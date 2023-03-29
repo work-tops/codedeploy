@@ -1,0 +1,104 @@
+.footer_body,
+.footer-box,
+.footer_3,
+.register_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.register_footer {
+    margin-top: -16px;
+}
+
+.footer_body {
+    margin-top: 115rem;
+}
+
+.footer_3 {
+    margin-top: 75rem;
+}
+
+.footer-box {
+    margin-top: 101rem;
+}
+
+.footer {
+    background: #f0f0f0;
+}
+
+.desc {
+    margin-top: 14px;
+    width: 221px;
+    font-size: 14px;
+}
+
+li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.ri-facebook-circle-fill,
+.ri-linkedin-box-fill,
+.ri-twitter-fill,
+.ri-instagram-line {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.ri-facebook-circle-fill:hover,
+.ri-linkedin-box-fill:hover {
+    color: blue;
+    transition: all 0.5s;
+}
+
+.ri-twitter-fill:hover {
+    color: skyblue;
+    transition: all 0.5s;
+}
+
+.ri-instagram-line:hover {
+    color: palevioletred;
+    transition: all 0.5s;
+
+}
+
+.copyrights {
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 10px;
+    margin-bottom: 0rem;
+}
+
+.footer-title {
+    font-size: 1.4rem;
+    margin-top: 20px;
+}
+
+.address {
+    font-size: 14px;
+}
+
+.address {
+    margin-top: 15px;
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
+
+.Contact-us p {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.Contact-us h5 {
+    margin-top: 15px;
+}
+
+.Decbase h5 {
+    margin-top: 15px;
+}
+.Follow-Us h5 {
+    margin-top: 15px;
+}

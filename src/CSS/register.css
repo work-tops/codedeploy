@@ -1,0 +1,161 @@
+.bg,
+.bg-form {
+    background: url(../Images/bg1.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: -16px;
+}
+
+.bg {
+    height: 565px;
+}
+
+.bg-form {
+    height: 785px;
+}
+
+.heading {
+    text-align: center;
+    color: #000;
+    font-size: 24px;
+}
+
+.note {
+    color: grey;
+    font-size: 12px;
+    margin-left: 90px;
+    margin-top: 50px;
+}
+
+.register-field,
+.form-field {
+    background: #fff;
+    width: 700px;
+    margin-left: 275px;
+    border: none;
+    position: relative;
+    top: 30px;
+}
+.register-field{
+    padding-bottom: 120px;
+}
+.form-field{
+    padding-bottom: 16px;
+}
+.hiring,
+.work {
+    padding: 30px;
+    width: 240px;
+    background: #fff;
+    border-radius: 10px;
+    color: rgb(73 128 192);
+    font-weight: 600;
+    border: 1px solid rgb(73 128 192);
+    cursor: pointer;
+}
+
+.hiring:hover,
+.work:hover {
+    background: rgb(73 128 192);
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.hiring {
+    margin-left: 50px;
+}
+
+.work {
+    margin-left: 90px;
+}
+
+.fb-sign-in,
+.email-sign-in {
+    display: block;
+    margin-left: 230px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.fb-sign-in {
+    margin-top: 45px;
+    background: rgb(73 128 192);
+}
+
+.email-sign-in {
+    background-color: #bfb3b3;
+}
+
+#fname,
+#lname,
+#email,
+#password {
+    margin-top: 40px;
+    padding: 10px;
+    width: 212px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid rgb(73 128 192);
+}
+
+#fname {
+    margin-left: 118px;
+}
+
+#lname {
+    margin-left: 30px;
+}
+
+#email,
+#password {
+    display: block;
+    margin-left: 118px;
+    width: 454px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.terms-and-conditions {
+    width: 345px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 190px;
+    margin-top: 50px;
+}
+
+#sign-up,
+#back {
+    display: block;
+    margin-left: 270px;
+    padding: 15px;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#sign-up {
+    background: rgb(159 114 47 / 86%);
+    color: #fff;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+#back {
+    background: #fff;
+    color: #bfb3b3;
+    margin-top: 10px;
+
+}

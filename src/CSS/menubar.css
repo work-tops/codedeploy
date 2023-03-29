@@ -1,0 +1,11 @@
+.menu_bar{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    background: rgb(221, 217, 213,1);
+    padding-bottom: 5px;
+}
+.menu{
+    cursor: pointer;
+    color: rgb(41, 24, 5);
+}

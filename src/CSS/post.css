@@ -1,0 +1,51 @@
+.project-post,.project_post,.job-post{
+    background: #262121f5;
+    padding: 80px;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+.job-post{
+    bottom: 16px;
+}
+.project_post,.project-post{
+    top: -16px;
+}
+.title {
+    color: #fff;
+    text-align: center;
+}
+
+.descr{
+    color: lightgrey;
+    font-size: 14px;
+    display: block;
+    width: 410px;
+}
+
+.offer_desc {
+    color: #fff;
+    font-size: 30px;
+}
+
+#search {
+    position: absolute;
+    left: 350px;
+    top: 240px;
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.ri-search-line{
+    position: absolute;
+    left: 795px;
+    top: 242px;
+    margin-top: 5px;
+    font-size: 22px;
+    cursor: pointer;
+}
+#search::placeholder{
+    margin-left: 20px;
+    font-size: 14px;
+}

@@ -1,0 +1,373 @@
+.key-description {
+    background-color: rgb(156 147 147 / 11%);
+    position: absolute;
+    top: 410px;
+    left: 130px;
+    right: 130px;
+
+}
+
+.key {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.send-proposal {
+    margin-bottom: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(159 114 47 / 86%);
+}
+
+.sub-title,
+.title-desc,
+.skills-req {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.layout-1 {
+    display: grid;
+    grid-template-columns: 65% 25%;
+    gap: 5px;
+    position: absolute;
+    margin-bottom: 10px;
+    top: 540px;
+    left: 130px;
+    right: 130px;
+}
+
+.prj-detail {
+    background: rgb(156 147 147 / 11%);
+}
+
+.sub-title,
+.skills-req {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.title-desc {
+    width: 622px;
+    font-size: 12px;
+    color: #776e6e;
+    margin-bottom: 110px;
+}
+
+.economy-desc {
+    background-color: rgb(156 147 147 / 11%);
+    margin-left: 25px;
+    width: 327px;
+}
+
+.ending-days {
+    text-align: center;
+    color: rgb(133, 127, 127);
+    font-size: 14px;
+    position: relative;
+    top: 0px;
+    left: 0;
+    right: 0px;
+}
+
+.days-left {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(133, 127, 127);
+    font-size: 18px;
+    border-bottom: 1px solid rgb(133, 127, 127);
+    position: relative;
+    top: -18px;
+}
+
+.euros {
+    font-size: 30px;
+    font-weight: bold;
+    color: #40c940;
+}
+
+.currency {
+    width: 125px;
+    height: 100px;
+    margin-left: 18px;
+    margin-right: 30px;
+    padding-right: 22px;
+    margin-top: -19px;
+    border-right: 1px solid rgb(133, 127, 127);
+}
+
+.news-feed {
+    width: 120px;
+    height: 96px;
+    margin-right: 85px;
+    margin-left: 24px;
+    margin-top: 19px;
+    border-right: 1px solid rgb(133, 127, 127);
+    padding-right: 40px;
+    padding-bottom: 3px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    border-bottom: 1px solid rgb(133, 127, 127);
+
+}
+
+.amount,
+.num {
+    color: #40c940;
+    font-weight: bold;
+    font-size: 34px;
+}
+
+.num {
+    position: relative;
+    right: 45px;
+    top: 20px;
+}
+
+.desc-title {
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(133, 127, 127);
+}
+
+.proposal {
+    font-size: 12px;
+    position: relative;
+    bottom: 0px;
+    right: 45px;
+}
+
+.proposal-date {
+    font-size: 11px;
+    font-style: italic;
+    position: relative;
+    bottom: 12px;
+    right: 44px;
+}
+
+.received-proposals {
+    font-size: 13px;
+    position: relative;
+    bottom: 15px;
+    left: 30px;
+}
+
+.prj-id {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.save-btn {
+    width: 200px;
+    padding: 10px;
+    font-size: 17px;
+    color: #d20a20;
+    font-weight: bold;
+    margin-left: 70px;
+    border: 2px solid #d20a20;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.fa-heart {
+    color: #d20a20;
+    margin-right: 5px;
+}
+
+.save {
+    border-bottom: 1px solid rgb(133, 127, 127);
+}
+
+.profile-img {
+    height: 75px;
+    width: 75px;
+    border-radius: 45px;
+    margin-left: 129px;
+    border: 1px solid;
+    margin-top: 20px;
+}
+
+.emp-name {
+    text-align: center;
+    font-weight: 600;
+}
+
+.open-job-1 {
+    margin-left: 65px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    display: inline;
+    cursor: pointer;
+    border-right: 1px solid rgb(133, 127, 127);
+    padding-right: 5px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.open-job-2 {
+    display: inline;
+    border-top: none;
+    border-bottom: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: none;
+    color: #507a93;
+    cursor: pointer;
+    border-right: 1px solid rgb(133, 127, 127);
+    font-size: 13px;
+}
+
+.skills {
+    display: inline;
+    border-radius: 25px;
+    border: 1px solid rgb(133, 127, 127);
+    color: rgb(133, 127, 127);
+    padding: 0px 14px 3px 14px;
+    font-size: 12px;
+    margin-left: 25px;
+    background: #e8e6e6;
+    width: 150px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 59% 29%;
+    gap: 28px;
+    position: absolute;
+    top: 1170px;
+    left: 129px;
+    right: 22px;
+}
+
+.container2 {
+    background: rgb(156 147 147 / 11%);
+}
+
+.report-title {
+    font-size: 22px;
+    margin-left: 25px;
+    border-bottom: 1px solid grey;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+#report-box,
+#desc-box {
+    padding: 10px;
+    border: 1px solid rgb(133, 127, 127);
+    background: rgb(156 147 147 / 11%);
+}
+
+#report-box {
+    width: 240px;
+    margin-left: 45px;
+}
+
+#desc-box {
+    margin-top: 20px;
+    margin-left: 42px;
+    width: 250px;
+    padding-bottom: 100px;
+}
+
+#report-box::placeholder {
+    font-size: 16px;
+}
+
+.submit {
+    border-radius: 25px;
+    margin-left: 90px;
+    margin-top: 20px;
+    width: 150px;
+    padding: 10px;
+    text-transform: uppercase;
+    border: none;
+    color: #fff;
+    background: rgb(159 114 47 / 86%);
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.clarification-board {
+    display: inline;
+    font-size: 25px;
+}
+
+.ask-a-que {
+    color: rgb(205, 164, 118);
+    margin-left: 250px;
+    font-weight: 500;
+    width: 200px;
+    border: 2px solid rgb(205, 164, 118);
+    padding: 15px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#msg-box {
+    width: 652px;
+    padding-bottom: 184px;
+    margin-top: 30px;
+    border: 1px solid rgb(133, 127, 127);
+    padding-top: 15px;
+    border-bottom: none;
+}
+
+#msg-box::placeholder {
+    padding-left: 30px;
+    font-size: 12px;
+}
+
+.send-box {
+    background: rgb(156 147 147 / 11%);
+    width: 652px;
+    position: relative;
+    bottom: 1px;
+    border: 1px solid rgb(133, 127, 127);
+    border-top: none;
+}
+
+.send {
+    width: 100px;
+    padding: 5px;
+    color: #fff;
+    background: rgb(159 114 47 / 86%);
+    text-transform: uppercase;
+    margin-left: 550px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.fa-angle-down {
+    position: relative;
+    right: 25px;
+}
+
+.fa-sterling-sign,
+.fa-location-dot,
+.fa-building,
+.fa-business-time {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.heading {
+    font-size: 20px;
+    margin-left: 25px;
+    margin-top: 7px;
+}
+
+.personal-profile {
+    margin-bottom: 10px;
+}
