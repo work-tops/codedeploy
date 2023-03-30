@@ -6,7 +6,6 @@
 .ai-logo-title {
     text-align: center;
 }
-
 .ai-logo {
     width: 170px;
     height: 55px;
@@ -54,12 +53,14 @@
     text-align: justify;
     padding-left: 100px;
 }
-.user-title{
+
+.user-title {
     font-size: 14px;
     margin-left: 30px;
     color: gray;
 }
-.user-log-out{
+
+.user-log-out {
     margin-left: 30px;
     border: none;
     font-size: 14px;
