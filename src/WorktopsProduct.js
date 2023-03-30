@@ -1,4 +1,5 @@
 import React from "react";
+import ProductEdit from "./Components/ProductEdit";
 import WorktopsHeader from "./Components/WorktopsHeader";
 import WorktopsProductMenu from "./Components/wtmenubar";
 function WorktopsProducts(){
@@ -6,6 +7,7 @@ function WorktopsProducts(){
     <>
     <WorktopsHeader/>
     <WorktopsProductMenu/>
+    <ProductEdit/>
     </>
     )
 }

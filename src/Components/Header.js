@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../CSS/header.css'
 function Header() {
     return (
@@ -15,7 +16,7 @@ function Header() {
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" id="dropdown-item" href="#">
-                                <span className="search_span">Search</span> Offers
+                            <Link className="route-link" to='/postproject'><span className="search_span">Post</span>Project</Link>
                                 <br></br>
                                 <small id="small-dd">action...</small>
 
@@ -24,13 +25,13 @@ function Header() {
                         </li>
                         <li>
                             <a class="dropdown-item" id="dropdown-item" href="#">
-                                <span className="search_span">Search</span> Freelancers
+                            <Link className="route-link" to='/projectlisting'><span className="search_span">Project</span>Listing</Link>
                                 <br></br>
                                 <small id="small-dd">action...</small></a>
                         </li>
                         <li>
                             <a class="dropdown-item" id="dropdown-item" href="#">
-                                <span className="search_span">Search</span> Projects
+                            <Link className="route-link" to='/projectdetails'><span className="search_span">Job</span>Details</Link>
                                 <br></br>
                                 <small id="small-dd">action...</small>
                             </a>

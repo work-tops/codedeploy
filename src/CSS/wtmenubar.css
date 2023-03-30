@@ -3,7 +3,6 @@
     flex-direction: row;
     justify-content: space-between;
     background: #fff;
-    padding: 10px;
     box-shadow: 0px 5px rgba(244, 244, 244, 0.5);
 }
 
@@ -17,15 +16,18 @@
 .icons {
     margin-right: 5px;
 }
-#dropdown-item{
-    /* .dropdown .ddt,
-    .dropdown .ddt:hover { */
-        width: 130px;
-        padding: 13px;
-        border: 2px solid rgb(121, 93, 57);
-        color: rgb(121, 93, 57);
-        font-weight: bold;
-        border-radius: 0px;
-        text-align: right;
-    /* } */
+
+#ddToggle{
+ font-size: 12px;
+ font-weight: bold;
+}
+#ddToggle:focus{
+border: none;
+background-color: rgb(89, 176, 220);
+color: #fff;
+}
+#ddToggle:hover{
+    background-color: rgb(89, 176, 220);
+    transition: all 0.5s;
+    color: #fff;
 }

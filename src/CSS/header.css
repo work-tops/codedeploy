@@ -59,6 +59,8 @@
     cursor: pointer;
     font-weight: bold;
     margin-top: 14px;
+    background: none;
+    border: none;
 }
 
 .desc-title {
@@ -69,14 +71,19 @@
 #dropdown-item{
     color: rgb(135, 211, 230);
 }
+
 #small-dd{
     color: #7a7070;
 }
 .search_span{
 color: #7a7070;
 font-weight: bold;
+text-decoration: none;
 }
 .search_span:hover{
     color: rgb(86, 185, 224);
     transition: all 0.5s;
+}
+.route-link{
+    text-decoration: none;
 }

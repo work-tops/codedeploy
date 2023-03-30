@@ -6,7 +6,7 @@ function WorktopsProductMenu() {
             <ul className="menu-bar" type='none'>
                 <li className="menu-opt">
                     <div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" id="ddToggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid icons fa-gauge"></i>dashboard
                         </a>
                         <ul class="dropdown-menu">
@@ -38,7 +38,7 @@ function WorktopsProductMenu() {
                     </div>
                 </li>
                 <li className="menu-opt"><div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" id="ddToggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid icons fa-gear"></i>configuration
                         </a>
                         <ul class="dropdown-menu">
@@ -69,7 +69,7 @@ function WorktopsProductMenu() {
                         </ul>
                     </div></li>
                 <li className="menu-opt"><div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" id="ddToggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid icons fa-user-plus"></i>sellers
                         </a>
                         <ul class="dropdown-menu">
@@ -100,7 +100,7 @@ function WorktopsProductMenu() {
                         </ul>
                     </div></li>
                 <li className="menu-opt"><div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" id="ddToggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid icons fa-cube"></i>products
                         </a>
                         <ul class="dropdown-menu">
@@ -131,7 +131,7 @@ function WorktopsProductMenu() {
                         </ul>
                     </div></li>
                 <li className="menu-opt"><div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" id="ddToggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid icons fa-clipboard-list"></i>orders
                         </a>
                         <ul class="dropdown-menu">
@@ -162,7 +162,7 @@ function WorktopsProductMenu() {
                         </ul>
                     </div></li>
                 <li className="menu-opt"><div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" id="ddToggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid icons fa-money-check-dollar"></i>Commission
                         </a>
                         <ul class="dropdown-menu">
@@ -193,7 +193,7 @@ function WorktopsProductMenu() {
                         </ul>
                     </div></li>
                 <li className="menu-opt"><div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" id="ddToggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-regular icons fa-credit-card"></i>payment
                         </a>
                         <ul class="dropdown-menu">
@@ -224,7 +224,7 @@ function WorktopsProductMenu() {
                         </ul>
                     </div></li>
                 <li className="menu-opt"><div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" id="ddToggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid icons fa-envelope-open"></i>mail configuration
                         </a>
                         <ul class="dropdown-menu">
@@ -255,7 +255,7 @@ function WorktopsProductMenu() {
                         </ul>
                     </div></li>
                 <li className="menu-opt"><div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" id="ddToggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid icons fa-language"></i>Translation
                         </a>
                         <ul class="dropdown-menu">

@@ -1,0 +1,221 @@
+#ddownToggle {
+    border: 1px solid #000;
+    border-radius: 0px;
+    margin-top: 45px;
+    margin-left: 25px;
+}
+
+.product-edit {
+    display: grid;
+    grid-template-columns: 70% 15% 15%;
+}
+
+.view-in-store {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-top: 35px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #32ca32;
+    color: #fff;
+    font-weight: bold;
+    width: 150px;
+}
+
+.edit-desc {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.edit-sec {
+    text-transform: uppercase;
+    color: rgb(189, 189, 189);
+    font-size: 12px;
+}
+
+.pro-description {
+    margin-left: 20px;
+}
+
+.product-edit-form {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+#ddown-Toggle,
+.edit-form input {
+    border: 1px solid black;
+    border-radius: 0px;
+    width: 840px;
+    margin-left: 10px;
+    background: #a8a3a324;
+    margin-top: 10px;
+}
+
+#ddown-Toggle {
+    text-align: left;
+    color: gray;
+}
+
+.edit-form input {
+    display: block;
+    padding: 7px;
+
+}
+
+.edit-form label {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.edit-form {
+    border: 1px solid black;
+    padding-bottom: 20px;
+    margin-left: 20px;
+}
+
+.icon {
+    margin-left: 42rem;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#marble-name::placeholder {
+    text-transform: uppercase;
+    padding-left: 5px;
+}
+
+#wt-email::placeholder {
+    padding-left: 5px;
+}
+
+.mark {
+    color: red;
+    background: none;
+}
+
+.type-list {
+    color: rgb(7, 44, 179);
+}
+
+.para-dropdown {
+    display: inline;
+}
+
+.para-style {
+    width: 110px;
+    padding: 0px;
+    margin-bottom: 10px;
+    background: rgb(227, 248, 255);
+    border-radius: 0px;
+    color: black;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.para-style:hover {
+    background: rgb(227, 248, 255);
+    color: #000;
+}
+
+.icons-toolbar,
+.icons-toolbar1 {
+    background-color: #c8c8c8;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding-top: 5px;
+    width: 840px;
+    position: relative;
+}
+
+.icons-toolbar1 {
+    bottom: 15px;
+    padding: 15px;
+}
+
+#dec-icons {
+    margin-left: 5px;
+    margin-right: 2px;
+    font-size: 18px;
+    cursor: pointer;
+    background: rgb(227, 248, 255);
+}
+
+#des-box {
+    border: none;
+    position: relative;
+    bottom: 10px;
+    right: 1px;
+    width: 841px;
+    padding-bottom: 90px;
+}
+
+.tag1 {
+    margin-left: 20px;
+}
+
+.pro-tags {
+    border: 1px solid black;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    padding-bottom: 10px;
+    width: 840px;
+    margin-bottom: 15px;
+}
+
+.tag-btns,
+.tag-btns1,
+.tag-btns2,
+.tag-btns3,
+.tag-btns4,
+.tag-btns5 {
+    margin-left: 5px;
+    font-size: 12px;
+    margin-top: 10px;
+    border: none;
+    padding: 5px 0px 5px 10px;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #0bbb86;
+    color: #fff;
+}
+
+.close {
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 3px;
+    font-weight: bold;
+    color: #000;
+}
+
+.textarea {
+    resize: vertical;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 840px;
+}
+.product-image {
+    margin-left: 25px;
+    margin-top: 10px;
+    height: 120px;
+    width: 125px;
+    border: 2px solid gray;
+}
+.product-img-name,.product-img-desc,.product-img-note{
+    margin-left: 25px;
+}
+.product-img-name{
+    font-size: 16px;
+}
+.product-img-desc{
+    font-size: 14px;
+    font-weight: bold;
+}
+.product-img-note{
+    font-size: 12px;
+}

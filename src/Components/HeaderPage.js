@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../CSS/header.css'
 function HeaderPage() {
     return (
@@ -8,13 +9,13 @@ function HeaderPage() {
             </div>
             <div className="others">
                 <div class="dropdown">
-                    <a class="btn ddt dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="btn ddt dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         SEARCH
                     </a>
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" id="dropdown-item" href="#">
-                                <span className="search_span">Search</span> Offers
+                                <Link className="route-link" to='/postproject'><span className="search_span">Post</span>Project</Link>
                                 <br></br>
                                 <small id="small-dd">action...</small>
 
@@ -22,14 +23,15 @@ function HeaderPage() {
 
                         </li>
                         <li>
-                            <a class="dropdown-item" id="dropdown-item" href="#">
-                                <span className="search_span">Search</span> Freelancers
+                            <a class="dropdown-item" id="dropdown-item">
+                                <Link className="route-link" to='/projectlisting'><span className="search_span">Project</span>Listing</Link>
                                 <br></br>
-                                <small id="small-dd">action...</small></a>
+                                <small id="small-dd">action...</small>
+                            </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" id="dropdown-item" href="#">
-                                <span className="search_span">Search</span> Projects
+                            <a class="dropdown-item" id="dropdown-item" >
+                                <Link className="route-link" to='/projectdetails'><span className="search_span">Job</span>Details</Link>
                                 <br></br>
                                 <small id="small-dd">action...</small>
                             </a>
@@ -38,10 +40,10 @@ function HeaderPage() {
                         </li>
                     </ul>
                 </div>
-                <p className="options">HOW IT WORKS</p>
-                <p className="options">LOG IN</p>
-                <p className="options">SIGN UP</p>
-                <p className="options">FREELANCER?</p>
+                <Link><button className="options">HOW IT WORKS</button></Link>
+                <Link to='/'><button className="options">LOG IN</button></Link>
+                <Link to='/signupform'><button className="options">SIGN UP</button></Link>
+                <Link><button className="options">FREELANCER?</button></Link>
             </div>
 
         </div>
