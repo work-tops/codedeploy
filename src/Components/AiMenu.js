@@ -12,7 +12,7 @@ function AiMenu() {
                 <button><i class="fa-solid fa-cube"></i> Services</button>
                 <button><i class="fa-solid fa-table"></i> Post a Job</button>
                 <button><i class="fa-solid fa-shop"></i> Orders</button>
-                <button><i class="fa-solid fa-money-bill-wave"></i></button>
+                <button><i class="fa-solid fa-money-bill-wave">Payment</i></button>
                 <button><i class="fa-solid fa-percent"></i> Commisson</button>
             </div>
             <div>
