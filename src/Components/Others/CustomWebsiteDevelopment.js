@@ -2,7 +2,8 @@ import React from "react"
 import currency from "../../Images/Currency.png"
 import newsfeed from "../../Images/newsfeed.png"
 import profileImg from "../../Images/employee.png"
-import '../../CSS/customweb.css'
+
+
 function ProjectInformation() {
     return (
         <>
@@ -74,7 +75,7 @@ function ProjectInformation() {
                     </div>
                 </div>
             </div>
-            <div className="container">
+            <div className="containers">
                 <div className="container1">
                     <p className="clarification-board">Clarification Board</p>
                     <button className="ask-a-que">ASK A QUESTION</button>

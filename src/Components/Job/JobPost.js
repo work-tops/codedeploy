@@ -1,5 +1,6 @@
 import React from "react";
-import '../../CSS/post.css'
+
+
 function JobPost() {
     return (
         <div className="job-post">

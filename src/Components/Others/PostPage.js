@@ -1,5 +1,6 @@
 import React from "react";
-import '../../CSS/post.css'
+
+
 function PostPage() {
     return (
         <div className="project_post">

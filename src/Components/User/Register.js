@@ -1,5 +1,5 @@
 import React from "react";
-import '../../CSS/register.css'
+
 function Register() {
     return (
         <div className="bg">

@@ -2,10 +2,9 @@ import React from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import pom from '../../Images/product_image.png'
-import '../../CSS/Aiallproducts.css'
 function AiProducts() {
     return (
-        <div className="ai-all-products">
+        <div className="ai-all-product">
             <div>
                 <AiMenu />
             </div>
