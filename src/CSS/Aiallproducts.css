@@ -158,6 +158,6 @@ td {
     cursor: pointer;
 }
 .shadows{
-        margin-left: -19px;
+        /* margin-left: -19px; */
         margin-right: 45px;
 }
