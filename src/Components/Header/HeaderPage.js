@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import '../../CSS/header.css'
+
+
 function HeaderPage() {
     return (
         <div className="header">
@@ -15,7 +15,7 @@ function HeaderPage() {
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" id="dropdown-item" href="#">
-                                <Link className="route-link" to='/postproject'><span className="search_span">Post</span>Project</Link>
+                                <span className="search_span">Post</span>Project
                                 <br></br>
                                 <small id="small-dd">action...</small>
 
@@ -24,14 +24,14 @@ function HeaderPage() {
                         </li>
                         <li>
                             <a class="dropdown-item" id="dropdown-item">
-                                <Link className="route-link" to='/projectlisting'><span className="search_span">Project</span>Listing</Link>
+                                <span className="search_span">Project</span>Listing
                                 <br></br>
                                 <small id="small-dd">action...</small>
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item" id="dropdown-item" >
-                                <Link className="route-link" to='/projectdetails'><span className="search_span">Job</span>Details</Link>
+                                <span className="search_span">Job</span>Details
                                 <br></br>
                                 <small id="small-dd">action...</small>
                             </a>
@@ -40,10 +40,10 @@ function HeaderPage() {
                         </li>
                     </ul>
                 </div>
-                <Link><button className="options">HOW IT WORKS</button></Link>
-                <Link to='/'><button className="options">LOG IN</button></Link>
-                <Link to='/signupform'><button className="options">SIGN UP</button></Link>
-                <Link><button className="options">FREELANCER?</button></Link>
+                <button className="options">HOW IT WORKS</button>
+                <button className="options">LOG IN</button>
+                <button className="options">SIGN UP</button>
+                <button className="options">FREELANCER?</button>
             </div>
 
         </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import '../../CSS/register.css'
 function SignUpFormData() {
     return (
         <div className="bg-form">

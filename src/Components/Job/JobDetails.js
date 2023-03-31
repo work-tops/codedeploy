@@ -1,5 +1,6 @@
 import React from "react";
-import '../../CSS/Jobdetails.css'
+
+
 function JobDetails() {
     return (
         <>

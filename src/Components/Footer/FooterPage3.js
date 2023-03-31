@@ -1,5 +1,4 @@
 import React from "react";
-import '../../CSS/footer.css'
 function FooterPageThree() {
     return (
         <div className="footer">

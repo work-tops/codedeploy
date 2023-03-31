@@ -1,6 +1,8 @@
 import React from "react";
 import profile_pic from '../../Images/employee.png'
 import ai_logo from '../../Images/ai-logo.png'
+
+
 function AiMenu() {
     return (
         <>
@@ -12,7 +14,7 @@ function AiMenu() {
                 <button><i class="fa-solid fa-cube"></i> Services</button>
                 <button><i class="fa-solid fa-table"></i> Post a Job</button>
                 <button><i class="fa-solid fa-shop"></i> Orders</button>
-                <button><i class="fa-solid fa-money-bill-wave"></i>Payments</button>
+                <button><i class="fa-solid fa-money-bill-wave"></i> Payments</button>
                 <button><i class="fa-solid fa-percent"></i> Commisson</button>
             </div>
             <div>

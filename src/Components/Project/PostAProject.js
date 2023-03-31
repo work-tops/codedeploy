@@ -1,4 +1,4 @@
-// import './App.css';
+import React from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Menubar from '../Menubar/Menubar';
