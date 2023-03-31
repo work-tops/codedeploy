@@ -2,7 +2,7 @@ import React from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import pom from '../../Images/product_image.png'
-function AiProducts() {
+function AllSeller() {
     return (
         <div className="ai-all-product">
             <div>
@@ -16,11 +16,12 @@ function AiProducts() {
                     <div className="product-adding-div">
                         <div>
                             <p className="ai-sub-title">product/product list</p>
-                            <h4>All Products</h4>
+                            <h4>All Seller</h4>
+                            <p className="ai-title-note">Here are the current seller on your store</p>
                         </div>
                         <div>
                             <button className="more-action">More Action</button>
-                            <button className="add-product-ai">Add Product</button>
+                            <button className="add-seller">Add Seller</button>
                         </div>
                     </div>
                     <p className="bulk-actions">Bulk Action :{' '}
@@ -44,82 +45,82 @@ function AiProducts() {
                         {' '}
                         List
                     </p>
-                    <div class="shadow shadows p-3 mb-5 bg-body rounded">
-                        <table className="allproducts-table">
+                    <div class="shadow  p-3 mb-5 bg-body rounded">
+                        <table className="allsellers-table" >
                             <tr className="product-heading ">
                                 <td id="td" className="rounded-start"><input type='checkbox'  /></td>
-                                <td id="td">Product ID</td>
-                                <td id="td">Image</td>
+                                <td id="td">Seller ID</td>
+                                <td id="td">Seller Profile</td>
                                 <td id="td">Name</td>
-                                <td id="td">Seller</td>
-                                <td id="td">Price</td>
-                                <td id="td">Quantity</td>
+                                <td id="td">Company Name</td>
+                                <td id="td">Verfication</td>
+                                <td id="td">Date</td>
                                 <td id="td">Status</td>
                                 <td id="td" className="rounded-end">Option</td>
                             </tr>
                             <tr>
                                 <td id="td"><input type='checkbox' /></td>
                                 <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td>
+                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
                                 <td id="td">Emeka Warehouse</td>
                                 <td id="td">Granite Slab UK</td>
-                                <td id="td">£77.00</td>
-                                <td id="td">3Pcs.</td>
+                                <td id="td"><span className="pro-status-approved">Verified</span></td>
+                                <td id="td">31 Mar 2023.</td>
                                 <td id="td"><span className="pro-status-approved">Approved</span></td>
                                 <td id="td"><i class="fa-solid fa-ellipsis"></i></td>
                             </tr>
                             <tr>
                                 <td id="td"><input type='checkbox' /></td>
                                 <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td>
+                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
                                 <td id="td">Emeka Warehouse</td>
                                 <td id="td">Granite Slab UK</td>
-                                <td id="td">£77.00</td>
-                                <td id="td">3Pcs.</td>
+                                <td id="td"><span className="pro-status-approval_pending">Not Verified</span></td>
+                                <td id="td">31 Mar 2023.</td>
                                 <td id="td"><span className="pro-status-approval_pending">Approval Pending</span></td>
                                 <td id="td"><i class="fa-solid fa-ellipsis"></i></td>
                             </tr>
                             <tr>
                                 <td id="td"><input type='checkbox' /></td>
                                 <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td>
+                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
                                 <td id="td">Emeka Warehouse</td>
                                 <td id="td">Granite Slab UK</td>
-                                <td id="td">£77.00</td>
-                                <td id="td">3Pcs.</td>
+                                <td id="td"><span className="pro-status-approved">Verified</span></td>
+                                <td id="td">31 Mar 2023.</td>
                                 <td id="td"><span className="pro-status-disabled">Disabled</span></td>
                                 <td id="td"><i class="fa-solid fa-ellipsis"></i></td>
                             </tr>
                             <tr>
                                 <td id="td"><input type='checkbox' /></td>
                                 <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td>
+                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
                                 <td id="td">Emeka Warehouse</td>
                                 <td id="td">Granite Slab UK</td>
-                                <td id="td">£77.00</td>
-                                <td id="td">3Pcs.</td>
+                                <td id="td"><span className="pro-status-approved">Verified</span></td>
+                                <td id="td">31 Mar 2023.</td>
                                 <td id="td"><span className="pro-status-approved">Approved</span></td>
                                 <td id="td"><i class="fa-solid fa-ellipsis"></i></td>
                             </tr>
                             <tr>
                                 <td id="td"><input type='checkbox' /></td>
                                 <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td>
+                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
                                 <td id="td">Emeka Warehouse</td>
                                 <td id="td">Granite Slab UK</td>
-                                <td id="td">£77.00</td>
-                                <td id="td">3Pcs.</td>
+                                <td id="td"><span className="pro-status-approved">Verified</span></td>
+                                <td id="td">31 Mar 2023.</td>
                                 <td id="td"><span className="pro-status-approved">Approved</span></td>
                                 <td id="td"><i class="fa-solid fa-ellipsis"></i></td>
                             </tr>
                             <tr>
                                 <td id="td"><input type='checkbox' /></td>
                                 <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td>
+                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
                                 <td id="td">Emeka Warehouse</td>
                                 <td id="td">Granite Slab UK</td>
-                                <td id="td">£77.00</td>
-                                <td id="td">3Pcs.</td>
+                                <td id="td"><span className="pro-status-approved">Verified</span></td>
+                                <td id="td">31 Mar 2023.</td>
                                 <td id="td"><span className="pro-status-approved">Approved</span></td>
                                 <td id="td"><i class="fa-solid fa-ellipsis"></i></td>
                             </tr>
@@ -141,4 +142,4 @@ function AiProducts() {
         </div>
     )
 }
-export default AiProducts
+export default AllSeller
