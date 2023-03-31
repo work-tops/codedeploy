@@ -1,6 +1,6 @@
 import React from "react";
-import '../CSS/ProductEdit.css'
-import product_img from '../Images/product_image.png'
+import '../../CSS/ProductEdit.css'
+import product_img from '../../Images/product_image.png'
 function ProductEdit() {
     return (
         <>

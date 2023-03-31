@@ -1,7 +1,7 @@
 import React from "react";
-import ProductEdit from "./Components/ProductEdit";
-import WorktopsHeader from "./Components/WorktopsHeader";
-import WorktopsProductMenu from "./Components/wtmenubar";
+import ProductEdit from "../Product/ProductEdit";
+import WorktopsHeader from "../Header/WorktopsHeader";
+import WorktopsProductMenu from "../Others/wtmenubar";
 function WorktopsProducts(){
     return(
     <>

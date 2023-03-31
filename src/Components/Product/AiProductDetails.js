@@ -1,6 +1,6 @@
 import React from "react";
-import profile from '../Images/employee.png'
-import '../CSS/AiProductDetails.css'
+import profile from '../../Images/employee.png'
+import '../../CSS/AiProductDetails.css'
 function AiProductDetails() {
     return (
         <>

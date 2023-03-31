@@ -1,9 +1,9 @@
 import React from "react";
-import '../CSS/footer.css'
-function RegisterFooter() {
+import '../../CSS/footer.css'
+function FooterPage() {
     return (
         <div className="footer">
-        <div className="register_footer">
+        <div className="footer_body">
             <div className="Decbase">
                 <h5 classname="footer-title">DECBASE</h5>
                 <p className="desc">But i must explain you all
@@ -49,4 +49,4 @@ function RegisterFooter() {
     </div>
     )
 }
-export default RegisterFooter
+export default FooterPage
