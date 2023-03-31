@@ -58,7 +58,7 @@ function AiProductDetails() {
                                     <input id="aipro-quantity" type='text' />
                                     <br></br>
                                     <input id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
-                                    <button id="aipro-addvariant"><i class="ri-add-line"></i>Add Variant</button>
+                                    <button id="aipro-addvariant"><i className="ri-add-line"></i>Add Variant</button>
                                     <label>Return Policy</label>
                                     <textarea id="aipro-returnpolicy"></textarea>
                                     <input type='button' id="add-product-btn" value='Add Product' />
@@ -67,7 +67,7 @@ function AiProductDetails() {
                             <div className="Add-Product-Images">
                                 <p className="ai-pro-title">Product Images</p>
                                 <div className="ai-image-drag">
-                                    <i class="ai-img-icon ri-image-fill"></i>
+                                    <i className="ai-img-icon ri-image-fill"></i>
                                     <small className="chose-file">No File Chosen</small>
                                 </div>
                                 <button className="img-upload-btn">Upload Images</button>

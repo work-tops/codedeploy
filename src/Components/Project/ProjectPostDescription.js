@@ -47,35 +47,35 @@ function Description() {
                 <div className="tool_bar">
                     <div className="tool-1">
                         <button className="arrow" disabled>
-                            <i class="ri-arrow-go-back-line"></i>
+                            <i className="ri-arrow-go-back-line"></i>
                         </button>
                         <button disabled>
-                            <i class="ri-arrow-go-forward-line"></i>
+                            <i className="ri-arrow-go-forward-line"></i>
                         </button>
                         <button>
-                            <i class="ri-add-fill"></i>
-                            <i class="ri-arrow-down-s-fill"></i>
+                            <i className="ri-add-fill"></i>
+                            <i className="ri-arrow-down-s-fill"></i>
                         </button>
                         <button>
-                            <i class="ri-image-line"></i>
+                            <i className="ri-image-line"></i>
                         </button>
                         <button>
-                            Formats<i class="ri-arrow-down-s-fill"></i>
+                            Formats<i className="ri-arrow-down-s-fill"></i>
                         </button>
                         <button>
-                            <i class="ri-bold"></i>
+                            <i className="ri-bold"></i>
                         </button>
                         <button>
-                            <i class="ri-italic"></i>
+                            <i className="ri-italic"></i>
                         </button>
                     </div>
                     <div className="tool-2">
-                        <i class="ri-align-left"></i>
-                        <i class="ri-align-center"></i>
-                        <i class="ri-align-right"></i>
-                        <i class="ri-align-justify"></i>
-                        <i class="ri-arrow-left-s-line"></i>
-                        <i class="ri-arrow-right-s-line"></i>
+                        <i className="ri-align-left"></i>
+                        <i className="ri-align-center"></i>
+                        <i className="ri-align-right"></i>
+                        <i className="ri-align-justify"></i>
+                        <i className="ri-arrow-left-s-line"></i>
+                        <i className="ri-arrow-right-s-line"></i>
                     </div>
                     <input id="word-doc" type='text' />
                 </div>

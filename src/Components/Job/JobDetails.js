@@ -19,15 +19,15 @@ function JobDetails() {
                         <div className="job_search">
                             <p className="job_title">Price Range</p>
                             <p className="price">$0-1000$</p>
-                            <div class="slidecontainer">
-                                <input type="range" min="1" max="1000" class="slider" id="myRange" />
+                            <div className="slidecontainer">
+                                <input type="range" min="1" max="1000" className="slider" id="myRange" />
                             </div>
                         </div>
                         <div className="job_search">
                             <p className="job_title">Categories</p>
                             <input type='text' id="enter" placeholder="Search Category" />
                             <button className="search-category_1">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i className="fa-solid fa-magnifying-glass"></i>
                             </button>
                             <form className="scroll">
                                 <input type='checkbox' id="checkbox" />Kitchen Worktops
@@ -46,7 +46,7 @@ function JobDetails() {
                             <p className="job_title">Location</p>
                             <input type='text' id="enter" placeholder="Search Category" />
                             <button className="search-category_2">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i className="fa-solid fa-magnifying-glass"></i>
                             </button>
                             <form className="scroll">
                                 <input type='checkbox' id="checkbox" />Kitchen Worktops
@@ -94,7 +94,7 @@ function JobDetails() {
                 <div>
                     <div className="requirements">
                         <div className="employee-info">
-                            <p className="Name"><i class="ri-check-double-fill"></i>James Buchanon</p>
+                            <p className="Name"><i className="ri-check-double-fill"></i>James Buchanon</p>
                             <h3 id="product-type">New L-Shape Kitchen With Island</h3>
                             <p className="emp-description">A Custom Web Development Job involves designing,developing,
                                 and maintaining a unique website tailored to a client's specific
@@ -106,18 +106,18 @@ function JobDetails() {
 
                         </div>
                         <div className="details-to-know">
-                            <p className="highlights"><i class="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
+                            <p className="highlights"><i className="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
                             <p className="highlights">United Kingdom</p>
-                            <p className="highlights"><i class="ri-folder-2-line"></i>Type Fixed</p>
-                            <p className="highlights"><i class="ri-time-fill"></i>20 to 30 days</p>
-                            <p className="highlights"><i class="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
-                            <p className="highlights"><i class="ri-heart-3-fill"></i>Click to Save</p>
+                            <p className="highlights"><i className="ri-folder-2-line"></i>Type Fixed</p>
+                            <p className="highlights"><i className="ri-time-fill"></i>20 to 30 days</p>
+                            <p className="highlights"><i className="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
+                            <p className="highlights"><i className="ri-heart-3-fill"></i>Click to Save</p>
                             <button className="view">VIEW JOB</button>
                         </div>
                     </div>
                     <div className="requirements">
                         <div className="employee-info">
-                            <p className="Name"><i class="ri-check-double-fill"></i>James Buchanon</p>
+                            <p className="Name"><i className="ri-check-double-fill"></i>James Buchanon</p>
                             <h3 id="product-type">New L-Shape Kitchen With Island</h3>
                             <p className="emp-description">A Custom Web Development Job involves designing,developing,
                                 and maintaining a unique website tailored to a client's specific
@@ -129,18 +129,18 @@ function JobDetails() {
 
                         </div>
                         <div className="details-to-know">
-                            <p className="highlights"><i class="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
+                            <p className="highlights"><i className="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
                             <p className="highlights">United Kingdom</p>
-                            <p className="highlights"><i class="ri-folder-2-line"></i>Type Fixed</p>
-                            <p className="highlights"><i class="ri-time-fill"></i>20 to 30 days</p>
-                            <p className="highlights"><i class="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
-                            <p className="highlights"><i class="ri-heart-3-fill"></i>Click to Save</p>
+                            <p className="highlights"><i className="ri-folder-2-line"></i>Type Fixed</p>
+                            <p className="highlights"><i className="ri-time-fill"></i>20 to 30 days</p>
+                            <p className="highlights"><i className="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
+                            <p className="highlights"><i className="ri-heart-3-fill"></i>Click to Save</p>
                             <button className="view">VIEW JOB</button>
                         </div>
                     </div>
                     <div className="requirements">
                         <div className="employee-info">
-                            <p className="Name"><i class="ri-check-double-fill"></i>James Buchanon</p>
+                            <p className="Name"><i className="ri-check-double-fill"></i>James Buchanon</p>
                             <h3 id="product-type">New L-Shape Kitchen With Island</h3>
                             <p className="emp-description">A Custom Web Development Job involves designing,developing,
                                 and maintaining a unique website tailored to a client's specific
@@ -152,18 +152,18 @@ function JobDetails() {
 
                         </div>
                         <div className="details-to-know">
-                            <p className="highlights"><i class="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
+                            <p className="highlights"><i className="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
                             <p className="highlights">United Kingdom</p>
-                            <p className="highlights"><i class="ri-folder-2-line"></i>Type Fixed</p>
-                            <p className="highlights"><i class="ri-time-fill"></i>20 to 30 days</p>
-                            <p className="highlights"><i class="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
-                            <p className="highlights"><i class="ri-heart-3-fill"></i>Click to Save</p>
+                            <p className="highlights"><i className="ri-folder-2-line"></i>Type Fixed</p>
+                            <p className="highlights"><i className="ri-time-fill"></i>20 to 30 days</p>
+                            <p className="highlights"><i className="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
+                            <p className="highlights"><i className="ri-heart-3-fill"></i>Click to Save</p>
                             <button className="view">VIEW JOB</button>
                         </div>
                     </div>
                     <div className="requirements">
                         <div className="employee-info">
-                            <p className="Name"><i class="ri-check-double-fill"></i>James Buchanon</p>
+                            <p className="Name"><i className="ri-check-double-fill"></i>James Buchanon</p>
                             <h3 id="product-type">New L-Shape Kitchen With Island</h3>
                             <p className="emp-description">A Custom Web Development Job involves designing,developing,
                                 and maintaining a unique website tailored to a client's specific
@@ -175,18 +175,18 @@ function JobDetails() {
 
                         </div>
                         <div className="details-to-know">
-                            <p className="highlights"><i class="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
+                            <p className="highlights"><i className="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
                             <p className="highlights">United Kingdom</p>
-                            <p className="highlights"><i class="ri-folder-2-line"></i>Type Fixed</p>
-                            <p className="highlights"><i class="ri-time-fill"></i>20 to 30 days</p>
-                            <p className="highlights"><i class="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
-                            <p className="highlights"><i class="ri-heart-3-fill"></i>Click to Save</p>
+                            <p className="highlights"><i className="ri-folder-2-line"></i>Type Fixed</p>
+                            <p className="highlights"><i className="ri-time-fill"></i>20 to 30 days</p>
+                            <p className="highlights"><i className="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
+                            <p className="highlights"><i className="ri-heart-3-fill"></i>Click to Save</p>
                             <button className="view">VIEW JOB</button>
                         </div>
                     </div>
                     <div className="requirements">
                         <div className="employee-info">
-                            <p className="Name"><i class="ri-check-double-fill"></i>James Buchanon</p>
+                            <p className="Name"><i className="ri-check-double-fill"></i>James Buchanon</p>
                             <h3 id="product-type">New L-Shape Kitchen With Island</h3>
                             <p className="emp-description">A Custom Web Development Job involves designing,developing,
                                 and maintaining a unique website tailored to a client's specific
@@ -198,19 +198,19 @@ function JobDetails() {
 
                         </div>
                         <div className="details-to-know">
-                            <p className="highlights"><i class="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
+                            <p className="highlights"><i className="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
                             <p className="highlights">United Kingdom</p>
-                            <p className="highlights"><i class="ri-folder-2-line"></i>Type Fixed</p>
-                            <p className="highlights"><i class="ri-time-fill"></i>20 to 30 days</p>
-                            <p className="highlights"><i class="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
-                            <p className="highlights"><i class="ri-heart-3-fill"></i>Click to Save</p>
+                            <p className="highlights"><i className="ri-folder-2-line"></i>Type Fixed</p>
+                            <p className="highlights"><i className="ri-time-fill"></i>20 to 30 days</p>
+                            <p className="highlights"><i className="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
+                            <p className="highlights"><i className="ri-heart-3-fill"></i>Click to Save</p>
                             <button className="view">VIEW JOB</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="btn_group">
-                <button className="previous"><i class="ri-arrow-left-s-line"></i></button>
+                <button className="previous"><i className="ri-arrow-left-s-line"></i></button>
                 <button className="page">1</button>
                 <button className="page">2</button>
                 <button className="page">3</button>
@@ -218,7 +218,7 @@ function JobDetails() {
                 <button className="page">...</button>
                 <button className="page">177</button>
                 <button className="page">178</button>
-                <button className="Next"><i class="ri-arrow-right-s-line"></i></button>
+                <button className="Next"><i className="ri-arrow-right-s-line"></i></button>
             </div>
         </>
     )

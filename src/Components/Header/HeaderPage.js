@@ -8,13 +8,13 @@ function HeaderPage() {
                 <img src="" alt="DECBASE-logo" />
             </div>
             <div className="others">
-                <div class="dropdown">
-                    <a class="btn ddt dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div className="dropdown">
+                    <a className="btn ddt dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         SEARCH
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul className="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" id="dropdown-item" href="#">
+                            <a className="dropdown-item" id="dropdown-item" href="#">
                                 <span className="search_span">Post</span>Project
                                 <br></br>
                                 <small id="small-dd">action...</small>
@@ -23,14 +23,14 @@ function HeaderPage() {
 
                         </li>
                         <li>
-                            <a class="dropdown-item" id="dropdown-item">
+                            <a className="dropdown-item" id="dropdown-item">
                                 <span className="search_span">Project</span>Listing
                                 <br></br>
                                 <small id="small-dd">action...</small>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" id="dropdown-item" >
+                            <a className="dropdown-item" id="dropdown-item" >
                                 <span className="search_span">Job</span>Details
                                 <br></br>
                                 <small id="small-dd">action...</small>
