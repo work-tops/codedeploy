@@ -44,6 +44,15 @@ label {
     display: grid;
     grid-template-columns: 60% 30%;
 }
+.ai-all-products {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.ai-product-div {
+display: grid;
+grid-template-rows: auto auto;
+}
 
 #aipro-name,
 #aipro-sku,
@@ -195,6 +204,7 @@ label {
         margin-top: 10px;
         width: 310px;
         margin-bottom: 10px;
+        border: 1px solid rgb(222, 171, 113);
 }
 .pro-sub-title{
     margin-top: 10px;
