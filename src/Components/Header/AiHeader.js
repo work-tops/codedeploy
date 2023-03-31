@@ -1,6 +1,6 @@
 import React from "react";
-import profile from '../Images/employee.png'
-import '../CSS/Aidashboard.css'
+import profile from '../../Images/employee.png'
+import '../../CSS/Aidashboard.css'
 function AiHeader() {
     return (
         <>

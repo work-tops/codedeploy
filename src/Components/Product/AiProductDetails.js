@@ -1,6 +1,5 @@
 import React from "react";
-import '../CSS/AiProductDetails.css'
-import AiHeader from "./AiHeader";
+import AiHeader from "../../Components/Header/AiHeader";
 import '../../CSS/AiProductDetails.css'
 function AiProductDetails() {
     return (

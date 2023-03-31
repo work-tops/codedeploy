@@ -1,8 +1,8 @@
 import React from "react";
-import AiHeader from "./Components/AiHeader";
-import AiMenu from "./Components/AiMenu";
-import pom from './Images/product_image.png'
-import './CSS/Aiallproducts.css'
+import AiHeader from "../Header/AiHeader";
+import AiMenu from "../Menubar/AiMenu";
+import pom from '../../Images/product_image.png'
+import '../../CSS/Aiallproducts.css'
 function AiProducts() {
     return (
         <div className="ai-all-products">
