@@ -1,14 +1,14 @@
 import React from "react";
-import profile from '../Images/employee.png'
+
 import '../CSS/AiProductDetails.css'
+import AiHeader from "./AiHeader";
 function AiProductDetails() {
     return (
         <>
-            <div className="profile-desk">
-                <i class="ri-notification-4-line notification_icon"></i>
-                <img src={profile} alt="profile" className="aiprofile" />
-                <p className="profile-username">Hello Mike</p>
+            <div>
+                <AiHeader />
             </div>
+
             <div className="product-div">
                 <div className="Add-Product">
                     <p className="ai-title">products/Edit Products</p>

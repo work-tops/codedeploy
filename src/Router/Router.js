@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import AiDashboard from "../AIDashboard";
+import AiProducts from "../AiProducts";
 import PostAProject from "../PostAProject";
 import ProjectDetails from "../ProjectDetails";
 import ProjectListing from "../ProjectListing";
@@ -13,7 +14,8 @@ const Routers = () => {
     return (
         <Switch>
             <Route path='/postproject'><PostAProject/></Route>
-            <Route exact path='/'><AiDashboard/></Route>
+            <Route exact path='/aidashboard'><AiDashboard/></Route>
+            <Route path='/'><AiProducts/></Route>
             <Route path='/projectdetails'><ProjectDetails/></Route>
             <Route path='/projectlisting'><ProjectListing/></Route>
             <Route path='/signupform'><SignUpForm/></Route>
