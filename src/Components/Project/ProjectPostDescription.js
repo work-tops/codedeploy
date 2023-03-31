@@ -1,5 +1,5 @@
 import React from "react";
-import '../CSS/description.css'
+import '../../CSS/description.css'
 function Description() {
     return (
         <div className="project-description">

@@ -1,5 +1,5 @@
 import React from "react";
-import '../CSS/post.css'
+import '../../CSS/post.css'
 function Post() {
     return (
         <div className="project-post">

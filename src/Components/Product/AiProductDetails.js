@@ -1,7 +1,7 @@
 import React from "react";
-
 import '../CSS/AiProductDetails.css'
 import AiHeader from "./AiHeader";
+import '../../CSS/AiProductDetails.css'
 function AiProductDetails() {
     return (
         <>

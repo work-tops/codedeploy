@@ -1,6 +1,6 @@
 import React from "react";
-import '../CSS/wtheader.css'
-import worktops_logo from '../Images/worktops-logo.png'
+import '../../CSS/wtheader.css'
+import worktops_logo from '../../Images/worktops-logo.png'
 function WorktopsHeader() {
     return (
         <div className="wt-header">

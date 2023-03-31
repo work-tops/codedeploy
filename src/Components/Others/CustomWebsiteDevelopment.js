@@ -1,8 +1,8 @@
 import React from "react"
-import currency from "../Images/Currency.png"
-import newsfeed from "../Images/newsfeed.png"
-import profileImg from "../Images/employee.png"
-import '../CSS/customweb.css'
+import currency from "../../Images/Currency.png"
+import newsfeed from "../../Images/newsfeed.png"
+import profileImg from "../../Images/employee.png"
+import '../../CSS/customweb.css'
 function ProjectInformation() {
     return (
         <>

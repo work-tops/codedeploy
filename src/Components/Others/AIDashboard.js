@@ -1,7 +1,7 @@
 import React from "react";
-import AiProductDetails from "./Components/AiProductDetails";
-import AiMenu from "./Components/AiMenu";
-import './CSS/Aidashboard.css'
+import AiProductDetails from "../Product/AiProductDetails";
+import AiMenu from "../Menubar/AiMenu";
+import '../../CSS/Aidashboard.css'
 function AiDashboard(){
 return(
     <div className="aidashboard">

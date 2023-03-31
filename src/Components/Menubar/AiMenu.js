@@ -1,6 +1,6 @@
 import React from "react";
-import profile_pic from '../Images/employee.png'
-import ai_logo from '../Images/ai-logo.png'
+import profile_pic from '../../Images/employee.png'
+import ai_logo from '../../Images/ai-logo.png'
 function AiMenu() {
     return (
         <>

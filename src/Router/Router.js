@@ -8,6 +8,13 @@ import ProjectListing from "../ProjectListing";
 import SignUpForm from "../SignupForm";
 import SignUpPage from "../SignUpPage";
 import WorktopsProducts from "../WorktopsProduct";
+import AiDashboard from "../Components/Others/AIDashboard";
+import ProjectDetails from "../Components/Project/ProjectDetails";
+import ProjectListing from "../Components/Project/ProjectListing";
+import SignUpPage from "../Components/User/SignUpPage";
+import SignUpForm from "../Components/User/SignupForm";
+import PostAProject from "../Components/Project/PostAProject";
+import WorktopsProducts from "../Components/Product/WorktopsProduct";
 
 
 const Routers = () => {
