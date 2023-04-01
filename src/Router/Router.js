@@ -7,18 +7,18 @@ import SignUpForm from "../Components/User/SignupForm";
 import PostAProject from "../Components/Project/PostAProject";
 import AiProducts from "../Components/Product/AiProducts";
 import AiProductDetails from "../Components/Product/AiProductDetails";
-import AiAddSeller from "../Components/Seller/AiAddSeller";
 import AllSeller from "../Components/Seller/AllSeller";
 import AllJob from "../Components/Job/AllJob";
+import AiFreelancer from "../Components/Seller/AiAddFreelancer";
 
 const Routers = () => {
     return (
         <Switch>
             <Route path='/postproject'><PostAProject /></Route>
-            <Route path='/addseller'><AiAddSeller /></Route>
+            <Route path='/addfreelancer'><AiFreelancer /></Route>
             <Route path='/aiproductdetails'><AiProductDetails /></Route>
             <Route path='/aiproducts'><AiProducts /></Route>
-            <Route path='/'><AiProducts /></Route>
+            <Route exact path='/'><AiProducts /></Route>
             <Route path='/projectdetails'><ProjectDetails /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path='/signupform'><SignUpForm /></Route>

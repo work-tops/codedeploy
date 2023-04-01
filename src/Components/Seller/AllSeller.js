@@ -16,7 +16,7 @@ function AllSeller() {
                     <div className="product-adding-div">
                         <div>
                             <p className="ai-sub-title">product/product list</p>
-                            <h4>All Seller</h4>
+                            <h4 className="ai-seller-title" >All Seller</h4>
                             <p className="ai-title-note">Here are the current seller on your store</p>
                         </div>
                         <div>

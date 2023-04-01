@@ -16,7 +16,7 @@ function AllJob() {
                     <div className="product-adding-div">
                         <div>
                             <p className="ai-sub-title">product/product list</p>
-                            <h4>All Jobs</h4>
+                            <h4 className="ai-seller-title" >All Jobs</h4>
                             <p className="ai-title-note">Here are the current seller on your store</p>
                         </div>
                         <div>
@@ -48,7 +48,7 @@ function AllJob() {
                     <div className="all-jobs-div">
                         <table className="allproducts-table">
                             <tr className="product-heading ">
-                                <td id="td" className="rounded-start"><input type='checkbox'  /></td>
+                                <td id="td" className="rounded-start"><input type='checkbox' /></td>
                                 <td id="td">Job ID</td>
                                 <td id="td">Category</td>
                                 <td id="td">Title</td>

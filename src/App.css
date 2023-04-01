@@ -1487,7 +1487,7 @@ li {
   }
 
   .ai-title-desc {
-    /* margin-left: 20px; */
+    margin-left: 20px;
     font-size: 12px;
     margin-bottom: 0px;
     text-transform: capitalize;
@@ -1505,7 +1505,7 @@ li {
   .ai-title-desc {
     font-size: 12px;
     margin-bottom: 0px;
-    /* margin-left: 20px; */
+    margin-left: 20px;
     text-transform: capitalize;
   }
 
@@ -1513,6 +1513,7 @@ li {
     font-size: 12px;
     margin-bottom: 0px;
     text-transform: capitalize;
+    margin-left: 20px;
 
   }
 
@@ -1696,7 +1697,9 @@ li {
       background: none;
     }
 
-
+.ai-seller-title{
+  margin-left: 20px;
+}
     .add-product-ai {
       padding: 9px;
       border: none;
@@ -1867,7 +1870,7 @@ li {
     }
 
     .pro-status-processing {
-      background-color: green;
+      background-color: rgb(238, 217, 30);
       color: #fff;
       font-size: 12px;
       padding-left: 3px;

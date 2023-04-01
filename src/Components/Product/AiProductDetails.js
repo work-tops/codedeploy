@@ -16,9 +16,9 @@ function AiProductDetails() {
                             <AiHeader />
                             <div>
                                 <div>
-                                    <div className="ms-3">
+                                    <div>
                                         <p className="ai-sub-title">products/edit product</p>
-                                        <h4>Add Product</h4>
+                                        <h4 className="ai-seller-title">Add Product</h4>
                                         <p className="ai-title-desc">Here You Can add products to your profile</p>
                                     </div>
                                     <div className="product-div">
@@ -81,10 +81,7 @@ function AiProductDetails() {
                                             </div>
                                             <button className="img-upload-btn">Upload Images</button>
                                             <p className="pro-sub-title">Product Handle and Metafields</p>
-
                                             <span className="label">Product handle</span>
-                                            <label>Product handle</label>
-
                                             <input id="ai-pro-handle" type='text' />
                                             <p className="pro-sub-title">Product Meta Fields</p>
                                             <p className="ai-title-desc">Title tag meta field</p>
