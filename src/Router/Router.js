@@ -9,6 +9,7 @@ import AiProducts from "../Components/Product/AiProducts";
 import AiProductDetails from "../Components/Product/AiProductDetails";
 import AiAddSeller from "../Components/Seller/AiAddSeller";
 import AllSeller from "../Components/Seller/AllSeller";
+import AllJob from "../Components/Job/AllJob";
 
 const Routers = () => {
     return (
@@ -22,6 +23,7 @@ const Routers = () => {
             <Route path='/signupform'><SignUpForm /></Route>
             <Route path='/signuppage'><SignUpPage /></Route>
             <Route path='/allseller'><AllSeller /></Route>
+            <Route path="/alljob"><AllJob/></Route>
         </Switch>
 
     )
