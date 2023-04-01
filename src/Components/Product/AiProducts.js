@@ -14,7 +14,7 @@ function AiProducts() {
             <div className="col-10">
             <div className="ai-product-div">
                 <div>
-                    <AiHeader />
+                    {/* <AiHeader /> */}
                 </div>
                 <div>
                     <div className="product-adding-div">
@@ -48,7 +48,11 @@ function AiProducts() {
                         {' '}
                         List
                     </p>
+<<<<<<< HEAD
                     <div className="shadows">
+=======
+                    <div className="shadow shadows py-3 ms-0 mb-5 bg-body rounded">
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
                         <table className="allproducts-table">
                             <tr className="product-heading ">
                                 <td id="td" className="rounded-start"><input type='checkbox'  /></td>

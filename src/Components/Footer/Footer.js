@@ -38,10 +38,10 @@ function Footer() {
                 </div>
                 <div className="Follow-Us">
                     <h5 classname="footer-title">Follow Us</h5>
-                    <i class="ri-facebook-circle-fill"></i>
-                    <i class="ri-twitter-fill"></i>
-                    <i class="ri-instagram-line"></i>
-                    <i class="ri-linkedin-box-fill"></i>
+                    <i className="ri-facebook-circle-fill"></i>
+                    <i className="ri-twitter-fill"></i>
+                    <i className="ri-instagram-line"></i>
+                    <i className="ri-linkedin-box-fill"></i>
                 </div>
             </div>
             <p className="copyrights">CopyRight @ 2020 brandoxide.all right reserved</p>

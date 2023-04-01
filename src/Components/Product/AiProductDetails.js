@@ -5,7 +5,11 @@ import AiMenu from "../Menubar/AiMenu";
 function AiProductDetails() {
     return (
         <>
+<<<<<<< HEAD
             <div>
+=======
+            <div className="">
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
                 <div className="row">
                     <div className="col-2">
                         <AiMenu />
@@ -13,7 +17,11 @@ function AiProductDetails() {
                     <div className="col-10">
                         <div className="ai-product-div">
                             <div>
+<<<<<<< HEAD
                                 <AiHeader />
+=======
+                                {/* <AiHeader /> */}
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
                             </div>
                             <div>
                             <div className="ms-3">
@@ -23,7 +31,11 @@ function AiProductDetails() {
                                         </div>
                                 <div className="product-div">
                                     <div className="Add-Product">
+<<<<<<< HEAD
 
+=======
+                                       
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
                                         <form>
                                             <label>Product Name</label>
                                             <input id="aipro-name" type='text' />
@@ -82,7 +94,11 @@ function AiProductDetails() {
                                         </div>
                                         <button className="img-upload-btn">Upload Images</button>
                                         <p className="pro-sub-title">Product Handle and Metafields</p>
+<<<<<<< HEAD
                                         <span className="label">Product handle</span>
+=======
+                                        <label>Product handle</label>
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
                                         <input id="ai-pro-handle" type='text' />
                                         <p className="pro-sub-title">Product Meta Fields</p>
                                         <p className="ai-title-desc">Title tag meta field</p>

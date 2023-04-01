@@ -1,11 +1,17 @@
 .App {
   text-align: center;
 }
+<<<<<<< HEAD
 
 body {
   overflow-x: hidden;
 }
 
+=======
+body{
+  overflow-x: hidden;
+}
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -16,11 +22,17 @@ body {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+<<<<<<< HEAD
 
 a {
   text-decoration: none !important;
 }
 
+=======
+a{
+  text-decoration: none!important;
+}
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -1470,12 +1482,21 @@ li {
     font-size: 14px;
   }
 
+<<<<<<< HEAD
   .ai-title {
     margin-top: 10px;
     text-transform: uppercase;
     font-size: 14px;
     margin-left: 20px;
   }
+=======
+.ai-title-desc {
+  /* margin-left: 20px; */
+  font-size: 12px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+}
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
 
   .ai-add-title {
     text-transform: capitalize;
@@ -1625,6 +1646,7 @@ li {
     text-align: justify;
   }
 
+<<<<<<< HEAD
   .user-title {
     font-size: 14px;
     margin-left: 15px;
@@ -1642,6 +1664,18 @@ li {
     color: red;
     background: lightsalmon;
   }
+=======
+.user-log-out {
+  margin-left: 45px;
+  border: none;
+  font-size: 14px;
+  width: 150px;
+  margin-top: 10px;
+  padding: 7px;
+  border-radius: 5px;
+  color: red;
+  background: lightsalmon;
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
 }
 
 /* Aidashboard.css //end// */
@@ -1661,10 +1695,17 @@ li {
     grid-template-rows: auto auto;
   }
 
+<<<<<<< HEAD
   .product-adding-div {
     display: grid;
     grid-template-columns: 80% 20%;
   }
+=======
+.product-adding-div {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
 
   .more-action {
     margin-top: 29px;
@@ -1674,6 +1715,7 @@ li {
     background: none;
   }
 
+<<<<<<< HEAD
   .add-product-ai {
     padding: 9px;
     border: none;
@@ -1682,6 +1724,30 @@ li {
     margin-left: 10px;
     width: 127px;
   }
+=======
+.add-product-ai {
+  padding: 9px;
+  border: none;
+  color: #fff;
+  background: burlywood;
+  margin-left: 10px;
+  width: 127px;
+}
+.add-seller{
+  padding: 9px;
+  width: 127px;
+  border: none;
+  color: #fff;
+  background: #40c940;
+  margin-left: 10px;
+  
+}
+.allproducts-table {
+  width: 100%;
+  /* margin-left: 25px; */
+  background: rgb(254, 247, 247);
+}
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
 
   .add-seller {
     padding: 9px;

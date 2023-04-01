@@ -10,10 +10,10 @@ function ProjectInformation() {
             <div className="key-description">
                 <h2 className="heading">Custom Website Development</h2>
                 <ul type='none' className="key">
-                    <li><i class="fa-solid fa-sterling-sign"></i>Medium Level</li>
-                    <li><i class="fa-solid fa-location-dot"></i>United Kingdom</li>
-                    <li><i class="fa-regular fa-building"></i>Type Fixed</li>
-                    <li><i class="fa-solid fa-business-time"></i>Duration: 1 to 3 Months</li>
+                    <li><i className="fa-solid fa-sterling-sign"></i>Medium Level</li>
+                    <li><i className="fa-solid fa-location-dot"></i>United Kingdom</li>
+                    <li><i className="fa-regular fa-building"></i>Type Fixed</li>
+                    <li><i className="fa-solid fa-business-time"></i>Duration: 1 to 3 Months</li>
                     <button className="send-proposal">SEND PROPOSAL</button>
                 </ul>
             </div>
@@ -45,7 +45,7 @@ function ProjectInformation() {
                                 <img src={currency} alt="euro-currency" className="currency" />
                             </div>
                             <div>
-                                <p className="amount"><i class="fa-sharp euros fa-solid fa-sterling-sign"></i>{' '}3456</p>
+                                <p className="amount"><i className="fa-sharp euros fa-solid fa-sterling-sign"></i>{' '}3456</p>
                                 <p className="received-proposals">Client Budget</p>
                             </div>
                         </div>
@@ -64,7 +64,7 @@ function ProjectInformation() {
                     </div>
                     <div className="save">
                         <p className="prj-id">Project ID : : 1484KHON</p>
-                        <button className="save-btn"><i class="fa-solid fa-heart"></i>{' '}Saved</button>
+                        <button className="save-btn"><i className="fa-solid fa-heart"></i>{' '}Saved</button>
                     </div>
                     <div className="personal-profile">
                         <img src={profileImg} className="profile-img" alt="profile-pic" />
@@ -86,7 +86,7 @@ function ProjectInformation() {
                     <p className="report-title">Report this Job</p>
                     <form>
                         <input type='text' id="report-box" placeholder="Select Reason" />
-                        <input type='text' id="desc-box" placeholder="Description" /><i class="fa-solid fa-angle-down"></i>
+                        <input type='text' id="desc-box" placeholder="Description" /><i className="fa-solid fa-angle-down"></i>
                         <input type='button' className="submit" value='Submit' />
                     </form>
                 </div>

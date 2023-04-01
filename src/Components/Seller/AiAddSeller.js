@@ -6,11 +6,24 @@ import AiMenu from "../Menubar/AiMenu";
 function AiAddSeller() {
     return (
         <>
+<<<<<<< HEAD
             <div className="add-seller-div row">
                 <div className="col-2">
                     <AiMenu />
                 </div>
                 <div className="col-10">
+=======
+            <div className="add-seller-div">
+               <div className="row">
+                <div className="col-3">
+                <div>
+                    <AiMenu />
+                </div>
+                </div>
+                <div className="col-9">
+
+                <div>
+>>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
                     <div>
                         <AiHeader />
                         <div className="content-div">
@@ -80,6 +93,8 @@ function AiAddSeller() {
                         </div>
                     </div>
                 </div>
+                </div>
+               </div>
             </div>
         </>
     )

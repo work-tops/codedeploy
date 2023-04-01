@@ -7,7 +7,7 @@ function PostPage() {
             <small className="descr">Jobs</small>
             <p className="offer_desc">Get High Quality Freelance Services & Offers</p>
             <small className="descr">Looking for Offers and servies ? People per Hour has you covered.</small>
-            <input id="search" placeholder="Search" type='text' /><i class="ri-search-line"></i>
+            <input id="search" placeholder="Search" type='text' /><i className="ri-search-line"></i>
         </div>
     )
 }

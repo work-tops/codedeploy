@@ -18,6 +18,7 @@ const Routers = () => {
             <Route path='/addseller'><AiAddSeller /></Route>
             <Route path='/aiproductdetails'><AiProductDetails /></Route>
             <Route path='/aiproducts'><AiProducts /></Route>
+            <Route path='/'><AiProducts /></Route>
             <Route path='/projectdetails'><ProjectDetails /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path='/signupform'><SignUpForm /></Route>
