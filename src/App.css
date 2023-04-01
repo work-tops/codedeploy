@@ -1,17 +1,15 @@
 .App {
   text-align: center;
 }
-<<<<<<< HEAD
 
 body {
   overflow-x: hidden;
 }
 
-=======
-body{
+body {
   overflow-x: hidden;
 }
->>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -22,17 +20,16 @@ body{
     animation: App-logo-spin infinite 20s linear;
   }
 }
-<<<<<<< HEAD
 
 a {
   text-decoration: none !important;
 }
 
-=======
-a{
-  text-decoration: none!important;
+
+a {
+  text-decoration: none !important;
 }
->>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -1482,21 +1479,20 @@ li {
     font-size: 14px;
   }
 
-<<<<<<< HEAD
   .ai-title {
     margin-top: 10px;
     text-transform: uppercase;
     font-size: 14px;
     margin-left: 20px;
   }
-=======
-.ai-title-desc {
-  /* margin-left: 20px; */
-  font-size: 12px;
-  margin-bottom: 0px;
-  text-transform: capitalize;
-}
->>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
+
+  .ai-title-desc {
+    /* margin-left: 20px; */
+    font-size: 12px;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+  }
+
 
   .ai-add-title {
     text-transform: capitalize;
@@ -1606,21 +1602,21 @@ li {
     height: 35px;
     border-radius: 25px;
     border: 1px solid black;
-    margin-left: 15px;
+    margin-left: 0px;
     cursor: pointer;
   }
 
   .profile-user {
     display: block;
     font-size: 14px;
-    margin-left: 55px;
+    margin-left: 40px;
     margin-top: -27px;
   }
 
   .user-email {
     color: gray;
     font-size: 12px;
-    margin-left: 30px;
+    margin-left: 5px;
   }
 
   .aipro-title {
@@ -1646,383 +1642,370 @@ li {
     text-align: justify;
   }
 
-<<<<<<< HEAD
   .user-title {
     font-size: 14px;
-    margin-left: 15px;
+    margin-left: 0px;
     color: gray;
   }
 
   .user-log-out {
-    margin-left: 10px;
+    margin-left: 5px;
     border: none;
     font-size: 14px;
-    width: 130px;
+    width: 100px;
     margin-top: 10px;
     padding: 7px;
     border-radius: 5px;
     color: red;
     background: lightsalmon;
   }
-=======
-.user-log-out {
-  margin-left: 45px;
-  border: none;
-  font-size: 14px;
-  width: 150px;
-  margin-top: 10px;
-  padding: 7px;
-  border-radius: 5px;
-  color: red;
-  background: lightsalmon;
->>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
-}
 
-/* Aidashboard.css //end// */
+  /* Aidashboard.css //end// */
 
 
 
 
-/* AiallProducts.css //start// */
-@media screen and (min-device-width: 992px) and (max-device-width:1700px) {
-  .ai-all-products {
+  /* AiallProducts.css //start// */
+  @media screen and (min-device-width: 992px) and (max-device-width:1700px) {
+    .ai-all-products {
+      display: grid;
+      grid-template-columns: 20% 80%;
+    }
+
+    .ai-product-div {
+      display: grid;
+      grid-template-rows: auto auto;
+    }
+
+
+    .product-adding-div {
+      display: grid;
+      grid-template-columns: 80% 20%;
+    }
+
+    .product-adding-div {
+      display: grid;
+      grid-template-columns: 80% 20%;
+    }
+
+    .more-action {
+      margin-top: 29px;
+      padding: 8px;
+      margin-left: -125px;
+      border: 1px solid brown;
+      background: none;
+    }
+
+
+    .add-product-ai {
+      padding: 9px;
+      border: none;
+      color: #fff;
+      background: burlywood;
+      margin-left: 10px;
+      width: 127px;
+    }
+
+    .add-product-ai {
+      padding: 9px;
+      border: none;
+      color: #fff;
+      background: burlywood;
+      margin-left: 10px;
+      width: 127px;
+    }
+
+    .add-seller {
+      padding: 9px;
+      width: 127px;
+      border: none;
+      color: #fff;
+      background: #40c940;
+      margin-left: 10px;
+
+    }
+
+    .allproducts-table {
+      width: 100%;
+      /* margin-left: 25px; */
+      background: rgb(254, 247, 247);
+    }
+
+    .add-seller {
+      padding: 9px;
+      width: 127px;
+      border: none;
+      color: #fff;
+      background: #40c940;
+      margin-left: 10px;
+
+    }
+
+    .allproducts-table {
+      width: 100%;
+      background: rgb(254, 247, 247);
+    }
+
+    .product-heading #td {
+      border: none;
+    }
+
+    #td {
+      border-bottom: 1px solid rgb(219, 211, 211);
+    }
+
+    .img {
+      width: 50px;
+      height: 45px;
+    }
+
+    .img-curve {
+      width: 40px;
+      height: 40px;
+      border-radius: 25px;
+    }
+
+    .product-heading {
+      background: rgb(247, 235, 225);
+      font-weight: 500;
+    }
+
+    #td {
+      /* padding: 5px; */
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    .all-pro-pagination button {
+      width: 35px;
+      border-radius: 5px;
+      border: none;
+      background: white;
+      font-size: 14px;
+    }
+
+    .all-pro-pagination {
+      margin-left: 25rem;
+      margin-bottom: 30px;
+    }
+
+    .all-pro-pagination button:focus {
+      border: 1px solid rgba(240, 186, 105, 0.968);
+    }
+
+    .bulk-actions {
+      text-align: center;
+    }
+
+    .bulk-actions {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .bulk-actions span {
+      font-weight: 400;
+      font-size: 15px;
+      color: lightgray;
+    }
+
+
+    .select-opt {
+      border: none;
+      font-size: 15px;
+      color: lightgray;
+    }
+
+    .show-list {
+      font-size: 14px;
+      text-align: right;
+      margin-right: 55px;
+    }
+
+    .show-list select {
+      width: 80px;
+      border-radius: 5px;
+      margin-left: 5px;
+      padding: 5px;
+    }
+
+    .showing-tag-name {
+      font-size: 14px;
+      margin-left: 25px;
+    }
+
+    .shadow {
+      margin-right: 10px;
+    }
+
+    .pro-status-disabled {
+      background-color: gray;
+      color: #fff;
+      font-size: 12px;
+      padding-left: 5px;
+      border-radius: 5px;
+      padding-right: 5px;
+    }
+
+    .pro-status-approval_pending {
+      background-color: orangered;
+      color: #fff;
+      padding-left: 2px;
+      padding-right: 1px;
+      font-size: 12px;
+      padding-right: 3px;
+      border-radius: 5px;
+    }
+
+    .pro-status-approved {
+      background-color: green;
+      color: #fff;
+      font-size: 12px;
+      padding-left: 3px;
+      padding-right: 3px;
+      border-radius: 5px;
+    }
+
+    .pro-status-processing {
+      background-color: green;
+      color: #fff;
+      font-size: 12px;
+      padding-left: 3px;
+      padding-right: 3px;
+      border-radius: 5px;
+    }
+
+    .ai-sub-title {
+      color: #b9aeae;
+      margin-left: 20px;
+    }
+
+    .fa-ellipsis {
+      cursor: pointer;
+    }
+
+    .shadows {
+      margin-right: 45px;
+      margin-left: 25px;
+    }
+
+    /* /Aiallproducts.css //end// */
+  }
+
+  /* addseller.css //start// */
+  .add-seller-div {
     display: grid;
     grid-template-columns: 20% 80%;
   }
 
-  .ai-product-div {
+  .content-div {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-columns: 60% 35%;
   }
 
-<<<<<<< HEAD
-  .product-adding-div {
-    display: grid;
-    grid-template-columns: 80% 20%;
+  .add-seller-form input {
+    border: 1px solid rgb(222, 171, 113);
   }
-=======
-.product-adding-div {
-  display: grid;
-  grid-template-columns: 80% 20%;
-}
->>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
 
-  .more-action {
-    margin-top: 29px;
+  #terms-conditions {
+    margin-left: 20px;
+    margin-top: 15px;
+  }
+
+  .create-acc-btn {
+    border: none;
+    width: 150px;
+    margin-left: 20px;
+    font-size: 14px;
     padding: 8px;
-    margin-left: -125px;
-    border: 1px solid brown;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
     background: none;
+    color: #4bb54b;
   }
 
-<<<<<<< HEAD
-  .add-product-ai {
-    padding: 9px;
-    border: none;
+  .create-acc-btn:hover,
+  .create-acc-btn:focus {
+    background-color: #4bb54b;
     color: #fff;
-    background: burlywood;
-    margin-left: 10px;
-    width: 127px;
+    transition: all 0.5s;
   }
-=======
-.add-product-ai {
-  padding: 9px;
-  border: none;
-  color: #fff;
-  background: burlywood;
-  margin-left: 10px;
-  width: 127px;
-}
-.add-seller{
-  padding: 9px;
-  width: 127px;
-  border: none;
-  color: #fff;
-  background: #40c940;
-  margin-left: 10px;
-  
-}
-.allproducts-table {
-  width: 100%;
-  /* margin-left: 25px; */
-  background: rgb(254, 247, 247);
-}
->>>>>>> ef9035a00b9b1b54011090252c3253d9547c1a13
 
-  .add-seller {
-    padding: 9px;
-    width: 127px;
-    border: none;
+  .cancel-btn:hover,
+  .cancel-btn:focus {
+    background: red;
     color: #fff;
-    background: #40c940;
-    margin-left: 10px;
-
+    transition: all 0.5s;
   }
 
-  .allproducts-table {
-    width: 100%;
-    background: rgb(254, 247, 247);
-  }
-
-  .product-heading #td {
+  .cancel-btn {
     border: none;
-  }
-
-  #td {
-    border-bottom: 1px solid rgb(219, 211, 211);
-  }
-
-  .img {
-    width: 50px;
-    height: 45px;
-  }
-
-  .img-curve {
-    width: 40px;
-    height: 40px;
-    border-radius: 25px;
-  }
-
-  .product-heading {
-    background: rgb(247, 235, 225);
-    font-weight: 500;
-  }
-
-  #td {
-    /* padding: 5px; */
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-  }
-
-  .all-pro-pagination button {
-    width: 35px;
+    width: 100px;
+    margin-left: 150px;
+    font-size: 14px;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     border-radius: 5px;
-    border: none;
-    background: white;
+    background: none;
+    color: red;
+  }
+
+  .agree-note {
     font-size: 14px;
-  }
-
-  .all-pro-pagination {
-    margin-left: 25rem;
-    margin-bottom: 30px;
-  }
-
-  .all-pro-pagination button:focus {
-    border: 1px solid rgba(240, 186, 105, 0.968);
-  }
-
-  .bulk-actions {
-    text-align: center;
-  }
-
-  .bulk-actions {
-    font-weight: bold;
-    font-size: 14px;
-  }
-
-  .bulk-actions span {
-    font-weight: 400;
-    font-size: 15px;
-    color: lightgray;
-  }
-
-
-  .select-opt {
-    border: none;
-    font-size: 15px;
-    color: lightgray;
-  }
-
-  .show-list {
-    font-size: 14px;
-    text-align: right;
-    margin-right: 55px;
-  }
-
-  .show-list select {
-    width: 80px;
-    border-radius: 5px;
     margin-left: 5px;
-    padding: 5px;
   }
 
-  .showing-tag-name {
+  .billing-add-note {
+    font-size: 12px;
+  }
+
+  #bill-check {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+
+  .freelance-form {
+    border: 1px solid black;
+    background: #fff;
+    padding-bottom: 10px;
+  }
+
+  #ff-chbox {
+    margin: 10px 5px 10px 30px;
+  }
+
+  .freelance-form-div {
+    margin-top: 100px;
+    margin-left: 65px;
+  }
+
+  .form-title {
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
+  .freelance-form span {
     font-size: 14px;
-    margin-left: 25px;
+    font-weight: 400;
   }
 
-  .shadow {
-    margin-right: 10px;
+  .content-div,
+  .freelance-form-div {
+    background-color: rgb(243, 239, 239);
   }
 
-  .pro-status-disabled {
-    background-color: gray;
-    color: #fff;
-    font-size: 12px;
-    padding-left: 5px;
-    border-radius: 5px;
-    padding-right: 5px;
+  .dob {
+    margin-left: 112px;
+    font-size: 14px;
   }
 
-  .pro-status-approval_pending {
-    background-color: orangered;
-    color: #fff;
-    padding-left: 2px;
-    padding-right: 1px;
-    font-size: 12px;
-    padding-right: 3px;
-    border-radius: 5px;
+  /* addseller.css //end*/
+
+
+
+  .all-jobs-div {
+    margin-right: 30px;
   }
-
-  .pro-status-approved {
-    background-color: green;
-    color: #fff;
-    font-size: 12px;
-    padding-left: 3px;
-    padding-right: 3px;
-    border-radius: 5px;
-  }
-
-  .pro-status-processing {
-    background-color: green;
-    color: #fff;
-    font-size: 12px;
-    padding-left: 3px;
-    padding-right: 3px;
-    border-radius: 5px;
-  }
-
-  .ai-sub-title {
-    color: #b9aeae;
-    /* margin-left: 20px; */
-  }
-
-  .fa-ellipsis {
-    cursor: pointer;
-  }
-
-  .shadows {
-    margin-right: 45px;
-    margin-left: 25px;
-  }
-
-  /* /Aiallproducts.css //end// */
-}
-
-/* addseller.css //start// */
-.add-seller-div {
-  display: grid;
-  grid-template-columns: 20% 80%;
-}
-
-.content-div {
-  display: grid;
-  grid-template-columns: 60% 35%;
-}
-
-.add-seller-form input {
-  border: 1px solid rgb(222, 171, 113);
-}
-
-#terms-conditions {
-  margin-left: 20px;
-  margin-top: 15px;
-}
-
-.create-acc-btn {
-  border: none;
-  width: 150px;
-  margin-left: 20px;
-  font-size: 14px;
-  padding: 8px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  background: none;
-  color: #4bb54b;
-}
-
-.create-acc-btn:hover,
-.create-acc-btn:focus {
-  background-color: #4bb54b;
-  color: #fff;
-  transition: all 0.5s;
-}
-
-.cancel-btn:hover,
-.cancel-btn:focus {
-  background: red;
-  color: #fff;
-  transition: all 0.5s;
-}
-
-.cancel-btn {
-  border: none;
-  width: 100px;
-  margin-left: 150px;
-  font-size: 14px;
-  padding: 8px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  background: none;
-  color: red;
-}
-
-.agree-note {
-  font-size: 14px;
-  margin-left: 5px;
-}
-
-.billing-add-note {
-  font-size: 12px;
-}
-
-#bill-check {
-  font-size: 16px;
-  margin-left: 20px;
-}
-
-.freelance-form {
-  border: 1px solid black;
-  background: #fff;
-  padding-bottom: 10px;
-}
-
-#ff-chbox {
-  margin: 10px 5px 10px 30px;
-}
-
-.freelance-form-div {
-  margin-top: 100px;
-  margin-left: 65px;
-}
-
-.form-title {
-  margin-left: 15px;
-  margin-top: 10px;
-}
-
-.freelance-form span {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.content-div,
-.freelance-form-div {
-  background-color: rgb(243, 239, 239);
-}
-
-.dob {
-  margin-left: 112px;
-  font-size: 14px;
-}
-
-/* addseller.css //end*/
-
-
-
-.all-jobs-div {
-  margin-right: 30px;
 }
