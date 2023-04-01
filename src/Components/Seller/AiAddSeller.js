@@ -7,9 +7,14 @@ function AiAddSeller() {
     return (
         <>
             <div className="add-seller-div">
+               <div className="row">
+                <div className="col-3">
                 <div>
                     <AiMenu />
                 </div>
+                </div>
+                <div className="col-9">
+
                 <div>
                     <div>
                         <AiHeader />
@@ -79,6 +84,8 @@ function AiAddSeller() {
                         </div>
                     </div>
                 </div>
+                </div>
+               </div>
             </div>
         </>
     )

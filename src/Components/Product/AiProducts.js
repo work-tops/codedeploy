@@ -2,15 +2,18 @@ import React from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import pom from '../../Images/product_image.png'
+import { Link } from "react-router-dom";
 function AiProducts() {
     return (
-        <div className="ai-all-product">
-            <div>
+        <div className="">
+           <div className="row">
+            <div className="col-2">
                 <AiMenu />
             </div>
+            <div className="col-10">
             <div className="ai-product-div">
                 <div>
-                    <AiHeader />
+                    {/* <AiHeader /> */}
                 </div>
                 <div>
                     <div className="product-adding-div">
@@ -20,15 +23,15 @@ function AiProducts() {
                         </div>
                         <div>
                             <button className="more-action">More Action</button>
-                            <button className="add-product-ai">Add Product</button>
+                            <Link className="add-product-ai" to="aiproductdetails">Add Product</Link>
                         </div>
                     </div>
-                    <p className="bulk-actions">Bulk Action :{' '}
+                    <p className="bulk-actions d-none">Bulk Action :{' '}
                         <select className="select-opt">
                             <option>Select Options</option>
                         </select>
                     </p>
-                    <p className="show-list">Show:
+                    <p className="show-list d-none">Show:
                         <select>
                             <option>1</option>
                             <option>2</option>
@@ -44,7 +47,7 @@ function AiProducts() {
                         {' '}
                         List
                     </p>
-                    <div className="shadow shadows p-3 mb-5 bg-body rounded">
+                    <div className="shadow shadows py-3 ms-0 mb-5 bg-body rounded">
                         <table className="allproducts-table">
                             <tr className="product-heading ">
                                 <td id="td" className="rounded-start"><input type='checkbox'  /></td>
@@ -138,6 +141,8 @@ function AiProducts() {
                     </div>
                 </div>
             </div>
+            </div>
+           </div>
         </div>
     )
 }
