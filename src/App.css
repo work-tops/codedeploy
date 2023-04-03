@@ -97,8 +97,8 @@ a {
 .dropdown .ddt:hover {
   width: 130px;
   padding: 13px;
-  border: 2px solid rgb(121, 93, 57);
-  color: rgb(121, 93, 57);
+  border: 1px solid #fff;
+  color: #fff;
   font-weight: bold;
   border-radius: 0px;
   text-align: right;
@@ -109,7 +109,7 @@ a {
 .ri-notification-2-line {
   font-size: 34px;
   cursor: pointer;
-  color: rgb(163, 156, 148);
+  color: #fff;
   margin-top: 4px;
 }
 
@@ -198,9 +198,10 @@ a {
 }
 
 .layout-1 {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 65% 25%;
-  gap: 5px;
+  gap: 5px; */
+  background-color: rgb(156 147 147 / 11%);
   position: absolute;
   margin-bottom: 10px;
   top: 540px;
@@ -361,6 +362,17 @@ a {
   margin-left: 129px;
   border: 1px solid;
   margin-top: 20px;
+}
+
+.post-profile {
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+  margin-left: 0px;
+  cursor: pointer;
+  margin-top: 2px;
+  background: white;
+  border: none;
 }
 
 .emp-name {
@@ -666,8 +678,8 @@ iframe {
 .post_a_project {
   width: 150px;
   padding: 15px;
-  color: #fff;
-  background-color: rgb(159 114 47 / 86%);
+  color: #507a93;
+  background-color: #fff;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -867,7 +879,7 @@ input:focus {
 .project-post,
 .project_post,
 .job-post {
-  background: #262121f5;
+  background: #a7d6df;
   padding: 80px;
   position: relative;
   left: 0;
@@ -932,7 +944,7 @@ input:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background: rgb(221, 217, 213, 1);
+  background: rgb(239 235 231);
   padding-bottom: 5px;
 }
 
@@ -1382,6 +1394,7 @@ li {
     margin-top: 10px;
     margin-left: 20px;
     margin-bottom: 5px;
+    padding: 5px;
     display: block;
   }
 
@@ -1399,6 +1412,7 @@ li {
     margin-top: 10px;
     width: 190px;
     margin-left: 20px;
+    padding: 5px;
   }
 
   #aipro-description {
@@ -1460,13 +1474,14 @@ li {
     margin-left: 20px;
     display: block;
     margin-top: 10px;
-    width: 500px;
+    width: 400px;
     padding-bottom: 50px;
     border: 1px solid rgb(222, 171, 113);
   }
 
   #aipro-category {
     margin-left: 20px;
+    padding: 5px;
     width: 190px;
     margin-bottom: 5px;
   }
@@ -1486,6 +1501,13 @@ li {
     margin-left: 20px;
   }
 
+  .ai-tit {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    /* margin-left: 20px; */
+  }
+
   .ai-title-desc {
     margin-left: 20px;
     font-size: 12px;
@@ -1493,6 +1515,12 @@ li {
     text-transform: capitalize;
   }
 
+  .ai-tit-desc {
+    /* margin-left: 20px; */
+    font-size: 12px;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+  }
 
   .ai-add-title {
     text-transform: capitalize;
@@ -1513,7 +1541,7 @@ li {
     font-size: 12px;
     margin-bottom: 0px;
     text-transform: capitalize;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 
   }
 
@@ -1557,9 +1585,10 @@ li {
 
   #ai-pro-handle {
     display: block;
-    /* margin-left: 20px; */
+    margin-left: 20px;
     margin-top: 10px;
     width: 275px;
+    padding: 5px;
     margin-bottom: 10px;
     border: 1px solid rgb(222, 171, 113);
   }
@@ -1596,6 +1625,10 @@ li {
   .ai-logo {
     width: 170px;
     height: 55px;
+  }
+
+  #badge-1 {
+    font-size: 12px;
   }
 
   .profile-picture {
@@ -1686,7 +1719,7 @@ li {
 
     .product-adding-div {
       display: grid;
-      grid-template-columns: 80% 20%;
+      grid-template-columns: 70% 30%;
     }
 
     .more-action {
@@ -1697,19 +1730,20 @@ li {
       background: none;
     }
 
-.ai-seller-title{
-  margin-left: 20px;
-}
+    #filter-search {
+      width: 100px;
+    }
+
     .add-product-ai {
       padding: 9px;
       border: none;
       color: #fff;
       background: burlywood;
-      margin-left: 10px;
+      margin-left: -90px;
       width: 127px;
     }
 
-    .add-product-ai {
+    .add-product-ai:hover {
       padding: 9px;
       border: none;
       color: #fff;
@@ -1740,8 +1774,8 @@ li {
       border: none;
       color: #fff;
       background: #40c940;
-      margin-left: 10px;
-
+      margin-left: -25px;
+      margin-top: 47px;
     }
 
     .allproducts-table {
@@ -1755,6 +1789,8 @@ li {
 
     #td {
       border-bottom: 1px solid rgb(219, 211, 211);
+      width: 1px;
+      font-size: 14px;
     }
 
     .img {
@@ -1880,7 +1916,7 @@ li {
 
     .ai-sub-title {
       color: #b9aeae;
-      margin-left: 20px;
+      /* margin-left: 20px; */
     }
 
     .fa-ellipsis {
@@ -1973,6 +2009,8 @@ li {
     border: 1px solid black;
     background: #fff;
     padding-bottom: 10px;
+    width: 250px;
+    /* margin-top: 10px; */
   }
 
   #ff-chbox {
@@ -2004,11 +2042,198 @@ li {
     font-size: 14px;
   }
 
+  #more_action {
+    margin-left: -80px;
+    margin-top: 50px;
+    border: 1px solid black;
+    border-radius: 0px;
+  }
+
+  #more_action:focus {
+    outline: none;
+  }
+
   /* addseller.css //end*/
 
-
-
+  /* allJobs.css // start */
   .all-jobs-div {
     margin-right: 30px;
   }
+
+  /* allJobs.css // end */
+
+
+  /* add jobs.css // start */
+  .select-category {
+    margin-left: 20px;
+    padding: 5px;
+    width: 190px;
+    margin-top: 10px;
+    /* padding: 2px; */
+    border: 1px solid rgb(222, 171, 113);
+  }
+
+  .drop-files-ph {
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .add_job-attachments {
+    padding-bottom: 40px;
+    border: 2px dotted #bdb5b5;
+    width: 400px;
+    padding-left: 5px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  #prj-locations::placeholder {
+    font-size: 13px;
+    padding-left: 10px;
+  }
+
+  .start-date-job {
+    margin-left: 145px;
+    font-size: 14px;
+  }
+
+  .optional {
+    font-size: 13px;
+    color: rgb(128, 121, 121);
+  }
+
+  #prj-locations {
+    width: 400px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    padding: 5px;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+
+  #postcode {
+    margin-left: 20px;
+    padding: 5px;
+    width: 190px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 3px;
+  }
+
+  #date-to-job {
+    margin-top: 10px;
+    width: 190px;
+    margin-left: 20px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px
+  }
+
+  .radio-opt {
+    font-size: 14px;
+  }
+
+  #radio-btn {
+    margin-left: 20px;
+    width: 18px;
+    height: 18px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  .prj-radio-div {
+    margin-top: 5px;
+    margin-bottom: 9px;
+  }
+
+  .public-icon {
+    font-size: 18px;
+  }
+
+  .opt-span {
+    margin-left: 115px;
+  }
+
+  .job-expiry-date {
+    margin-left: 70px;
+    font-size: 14px;
+  }
+
+  .select-budget {
+    margin-left: 20px;
+    padding: 5px;
+    width: 190px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+
+  .job-currency {
+    font-size: 14px;
+    margin-left: 130px;
+  }
+
+  #cust-ip-box {
+    margin-left: 20px;
+    width: 220px;
+    background: #bdb5b5;
+    border: none;
+  }
+
+  #cust-ip-box:focus {
+    outline: none;
+  }
+
+  .customer_details-form {
+    border: 1px solid black;
+    background: #fff;
+    padding-bottom: 80px;
+    width: 260px;
+    /* margin-right: 20px; */
+    border-radius: none;
+  }
+
+  /* add jobs.css // end */
+}
+
+/*  proposalSending.css //start//*/
+.prj-det-header {
+  background-color: #507a93;
+}
+
+.profile-div {
+  border-left: 1px solid #fff;
+  padding-left: 10px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.propos-title,
+.proposal-amt-box {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.proposal-amt-box {
+  width: 750px;
+  padding: 10px;
+  background: none;
+}
+
+.proposal-amt-box::placeholder {
+  font-size: 12px;
+}
+
+/*  proposalSending.css //end//*/
+.dropdown-icon {
+  font-size: 12px;
 }
