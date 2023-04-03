@@ -1462,7 +1462,7 @@ li {
     margin-left: 20px;
     display: block;
     margin-top: 10px;
-    width: 500px;
+    width: 400px;
     padding-bottom: 50px;
     border: 1px solid rgb(222, 171, 113);
   }
@@ -1495,7 +1495,12 @@ li {
     margin-bottom: 0px;
     text-transform: capitalize;
   }
-
+  .ai-tit-desc {
+    /* margin-left: 20px; */
+    font-size: 12px;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+  }
 
   .ai-add-title {
     text-transform: capitalize;
@@ -1563,6 +1568,7 @@ li {
     margin-left: 20px;
     margin-top: 10px;
     width: 275px;
+    padding: 5px;
     margin-bottom: 10px;
     border: 1px solid rgb(222, 171, 113);
   }
@@ -1885,7 +1891,7 @@ li {
 
     .ai-sub-title {
       color: #b9aeae;
-      margin-left: 20px;
+      /* margin-left: 20px; */
     }
 
     .fa-ellipsis {

@@ -24,7 +24,7 @@ function AiProducts() {
                 <div className="col-10">
                     <div className="ai-product-div">
                         <div>
-                            {/* <AiHeader /> */}
+                            <AiHeader />
                         </div>
                         <div>
                             <div className="product-adding-div">
