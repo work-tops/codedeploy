@@ -3,19 +3,14 @@ import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 
 
-function AiAddSeller() {
+function AiFreelancer() {
     return (
         <>
-            <div className="add-seller-div">
-               <div className="row">
-                <div className="col-3">
-                <div>
+            <div className="add-seller-div row">
+                <div className="col-2">
                     <AiMenu />
                 </div>
-                </div>
-                <div className="col-9">
-
-                <div>
+                <div className="col-10">
                     <div>
                         <AiHeader />
                         <div className="content-div">
@@ -29,6 +24,7 @@ function AiAddSeller() {
                                     <br></br>
                                     <input id="aipro-category" type='text' />
                                     <input id="aipro-email" type='text' />
+                                    <br></br>
                                     <label>Email</label>
                                     <input id="aipro-barcode" type='email' />
                                     <br></br>
@@ -84,10 +80,8 @@ function AiAddSeller() {
                         </div>
                     </div>
                 </div>
-                </div>
-               </div>
             </div>
         </>
     )
 }
-export default AiAddSeller
+export default AiFreelancer
