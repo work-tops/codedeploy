@@ -1,5 +1,5 @@
 import axios from "axios";
-import Config from "../Constants/Config";
+import {baseUrl} from "../Constants/Config";
 
 
 const baseUrl = Config.baseUrl;

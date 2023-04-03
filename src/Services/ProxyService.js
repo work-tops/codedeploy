@@ -1,7 +1,5 @@
 import axios from "axios";
-import Config from "../Constants/Config";
-
-const baseUrl = Config.baseUrl;
+import {baseUrl} from "../Constants/Config";
 
 export const getAllData = (url) => {
     return axios.get(baseUrl + url);
