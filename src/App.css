@@ -1382,6 +1382,7 @@ li {
     margin-top: 10px;
     margin-left: 20px;
     margin-bottom: 5px;
+    padding: 5px;
     display: block;
   }
 
@@ -1399,6 +1400,7 @@ li {
     margin-top: 10px;
     width: 190px;
     margin-left: 20px;
+    padding: 5px;
   }
 
   #aipro-description {
@@ -1467,6 +1469,7 @@ li {
 
   #aipro-category {
     margin-left: 20px;
+    padding: 5px;
     width: 190px;
     margin-bottom: 5px;
   }
@@ -1557,7 +1560,7 @@ li {
 
   #ai-pro-handle {
     display: block;
-    /* margin-left: 20px; */
+    margin-left: 20px;
     margin-top: 10px;
     width: 275px;
     margin-bottom: 10px;
@@ -1697,9 +1700,10 @@ li {
       background: none;
     }
 
-.ai-seller-title{
-  margin-left: 20px;
-}
+    .ai-seller-title {
+      margin-left: 20px;
+    }
+
     .add-product-ai {
       padding: 9px;
       border: none;
@@ -1755,6 +1759,7 @@ li {
 
     #td {
       border-bottom: 1px solid rgb(219, 211, 211);
+      width: 1px;
     }
 
     .img {
@@ -1973,6 +1978,8 @@ li {
     border: 1px solid black;
     background: #fff;
     padding-bottom: 10px;
+    width: 250px;
+    /* margin-top: 10px; */
   }
 
   #ff-chbox {
@@ -2006,9 +2013,152 @@ li {
 
   /* addseller.css //end*/
 
-
-
+  /* allJobs.css // start */
   .all-jobs-div {
     margin-right: 30px;
   }
+
+  /* allJobs.css // end */
+
+
+  /* add jobs.css // start */
+  .select-category {
+    margin-left: 20px;
+    padding: 5px;
+    width: 190px;
+    margin-top: 10px;
+    /* padding: 2px; */
+    border: 1px solid rgb(222, 171, 113);
+  }
+
+  .drop-files-ph {
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .add_job-attachments {
+    padding-bottom: 40px;
+    border: 2px dotted #bdb5b5;
+    width: 400px;
+    padding-left: 5px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  #prj-locations::placeholder {
+    font-size: 13px;
+    padding-left: 10px;
+  }
+
+  .start-date-job {
+    margin-left: 145px;
+    font-size: 14px;
+  }
+
+  .optional {
+    font-size: 13px;
+    color: rgb(128, 121, 121);
+  }
+
+  #prj-locations {
+    width: 400px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    padding: 5px;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+
+  #postcode {
+    margin-left: 20px;
+    padding: 5px;
+    width: 190px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 3px;
+  }
+
+  #date-to-job {
+    margin-top: 10px;
+    width: 190px;
+    margin-left: 20px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px
+  }
+
+  .radio-opt {
+    font-size: 14px;
+  }
+
+  #radio-btn {
+    margin-left: 20px;
+    width: 18px;
+    height: 18px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  .prj-radio-div {
+    margin-top: 5px;
+    margin-bottom: 9px;
+  }
+
+  .fa-users {
+    font-size: 18px;
+  }
+
+  .opt-span {
+    margin-left: 115px;
+  }
+
+  .job-expiry-date {
+    margin-left: 70px;
+    font-size: 14px;
+  }
+
+  .select-budget {
+    margin-left: 20px;
+    padding: 5px;
+    width: 190px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+
+  .job-currency {
+    font-size: 14px;
+    margin-left: 130px;
+  }
+
+  #cust-ip-box {
+    margin-left: 20px;
+    width: 220px;
+    background:#bdb5b5;
+    border: none;
+  }
+
+  #cust-ip-box:focus {
+    outline: none;
+  }
+
+  .customer_details-form {
+    border: 1px solid black;
+    background: #fff;
+    padding-bottom: 80px;
+    width: 260px;
+    /* margin-right: 20px; */
+    border-radius: none;
+  }
+
+  /* add jobs.css // end */
 }

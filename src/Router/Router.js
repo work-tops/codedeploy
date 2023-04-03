@@ -10,6 +10,7 @@ import AiProductDetails from "../Components/Product/AiProductDetails";
 import AllSeller from "../Components/Seller/AllSeller";
 import AllJob from "../Components/Job/AllJob";
 import AiFreelancer from "../Components/Seller/AiAddFreelancer";
+import AddJob from "../Components/Job/AddJob";
 
 const Routers = () => {
     return (
@@ -19,12 +20,13 @@ const Routers = () => {
             <Route path='/aiproductdetails'><AiProductDetails /></Route>
             <Route path='/aiproducts'><AiProducts /></Route>
             <Route exact path='/'><AiProducts /></Route>
+            <Route path='/addjobs'><AddJob /></Route>
             <Route path='/projectdetails'><ProjectDetails /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path='/signupform'><SignUpForm /></Route>
             <Route path='/signuppage'><SignUpPage /></Route>
             <Route path='/allseller'><AllSeller /></Route>
-            <Route path="/alljob"><AllJob/></Route>
+            <Route path="/alljob"><AllJob /></Route>
         </Switch>
 
     )
