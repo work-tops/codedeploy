@@ -14,11 +14,11 @@ import AiFreelancer from "../Components/Seller/AiAddFreelancer";
 const Routers = () => {
     return (
         <Switch>
+            <Route exact path='/'><AiProducts /></Route>
             <Route path='/postproject'><PostAProject /></Route>
             <Route path='/addfreelancer'><AiFreelancer /></Route>
             <Route path='/aiproductdetails'><AiProductDetails /></Route>
             <Route path='/aiproducts'><AiProducts /></Route>
-            <Route exact path='/'><AiProducts /></Route>
             <Route path='/projectdetails'><ProjectDetails /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path='/signupform'><SignUpForm /></Route>
