@@ -30,19 +30,29 @@ function AiProducts() {
                             <div className="product-adding-div">
                                 <div>
                                     <p className="ai-sub-title">product/product list</p>
-                                    <h4>All Products</h4>
+                                    <h4>All Products <span id="badge-1" class="badge bg-secondary">#100</span></h4>
                                 </div>
-                                <div>
-                                    <button className="more-action">More Action</button>
-                                    <Link className="add-product-ai" to="aiproductdetails">Add Product</Link>
+                                <div className="row">
+                                    <div class="dropdown col-6">
+                                        <button id="more_action" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            More Action
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#"><i class="fa-regular fa-pen-to-square"></i> Bulk Edit</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-plus"></i> Add Product By CSV</a></li>
+                                        </ul>
+                                    </div>
+                                    <div className="col-6">
+                                        <Link to="aiproductdetails" role="button"><button className="add-seller">All Products</button></Link>
+                                    </div>
                                 </div>
                             </div>
-                            <p className="bulk-actions d-none">Bulk Action :{' '}
+                            <p className="bulk-actions">Bulk Action :{' '}
                                 <select className="select-opt">
                                     <option>Select Options</option>
                                 </select>
                             </p>
-                            <p className="show-list d-none">Show:
+                            <p className="show-list">Show:
                                 <select>
                                     <option>1</option>
                                     <option>2</option>
@@ -58,17 +68,39 @@ function AiProducts() {
                                 {' '}
                                 List
                             </p>
-                            <div className="shadow shadows py-3 ms-0 mb-5 bg-body rounded">
+                            <div className="shadow">
                                 <table className="allproducts-table">
                                     <tr className="product-heading ">
                                         <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                        <td id="td">Product ID</td>
-                                        <td id="td">Image</td>
-                                        <td id="td">Name</td>
-                                        <td id="td">Seller</td>
-                                        <td id="td">Price</td>
-                                        <td id="td">Quantity</td>
-                                        <td id="td">Status</td>
+                                        <td id="td">Product ID 
+                                        <i class="ri-arrow-down-s-fill"></i>
+                                        <br></br>
+                                        <input id="filter-search" type="search"/>
+                                        </td>
+                                        <td id="td">Image <i class="ri-arrow-down-s-fill"></i>
+                                        <br></br>
+                                        <input id="filter-search" type="search"/>
+                                        </td>
+                                        <td id="td">Name <i class="ri-arrow-down-s-fill"></i>
+                                        <br></br>
+                                        <input id="filter-search" type="search"/>
+                                        </td>
+                                        <td id="td">Seller <i class="ri-arrow-down-s-fill"></i>
+                                        <br></br>
+                                        <input id="filter-search" type="search"/>
+                                        </td>
+                                        <td id="td">Price <i class="ri-arrow-down-s-fill"></i>
+                                        <br></br>
+                                        <input id="filter-search" type="search"/>
+                                        </td>
+                                        <td id="td">Quantity <i class="ri-arrow-down-s-fill"></i>
+                                        <br></br>
+                                        <input id="filter-search" type="search"/>
+                                        </td>
+                                        <td id="td">Status <i class="ri-arrow-down-s-fill"></i>
+                                        <br></br>
+                                        <input id="filter-search" type="search"/>
+                                        </td>
                                         <td id="td" className="rounded-end">Option</td>
                                     </tr>
                                     {product.map((data, key) => (
@@ -81,7 +113,20 @@ function AiProducts() {
                                             <td id="td">£ {data.pricing.price}</td>
                                             <td id="td">{data.inventory.quantity} Pcs.</td>
                                             <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                            <td id="td"><i className="fa-solid fa-ellipsis"></i></td>
+                                            <td id="td">
+                                                <div class="dropdown">
+                                                    <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
                                         </tr>
                                     ))}
 

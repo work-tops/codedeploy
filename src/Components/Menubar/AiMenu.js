@@ -10,10 +10,10 @@ function AiMenu() {
             <img className="ai-logo mt-4" src={ai_logo} alt="ai-logo" />
             <div className="ai-dropdown-menu">
                 <Link to="aiproducts" role="button"><button><i className="fa-brands fa-dropbox"></i> Products</button></Link>
-                <button><i className="ri-wallet-line"></i> Freelancer</button>
+                <Link to="allfreelancer" role="button"><button><i class="fa-solid fa-users"></i> Freelancer</button></Link>
                 <button><i className="fa-solid fa-tag"></i> Products</button>
                 <button><i className="fa-solid fa-cube"></i> Services</button>
-                <button><i className="fa-solid fa-table"></i> Post a Job</button>
+                <Link to="alljob" role="button"><button><i className="fa-solid fa-table"></i> Post a Job</button></Link>
                 <button><i className="fa-solid fa-shop"></i> Orders</button>
                 <button><i className="fa-solid fa-money-bill-wave"></i> Payments</button>
                 <button><i className="fa-solid fa-percent"></i> Commisson</button>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import profile from '../../Images/employee.png'
 
 function Header() {
     return (
@@ -9,7 +9,7 @@ function Header() {
                 <img src="" alt="DECBASE-logo" />
             </div>
             <div className="others">
-                <button className="post_a_project">POST A PROJECT</button>
+                <button className="post_a_project">POST A SERVICE</button>
                 <div className="dropdown">
                     <a className="btn ddt dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         SEARCH
@@ -36,15 +36,15 @@ function Header() {
                                 <br></br>
                                 <small id="small-dd">action...</small>
                             </a>
-
-
                         </li>
                     </ul>
                 </div>
                 < i className="ri-heart-3-line"></i>
                 <i className="ri-mail-line"></i>
                 <i className="ri-notification-2-line"></i>
-                <img src="" alt="profile" className="profile" />
+                <div className="profile-div">
+                <img src={profile} alt="profile" className="post-profile" />
+                </div>
             </div>
 
         </div>

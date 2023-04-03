@@ -131,7 +131,7 @@ function AiProductDetails() {
                                             <input value={form.sku} required name="sku" onChange={(e) => { handleChange(e) }} id="aipro-sku" type='text' />
                                             <label>Barcode</label>
                                             <input value={form.barcode} required name="barcode" onChange={(e) => { handleChange(e) }} id="aipro-barcode" type='text' />
-                                            <label>Minimum Purchase Quality</label>
+                                            <label>Minimum Purchase Quantity</label>
                                             <input value={form.minimumperchase} required name="minimumperchase" onChange={(e) => { handleChange(e) }} id="aipro-min-purchase_quality" type='text' />
                                             <label>Quantity</label>
                                             <input value={form.quantity} required name="quantity" onChange={(e) => { handleChange(e) }} id="aipro-quantity" type='number' />

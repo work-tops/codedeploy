@@ -62,29 +62,12 @@ function AddJob() {
                                     <br></br>
                                     <select className="select-budget">
                                         <option>Fixed Price   :</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
+                                        <option>No Idea</option>
+                                        <option>No Range</option>
                                     </select>
                                     <select className="select-budget">
                                         <option>£ GBP :</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
+                                        <option>£ EUR</option>
                                     </select>
                                     <br></br>
                                     <label className="label">Budget</label>
@@ -103,7 +86,7 @@ function AddJob() {
                                         <input id="radio-btn" name="public" type="radio" /><i class="fa-solid fa-users"></i> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
                                     </div>
                                     <div className="prj-radio-div">
-                                        <input id="radio-btn" name="public" type="radio" /><i class="fa-solid fa-users"></i> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
+                                        <input id="radio-btn" name="public" type="radio" /><i class="fa-solid public-icon fa-users"></i> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
                                     </div>
                                     <span className="category">Project Duration Time</span> <span className="job-expiry-date">Expiry Date</span>
                                     <br></br>
