@@ -2581,12 +2581,11 @@ li {
     }
 
     .notification_icon {
-      font-size: 35px;
-      margin-top: 5px;
+      font-size: 30px;
+      margin-top: 17px;
       cursor: pointer;
       margin-right: 5px;
-    }
-
+  }
     .profile-desk {
       display: flex;
       flex-direction: row;

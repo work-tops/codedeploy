@@ -3,7 +3,7 @@ import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { createData, getAllData } from "../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
-
+import { Icon } from '@iconify/react';
 
 function AddJob() {
 
@@ -177,10 +177,10 @@ function AddJob() {
                                     <br></br>
                                     <label>Project Visibility</label>
                                     <div className="prj-radio-div">
-                                        <input id="radio-btn" name="public" type="radio" /><i class="fa-solid fa-users"></i> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
+                                        <input id="radio-btn" name="public" type="radio" /><Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
                                     </div>
                                     <div className="prj-radio-div">
-                                        <input id="radio-btn" name="public" type="radio" /><i class="fa-solid public-icon fa-users"></i> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
+                                        <input id="radio-btn" name="public" type="radio" /><Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
                                     </div>
                                     <span className="category">Project Duration Time</span> <span className="job-expiry-date">Expiry Date</span>
                                     <br></br>
