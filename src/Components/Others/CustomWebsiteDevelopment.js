@@ -1,8 +1,4 @@
 import React from "react"
-import currency from "../../Images/Currency.png"
-import newsfeed from "../../Images/newsfeed.png"
-import profileImg from "../../Images/employee.png"
-
 
 function ProjectInformation() {
     return (
@@ -18,8 +14,40 @@ function ProjectInformation() {
             </div>
             <div className="layout-1">
                 <h5 className="propos-title">Proposal Amount</h5>
-                <input type="text" className="proposal-amt-box" placeholder="Enter Your Proposal Amount"/>
+                <input type="text" className="proposal-amt-box" placeholder="Enter Your Proposal Amount" />
+                <div class="dropdown proposal-amt-dd_div">
+                    <button class="btn" id="dropdown-proposal-amt" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" >
+                        <li id="dd-m">
+                            <fieldset className="proposal-fieldset">
+                                <p><span className="pound-sym">(<span className="pounds">£</span>) - 0</span>
+                                    <span className="proposal-info">"myproject.ai" Service Fee</span>
+                                    <i class="fa-solid fa-circle-info info_icon"></i>
+                                </p>
+                            </fieldset>
+                            <fieldset className="proposal-fieldset">
+                                <p><span className="pound-sym">(<span className="pounds">£</span>) - 0</span> <span className="proposal-info-1">"Amount You'll Receive after" Service Fee education</span>
+                                    <i class="fa-solid fa-circle-info info_icon"></i>
+                                </p>
+                            </fieldset>
+                        </li>
+                    </ul>
+                </div>
+                <p className="proposal-amt-note">Total Amount the client will see on the proposal</p>
+                <select className="completion-time">
+                    <option className="com-time-opt">Add Completion Time</option>
+                </select>
+                <br></br>
+                <textarea className="cover-letter" placeholder="Cover Letter"></textarea>
+                <h5 className="propos-title">Upload File (Optional)</h5>
+                <div className="attachments">
+                    <button>SELECT FILES</button><small>Drop file here to Upload</small>
+                </div>
+                <button className="proposal-send-btn">SEND</button>
             </div>
+
         </>
     )
 }

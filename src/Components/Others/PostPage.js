@@ -3,11 +3,15 @@ import React from "react";
 
 function PostPage() {
     return (
-        <div className="project_post">
-            <small className="descr">Jobs</small>
-            <p className="offer_desc">Get High Quality Freelance Services & Offers</p>
-            <small className="descr">Looking for Offers and servies ? People per Hour has you covered.</small>
-            <input id="search" placeholder="Search" type='text' /><i className="ri-search-line"></i>
+        <div className="row project_post">
+            <div className="col-6">
+                <p className="greetings-user">Good Afternoon , Abigail</p>
+            </div>
+            <div className="col-6">
+                <span className="todo-tasks">Open Projects <span class="badge bg-secondary">0</span></span>
+                <span className="todo-tasks">WorkStreams <span class="badge bg-secondary">2</span></span>
+                <span className="todo-tasks">Invoice Due <span class="badge bg-secondary">1</span></span>
+            </div>
         </div>
     )
 }

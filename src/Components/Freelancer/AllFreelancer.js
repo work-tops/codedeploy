@@ -13,7 +13,7 @@ function AllFreelancer() {
                 <div>
                     <AiHeader />
                 </div>
-                <div>
+                <div className="page-bg">
                     <div className="product-adding-div">
                         <div>
                             <p className="ai-tit">Freelancer / Freelancer list</p>

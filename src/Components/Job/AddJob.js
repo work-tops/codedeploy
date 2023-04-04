@@ -60,12 +60,12 @@ function AddJob() {
                                     </div>
                                     <span className="category">Budget Type</span> <span className="job-currency">Currency</span>
                                     <br></br>
-                                    <select className="select-budget">
+                                    <select className="select-category">
                                         <option>Fixed Price   :</option>
                                         <option>No Idea</option>
                                         <option>No Range</option>
                                     </select>
-                                    <select className="select-budget">
+                                    <select className="select-category">
                                         <option>£ GBP :</option>
                                         <option>£ EUR</option>
                                     </select>
@@ -74,12 +74,12 @@ function AddJob() {
                                     <input id="postcode" placeholder="£ 0" type="text"/>
                                     <br></br>
                                     <label>Project Locations</label>
-                                    <input id="prj-locations" placeholder="Geo Locations" type='text' />
+                                    <input id="aipro-barcode" placeholder="Geo Locations" type='text' />
                                     <br></br>
                                     <span className="category">Post Code</span> <span className="start-date-job">Starting Date <span className="optional">(optional)</span></span>
                                     <br></br>
                                     <input id="postcode" type='text' />
-                                    <input id="date-to-job" type='text' />
+                                    <input id="postcode" type='text' />
                                     <br></br>
                                     <label>Project Visibility</label>
                                     <div className="prj-radio-div">
@@ -91,7 +91,7 @@ function AddJob() {
                                     <span className="category">Project Duration Time</span> <span className="job-expiry-date">Expiry Date</span>
                                     <br></br>
                                     <input id="postcode" type='text' />
-                                    <input id="date-to-job" type='text' />
+                                    <input id="postcode" type='text' />
                                     <br></br>
                                     <button className="create-acc-btn">Post a Job</button>
                                     <button className="cancel-btn">Cancel</button>

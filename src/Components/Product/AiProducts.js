@@ -26,11 +26,11 @@ function AiProducts() {
                         <div>
                             <AiHeader />
                         </div>
-                        <div>
+                        <div className="page-bg">
                             <div className="product-adding-div">
                                 <div>
-                                    <p className="ai-sub-title">product/product list</p>
-                                    <h4>All Products <span id="badge-1" class="badge bg-secondary">#100</span></h4>
+                                    <p className="ai-tit">product/product list</p>
+                                    <h4 className="ai-seller-title">All Products <span id="badge-1" class="badge bg-secondary">#100</span></h4>
                                 </div>
                                 <div className="row">
                                     <div class="dropdown col-6">
@@ -68,38 +68,38 @@ function AiProducts() {
                                 {' '}
                                 List
                             </p>
-                            <div className="shadow">
+                            <div className="shadows">
                                 <table className="allproducts-table">
                                     <tr className="product-heading ">
                                         <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                        <td id="td">Product ID 
-                                        <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                        <td id="td">Product ID
+                                            <i class="ri-arrow-down-s-fill"></i>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Image <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Name <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Seller <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Price <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Quantity <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Status <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td" className="rounded-end">Option</td>
                                     </tr>
