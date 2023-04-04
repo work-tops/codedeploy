@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { Link } from "react-router-dom";
+import { getAllData } from "../../Services/ProxyService";
+import ReactPaginate from 'react-paginate'
+
+
 function AllJob() {
+
+    const [jobs, setjobs] = useState([])
+
+    const Jobslist = async () => {
+        const response = await getAllData('jobs/all');
+        setjobs(response.data.jobs);
+    }
+    useEffect(() => {
+        Jobslist()
+    }, [])
+
+    const [listPerPage] = useState(10);
+    const [pageNumber, setPageNumber] = useState(0);
+    const pagesVisited = pageNumber * listPerPage;
+    const lists = jobs.slice(pagesVisited, pagesVisited + listPerPage);
+    const pageCount = Math.ceil(jobs.length / listPerPage);
+    const changePage = ({ selected }) => {
+        setPageNumber(selected);
+    }
+
     return (
         <div className="row">
             <div className="col-2">
@@ -90,153 +114,37 @@ function AllJob() {
                                 </td>
                                 <td id="td" className="rounded-end">Option</td>
                             </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Kitchen</td>
-                                <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-processing">Processing</span></td>
-                                <td id="td">10 April 2023</td>
-                                <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Kitchen</td>
-                                <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-approval_pending">Not Hired</span></td>
-                                <td id="td">10 April 2023</td>
-                                <td id="td"><span className="pro-status-approval_pending">Approval Pending</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Kitchen</td>
-                                <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-approved">Completed</span></td>
-                                <td id="td">10 April 2023</td>
-                                <td id="td"><span className="pro-status-disabled">Disabled</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Kitchen</td>
-                                <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-approved">Completed</span></td>
-                                <td id="td">10 April 2023</td>
-                                <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Kitchen</td>
-                                <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-processing">Processing</span></td>
-                                <td id="td">10 April 2023</td>
-                                <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Kitchen</td>
-                                <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-approved">Verified</span></td>
-                                <td id="td">10 April 2023</td>
-                                <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                            {lists.map((data, key) => (
+                                <tr key={key}>
+                                    <td id="td"><input type='checkbox' /></td>
+                                    <td id="td">{data._id}</td>
+                                    <td id="td">{data.category}</td>
+                                    <td id="td">{data.project_title}</td>
+                                    <td id="td">{data.budget}</td>
+                                    <td id="td"><span className="pro-status-processing">Processing</span></td>
+                                    {/* <td id="td">10 April 2023</td> */}
+                                    <td id="td">{data?.expire_date}</td>
+                                    <td id="td"><span className="pro-status-approved">Approved</span></td>
+                                    <td id="td">
+                                        <div class="dropdown">
+                                            <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+
                         </table>
 
-                        <span className="showing-tag-name">Showing 1-30 List</span>
+                        {/* <span className="showing-tag-name">Showing 1-30 List</span>
                         <div className="all-pro-pagination ">
                             <button className="back-btn shadow bg-body rounded"><i class="fa-solid fa-chevron-left"></i></button>
                             <button className="shadow bg-body rounded">1</button>
@@ -245,7 +153,23 @@ function AllJob() {
                             <button className="shadow bg-body rounded"><i class="fa-solid fa-ellipsis"></i></button>
                             <button className="shadow bg-body rounded">25</button>
                             <button className="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
-                        </div>
+                        </div> */}
+                        
+                            <div className="mt-5" >
+                                <ReactPaginate
+                                    style={{ padding: "5px", margin: "0px", border: "none" }}
+                                    // previousLabel={""}
+                                    // nextLabel={""}
+                                    pageCount={pageCount}
+                                    onPageChange={changePage}
+                                    containerClassName={"pagination"}
+                                    // previousLinkClassName={"previousBttn"}
+                                    // nextLinkClassName={"nextBttn"}
+                                    disabledClassName={"disabled"}
+                                    activeClassName={"active"}
+                                    total={lists.length}
+                                />
+                            </div>
                     </div>
                 </div>
             </div>

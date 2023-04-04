@@ -4,6 +4,8 @@ import AiMenu from "../Menubar/AiMenu";
 import pom from '../../Images/product_image.png'
 import { Link } from "react-router-dom";
 import { getAllData } from "../../Services/ProxyService";
+import ReactPaginate from 'react-paginate';
+
 function AiProducts() {
 
     const [product, setproducts] = useState([])
@@ -15,6 +17,16 @@ function AiProducts() {
     useEffect(() => {
         Productlist()
     }, [])
+
+    const [listPerPage] = useState(10);
+    const [pageNumber, setPageNumber] = useState(0);
+    const pagesVisited = pageNumber * listPerPage;
+    const lists = product.slice(pagesVisited, pagesVisited + listPerPage);
+    const pageCount = Math.ceil(product.length / listPerPage);
+    const changePage = ({ selected }) => {
+        setPageNumber(selected);
+    }
+
     return (
         <div className="">
             <div className="row">
@@ -72,41 +84,41 @@ function AiProducts() {
                                 <table className="allproducts-table">
                                     <tr className="product-heading ">
                                         <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                        <td id="td">Product ID 
-                                        <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                        <td id="td">Product ID
+                                            <i class="ri-arrow-down-s-fill"></i>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Image <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Name <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Seller <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Price <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Quantity <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td">Status <i class="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search"/>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
                                         </td>
                                         <td id="td" className="rounded-end">Option</td>
                                     </tr>
-                                    {product.map((data, key) => (
+                                    {lists.map((data, key) => (
                                         <tr>
                                             <td id="td"><input type='checkbox' /></td>
-                                            <td id="td">2456781</td>
+                                            <td id="td">{data._id}</td>
                                             <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td>
                                             <td id="td">{data.name}</td>
                                             <td id="td">{data.seller_email}</td>
@@ -132,7 +144,7 @@ function AiProducts() {
 
                                 </table>
 
-                                <span className="showing-tag-name">Showing 1-30 List</span>
+                                {/* <span className="showing-tag-name">Showing 1-30 List</span>
                                 <div className="all-pro-pagination ">
                                     <button className="back-btn shadow bg-body rounded"><i className="fa-solid fa-chevron-left"></i></button>
                                     <button className="shadow bg-body rounded">1</button>
@@ -141,7 +153,24 @@ function AiProducts() {
                                     <button className="shadow bg-body rounded"><i className="fa-solid fa-ellipsis"></i></button>
                                     <button className="shadow bg-body rounded">25</button>
                                     <button className="next-btn"><i className="fa-solid fa-chevron-right"></i></button>
+                                </div> */}
+
+                                <div className="mt-5" >
+                                    <ReactPaginate
+                                        style={{ padding: "5px", margin: "0px", border: "none" }}
+                                        // previousLabel={""}
+                                        // nextLabel={""}
+                                        pageCount={pageCount}
+                                        onPageChange={changePage}
+                                        containerClassName={"pagination"}
+                                        // previousLinkClassName={"previousBttn"}
+                                        // nextLinkClassName={"nextBttn"}
+                                        disabledClassName={"disabled"}
+                                        activeClassName={"active"}
+                                        total={lists.length}
+                                    />
                                 </div>
+
                             </div>
                         </div>
                     </div>
