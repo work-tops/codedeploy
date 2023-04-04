@@ -18,7 +18,7 @@ function AllJob() {
         Jobslist()
     }, [])
 
-    const [listPerPage] = useState(10);
+    const [listPerPage] = useState(5);
     const [pageNumber, setPageNumber] = useState(0);
     const pagesVisited = pageNumber * listPerPage;
     const lists = jobs.slice(pagesVisited, pagesVisited + listPerPage);

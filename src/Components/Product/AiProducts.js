@@ -18,7 +18,7 @@ function AiProducts() {
         Productlist()
     }, [])
 
-    const [listPerPage] = useState(10);
+    const [listPerPage] = useState(5);
     const [pageNumber, setPageNumber] = useState(0);
     const pagesVisited = pageNumber * listPerPage;
     const lists = product.slice(pagesVisited, pagesVisited + listPerPage);
