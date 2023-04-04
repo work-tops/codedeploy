@@ -36,10 +36,10 @@ function AllJob() {
                 <div>
                     <AiHeader />
                 </div>
-                <div>
+                <div className="page-bg">
                     <div className="product-adding-div">
                         <div>
-                            <p className="ai-sub-title">product/product list</p>
+                            <p className="ai-tit">job / Job list</p>
                             <h4 className="ai-seller-title" >All Jobs <span id="badge-1" class="badge bg-secondary">#100</span></h4>
                             <p className="ai-title-note">Here are the current seller on your store</p>
                         </div>

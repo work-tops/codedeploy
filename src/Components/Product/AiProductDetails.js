@@ -85,7 +85,7 @@ function AiProductDetails() {
                     <div className="col-10">
                         <div className="ai-product-div">
                             <AiHeader />
-                            <div>
+                            <div className="page-bg">
                                 <div className="ms-3">
                                     <p className="ai-sub-title">products/edit product</p>
                                     <h4>Add Product</h4>

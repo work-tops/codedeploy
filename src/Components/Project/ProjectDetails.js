@@ -3,8 +3,9 @@ import Header from "../Header/Header";
 import Menubar from "../Menubar/Menubar";
 import JobPost from "../Job/JobPost";
 import ProjectInformation from "../Others/CustomWebsiteDevelopment";
-import FooterPageThree from "../Footer/FooterPage3";
-function ProjectDetails() {
+// import FooterPageThree from "../Footer/FooterPage3";
+// import Footer from '../Footer/Footer'
+function JobProposal() {
     return (
         <>
             <div className="row">
@@ -20,9 +21,11 @@ function ProjectDetails() {
                 <div className="col-12">
                     <ProjectInformation />
                 </div>
+                <div>
+                    {/* <Footer/> */}
+                </div>
             </div>
-            {/* <FooterPageThree/> */}
         </>
     )
 }
-export default ProjectDetails
+export default JobProposal

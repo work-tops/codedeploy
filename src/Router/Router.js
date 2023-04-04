@@ -11,20 +11,23 @@ import AllFreelancer from "../Components/Freelancer/AllFreelancer";
 import AllJob from "../Components/Job/AllJob";
 import AiFreelancer from "../Components/Freelancer/AiAddFreelancer";
 import AddJob from "../Components/Job/AddJob";
+import JobProposal from "../Components/Project/ProjectDetails";
+import AllOrders from "../Components/Orders/AllOrders";
 
 const Routers = () => {
     return (
         <Switch>
             {/* Routes for AI Pages //start */}
-            <Route exact path='/'><AiProducts/></Route>
+            <Route exact path='/'><AiProducts /></Route>
             <Route path='/addfreelancer'><AiFreelancer /></Route>
             <Route path='/aiproductdetails'><AiProductDetails /></Route>
             <Route path='/aiproducts'><AiProducts /></Route>
             <Route path='/addjobs'><AddJob /></Route>
             <Route path='/allfreelancer'><AllFreelancer /></Route>
             <Route path="/alljob"><AllJob /></Route>
+            <Route path='/jobproposal'><JobProposal /></Route>
+            <Route path='/allorders'><AllOrders /></Route>
             {/* Routes for AI Pages //end*/}
-            <Route path='/projectdetails'><ProjectDetails /></Route>
             <Route path='/postproject'><PostAProject /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path='/signupform'><SignUpForm /></Route>

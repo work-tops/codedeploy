@@ -3,7 +3,7 @@ import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { createData, getAllData } from "../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
-
+import { Icon } from '@iconify/react';
 
 function AddJob() {
 
@@ -14,14 +14,14 @@ function AddJob() {
         const myData = { ...form };
         myData[e.target.name] = e.target.value;
         setform(myData);
-        if(e.target.name == 'category'){
+        if (e.target.name == 'category') {
             console.log(e.target.value);
             SubCategory(e.target.value);
         }
     }
 
-    const SubCategory = async (_category)=>{
-        var catg = cate.find(x=>x.category == _category);
+    const SubCategory = async (_category) => {
+        var catg = cate.find(x => x.category == _category);
         setsubcate(catg.sub_category);
     }
 
@@ -111,7 +111,7 @@ function AddJob() {
                                 <p className="ai-add-title">Add Job</p>
                                 <p className="ai-title-desc">Here you can add jobs listed in your store</p>
                                 <br></br>
-                                <form onSubmit={(e)=>{formsubmit(e)}} className="add-seller-form">
+                                <form onSubmit={(e) => { formsubmit(e) }} className="add-seller-form">
                                     <span className="category">Category</span> <span className="seller-email">Sub Category</span>
                                     <br></br>
                                     <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} className="select-category">
@@ -134,13 +134,13 @@ function AddJob() {
                                         {subcate.map((data) => (
                                             <option value={data.value}>{data.value}</option>
                                         ))}
-                                       
+
                                     </select>
                                     <br></br>
                                     <label>Project Title</label>
-                                    <input  value={form.project_title} required name="project_title" onChange={(e) => { handleChange(e) }} id="aipro-barcode" type='text' />
+                                    <input value={form.project_title} required name="project_title" onChange={(e) => { handleChange(e) }} id="aipro-barcode" type='text' />
                                     <label>Description</label>
-                                    <textarea   value={form.project_description} required name="project_description" onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+                                    <textarea value={form.project_description} required name="project_description" onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
                                     <label>Upload Samples</label>
                                     <div className="add_job-attachments">
                                         <span className="drop-files-ph">Drop file here</span>
@@ -148,45 +148,50 @@ function AddJob() {
                                     </div>
                                     <span className="category">Budget Type</span> <span className="job-currency">Currency</span>
                                     <br></br>
-                                    <select value={form.budget_type} required name="budget_type" onChange={(e) => { handleChange(e) }} className="select-budget">
+                                    <select value={form.budget_type} required name="budget_type" onChange={(e) => { handleChange(e) }} className="select-category">
                                         <option value="">Select</option>
                                         <option value="FixedPrice">Fixed Price   :</option>
                                         <option value="No Idea">No Idea</option>
                                         <option value="No Range">No Range</option>
                                     </select>
-                                    <select value={form.currency} required name="currency" onChange={(e) => { handleChange(e) }} className="select-budget">
-                                    <option value="">Select</option>
+                                    <select value={form.currency} required name="currency" onChange={(e) => { handleChange(e) }} className="select-category">
+                                        <option value="">Select</option>
                                         <option value="£GBP">£ GBP :</option>
                                         <option value="£ EUR">£ EUR</option>
+
                                     </select>
                                     <br></br>
                                     <label className="label">Budget</label>
                                     <input value={form.budget} required name="budget" onChange={(e) => { handleChange(e) }} id="postcode" placeholder="£ 0" type="number" />
                                     <br></br>
                                     <label>Project Locations</label>
-                                    <input value={form.location} required name="location" onChange={(e) => { handleChange(e) }}  id="prj-locations" placeholder="Geo Locations" type='text' />
+
+                                    <br></br>
+                        
+                                    <input value={form.location} required name="location" onChange={(e) => { handleChange(e) }} id="aipro-barcode" placeholder="Geo Locations" type='text' />
                                     <br></br>
                                     <span className="category">Post Code</span> <span className="start-date-job">Starting Date <span className="optional">(optional)</span></span>
                                     <br></br>
                                     <input value={form.postcode} required name="postcode" onChange={(e) => { handleChange(e) }} id="postcode" type='text' />
-                                    <input  value={form.startdate} required name="startdate" onChange={(e) => { handleChange(e) }} id="date-to-job" type='date' />
+                                    <input value={form.startdate} required name="startdate" onChange={(e) => { handleChange(e) }} id="postcode" type='date' />
                                     <br></br>
                                     <label>Project Visibility</label>
                                     <div className="prj-radio-div">
-                                        <input id="radio-btn" name="public" type="radio" /><i class="fa-solid fa-users"></i> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
+                                        <input id="radio-btn" name="public" type="radio" /><Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
                                     </div>
                                     <div className="prj-radio-div">
-                                        <input id="radio-btn" name="public" type="radio" /><i class="fa-solid public-icon fa-users"></i> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
+                                        <input id="radio-btn" name="public" type="radio" /><Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
                                     </div>
                                     <span className="category">Project Duration Time</span> <span className="job-expiry-date">Expiry Date</span>
                                     <br></br>
-                                    <input  value={form.project_duration} required name="project_duration" onChange={(e) => { handleChange(e) }} id="postcode" type='text' />
-                                    <input  value={form.expire_date} required name="expire_date" onChange={(e) => { handleChange(e) }} id="date-to-job" type='date' />
+
+                                    <input value={form.project_duration} required name="project_duration" onChange={(e) => { handleChange(e) }} id="postcode" type='text' />
+                                    <input value={form.expire_date} required name="expire_date" onChange={(e) => { handleChange(e) }} id="postcode" type='date' />
                                     <br></br>
                                     <button type="submit" className="create-acc-btn">Post a Job</button>
                                     <button className="cancel-btn">Cancel</button>
-                                </form>
-                            </div>
+                                </form >
+                            </div >
                             <div className="freelance-form-div">
                                 <form className="customer_details-form">
                                     <h5 className="form-title">Customer Details</h5>
@@ -200,11 +205,11 @@ function AddJob() {
                                     <input id="cust-ip-box" type='text' />
                                 </form>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <Toaster/>
+                        </div >
+                    </div >
+                </div >
+            </div >
+            <Toaster />
         </>
     )
 }
