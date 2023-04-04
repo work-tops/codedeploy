@@ -21,9 +21,9 @@ function AiProductDetails() {
         const productdata = {
             seller_email: form.seller_email,
             name: form.name,
-            type: "Ceramic",
+            type: {},
             description: form.description,
-            tags: form.tags,
+            tags: [],
             policy: form.policy,
             shipping: form.shipping,
             pricing: { price: Number(form.price) },
