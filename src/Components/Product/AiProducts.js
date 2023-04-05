@@ -90,7 +90,7 @@ function AiProducts() {
                                 {' '}
                                 List
                             </p>
-                            <div className="shadows">
+                            <div className="all-jobs-div">
                                 <table className="allproducts-table">
                                     <tr className="product-heading ">
                                         <td id="td" className="rounded-start"><input type='checkbox' /></td>
@@ -145,7 +145,7 @@ function AiProducts() {
                                                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
                                                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
                                                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                                        <li><a onClick={()=>{productdel(data)}} class="dropdown-item" ><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                                        <li><a onClick={() => { productdel(data) }} class="dropdown-item" ><i class="fa-solid fa-trash"></i> Delete</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -186,7 +186,7 @@ function AiProducts() {
                     </div>
                 </div>
             </div>
-            <Toaster/>
+            <Toaster />
         </div>
     )
 }
