@@ -25,7 +25,7 @@ function AddJob() {
         setsubcate(catg.sub_category);
     }
 
-    const Addproducts = async () => {
+    const AddJobs = async () => {
         const productdata = {
             category: form.category,
             sub_category: form.sub_category,
@@ -58,7 +58,7 @@ function AddJob() {
 
     const formsubmit = (e) => {
         e.preventDefault()
-        Addproducts()
+        AddJobs()
     }
 
     const cleardata = () => {

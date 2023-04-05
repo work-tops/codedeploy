@@ -3,8 +3,9 @@ import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import pom from '../../Images/product_image.png'
 import { Link } from "react-router-dom";
-import { getAllData } from "../../Services/ProxyService";
+import { getAllData, deleteData } from "../../Services/ProxyService";
 import ReactPaginate from 'react-paginate';
+import toast, { Toaster } from 'react-hot-toast';
 
 function AiProducts() {
 
@@ -14,11 +15,20 @@ function AiProducts() {
         const response = await getAllData('products');
         setproducts(response.data.products);
     }
+    const productdel = async (data) => {
+        const response = await deleteData('admin/product/' + data._id);
+        if (response.status === 201) {
+            toast.success('Successfully Freelancer Added')
+            Productlist()
+        } else {
+            toast.error('Something went wrong')
+        }
+    }
     useEffect(() => {
         Productlist()
     }, [])
 
-    const [listPerPage] = useState(5);
+    const [listPerPage] = useState(10);
     const [pageNumber, setPageNumber] = useState(0);
     const pagesVisited = pageNumber * listPerPage;
     const lists = product.slice(pagesVisited, pagesVisited + listPerPage);
@@ -135,7 +145,7 @@ function AiProducts() {
                                                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
                                                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
                                                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                                        <li><a onClick={()=>{productdel(data)}} class="dropdown-item" ><i class="fa-solid fa-trash"></i> Delete</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -176,6 +186,7 @@ function AiProducts() {
                     </div>
                 </div>
             </div>
+            <Toaster/>
         </div>
     )
 }

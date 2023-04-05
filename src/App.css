@@ -2321,7 +2321,7 @@ li {
     color: #000;
     font-weight: bold;
     margin-top: 10px;
-    padding: 13px;
+    /* padding: 13px; */
     cursor: pointer;
 
   }
@@ -2347,9 +2347,9 @@ li {
     color: lightskyblue;
   }
 
-  .previous {
+  /* .previous {
     margin-left: 440px;
-  }
+  } */
 
   .btn_group {
     position: relative;

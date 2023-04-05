@@ -1,9 +1,41 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import pom from '../../Images/product_image.png'
 import { Link } from "react-router-dom";
+import { getAllData, deleteData } from "../../Services/ProxyService";
+import ReactPaginate from 'react-paginate';
+import toast, { Toaster } from 'react-hot-toast';
+
 function AllFreelancer() {
+    const [freelanc, setfreelanc] = useState([])
+
+    const freelancList = async () => {
+        const response = await getAllData('sellers/all');
+        setfreelanc(response.data.sellers);
+    }
+    const freelancdel = async (data) => {
+        const response = await deleteData('seller/' + data._id);
+        if (response.status === 201) {
+            toast.success('Successfully Freelancer Added')
+            freelancList()
+        } else {
+            toast.error('Something went wrong')
+        }
+    }
+    useEffect(() => {
+        freelancList()
+    }, [])
+
+    const [listPerPage] = useState(10);
+    const [pageNumber, setPageNumber] = useState(0);
+    const pagesVisited = pageNumber * listPerPage;
+    const lists = freelanc.slice(pagesVisited, pagesVisited + listPerPage);
+    const pageCount = Math.ceil(freelanc.length / listPerPage);
+    const changePage = ({ selected }) => {
+        setPageNumber(selected);
+    }
+
     return (
         <div className="row">
             <div className="col-2">
@@ -62,179 +94,66 @@ function AllFreelancer() {
                             <tr className="product-heading ">
                                 <td id="td" className="rounded-start"><input type='checkbox' /></td>
                                 <td id="td">Freelancer ID <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
                                 <td id="td">Freelancer Profile <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
                                 <td id="td">Name <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
                                 <td id="td">Company Name <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
                                 <td id="td">Verfication <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
                                 <td id="td">Date <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
                                 <td id="td">Status <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
                                 <td id="td" className="rounded-end">Option</td>
                             </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
-                                <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-approved">Verified</span></td>
-                                <td id="td">31 Mar 2023</td>
-                                <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
-                                <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-approval_pending">Not Verified</span></td>
-                                <td id="td">31 Mar 2023</td>
-                                <td id="td"><span className="pro-status-approval_pending">Approval Pending</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
-                                <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-approved">Verified</span></td>
-                                <td id="td">31 Mar 2023</td>
-                                <td id="td"><span className="pro-status-disabled">Disabled</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>                                    <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-approved">Verified</span></td>
-                                <td id="td">31 Mar 2023</td>
-                                <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>                                    <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-approved">Verified</span></td>
-                                <td id="td">31 Mar 2023</td>
-                                <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>                                    <td id="td">Emeka Warehouse</td>
-                                <td id="td">Granite Slab UK</td>
-                                <td id="td"><span className="pro-status-approved">Verified</span></td>
-                                <td id="td">31 Mar 2023</td>
-                                <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                            {lists.map((data, key) => (
+                                <tr key={key}>
+                                    <td id="td"><input type='checkbox' /></td>
+                                    <td id="td">2456781</td>
+                                    <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
+                                    <td id="td">{data.name}</td>
+                                    <td id="td">{data.shop_name}</td>
+                                    <td id="td"><span className="pro-status-approved">Verified</span></td>
+                                    <td id="td">31 Mar 2023</td>
+                                    <td id="td"><span className="pro-status-approved">Approved</span></td>
+                                    <td id="td">
+                                        <div class="dropdown">
+                                            <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
+                                                <li><a onClick={()=>{freelancdel(data)}} class="dropdown-item" ><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+
+
                         </table>
 
-                        <span className="showing-tag-name">Showing 1-30 List</span>
+                        {/* <span className="showing-tag-name">Showing 1-30 List</span>
                         <div className="all-pro-pagination ">
                             <button className="back-btn shadow bg-body rounded"><i class="fa-solid fa-chevron-left"></i></button>
                             <button className="shadow bg-body rounded">1</button>
@@ -243,10 +162,23 @@ function AllFreelancer() {
                             <button className="shadow bg-body rounded"><i class="fa-solid fa-ellipsis"></i></button>
                             <button className="shadow bg-body rounded">25</button>
                             <button className="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div> */}
+
+                        <div className="mt-5" >
+                            <ReactPaginate
+                                style={{ padding: "5px", margin: "0px", border: "none" }}
+                                pageCount={pageCount}
+                                onPageChange={changePage}
+                                containerClassName={"pagination"}
+                                disabledClassName={"disabled"}
+                                activeClassName={"active"}
+                                total={lists.length}
+                            />
                         </div>
                     </div>
                 </div>
             </div>
+            <Toaster/>
         </div>
     )
 }

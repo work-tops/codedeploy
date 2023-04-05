@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { Link } from "react-router-dom";
-import { getAllData } from "../../Services/ProxyService";
-import ReactPaginate from 'react-paginate'
+import { getAllData, deleteData } from "../../Services/ProxyService";
+import ReactPaginate from 'react-paginate';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 function AllJob() {
@@ -14,11 +15,20 @@ function AllJob() {
         const response = await getAllData('jobs/all');
         setjobs(response.data.jobs);
     }
+    const Jobstdel = async (data) => {
+        const response = await deleteData('job/' + data._id);
+        if (response.status === 201) {
+            toast.success('Successfully Freelancer Added')
+            Jobslist()
+        } else {
+            toast.error('Something went wrong')
+        }
+    }
     useEffect(() => {
         Jobslist()
     }, [])
 
-    const [listPerPage] = useState(5);
+    const [listPerPage] = useState(10);
     const [pageNumber, setPageNumber] = useState(0);
     const pagesVisited = pageNumber * listPerPage;
     const lists = jobs.slice(pagesVisited, pagesVisited + listPerPage);
@@ -135,7 +145,7 @@ function AllJob() {
                                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
                                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
                                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                                <li><a onClick={()=>{Jobstdel(data)}} class="dropdown-item"><i class="fa-solid fa-trash"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -173,6 +183,7 @@ function AllJob() {
                     </div>
                 </div>
             </div>
+            <Toaster/>
         </div>
     )
 }
