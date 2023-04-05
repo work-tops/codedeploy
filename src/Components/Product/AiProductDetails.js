@@ -2,14 +2,24 @@ import React, { useState } from "react";
 import AiHeader from "../../Components/Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { createData } from "../../Services/ProxyService";
+import { uploadImage } from "../../Services/ImageService";
 import toast, { Toaster } from 'react-hot-toast';
+
 
 function AiProductDetails() {
 
     const [form, setform] = useState({
         name: ""
     })
+    const [selectedFile, setSelectedFile] = useState(null);
     // console.log(form)
+    const handleFileInput = (e) => {
+        setSelectedFile(e.target.files[0]);
+    }
+    const uploadFile = (file) => {
+        uploadImage(file);
+        console.log('image uploaded');
+    }
 
     const handleChange = (e) => {
         const myData = { ...form };
@@ -93,6 +103,9 @@ function AiProductDetails() {
                                 </div>
                                 <div className="product-div">
                                     <div className="Add-Product">
+                                        {/* file upload  */}
+                                    <input type="file" onChange={handleFileInput}/>
+                                    <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button>
 
                                         <form onSubmit={(e) => { formsubmit(e) }}>
                                             <label>Product Name</label>

@@ -17,7 +17,9 @@ function AiFreelancer() {
 
     const AddFreelancer = async () => {
         const productdata = {
-            name: form.name,
+            name: form.name + " "+ form.lastname,
+            type: "",
+            skills:"",
             shop_name: form.shop_name,
             email: form.email,
             store_address: form.store_address,
