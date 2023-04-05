@@ -3,7 +3,8 @@ import AiHeader from "../../Components/Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { createData } from "../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
-
+import { Icon } from '@iconify/react';
+import variant_image from "../../Images/product_image.png"
 function AiProductDetails() {
 
     const [form, setform] = useState({
@@ -111,37 +112,88 @@ function AiProductDetails() {
                                             <br />
                                             <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input>
                                             <br></br>
+                                            {/* <!-- Button trigger modal --> */}
+                                            <button id="aipro-addvariant" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                <i className="ri-add-line"></i>Add Variant
+                                            </button>
+
+                                            {/* <!-- Modal --> */}
+                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <p>Add Variant</p>
+                                                            <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                                                        </div>
+                                                        <div class="modal-body row">
+                                                            <div className="col-5">
+                                                                <div className="var-img-drop-div">
+                                                                    <p className="add-img-tit">Variant Image</p>
+                                                                    <p className="add-img-des">Add Variant image here</p>
+                                                                    <br></br>
+                                                                    <Icon className="var-image" icon="mingcute:photo-album-fill" height="24" width="24" />
+                                                                    <br></br>
+                                                                    <button className="add-img-btn">ADD IMAGE</button>
+                                                                </div>
+                                                                <br></br>
+                                                                <div className="var-img-drop-div">
+                                                                    <p className="var-tit">Variants</p>
+                                                                    <p className="var-dec">Here all the variants click on variant to edit its details </p>
+                                                                    <div className="sel-var-abt-div">
+                                                                        <img src={variant_image} className="sel_var_image" alt="selected-variant" />
+                                                                        <small>Finished Type / Colour / Size </small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-7">
+                                                                <p className="var-tit">Options</p>
+                                                                <p className="var-dec">Add Options details here</p>
+                                                                <label className="label">Colour</label>
+                                                                <input type="text" id="opt-ip-box" />
+                                                                <label className="label">Size</label>
+                                                                <input type="text" id="opt-ip-box" />
+                                                                <label className="label">Finish Type</label>
+                                                                <input type="text" id="opt-ip-box" />
+                                                                <br></br>
+                                                                <p className="var-tit">Price Details</p>
+                                                                <label className="label">Price</label>
+                                                                <input value={form.price} required name="price" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <label className="label">Compare at Price</label>
+                                                                <input value={form.compareprice} required name="compareprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <label className="label">Handling Charges</label>
+                                                                <input value={form.handlingcharge} required name="handlingcharge" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <label className="label">Sales Price</label>
+                                                                <input value={form.saleprice} required name="saleprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <br></br>
+                                                                <input name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox1" type='checkbox' value="shipping" /><span className="chc-span">Shipping Requires</span>
+                                                                <input name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox2" type='checkbox' value="chargetax" /><span className="chc-span">Charge Taxes on this product</span>
+                                                                <br></br>
+                                                                <br></br>
+                                                                <p className="var-tit">Inventory</p>
+                                                                <label>SKU</label>
+                                                                <input value={form.sku} required name="sku" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <label>Barcode</label>
+                                                                <input value={form.barcode} required name="barcode" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <label>Minimum Purchase Quantity</label>
+                                                                <input value={form.minimumperchase} required name="minimumperchase" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <label>Quantity</label>
+                                                                <input value={form.quantity} required name="quantity" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <br></br>
+                                                                <input id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
+                                                                <br></br>
+                                                                <button type="submit" className="create-acc-btn">Add</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <br></br>
-                                            <input name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox1" type='checkbox' value="shipping" /><span className="chc-span">Shipping Requires</span>
-                                            <input name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox2" type='checkbox' value="chargetax" /><span className="chc-span">Charge Taxes on this product</span>
-                                            <br></br>
-                                            <br></br>
-                                            <span className="category">Price</span> <span className="compareprice">Compare Price</span>
-                                            <br></br>
-                                            <input value={form.price} required name="price" onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
-                                            <input value={form.compareprice} required name="compareprice" onChange={(e) => { handleChange(e) }} id="aipro-email" type='number' />
-                                            <br></br>
-                                            <br></br>
-                                            <span className="category">Handling Charges</span> <span className="salesprice">Sales Price</span>
-                                            <br></br>
-                                            <input value={form.handlingcharge} required name="handlingcharge" onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
-                                            <input value={form.saleprice} required name="saleprice" onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
-                                            <br></br>
-                                            <label>SKU</label>
-                                            <input value={form.sku} required name="sku" onChange={(e) => { handleChange(e) }} id="aipro-sku" type='text' />
-                                            <label>Barcode</label>
-                                            <input value={form.barcode} required name="barcode" onChange={(e) => { handleChange(e) }} id="aipro-barcode" type='text' />
-                                            <label>Minimum Purchase Quantity</label>
-                                            <input value={form.minimumperchase} required name="minimumperchase" onChange={(e) => { handleChange(e) }} id="aipro-min-purchase_quality" type='text' />
-                                            <label>Quantity</label>
-                                            <input value={form.quantity} required name="quantity" onChange={(e) => { handleChange(e) }} id="aipro-quantity" type='number' />
-                                            <br></br>
-                                            <input id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
-                                            <button id="aipro-addvariant"><i className="ri-add-line"></i>Add Variant</button>
+                                            {/*  */}
                                             <label>Return Policy</label>
                                             <br />
                                             <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
-                                            <button type='submit' id="add-product-btn">Add Product</button>
+                                            <button type='submit' className="create-acc-btn">Add Product</button>
+
                                         </form>
                                     </div>
                                     <div className="Add-Product-Images">
@@ -166,8 +218,8 @@ function AiProductDetails() {
                     </div>
                     <Toaster />
                 </div>
-                </div>
-            </>
-            )
+            </div>
+        </>
+    )
 }
 export default AiProductDetails

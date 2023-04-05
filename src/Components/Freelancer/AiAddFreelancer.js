@@ -86,7 +86,7 @@ function AiFreelancer() {
     }
     return (
         <>
-            <div className="add-seller-div row">
+            <div className="row">
                 <div className="col-2">
                     <AiMenu />
                 </div>
