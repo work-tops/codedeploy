@@ -3027,7 +3027,7 @@ a {
   .allproducts-table {
     width: 100%;
     background: rgb(254, 247, 247);
-    margin-left: 20px;
+    /* margin-left: 20px; */
   }
 
   .add-seller {
@@ -3343,7 +3343,7 @@ a {
 
   /* allJobs.css // start */
   .all-jobs-div {
-    margin-right: 30px;
+    /* margin-right: 30px; */
   }
 
   /* allJobs.css // end */
