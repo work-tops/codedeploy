@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AiHeader from "../../Components/Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
-import { createData } from "../../Services/ProxyService";
+import { createData, getAllData } from "../../Services/ProxyService";
+import { uploadImage } from "../../Services/ImageService";
 import toast, { Toaster } from 'react-hot-toast';
 import { Icon } from '@iconify/react';
 import variant_image from "../../Images/product_image.png"
@@ -10,7 +11,17 @@ function AiProductDetails() {
     const [form, setform] = useState({
         name: ""
     })
+    const [procat, setprocat]= useState([])
+    const [selemail, setselemail]= useState([])
+    const [selectedFile, setSelectedFile] = useState(null);
     // console.log(form)
+    const handleFileInput = (e) => {
+        setSelectedFile(e.target.files[0]);
+    }
+    const uploadFile = (file) => {
+        uploadImage(file);
+        console.log('image uploaded');
+    }
 
     const handleChange = (e) => {
         const myData = { ...form };
@@ -22,13 +33,14 @@ function AiProductDetails() {
         const productdata = {
             seller_email: form.seller_email,
             name: form.name,
+            category: form.category,
             type: {},
             description: form.description,
             tags: [],
             policy: form.policy,
             shipping: form.shipping,
-            pricing: { price: Number(form.price) },
-            inventory: { quantity: Number(form.quantity) },
+            pricing: { price: 100 },
+            inventory: { quantity: 100 },
             // variant:form.tags,
             variant: [
                 {
@@ -56,6 +68,16 @@ function AiProductDetails() {
         Addproducts()
     }
 
+    const Productcat = async () => {
+        const response = await getAllData('master/product_types');
+        setprocat(response.data.master[0].data);
+    }
+
+    const Selleremails = async () => {
+        const response = await getAllData('sellers/all');
+        setselemail(response.data.sellers);
+    }
+
     const cleardata = () => {
         setform({
             name: "",
@@ -74,6 +96,11 @@ function AiProductDetails() {
             policy: ""
         })
     }
+
+    useEffect(()=>{
+        Productcat()
+        Selleremails()
+    }, [])
 
     return (
         <>
@@ -94,6 +121,11 @@ function AiProductDetails() {
                                 </div>
                                 <div className="product-div">
                                     <div className="Add-Product">
+                                        {/* file upload  testing*/}
+                                        <div className="d-none">
+                                            <input type="file" onChange={handleFileInput} />
+                                            <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button>
+                                        </div>
 
                                         <form onSubmit={(e) => { formsubmit(e) }}>
                                             <label>Product Name</label>
@@ -101,14 +133,27 @@ function AiProductDetails() {
                                             <br></br>
                                             <span className="category">Category</span> <span className="seller-email">Seller Email</span>
                                             <br></br>
-                                            <input value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
-                                            <input value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' />
+                                            <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
+                                                <option value="">Select</option>
+                                                {procat.map((data, key) => (
+                                                    <option key={key} value={data.name}>{data.name}</option>
+                                                ))}
+                                            </select>
+
+                                            <select value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
+                                                <option value="">Select</option>
+                                                {selemail.map((data, key) => (
+                                                    <option key={key} value={data.email}>{data.email}</option>
+                                                ))}
+                                            </select>
+                                            {/* <input value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' /> */}
+                                            {/* <input value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' /> */}
                                             <br />
                                             <label>Description</label>
                                             <br />
                                             <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
                                             <br />
-                                            <label>Product Tag</label>
+                                            <label>Product Tag</label> 
                                             <br />
                                             <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input>
                                             <br></br>
@@ -157,13 +202,13 @@ function AiProductDetails() {
                                                                 <br></br>
                                                                 <p className="var-tit">Price Details</p>
                                                                 <label className="label">Price</label>
-                                                                <input value={form.price} required name="price" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <input value={form.price}  name="price" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
                                                                 <label className="label">Compare at Price</label>
-                                                                <input value={form.compareprice} required name="compareprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <input value={form.compareprice}  name="compareprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
                                                                 <label className="label">Handling Charges</label>
-                                                                <input value={form.handlingcharge} required name="handlingcharge" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input value={form.handlingcharge}  name="handlingcharge" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label className="label">Sales Price</label>
-                                                                <input value={form.saleprice} required name="saleprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input value={form.saleprice}  name="saleprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <br></br>
                                                                 <input name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox1" type='checkbox' value="shipping" /><span className="chc-span">Shipping Requires</span>
                                                                 <input name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox2" type='checkbox' value="chargetax" /><span className="chc-span">Charge Taxes on this product</span>
@@ -171,13 +216,13 @@ function AiProductDetails() {
                                                                 <br></br>
                                                                 <p className="var-tit">Inventory</p>
                                                                 <label>SKU</label>
-                                                                <input value={form.sku} required name="sku" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input value={form.sku}  name="sku" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label>Barcode</label>
-                                                                <input value={form.barcode} required name="barcode" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input value={form.barcode}  name="barcode" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label>Minimum Purchase Quantity</label>
-                                                                <input value={form.minimumperchase} required name="minimumperchase" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input value={form.minimumperchase}  name="minimumperchase" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label>Quantity</label>
-                                                                <input value={form.quantity} required name="quantity" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <input value={form.quantity}  name="quantity" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
                                                                 <br></br>
                                                                 <input id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
                                                                 <br></br>
