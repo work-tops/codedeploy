@@ -27,7 +27,7 @@ function AllFreelancer() {
         freelancList()
     }, [])
 
-    const [listPerPage] = useState(10);
+    const [listPerPage] = useState(5);
     const [pageNumber, setPageNumber] = useState(0);
     const pagesVisited = pageNumber * listPerPage;
     const lists = freelanc.slice(pagesVisited, pagesVisited + listPerPage);
