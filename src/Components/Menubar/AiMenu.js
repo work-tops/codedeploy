@@ -9,7 +9,7 @@ function AiMenu() {
 
             <img className="ai-logo mt-4" src={ai_logo} alt="ai-logo" />
             <div className="ai-dropdown-menu">
-                <button><Icon icon="radix-icons:dashboard" /> Dashboard</button>
+                <Link to="dashboard" role="button"><button><Icon icon="radix-icons:dashboard" /> Dashboard</button></Link>
                 <Link to="allfreelancer" role="button"><button><Icon icon="gridicons:multiple-users" /> Freelancer</button></Link>
                 <Link to="aiproducts" role="button"><button><Icon icon="mdi:tag" /> Products</button></Link>
                 <button><Icon icon="bi:box-seam" /> Services</button>

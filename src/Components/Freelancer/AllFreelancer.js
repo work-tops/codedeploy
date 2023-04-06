@@ -126,7 +126,7 @@ function AllFreelancer() {
                             {lists.map((data, key) => (
                                 <tr key={key}>
                                     <td id="td"><input type='checkbox' /></td>
-                                    <td id="td">2456781</td>
+                                    <td id="td">{data._id}</td>
                                     <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
                                     <td id="td">{data.name}</td>
                                     <td id="td">{data.shop_name}</td>

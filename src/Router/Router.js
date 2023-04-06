@@ -13,12 +13,14 @@ import AiFreelancer from "../Components/Freelancer/AiAddFreelancer";
 import AddJob from "../Components/Job/AddJob";
 import JobProposal from "../Components/Project/ProjectDetails";
 import AllOrders from "../Components/Orders/AllOrders";
+import Dashboard from "../Components/Dashboard/Dashboard";
 
 const Routers = () => {
     return (
         <Switch>
             {/* Routes for AI Pages //start */}
             <Route exact path='/'><AiProducts /></Route>
+            <Route exact path='/dashboard'><Dashboard /></Route>
             <Route path='/addfreelancer'><AiFreelancer /></Route>
             <Route path='/aiproductdetails'><AiProductDetails /></Route>
             <Route path='/aiproducts'><AiProducts /></Route>

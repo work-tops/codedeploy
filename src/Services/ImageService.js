@@ -4,7 +4,6 @@ import AWS from 'aws-sdk';
 const S3_BUCKET =s3bucket;
 const REGION =region;
 const path = "images/";
-// https://myproject-data.s3.eu-west-2.amazonaws.com/images/test.jpeg
 
 AWS.config.update({
     accessKeyId: accessKeyId,

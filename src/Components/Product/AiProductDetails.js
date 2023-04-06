@@ -16,7 +16,12 @@ function AiProductDetails() {
     const [selectedFile, setSelectedFile] = useState(null);
     // console.log(form)
     const handleFileInput = (e) => {
-        setSelectedFile(e.target.files[0]);
+        setSelectedFile(e.target.files[0].name);
+        // {
+        //     "name": e.target.files[0].name,
+        //     "url": "https://myproject-data.s3.eu-west-2.amazonaws.com/images/"+e.target.files[0].name,
+        //     "type": e.target.files[0].type
+        // }
     }
     const uploadFile = (file) => {
         uploadImage(file);
