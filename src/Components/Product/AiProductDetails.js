@@ -122,7 +122,7 @@ function AiProductDetails() {
                                 <div className="product-div">
                                     <div className="Add-Product">
                                         {/* file upload  testing*/}
-                                        <div className="d-none">
+                                        <div className="">
                                             <input type="file" onChange={handleFileInput} />
                                             <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button>
                                         </div>

@@ -4,6 +4,7 @@ import AWS from 'aws-sdk';
 const S3_BUCKET =s3bucket;
 const REGION =region;
 const path = "images/";
+// https://myproject-data.s3.eu-west-2.amazonaws.com/images/test.jpeg
 
 AWS.config.update({
     accessKeyId: accessKeyId,
@@ -18,10 +19,11 @@ const myBucket = new AWS.S3({
 export const uploadImage = (file) => {
     
     const params = {
-        ACL: 'public-read',
+        // ACL: 'public-read',
         Body: file,
         Bucket: S3_BUCKET,
-        Key: path+file.name
+        Key: path+file.name,
+        ACL:"public-read-write", 
     };
 
     myBucket.putObject(params)
