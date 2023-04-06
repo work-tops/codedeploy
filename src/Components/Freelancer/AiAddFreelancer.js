@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { createData, getAllData } from "../../Services/ProxyService";
@@ -141,39 +142,39 @@ function AiFreelancer() {
                                 <p className="ai-add-title">Add Freelancer</p>
                                 <p className="ai-title-desc">Here you can add your freelancer</p>
                                 <br></br>
-                                <form onSubmit={(e)=>{formsubmit(e)}} className="add-seller-form">
+                                <form onSubmit={(e) => { formsubmit(e) }} className="add-seller-form">
                                     <span className="category">First Name</span> <span className="seller-email">Last Name</span>
                                     <br></br>
-                                    <input required name="name" value={form.name} onChange={(e)=>{handleChange(e)}} id="aipro-category" type='text' />
-                                    <input required name="lastname" value={form.lastname} onChange={(e)=>{handleChange(e)}} id="aipro-email" type='text' />
+                                    <input required name="name" value={form.name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
+                                    <input required name="lastname" value={form.lastname} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
                                     <br></br>
                                     <label>Email</label>
-                                    <input required name="email" value={form.email} onChange={(e)=>{handleChange(e)}} id="aipro-barcode" type='email' />
+                                    <input required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="aipro-barcode" type='email' />
                                     <br></br>
                                     <span className="category">Phone Number</span> <span className="dob">Date of Birth</span>
                                     <br></br>
-                                    <input required name="contact" value={form.contact} onChange={(e)=>{handleChange(e)}} id="aipro-category" type='number' />
-                                    <input required name="dob" value={form.dob} onChange={(e)=>{handleChange(e)}} id="aipro-email" type='date' />
+                                    <input required name="contact" value={form.contact} onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
+                                    <input required name="dob" value={form.dob} onChange={(e) => { handleChange(e) }} id="aipro-email" type='date' />
                                     <br></br>
                                     <span className="category">Company Name</span> <span className="dob">Skills</span>
                                     <br></br>
-                                    <input required name="shop_name" value={form.shop_name} onChange={(e)=>{handleChange(e)}} id="aipro-category" type='text' />
-                                    <input required name="skills" value={form.skills} onChange={(e)=>{handleChange(e)}} id="aipro-email" type='text' />
+                                    <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
+                                    <input required name="skills" value={form.skills} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
                                     <br></br>
                                     <label>Company Address</label>
-                                    <textarea  required name="store_address" value={form.store_address} onChange={(e)=>{handleChange(e)}} id="aipro-description"></textarea>
+                                    <textarea required name="store_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
                                     <label>
                                         Billing Address <input type='checkbox' id="bill-check" />
                                         <span className="billing-add-note">{' '}address and the billing address are same.</span>
                                     </label>
-                                    <textarea required name="billing_address" value={form.sbilling_address} onChange={(e)=>{handleChange(e)}} id="aipro-description"></textarea>
+                                    <textarea required name="billing_address" value={form.sbilling_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
                                     <label>Description</label>
-                                    <textarea  required name="store_description" value={form.store_description} onChange={(e)=>{handleChange(e)}} id="aipro-description"></textarea>
+                                    <textarea required name="store_description" value={form.store_description} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
                                     <br></br>
                                     <span className="category">Password</span> <span className="seller-email">Confirm Password</span>
                                     <br></br>
-                                    <input  required name="password" value={form.password} onChange={(e)=>{handleChange(e)}}  id="aipro-category" type='password' />
-                                    <input  required name="confirm_password" value={form.confirm_password} onChange={(e)=>{handleChange(e)}}  id="aipro-email" type='text' />
+                                    <input required name="password" value={form.password} onChange={(e) => { handleChange(e) }} id="aipro-category" type='password' />
+                                    <input required name="confirm_password" value={form.confirm_password} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
                                     <br></br>
                                     <input id="terms-conditions" type='checkbox' /><span className="agree-note">You agree to the terms and conditions.</span>
                                     <br></br>
