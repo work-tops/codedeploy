@@ -2649,7 +2649,7 @@ a {
     width: 400px;
     margin-top: 10px;
     margin-left: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding: 5px;
     display: block;
   }
@@ -3824,39 +3824,111 @@ a {
     font-size: 16px;
     font-weight: 600;
   }
-  .add-img-btn{
-      border: 1px solid;
-      margin-left: 20px;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1;
-      font-size: 12px;
+
+  .add-img-btn {
+    border: 1px solid;
+    margin-left: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1;
+    font-size: 12px;
   }
-  .var-tit{
-      margin-left: 20px;
-      font-size: 16px;
-      font-weight: 600;
-      margin-top: 5px;
+
+  .var-tit {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 5px;
   }
-  .var-dec{
-      margin-left: 20px;
-      font-size: 12px;
-      margin-top: -10px;
+
+  .var-dec {
+    margin-left: 20px;
+    font-size: 12px;
+    margin-top: -10px;
   }
+
   .sel_var_image {
     width: 50px;
     height: 50px;
     margin: 20px 10px 20px 20px;
-}
-  .sel-var-abt-div{
+  }
+
+  .sel-var-abt-div {
     border: 1px solid lightgrey;
     margin: 10px;
   }
+
   #opt-ip-box {
     border: 1px solid lightgrey;
     margin-left: 20px;
     margin-top: 10px;
     width: 390px;
     padding: 5px;
-}
+  }
+
+
+  /*  */
+
+  .autocom-dropdown {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    width: 400px;
+    margin-left: 20px;
+    margin-top: -9px;
+  }
+
+  .dropdown-row {
+    cursor: pointer;
+    text-align: start;
+  }
+
+  .search-container {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-inner {
+    display: flex;
+    color: #000;
+  }
+
+  .cust-email {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .cust-email:hover {
+    margin-top: 5px;
+    margin-left: 5px;
+    background: #e3dada;
+    padding: 10px;
+    color: #fff;
+  }
+
+  .tag-box {
+    border: 1px solid rgb(222, 171, 113);
+    width: 400px;
+    background-color: #fff;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+    margin-left: 20px;
+  }
+
+  .skill-tag {
+    margin-left: 5px;
+    font-size: 12px !important;
+    /* width: 100px; */
+    margin-bottom: 5px;
+  }
+  .tag-close{
+    text-align: end;
+    margin-top: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    }
 }

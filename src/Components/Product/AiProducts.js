@@ -65,7 +65,7 @@ function AiProducts() {
                                         </ul>
                                     </div>
                                     <div className="col-6">
-                                        <Link to="aiproductdetails" role="button"><button className="add-seller">All Products</button></Link>
+                                        <Link to="aiproductdetails" role="button"><button className="add-seller">Add Products</button></Link>
                                     </div>
                                 </div>
                             </div>
