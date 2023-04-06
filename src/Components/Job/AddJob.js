@@ -4,8 +4,27 @@ import AiMenu from "../Menubar/AiMenu";
 import { createData, getAllData } from "../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
 import { Icon } from '@iconify/react';
-
+import data from "../../Data/CustomerMailData";
 function AddJob() {
+
+    //Customer Email (Javascript-Fun) 
+
+    const [value, setValue] = useState('');
+
+    const onChange = (event) => {
+
+        setValue(event.target.value);
+
+    }
+    const onSearch = (searchTerm) => {
+
+        setValue(searchTerm);
+    }
+
+    //Customer-Email Js Fun Ends// 
+
+
+
 
     const [form, setform] = useState([])
     // console.log(form)
@@ -96,6 +115,7 @@ function AddJob() {
         Jobslist()
     }, [])
 
+
     return (
         <>
             <div className="add-seller-div row">
@@ -112,6 +132,21 @@ function AddJob() {
                                 <p className="ai-title-desc">Here you can add jobs listed in your store</p>
                                 <br></br>
                                 <form onSubmit={(e) => { formsubmit(e) }} className="add-seller-form">
+                                    <label className="label">Customer Email</label>
+                                    <input type="text" autoComplete="off" id="aipro-barcode" value={value} onChange={onChange} />
+                                    <div className="autocom-dropdown">
+                                        {data.filter(item => {
+                                            const searchTerm = value.toLowerCase();
+                                            const email = item.email.toLowerCase();
+
+                                            return searchTerm && email.startsWith(searchTerm) && email !== searchTerm;
+                                        }
+                                        )
+                                            .map((item) =>
+                                                <div onClick={() => onSearch(item.email)} className="dropdown-row" key={item.email}>
+                                                    <p className="cust-email">{item.email}</p>
+                                                </div>)}
+                                    </div>
                                     <span className="category">Category</span> <span className="seller-email">Sub Category</span>
                                     <br></br>
                                     <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} className="select-category">
@@ -167,7 +202,7 @@ function AddJob() {
                                     <label>Project Locations</label>
 
                                     <br></br>
-                        
+
                                     <input value={form.location} required name="location" onChange={(e) => { handleChange(e) }} id="aipro-barcode" placeholder="Geo Locations" type='text' />
                                     <br></br>
                                     <span className="category">Post Code</span> <span className="start-date-job">Starting Date <span className="optional">(optional)</span></span>
@@ -192,7 +227,7 @@ function AddJob() {
                                     <button className="cancel-btn">Cancel</button>
                                 </form >
                             </div >
-                            <div className="freelance-form-div">
+                            {/* <div className="freelance-form-div">
                                 <form className="customer_details-form">
                                     <h5 className="form-title">Customer Details</h5>
                                     <label className="label">Email ID :</label>
@@ -204,7 +239,7 @@ function AddJob() {
                                     <label className="label">Postcode :</label>
                                     <input id="cust-ip-box" type='text' />
                                 </form>
-                            </div>
+                            </div> */}
                         </div >
                     </div >
                 </div >
