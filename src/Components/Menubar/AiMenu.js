@@ -11,7 +11,7 @@ function AiMenu() {
             <div className="ai-dropdown-menu">
                 <Link to="dashboard" role="button"><button><Icon icon="radix-icons:dashboard" /> Dashboard</button></Link>
                 <Link to="allfreelancer" role="button"><button><Icon icon="gridicons:multiple-users" /> Freelancer</button></Link>
-                <Link to="aiproducts" role="button"><button><Icon icon="mdi:tag" /> Products</button></Link>
+                <Link to="allproduct" role="button"><button><Icon icon="mdi:tag" /> Products</button></Link>
                 <button><Icon icon="bi:box-seam" /> Services</button>
                 <Link to="alljob" role="button"><button><Icon icon="material-symbols:border-all-outline" /> Post a Job</button></Link>
                 <Link to="allorders" role="button"><button><Icon icon="mingcute:box-2-line" /> Orders</button></Link>

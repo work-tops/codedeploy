@@ -14,6 +14,7 @@ function AiProducts() {
     const Productlist = async () => {
         const response = await getAllData('products');
         setproducts(response.data.products);
+        setShowSpinner(false);
     }
     const productdel = async (data) => {
         const response = await deleteData('admin/product/' + data._id);
@@ -24,6 +25,8 @@ function AiProducts() {
             toast.error('Something went wrong')
         }
     }
+    const [showSpinner, setShowSpinner] = useState(true);
+
     useEffect(() => {
         Productlist()
     }, [])
@@ -52,20 +55,20 @@ function AiProducts() {
                             <div className="product-adding-div">
                                 <div>
                                     <p className="ai-tit">product/product list</p>
-                                    <h4 className="ai-seller-title">All Products <span id="badge-1" class="badge bg-secondary">#100</span></h4>
+                                    <h4 className="ai-seller-title">All Products <span id="badge-1" className="badge bg-secondary">#100</span></h4>
                                 </div>
                                 <div className="row">
-                                    <div class="dropdown col-6">
-                                        <button id="more_action" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div className="dropdown col-6">
+                                        <button id="more_action" className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             More Action
                                         </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-regular fa-pen-to-square"></i> Bulk Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-plus"></i> Add Product By CSV</a></li>
+                                        <ul className="dropdown-menu">
+                                            <li><a className="dropdown-item" href="#"><i className="fa-regular fa-pen-to-square"></i> Bulk Edit</a></li>
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-plus"></i> Add Product By CSV</a></li>
                                         </ul>
                                     </div>
                                     <div className="col-6">
-                                        <Link to="aiproductdetails" role="button"><button className="add-seller">Add Products</button></Link>
+                                        <Link to="addproduct" role="button"><button className="add-seller">Add Products</button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -91,35 +94,48 @@ function AiProducts() {
                                 List
                             </p>
                             <div className="all-jobs-div">
+                            <div style={{ height: '0px' }} className="text-center">
+                            {showSpinner && (
+                                <div
+                                    className="spinner-border"
+                                    role="status"
+                                    style={{ width: '70px', height: '70px', fontSize: "20px", opacity:"0.7" }} // set the width and height here
+                                >
+                                    <span className="sr-only">Loading...</span>
+                                </div>
+                            )}
+                        </div>
+                        
                                 <table className="allproducts-table">
-                                    <tr className="product-heading ">
+                                  <tbody>
+                                  <tr className="product-heading ">
                                         <td id="td" className="rounded-start"><input type='checkbox' /></td>
                                         <td id="td">Product ID
-                                            <i class="ri-arrow-down-s-fill"></i>
+                                            <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td>
-                                        <td id="td">Image <i class="ri-arrow-down-s-fill"></i>
+                                        <td id="td">Image <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td>
-                                        <td id="td">Name <i class="ri-arrow-down-s-fill"></i>
+                                        <td id="td">Name <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td>
-                                        <td id="td">Seller <i class="ri-arrow-down-s-fill"></i>
+                                        <td id="td">Seller <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td>
-                                        <td id="td">Price <i class="ri-arrow-down-s-fill"></i>
+                                        <td id="td">Price <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td>
-                                        <td id="td">Quantity <i class="ri-arrow-down-s-fill"></i>
+                                        <td id="td">Quantity <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td>
-                                        <td id="td">Status <i class="ri-arrow-down-s-fill"></i>
+                                        <td id="td">Status <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td>
@@ -136,21 +152,22 @@ function AiProducts() {
                                             <td id="td">{data.inventory.quantity} Pcs.</td>
                                             <td id="td"><span className="pro-status-approved">Approved</span></td>
                                             <td id="td">
-                                                <div class="dropdown">
-                                                    <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa-solid fa-ellipsis"></i>
+                                                <div className="dropdown">
+                                                    <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i className="fa-solid fa-ellipsis"></i>
                                                     </a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-xmark"></i> Disable</a></li>
-                                                        <li><a onClick={() => { productdel(data) }} class="dropdown-item" ><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                                    <ul className="dropdown-menu">
+                                                        <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                                        <li><a className="dropdown-item" href="#"><i className="fa-solid fa-bag-shopping"></i> View in Store</a></li>
+                                                        <li><a className="dropdown-item" href="#"><i className="fa-solid fa-circle-user"></i> Reassign</a></li>
+                                                        <li><a className="dropdown-item" href="#"><i className="fa-solid fa-xmark"></i> Disable</a></li>
+                                                        <li><a onClick={() => { productdel(data) }} className="dropdown-item" ><i className="fa-solid fa-trash"></i> Delete</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
                                         </tr>
                                     ))}
+                                  </tbody>
 
                                 </table>
 

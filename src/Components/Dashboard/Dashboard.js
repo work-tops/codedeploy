@@ -18,7 +18,7 @@ function Dashboard() {
                     <AiMenu />
                 </div>
                 <div className="col-10">
-                    <img src={dashboardUrl} alt="dashboard" class="" />
+                    <img src={dashboardUrl} alt="dashboard" className="" />
                 </div>
             </div>
         </div>

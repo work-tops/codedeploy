@@ -15,15 +15,15 @@ function JobDetails() {
                         </p>
                     </div>
                     <div>
-                        <div class="btn-group">
-                            <button type="button" class="btn bg-white user-prj-view">View</button>
-                            <button type="button" class="btn bg-primary user-prj-dd dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="visually-hidden">Toggle Dropdown</span>
+                        <div className="btn-group">
+                            <button type="button" className="btn bg-white user-prj-view">View</button>
+                            <button type="button" className="btn bg-primary user-prj-dd dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span className="visually-hidden">Toggle Dropdown</span>
                             </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <ul className="dropdown-menu">
+                                <li><a className="dropdown-item" href="#">Action</a></li>
+                                <li><a className="dropdown-item" href="#">Another action</a></li>
+                                <li><a className="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </div>
                     </div>

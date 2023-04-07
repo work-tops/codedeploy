@@ -19,16 +19,16 @@ const Routers = () => {
     return (
         <Switch>
             {/* Routes for AI Pages //start */}
-            <Route exact path='/'><AiProducts /></Route>
+            <Route exact path='/'><Dashboard /></Route>
             <Route exact path='/dashboard'><Dashboard /></Route>
-            <Route path='/addfreelancer'><AiFreelancer /></Route>
-            <Route path='/aiproductdetails'><AiProductDetails /></Route>
-            <Route path='/aiproducts'><AiProducts /></Route>
-            <Route path='/addjobs'><AddJob /></Route>
             <Route path='/allfreelancer'><AllFreelancer /></Route>
+            <Route path='/addfreelancer'><AiFreelancer /></Route>
+            <Route path='/allproduct'><AiProducts /></Route>
+            <Route path='/addproduct'><AiProductDetails /></Route>
             <Route path="/alljob"><AllJob /></Route>
-            <Route path='/jobproposal'><JobProposal /></Route>
+            <Route path='/addjob'><AddJob /></Route>
             <Route path='/allorders'><AllOrders /></Route>
+            <Route path='/jobproposal'><JobProposal /></Route>
             {/* Routes for AI Pages //end*/}
             <Route path='/postproject'><PostAProject /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>

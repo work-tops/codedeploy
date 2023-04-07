@@ -15,21 +15,21 @@ function ProjectInformation() {
             <div className="layout-1">
                 <h5 className="propos-title">Proposal Amount</h5>
                 <input type="text" className="proposal-amt-box" placeholder="Enter Your Proposal Amount" />
-                <div class="dropdown proposal-amt-dd_div">
-                    <button class="btn" id="dropdown-proposal-amt" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-chevron-down"></i>
+                <div className="dropdown proposal-amt-dd_div">
+                    <button className="btn" id="dropdown-proposal-amt" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i className="fa-solid fa-chevron-down"></i>
                     </button>
-                    <ul class="dropdown-menu" >
+                    <ul className="dropdown-menu" >
                         <li id="dd-m">
                             <fieldset className="proposal-fieldset">
                                 <p><span className="pound-sym">(<span className="pounds">£</span>) - 0</span>
                                     <span className="proposal-info">"myproject.ai" Service Fee</span>
-                                    <i class="fa-solid fa-circle-info info_icon"></i>
+                                    <i className="fa-solid fa-circle-info info_icon"></i>
                                 </p>
                             </fieldset>
                             <fieldset className="proposal-fieldset">
                                 <p><span className="pound-sym">(<span className="pounds">£</span>) - 0</span> <span className="proposal-info-1">"Amount You'll Receive after" Service Fee education</span>
-                                    <i class="fa-solid fa-circle-info info_icon"></i>
+                                    <i className="fa-solid fa-circle-info info_icon"></i>
                                 </p>
                             </fieldset>
                         </li>

@@ -4,6 +4,7 @@ import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { createData, getAllData } from "../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
+import { Link } from "react-router-dom";
 function AiFreelancer() {
 
     const [form, setform] = useState([])
@@ -179,7 +180,7 @@ function AiFreelancer() {
                                     <input id="terms-conditions" type='checkbox' /><span className="agree-note">You agree to the terms and conditions.</span>
                                     <br></br>
                                     <button type="submit" className="create-acc-btn">Create Account</button>
-                                    <button className="cancel-btn">Cancel</button>
+                                    <Link to="allfreelancer" role="button"><button className="cancel-btn">Cancel</button></Link>
                                 </form>
                             </div>
                             <div className="freelance-form-div">

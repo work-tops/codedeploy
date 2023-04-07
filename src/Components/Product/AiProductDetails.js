@@ -127,7 +127,7 @@ function AiProductDetails() {
                                 <div className="product-div">
                                     <div className="Add-Product">
                                         {/* file upload  testing*/}
-                                        <div className="">
+                                        <div className="d-none">
                                             <input type="file" onChange={handleFileInput} />
                                             <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button>
                                         </div>
@@ -168,14 +168,14 @@ function AiProductDetails() {
                                             </button>
 
                                             {/* <!-- Modal --> */}
-                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
+                                            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div className="modal-dialog modal-lg">
+                                                    <div className="modal-content">
+                                                        <div className="modal-header">
                                                             <p>Add Variant</p>
                                                             <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                                                         </div>
-                                                        <div class="modal-body row">
+                                                        <div className="modal-body row">
                                                             <div className="col-5">
                                                                 <div className="var-img-drop-div">
                                                                     <p className="add-img-tit">Variant Image</p>
