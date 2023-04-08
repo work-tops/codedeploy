@@ -267,7 +267,13 @@ function AddJob() {
                                         </div>
                                     </div>
                                     <br />
-
+                                    <br></br>
+                                    <label className="label">Files:</label>
+                                    <br></br>
+                                    <span className="kitchen-plan-div"><Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />KitchenPlan.pdf</span><i class="ri-close-line upload-img-close3"></i>
+                                    <span className="kitchen-plan-div"><Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />KitchenPlan.pdf</span><i class="ri-close-line upload-img-close3"></i>
+                                    <br></br>
+                                    <br></br>
                                     <span className="category">Budget Type</span> <span className="job-currency">Currency</span>
                                     <br></br>
                                     <select value={form.budget_type} required name="budget_type" onChange={(e) => { handleChange(e) }} className="select-category">

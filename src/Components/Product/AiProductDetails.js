@@ -5,14 +5,15 @@ import { createData, getAllData } from "../../Services/ProxyService";
 import { uploadImage } from "../../Services/ImageService";
 import toast, { Toaster } from 'react-hot-toast';
 import { Icon } from '@iconify/react';
+import product_image from '../../Images/employee.png'
 import variant_image from "../../Images/product_image.png"
 function AiProductDetails() {
 
     const [form, setform] = useState({
         name: ""
     })
-    const [procat, setprocat]= useState([])
-    const [selemail, setselemail]= useState([])
+    const [procat, setprocat] = useState([])
+    const [selemail, setselemail] = useState([])
     const [selectedFile, setSelectedFile] = useState(null);
     // console.log(form)
     const handleFileInput = (e) => {
@@ -102,7 +103,7 @@ function AiProductDetails() {
         })
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         Productcat()
         Selleremails()
     }, [])
@@ -158,10 +159,13 @@ function AiProductDetails() {
                                             <br />
                                             <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
                                             <br />
-                                            <label>Product Tag</label> 
+                                            <label>Product Tag</label>
                                             <br />
                                             <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input>
                                             <br></br>
+                                            {/*  */}
+
+                                            {/*  */}
                                             {/* <!-- Button trigger modal --> */}
                                             <button id="aipro-addvariant" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                                 <i className="ri-add-line"></i>Add Variant
@@ -199,7 +203,12 @@ function AiProductDetails() {
                                                                 <p className="var-tit">Options</p>
                                                                 <p className="var-dec">Add Options details here</p>
                                                                 <label className="label">Colour</label>
-                                                                <input type="text" id="opt-ip-box" />
+                                                                <select className="sel-colour">
+                                                                    <option>Black,Gold</option>
+                                                                    <option>Grey,White</option>
+                                                                    <option>Black,Grey</option>
+                                                                    <option>Maroon,White</option>
+                                                                </select>
                                                                 <label className="label">Size</label>
                                                                 <input type="text" id="opt-ip-box" />
                                                                 <label className="label">Finish Type</label>
@@ -207,13 +216,13 @@ function AiProductDetails() {
                                                                 <br></br>
                                                                 <p className="var-tit">Price Details</p>
                                                                 <label className="label">Price</label>
-                                                                <input value={form.price}  name="price" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <input value={form.price} name="price" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
                                                                 <label className="label">Compare at Price</label>
-                                                                <input value={form.compareprice}  name="compareprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <input value={form.compareprice} name="compareprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
                                                                 <label className="label">Handling Charges</label>
-                                                                <input value={form.handlingcharge}  name="handlingcharge" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input value={form.handlingcharge} name="handlingcharge" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label className="label">Sales Price</label>
-                                                                <input value={form.saleprice}  name="saleprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input value={form.saleprice} name="saleprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <br></br>
                                                                 <input name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox1" type='checkbox' value="shipping" /><span className="chc-span">Shipping Requires</span>
                                                                 <input name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox2" type='checkbox' value="chargetax" /><span className="chc-span">Charge Taxes on this product</span>
@@ -221,13 +230,13 @@ function AiProductDetails() {
                                                                 <br></br>
                                                                 <p className="var-tit">Inventory</p>
                                                                 <label>SKU</label>
-                                                                <input value={form.sku}  name="sku" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input value={form.sku} name="sku" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label>Barcode</label>
-                                                                <input value={form.barcode}  name="barcode" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input value={form.barcode} name="barcode" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label>Minimum Purchase Quantity</label>
-                                                                <input value={form.minimumperchase}  name="minimumperchase" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input value={form.minimumperchase} name="minimumperchase" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label>Quantity</label>
-                                                                <input value={form.quantity}  name="quantity" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <input value={form.quantity} name="quantity" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
                                                                 <br></br>
                                                                 <input id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
                                                                 <br></br>
@@ -238,6 +247,32 @@ function AiProductDetails() {
                                                 </div>
                                             </div>
                                             <br></br>
+                                            <div>
+                                                <table className="sel-var-box">
+                                                    <tr>
+                                                        <td><img src={variant_image} className="sel_var_image" alt="selected-variant" /></td>
+                                                        <td>
+                                                            <p className="cur-var-types">Colour / Size / Finished Type / Quantity</p>
+                                                            <p className="sku-price">Sku:192736383 / Price: £ 438.48</p>
+                                                        </td>
+                                                        <td>
+                                                            <button className="edt-rem1" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
+                                                            <button className="edt-rem2">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img src={variant_image} className="sel_var_image" alt="selected-variant" /></td>
+                                                        <td>
+                                                            <p className="cur-var-types">Colour / Size / Finished Type / Quantity</p>
+                                                            <p className="sku-price">Sku:192736383 / Price: £ 438.48</p>
+                                                        </td>
+                                                        <td>
+                                                            <button className="edt-rem1" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
+                                                            <button className="edt-rem2">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
                                             {/*  */}
                                             <label>Return Policy</label>
                                             <br />
@@ -252,7 +287,97 @@ function AiProductDetails() {
                                             <i className="ai-img-icon ri-image-fill"></i>
                                             <small className="chose-file">No File Chosen</small>
                                         </div>
-                                        <button className="img-upload-btn">Upload Images</button>
+                                        <div>
+                                            <div className="row bg-pre">
+                                                <div className="col-4">
+                                                    <img src={product_image} width="50px" height="50px" className="pro-pre"/>
+                                                </div>
+                                                <div className="col-4 fil-name">calcata.gold.jpg</div>
+                                                <div className="col-4 "><Icon icon="simple-line-icons:options" className="ico-menu"  /></div>
+                                            </div>
+                                            <br></br>
+                                            <div className="row bg-pre">
+                                                <div className="col-4">
+                                                    <img src={product_image} width="50px" height="50px" className="pro-pre"/>
+                                                </div>
+                                                <div className="col-4 fil-name">calcata.gold.jpg</div>
+                                                <div className="col-4 "><Icon icon="simple-line-icons:options" className="ico-menu"  /></div>
+                                            </div>
+                                            <br></br>
+                                            <div className="row bg-pre">
+                                                <div className="col-4">
+                                                    <img src={product_image} width="50px" height="50px" className="pro-pre"/>
+                                                </div>
+                                                <div className="col-4 fil-name">calcata.gold.jpg</div>
+                                                <div className="col-4 "><Icon icon="simple-line-icons:options" className="ico-menu"  /></div>
+                                            </div>
+                                        </div>
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="img-upload-btn">Upload Images</button>
+                                        {/* Modal-1 */}
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div>
+                                                        <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
+                                                        <p className="proadd-img-desc">to add the product images</p>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div className="upd-attachments">
+                                                            <Icon className="upload-file-icon" data-bs-toggle="modal" data-bs-target="#exampleModal2" icon="fluent:folder-arrow-up-20-filled" width="90" height="90" />
+                                                            <p className="ig-upldesc">Drag & Drop files here or choose file 50 MB max file size</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Modal -2 */}
+                                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div>
+                                                        <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
+                                                        <p className="proadd-img-desc">to add the product images</p>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div className="upd-attachments">
+                                                            <table>
+                                                                <tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                </tr>
+                                                                </tr>
+                                                            </table>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <p className="pro-sub-title">Product Handle and Metafields</p>
                                         <label>Product handle</label>
                                         <input id="ai-pro-handle" type='text' />
