@@ -5,6 +5,8 @@ import AiMenu from "../Menubar/AiMenu";
 import { createData, getAllData } from "../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from "react-router-dom";
+import { Icon } from '@iconify/react';
+import product_image from '../../Images/employee.png'
 function AiFreelancer() {
 
     const [form, setform] = useState([])
@@ -128,6 +130,20 @@ function AiFreelancer() {
         Sellerskills()
     }, [])
 
+    // Skills
+
+
+
+    // Skills
+
+
+
+
+
+
+
+
+
     return (
         <>
             <div className="row">
@@ -183,23 +199,191 @@ function AiFreelancer() {
                                     <Link to="allfreelancer" role="button"><button className="cancel-btn">Cancel</button></Link>
                                 </form>
                             </div>
-                            <div className="freelance-form-div">
-                                <form className="freelance-form">
-                                    <h5 className="form-title">Freelancer Type</h5>
-                                    <input type='checkbox' id="ff-chbox" /><span>Fabricators</span>
-                                    <br></br>
-                                    <input type='checkbox' id="ff-chbox" /><span>Kitchen Designer</span>
-                                    <br></br>
-                                    <input type='checkbox' id="ff-chbox" /><span>Interior Designer</span>
-                                    <br></br>
-                                    <input type='checkbox' id="ff-chbox" /><span>Stone Seller</span>
-                                    <br></br>
-                                    <input type='checkbox' id="ff-chbox" /><span>Slink Manufacture</span>
-                                    <br></br>
-                                    <input type='checkbox' id="ff-chbox" /><span>Tap Seller</span>
-                                    <br></br>
-                                    <input type='checkbox' id="ff-chbox" /><span>Construction Company</span>
-                                </form>
+                            <div className="row">
+                                <div className="freelance-form-div col-10">
+                                    <form className="freelance-form">
+                                        <h5 className="form-title">Freelancer Type</h5>
+                                        <input type='checkbox' id="ff-chbox" /><span>Fabricators</span>
+                                        <br></br>
+                                        <input type='checkbox' id="ff-chbox" /><span>Kitchen Designer</span>
+                                        <br></br>
+                                        <input type='checkbox' id="ff-chbox" /><span>Interior Designer</span>
+                                        <br></br>
+                                        <input type='checkbox' id="ff-chbox" /><span>Stone Seller</span>
+                                        <br></br>
+                                        <input type='checkbox' id="ff-chbox" /><span>Slink Manufacture</span>
+                                        <br></br>
+                                        <input type='checkbox' id="ff-chbox" /><span>Tap Seller</span>
+                                        <br></br>
+                                        <input type='checkbox' id="ff-chbox" /><span>Construction Company</span>
+                                    </form>
+                                </div>
+                                <div className="freelance-form-div col-12">
+                                    <form className="freelance-form1">
+                                        <h5 className="form-title">Documents</h5>
+                                        <br></br>
+                                        <select className="frl-proof-sel">
+                                            <option>Freelancer Type</option>
+                                            <option>Registration Document</option>
+                                            <option>VAT Document</option>
+                                            <option>Driving License</option>
+                                            <option>Passport</option>
+                                        </select>
+                                        {/* <!-- Button trigger modal --> */}
+                                        <button type="button" class="upload-doc-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Upload
+                                        </button>
+                                        <br></br>
+                                        <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
+                                        <span className="fil-doc">File Document</span>
+                                        <select className="frl-proof-sel">
+                                            <option>Freelancer Type</option>
+                                            <option>Registration Document</option>
+                                            <option>VAT Document</option>
+                                            <option>Driving License</option>
+                                            <option>Passport</option>
+                                        </select>
+                                        {/* <!-- Button trigger modal --> */}
+                                        <button type="button" class="upload-doc-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Upload
+                                        </button>
+                                        <br></br>
+                                        <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
+                                        <span className="fil-doc">File Document</span>
+                                        <br></br>
+                                        <select className="frl-proof-sel">
+                                            <option>Freelancer Type</option>
+                                            <option>Registration Document</option>
+                                            <option>VAT Document</option>
+                                            <option>Driving License</option>
+                                            <option>Passport</option>
+                                        </select>
+                                        {/* <!-- Button trigger modal --> */}
+                                        <button type="button" class="upload-doc-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Upload
+                                        </button>
+                                        <br></br>
+                                        <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
+                                        <span className="fil-doc">File Document</span>
+                                        <br></br>
+                                        <select className="frl-proof-sel">
+                                            <option>Freelancer Type</option>
+                                            <option>Registration Document</option>
+                                            <option>VAT Document</option>
+                                            <option>Driving License</option>
+                                            <option>Passport</option>
+                                        </select>
+                                        {/* <!-- Button trigger modal --> */}
+                                        <button type="button" class="upload-doc-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Upload
+                                        </button>
+                                        <br></br>
+                                        <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
+                                        <span className="fil-doc">File Document</span>
+                                        <br></br>
+                                        <select className="frl-proof-sel">
+                                            <option>Freelancer Type</option>
+                                            <option>Registration Document</option>
+                                            <option>VAT Document</option>
+                                            <option>Driving License</option>
+                                            <option>Passport</option>
+                                        </select>
+
+                                        {/* <!-- Button trigger modal --> */}
+                                        <button type="button" class="upload-doc-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Upload
+                                        </button>
+                                        <br></br>
+                                        <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
+                                        <span className="fil-doc">File Document</span>
+                                        {/* <!-- Modal --> */}
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div>
+                                                        <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
+                                                        <p className="proadd-img-desc">to add the product images</p>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div className="upd-attachments">
+                                                            <Icon className="upload-file-icon" data-bs-toggle="modal" data-bs-target="#exampleModal1" icon="fluent:folder-arrow-up-20-filled" width="90" height="90" />
+                                                            <p className="ig-upldesc">Drag & Drop files here or choose file 50 MB max file size</p>
+                                                            <br></br>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Modal -2 */}
+                                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div>
+                                                        <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
+                                                        <p className="proadd-img-desc">to add the product images</p>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div className="upd-attachments">
+                                                            <table>
+                                                                <tr>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src={product_image} alt="product-img" className="attached-img" />
+                                                                        <i class="ri-close-line upload-img-close"></i>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
