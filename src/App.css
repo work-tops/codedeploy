@@ -1262,11 +1262,11 @@ a {
     margin-top: 20px;
   }
 
-  .address {
+  #address {
     font-size: 14px;
   }
 
-  .address {
+  #address {
     margin-top: 15px;
     margin-bottom: 1rem;
     font-size: 14px;
@@ -1391,6 +1391,10 @@ a {
 
   .route-link {
     text-decoration: none;
+  }
+
+  #links {
+    color: #fff;
   }
 
   /*header.css  // end//*/
@@ -2478,7 +2482,7 @@ a {
     cursor: pointer;
     margin-top: 15px;
     font-size: 14px;
-    color: #fff;
+    /* color: #fff; */
   }
 
   .ri-facebook-circle-fill,
@@ -4120,6 +4124,7 @@ a {
     margin-left: 20px;
     padding: 5px 0px 5px 5px;
   }
+
   .upd-attachments {
     border: 2px dotted #bdb5b5;
     /* width: 135%; */
@@ -4371,6 +4376,7 @@ a {
     border: 1px solid black;
     color: black;
   }
+
   .fix-btn-dis {
     position: relative;
     right: 48px;
@@ -4381,5 +4387,5 @@ a {
     border: 1px solid black;
     color: black;
     font-size: 12px;
-}
+  }
 }
