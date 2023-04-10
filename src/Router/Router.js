@@ -14,8 +14,6 @@ import JobProposal from "../Components/Project/ProjectDetails";
 import AllOrders from "../Components/Orders/AllOrders";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import AddServices from "../Services/AddServices";
-import GlobalCommission from "../Components/Commission/GlobalCommission";
-import ServiceCommission from "../Components/Commission/ServiceCommission";
 
 const Routers = () => {
     return (
@@ -32,8 +30,6 @@ const Routers = () => {
             <Route path='/allorders'><AllOrders /></Route>
             <Route path='/jobproposal'><JobProposal /></Route>
             <Route path='/addservices'><AddServices/></Route>
-            <Route path='/globalcommission'><GlobalCommission/></Route>
-            <Route path='/servicecommission'><ServiceCommission/></Route>
             {/* Routes for AI Pages //end*/}
             <Route path='/postproject'><PostAProject /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>

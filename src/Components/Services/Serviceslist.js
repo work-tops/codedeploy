@@ -7,19 +7,20 @@ import { getAllData, deleteData } from "../../Services/ProxyService";
 import ReactPaginate from 'react-paginate';
 import toast, { Toaster } from 'react-hot-toast';
 
-function AiProducts() {
+function Serviceslist() {
 
     const [product, setproducts] = useState([])
 
     const Productlist = async () => {
-        const response = await getAllData('products');
-        setproducts(response.data.products);
+        const response = await getAllData('services/all');
+        setproducts(response.data.services);
         setShowSpinner(false);
     }
+
     const productdel = async (data) => {
         const response = await deleteData('admin/product/' + data._id);
         if (response.status === 201) {
-            toast.success('Successfully Product Deleted')
+            toast.success('Successfully Freelancer Added')
             Productlist()
         } else {
             toast.error('Something went wrong')
@@ -54,8 +55,8 @@ function AiProducts() {
                         <div className="page-bg">
                             <div className="product-adding-div">
                                 <div>
-                                    <p className="ai-tit">product/product list</p>
-                                    <h4 className="ai-seller-title">All Products <span id="badge-1" className="badge bg-secondary">#100</span></h4>
+                                    <p className="ai-tit">Services/Services list</p>
+                                    <h4 className="ai-seller-title">All Services <span id="badge-1" className="badge bg-secondary">#100</span></h4>
                                 </div>
                                 <div className="row">
                                     <div className="dropdown col-6">
@@ -64,11 +65,11 @@ function AiProducts() {
                                         </button>
                                         <ul className="dropdown-menu">
                                             <li><a className="dropdown-item" href="#"><i className="fa-regular fa-pen-to-square"></i> Bulk Edit</a></li>
-                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-plus"></i> Add Product By CSV</a></li>
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-plus"></i> Add Services By CSV</a></li>
                                         </ul>
                                     </div>
                                     <div className="col-6">
-                                        <Link to="addproduct" role="button"><button className="add-seller">Add Products</button></Link>
+                                        <Link to="addservices" role="button"><button className="add-seller">Add Service</button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -110,15 +111,15 @@ function AiProducts() {
                                   <tbody>
                                   <tr className="product-heading ">
                                         <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                        <td id="td">Product ID
+                                        {/* <td id="td">Service ID
                                             <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
-                                        </td>
-                                        <td id="td">Image <i className="ri-arrow-down-s-fill"></i>
+                                        </td> */}
+                                        {/* <td id="td">Image <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
-                                        </td>
+                                        </td> */}
                                         <td id="td">Name <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
@@ -127,14 +128,15 @@ function AiProducts() {
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td>
+                                        <td id="td">Price Type <i className="ri-arrow-down-s-fill"></i>
+                                            <br></br>
+                                            <input id="filter-search" type="search" />
+                                        </td>
                                         <td id="td">Price <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td>
-                                        <td id="td">Quantity <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td>
+                                      
                                         <td id="td">Status <i className="ri-arrow-down-s-fill"></i>
                                             <br></br>
                                             <input id="filter-search" type="search" />
@@ -144,13 +146,13 @@ function AiProducts() {
                                     {lists.map((data, key) => (
                                         <tr>
                                             <td id="td"><input type='checkbox' /></td>
-                                            <td id="td">{data._id}</td>
-                                            <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td>
-                                            <td id="td">{data.name}</td>
-                                            <td id="td">{data.seller_email}</td>
-                                            <td id="td">£ {data.pricing.price}</td>
-                                            <td id="td">{data.inventory.quantity} Pcs.</td>
-                                            <td id="td"><span className="pro-status-approved">Approved</span></td>
+                                            {/* <td id="td">{data.title}</td> */}
+                                            {/* <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td> */}
+                                            <td id="td">{data.title}</td>
+                                            <td id="td">{data.email}</td>
+                                            <td id="td">{data.price_type} </td>
+                                            <td id="td">£ {data.price}</td>
+                                            <td id="td"><span className="pro-status-approved">{data.status}</span></td>
                                             <td id="td">
                                                 <div className="dropdown">
                                                     <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -207,4 +209,4 @@ function AiProducts() {
         </div>
     )
 }
-export default AiProducts
+export default Serviceslist
