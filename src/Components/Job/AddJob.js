@@ -30,25 +30,6 @@ function AddJob() {
     const [selectedFile, setSelectedFile] = useState(null);
     const [actualFiles, setActualFile] = useState([]);
     console.log(selectedFile)
-    // const handleFileInput = (e, i) => {
-    //     setSelectedFile(
-    //         "name"= e.target.files[i].name,
-    //         "url" = "https://myproject-data.s3.eu-west-2.amazonaws.com/images/" + e.target.files[i].name,
-    //         "type"= e.target.files[i].type
-    //     );
-
-    //     // uploadImage({
-    //     //     "name": e.target.files[i].name,
-    //     //     "url": "https://myproject-data.s3.eu-west-2.amazonaws.com/images/" + e.target.files[i].name,
-    //     //     "type": e.target.files[i].type
-    //     // })
-
-    //     // {
-    //     //     "name": e.target.files[0].name,
-    //     //     "url": "https://myproject-data.s3.eu-west-2.amazonaws.com/images/"+e.target.files[0].name,
-    //     //     "type": e.target.files[0].type
-    //     // }
-    // }
 
     const handleFileInput = (e) => {
         const files = e.target.files;

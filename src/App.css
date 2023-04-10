@@ -4115,8 +4115,16 @@ a {
     font-size: 14px;
   }
 
+  .upd-attachment {
+    border: 2px dotted #bdb5b5;
+    width: 135%;
+    /* width: 95%; */
+    margin-left: 20px;
+    padding: 5px 0px 5px 5px;
+  }
   .upd-attachments {
     border: 2px dotted #bdb5b5;
+    /* width: 135%; */
     width: 95%;
     margin-left: 20px;
     padding: 5px 0px 5px 5px;

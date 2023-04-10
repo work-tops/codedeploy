@@ -51,9 +51,10 @@ function AiFreelancer() {
             shop_name: form.shop_name,
             email: form.email,
             store_address: form.store_address,
-            city: "hyderabad",
-            zipcode: "500001",
-            country: "India",
+            city: "default",
+            zipcode: "default",
+            country: "default",
+            billing_address:"default",
             // city: form.city,
             // country: form.country,
             // zipcode: form.zipcode,
@@ -191,7 +192,7 @@ function AiFreelancer() {
                                     <span className="category">Password</span> <span className="seller-email">Confirm Password</span>
                                     <br></br>
                                     <input required name="password" value={form.password} onChange={(e) => { handleChange(e) }} id="aipro-category" type='password' />
-                                    <input required name="confirm_password" value={form.confirm_password} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
+                                    <input required name="confirm_password" value={form.confirm_password} onChange={(e) => { handleChange(e) }} id="aipro-email" type='password' />
                                     <br></br>
                                     <input id="terms-conditions" type='checkbox' /><span className="agree-note">You agree to the terms and conditions.</span>
                                     <br></br>
