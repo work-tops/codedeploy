@@ -1,6 +1,6 @@
 import React from "react";
 import profile_pic from '../../Images/employee.png'
-import ai_logo from '../../Images/ai-logo.png'
+import ai_logo from '../../Images/adminpanel_logo.png'
 import { Icon } from '@iconify/react';
 import { Link } from "react-router-dom";
 function AiMenu() {
@@ -16,7 +16,7 @@ function AiMenu() {
                 <Link to="alljob" role="button"><button><Icon icon="material-symbols:border-all-outline" /> Post a Job</button></Link>
                 <Link to="allorders" role="button"><button><Icon icon="mingcute:box-2-line" /> Orders</button></Link>
                 <button><Icon icon="material-symbols:payments-outline-sharp" /> Payments</button>
-                <button><Icon icon="mdi:brightness-percent" /> Commisson</button>
+                <Link to="globalcommission" role="button"><button><Icon icon="mdi:brightness-percent" /> Commisson</button></Link>
             </div>
             <div className="ms-3">
                 <p className="user-title">Profile</p>

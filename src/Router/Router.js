@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import ProjectDetails from "../Components/Project/ProjectDetails";
 import ProjectListing from "../Components/Project/ProjectListing";
 import SignUpPage from "../Components/User/SignUpPage";
 import SignUpForm from "../Components/User/SignupForm";
@@ -15,6 +14,8 @@ import JobProposal from "../Components/Project/ProjectDetails";
 import AllOrders from "../Components/Orders/AllOrders";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import AddServices from "../Services/AddServices";
+import GlobalCommission from "../Components/Commission/GlobalCommission";
+import ServiceCommission from "../Components/Commission/ServiceCommission";
 
 const Routers = () => {
     return (
@@ -31,11 +32,13 @@ const Routers = () => {
             <Route path='/allorders'><AllOrders /></Route>
             <Route path='/jobproposal'><JobProposal /></Route>
             <Route path='/addservices'><AddServices/></Route>
+            <Route path='/globalcommission'><GlobalCommission/></Route>
+            <Route path='/servicecommission'><ServiceCommission/></Route>
             {/* Routes for AI Pages //end*/}
             <Route path='/postproject'><PostAProject /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path='/signupform'><SignUpForm /></Route>
-            <Route path='/signuppage'><SignUpPage /></Route>
+            <Route path='/signuppage'><SignUpPage/></Route>
         </Switch>
 
     )

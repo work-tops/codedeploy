@@ -7,6 +7,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import product_image from '../../Images/employee.png'
+import SkillsMultiselectDropdown from "../SelectTag/SelectTag";
+
 function AiFreelancer() {
 
     const [form, setform] = useState([])
@@ -177,6 +179,9 @@ function AiFreelancer() {
                                     <br></br>
                                     <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
                                     <input required name="skills" value={form.skills} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
+                                    <br></br>
+                                    <label className="label">Skills:</label>
+                                    <SkillsMultiselectDropdown/>
                                     <br></br>
                                     <label>Company Address</label>
                                     <textarea required name="store_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>

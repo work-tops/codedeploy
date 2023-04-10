@@ -9,11 +9,13 @@ import 'remixicon/fonts/remixicon.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import Routers from './Router/Router';
+import AnimatedMulti from './Components/SelectTag/SelectTag';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
      <BrowserRouter>
          <Routers/>
+         {/* <AnimatedMulti/> */}
      </BrowserRouter>
   </React.StrictMode>
 );

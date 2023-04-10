@@ -3,6 +3,8 @@ import AiHeader from "../Components/Header/AiHeader";
 import AiMenu from "../Components/Menubar/AiMenu";
 import { Icon } from '@iconify/react';
 import product_image from '../Images/employee.png'
+import ServiceMultiselectDropdown from "../Components/SelectTag/ServiceTag";
+
 
 function AddServices() {
     return (
@@ -44,12 +46,7 @@ function AddServices() {
                                     <label className="label">Description</label>
                                     <textarea id="aipro-description" className="ai-product-description"></textarea>
                                     <label>Service Tag</label>
-                                    <input className="ai-product-tag" type='text'></input>
-                                    <br></br>
-                                    <br></br>
-                                    <input id="aipro-checkbox1" type='checkbox' /><span className="chc-span">Shipping Requires</span>
-                                    <input id="aipro-checkbox2" type='checkbox' /><span className="chc-span">Charge Taxes on this product</span>
-                                    <br></br>
+                                    <ServiceMultiselectDropdown/>
                                     <br></br>
                                     <span className="category">Price Type</span> <span className="service-price">Price</span>
                                     <br></br>
@@ -61,7 +58,7 @@ function AddServices() {
                                     <input id="aipro-email" type='email' />
                                     <br></br>
                                     <br></br>
-                                    <span className="category">Office Price</span> <span className="displayprice">Display Price</span>
+                                    <span className="category">Offer Price</span> <span className="displayprice">Display Price</span>
                                     <br></br>
                                     <input id="aipro-category" type='text' />
                                     <input id="aipro-email" type='email' />
@@ -87,7 +84,7 @@ function AddServices() {
                                 <br></br>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="img-upload-btn-1">Upload Images</button>
                                 {' '}
-                                <button className="img-upload-btn-1">Remove</button>
+                                <button className="img-upload-btn-2">Remove</button>
                                 <br></br>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="img-upload-btn">Upload Images</button>
                                 {/* Modal-1 */}
@@ -144,7 +141,7 @@ function AddServices() {
                                 <p className="pro-sub-title">Service Meta Fields</p>
                                 <p className="ai-title-desc">Title tag meta field</p>
                                 <input id="ai-pro-handle" type='text' />
-                                <p className="ai-title-desc">Descrption tag meta field</p>
+                                <p className="ai-title-desc">Description tag meta field</p>
                                 <input id="ai-pro-handle" type='text' />
                             </div>
 

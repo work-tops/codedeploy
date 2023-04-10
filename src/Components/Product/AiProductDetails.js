@@ -7,6 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Icon } from '@iconify/react';
 import product_image from '../../Images/employee.png'
 import variant_image from "../../Images/product_image.png"
+import ProductMultiselectDropdown from "../SelectTag/ProductTag";
 function AiProductDetails() {
 
     const [form, setform] = useState({
@@ -163,7 +164,9 @@ function AiProductDetails() {
                                             <br />
                                             <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input>
                                             <br></br>
-                                            {/*  */}
+                                            <label className="label">Product Tag</label>
+                                            <ProductMultiselectDropdown/>
+                                            <br></br>
 
                                             {/*  */}
                                             {/* <!-- Button trigger modal --> */}
@@ -384,7 +387,7 @@ function AiProductDetails() {
                                         <p className="pro-sub-title">Product Meta Fields</p>
                                         <p className="ai-title-desc">Title tag meta field</p>
                                         <input id="ai-pro-handle" type='text' />
-                                        <p className="ai-title-desc">Descrption tag meta field</p>
+                                        <p className="ai-title-desc">Description tag meta field</p>
                                         <input id="ai-pro-handle" type='text' />
                                     </div>
                                 </div >

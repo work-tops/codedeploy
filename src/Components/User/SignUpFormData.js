@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 function SignUpFormData() {
     return (
         <div className="bg-form">
@@ -19,8 +21,8 @@ function SignUpFormData() {
                         By Signing up you accept PeoplePerHour's Terms of Service.
                         I have read and understood PeoplePerHour's Privacy Policy.
                     </p>
-                    <input type="button" id="sign-up" value="SIGN UP" />
-                    <input type="button" id="back" value="Back" />
+                    <button id="sign-up">SIGN UP</button>
+                    <Link to="signuppage" role="button"><input type="button" id="back" value="Back" /></Link>
                 </form>
             </fieldset>
         </div>

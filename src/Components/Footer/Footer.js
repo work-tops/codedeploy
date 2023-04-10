@@ -1,7 +1,7 @@
 import React from "react";
 function Footer() {
     return (
-        <div className="footer">
+        <div>
             <div className="footer-box">
                 <div className="Decbase">
                     <h5 classname="footer-title">DECBASE</h5>

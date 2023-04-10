@@ -7,7 +7,7 @@ import { Icon } from '@iconify/react';
 import data from "../../Data/CustomerMailData";
 import { uploadImage } from "../../Services/ImageService";
 import { Link } from "react-router-dom";
-
+import product_image from '../../Images/employee.png'
 function AddJob() {
 
     //Customer Email (Javascript-Fun) 
@@ -57,30 +57,30 @@ function AddJob() {
         const _urls = [];
         _files.forEach((file) => {
             const reader = new FileReader();
-      
+
             reader.onload = () => {
-              _urls.push(reader.result);
-              setActualFile(_urls);
+                _urls.push(reader.result);
+                setActualFile(_urls);
             };
-      
+
             reader.readAsDataURL(file);
         });
         for (let i = 0; i < files.length; i++) {
-          fileArray.push({
-            name: files[i].name,
-            url: `https://myproject-data.s3.eu-west-2.amazonaws.com/images/${files[i].name}`,
-            type: files[i].type
-          });
+            fileArray.push({
+                name: files[i].name,
+                url: `https://myproject-data.s3.eu-west-2.amazonaws.com/images/${files[i].name}`,
+                type: files[i].type
+            });
         }
         setSelectedFile(fileArray);
-      };
+    };
 
     const uploadFile = () => {
-        console.log('actual files length',actualFiles.length);
+        console.log('actual files length', actualFiles.length);
         for (let i = 0; i < actualFiles.length; i++) {
             uploadImage(actualFiles[i]);
         }
-      };
+    };
 
 
     const [form, setform] = useState([])
@@ -218,6 +218,7 @@ function AddJob() {
                                                     <p className="cust-email">{item.email}</p>
                                                 </div>)}
                                     </div>
+                                    <br></br>
                                     <span className="category">Category</span> <span className="seller-email">Sub Category</span>
                                     <br></br>
                                     <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} className="select-category">
@@ -258,21 +259,95 @@ function AddJob() {
                                     </label>
                                     <div>
                                         <div className="row w-50 ms-5">
-                                        {actualFiles.map((file) => (
-                                           <div className="col">
-                                                <img height={100} src={file} alt="dashboard" className="" />
-                                           </div>
-                                        ))}
-                                            
+                                            {actualFiles.map((file) => (
+                                                <div className="col">
+                                                    <img height={100} src={file} alt="dashboard" className="" />
+                                                </div>
+                                            ))}
+
                                         </div>
                                     </div>
                                     <br />
                                     <br></br>
                                     <label className="label">Files:</label>
                                     <br></br>
-                                    <span className="kitchen-plan-div"><Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />KitchenPlan.pdf</span><i class="ri-close-line upload-img-close3"></i>
-                                    <span className="kitchen-plan-div"><Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />KitchenPlan.pdf</span><i class="ri-close-line upload-img-close3"></i>
-                                    <br></br>
+                                    <table className="added-fil-table">
+                                        <tr className="doc-ad-bg">
+                                            <td>
+                                                <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
+                                                <span className="kitchen-plan-div">KitchenPlan.pdf</span>
+                                                <i class="ri-close-line upload-img-close3"></i></td>
+                                            {' '}
+                                            <td><Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" /></td>
+                                            <td><span className="kitchen-plan-div">KitchenPlan.pdf</span><i class="ri-close-line upload-img-close3"></i></td>
+                                            <td>
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="add-upl-pdf-btn">Add</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    {/* Modal-1 */}
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div>
+                                                    <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
+                                                    <p className="proadd-img-desc">to add the service images</p>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div className="upd-attachments">
+                                                        <Icon className="upload-file-icon" data-bs-toggle="modal" data-bs-target="#exampleModal2" icon="fluent:folder-arrow-up-20-filled" width="90" height="90" />
+                                                        <p className="ig-upldesc">Drag & Drop files here or choose file 50 MB max file size</p>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Modal -2 */}
+                                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div>
+                                                    <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
+                                                    <p className="proadd-img-desc">to add the service images</p>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div className="upd-attachments">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <img src={product_image} alt="product-img" className="attached-img" />
+                                                                    <i class="ri-close-line upload-img-close"></i>
+                                                                </td>
+                                                                <td>
+                                                                    <img src={product_image} alt="product-img" className="attached-img" />
+                                                                    <i class="ri-close-line upload-img-close"></i>
+                                                                </td>
+                                                                <td>
+                                                                    <img src={product_image} alt="product-img" className="attached-img" />
+                                                                    <i class="ri-close-line upload-img-close"></i>
+                                                                </td>
+                                                                <td>
+                                                                    <img src={product_image} alt="product-img" className="attached-img" />
+                                                                    <i class="ri-close-line upload-img-close"></i>
+                                                                </td>
+                                                                <td>
+                                                                    <img src={product_image} alt="product-img" className="attached-img" />
+                                                                    <i class="ri-close-line upload-img-close"></i>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Add</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <br></br>
                                     <span className="category">Budget Type</span> <span className="job-currency">Currency</span>
                                     <br></br>
@@ -308,7 +383,7 @@ function AddJob() {
                                         <input id="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
                                     </div>
                                     <div className="prj-radio-div">
-                                        <input id="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
+                                        <input id="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon icon="ph:lock-simple-fill" width="24" height="24" /> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
                                     </div>
                                     <span className="category">Project Duration Time</span> <span className="job-expiry-date">Expiry Date</span>
                                     <br></br>

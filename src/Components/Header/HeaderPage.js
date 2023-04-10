@@ -1,11 +1,11 @@
 import React from "react";
-
+import Ailogo from '../../Images/Ai-logo.png'
 
 function HeaderPage() {
     return (
         <div className="header">
             <div>
-                <img src="" alt="DECBASE-logo" />
+                <img src={Ailogo} alt="DECBASE-logo" width="190px" height="75px"/>
             </div>
             <div className="others">
                 <div className="dropdown">
