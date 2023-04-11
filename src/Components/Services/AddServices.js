@@ -7,6 +7,7 @@ import product_image from '../../Images/employee.png'
 import { uploadImage } from "../../Services/ImageService";
 import { createData, getAllData } from "../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
+import ServiceMultiselectDropdown from "../SelectTag/ServiceTag";
 
 function AddServices() {
 
@@ -166,6 +167,8 @@ function AddServices() {
                                     <label>Service Tag</label>
                                     <input value={form.service_tag} required name="service_tag" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input>
                                     <br></br>
+                                    <label>Service Tag</label>
+                                    <ServiceMultiselectDropdown/>
                                     <br></br>
                                     <input id="aipro-checkbox1" type='checkbox' /><span className="chc-span">Shipping Requires</span>
                                     <input id="aipro-checkbox2" type='checkbox' /><span className="chc-span">Charge Taxes on this product</span>
@@ -205,7 +208,7 @@ function AddServices() {
                                         <small className="chose-file">No File Chosen</small>
                                     </div>
                                     {selectedFile == undefined || selectedFile == 0 ? (
-                                        <img src={product_image} alt="product-img" className="attached-img_1" />
+                                        <img src="" className="attached-img_1" />
                                     ) : (
                                         <>
                                             {/* {actualFiles.map((file) => ( */}
@@ -216,7 +219,7 @@ function AddServices() {
                                     <br></br>
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="img-upload-btn-1">Upload Images</button>
                                     {' '}
-                                    <button className="img-upload-btn-1">Remove</button>
+                                    <button className="img-upload-btn-2">Remove</button>
                                     <br></br>
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="img-upload-btn d-none">Upload Images</button>
                                     {/* Modal-1 */}

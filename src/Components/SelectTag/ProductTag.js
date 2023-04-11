@@ -22,8 +22,8 @@ function ProductMultiselectDropdown() {
   const [products] = useState(data)
   return (
     <>
-    <div className="multi-sel">
-      <Multiselect options={products} displayValue="ProCategories"/>
+    <div  className="multi-sel">
+      <Multiselect  options={products} displayValue="ProCategories"/>
     </div>
     </>
   )

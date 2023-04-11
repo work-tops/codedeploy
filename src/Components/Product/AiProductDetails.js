@@ -158,14 +158,14 @@ function AiProductDetails() {
                                             <br />
                                             <label>Description</label>
                                             <br />
-                                            <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
+                                            <textarea value={form.description}  name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
                                             <br />
                                             <label>Product Tag</label>
                                             <br />
                                             <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input>
                                             <br></br>
                                             <label className="label">Product Tag</label>
-                                            <ProductMultiselectDropdown/>
+                                            <ProductMultiselectDropdown />
                                             <br></br>
 
                                             {/*  */}
@@ -206,29 +206,29 @@ function AiProductDetails() {
                                                                 <p className="var-tit">Options</p>
                                                                 <p className="var-dec">Add Options details here</p>
                                                                 <label className="label">Colour</label>
-                                                                <select className="sel-colour">
+                                                                <select required className="sel-colour">
                                                                     <option>Black,Gold</option>
                                                                     <option>Grey,White</option>
                                                                     <option>Black,Grey</option>
                                                                     <option>Maroon,White</option>
                                                                 </select>
                                                                 <label className="label">Size</label>
-                                                                <input type="text" id="opt-ip-box" />
+                                                                <input required type="text" id="opt-ip-box" />
                                                                 <label className="label">Finish Type</label>
-                                                                <input type="text" id="opt-ip-box" />
+                                                                <input required type="text" id="opt-ip-box" />
                                                                 <br></br>
                                                                 <p className="var-tit">Price Details</p>
                                                                 <label className="label">Price</label>
-                                                                <input value={form.price} name="price" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
-                                                                <label className="label">Compare at Price</label>
-                                                                <input value={form.compareprice} name="compareprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <input required value={form.price} name="price" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <label  className="label">Compare at Price</label>
+                                                                <input  value={form.compareprice} name="compareprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
                                                                 <label className="label">Handling Charges</label>
                                                                 <input value={form.handlingcharge} name="handlingcharge" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label className="label">Sales Price</label>
                                                                 <input value={form.saleprice} name="saleprice" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <br></br>
-                                                                <input name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox1" type='checkbox' value="shipping" /><span className="chc-span">Shipping Requires</span>
-                                                                <input name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox2" type='checkbox' value="chargetax" /><span className="chc-span">Charge Taxes on this product</span>
+                                                                <input required name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox1" type='checkbox' value="shipping" /><span className="chc-span">Shipping Requires</span>
+                                                                <input required name="shipping" onChange={(e) => { handleChange(e) }} id="aipro-checkbox2" type='checkbox' value="chargetax" /><span className="chc-span">Charge Taxes on this product</span>
                                                                 <br></br>
                                                                 <br></br>
                                                                 <p className="var-tit">Inventory</p>
@@ -237,11 +237,11 @@ function AiProductDetails() {
                                                                 <label>Barcode</label>
                                                                 <input value={form.barcode} name="barcode" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label>Minimum Purchase Quantity</label>
-                                                                <input value={form.minimumperchase} name="minimumperchase" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
+                                                                <input required value={form.minimumperchase} name="minimumperchase" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='text' />
                                                                 <label>Quantity</label>
-                                                                <input value={form.quantity} name="quantity" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
+                                                                <input required value={form.quantity} name="quantity" onChange={(e) => { handleChange(e) }} id="opt-ip-box" type='number' />
                                                                 <br></br>
-                                                                <input id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
+                                                                <input required id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
                                                                 <br></br>
                                                                 <button type="submit" className="create-acc-btn">Add</button>
                                                             </div>
@@ -279,7 +279,7 @@ function AiProductDetails() {
                                             {/*  */}
                                             <label>Return Policy</label>
                                             <br />
-                                            <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
+                                            <textarea value={form.policy}  name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
                                             <button type='submit' className="create-acc-btn">Add Product</button>
 
                                         </form>
@@ -293,7 +293,7 @@ function AiProductDetails() {
                                         <div>
                                             <div className="row bg-pre">
                                                 <div className="col-4">
-                                                    <img src={product_image} width="50px" height="50px" className="pro-pre"/>
+                                                    <img src={product_image}  width="50px" height="50px" className="pro-pre"/>
                                                 </div>
                                                 <div className="col-4 fil-name">calcata.gold.jpg</div>
                                                 <div className="col-4 "><Icon icon="simple-line-icons:options" className="ico-menu"  /></div>
@@ -315,7 +315,7 @@ function AiProductDetails() {
                                                 <div className="col-4 "><Icon icon="simple-line-icons:options" className="ico-menu"  /></div>
                                             </div>
                                         </div>
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="img-upload-btn">Upload Images</button>
+                                        <button type="button" required  data-bs-toggle="modal" data-bs-target="#exampleModal" className="img-upload-btn">Upload Images</button>
                                         {/* Modal-1 */}
                                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-lg">

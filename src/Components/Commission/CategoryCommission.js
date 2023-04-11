@@ -2,7 +2,7 @@ import React from "react";
 import AiMenu from "../Menubar/AiMenu";
 import AiHeader from "../Header/AiHeader";
 import { Link } from "react-router-dom";
-function GlobalCommission() {
+function CategoryCommission() {
     return (
         <>
             <div className="row">
@@ -16,9 +16,9 @@ function GlobalCommission() {
                         </div>
                         <div className="col-12 page-bg">
                             <div className="ms-3">
-                                <p className="ai-sub-title">Commission / Global Commission</p>
-                                <h4>Global Commission</h4>
-                                <p className="ai-tit-desc">Here are setting for Global Commission</p>
+                                <p className="ai-sub-title">Commission / Category Commission</p>
+                                <h4>Category Commission</h4>
+                                <p className="ai-tit-desc">Here are setting for Category Commission</p>
                                 <div className="imp-note">
                                     <p className="not-tit">Note:</p>
                                     <ul type="none">
@@ -39,31 +39,60 @@ function GlobalCommission() {
                                     </ul>
                                 </div>
                                 <div className="global-com-setting-div">
-                                    <p className="global-com-setting-heading">Global Commission</p>
-                                    <p className="global-desc">Here are the setting for global commission</p>
-                                    <p className="gct">Global Commission Type</p>
+                                    <p className="global-com-setting-heading">Category Commission</p>
+                                    <p className="global-desc">Here are the setting for category commission</p>
+                                    <span className="category">Select Category Type</span> 
+                                    <span className="category-service">Select Product Category</span> 
+                                    <span className="category-service-1">Select Service Category</span>
+                                    <br></br>
+                                    <select id="aipro-service-comm">
+                                        <option>Choose the Option</option>
+                                        <option>Products</option>
+                                        <option>Services</option>
+                                    </select>
+                                    <select id="aipro-service-comm">
+                                        <option>Choose the Option</option>
+                                        <option>Granite</option>
+                                        <option>Marble</option>
+                                        <option>Quartz</option>
+                                        <option>Tiles</option>
+                                        <option>Quartzite</option>
+                                    </select>
+                                    <select id="aipro-service-comm">
+                                        <option>Choose the Option</option>
+                                        <option>Cleaning</option>
+                                        <option>Cabinets </option>
+                                        <option>fixing</option>
+                                        <option> Worktops  Installation</option>
+                                        <option>Loft Installation</option>
+                                        <option>Solar Panels Installation</option>
+                                        <option>Electrical Help</option>
+                                    </select>
+                                    <br></br>
+                                    <br></br>
+                                    <p className="gct">Category Commission Type</p>
                                     <select className="cgct">
-                                        <option>Choose global commission type</option>
+                                        <option>Choose category commission type</option>
                                         <option>%</option>
                                         <option>Fixed</option>
                                         <option>% + Fixed</option>
                                         <option>Fixed + %</option>
                                     </select>
                                     <hr></hr>
-                                    <label className="label">Global Commission</label>
+                                    <label className="label">Category Commission</label>
                                     <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
                                     <hr></hr>
-                                    <label className="label">Global Commission</label>
+                                    <label className="label">Category Commission</label>
                                     <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
                                     <hr></hr>
-                                    <label className="label">Global Commission</label>
+                                    <label className="label">Category Commission</label>
                                     <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
-                                    <label className="label">Second Global Commission</label>
+                                    <label className="label">Second Category Commission</label>
                                     <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
                                     <hr></hr>
-                                    <label className="label">Global Commission</label>
+                                    <label className="label">Category Commission</label>
                                     <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
-                                    <label className="label">Second Global Commission</label>
+                                    <label className="label">Second Category Commission</label>
                                     <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
                                     <hr></hr>
                                     <p className="upd-titl">UPDATE EARLIER PRODUCT PRICE</p>
@@ -81,4 +110,4 @@ function GlobalCommission() {
         </>
     )
 }
-export default GlobalCommission
+export default CategoryCommission

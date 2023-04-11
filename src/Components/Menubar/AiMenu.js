@@ -16,7 +16,14 @@ function AiMenu() {
                 <Link to="alljob" role="button"><button><Icon icon="material-symbols:border-all-outline" /> Post a Job</button></Link>
                 <Link to="allorders" role="button"><button><Icon icon="mingcute:box-2-line" /> Orders</button></Link>
                 <button><Icon icon="material-symbols:payments-outline-sharp" /> Payments</button>
-                <Link to="globalcommission" role="button"><button><Icon icon="mdi:brightness-percent" /> Commisson</button></Link>
+                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><Icon icon="mdi:brightness-percent" /> Commisson</button>
+                <div class="dropdown">
+                    <ul class="dropdown-menu">
+                        <li><Link to="globalcommission" role="button"><a id="drop-list" class="dropdown-item">Global Commisson</a></Link></li>
+                        <li><Link to="servicecommission" role="button"><a id="drop-list" class="dropdown-item">Services Commisson</a></Link></li>
+                        <li><Link to="allcommission" role="button"><a id="drop-list" class="dropdown-item">Category Commisson Settings</a></Link></li>
+                    </ul>
+                </div>
             </div>
             <div className="ms-3">
                 <p className="user-title">Profile</p>

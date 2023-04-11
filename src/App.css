@@ -2731,6 +2731,16 @@ a {
     margin-top: 10px;
   }
 
+  #aipro-service-comm {
+    margin-left: 20px;
+    padding: 5px;
+    width: 190px;
+    margin-bottom: 5px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
   .Add-Product input {
     border: 1px solid rgb(222, 171, 113);
   }
@@ -2798,6 +2808,16 @@ a {
   .service-price {
     font-size: 14px;
     margin-left: 145px;
+  }
+
+  .category-service {
+    font-size: 14px;
+    margin-left: 80px;
+  }
+
+  .category-service-1 {
+    font-size: 14px;
+    margin-left: 61px;
   }
 
   .salesprice {
@@ -2935,6 +2955,7 @@ a {
     border: none;
     margin-bottom: 10px;
     margin-right: 28px;
+    border-radius: 0px;
     padding: 7px;
     margin-top: 7px;
     width: 150px;
@@ -2947,6 +2968,7 @@ a {
     color: #fff;
     padding: 7px;
     text-align: justify;
+    outline: none !important;
   }
 
   .user-title {
@@ -3020,6 +3042,13 @@ a {
     background: burlywood;
     margin-left: -90px;
     width: 127px;
+  }
+
+  #drop-list:hover{
+    background-color: orange;
+    color: #fff;
+    padding:9px;
+    transition:all .5s;
   }
 
   .add-product-ai:hover {
@@ -4336,6 +4365,12 @@ a {
     margin-bottom: 20px;
   }
 
+  #flexSwitchCheckDefault {
+    background-color: #40c940;
+    padding: 10px;
+    width: 40px;
+  }
+
   .upd-titl {
     margin-left: 20px;
     margin-top: 20px;
@@ -4387,5 +4422,15 @@ a {
     border: 1px solid black;
     color: black;
     font-size: 12px;
+  }
+
+  .add-commission {
+    padding: 9px;
+    width: 240px;
+    border: none;
+    color: #fff;
+    background: #40c940;
+    margin-left: -5px;
+    margin-top: 47px;
   }
 }
