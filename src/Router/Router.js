@@ -16,6 +16,9 @@ import Dashboard from "../Components/Dashboard/Dashboard";
 import AddServices from "../Components/Services/AddServices";
 import GlobalCommission from "../Components/Commission/GlobalCommission";
 import ServiceCommission from "../Components/Commission/ServiceCommission";
+import Serviceslist from "../Components/Services/Serviceslist"
+import AllCommission from "../Components/Commission/AllCommission"
+import CategoryCommission from "../Components/Commission/CategoryCommission"
 const Routers = () => {
     return (
         <Switch>

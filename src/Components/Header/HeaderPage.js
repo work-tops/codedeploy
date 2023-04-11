@@ -1,5 +1,5 @@
 import React from "react";
-import Ailogo from '../../Images/ai-logo.png'
+import Ailogo from '../../Images/Ai-logo.png'
 
 function HeaderPage() {
     return (
