@@ -162,6 +162,14 @@ function AddJob() {
         // setsubcate(response.data.master[0].data.sub_category);
         // console.log(response.data.master[0].data.sub_category);
     }
+    const removeImage = async (index) => {
+        var selected = [...selectedFile];
+        var actual = [...actualFiles];
+        selected.splice(index,1);
+        actual.splice(index,1);
+        setActualFile(actual);
+        setSelectedFile(selected);
+    }
     useEffect(() => {
         Jobslist()
         selleremails()
@@ -238,14 +246,13 @@ function AddJob() {
                                             <input name="attachments" multiple onChange={handleFileInput} required type="file" id="select-basic" accept='image/*' style={{ display: 'none' }} />
                                         </div>
                                     </label>
-                                    <div>
+                                    <div className="d-none">
                                         <div className="row w-50 ms-5">
                                             {actualFiles.map((file) => (
                                                 <div className="col">
                                                     <img height={100} src={file} alt="dashboard" className="" />
                                                 </div>
                                             ))}
-
                                         </div>
                                     </div>
                                     <br />
@@ -254,14 +261,17 @@ function AddJob() {
                                     <br></br>
                                     <table className="added-fil-table">
                                         <tr className="doc-ad-bg">
-                                            <td>
-                                                <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
-                                                <span className="kitchen-plan-div">KitchenPlan.pdf</span>
-                                                <i class="ri-close-line upload-img-close3"></i></td>
-                                            {' '}
-                                            <td><Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" /></td>
-                                            <td><span className="kitchen-plan-div">KitchenPlan.pdf</span><i class="ri-close-line upload-img-close3"></i></td>
-                                            <td>
+                                            {actualFiles.map((file,index) => (
+                                                // <div className="col">
+                                                //     <img height={100} src={file} alt="dashboard" className="" />
+                                                // </div>
+                                                <td>
+                                                    <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
+                                                    <span className="kitchen-plan-div">{selectedFile[index].name}</span>
+                                                    <i class="ri-close-line upload-img-close3"  onClick={(e) => { removeImage(index) }}></i>
+                                                </td>
+                                            ))}
+                                            <td className="d-none">
                                                 <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="add-upl-pdf-btn">Add</button>
                                             </td>
                                         </tr>

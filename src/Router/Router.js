@@ -13,9 +13,10 @@ import AddJob from "../Components/Job/AddJob";
 import JobProposal from "../Components/Project/ProjectDetails";
 import AllOrders from "../Components/Orders/AllOrders";
 import Dashboard from "../Components/Dashboard/Dashboard";
-import AddServices from "../Services/AddServices";
+import AddServices from "../Components/Services/AddServices";
 import GlobalCommission from "../Components/Commission/GlobalCommission";
 import ServiceCommission from "../Components/Commission/ServiceCommission";
+import Serviceslist from "../Components/Services/Serviceslist";
 const Routers = () => {
     return (
         <Switch>
@@ -30,6 +31,7 @@ const Routers = () => {
             <Route path='/addjob'><AddJob /></Route>
             <Route path='/allorders'><AllOrders /></Route>
             <Route path='/jobproposal'><JobProposal /></Route>
+            <Route path='/allservices'><Serviceslist /></Route>
             <Route path='/addservices'><AddServices /></Route>
             <Route path='/globalcommission'><GlobalCommission /></Route>
             <Route path='/servicecommission'><ServiceCommission /></Route>
