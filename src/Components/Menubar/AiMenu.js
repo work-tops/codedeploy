@@ -31,7 +31,7 @@ function AiMenu() {
                 <span className="profile-user">Jhon Daniel</span>
                 <small className="user-email">jhondaniel@gmail.com</small>
                 <br></br>
-                <button className="user-log-out"><Icon icon="bx:log-out-circle" width="24" height="24" hFlip={true} /> Log Out</button>
+                <Link to="signuppage" role="button"><button className="user-log-out"><Icon icon="bx:log-out-circle" width="24" height="24" hFlip={true} /> Log Out</button></Link>
             </div>
         </>
     )
