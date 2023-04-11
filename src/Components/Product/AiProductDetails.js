@@ -463,7 +463,7 @@ function AiProductDetails() {
                                                 />
                                             </label>
 
-                                                <p className="pro-sub-title">Product Handle and Metafields</p>
+                                                <p className="pro-sub-title">Product Handle and Metafields </p>
                                                 <label>Product handle</label>
                                                 <input value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
                                                 <p className="pro-sub-title">Product Meta Fields</p>
