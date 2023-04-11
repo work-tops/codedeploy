@@ -113,7 +113,7 @@ function AddServices() {
 
 
     const Jobslist = async () => {
-        const response = await getAllData('master/job_category');
+        const response = await getAllData('master/service_category');
         setcate(response.data.master[0].data);
 
     }
@@ -152,8 +152,8 @@ function AddServices() {
                                     <br></br>
                                     <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category">
                                         <option value="">Select Option</option>
-                                        {cate.map((data) => (
-                                            <option value={data.category}>{data.category}</option>
+                                        {cate?.map((data) => (
+                                            <option value={data.value}>{data.value}</option>
                                         ))}
                                     </select>
                                     <select value={form.email} required name="email" onChange={(e) => { handleChange(e) }} id="aipro-category">
@@ -165,7 +165,8 @@ function AddServices() {
                                     <label className="label">Description</label>
                                     <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
                                     <label>Service Tag</label>
-                                    <input value={form.service_tag} required name="service_tag" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input>
+                                    <ServiceMultiselectDropdown/>
+                                    {/* <input value={form.service_tag} required name="service_tag" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input> */}
                                     <br></br>
                                     <label>Service Tag</label>
                                     <ServiceMultiselectDropdown/>
@@ -221,7 +222,6 @@ function AddServices() {
                                     {' '}
                                     <button className="img-upload-btn-2">Remove</button>
                                     <br></br>
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="img-upload-btn d-none">Upload Images</button>
                                     {/* Modal-1 */}
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">

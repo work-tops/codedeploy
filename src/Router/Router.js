@@ -16,9 +16,6 @@ import Dashboard from "../Components/Dashboard/Dashboard";
 import AddServices from "../Components/Services/AddServices";
 import GlobalCommission from "../Components/Commission/GlobalCommission";
 import ServiceCommission from "../Components/Commission/ServiceCommission";
-import AllCommission from "../Components/Commission/AllCommission";
-import CategoryCommission from "../Components/Commission/CategoryCommission";
-import Serviceslist from "../Components/Services/Serviceslist";
 const Routers = () => {
     return (
         <Switch>
@@ -33,6 +30,7 @@ const Routers = () => {
             <Route path='/addjob'><AddJob /></Route>
             <Route path='/allorders'><AllOrders /></Route>
             <Route path='/jobproposal'><JobProposal /></Route>
+            <Route path='/allservices'><Serviceslist /></Route>
             <Route path='/addservices'><AddServices /></Route>
             <Route path='/globalcommission'><GlobalCommission /></Route>
             <Route path='/servicecommission'><ServiceCommission /></Route>
