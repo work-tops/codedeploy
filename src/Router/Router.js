@@ -19,6 +19,9 @@ import ServiceCommission from "../Components/Commission/ServiceCommission";
 import Serviceslist from "../Components/Services/Serviceslist"
 import AllCommission from "../Components/Commission/AllCommission"
 import CategoryCommission from "../Components/Commission/CategoryCommission"
+import AiLoginPage from "../Components/Admin/AiLoginPage";
+import AllStaff from "../Components/Staff/AllStaff";
+import AddStaff from "../Components/Staff/AddStaff";
 const Routers = () => {
     return (
         <Switch>
@@ -40,6 +43,9 @@ const Routers = () => {
             <Route path="/allcommission"><AllCommission /></Route>
             <Route path="/categorycommission"><CategoryCommission /></Route>
             <Route path="/allservices"><Serviceslist /></Route>
+            <Route path="/ailogin"><AiLoginPage/></Route>
+            <Route path="/allstaff"><AllStaff/></Route>
+            <Route path="/addstaff"><AddStaff/></Route>
             {/* Routes for AI Pages //end*/}
             <Route path='/postproject'><PostAProject /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>

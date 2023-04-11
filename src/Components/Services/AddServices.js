@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { Icon } from '@iconify/react';
-import product_image from '../../Images/employee.png'
+// import product_image from '../../Images/employee.png'
 // import { Link } from "react-router-dom";
 import { uploadImage } from "../../Services/ImageService";
 import { createData, getAllData } from "../../Services/ProxyService";

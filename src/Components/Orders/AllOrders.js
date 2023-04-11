@@ -147,11 +147,8 @@ function AllOrders() {
                                                 <i className="fa-solid fa-ellipsis"></i>
                                             </a>
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
-                                                <li><a className="dropdown-item" href="#"><i className="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                                <li><a className="dropdown-item" href="#"><i className="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                                <li><a className="dropdown-item" href="#"><i className="fa-solid fa-xmark"></i> Disable</a></li>
-                                                <li><a className="dropdown-item" href="#"><i className="fa-solid fa-trash"></i> Delete</a></li>
+                                                <li><a className="dropdown-item" href="#"><i class="fa-solid fa-eye"></i> View</a></li>
+                                                <li><a className="dropdown-item" href="#"><i class="fa-solid fa-bell"></i> Send Remainder</a></li>
                                             </ul>
                                         </div>
                                     </td>

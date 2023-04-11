@@ -139,7 +139,7 @@ function AiProducts() {
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td>
-                                        <td id="td" className="rounded-end">Option</td>
+                                        <td id="td" className="rounded-end">Action</td>
                                     </tr>
                                     {lists.map((data, key) => (
                                         <tr>
@@ -158,6 +158,7 @@ function AiProducts() {
                                                     </a>
                                                     <ul className="dropdown-menu">
                                                         <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                                        <li><a className="dropdown-item" href="#"><i class="fa-solid fa-check"></i> Enable</a></li>
                                                         <li><a className="dropdown-item" href="#"><i className="fa-solid fa-bag-shopping"></i> View in Store</a></li>
                                                         <li><a className="dropdown-item" href="#"><i className="fa-solid fa-circle-user"></i> Reassign</a></li>
                                                         <li><a className="dropdown-item" href="#"><i className="fa-solid fa-xmark"></i> Disable</a></li>

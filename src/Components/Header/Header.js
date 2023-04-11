@@ -9,7 +9,9 @@ function Header() {
                 <img src="" alt="DECBASE-logo" />
             </div>
             <div className="others">
+                <div>
                 <button className="post_a_project">POST A SERVICE</button>
+                </div>
                 <div className="dropdown">
                     <a className="btn ddt dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         SEARCH
@@ -17,7 +19,7 @@ function Header() {
                     <ul className="dropdown-menu">
                         <li>
                             <a className="dropdown-item" id="dropdown-item" href="#">
-                                <Link className="route-link" to='/postproject'><span className="search_span">Post</span>Project</Link>
+                                <Link className="route-link" to='/postproject'><span className="search_span">Post </span>Project</Link>
                                 <br></br>
                                 <small id="small-dd">action...</small>
 
@@ -26,13 +28,13 @@ function Header() {
                         </li>
                         <li>
                             <a className="dropdown-item" id="dropdown-item" href="#">
-                                <Link className="route-link" to='/projectlisting'><span className="search_span">Project</span>Listing</Link>
+                                <Link className="route-link" to='/projectlisting'><span className="search_span">Project </span>Listing</Link>
                                 <br></br>
                                 <small id="small-dd">action...</small></a>
                         </li>
                         <li>
                             <a className="dropdown-item" id="dropdown-item" href="#">
-                                <Link className="route-link" to='/projectdetails'><span className="search_span">Job</span>Details</Link>
+                                <Link className="route-link" to='/projectdetails'><span className="search_span">Job </span>Details</Link>
                                 <br></br>
                                 <small id="small-dd">action...</small>
                             </a>

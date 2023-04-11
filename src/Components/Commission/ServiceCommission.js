@@ -14,10 +14,10 @@ function ServiceCommission() {
                             <AiHeader />
                         </div>
                         <div className="col-12 page-bg">
-                            <div className="ms-3">
-                                <p className="ai-sub-title">Commission / Service Commission</p>
-                                <h4>Service Commission</h4>
-                                <p className="ai-tit-desc">Here are setting for Service Commission</p>
+                            <div >
+                                <p className="ms-3 ai-sub-title">Commission / Service Commission</p>
+                                <h4 className="ms-3">Service Commission</h4>
+                                <p className="ms-3 ai-tit-desc">Here are setting for Service Commission</p>
                                 <div className="imp-note">
                                     <p className="not-tit">Note:</p>
                                     <ul type="none">
@@ -39,7 +39,7 @@ function ServiceCommission() {
                                 </div>
                                 <div className="global-com-setting-div">
                                     <p className="global-com-setting-heading">Service Commission</p>
-                                    <p className="global-desc">Here are the setting for global commission</p>
+                                    <p className="global-desc">Here are the setting for service commission</p>
                                     <p className="gct">Service Commission Type</p>
                                     <select className="cgct">
                                         <option>Choose service commission type</option>

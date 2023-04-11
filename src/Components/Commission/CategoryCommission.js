@@ -1,7 +1,7 @@
 import React from "react";
 import AiMenu from "../Menubar/AiMenu";
 import AiHeader from "../Header/AiHeader";
-import { Link } from "react-router-dom";
+
 function CategoryCommission() {
     return (
         <>
@@ -15,10 +15,10 @@ function CategoryCommission() {
                             <AiHeader />
                         </div>
                         <div className="col-12 page-bg">
-                            <div className="ms-3">
-                                <p className="ai-sub-title">Commission / Category Commission</p>
-                                <h4>Category Commission</h4>
-                                <p className="ai-tit-desc">Here are setting for Category Commission</p>
+                            <div>
+                                <p className="ms-3 ai-sub-title">Commission / Category Commission</p>
+                                <h4  className="ms-3">Category Commission</h4>
+                                <p className="ms-3 ai-tit-desc">Here are setting for Category Commission</p>
                                 <div className="imp-note">
                                     <p className="not-tit">Note:</p>
                                     <ul type="none">

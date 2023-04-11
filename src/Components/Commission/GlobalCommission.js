@@ -15,10 +15,10 @@ function GlobalCommission() {
                             <AiHeader />
                         </div>
                         <div className="col-12 page-bg">
-                            <div className="ms-3">
-                                <p className="ai-sub-title">Commission / Global Commission</p>
-                                <h4>Global Commission</h4>
-                                <p className="ai-tit-desc">Here are setting for Global Commission</p>
+                            <div>
+                                <p className=" ms-3 ai-sub-title">Commission / Global Commission</p>
+                                <h4 className=" ms-3">Global Commission</h4>
+                                <p className="ms-3 ai-tit-desc">Here are setting for Global Commission</p>
                                 <div className="imp-note">
                                     <p className="not-tit">Note:</p>
                                     <ul type="none">
