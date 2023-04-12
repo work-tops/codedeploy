@@ -18,7 +18,7 @@ function AllCommission() {
                     <div className="product-adding-div">
                         <div>
                             <br></br>
-                            <h4 className="ai-seller-title" >Category Commission Settings <span id="badge-1" class="badge bg-secondary">#100</span></h4>
+                            <h4 className="ai-seller-title" >Category Commission Settings <span id="badge-1" className="badge bg-secondary">#100</span></h4>
                             <p className="ai-title-note">Here are the Category Commission Setting on your store</p>
                         </div>
                         <div className="row">
@@ -52,31 +52,31 @@ function AllCommission() {
                         <table className="allproducts-table">
                             <tr className="product-heading ">
                                 <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                <td id="td">Freelancer ID <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">Freelancer ID <i className="ri-arrow-down-s-fill"></i>
                                 <br></br>
                                         <input id="filter-search" type="search"/>
                                 </td>
-                                <td id="td">Freelancer Profile <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">Freelancer Profile <i className="ri-arrow-down-s-fill"></i>
                                 <br></br>
                                         <input id="filter-search" type="search"/>
                                 </td>
-                                <td id="td">Company Name <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">Company Name <i className="ri-arrow-down-s-fill"></i>
                                 <br></br>
                                         <input id="filter-search" type="search"/>
                                 </td>
-                                <td id="td">Email ID <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">Email ID <i className="ri-arrow-down-s-fill"></i>
                                 <br></br>
                                         <input id="filter-search" type="search"/>
                                 </td>
-                                <td id="td">Commission Type <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">Commission Type <i className="ri-arrow-down-s-fill"></i>
                                 <br></br>
                                         <input id="filter-search" type="search"/>
                                 </td>
-                                <td id="td">First Commission <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">First Commission <i className="ri-arrow-down-s-fill"></i>
                                 <br></br>
                                         <input id="filter-search" type="search"/>
                                 </td>
-                                <td id="td">Second Commission <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">Second Commission <i className="ri-arrow-down-s-fill"></i>
                                 <br></br>
                                         <input id="filter-search" type="search"/>
                                 </td>
@@ -92,13 +92,13 @@ function AllCommission() {
                                 <td id="td">20 %</td>
                                 <td id="td">-</td>
                                 <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
+                                    <div className="dropdown">
+                                        <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i className="fa-solid fa-ellipsis"></i>
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                        <ul className="dropdown-menu">
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-trash"></i> Delete</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -113,13 +113,13 @@ function AllCommission() {
                                 <td id="td">10.00</td>
                                 <td id="td">-</td>
                                 <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
+                                    <div className="dropdown">
+                                        <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i className="fa-solid fa-ellipsis"></i>
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                        <ul className="dropdown-menu">
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-trash"></i> Delete</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -134,13 +134,13 @@ function AllCommission() {
                                 <td id="td">10 %</td>
                                 <td id="td">10.00</td>
                                 <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
+                                    <div className="dropdown">
+                                        <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i className="fa-solid fa-ellipsis"></i>
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                        <ul className="dropdown-menu">
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-trash"></i> Delete</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -155,13 +155,13 @@ function AllCommission() {
                                 <td id="td">10 %</td>
                                 <td id="td">-</td>
                                 <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
+                                    <div className="dropdown">
+                                        <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i className="fa-solid fa-ellipsis"></i>
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                        <ul className="dropdown-menu">
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-trash"></i> Delete</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -176,13 +176,13 @@ function AllCommission() {
                                 <td id="td">10 %</td>
                                 <td id="td">20.00</td>
                                 <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
+                                    <div className="dropdown">
+                                        <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i className="fa-solid fa-ellipsis"></i>
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                        <ul className="dropdown-menu">
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-trash"></i> Delete</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -197,13 +197,13 @@ function AllCommission() {
                                 <td id="td">20.00</td>
                                 <td id="td">10 %</td>
                                 <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
+                                    <div className="dropdown">
+                                        <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i className="fa-solid fa-ellipsis"></i>
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                        <ul className="dropdown-menu">
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-trash"></i> Delete</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -211,13 +211,13 @@ function AllCommission() {
                         </table>
                         <span className="showing-tag-name">Showing 1-30 List</span>
                         <div className="all-pro-pagination ">
-                            <button className="back-btn shadow bg-body rounded"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button className="back-btn shadow bg-body rounded"><i className="fa-solid fa-chevron-left"></i></button>
                             <button className="shadow bg-body rounded">1</button>
                             <button className="shadow bg-body rounded">2</button>
                             <button className="shadow bg-body rounded">3</button>
-                            <button className="shadow bg-body rounded"><i class="fa-solid fa-ellipsis"></i></button>
+                            <button className="shadow bg-body rounded"><i className="fa-solid fa-ellipsis"></i></button>
                             <button className="shadow bg-body rounded">25</button>
-                            <button className="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                            <button className="next-btn"><i className="fa-solid fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>

@@ -11,13 +11,14 @@ import ServiceMultiselectDropdown from "../SelectTag/ServiceTag";
 
 function AddServices() {
 
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [selectedFile, setSelectedFile] = useState({});
     const [actualFiles, setActualFile] = useState({});
-    console.log(actualFiles)
+    const [uploadFiles, setUploadFile] = useState([]);
 
     const handleFileInput = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
+        setUploadFile([file]);
     
         reader.onload = () => {
             const url = reader.result;
@@ -35,9 +36,18 @@ function AddServices() {
     };
 
     const uploadFile = () => {
-        console.log('actual file', actualFiles);
-        uploadImage(actualFiles);
+        console.log('uploadFiles length', uploadFiles.length);
+        for (let i = 0; i < uploadFiles.length; i++) {
+            uploadImage(uploadFiles[i]);
+        }
     };
+
+    const removeImage = () => {
+        console.log(selectedFile); // Check the data type and structure of selectedFile
+        setSelectedFile({});
+        setActualFile({});
+        setUploadFile([]);
+      };
 
 
     const [form, setform] = useState([])
@@ -69,7 +79,7 @@ function AddServices() {
             offer_price: form.offer_price,
             display_price: form.display_price,
             terms_and_condition: form.terms_and_condition,
-            attachment: JSON.stringify(selectedFile),
+            attachment: selectedFile,
             created_by: "1",
         }
         const response = await createData("service/new", Servicedata)
@@ -167,12 +177,12 @@ function AddServices() {
                                     <label>Service Tag</label>
                                     <ServiceMultiselectDropdown/>
                                     {/* <input value={form.service_tag} required name="service_tag" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input> */}
+                                    {/* <br></br> */}
+                                    {/* <label>Service Tag</label>
+                                    <ServiceMultiselectDropdown/> */}
                                     <br></br>
-                                    <label>Service Tag</label>
-                                    <ServiceMultiselectDropdown/>
-                                    <br></br>
-                                    <input id="aipro-checkbox1" type='checkbox' /><span className="chc-span">Shipping Requires</span>
-                                    <input id="aipro-checkbox2" type='checkbox' /><span className="chc-span">Charge Taxes on this product</span>
+                                    {/* <input id="aipro-checkbox1" type='checkbox' /><span className="chc-span">Shipping Requires</span>
+                                    <input id="aipro-checkbox2" type='checkbox' /><span className="chc-span">Charge Taxes on this product</span> */}
                                     <br></br>
                                     <br></br>
                                     <span className="category">Price Type</span> <span className="service-price">Price</span>
@@ -204,12 +214,12 @@ function AddServices() {
                                         <option value="Active">Active</option>
                                     </select>
                                     <p className="ai-pro-title">Service Images</p>
-                                    <div className="ai-image-drag">
-                                        <i class="ai-img-icon ri-image-fill"></i>
+                                   
+                                    {selectedFile?.name == undefined || selectedFile?.name == null? (
+                                        <div className="ai-image-drag">
+                                        <i className="ai-img-icon ri-image-fill"></i>
                                         <small className="chose-file">No File Chosen</small>
                                     </div>
-                                    {selectedFile == undefined || selectedFile == 0 ? (
-                                        <img src="" className="attached-img_1" />
                                     ) : (
                                         <>
                                             {/* {actualFiles.map((file) => ( */}
@@ -218,84 +228,25 @@ function AddServices() {
                                         </>
                                     )}
                                     <br></br>
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="img-upload-btn-1">Upload Images</button>
+                                    <label htmlFor="select-basic" className="mb-75 me-75" style={{ fontSize: "small", color: "blue" }}>
+                                            <button type="button" className="img-upload-btn-1" onClick={() => document.getElementById('select-basic').click()}>
+                                                Upload Images
+                                            </button>
+                                            <input
+                                                name="attachments"
+                                                // multiple
+                                                onChange={handleFileInput}
+                                                required
+                                                type="file"
+                                                id="select-basic"
+                                                accept="image/*"
+                                                style={{ display: "none" }}
+                                            />
+                                        </label>
+                                  
                                     {' '}
-                                    <button className="img-upload-btn-2">Remove</button>
+                                    <button type="button" onClick={removeImage} className="img-upload-btn-2">Remove</button>
                                     <br></br>
-                                    {/* Modal-1 */}
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div>
-                                                    <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
-                                                    <p className="proadd-img-desc">to add the service images</p>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <label htmlFor="select-basic" className='mb-75 me-75' size='sm' color='primary'>
-                                                        <div className="upd-attachment">
-                                                            <Icon className="upload-file-icon" data-bs-toggle="modal" data-bs-target="#exampleModal2" icon="fluent:folder-arrow-up-20-filled" width="90" height="90" />
-                                                            <p className="ig-upldesc">Drag & Drop files here or choose file 50 MB max file size</p>
-                                                            <input name="attachment" onChange={handleFileInput} required type="file" id="select-basic" accept='image/*' style={{ display: 'none' }} />
-                                                        </div>
-
-                                                    </label>
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* Modal -2 */}
-                                    {selectedFile == undefined || selectedFile == 0 ? (
-                                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div style={{ display: "none" }} class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div>
-                                                        <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
-                                                        <p className="proadd-img-desc">to add the service images</p>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div className="upd-attachments">
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Add</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ) : (
-                                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div>
-                                                        <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
-                                                        <p className="proadd-img-desc">to add the service images</p>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div className="upd-attachments">
-                                                            <table>
-                                                                <tr>
-                                                                    <td>
-                                                                        {/* {actualFiles.map((file) => ( */}
-                                                                            <img src={actualFiles} alt="product-img" className="attached-img1" />
-                                                                        {/* ))} */}
-                                                                        <i class="ri-close-line upload-img-close1"></i>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Add</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )}
 
                                     <p className="pro-sub-title">Services Handle and Metafields</p>
                                     <label>Service handle</label>
