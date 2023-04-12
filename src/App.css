@@ -3082,7 +3082,7 @@ a {
     border: none;
     color: #fff;
     background: #40c940;
-    margin-left: -25px;
+    margin-left: -10px;
     margin-top: 47px;
   }
 
@@ -3289,6 +3289,18 @@ a {
     border: none;
     width: 150px;
     margin-left: 20px;
+    font-size: 14px;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: #4bb54b;
+    color: #fff;
+  }
+  .create-acc-btn-1 {
+    border: none;
+    width: 150px;
+    margin-left: -18px;
     font-size: 14px;
     padding: 8px;
     margin-top: 15px;
