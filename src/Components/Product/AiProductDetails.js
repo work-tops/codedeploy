@@ -5,7 +5,6 @@ import { createData, getAllData } from "../../Services/ProxyService";
 import { uploadImage } from "../../Services/ImageService";
 import toast, { Toaster } from 'react-hot-toast';
 import { Icon } from '@iconify/react';
-import product_image from '../../Images/employee.png'
 import variant_image from "../../Images/product_image.png"
 // import ProductMultiselectDropdown from "../SelectTag/ProductTag";
 import Multiselect from "multiselect-react-dropdown";
@@ -246,10 +245,10 @@ function AiProductDetails() {
                         <div className="ai-product-div">
                             <AiHeader />
                             <div className="page-bg">
-                                <div className="ms-3">
-                                    <p className="ai-sub-title">products/edit product</p>
-                                    <h4>Add Product</h4>
-                                    <p className="ai-tit-desc">Here You Can add products to your profile</p>
+                                <div className="">
+                                    <p className="ai-title">products/edit product</p>
+                                    <h4 className="ai-add-title">Add Product</h4>
+                                    <p className="ai-title-desc">Here You Can add products to your profile</p>
                                 </div>
                                 <form onSubmit={(e) => { formsubmit(e) }}>
                                     <div className="product-div">
@@ -290,19 +289,6 @@ function AiProductDetails() {
                                                 <br />
                                                 <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input>
                                                 <br></br>
-                                                <label className="label">Product Tag</label>
-                                                {/* <ProductMultiselectDropdown /> */}
-                                                <div className="multi-sel">
-                                                    <Multiselect
-                                                        name="tags"
-                                                        value={selectedMulti}
-                                                        onSelect={handleMulti}
-                                                        options={options}
-                                                        displayValue="ProCategories"
-                                                    />
-                                                </div>
-                                                <br></br>
-
                                                 {/*  */}
                                                 {/* <!-- Button trigger modal --> */}
                                                 <button id="aipro-addvariant" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -471,6 +457,72 @@ function AiProductDetails() {
                                                 <input value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
                                                 <p className="ai-title-desc">Description tag meta field</p>
                                                 <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
+                                                <p className="pro-sub-title">Product Tags </p>
+                                                <label className="label">Category</label>
+                                                <div className="multi-sel">
+                                                    <Multiselect
+                                                        name="tags"
+                                                        value={selectedMulti}
+                                                        onSelect={handleMulti}
+                                                        options={options}
+                                                        displayValue="ProCategories"
+                                                    />
+                                                </div>
+                                                <label className="label">Colour</label>
+                                                <div className="multi-sel">
+                                                    <Multiselect
+                                                        name="tags"
+                                                        value={selectedMulti}
+                                                        onSelect={handleMulti}
+                                                        options={options}
+                                                        displayValue="ProCategories"
+                                                    />
+                                                </div>
+                                                
+                                                <label className="label">Finish Type</label>
+                                                <div className="multi-sel">
+                                                    <Multiselect
+                                                        name="tags"
+                                                        value={selectedMulti}
+                                                        onSelect={handleMulti}
+                                                        options={options}
+                                                        displayValue="ProCategories"
+                                                    />
+                                                </div>
+                                                
+                                                <label className="label">Length</label>
+                                                <div className="multi-sel">
+                                                    <Multiselect
+                                                        name="tags"
+                                                        value={selectedMulti}
+                                                        onSelect={handleMulti}
+                                                        options={options}
+                                                        displayValue="ProCategories"
+                                                    />
+                                                </div>
+                                                
+                                                <label className="label">Width</label>
+                                                <div className="multi-sel">
+                                                    <Multiselect
+                                                        name="tags"
+                                                        value={selectedMulti}
+                                                        onSelect={handleMulti}
+                                                        options={options}
+                                                        displayValue="ProCategories"
+                                                    />
+                                                </div>
+                                                
+                                                <label className="label">Thickness</label>
+                                                <div className="multi-sel">
+                                                    <Multiselect
+                                                        name="tags"
+                                                        value={selectedMulti}
+                                                        onSelect={handleMulti}
+                                                        options={options}
+                                                        displayValue="ProCategories"
+                                                    />
+                                                </div>
+                                                <button className="addtag-row-btn">Add Row</button>
                                             </div>
                                         </div >
                                 </form>

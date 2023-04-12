@@ -21,6 +21,7 @@ function AiMenu() {
                     <ul class="dropdown-menu">
                         <li><Link to="globalcommission" role="button"><a id="drop-list" class="dropdown-item">Global Commisson</a></Link></li>
                         <li><Link to="servicecommission" role="button"><a id="drop-list" class="dropdown-item">Services Commisson</a></Link></li>
+                        <li><Link to="allfreelancercommission" role="button"><a id="drop-list" class="dropdown-item">Freelancer Commisson Settings</a></Link></li>
                         <li><Link to="allcommission" role="button"><a id="drop-list" class="dropdown-item">Category Commisson Settings</a></Link></li>
                     </ul>
                 </div>
@@ -31,7 +32,7 @@ function AiMenu() {
                 <span className="profile-user">Jhon Daniel</span>
                 <small className="user-email">jhondaniel@gmail.com</small>
                 <br></br>
-                <Link to="signuppage" role="button"><button className="user-log-out"><Icon icon="bx:log-out-circle" width="24" height="24" hFlip={true} /> Log Out</button></Link>
+                <Link to="ailogin" role="button"><button className="user-log-out"><Icon icon="bx:log-out-circle" width="24" height="24" hFlip={true} /> Log Out</button></Link>
             </div>
         </>
     )

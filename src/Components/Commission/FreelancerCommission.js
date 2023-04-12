@@ -1,8 +1,7 @@
 import React from "react";
 import AiMenu from "../Menubar/AiMenu";
 import AiHeader from "../Header/AiHeader";
-
-function CategoryCommission() {
+function FreelancerCommission() {
     return (
         <>
             <div className="row">
@@ -15,10 +14,10 @@ function CategoryCommission() {
                             <AiHeader />
                         </div>
                         <div className="col-12 page-bg">
-                            <div>
-                                <p className="ms-3 ai-sub-title">Commission / Category Commission</p>
-                                <h4  className="ms-3">Category Commission</h4>
-                                <p className="ms-3 ai-tit-desc">Here are setting for Category Commission</p>
+                            <div >
+                                <p className="ms-3 ai-sub-title">Commission / Freelancer Commission</p>
+                                <h4 className="ms-3">Freelancer Commission</h4>
+                                <p className="ms-3 ai-tit-desc">Here are setting for Freelancer Commission</p>
                                 <div className="imp-note">
                                     <p className="not-tit">Note:</p>
                                     <ul type="none">
@@ -39,60 +38,38 @@ function CategoryCommission() {
                                     </ul>
                                 </div>
                                 <div className="global-com-setting-div">
-                                    <p className="global-com-setting-heading">Category Commission</p>
-                                    <p className="global-desc">Here are the setting for category commission</p>
-                                    <span className="category">Select Category Type</span> 
-                                    <span className="category-service">Select Product Category</span> 
-                                    <span className="category-service-1">Select Service Category</span>
-                                    <br></br>
-                                    <select id="aipro-service-comm">
-                                        <option>Choose the Option</option>
-                                        <option>Products</option>
-                                        <option>Services</option>
-                                    </select>
-                                    <select id="aipro-service-comm">
-                                        <option>Choose the Option</option>
-                                        <option>Granite</option>
-                                        <option>Marble</option>
-                                        <option>Quartz</option>
-                                        <option>Tiles</option>
-                                        <option>Quartzite</option>
-                                    </select>
-                                    <select id="aipro-service-comm">
-                                        <option>Choose the Option</option>
-                                        <option>Cleaning</option>
-                                        <option>Cabinets </option>
-                                        <option>fixing</option>
-                                        <option> Worktops  Installation</option>
-                                        <option>Loft Installation</option>
-                                        <option>Solar Panels Installation</option>
-                                        <option>Electrical Help</option>
-                                    </select>
-                                    <br></br>
-                                    <br></br>
-                                    <p className="gct">Category Commission Type</p>
+                                    <p className="global-com-setting-heading">Freelancer Commission</p>
+                                    <p className="global-desc">Here are the setting for freelancer commission</p>
+                                    <p className="gct">Select Freelancer Email</p>
                                     <select className="cgct">
-                                        <option>Choose category commission type</option>
+                                        <option>test@test.com</option>
+                                        <option>test@test.com</option>
+                                        <option>test@test.com</option>
+                                        <option>test@test.com</option>
+                                    </select>
+                                    <p className="gct">Freelancer Commission Type</p>
+                                    <select className="cgct">
+                                        <option>Choose freelancer commission type</option>
                                         <option>%</option>
                                         <option>Fixed</option>
                                         <option>% + Fixed</option>
                                         <option>Fixed + %</option>
                                     </select>
                                     <hr></hr>
-                                    <label className="label">Category Commission</label>
+                                    <label className="label">Freelancer Commission</label>
                                     <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
                                     <hr></hr>
-                                    <label className="label">Category Commission</label>
+                                    <label className="label">Freelancer Commission</label>
                                     <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
                                     <hr></hr>
-                                    <label className="label">Category Commission</label>
+                                    <label className="label">Freelancer Commission</label>
                                     <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
-                                    <label className="label">Second Category Commission</label>
+                                    <label className="label">Second Freelancer Commission</label>
                                     <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
                                     <hr></hr>
-                                    <label className="label">Category Commission</label>
+                                    <label className="label">Freelancer Commission</label>
                                     <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
-                                    <label className="label">Second Category Commission</label>
+                                    <label className="label">Second Freelancer Commission</label>
                                     <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
                                     <hr></hr>
                                     <p className="upd-titl">UPDATE EARLIER PRODUCT PRICE</p>
@@ -100,7 +77,7 @@ function CategoryCommission() {
                                         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                                         <br></br>
                                         <p className="switch-des">If you enable this option , all the prices of exisiting products will change according to the given commission value</p>
-                                        <button className="create-acc-btn">Save Changes</button>
+                                        <button className="create-acc-btn-1">Save Changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -111,4 +88,4 @@ function CategoryCommission() {
         </>
     )
 }
-export default CategoryCommission
+export default FreelancerCommission

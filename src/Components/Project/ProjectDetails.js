@@ -3,8 +3,7 @@ import Header from "../Header/Header";
 import Menubar from "../Menubar/Menubar";
 import JobPost from "../Job/JobPost";
 import ProjectInformation from "../Others/CustomWebsiteDevelopment";
-// import FooterPageThree from "../Footer/FooterPage3";
-// import Footer from '../Footer/Footer'
+import Footer from '../Footer/Footer'
 function JobProposal() {
     return (
         <>
@@ -21,8 +20,8 @@ function JobProposal() {
                 <div className="col-12">
                     <ProjectInformation />
                 </div>
-                <div>
-                    {/* <Footer/> */}
+                <div className="col-12">
+                    <Footer/>
                 </div>
             </div>
         </>
