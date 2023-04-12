@@ -94,81 +94,86 @@ function AiProducts() {
                                 List
                             </p>
                             <div className="all-jobs-div">
-                            <div style={{ height: '0px' }} className="text-center">
-                            {showSpinner && (
-                                <div
-                                    className="spinner-border"
-                                    role="status"
-                                    style={{ width: '70px', height: '70px', fontSize: "20px", opacity:"0.7" }} // set the width and height here
-                                >
-                                    <span className="sr-only">Loading...</span>
+                                <div style={{ height: '0px' }} className="text-center">
+                                    {showSpinner && (
+                                        <div
+                                            className="spinner-border"
+                                            role="status"
+                                            style={{ width: '70px', height: '70px', fontSize: "20px", opacity: "0.7" }} // set the width and height here
+                                        >
+                                            <span className="sr-only">Loading...</span>
+                                        </div>
+                                    )}
                                 </div>
-                            )}
-                        </div>
-                        
+
                                 <table className="allproducts-table">
-                                  <tbody>
-                                  <tr className="product-heading ">
-                                        <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                        <td id="td">Product ID
-                                            <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td>
-                                        <td id="td">Image <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td>
-                                        <td id="td">Name <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td>
-                                        <td id="td">Seller <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td>
-                                        <td id="td">Price <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td>
-                                        <td id="td">Quantity <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td>
-                                        <td id="td">Status <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td>
-                                        <td id="td" className="rounded-end">Action</td>
-                                    </tr>
-                                    {lists.map((data, key) => (
-                                        <tr>
-                                            <td id="td"><input type='checkbox' /></td>
-                                            <td id="td">{data._id}</td>
-                                            <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td>
-                                            <td id="td">{data.name}</td>
-                                            <td id="td">{data.seller_email}</td>
-                                            <td id="td">£ {data.pricing.price}</td>
-                                            <td id="td">{data.inventory.quantity} Pcs.</td>
-                                            <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                            <td id="td">
-                                                <div className="dropdown">
-                                                    <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i className="fa-solid fa-ellipsis"></i>
-                                                    </a>
-                                                    <ul className="dropdown-menu">
-                                                        <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i class="fa-solid fa-check"></i> Enable</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="fa-solid fa-bag-shopping"></i> View in Store</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="fa-solid fa-circle-user"></i> Reassign</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="fa-solid fa-xmark"></i> Disable</a></li>
-                                                        <li><a onClick={() => { productdel(data) }} className="dropdown-item" ><i className="fa-solid fa-trash"></i> Delete</a></li>
-                                                    </ul>
-                                                </div>
+                                    <tbody>
+                                        <tr className="product-heading ">
+                                            <td id="td" className="rounded-start"><input type='checkbox' /></td>
+                                            <td id="td">Product ID
+                                                <i className="ri-arrow-down-s-fill"></i>
+                                                <br></br>
+                                                <input id="filter-search" type="search" />
                                             </td>
+                                            <td id="td">Image <i className="ri-arrow-down-s-fill"></i>
+                                                <br></br>
+                                                <input id="filter-search" type="search" />
+                                            </td>
+                                            <td id="td">Name <i className="ri-arrow-down-s-fill"></i>
+                                                <br></br>
+                                                <input id="filter-search" type="search" />
+                                            </td>
+                                            <td id="td">Seller <i className="ri-arrow-down-s-fill"></i>
+                                                <br></br>
+                                                <input id="filter-search" type="search" />
+                                            </td>
+                                            <td id="td">Price <i className="ri-arrow-down-s-fill"></i>
+                                                <br></br>
+                                                <input id="filter-search" type="search" />
+                                            </td>
+                                            <td id="td">Quantity <i className="ri-arrow-down-s-fill"></i>
+                                                <br></br>
+                                                <input id="filter-search" type="search" />
+                                            </td>
+                                            <td id="td">Status <i className="ri-arrow-down-s-fill"></i>
+                                                <br></br>
+                                                <input id="filter-search" type="search" />
+                                            </td>
+                                            <td id="td" className="rounded-end">Action</td>
                                         </tr>
-                                    ))}
-                                  </tbody>
+                                        {lists.map((data, key) => (
+                                            <tr>
+                                                <td id="td"><input type='checkbox' /></td>
+                                                <td id="td">{data._id}</td>
+                                                <td id="td">
+                                                    {data.attachments.length > 0 ?
+                                                        (<img src={data.attachments[0]?.url} alt="pro-thumb" className="img" />) : (<img src={pom} alt="pro-thumb" className="img" />)
+                                                    }
+
+                                                </td>
+                                                <td id="td">{data.name}</td>
+                                                <td id="td">{data.seller_email}</td>
+                                                <td id="td">£ 100</td>
+                                                <td id="td">10 Pcs.</td>
+                                                <td id="td"><span className="pro-status-approved">Approved</span></td>
+                                                <td id="td">
+                                                    <div className="dropdown">
+                                                        <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i className="fa-solid fa-ellipsis"></i>
+                                                        </a>
+                                                        <ul className="dropdown-menu">
+                                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-check"></i> Enable</a></li>
+                                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-bag-shopping"></i> View in Store</a></li>
+                                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-circle-user"></i> Reassign</a></li>
+                                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-xmark"></i> Disable</a></li>
+                                                            <li><a onClick={() => { productdel(data) }} className="dropdown-item" ><i className="fa-solid fa-trash"></i> Delete</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
 
                                 </table>
 

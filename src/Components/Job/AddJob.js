@@ -27,25 +27,15 @@ function AddJob() {
 
     //Customer-Email Js Fun Ends// 
 
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [selectedFile, setSelectedFile] = useState([]);
     const [actualFiles, setActualFile] = useState([]);
+    const [uploadFiles, setUploadFile] = useState([]);
     console.log(selectedFile)
 
     const handleFileInput = (e) => {
         const files = e.target.files;
         const fileArray = [];
-        const _files = Array.from(e.target.files);
-        const _urls = [];
-        _files.forEach((file) => {
-            const reader = new FileReader();
-
-            reader.onload = () => {
-                _urls.push(reader.result);
-                setActualFile(_urls);
-            };
-
-            reader.readAsDataURL(file);
-        });
+        
         for (let i = 0; i < files.length; i++) {
             fileArray.push({
                 name: files[i].name,
@@ -54,12 +44,13 @@ function AddJob() {
             });
         }
         setSelectedFile(fileArray);
+        setUploadFile(files);
     };
 
     const uploadFile = () => {
-        console.log('actual files length', actualFiles.length);
-        for (let i = 0; i < actualFiles.length; i++) {
-            uploadImage(actualFiles[i]);
+        console.log('uploadFiles length', uploadFiles.length);
+        for (let i = 0; i < uploadFiles.length; i++) {
+            uploadImage(uploadFiles[i]);
         }
     };
 
@@ -164,11 +155,11 @@ function AddJob() {
     }
     const removeImage = async (index) => {
         var selected = [...selectedFile];
-        var actual = [...actualFiles];
+        var uploads = [...uploadFiles];
         selected.splice(index,1);
-        actual.splice(index,1);
-        setActualFile(actual);
+        uploads.splice(index, 1);
         setSelectedFile(selected);
+        setUploadFile(uploads);
     }
     useEffect(() => {
         Jobslist()
@@ -246,29 +237,20 @@ function AddJob() {
                                             <input name="attachments" multiple onChange={handleFileInput} required type="file" id="select-basic" accept='image/*' style={{ display: 'none' }} />
                                         </div>
                                     </label>
-                                    <div className="d-none">
-                                        <div className="row w-50 ms-5">
-                                            {actualFiles.map((file) => (
-                                                <div className="col">
-                                                    <img height={100} src={file} alt="dashboard" className="" />
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
                                     <br />
                                     <br></br>
                                     <label className="label">Files:</label>
                                     <br></br>
                                     <table className="added-fil-table">
                                         <tr className="doc-ad-bg">
-                                            {actualFiles.map((file,index) => (
+                                            {selectedFile.map((file,index) => (
                                                 // <div className="col">
                                                 //     <img height={100} src={file} alt="dashboard" className="" />
                                                 // </div>
                                                 <td>
                                                     <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
-                                                    <span className="kitchen-plan-div">{selectedFile[index].name}</span>
-                                                    <i class="ri-close-line upload-img-close3"  onClick={(e) => { removeImage(index) }}></i>
+                                                    <span className="kitchen-plan-div">{file.name}</span>
+                                                    <i className="ri-close-line upload-img-close3"  onClick={(e) => { removeImage(index) }}></i>
                                                 </td>
                                             ))}
                                             <td className="d-none">
@@ -277,64 +259,64 @@ function AddJob() {
                                         </tr>
                                     </table>
                                     {/* Modal-1 */}
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
+                                    <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div className="modal-dialog modal-lg">
+                                            <div className="modal-content">
                                                 <div>
-                                                    <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
+                                                    <p className="modal-title upd-tit" id="exampleModalLabel">Upload Your File</p>
                                                     <p className="proadd-img-desc">to add the service images</p>
                                                 </div>
-                                                <div class="modal-body">
+                                                <div className="modal-body">
                                                     <div className="upd-attachments">
                                                         <Icon className="upload-file-icon" data-bs-toggle="modal" data-bs-target="#exampleModal2" icon="fluent:folder-arrow-up-20-filled" width="90" height="90" />
                                                         <p className="ig-upldesc">Drag & Drop files here or choose file 50 MB max file size</p>
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                                <div className="modal-footer">
+                                                    <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     {/* Modal -2 */}
-                                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
+                                    <div className="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div className="modal-dialog modal-lg">
+                                            <div className="modal-content">
                                                 <div>
-                                                    <p class="modal-title" className="upd-tit" id="exampleModalLabel">Upload Your File</p>
+                                                    <p className="modal-title upd-tit" id="exampleModalLabel">Upload Your File</p>
                                                     <p className="proadd-img-desc">to add the service images</p>
                                                 </div>
-                                                <div class="modal-body">
+                                                <div className="modal-body">
                                                     <div className="upd-attachments">
                                                         <table>
                                                             <tr>
                                                                 <td>
                                                                     <img src={product_image} alt="product-img" className="attached-img" />
-                                                                    <i class="ri-close-line upload-img-close"></i>
+                                                                    <i className="ri-close-line upload-img-close"></i>
                                                                 </td>
                                                                 <td>
                                                                     <img src={product_image} alt="product-img" className="attached-img" />
-                                                                    <i class="ri-close-line upload-img-close"></i>
+                                                                    <i className="ri-close-line upload-img-close"></i>
                                                                 </td>
                                                                 <td>
                                                                     <img src={product_image} alt="product-img" className="attached-img" />
-                                                                    <i class="ri-close-line upload-img-close"></i>
+                                                                    <i className="ri-close-line upload-img-close"></i>
                                                                 </td>
                                                                 <td>
                                                                     <img src={product_image} alt="product-img" className="attached-img" />
-                                                                    <i class="ri-close-line upload-img-close"></i>
+                                                                    <i className="ri-close-line upload-img-close"></i>
                                                                 </td>
                                                                 <td>
                                                                     <img src={product_image} alt="product-img" className="attached-img" />
-                                                                    <i class="ri-close-line upload-img-close"></i>
+                                                                    <i className="ri-close-line upload-img-close"></i>
                                                                 </td>
                                                             </tr>
                                                         </table>
 
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Add</button>
+                                                <div className="modal-footer">
+                                                    <button type="button" className="btn btn-success" data-bs-dismiss="modal">Add</button>
                                                 </div>
                                             </div>
                                         </div>

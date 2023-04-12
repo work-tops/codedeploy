@@ -1,9 +1,10 @@
 import React from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
+import pom from '../../Images/product_image.png'
 import { Link } from "react-router-dom";
-
-function AllFreelancerCommission() {
+import { Icon } from "@iconify/react";
+function AllCommission() {
     return (
         <div className="row">
             <div className="col-2">
@@ -17,12 +18,12 @@ function AllFreelancerCommission() {
                     <div className="product-adding-div">
                         <div>
                             <br></br>
-                            <h4 className="ai-seller-title" >Freelancer Commission Settings <span id="badge-1" class="badge bg-secondary">#100</span></h4>
-                            <p className="ai-title-note">Here are the Freelancer Commission Setting on your store</p>
+                            <h4 className="ai-seller-title" >Category Commission Settings <span id="badge-1" class="badge bg-secondary">#100</span></h4>
+                            <p className="ai-title-note">Here are the Category Commission Setting on your store</p>
                         </div>
                         <div className="row">
                             <div className="col-12">
-                                <Link to="freelancercommission" role="button"><button className="add-commission">Add Commission to Freelancer</button></Link>
+                                <Link to="categorycommission" role="button"><button className="add-commission">Add Commission to Category</button></Link>
                             </div>
                         </div>
                     </div>
@@ -31,60 +32,53 @@ function AllFreelancerCommission() {
                             <option>Select Options</option>
                         </select>
                     </p>
-                    <div className="d-flex justify-content-between">
-                        <div>
-                            <input type="text" id="all-order-search" placeholder="Search" />
-                        </div>
-                        <div>
-                            <p className="show-list">Show:
-                                <select>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                </select>
-                                {' '}
-                                List
-                            </p>
-                        </div>
-                    </div>
+                    <p className="show-list">Show:
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                        {' '}
+                        List
+                    </p>
                     <div className="all-jobs-div">
                         <table className="allproducts-table">
                             <tr className="product-heading ">
                                 <td id="td" className="rounded-start"><input type='checkbox' /></td>
                                 <td id="td">Freelancer ID <i class="ri-arrow-down-s-fill"></i>
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
+                                <br></br>
+                                        <input id="filter-search" type="search"/>
                                 </td>
                                 <td id="td">Freelancer Profile <i class="ri-arrow-down-s-fill"></i>
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
+                                <br></br>
+                                        <input id="filter-search" type="search"/>
                                 </td>
                                 <td id="td">Company Name <i class="ri-arrow-down-s-fill"></i>
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
+                                <br></br>
+                                        <input id="filter-search" type="search"/>
                                 </td>
                                 <td id="td">Email ID <i class="ri-arrow-down-s-fill"></i>
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
+                                <br></br>
+                                        <input id="filter-search" type="search"/>
                                 </td>
                                 <td id="td">Commission Type <i class="ri-arrow-down-s-fill"></i>
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
+                                <br></br>
+                                        <input id="filter-search" type="search"/>
                                 </td>
                                 <td id="td">First Commission <i class="ri-arrow-down-s-fill"></i>
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
+                                <br></br>
+                                        <input id="filter-search" type="search"/>
                                 </td>
                                 <td id="td">Second Commission <i class="ri-arrow-down-s-fill"></i>
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
+                                <br></br>
+                                        <input id="filter-search" type="search"/>
                                 </td>
                                 <td id="td" className="rounded-end">Action</td>
                             </tr>
@@ -231,4 +225,4 @@ function AllFreelancerCommission() {
         </div>
     )
 }
-export default AllFreelancerCommission
+export default AllCommission

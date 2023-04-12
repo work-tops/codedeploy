@@ -147,8 +147,8 @@ function AllOrders() {
                                                 <i className="fa-solid fa-ellipsis"></i>
                                             </a>
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#"><i class="fa-solid fa-eye"></i> View</a></li>
-                                                <li><a className="dropdown-item" href="#"><i class="fa-solid fa-bell"></i> Send Remainder</a></li>
+                                                <li><a className="dropdown-item" href="#"><i className="fa-solid fa-eye"></i> View</a></li>
+                                                <li><a className="dropdown-item" href="#"><i className="fa-solid fa-bell"></i> Send Remainder</a></li>
                                             </ul>
                                         </div>
                                     </td>

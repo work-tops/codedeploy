@@ -157,10 +157,10 @@ function AllFreelancer() {
                                                 </a>
                                                 <ul className="dropdown-menu">
                                                     <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
-                                                    <li><a className="dropdown-item" href="#"><i class="fa-solid fa-check"></i> Enable</a></li>
-                                                    <li><a className="dropdown-item" href="#"><i class="fa-solid fa-ban"></i> Deny</a></li>
-                                                    <li><a className="dropdown-item" href="#"><i class="fa-solid fa-envelope"></i> Send Message</a></li>
-                                                    <li><a className="dropdown-item" href="#"><i class="fa-solid fa-key"></i> Change Password </a></li>
+                                                    <li><a className="dropdown-item" href="#"><i className="fa-solid fa-check"></i> Enable</a></li>
+                                                    <li><a className="dropdown-item" href="#"><i className="fa-solid fa-ban"></i> Deny</a></li>
+                                                    <li><a className="dropdown-item" href="#"><i className="fa-solid fa-envelope"></i> Send Message</a></li>
+                                                    <li><a className="dropdown-item" href="#"><i className="fa-solid fa-key"></i> Change Password </a></li>
                                                     <li><a onClick={() => { freelancdel(data) }} className="dropdown-item" ><i className="fa-solid fa-trash"></i> Delete</a></li>
                                                 </ul>
                                             </div>

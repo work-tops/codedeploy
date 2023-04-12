@@ -66,8 +66,8 @@ function ServiceCommission() {
                                     <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
                                     <hr></hr>
                                     <p className="upd-titl">UPDATE EARLIER PRODUCT PRICE</p>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                                    <div className="form-check form-switch">
+                                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                                         <br></br>
                                         <p className="switch-des">If you enable this option , all the prices of exisiting products will change according to the given commission value</p>
                                         <button className="create-acc-btn-1">Save Changes</button>

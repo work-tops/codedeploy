@@ -21,7 +21,6 @@ function AiMenu() {
                     <ul class="dropdown-menu">
                         <li><Link to="globalcommission" role="button"><a id="drop-list" class="dropdown-item">Global Commisson</a></Link></li>
                         <li><Link to="servicecommission" role="button"><a id="drop-list" class="dropdown-item">Services Commisson</a></Link></li>
-                        <li><Link to="allfreelancercommission" role="button"><a id="drop-list" class="dropdown-item">Freelancer Commisson Settings</a></Link></li>
                         <li><Link to="allcommission" role="button"><a id="drop-list" class="dropdown-item">Category Commisson Settings</a></Link></li>
                     </ul>
                 </div>

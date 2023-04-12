@@ -156,8 +156,8 @@ function AllJob() {
                                                 </a>
                                                 <ul className="dropdown-menu">
                                                     <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
-                                                    <li><a className="dropdown-item" href="#"><i class="fa-solid fa-check"></i> Enable</a></li>
-                                                    <li><a className="dropdown-item" href="#"><i class="fa-solid fa-ban"></i> Deny</a></li>
+                                                    <li><a className="dropdown-item" href="#"><i className="fa-solid fa-check"></i> Enable</a></li>
+                                                    <li><a className="dropdown-item" href="#"><i className="fa-solid fa-ban"></i> Deny</a></li>
                                                     <li><a className="dropdown-item" href="#"><i className="fa-solid fa-xmark"></i> Disable</a></li>
                                                     <li><a onClick={() => { Jobstdel(data) }} className="dropdown-item"><i className="fa-solid fa-trash"></i> Delete</a></li>
                                                 </ul>

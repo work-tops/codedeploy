@@ -35,59 +35,122 @@ function AiProductDetails() {
         setselectedMulti(selectedValues);
     };
 
-    const [forms1, setForms1] = useState({
-        color: "",
-        size: "",
-        finish_type: "",
+    const [moredet, setmoredet] = useState({
+        required_shipping: false,
+        charge_tax: false,
         price: "",
         compare_at: "",
         handling_changes: "",
         sales_price: "",
-        shipping: false,
-        chargeTax: false,
+        charge_taxes: false,
         sku: "",
         barcode: "",
         min_purchase_qty: "",
         quantity: "",
-        track_inventory: "",
+        track_inventory: false,
+        remaining_quantity: 5,
     });
 
+    console.log(moredet);
 
-    const [products, setProducts] = useState([]);
-    console.log(products)
-
-    const handleChange123 = (event) => {
-        const { name, value, type, checked } = event.target;
-        setForms1((prevForm) => ({
-            ...prevForm,
-            [name]: type === "checkbox" ? checked : value,
-        }));
+    const morehandlechange = (e) => {
+        const myUser = { ...moredet };
+        myUser[e.target.name] = e.target.value;
+        setmoredet(myUser);
     };
 
+    const [forms1, setForms1] = useState({
+        color: moredet.color,
+        size: moredet.size,
+        finish_type: moredet.finish_type,
+        shipping: {
+            required_shipping: moredet.required_shipping,
+            charge_tax: moredet.charge_tax,
+        },
+        pricing: {
+            price: moredet.price,
+            compare_at: moredet.compare_at,
+            handling_changes: moredet.handling_changes,
+            sales_price: moredet.sales_price,
+            charge_taxes: moredet.charge_taxes,
+        },
+        inventory: {
+            sku: moredet.sku,
+            barcode: moredet.barcode,
+            min_purchase_qty: moredet.min_purchase_qty,
+            quantity: moredet.quantity,
+            track_inventory: moredet.track_inventory,
+            remaining_quantity: moredet.remaining_quantity,
+        },
+    });
+
+    console.log(forms1);
+
+    const [products, setProducts] = useState([]);
+
+    console.log(products);
+
+    //   const handleChange123 = (event) => {
+    //     const { name, value, type, checked } = event.target;
+    //     setForms1((prevForm) => ({
+    //       ...prevForm,
+    //       [name]: type === "checkbox" ? checked : value,
+
+    //     }));
+    //   };
+
     const handleSubmit = (event) => {
-        event.preventDefault();
-        setProducts((prevProducts) => [...prevProducts, forms1]);
-        setForms1({
+        setmoredet({
             color: "",
             size: "",
             finish_type: "",
+            required_shipping: false,
+            charge_tax: false,
             price: "",
             compare_at: "",
             handling_changes: "",
             sales_price: "",
-            shipping: false,
-            chargeTax: false,
+            charge_taxes: false,
             sku: "",
             barcode: "",
             min_purchase_qty: "",
             quantity: "",
-            track_inventory: "",
-
+            track_inventory: false,
+            remaining_quantity: 5,
+        })
+        event.preventDefault();
+        setProducts((prevState) => [...prevState, forms1]);
+        setForms1({
+            color: moredet.color,
+            size: moredet.size,
+            finish_type: moredet.finish_type,
+            shipping: {
+                required_shipping: moredet.required_shipping,
+                charge_tax: moredet.charge_tax,
+            },
+            pricing: {
+                price: moredet.price,
+                compare_at: moredet.compare_at,
+                handling_changes: moredet.handling_changes,
+                sales_price: moredet.sales_price,
+                charge_taxes: moredet.charge_taxes,
+            },
+            inventory: {
+                sku: moredet.sku,
+                barcode: moredet.barcode,
+                min_purchase_qty: moredet.min_purchase_qty,
+                quantity: moredet.quantity,
+                track_inventory: moredet.track_inventory,
+                remaining_quantity: moredet.remaining_quantity,
+            },
+            attachment: selectedFile[parseInt(moredet.imageInx)]
         });
     };
 
-    const variantremove = () => {
-        setProducts((prevProducts) => prevProducts.slice(0, -1));
+    const variantremove = (index) => {
+        var _varient = [...products]
+        _varient.splice(index, 1);
+        setProducts(_varient);
     };
 
     const [form, setform] = useState({
@@ -112,6 +175,7 @@ function AiProductDetails() {
 
     const [selectedFile, setSelectedFile] = useState([]);
     const [actualFiles, setActualFile] = useState([]);
+    const [uploadFiles, setUploadFile] = useState([]);
     console.log(selectedFile)
 
     const handleFileInput = (e) => {
@@ -137,19 +201,40 @@ function AiProductDetails() {
             });
         }
         setSelectedFile(fileArray);
+        setUploadFile(files);
     };
 
     const uploadFile = () => {
-        console.log('actual files length', actualFiles.length);
-        for (let i = 0; i < actualFiles.length; i++) {
-            uploadImage(actualFiles[i]);
+        console.log('uploadFiles length', uploadFiles.length);
+        for (let i = 0; i < uploadFiles.length; i++) {
+            uploadImage(uploadFiles[i]);
         }
     };
+
+    const removeImage = async (index) => {
+        var selected = [...selectedFile];
+        var actual = [...actualFiles];
+        var uploads = [...uploadFiles];
+        selected.splice(index, 1);
+        actual.splice(index, 1);
+        uploads.splice(index, 1);
+        setActualFile(actual);
+        setSelectedFile(selected);
+        setUploadFile(uploads);
+    }
 
     const handleChange = (e) => {
         const myData = { ...form };
         myData[e.target.name] = e.target.value;
         setform(myData)
+    }
+    const [metadata, setmetadata] = useState([])
+    console.log(metadata)
+
+    const handleChange1 = (e) => {
+        const myData = { ...metadata };
+        myData[e.target.name] = e.target.value;
+        setmetadata(myData)
     }
 
     const Addproducts = async () => {
@@ -166,20 +251,16 @@ function AiProductDetails() {
             pricing: { price: 100 },
             inventory: { quantity: 100 },
             meta_fields: {
-                title: form.metatitle,
-                description: form.metadescription,
+                title: metadata.metatitle,
+                description: metadata.metadescription,
             },
             attachments: selectedFile,
             // variant:form.tags,
-            variant: [
-                {
-                    "option_name": "test option",
-                    "option_value": "test value"
-                }
-            ],
+            variant: products,
             custom_fields: {},
             created_by: "1",
         }
+        console.log(productdata)
         const response = await createData("admin/product/new", productdata)
         if (response.status === 201) {
             toast.success('Successfully Product Added')
@@ -196,8 +277,6 @@ function AiProductDetails() {
         Addproducts()
         uploadFile()
     }
-
-
 
     const Productcat = async () => {
         const response = await getAllData('master/product_types');
@@ -285,9 +364,9 @@ function AiProductDetails() {
                                                 <br />
                                                 <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
                                                 <br />
-                                                <label>Product Tag</label>
+                                                {/* <label>Product Tag</label>
                                                 <br />
-                                                <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input>
+                                                <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input> */}
                                                 <br></br>
                                                 {/*  */}
                                                 {/* <!-- Button trigger modal --> */}
@@ -301,7 +380,7 @@ function AiProductDetails() {
                                                         <div className="modal-content">
                                                             <div className="modal-header">
                                                                 <p>Add Variant</p>
-                                                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                                                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
                                                             </div>
                                                             <div className="modal-body row">
                                                                 <div className="col-5">
@@ -309,9 +388,23 @@ function AiProductDetails() {
                                                                         <p className="add-img-tit">Variant Image</p>
                                                                         <p className="add-img-des">Add Variant image here</p>
                                                                         <br></br>
-                                                                        <Icon className="var-image" icon="mingcute:photo-album-fill" height="24" width="24" />
+
+                                                                        {moredet.imageInx == undefined || moredet.imageInx == null ? (
+                                                                            <Icon className="var-image" icon="mingcute:photo-album-fill" height="24" width="24" />) :
+                                                                            (<img src={actualFiles[moredet.imageInx]} width="50px" height="50px" className="pro-pre" />)
+
+                                                                        }
                                                                         <br></br>
-                                                                        <button className="add-img-btn">ADD IMAGE</button>
+                                                                        <button className="add-img-btn d-none">ADD IMAGE</button>
+                                                                        <select value={moredet.imageInx} name="imageInx" onChange={(e) => { morehandlechange(e) }} className="select-category">
+                                                                            <option value="" disabled>Add Image</option>
+                                                                            {actualFiles.map((file, index) => (
+                                                                                <option value={index}>
+                                                                                    {/* <img src={file} width="50px" height="50px" className="pro-pre" /> */}
+                                                                                    {selectedFile[index].name}
+                                                                                </option>
+                                                                            ))}
+                                                                        </select>
                                                                     </div>
                                                                     <br></br>
                                                                     <div className="var-img-drop-div">
@@ -328,7 +421,7 @@ function AiProductDetails() {
                                                                         <p className="var-tit">Options</p>
                                                                         <p className="var-dec">Add Options details here</p>
                                                                         <label className="label">Colour</label>
-                                                                        <select value={forms1.color} name="color" onChange={(e) => { handleChange123(e) }} className="sel-colour">
+                                                                        <select value={moredet.color} name="color" onChange={(e) => { morehandlechange(e) }} className="sel-colour">
                                                                             <option value="">Select</option>
                                                                             <option value="Black,Gold">Black,Gold</option>
                                                                             <option value="Grey,White">Grey,White</option>
@@ -336,104 +429,103 @@ function AiProductDetails() {
                                                                             <option value="Maroon,White">Maroon,White</option>
                                                                         </select>
                                                                         <label className="label">Size</label>
-                                                                        <input value={forms1.size} name="size" onChange={(e) => { handleChange123(e) }} type="text" id="opt-ip-box" />
+                                                                        <input value={moredet.size} name="size" onChange={(e) => { morehandlechange(e) }} type="text" id="opt-ip-box" />
                                                                         <label className="label">Finish Type</label>
-                                                                        <input value={forms1.finish_type} name="finish_type" onChange={(e) => { handleChange123(e) }} type="text" id="opt-ip-box" />
+                                                                        <input value={moredet.finish_type} name="finish_type" onChange={(e) => { morehandlechange(e) }} type="text" id="opt-ip-box" />
                                                                         <br></br>
                                                                         <p className="var-tit">Price Details</p>
                                                                         <label className="label">Price</label>
-                                                                        <input value={forms1.price} name="price" onChange={(e) => { handleChange123(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={moredet.price} name="price" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
                                                                         <label className="label">Compare at Price</label>
-                                                                        <input value={forms1.compare_at} name="compare_at" onChange={(e) => { handleChange123(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={moredet.compare_at} name="compare_at" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
                                                                         <label className="label">Handling Charges</label>
-                                                                        <input value={forms1.handling_changes} name="handling_changes" onChange={(e) => { handleChange123(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={moredet.handling_changes} name="handling_changes" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
                                                                         <label className="label">Sales Price</label>
-                                                                        <input value={forms1.sales_price} name="sales_price" onChange={(e) => { handleChange123(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={moredet.sales_price} name="sales_price" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
                                                                         <br></br>
-                                                                        <input name="required_shipping" onChange={(e) => { handleChange123(e) }} id="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
-                                                                        <input name="charge_tax" onChange={(e) => { handleChange123(e) }} id="aipro-checkbox2" type='checkbox' value="true" /><span className="chc-span">Charge Taxes on this product</span>
+                                                                        <input name="required_shipping" onChange={(e) => { morehandlechange(e) }} id="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
+                                                                        <input name="charge_tax" onChange={(e) => { morehandlechange(e) }} id="aipro-checkbox2" type='checkbox' value="true" /><span className="chc-span">Charge Taxes on this product</span>
                                                                         <br></br>
                                                                         <br></br>
                                                                         <p className="var-tit">Inventory</p>
                                                                         <label>SKU</label>
-                                                                        <input value={forms1.sku} name="sku" onChange={(e) => { handleChange123(e) }} id="opt-ip-box" type='text' />
+                                                                        <input value={moredet.sku} name="sku" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='text' />
                                                                         <label>Barcode</label>
-                                                                        <input value={forms1.barcode} name="barcode" onChange={(e) => { handleChange123(e) }} id="opt-ip-box" type='text' />
+                                                                        <input value={moredet.barcode} name="barcode" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='text' />
                                                                         <label>Minimum Purchase Quantity</label>
-                                                                        <input value={forms1.min_purchase_qty} name="min_purchase_qty" onChange={(e) => { handleChange123(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={moredet.min_purchase_qty} name="min_purchase_qty" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
                                                                         <label>Quantity</label>
-                                                                        <input value={forms1.quantity} name="quantity" onChange={(e) => { handleChange123(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={moredet.quantity} name="quantity" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
                                                                         <br></br>
-                                                                        <input value={forms1.track_inventory} name="track_inventory" onChange={(e) => { handleChange123(e) }} id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
+                                                                        <input value={moredet.track_inventory} name="track_inventory" onChange={(e) => { morehandlechange(e) }} id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
                                                                         <br></br>
                                                                         <button type="button" onClick={(e) => { handleSubmit(e) }} className="create-acc-btn">Add</button>
+                                                                        <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                                                                     </div>
-                                                                </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <br></br>
-                                                    <div>
-                                                    <table className="sel-var-box">
-                                                        {products.map((data) => (
-                                                            <tr>
-                                                                <td><img src={variant_image} className="sel_var_image" alt="selected-variant" /></td>
-                                                                <td>
-                                                                    <p className="cur-var-types">{data.color} / {data.size}  / {data.finish_type} / {data.quantity}</p>
-                                                                    <p className="sku-price">Sku:{data.sku} / Price: £ {data.price}</p>
-                                                                </td>
-                                                                <td>
-                                                                    <button className="edt-rem1" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
-                                                                    <button onClick={()=>{variantremove()}} type="button" className="edt-rem2">Remove</button>
-                                                                </td>
-                                                            </tr>
-                                                        ))}
-
-                                                        {/* <tr>
-                                                            <td><img src={variant_image} className="sel_var_image" alt="selected-variant" /></td>
-                                                            <td>
-                                                                <p className="cur-var-types">Colour / Size / Finished Type / Quantity</p>
-                                                                <p className="sku-price">Sku:192736383 / Price: £ 438.48</p>
-                                                            </td>
-                                                            <td>
-                                                                <button className="edt-rem1" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
-                                                                <button className="edt-rem2">Remove</button>
-                                                            </td>
-                                                        </tr> */}
-                                                    </table>
-                                                    </div>
-                                                    {/*  */}
-                                                    <label>Return Policy</label>
-                                                    <br />
-                                                    <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
-                                                    <button type='submit' className="create-acc-btn">Add Product</button>
                                                 </div>
+                                                <br></br>
+                                                <div>
+                                                    <table className="sel-var-box">
+
+                                                        <tbody>
+                                                            {products.map((data, index) => (
+                                                                <tr>
+                                                                    <td><img src={variant_image} className="sel_var_image" alt="selected-variant" /></td>
+                                                                    <td>
+                                                                        <p className="cur-var-types">{data.color} / {data.size}  / {data.finish_type} / {data.quantity}</p>
+                                                                        <p className="sku-price">Sku:{data.inventory.sku} / Price: £ {data.pricing.price}</p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <button className="edt-rem1" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
+                                                                        <button onClick={() => { variantremove(index) }} type="button" className="edt-rem2">Remove</button>
+                                                                    </td>
+                                                                </tr>
+                                                            ))}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                {/*  */}
+                                                <label>Return Policy</label>
+                                                <br />
+                                                <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
+                                                <button type='submit' className="create-acc-btn">Add Product</button>
                                             </div>
-                                            <div className="Add-Product-Images">
-                                                <p className="ai-pro-title">Product Images</p>
-                                                {selectedFile == undefined || selectedFile == 0 ? (
+                                        </div>
+                                        <div className="Add-Product-Images">
+                                            <p className="ai-pro-title">Product Images</p>
+                                            {selectedFile == undefined || selectedFile == 0 ? (
                                                 <div className="ai-image-drag">
                                                     <i className="ai-img-icon ri-image-fill"></i>
                                                     <small className="chose-file">No File Chosen</small>
                                                 </div>
                                             ) : (
                                                 <div>
-                                                    {actualFiles.map((file) => (
+                                                    {actualFiles.map((file, index) => (
                                                         <>
                                                             <div className="row bg-pre">
                                                                 <div className="col-4">
                                                                     <img src={file} width="50px" height="50px" className="pro-pre" />
                                                                 </div>
-                                                                <div className="col-4 fil-name">{file.name}</div>
-                                                                <div className="col-4 "><Icon icon="simple-line-icons:options" className="ico-menu" /></div>
+                                                                <div className="col-4 fil-name">{selectedFile[index].name}</div>
+                                                                <div className="col-4 ">
+                                                                    <div className="m-3 text-end">
+                                                                        <i className="ri-close-line upload-img-close3" onClick={(e) => { removeImage(index) }}></i>
+
+                                                                    </div>
+                                                                    {/* <Icon icon="simple-line-icons:options" className="ico-menu" /> */}
+
+                                                                </div>
                                                             </div>
                                                             <br></br>
                                                         </>
                                                     ))}
-                                                    </div>
-                                                     )}
-                                               <label htmlFor="select-basic" className="mb-75 me-75" style={{ fontSize: "small", color: "blue" }}>
+                                                </div>
+                                            )}
+                                            <label htmlFor="select-basic" className="mb-75 me-75" style={{ fontSize: "small", color: "blue" }}>
                                                 <button type="button" className="img-upload-btn" onClick={() => document.getElementById('select-basic').click()}>
                                                     Upload Images
                                                 </button>
@@ -457,72 +549,6 @@ function AiProductDetails() {
                                                 <input value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
                                                 <p className="ai-title-desc">Description tag meta field</p>
                                                 <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
-                                                <p className="pro-sub-title">Product Tags </p>
-                                                <label className="label">Category</label>
-                                                <div className="multi-sel">
-                                                    <Multiselect
-                                                        name="tags"
-                                                        value={selectedMulti}
-                                                        onSelect={handleMulti}
-                                                        options={options}
-                                                        displayValue="ProCategories"
-                                                    />
-                                                </div>
-                                                <label className="label">Colour</label>
-                                                <div className="multi-sel">
-                                                    <Multiselect
-                                                        name="tags"
-                                                        value={selectedMulti}
-                                                        onSelect={handleMulti}
-                                                        options={options}
-                                                        displayValue="ProCategories"
-                                                    />
-                                                </div>
-                                                
-                                                <label className="label">Finish Type</label>
-                                                <div className="multi-sel">
-                                                    <Multiselect
-                                                        name="tags"
-                                                        value={selectedMulti}
-                                                        onSelect={handleMulti}
-                                                        options={options}
-                                                        displayValue="ProCategories"
-                                                    />
-                                                </div>
-                                                
-                                                <label className="label">Length</label>
-                                                <div className="multi-sel">
-                                                    <Multiselect
-                                                        name="tags"
-                                                        value={selectedMulti}
-                                                        onSelect={handleMulti}
-                                                        options={options}
-                                                        displayValue="ProCategories"
-                                                    />
-                                                </div>
-                                                
-                                                <label className="label">Width</label>
-                                                <div className="multi-sel">
-                                                    <Multiselect
-                                                        name="tags"
-                                                        value={selectedMulti}
-                                                        onSelect={handleMulti}
-                                                        options={options}
-                                                        displayValue="ProCategories"
-                                                    />
-                                                </div>
-                                                
-                                                <label className="label">Thickness</label>
-                                                <div className="multi-sel">
-                                                    <Multiselect
-                                                        name="tags"
-                                                        value={selectedMulti}
-                                                        onSelect={handleMulti}
-                                                        options={options}
-                                                        displayValue="ProCategories"
-                                                    />
-                                                </div>
-                                                <button className="addtag-row-btn">Add Row</button>
                                             </div>
                                         </div >
                                 </form>
