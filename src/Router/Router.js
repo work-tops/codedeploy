@@ -14,11 +14,16 @@ import JobProposal from "../Components/Project/ProjectDetails";
 import AllOrders from "../Components/Orders/AllOrders";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import AddServices from "../Components/Services/AddServices";
+import AllCommission from "../Components/Commission/AllCommission"
+import CategoryCommission from "../Components/Commission/CategoryCommission"
 import GlobalCommission from "../Components/Commission/GlobalCommission";
 import ServiceCommission from "../Components/Commission/ServiceCommission";
 import Serviceslist from "../Components/Services/Serviceslist"
+<<<<<<< HEAD
 import AllCategoryCommission from "../Components/Commission/AllCategoryCommission"
 import CategoryCommission from "../Components/Commission/CategoryCommission"
+=======
+>>>>>>> dev-senkar
 import AiLoginPage from "../Components/Admin/AiLoginPage";
 import AllStaff from "../Components/Staff/AllStaff";
 import AddStaff from "../Components/Staff/AddStaff";
