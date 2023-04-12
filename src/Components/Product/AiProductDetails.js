@@ -36,13 +36,16 @@ function AiProductDetails() {
         setselectedMulti(selectedValues);
     };
 
-    const [moredet, setmoredet] = useState({
-        required_shipping: false,
-        charge_tax: false,
+    const [variant, setVarientObject] = useState({
+        imageInx: null,
+        color: "",
+        size: "",
+        finish_type: "",
         price: "",
         compare_at: "",
         handling_changes: "",
         sales_price: "",
+        required_shipping: false,
         charge_taxes: false,
         sku: "",
         barcode: "",
@@ -52,44 +55,16 @@ function AiProductDetails() {
         remaining_quantity: 5,
     });
 
-    console.log(moredet);
-
-    const morehandlechange = (e) => {
-        const myUser = { ...moredet };
-        myUser[e.target.name] = e.target.value;
-        setmoredet(myUser);
+    const variantChange = (e) => {
+        const _variant = { ...variant };
+        _variant[e.target.name] = e.target.value;
+        setVarientObject(_variant);
     };
 
-    const [forms1, setForms1] = useState({
-        color: moredet.color,
-        size: moredet.size,
-        finish_type: moredet.finish_type,
-        shipping: {
-            required_shipping: moredet.required_shipping,
-            charge_tax: moredet.charge_tax,
-        },
-        pricing: {
-            price: moredet.price,
-            compare_at: moredet.compare_at,
-            handling_changes: moredet.handling_changes,
-            sales_price: moredet.sales_price,
-            charge_taxes: moredet.charge_taxes,
-        },
-        inventory: {
-            sku: moredet.sku,
-            barcode: moredet.barcode,
-            min_purchase_qty: moredet.min_purchase_qty,
-            quantity: moredet.quantity,
-            track_inventory: moredet.track_inventory,
-            remaining_quantity: moredet.remaining_quantity,
-        },
-    });
-
-    console.log(forms1);
-
-    const [products, setProducts] = useState([]);
-
-    console.log(products);
+    const [forms1, setForms1] = useState({});
+    const [variants, setVariants] = useState([]);
+    const [isEdit, setEditButton] = useState(false);
+    const [editIndex, setEditVarientIndex] = useState(0);
 
     //   const handleChange123 = (event) => {
     //     const { name, value, type, checked } = event.target;
@@ -100,17 +75,61 @@ function AiProductDetails() {
     //     }));
     //   };
 
-    const handleSubmit = (event) => {
-        setmoredet({
+    const handleVariantSubmit = (event) => {
+
+        event.preventDefault();
+        var _form = { ...forms1 };
+        _form = {
+            color: variant.color,
+            size: variant.size,
+            finish_type: variant.finish_type,
+            shipping: {
+                required_shipping: variant.required_shipping,
+                charge_tax: variant.charge_tax,
+            },
+            pricing: {
+                price: variant.price,
+                compare_at: variant.compare_at,
+                handling_changes: variant.handling_changes,
+                sales_price: variant.sales_price,
+                charge_taxes: variant.charge_taxes,
+            },
+            inventory: {
+                sku: variant.sku,
+                barcode: variant.barcode,
+                min_purchase_qty: variant.min_purchase_qty,
+                quantity: variant.quantity,
+                track_inventory: variant.track_inventory,
+                remaining_quantity: variant.remaining_quantity,
+            },
+            attachment: selectedFile[parseInt(variant.imageInx)]
+        }
+
+        setForms1(_form);
+        var _variant = [...variants]
+        if (isEdit == true) {
+            _variant[editIndex] = _form;
+        } else {
+            _variant.push(_form);
+        }
+        setVariants(_variant);
+        console.log('variant', variant);
+        console.log('_form', _form);
+        console.log('variants list', variants);
+        resetBillingObject();
+    };
+
+    const resetBillingObject = () => {
+        var _variant = {
+            imageInx: null,
             color: "",
             size: "",
             finish_type: "",
-            required_shipping: false,
-            charge_tax: false,
             price: "",
             compare_at: "",
             handling_changes: "",
             sales_price: "",
+            required_shipping: false,
             charge_taxes: false,
             sku: "",
             barcode: "",
@@ -118,40 +137,39 @@ function AiProductDetails() {
             quantity: "",
             track_inventory: false,
             remaining_quantity: 5,
-        })
-        event.preventDefault();
-        setProducts((prevState) => [...prevState, forms1]);
-        setForms1({
-            color: moredet.color,
-            size: moredet.size,
-            finish_type: moredet.finish_type,
-            shipping: {
-                required_shipping: moredet.required_shipping,
-                charge_tax: moredet.charge_tax,
-            },
-            pricing: {
-                price: moredet.price,
-                compare_at: moredet.compare_at,
-                handling_changes: moredet.handling_changes,
-                sales_price: moredet.sales_price,
-                charge_taxes: moredet.charge_taxes,
-            },
-            inventory: {
-                sku: moredet.sku,
-                barcode: moredet.barcode,
-                min_purchase_qty: moredet.min_purchase_qty,
-                quantity: moredet.quantity,
-                track_inventory: moredet.track_inventory,
-                remaining_quantity: moredet.remaining_quantity,
-            },
-            attachment: selectedFile[parseInt(moredet.imageInx)]
-        });
-    };
+        }
 
+        setVarientObject(_variant);
+        setEditButton(false);
+        setEditVarientIndex(0);
+    };
+    const editVarient = (data, index) => {
+        var _variant = {
+            imageInx: data?.imageInx,
+            color: data?.color,
+            size: data?.size,
+            finish_type: data?.finish_type,
+            price: data?.pricing?.price,
+            compare_at: data?.pricing?.compare_at,
+            handling_changes: data?.pricing?.handling_changes,
+            sales_price: data?.pricing?.sales_price,
+            required_shipping: false,
+            charge_taxes: false,
+            sku: data?.inventory?.sku,
+            barcode: data?.inventory?.barcode,
+            min_purchase_qty: data?.inventory?.min_purchase_qty,
+            quantity: data?.inventory?.quantity,
+            track_inventory: false,
+            remaining_quantity: 5,
+        }
+        setVarientObject(_variant);
+        setEditButton(true);
+        setEditVarientIndex(index);
+    };
     const variantremove = (index) => {
-        var _varient = [...products]
-        _varient.splice(index, 1);
-        setProducts(_varient);
+        var _variant = [...variants]
+        _variant.splice(index, 1);
+        setVariants(_variant);
     };
 
     const [form, setform] = useState({
@@ -177,7 +195,6 @@ function AiProductDetails() {
     const [selectedFile, setSelectedFile] = useState([]);
     const [actualFiles, setActualFile] = useState([]);
     const [uploadFiles, setUploadFile] = useState([]);
-    console.log(selectedFile)
 
     const handleFileInput = (e) => {
         const files = e.target.files;
@@ -230,7 +247,6 @@ function AiProductDetails() {
         setform(myData)
     }
     const [metadata, setmetadata] = useState([])
-    console.log(metadata)
 
     const handleChange1 = (e) => {
         const myData = { ...metadata };
@@ -257,7 +273,7 @@ function AiProductDetails() {
             },
             attachments: selectedFile,
             // variant:form.tags,
-            variant: products,
+            variant: variants,
             custom_fields: {},
             created_by: "1",
         }
@@ -394,7 +410,7 @@ function AiProductDetails() {
                                                         <div className="modal-content">
                                                             <div className="modal-header">
                                                                 <p>Add Variant</p>
-                                                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                                                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetBillingObject}>Close</button>
                                                             </div>
                                                             <div className="modal-body row">
                                                                 <div className="col-5">
@@ -403,14 +419,14 @@ function AiProductDetails() {
                                                                         <p className="add-img-des">Add Variant image here</p>
                                                                         <br></br>
 
-                                                                        {moredet.imageInx == undefined || moredet.imageInx == null ? (
+                                                                        {variant.imageInx == undefined || variant.imageInx == null ? (
                                                                             <Icon className="var-image" icon="mingcute:photo-album-fill" height="24" width="24" />) :
-                                                                            (<img src={actualFiles[moredet.imageInx]} width="50px" height="50px" className="pro-pre" />)
+                                                                            (<img src={actualFiles[variant.imageInx]} width="50px" height="50px" className="pro-pre" />)
 
                                                                         }
                                                                         <br></br>
                                                                         <button className="add-img-btn d-none">ADD IMAGE</button>
-                                                                        <select value={moredet.imageInx} name="imageInx" onChange={(e) => { morehandlechange(e) }} className="select-category">
+                                                                        <select value={variant.imageInx} name="imageInx" onChange={(e) => { variantChange(e) }} className="select-category">
                                                                             <option value="" disabled>Add Image</option>
                                                                             {actualFiles.map((file, index) => (
                                                                                 <option value={index}>
@@ -435,7 +451,7 @@ function AiProductDetails() {
                                                                         <p className="var-tit">Options</p>
                                                                         <p className="var-dec">Add Options details here</p>
                                                                         <label className="label">Colour</label>
-                                                                        <select value={moredet.color} name="color" onChange={(e) => { morehandlechange(e) }} className="sel-colour">
+                                                                        <select value={variant.color} name="color" onChange={(e) => { variantChange(e) }} className="sel-colour">
                                                                             <option value="">Select</option>
                                                                             <option value="Black,Gold">Black,Gold</option>
                                                                             <option value="Grey,White">Grey,White</option>
@@ -443,38 +459,38 @@ function AiProductDetails() {
                                                                             <option value="Maroon,White">Maroon,White</option>
                                                                         </select>
                                                                         <label className="label">Size</label>
-                                                                        <input value={moredet.size} name="size" onChange={(e) => { morehandlechange(e) }} type="text" id="opt-ip-box" />
+                                                                        <input value={variant.size} name="size" onChange={(e) => { variantChange(e) }} type="text" id="opt-ip-box" />
                                                                         <label className="label">Finish Type</label>
-                                                                        <input value={moredet.finish_type} name="finish_type" onChange={(e) => { morehandlechange(e) }} type="text" id="opt-ip-box" />
+                                                                        <input value={variant.finish_type} name="finish_type" onChange={(e) => { variantChange(e) }} type="text" id="opt-ip-box" />
                                                                         <br></br>
                                                                         <p className="var-tit">Price Details</p>
                                                                         <label className="label">Price</label>
-                                                                        <input value={moredet.price} name="price" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={variant.price} name="price" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
                                                                         <label className="label">Compare at Price</label>
-                                                                        <input value={moredet.compare_at} name="compare_at" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={variant.compare_at} name="compare_at" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
                                                                         <label className="label">Handling Charges</label>
-                                                                        <input value={moredet.handling_changes} name="handling_changes" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={variant.handling_changes} name="handling_changes" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
                                                                         <label className="label">Sales Price</label>
-                                                                        <input value={moredet.sales_price} name="sales_price" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={variant.sales_price} name="sales_price" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
                                                                         <br></br>
-                                                                        <input name="required_shipping" onChange={(e) => { morehandlechange(e) }} id="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
-                                                                        <input name="charge_tax" onChange={(e) => { morehandlechange(e) }} id="aipro-checkbox2" type='checkbox' value="true" /><span className="chc-span">Charge Taxes on this product</span>
+                                                                        <input name="required_shipping" onChange={(e) => { variantChange(e) }} id="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
+                                                                        <input name="charge_taxes" onChange={(e) => { variantChange(e) }} id="aipro-checkbox2" type='checkbox' value="true" /><span className="chc-span">Charge Taxes on this product</span>
                                                                         <br></br>
                                                                         <br></br>
                                                                         <p className="var-tit">Inventory</p>
                                                                         <label>SKU</label>
-                                                                        <input value={moredet.sku} name="sku" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='text' />
+                                                                        <input value={variant.sku} name="sku" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='text' />
                                                                         <label>Barcode</label>
-                                                                        <input value={moredet.barcode} name="barcode" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='text' />
+                                                                        <input value={variant.barcode} name="barcode" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='text' />
                                                                         <label>Minimum Purchase Quantity</label>
-                                                                        <input value={moredet.min_purchase_qty} name="min_purchase_qty" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={variant.min_purchase_qty} name="min_purchase_qty" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
                                                                         <label>Quantity</label>
-                                                                        <input value={moredet.quantity} name="quantity" onChange={(e) => { morehandlechange(e) }} id="opt-ip-box" type='number' />
+                                                                        <input value={variant.quantity} name="quantity" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
                                                                         <br></br>
-                                                                        <input value={moredet.track_inventory} name="track_inventory" onChange={(e) => { morehandlechange(e) }} id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
+                                                                        <input value={variant.track_inventory} name="track_inventory" onChange={(e) => { variantChange(e) }} id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
                                                                         <br></br>
-                                                                        <button type="button" onClick={(e) => { handleSubmit(e) }} className="create-acc-btn">Add</button>
-                                                                        <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                                                                        <button type="button" onClick={(e) => { handleVariantSubmit(e) }} data-bs-dismiss="modal" aria-label="Close" className="create-acc-btn">Submit</button>
+                                                                        <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetBillingObject}>Cancel</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -486,15 +502,15 @@ function AiProductDetails() {
                                                     <table className="sel-var-box">
 
                                                         <tbody>
-                                                            {products.map((data, index) => (
+                                                            {variants.map((data, index) => (
                                                                 <tr>
                                                                     <td><img src={variant_image} className="sel_var_image" alt="selected-variant" /></td>
                                                                     <td>
-                                                                        <p className="cur-var-types">{data.color} / {data.size}  / {data.finish_type} / {data.quantity}</p>
-                                                                        <p className="sku-price">Sku:{data.inventory.sku} / Price: £ {data.pricing.price}</p>
+                                                                        <p className="cur-var-types">{data?.color} / {data?.size}  / {data?.finish_type} / {data?.quantity}</p>
+                                                                        <p className="sku-price">Sku:{data?.inventory?.sku} / Price: £ {data?.pricing?.price}</p>
                                                                     </td>
                                                                     <td>
-                                                                        <button className="edt-rem1" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
+                                                                        <button className="edt-rem1" type="button" onClick={() => editVarient(data, index)} data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
                                                                         <button onClick={() => { variantremove(index) }} type="button" className="edt-rem2">Remove</button>
                                                                     </td>
                                                                 </tr>
