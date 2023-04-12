@@ -18,12 +18,12 @@ function AllCommission() {
                     <div className="product-adding-div">
                         <div>
                             <br></br>
-                            <h4 className="ai-seller-title" >Category Commission Settings <span id="badge-1" class="badge bg-secondary">#100</span></h4>
-                            <p className="ai-title-note">Here are the Category Commission Setting on your store</p>
+                            <h4 className="ai-seller-title" >Freelancer Commission Settings <span id="badge-1" class="badge bg-secondary">#100</span></h4>
+                            <p className="ai-title-note">Here are the Freelancer Commission Setting on your store</p>
                         </div>
                         <div className="row">
                             <div className="col-12">
-                                <Link to="categorycommission" role="button"><button className="add-commission">Add Commission to Category</button></Link>
+                                <Link to="freelancercommission" role="button"><button className="add-commission">Add Commission to Freelancer</button></Link>
                             </div>
                         </div>
                     </div>
