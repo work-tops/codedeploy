@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import ProjectListing from "../Components/Project/ProjectListing";
 import SignUpPage from "../Components/User/SignUpPage";
 import SignUpForm from "../Components/User/SignupForm";
-import PostAProject from "../Components/Project/PostAProject";
+// import PostAProject from "../Components/";
 import AiProducts from "../Components/Product/AiProducts";
 import AiProductDetails from "../Components/Product/AiProductDetails";
 import AllFreelancer from "../Components/Freelancer/AllFreelancer";
@@ -14,21 +14,20 @@ import JobProposal from "../Components/Project/ProjectDetails";
 import AllOrders from "../Components/Orders/AllOrders";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import AddServices from "../Components/Services/AddServices";
-import AllCommission from "../Components/Commission/AllCommission"
-import CategoryCommission from "../Components/Commission/CategoryCommission"
 import GlobalCommission from "../Components/Commission/GlobalCommission";
 import ServiceCommission from "../Components/Commission/ServiceCommission";
 import Serviceslist from "../Components/Services/Serviceslist"
-<<<<<<< HEAD
-=======
-import AllCategoryCommission from "../Components/Commission/AllCategoryCommission"
 import CategoryCommission from "../Components/Commission/CategoryCommission"
->>>>>>> main
+import AllCategoryCommission from "../Components/Commission/AllCategoryCommission"
 import AiLoginPage from "../Components/Admin/AiLoginPage";
 import AllStaff from "../Components/Staff/AllStaff";
 import AddStaff from "../Components/Staff/AddStaff";
 import FreelancerCommission from "../Components/Commission/FreelancerCommission";
 import AllFreelancerCommission from "../Components/Commission/AllFreelancerCommission";
+import ProposalList from "../Components/Project/ProposalList";
+import PostJob1 from "../Components/Project/PostJob1";
+import ListJobs from "../Components/Project/ListJobs";
+import JobDetails from "../Components/Project/JobDetails";
 const Routers = () => {
     return (
         <Switch>
@@ -42,7 +41,6 @@ const Routers = () => {
             <Route path="/alljob"><AllJob /></Route>
             <Route path='/addjob'><AddJob /></Route>
             <Route path='/allorders'><AllOrders /></Route>
-            <Route path='/jobproposal'><JobProposal /></Route>
             <Route path='/allservices'><Serviceslist /></Route>
             <Route path='/addservices'><AddServices /></Route>
             <Route path='/globalcommission'><GlobalCommission /></Route>
@@ -56,10 +54,16 @@ const Routers = () => {
             <Route path="/allstaff"><AllStaff/></Route>
             <Route path="/addstaff"><AddStaff/></Route>
             {/* Routes for AI Pages //end*/}
-            <Route path='/postproject'><PostAProject /></Route>
+            {/* User UI Pages Start */}
+            <Route path='/jobproposal'><JobProposal /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path='/signupform'><SignUpForm /></Route>
             <Route path='/signuppage'><SignUpPage /></Route>
+            <Route path="/proposallist"><ProposalList/></Route>
+            <Route path="/postjob1"><PostJob1/></Route>
+            <Route path="/listjobs"><ListJobs/></Route>
+            <Route path="/jobdetails"><JobDetails/></Route>
+            {/* User UI Pages End */}
         </Switch>
 
     )

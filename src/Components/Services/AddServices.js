@@ -181,9 +181,6 @@ function AddServices() {
                                     <ServiceMultiselectDropdown />
                                     {/* <input value={form.service_tag} required name="service_tag" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input> */}
                                     <br></br>
-                                    <label>Service Tag</label>
-                                    <ServiceMultiselectDropdown/>
-                                    <br></br>
                                     <input id="aipro-checkbox1" type='checkbox' /><span className="chc-span">Shipping Requires</span>
                                     <input id="aipro-checkbox2" type='checkbox' /><span className="chc-span">Charge Taxes on this product</span>
                                     <br></br>

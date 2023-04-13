@@ -188,9 +188,12 @@ a {
     margin-right: 10px;
   }
 
+<<<<<<< HEAD
   .prj-detail {
     background: rgb(156 147 147 / 11%);
   }
+=======
+>>>>>>> main
 
   .sub-title,
   .skills-req {
@@ -199,16 +202,10 @@ a {
   }
 
   .title-desc {
-    width: 622px;
+    width: 580px;
     font-size: 12px;
     color: #776e6e;
     margin-bottom: 110px;
-  }
-
-  .economy-desc {
-    background-color: rgb(156 147 147 / 11%);
-    margin-left: 25px;
-    width: 327px;
   }
 
   .ending-days {
@@ -397,18 +394,13 @@ a {
     width: 150px;
   }
 
-  .containers {
-    display: grid;
-    grid-template-columns: 59% 29%;
-    gap: 28px;
-    position: absolute;
-    top: 1170px;
-    left: 129px;
-    right: 22px;
+  .container1 {
+    margin-left: 8rem;
   }
 
   .container2 {
     background: rgb(156 147 147 / 11%);
+    margin-left: 3.5rem;
   }
 
   .report-title {
@@ -461,19 +453,9 @@ a {
     font-size: 25px;
   }
 
-  .ask-a-que {
-    color: rgb(205, 164, 118);
-    margin-left: 250px;
-    font-weight: 500;
-    width: 200px;
-    border: 2px solid rgb(205, 164, 118);
-    padding: 15px;
-    font-size: 17px;
-    cursor: pointer;
-  }
 
   #msg-box {
-    width: 652px;
+    width: 623px;
     padding-bottom: 184px;
     margin-top: 30px;
     border: 1px solid rgb(133, 127, 127);
@@ -488,7 +470,7 @@ a {
 
   .send-box {
     background: rgb(156 147 147 / 11%);
-    width: 652px;
+    width: 623px;
     position: relative;
     bottom: 1px;
     border: 1px solid rgb(133, 127, 127);
@@ -692,7 +674,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    top: -16px;
+    /* top: -16px; */
   }
 
   .bg {
@@ -763,7 +745,8 @@ a {
   }
 
   .fb-sign-in,
-  .email-sign-in {
+  .email-sign-in,
+  .google-sign-in {
     display: block;
     margin-left: 230px;
     width: 250px;
@@ -774,6 +757,10 @@ a {
     border: none;
     margin-top: 20px;
     cursor: pointer;
+  }
+
+  .google-sign-in {
+    background: #212245;
   }
 
   .fb-sign-in {
@@ -874,7 +861,7 @@ a {
   }
 
   .descr {
-    color: lightgrey;
+    color: #fff;
     font-size: 14px;
     display: block;
     width: 410px;
@@ -888,20 +875,13 @@ a {
   #search {
     position: absolute;
     left: 350px;
-    top: 240px;
+    top: 284px;
     width: 500px;
     padding: 10px;
     border-radius: 5px;
   }
 
-  .ri-search-line {
-    position: absolute;
-    left: 795px;
-    top: 242px;
-    margin-top: 5px;
-    font-size: 22px;
-    cursor: pointer;
-  }
+
 
   #search::placeholder {
     margin-left: 20px;
@@ -928,18 +908,6 @@ a {
 
   /* menubar.css //end// */
 
-
-
-
-  /* jobdetails.css //start// */
-  .job-details {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    position: absolute;
-    top: 440px;
-
-  }
-
   .details-to-know {
     background: rgb(186, 181, 188);
     padding-left: 25px;
@@ -947,9 +915,8 @@ a {
     padding-top: 10px;
     width: 224px;
     border-radius: 5px;
-    margin-left: 36px;
     margin-top: 45px;
-    padding-right: 40px;
+    padding-right: 10px;
   }
 
   .job_title {
@@ -996,10 +963,6 @@ a {
     margin-top: 14px;
   }
 
-  .requirements {
-    display: grid;
-    grid-template-columns: 63% 37%;
-  }
 
   .keywords {
     border: 1px solid black;
@@ -1012,6 +975,8 @@ a {
   .emp-description {
     width: 479px;
     margin-bottom: 20px;
+    font-size: 14px;
+    margin-left: 20px;
   }
 
   .view {
@@ -1021,7 +986,7 @@ a {
     color: #fff;
     background-color: rgb(159 114 47 / 86%);
     border: none;
-    margin-left: 20px;
+    margin-left: 5rem;
     margin-bottom: 10px;
   }
 
@@ -1044,6 +1009,7 @@ a {
 
   .Name {
     font-size: 20px;
+    margin-left: 20px;
   }
 
   .euro,
@@ -1068,11 +1034,11 @@ a {
   }
 
   .btn_group {
-    position: relative;
-    top: 1813px;
     display: inline-flex;
     vertical-align: middle;
     border-radius: 0.375rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .price {
@@ -1086,13 +1052,13 @@ a {
 
   .employee-info {
     background: rgb(234 234 234);
-    width: 510px;
+    width: 400px;
     padding-bottom: 30px;
-    padding-left: 20px;
+    /* padding-left: 30px; */
     border-radius: 5px;
     margin-top: 45px;
-    margin-left: 35px;
-    padding-right: 45px;
+    margin-left: 20px;
+    /* padding-right: 45px; */
   }
 
   .job_search {
@@ -1104,10 +1070,6 @@ a {
     border-radius: 5px;
     margin-left: 40px;
     margin-top: 20px;
-  }
-
-  .highlights {
-    margin-left: 19px;
   }
 
   .slidecontainer {
@@ -1376,6 +1338,7 @@ a {
     margin-right: 8rem;
     margin-top: 2.5rem;
     padding-top: 5px;
+    margin-bottom: 30px;
   }
 
   .key {
@@ -1407,8 +1370,11 @@ a {
     margin: 2rem 8rem 2.5rem 8rem;
   }
 
+
   .prj-detail {
     background: rgb(156 147 147 / 11%);
+    margin-left: 8rem;
+    /* width: 0px; */
   }
 
   .sub-title,
@@ -1417,16 +1383,9 @@ a {
     margin-top: 6px;
   }
 
-  .title-desc {
-    width: 622px;
-    font-size: 12px;
-    color: #776e6e;
-    margin-bottom: 110px;
-  }
-
   .economy-desc {
     background-color: rgb(156 147 147 / 11%);
-    margin-left: 25px;
+    margin-left: 3.5rem;
     width: 327px;
   }
 
@@ -1616,15 +1575,6 @@ a {
     width: 150px;
   }
 
-  .containers {
-    display: grid;
-    grid-template-columns: 59% 29%;
-    gap: 28px;
-    position: absolute;
-    top: 1170px;
-    left: 129px;
-    right: 22px;
-  }
 
   .container2 {
     background: rgb(156 147 147 / 11%);
@@ -1682,7 +1632,7 @@ a {
 
   .ask-a-que {
     color: rgb(205, 164, 118);
-    margin-left: 250px;
+    margin-left: 7rem;
     font-weight: 500;
     width: 200px;
     border: 2px solid rgb(205, 164, 118);
@@ -1691,27 +1641,10 @@ a {
     cursor: pointer;
   }
 
-  #msg-box {
-    width: 652px;
-    padding-bottom: 184px;
-    margin-top: 30px;
-    border: 1px solid rgb(133, 127, 127);
-    padding-top: 15px;
-    border-bottom: none;
-  }
 
   #msg-box::placeholder {
     padding-left: 30px;
     font-size: 12px;
-  }
-
-  .send-box {
-    background: rgb(156 147 147 / 11%);
-    width: 652px;
-    position: relative;
-    bottom: 1px;
-    border: 1px solid rgb(133, 127, 127);
-    border-top: none;
   }
 
   .send {
@@ -1720,7 +1653,7 @@ a {
     color: #fff;
     background: rgb(159 114 47 / 86%);
     text-transform: uppercase;
-    margin-left: 550px;
+    margin-left: 523px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -1915,11 +1848,11 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    top: -16px;
+    /* top: -16px; */
   }
 
   .bg {
-    height: 565px;
+    height: 625px;
   }
 
   .bg-form {
@@ -2077,7 +2010,7 @@ a {
 
   .job-post {
     background: #a7d6df;
-    padding: 60px;
+    padding: 40px;
   }
 
   ul {
@@ -2095,40 +2028,22 @@ a {
     text-align: center;
   }
 
-  .descr {
-    color: lightgrey;
-    font-size: 14px;
-    display: block;
-    width: 410px;
-  }
-
   .offer_desc {
     color: #fff;
     font-size: 30px;
   }
 
-  #search {
-    position: absolute;
-    left: 350px;
-    top: 240px;
-    width: 500px;
-    padding: 10px;
-    border-radius: 5px;
-  }
+
 
   .ri-search-line {
     position: absolute;
     left: 795px;
-    top: 242px;
+    top: 284px;
     margin-top: 5px;
     font-size: 22px;
     cursor: pointer;
   }
 
-  #search::placeholder {
-    margin-left: 20px;
-    font-size: 14px;
-  }
 
   /* post.css //end// */
 
@@ -2153,26 +2068,7 @@ a {
 
 
 
-  /* jobdetails.css //start// */
-  .job-details {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    position: absolute;
-    top: 440px;
 
-  }
-
-  .details-to-know {
-    background: rgb(186, 181, 188);
-    padding-left: 25px;
-    padding-bottom: 0px;
-    padding-top: 10px;
-    width: 224px;
-    border-radius: 5px;
-    margin-left: 36px;
-    margin-top: 45px;
-    padding-right: 40px;
-  }
 
   .job_title {
     border-bottom: 1px solid #000;
@@ -2218,10 +2114,6 @@ a {
     margin-top: 14px;
   }
 
-  .requirements {
-    display: grid;
-    grid-template-columns: 63% 37%;
-  }
 
   .keywords {
     border: 1px solid black;
@@ -2231,21 +2123,7 @@ a {
     border-radius: 25px;
   }
 
-  .emp-description {
-    width: 479px;
-    margin-bottom: 20px;
-  }
 
-  .view {
-    width: 135px;
-    padding: 10px;
-    border-radius: 25px;
-    color: #fff;
-    background-color: rgb(159 114 47 / 86%);
-    border: none;
-    margin-left: 20px;
-    margin-bottom: 10px;
-  }
 
   .page {
     padding: 10px;
@@ -2264,9 +2142,6 @@ a {
 
   }
 
-  .Name {
-    font-size: 20px;
-  }
 
   .euro,
   .ri-check-double-fill {
@@ -2285,17 +2160,7 @@ a {
     color: lightskyblue;
   }
 
-  /* .previous {
-    margin-left: 440px;
-  } */
 
-  .btn_group {
-    position: relative;
-    top: 1813px;
-    display: inline-flex;
-    vertical-align: middle;
-    border-radius: 0.375rem;
-  }
 
   .price {
     margin-left: 40px;
@@ -2306,16 +2171,7 @@ a {
     margin-left: 45px;
   }
 
-  .employee-info {
-    background: rgb(234 234 234);
-    width: 510px;
-    padding-bottom: 30px;
-    padding-left: 20px;
-    border-radius: 5px;
-    margin-top: 45px;
-    margin-left: 35px;
-    padding-right: 45px;
-  }
+
 
   .job_search {
     background: rgb(234 234 234);
@@ -2329,7 +2185,7 @@ a {
   }
 
   .highlights {
-    margin-left: 19px;
+    margin-left: 5rem;
   }
 
   .slidecontainer {
@@ -2430,7 +2286,7 @@ a {
 
   .ri-facebook-circle-fill:hover,
   .ri-linkedin-box-fill:hover {
-    color: blue;
+    color: rgb(126, 175, 226);
     transition: all 0.5s;
   }
 
@@ -2573,6 +2429,7 @@ a {
     margin-bottom: 10px;
     padding: 5px;
     display: block;
+    border: 1px solid rgb(222, 171, 113);
   }
 
   .category {
@@ -2660,7 +2517,7 @@ a {
     margin-left: 20px;
     padding: 5px;
     width: 190px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border: 1px solid rgb(222, 171, 113);
     margin-top: 10px;
   }
@@ -2921,6 +2778,7 @@ a {
     border-radius: 5px;
     color: red;
     background: lightsalmon;
+    margin-bottom: 10px;
   }
 
   /* Aidashboard.css //end// */
@@ -3358,9 +3216,7 @@ a {
   /* addseller.css //end*/
 
   /* allJobs.css // start */
-  .all-jobs-div {
-    /* margin-right: 30px; */
-  }
+
 
   /* allJobs.css // end */
 
@@ -3368,11 +3224,17 @@ a {
   /* add jobs.css // start */
   .select-category {
     margin-left: 20px;
-    padding: 5px;
+    padding: 7px;
     width: 190px;
     margin-top: 10px;
-    /* padding: 2px; */
+    margin-bottom: 10px;
+    font-size: 14px;
     border: 1px solid rgb(222, 171, 113);
+  }
+
+  .frl-sector {
+    margin: 128px;
+    font-size: 14px;
   }
 
   .drop-files-ph {
@@ -3528,6 +3390,7 @@ a {
     width: 620px;
     padding: 8px;
     background: none;
+    margin-bottom: 15px;
     border: 1px solid black;
   }
 
@@ -3567,7 +3430,7 @@ a {
     border: 1px solid black;
     padding: 3px;
     width: 620px;
-    margin-left: 30px;
+    margin-left: 20px;
     margin-right: 30px;
   }
 
@@ -3710,6 +3573,25 @@ a {
     color: #fff !important;
     border-radius: 0px !important;
     background: #0c4664 !important;
+  }
+
+  .user-prj-view-1 {
+    margin-top: 20px;
+    width: 100px;
+    border: 2px solid #0c4664 !important;
+    border-radius: 0px !important;
+    position: relative;
+    top: -60px;
+  }
+
+  .user-prj-dd-1 {
+    margin-right: 15px;
+    margin-top: 20px;
+    color: #fff !important;
+    border-radius: 0px !important;
+    background: #0c4664 !important;
+    position: relative;
+    top: -60px;
   }
 
   #all-order-search {
@@ -4337,8 +4219,9 @@ a {
 
   .per-btn-dis {
     position: relative;
-    right: 30px;
-    padding: -1px;
+    /* right: 30px; */
+    right: 1px;
+    border-left: none;
     padding-top: 4px;
     padding-right: 10px;
     padding-bottom: 4px;
@@ -4348,8 +4231,8 @@ a {
 
   .fix-btn-dis {
     position: relative;
-    right: 48px;
-    padding: -1px;
+    right: 1px;
+    border-left: none;
     padding-top: 9px;
     padding-right: 10px;
     padding-bottom: 4px;
@@ -4540,5 +4423,220 @@ a {
   .btn-nxt:hover {
     color: #2082b4;
     transition: all 0.5s;
+  }
+
+  .current-sel-proposal-status {
+    color: #000;
+    font-size: 14px;
+    padding: 5px 25px 5px 28px;
+    background: gold;
+    margin-left: 24rem;
+    position: relative;
+    top: 32px;
+    cursor: default;
+  }
+
+  .job_id {
+    position: relative;
+    font-size: 12px;
+    margin-left: 24rem;
+    top: 34px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .proposal-content {
+    background: rgb(156 147 147 / 11%);
+  }
+
+  .bud-viw-prj {
+    border: 1px solid #0c4664;
+    width: 600px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-left: 14rem;
+    padding: 25px;
+    border-radius: 10px;
+  }
+
+  .bud-viw-prj:nth-child(odd),
+  .bud-viw-prj:nth-child(even) {
+    color: #0c4664;
+    cursor: pointer;
+  }
+
+  .bud-viw-prj:nth-child(odd):hover,
+  .bud-viw-prj:nth-child(even):hover {
+    color: #2082b4;
+  }
+
+  .loc-drp {
+    padding: 15px;
+    border: none;
+    background: #e6e3e3;
+    width: 135px;
+    margin-left: 4rem;
+    /* margin-right: 5px; */
+  }
+
+  .rating-drp {
+    padding: 15px;
+    border: none;
+    background: #e6e3e3;
+    width: 135px;
+    border-left: 2px solid;
+  }
+
+  .page-prop-list {
+    text-align: end;
+    cursor: default;
+    margin-right: 2rem;
+  }
+
+  .user-frl-profile-pic {
+    width: 100px;
+    border: 1px solid;
+    border-radius: 25px;
+    margin-left: 10px;
+    position: relative;
+    bottom: 35px;
+  }
+
+  .frl-c-name {
+    font-size: 16px;
+    font-weight: bolder;
+    /* margin-top: 0px; */
+    margin-left: 30px;
+    position: relative;
+    top: 15px;
+  }
+
+  .frl-role {
+    font-size: 14px;
+    margin-left: 30px;
+  }
+
+  .frl-ratings {
+    margin-left: 30px;
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+  }
+
+  .exp-tit {
+    margin-left: 40px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .exp {
+    font-size: 13px;
+    position: relative;
+    bottom: 5px;
+    margin-left: 40px;
+  }
+
+  .seller-ph-no {
+    margin-left: 173px;
+    font-size: 14px;
+  }
+
+  .noe {
+    margin-left: 108px;
+    font-size: 14px;
+  }
+
+  .frl-pro-list {
+    width: 90%;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  .frl-prf-dec {
+    font-size: 14px;
+    margin-top: 19px;
+    width: 450px;
+    margin-left: 24px;
+  }
+
+  .list-body-div {
+    background: #fff;
+    border-radius: 25px;
+  }
+
+  .google-logo {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 2px;
+    right: 5px;
+  }
+
+  .postjob-desc {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    top: 12px;
+  }
+
+  .pj-pg-desc {
+    color: #bfb3b3;
+    font-size: 16px;
+    margin-left: 50px;
+    position: relative;
+    top: 20px;
+    text-transform: capitalize;
+  }
+
+  .cat-drp {
+    margin-top: 40px;
+    width: 250px;
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid;
+    padding-right: 5px;
+  }
+
+  .pj-ctn-btn {
+    margin-top: 3rem;
+    width: 200px;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    background: #2082b4;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    position: relative;
+    left: 15rem;
+  }
+
+  .n-ip-bg {
+    background: #f4f4f4;
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+
+  .n-tit {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .n-list {
+    background-color: #fff;
+    width: 420px;
+    margin-left: 29px;
+    position: relative;
+    bottom: 14px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .nte-list {
+    font-size: 13px;
   }
 }

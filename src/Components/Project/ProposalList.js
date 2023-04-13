@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from '../Header/Header'
-import JobDetails from '../Job/JobDetails'
 import Menubar from '../Menubar/Menubar'
-import PostPage from '../Post/PostPage'
 import Footer from '../Footer/Footer'
-function ProjectListing() {
+import ProposalPost from '../Post/ProposalPost'
+import ProposalListContent from '../Others/ProposalListContent'
+function ProposalList() {
     return (
         <div className='row'>
             <div className='col-12 prj-det-header'>
@@ -14,13 +14,16 @@ function ProjectListing() {
                 <Menubar />
             </div>
             <div className='col-12'>
-                <PostPage />
+                <ProposalPost />
             </div>
             <div className='col-12'>
-                <JobDetails />
+                <ProposalListContent />
             </div>
+            <div className='col-12'>
             <Footer />
+            </div>
+            
         </div>
     )
 }
-export default ProjectListing
+export default ProposalList

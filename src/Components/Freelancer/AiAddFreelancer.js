@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import product_image from '../../Images/employee.png'
 import Multiselect from "multiselect-react-dropdown";
+import SkillsMultiselectDropdown from "../SelectTag/SelectTag";
 
 function AiFreelancer() {
 
@@ -262,24 +263,50 @@ function AiFreelancer() {
                                     <input required name="name" value={form.name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
                                     <input required name="lastname" value={form.lastname} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
                                     <br></br>
-                                    <label>Email</label>
-                                    <input required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="aipro-barcode" type='email' />
+                                    <span className="category">Email</span> <span className="seller-ph-no">Phone Number</span>
                                     <br></br>
-                                    <span className="category">Phone Number</span> <span className="dob">Date of Birth</span>
-                                    <br></br>
+                                    <input required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' />
                                     <input required name="contact" value={form.contact} onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
-                                    <input required name="dob" value={form.dob} onChange={(e) => { handleChange(e) }} id="aipro-email" type='date' />
                                     <br></br>
                                     <span className="category">Company Name</span>
                                     {/* <span className="dob">Skills</span> */}
+                                    <span className="category">Date of Birth</span> <span className="frl-sector">You Operate as a</span>
+                                    <br></br>
+                                    <input required name="dob" value={form.dob} onChange={(e) => { handleChange(e) }} id="aipro-email" type='date' />
+                                    <select className="select-category">
+                                        <option>Select</option>
+                                        <option>Self-employed / Sole Trader</option>
+                                        <option>Limited Company</option>
+                                        <option>Ordinary Partnership</option>
+                                        <option>Limited Partnership</option>
+                                    </select>
+                                    <br></br>
+                                    <span className="category">Bussiness Name</span> <span className="noe">No.of Employee</span>
                                     <br></br>
                                     <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
-                                    {/* <input required name="skills" value={form.skills} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' /> */}
+                                    <select className="select-category">
+                                        <option>Select</option>
+                                        <option>Myself Only</option>
+                                        <option>2-5</option>
+                                        <option>6-10 </option>
+                                        <option>10+</option>
+                                    </select>
                                     <br></br>
                                     <label className="label">Skills:</label>
                                     <div className="multi-sel">
                                         <Multiselect options={skill} onSelect={onSelect} onRemove={onRemove} displayValue="value" />
                                     </div>
+                                    <label className="label">Primary Skill</label>
+                                    <select id="aipro-name">
+                                        <option>Select</option>
+                                        <option>Skill 1</option>
+                                        <option>Skill 2</option>
+                                        <option>Skill 3</option>
+                                        <option>Skill 4</option>
+                                    </select>
+                                    <br></br>
+                                    <label className="label">Secondary Skill</label>
+                                    <SkillsMultiselectDropdown /> 
                                     <br></br>
                                     <label>Company Address</label>
                                     <textarea required name="store_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
@@ -303,7 +330,7 @@ function AiFreelancer() {
                                 </form>
                             </div>
                             <div className="row">
-                                <div className="freelance-form-div col-10">
+                                <div className="freelance-form-div col-12">
                                     <form className="freelance-form">
                                         <h5 className="form-title">Freelancer Type</h5>
                                         <input type='checkbox' id="ff-chbox" /><span>Fabricators</span>

@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { Link } from "react-router-dom";
+import { getAllData } from "../../Services/ProxyService";
+import ReactPaginate from 'react-paginate';
+import toast, { Toaster } from 'react-hot-toast';
 
 function AllCategoryCommission() {
+    const [form, setform] = useState([]);
+    const Catcomdata = async () => {
+        const response = await getAllData("commission/category/3")
+        setform(response.data.commission)
+    }
+
+    useEffect(() => {
+        Catcomdata()
+    }, [])
+
+    const [listPerPage] = useState(10);
+    const [pageNumber, setPageNumber] = useState(0);
+    const pagesVisited = pageNumber * listPerPage;
+    const lists = form.slice(pagesVisited, pagesVisited + listPerPage);
+    const pageCount = Math.ceil(form.length / listPerPage);
+    const changePage = ({ selected }) => {
+        setPageNumber(selected);
+    }
+
     return (
         <div className="row">
             <div className="col-2">
@@ -80,130 +102,53 @@ function AllCategoryCommission() {
                                 </td>
                                 <td id="td" className="rounded-end">Action</td>
                             </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Granite</td>
-                                <td id="td"> % + Fixed </td>
-                                <td id="td">20 %</td>
-                                <td id="td">-</td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Marble</td>
-                                <td id="td">Fixed + %</td>
-                                <td id="td">10.00</td>
-                                <td id="td">-</td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Tiles</td>
-                                <td id="td">Fixed </td>
-                                <td id="td">10 %</td>
-                                <td id="td">10.00</td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Quartz</td>
-                                <td id="td">%</td>
-                                <td id="td">10 %</td>
-                                <td id="td">-</td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Sandstone</td>
-                                <td id="td">Fixed + %</td>
-                                <td id="td">10 %</td>
-                                <td id="td">20.00</td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Quantize</td>
-                                <td id="td"> % + Fixed </td>
-                                <td id="td">20.00</td>
-                                <td id="td">10 %</td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                            {lists.map((data, key) => (
+                                <tr key={key}>
+                                    <td id="td"><input type='checkbox' /></td>
+                                    <td id="td">2456781</td>
+                                    <td id="td">{data.category}</td>
+                                    <td id="td">{data.commission_type}</td>
+                                    <td id="td">{data.first_commission == "" || data.first_commission == undefined ? (
+                                        <span> -</span>
+                                    ) : (
+                                        <span> {data.first_commission}</span>
+                                    )}</td>
+                                     <td id="td">{data.second_commission == "" || data.second_commission == undefined ? (
+                                        <span> -</span>
+                                    ) : (
+                                        <span> {data.second_commission}</span>
+                                    )}</td>
+                                   
+                                    <td id="td">
+                                        <div class="dropdown">
+                                            <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+
                         </table>
                         <span className="showing-tag-name">Showing 1-30 List</span>
-                        <div className="all-pro-pagination ">
-                            <button className="back-btn shadow bg-body rounded"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button className="shadow bg-body rounded">1</button>
-                            <button className="shadow bg-body rounded">2</button>
-                            <button className="shadow bg-body rounded">3</button>
-                            <button className="shadow bg-body rounded"><i class="fa-solid fa-ellipsis"></i></button>
-                            <button className="shadow bg-body rounded">25</button>
-                            <button className="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                        <div className="mt-5" >
+                            <ReactPaginate
+                                style={{ padding: "5px", margin: "0px", border: "none" }}
+                                // previousLabel={""}
+                                // nextLabel={""}
+                                pageCount={pageCount}
+                                onPageChange={changePage}
+                                containerClassName={"pagination"}
+                                // previousLinkClassName={"previousBttn"}
+                                // nextLinkClassName={"nextBttn"}
+                                disabledClassName={"disabled"}
+                                activeClassName={"active"}
+                                total={lists.length}
+                            />
                         </div>
                     </div>
                 </div>
