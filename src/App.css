@@ -4541,4 +4541,69 @@ a {
     color: #2082b4;
     transition: all 0.5s;
   }
+
+  .current-sel-proposal-status {
+    color: #000;
+    font-size: 14px;
+    padding: 5px 25px 5px 28px;
+    background: gold;
+    margin-left: 24rem;
+    position: relative;
+    top: 32px;
+    cursor: default;
+  }
+
+  .job_id {
+    position: relative;
+    font-size: 12px;
+    margin-left: 24rem;
+    top: 34px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .proposal-content {
+    background: rgb(156 147 147 / 11%);
+  }
+
+  .bud-viw-prj {
+    border: 1px solid #0c4664;
+    width: 600px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-left: 14rem;
+    padding: 25px;
+    border-radius: 10px;
+  }
+
+  .bud-viw-prj:nth-child(odd),
+  .bud-viw-prj:nth-child(even) {
+    color: #0c4664;
+    cursor: pointer;
+  }
+
+  .bud-viw-prj:nth-child(odd):hover,
+  .bud-viw-prj:nth-child(even):hover {
+    color: #2082b4;
+  }
+  .loc-drp{
+      padding: 15px;
+      border: none;
+      background: #e6e3e3;
+      width: 135px;
+      margin-left: 4rem;
+      /* margin-right: 5px; */
+  }
+  .rating-drp {
+    padding: 15px;
+    border: none;
+    background: #e6e3e3;
+    width: 135px;
+    border-left: 2px solid;
+}
+.page-prop-list{
+  text-align: end;
+  cursor: default;
+  margin-right: 2rem;
+}
 }

@@ -24,6 +24,7 @@ import AllStaff from "../Components/Staff/AllStaff";
 import AddStaff from "../Components/Staff/AddStaff";
 import FreelancerCommission from "../Components/Commission/FreelancerCommission";
 import AllFreelancerCommission from "../Components/Commission/AllFreelancerCommission";
+import ProposalList from "../Components/Project/ProposalList";
 const Routers = () => {
     return (
         <Switch>
@@ -37,7 +38,6 @@ const Routers = () => {
             <Route path="/alljob"><AllJob /></Route>
             <Route path='/addjob'><AddJob /></Route>
             <Route path='/allorders'><AllOrders /></Route>
-            <Route path='/jobproposal'><JobProposal /></Route>
             <Route path='/allservices'><Serviceslist /></Route>
             <Route path='/addservices'><AddServices /></Route>
             <Route path='/globalcommission'><GlobalCommission /></Route>
@@ -52,9 +52,11 @@ const Routers = () => {
             <Route path="/addstaff"><AddStaff/></Route>
             {/* Routes for AI Pages //end*/}
             <Route path='/postproject'><PostAProject /></Route>
+            <Route path='/jobproposal'><JobProposal /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path='/signupform'><SignUpForm /></Route>
             <Route path='/signuppage'><SignUpPage /></Route>
+            <Route path="/proposallist"><ProposalList/></Route>
         </Switch>
 
     )
