@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../Header/Header";
 import Menubar from "../Menubar/Menubar";
-import JobPost from "../Job/JobPost";
-import ProjectInformation from "../Others/CustomWebsiteDevelopment";
+import JobPost from "../Post/JobProposalPost";
 import Footer from '../Footer/Footer'
+import ProposalSendingContent from "../Others/ProposalSendingContent";
 function JobProposal() {
     return (
         <>
@@ -18,7 +18,7 @@ function JobProposal() {
                     <JobPost />
                 </div>
                 <div className="col-12">
-                    <ProjectInformation />
+                    <ProposalSendingContent/>
                 </div>
                 <div className="col-12">
                     <Footer/>

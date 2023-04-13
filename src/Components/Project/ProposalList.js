@@ -1,9 +1,8 @@
 import React from 'react'
 import Header from '../Header/Header'
-import JobDetails from '../Job/JobDetails'
 import Menubar from '../Menubar/Menubar'
 import Footer from '../Footer/Footer'
-import ProposalPost from '../Others/ProposalPost'
+import ProposalPost from '../Post/ProposalPost'
 import ProposalListContent from '../Others/ProposalListContent'
 function ProposalList() {
     return (

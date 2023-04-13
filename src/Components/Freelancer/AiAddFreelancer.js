@@ -47,10 +47,10 @@ function AiFreelancer() {
         console.log(_objList.length);
         setSelectedFile(_objList);
     }
-    const handleSelectChange = (event,inx) => {
+    const handleSelectChange = (event, inx) => {
         const _value = event.target.value;
         var allSelected = [...selectedFile];
-        const oneSelected =  {
+        const oneSelected = {
             "document_type": _value,
             "name": "",
             "url": "",
@@ -58,18 +58,18 @@ function AiFreelancer() {
         };
         allSelected[inx] = oneSelected;
         setSelectedFile(allSelected);
-        console.log('select index',inx);
+        console.log('select index', inx);
         console.log(selectedFile);
     };
-    const handleFileInput = (e,inx) => {
-        console.log('file index',inx);
+    const handleFileInput = (e, inx) => {
+        console.log('file index', inx);
         const file = e.target.files[0];
         var _files = [...uploadFiles];
         _files.push(file);
         setUploadFile(_files);
 
         var _selectFiles = [...selectedFile];
-        const oneSelected =  {
+        const oneSelected = {
             "document_type": _selectFiles[inx].document_type,
             "name": file.name,
             "url": `https://myproject-data.s3.eu-west-2.amazonaws.com/images/${file.name}`,
@@ -155,9 +155,9 @@ function AiFreelancer() {
                 ternsandconfition: true
             },
             created_by: "1",
-            attachments:selectedFile
+            attachments: selectedFile
         }
-        console.log('add freelancer obj',freelancerData);
+        console.log('add freelancer obj', freelancerData);
         const response = await createData("seller/new", freelancerData)
         if (response.status === 201) {
             toast.success('Successfully Freelancer Added')
@@ -253,21 +253,43 @@ function AiFreelancer() {
                                     <input required name="name" value={form.name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
                                     <input required name="lastname" value={form.lastname} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
                                     <br></br>
-                                    <label>Email</label>
-                                    <input required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="aipro-barcode" type='email' />
+                                    <span className="category">Email</span> <span className="seller-ph-no">Phone Number</span>
                                     <br></br>
-                                    <span className="category">Phone Number</span> <span className="dob">Date of Birth</span>
-                                    <br></br>
+                                    <input required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' />
                                     <input required name="contact" value={form.contact} onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
+                                    <br></br>
+                                    <span className="category">Date of Birth</span> <span className="frl-sector">You Operate as a</span>
+                                    <br></br>
                                     <input required name="dob" value={form.dob} onChange={(e) => { handleChange(e) }} id="aipro-email" type='date' />
+                                    <select className="select-category">
+                                        <option>Select</option>
+                                        <option>Self-employed / Sole Trader</option>
+                                        <option>Limited Company</option>
+                                        <option>Ordinary Partnership</option>
+                                        <option>Limited Partnership</option>
+                                    </select>
                                     <br></br>
-                                    <label className="label">Company Name</label> 
-                                    {/* <span className="dob">Skills</span> */}
+                                    <span className="category">Bussiness Name</span> <span className="noe">No.of Employee</span>
                                     <br></br>
-                                    <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-name" type='text' />
-                                    {/* <input required name="skills" value={form.skills} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' /> */}
+                                    <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
+                                    <select className="select-category">
+                                        <option>Select</option>
+                                        <option>Myself Only</option>
+                                        <option>2-5</option>
+                                        <option>6-10 </option>
+                                        <option>10+</option>
+                                    </select>
                                     <br></br>
-                                    <label className="label">Skills:</label>
+                                    <label className="label">Primary Skill</label>
+                                    <select id="aipro-name">
+                                        <option>Select</option>
+                                        <option>Skill 1</option>
+                                        <option>Skill 2</option>
+                                        <option>Skill 3</option>
+                                        <option>Skill 4</option>
+                                    </select>
+                                    <br></br>
+                                    <label className="label">Secondary Skill</label>
                                     <SkillsMultiselectDropdown />
                                     <br></br>
                                     <label>Company Address</label>
@@ -292,7 +314,7 @@ function AiFreelancer() {
                                 </form>
                             </div>
                             <div className="row">
-                                <div className="freelance-form-div col-10">
+                                <div className="freelance-form-div col-12">
                                     <form className="freelance-form">
                                         <h5 className="form-title">Freelancer Type</h5>
                                         <input type='checkbox' id="ff-chbox" /><span>Fabricators</span>
@@ -316,7 +338,7 @@ function AiFreelancer() {
                                         <br></br>
                                         {selectedFile.map((x, i) =>
                                             <>
-                                                <select name={'select_' + i} onChange={(e)=>handleSelectChange(e,i)} className="frl-proof-sel">
+                                                <select name={'select_' + i} onChange={(e) => handleSelectChange(e, i)} className="frl-proof-sel">
                                                     <option value="">Select</option>
                                                     {filteredOptions.map((data, key) => (
                                                         <option key={'doc_' + key} value={data.value}>{data.value}</option>
@@ -331,7 +353,7 @@ function AiFreelancer() {
                                                     <input
                                                         name={'doc_attach_' + i}
                                                         // multiple
-                                                        onChange={(e)=>handleFileInput(e,i)}
+                                                        onChange={(e) => handleFileInput(e, i)}
                                                         required
                                                         type="file"
                                                         id={'doc_attach_id_' + i}

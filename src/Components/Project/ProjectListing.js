@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../Header/Header'
 import JobDetails from '../Job/JobDetails'
 import Menubar from '../Menubar/Menubar'
-import PostPage from '../Others/PostPage'
+import PostPage from '../Post/PostPage'
 import Footer from '../Footer/Footer'
 function ProjectListing() {
     return (
