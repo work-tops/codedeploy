@@ -110,14 +110,14 @@ function GlobalCommission() {
                                         <option value="% + Fixed">% + Fixed</option>
                                         <option value="Fixed + %">Fixed + %</option>
                                     </select>
-                                    <hr></hr>
+                                    
 
 
                                     {form.commission_type == "%" || form.commission_type == "Fixed" ? (
                                         <>
                                             <label className="label">Global Commission</label>
                                             <input  type="number" required value={form.first_commission} id="fgc" name="first_commission" onChange={(e) => { handlechange(e) }} /><button className="per-btn-dis fix-btn-dis" disabled>{form.commission_type}</button>
-                                            <hr></hr>
+                                            
                                         </>
                                     ) : ""}
 
@@ -128,7 +128,7 @@ function GlobalCommission() {
                                             <hr></hr>
                                             <label className="label">Second Global Commission</label>
                                             <input  type="number" id="fgc" required value={form.second_commission} name="second_commission" onChange={(e) => { handlechange(e) }} /><button className="fix-btn-dis" disabled>FIXED</button>
-                                            <hr></hr>
+                                            
                                         </>
                                     ) : ""}
 
@@ -155,7 +155,8 @@ function GlobalCommission() {
                                             type="checkbox"
                                             role="switch"
                                             id="flexSwitchCheckDefault"
-                                        />                                        <br></br>
+                                        />
+                                        <br></br>                                       
                                         <p className="switch-des">If you enable this option , all the prices of exisiting products will change according to the given commission value</p>
                                         <button type="submit" className="create-acc-btn-1">Save Changes</button>
                                     </div>

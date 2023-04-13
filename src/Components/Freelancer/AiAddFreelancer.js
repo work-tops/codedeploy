@@ -261,10 +261,10 @@ function AiFreelancer() {
                                     <input required name="contact" value={form.contact} onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
                                     <input required name="dob" value={form.dob} onChange={(e) => { handleChange(e) }} id="aipro-email" type='date' />
                                     <br></br>
-                                    <span className="category">Company Name</span> 
+                                    <label className="label">Company Name</label> 
                                     {/* <span className="dob">Skills</span> */}
                                     <br></br>
-                                    <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
+                                    <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-name" type='text' />
                                     {/* <input required name="skills" value={form.skills} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' /> */}
                                     <br></br>
                                     <label className="label">Skills:</label>

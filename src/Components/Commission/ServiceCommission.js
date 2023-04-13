@@ -110,22 +110,22 @@ function ServiceCommission() {
                                             <option value="% + Fixed">% + Fixed</option>
                                             <option value="Fixed + %">Fixed + %</option>
                                         </select>
-                                        <hr></hr>
+                                        
                                         {form.commission_type == "%" || form.commission_type == "Fixed" ? (
                                             <>
                                                 <label className="label">Service Commission</label>
                                                 <input type="number" required value={form.first_commission} id="fgc" name="first_commission" onChange={(e) => { handlechange(e) }} /><button className="per-btn-dis fix-btn-dis" disabled>{form.commission_type}</button>
-                                                <hr></hr>
+                                                
                                             </>
                                         ) : ""}
                                         {form.commission_type == "% + Fixed" || form.commission_type == "Fixed + %" ? (
                                             <>
                                                 <label className="label">Service Commission</label>
                                                 <input  type="number" required value={form.first_commission} name="first_commission" onChange={(e) => { handlechange(e) }} id="fgc" /><button className="per-btn-dis" disabled>%</button>
-                                                <hr></hr>
+                                                
                                                 <label className="label">Second Service Commission</label>
                                                 <input  type="number" id="fgc" required value={form.second_commission} name="second_commission" onChange={(e) => { handlechange(e) }} /><button className="fix-btn-dis" disabled>FIXED</button>
-                                                <hr></hr>
+                                               
                                             </>
                                         ) : ""}
 

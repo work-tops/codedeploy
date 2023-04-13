@@ -8,6 +8,7 @@ import { Icon } from '@iconify/react';
 import variant_image from "../../Images/product_image.png"
 // import ProductMultiselectDropdown from "../SelectTag/ProductTag";
 import Multiselect from "multiselect-react-dropdown";
+import ProductMultiselectDropdown from "../SelectTag/ProductTag";
 function AiProductDetails() {
 
     const options = [
@@ -565,6 +566,20 @@ function AiProductDetails() {
                                                 <input value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
                                                 <p className="ai-title-desc">Description tag meta field</p>
                                                 <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
+                                                <p className="pro-sub-title">Product Tag</p>
+                                                <label className="label">Category</label>
+                                                <ProductMultiselectDropdown/>
+                                                <label className="label">Colour</label>
+                                                <ProductMultiselectDropdown/>
+                                                <label className="label">Finish Type</label>
+                                                <ProductMultiselectDropdown/>
+                                                <label className="label">Length</label>
+                                                <ProductMultiselectDropdown/>
+                                                <label className="label">Width</label>
+                                                <ProductMultiselectDropdown/>
+                                                <label className="label">Thickness</label>
+                                                <ProductMultiselectDropdown/>
+                                                <button className="addtag-row-btn">Add Row</button>
                                             </div>
                                         </div >
                                 </form>
