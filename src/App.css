@@ -164,14 +164,6 @@ a {
 
 
   /* customweb.css //start// */
-  .key-description {
-    background-color: rgb(156 147 147 / 11%);
-    position: absolute;
-    top: 410px;
-    left: 130px;
-    right: 130px;
-
-  }
 
   .key {
     display: flex;
@@ -194,15 +186,6 @@ a {
   .skills-req {
     margin-left: 30px;
     margin-right: 10px;
-  }
-
-  .layout-1 {
-    background-color: rgb(156 147 147 / 11%);
-    position: absolute;
-    margin-bottom: 10px;
-    top: 540px;
-    left: 130px;
-    right: 130px;
   }
 
   .prj-detail {
@@ -874,18 +857,11 @@ a {
 
   /* post.css //start// */
   .project-post,
-  .project_post,
-  .job-post {
+  .project_post {
     background: #a7d6df;
     padding: 80px;
-    position: relative;
-    left: 0;
-    right: 0;
   }
 
-  .job-post {
-    bottom: 16px;
-  }
 
   .project_post,
   .project-post {
@@ -1199,15 +1175,12 @@ a {
 
 
   /* footer.css //start// */
-  .footer_body,
-  .footer-box,
-  .footer_3,
-  .register_footer {
+  .footer-box {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     background: #0c4664;
-    margin-top: -16px;
+    /* margin-top: -16px; */
   }
 
   .desc {
@@ -1399,11 +1372,10 @@ a {
   /* customweb.css //start// */
   .key-description {
     background-color: rgb(156 147 147 / 11%);
-    position: absolute;
-    top: 410px;
-    left: 130px;
-    right: 130px;
-
+    margin-left: 8rem;
+    margin-right: 8rem;
+    margin-top: 2.5rem;
+    padding-top: 5px;
   }
 
   .key {
@@ -1430,15 +1402,9 @@ a {
   }
 
   .layout-1 {
-    /* display: grid;
-  grid-template-columns: 65% 25%;
-  gap: 5px; */
     background-color: rgb(156 147 147 / 11%);
-    position: absolute;
-    margin-bottom: 10px;
-    top: 540px;
-    left: 130px;
-    right: 130px;
+    padding-top: 5px;
+    margin: 2rem 8rem 2.5rem 8rem;
   }
 
   .prj-detail {
@@ -1963,7 +1929,8 @@ a {
   .heading {
     text-align: center;
     color: #000;
-    font-size: 24px;
+    font-size: 20px;
+    margin-bottom: 15px;
   }
 
   .note {
@@ -1972,17 +1939,6 @@ a {
     margin-left: 90px;
     margin-top: 50px;
   }
-
-  /* .register-field,
-  .form-field {
-    background: #fff;
-    width: 700px;
-    margin-left: 9rem;
-    border: none;
-    position: relative;
-    top: 30px;
-    right: 110px;
-  } */
 
   .register-field {
     padding-bottom: 120px;
@@ -2114,18 +2070,20 @@ a {
 
   /* post.css //start// */
   .project-post,
-  .project_post,
-  .job-post {
+  .project_post {
     background: #a7d6df;
     padding: 40px;
-    position: relative;
-    left: 0;
-    right: 0;
   }
 
   .job-post {
-    bottom: 16px;
+    background: #a7d6df;
+    padding: 60px;
   }
+
+  ul {
+    margin-bottom: 0rem !important;
+  }
+
 
   .project_post,
   .project-post {
@@ -2439,27 +2397,12 @@ a {
 
 
   /* footer.css //start// */
-  .footer_body,
-  .footer-box,
-  .footer_3,
-  .register_footer {
+
+  .footer-box {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
   }
-
-  .register_footer {
-    margin-top: -16px;
-  }
-
-  .footer_body {
-    margin-top: 115rem;
-  }
-
-  .footer_3 {
-    margin-top: 75rem;
-  }
-
 
   .desc {
     margin-top: 14px;
@@ -3060,16 +3003,18 @@ a {
     margin-left: 10px;
 
   }
+
   .add-seller_1 {
     padding: 9px;
     width: 127px;
     border: none;
     color: #fff;
     background: #40c940;
-    margin-left:110px;
+    margin-left: 110px;
     margin-top: 35px;
 
   }
+
   .allproducts-table {
     width: 100%;
     background: rgb(254, 247, 247);
@@ -3082,7 +3027,7 @@ a {
     border: none;
     color: #fff;
     background: #40c940;
-    margin-left: -25px;
+    margin-left: -10px;
     margin-top: 47px;
   }
 
@@ -3289,6 +3234,19 @@ a {
     border: none;
     width: 150px;
     margin-left: 20px;
+    font-size: 14px;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: #4bb54b;
+    color: #fff;
+  }
+
+  .create-acc-btn-1 {
+    border: none;
+    width: 150px;
+    margin-left: -18px;
     font-size: 14px;
     padding: 8px;
     margin-top: 15px;
@@ -3542,7 +3500,6 @@ a {
     background: #fff;
     padding-bottom: 80px;
     width: 260px;
-    /* margin-right: 20px; */
     border-radius: none;
   }
 
@@ -3564,6 +3521,7 @@ a {
   .proposal-amt-box {
     margin-left: 20px;
     margin-top: 20px;
+    font-size: 16px;
   }
 
   .proposal-amt-box {
@@ -3707,7 +3665,24 @@ a {
   }
 
   .field-box-bg {
-    /* background-color: #776e6e; */
+    background-color: #f4f4f4;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 800px;
+    margin-left: 5rem;
+    margin-top: 4rem;
+    margin-bottom: 70px;
+  }
+
+  .user-project-details-table {
+    margin-left: 55px;
+    /* margin-bottom: 10px; */
+  }
+
+  .tab-clm {
+    border-bottom: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   .abt-user {
@@ -3723,14 +3698,18 @@ a {
   }
 
   .user-prj-view {
-    /* margin-right: 42px; */
     margin-top: 20px;
     width: 100px;
+    border: 2px solid #0c4664 !important;
+    border-radius: 0px !important;
   }
 
   .user-prj-dd {
     margin-right: 15px;
     margin-top: 20px;
+    color: #fff !important;
+    border-radius: 0px !important;
+    background: #0c4664 !important;
   }
 
   #all-order-search {
@@ -4232,12 +4211,21 @@ a {
   .multi-sel {
     margin-left: 20px;
     margin-top: 10px;
-    padding: -1px;
-    /* padding-bottom: 30px; */
+    border: 1px solid rgb(222, 171, 113);
+    border-radius: 0px;
+    width: 275px;
+    background: #fff;
+    margin-bottom: 15px !important;
+  }
+
+  .multi-sel-service {
+    margin-left: 20px;
+    margin-top: 10px;
     border: 1px solid rgb(222, 171, 113);
     border-radius: 0px;
     width: 400px;
     background: #fff;
+    margin-bottom: 15px !important;
   }
 
   .searchWrapper {
@@ -4449,26 +4437,108 @@ a {
     margin-top: 20px;
     font-size: 14px;
   }
-  .add-staff-des{
-      margin-left: 16px;
-      font-size: 12px;
-      position: relative;
-      bottom: 14px;
+
+  .add-staff-des {
+    margin-left: 16px;
+    font-size: 12px;
+    position: relative;
+    bottom: 14px;
   }
-  #staff-ip-box{
-      margin-left: 20px;
-      margin-top: 10px;
-      padding: 5px;
-      width: 600px;
+
+  #staff-ip-box {
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 600px;
   }
-  .not-titile-staff{
+
+  .not-titile-staff {
     color: red;
     margin-left: 20px;
     font-size: 14px;
   }
-  .note-defi{
+
+  .note-defi {
     font-size: 12px;
     margin-top: 5rem;
     margin-bottom: 5rem;
+  }
+
+  .addtag-row-btn {
+    margin-left: 20px;
+    border: none;
+    font-size: 14px;
+    background: #4bb54b;
+    padding: 4px;
+    width: 100px;
+    border-radius: 5px;
+    color: #fff;
+  }
+
+  .opn-prj-btn {
+    /* margin-left: 82px; */
+    position: relative;
+    top: 64px;
+    border: none;
+    font-size: 14px;
+    padding: 10px;
+    background: none;
+    /* border-bottom: 4px solid; */
+    margin-left: 80px;
+  }
+
+  .opn-prj-btn-1 {
+    /* margin-left: 82px; */
+    position: relative;
+    top: 64px;
+    border: none;
+    font-size: 14px;
+    padding: 10px;
+    margin-left: 35px;
+    background: none;
+  }
+
+  .opn-prj-btn:hover,
+  .opn-prj-btn-1:hover {
+    border-bottom: 4px solid #0c4664;
+    transition: all .5s;
+    background-color: #f4f4f4;
+  }
+
+  .your-prj-tit {
+    margin-left: 82px;
+    font-size: 18px;
+    position: relative;
+    top: 55px;
+    font-weight: 500;
+  }
+
+  .viw-prj {
+    width: 97px;
+    padding: 8px;
+    border: 1px solid;
+    font-size: 14px;
+  }
+
+  .btn-nxt {
+    font-size: 16px;
+    border: none;
+    background: none;
+    margin-right: 35px;
+    margin-top: 50px;
+  }
+
+  .btn-back {
+    border: none;
+    background: none;
+    font-size: 16px;
+    margin-left: 42px;
+    margin-top: 50px;
+  }
+
+  .btn-back:hover,
+  .btn-nxt:hover {
+    color: #2082b4;
+    transition: all 0.5s;
   }
 }

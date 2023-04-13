@@ -50,28 +50,28 @@ function ServiceCommission() {
                                     </select>
                                     <hr></hr>
                                     <label className="label">Service Commission</label>
-                                    <input id="fgc"/><button className="per-btn-dis"  disabled>%</button>
+                                    <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
                                     <hr></hr>
                                     <label className="label">Service Commission</label>
-                                    <input id="fgc"/><button className="fix-btn-dis" disabled>FIXED</button>
+                                    <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
                                     <hr></hr>
                                     <label className="label">Service Commission</label>
-                                    <input id="fgc"/><button className="per-btn-dis"  disabled>%</button>
+                                    <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
                                     <label className="label">Second Service Commission</label>
-                                    <input id="fgc"/><button className="fix-btn-dis" disabled>FIXED</button>
+                                    <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
                                     <hr></hr>
                                     <label className="label">Service Commission</label>
-                                    <input id="fgc"/><button className="fix-btn-dis" disabled>FIXED</button>
+                                    <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
                                     <label className="label">Second Service Commission</label>
-                                    <input id="fgc"/><button className="per-btn-dis"  disabled>%</button>
+                                    <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
                                     <hr></hr>
                                     <p className="upd-titl">UPDATE EARLIER PRODUCT PRICE</p>
                                     <div className="form-check form-switch">
                                         <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                                         <br></br>
                                         <p className="switch-des">If you enable this option , all the prices of exisiting products will change according to the given commission value</p>
+                                        <button className="create-acc-btn-1">Save Changes</button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

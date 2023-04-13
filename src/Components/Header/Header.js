@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import profile from '../../Images/employee.png'
-
+import Ailogo from '../../Images/proposal-ai-logo.png'
 function Header() {
     return (
         <div className="header">
             <div>
-                <img src="" alt="DECBASE-logo" />
+                <img src={Ailogo} alt="DECBASE-logo"  width="190px" height="75px"/>
             </div>
             <div className="others">
                 <div>

@@ -16,12 +16,13 @@ function AiMenu() {
                 <Link to="alljob" role="button"><button><Icon icon="material-symbols:border-all-outline" /> Post a Job</button></Link>
                 <Link to="allorders" role="button"><button><Icon icon="mingcute:box-2-line" /> Orders</button></Link>
                 <button><Icon icon="material-symbols:payments-outline-sharp" /> Payments</button>
-                <button className="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><Icon icon="mdi:brightness-percent" /> Commisson</button>
-                <div className="dropdown">
-                    <ul className="dropdown-menu">
-                        <li><Link to="globalcommission" role="button"><a id="drop-list" className="dropdown-item">Global Commisson</a></Link></li>
-                        <li><Link to="servicecommission" role="button"><a id="drop-list" className="dropdown-item">Services Commisson</a></Link></li>
-                        <li><Link to="allcommission" role="button"><a id="drop-list" className="dropdown-item">Category Commisson Settings</a></Link></li>
+                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><Icon icon="mdi:brightness-percent" /> Commisson</button>
+                <div class="dropdown">
+                    <ul class="dropdown-menu">
+                        <li><Link to="globalcommission" role="button"><a id="drop-list" class="dropdown-item">Global Commisson</a></Link></li>
+                        <li><Link to="servicecommission" role="button"><a id="drop-list" class="dropdown-item">Services Commisson</a></Link></li>
+                        <li><Link to="allcommission" role="button"><a id="drop-list" class="dropdown-item">Category Commisson Settings</a></Link></li>
+                        <li><Link to="allfreelancercommission" role="button"><a id="drop-list" class="dropdown-item">Freelancer Commisson Settings</a></Link></li>
                     </ul>
                 </div>
             </div>
@@ -31,7 +32,7 @@ function AiMenu() {
                 <span className="profile-user">Jhon Daniel</span>
                 <small className="user-email">jhondaniel@gmail.com</small>
                 <br></br>
-                <Link to="signuppage" role="button"><button className="user-log-out"><Icon icon="bx:log-out-circle" width="24" height="24" hFlip={true} /> Log Out</button></Link>
+                <Link to="ailogin" role="button"><button className="user-log-out"><Icon icon="bx:log-out-circle" width="24" height="24" hFlip={true} /> Log Out</button></Link>
             </div>
         </>
     )

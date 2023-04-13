@@ -19,9 +19,16 @@ import CategoryCommission from "../Components/Commission/CategoryCommission"
 import GlobalCommission from "../Components/Commission/GlobalCommission";
 import ServiceCommission from "../Components/Commission/ServiceCommission";
 import Serviceslist from "../Components/Services/Serviceslist"
+<<<<<<< HEAD
+=======
+import AllCategoryCommission from "../Components/Commission/AllCategoryCommission"
+import CategoryCommission from "../Components/Commission/CategoryCommission"
+>>>>>>> main
 import AiLoginPage from "../Components/Admin/AiLoginPage";
 import AllStaff from "../Components/Staff/AllStaff";
 import AddStaff from "../Components/Staff/AddStaff";
+import FreelancerCommission from "../Components/Commission/FreelancerCommission";
+import AllFreelancerCommission from "../Components/Commission/AllFreelancerCommission";
 const Routers = () => {
     return (
         <Switch>
@@ -40,7 +47,9 @@ const Routers = () => {
             <Route path='/addservices'><AddServices /></Route>
             <Route path='/globalcommission'><GlobalCommission /></Route>
             <Route path='/servicecommission'><ServiceCommission /></Route>
-            <Route path="/allcommission"><AllCommission /></Route>
+            <Route path="/freelancercommission"><FreelancerCommission/></Route>
+            <Route path="/allcommission"><AllCategoryCommission/></Route>
+            <Route path="/allfreelancercommission"><AllFreelancerCommission/></Route>
             <Route path="/categorycommission"><CategoryCommission /></Route>
             <Route path="/allservices"><Serviceslist /></Route>
             <Route path="/ailogin"><AiLoginPage/></Route>
