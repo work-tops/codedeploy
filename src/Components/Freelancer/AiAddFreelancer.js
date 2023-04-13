@@ -290,7 +290,7 @@ function AiFreelancer() {
                                     </select>
                                     <br></br>
                                     <label className="label">Secondary Skill</label>
-                                    <SkillsMultiselectDropdown />
+                                    <SkillsMultiselectDropdown /> 
                                     <br></br>
                                     <label>Company Address</label>
                                     <textarea required name="store_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
