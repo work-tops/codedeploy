@@ -8,7 +8,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import product_image from '../../Images/employee.png'
-import SkillsMultiselectDropdown from "../SelectTag/SelectTag";
+import Multiselect from "multiselect-react-dropdown";
 
 function AiFreelancer() {
 
@@ -17,6 +17,7 @@ function AiFreelancer() {
     const [freel, setfreel] = useState([])
     const [skill, setskill] = useState([])
     const [doctype, setdoctype] = useState([])
+    const [selectedSkills, setSelectedSkills] = useState([])
 
     useEffect(() => {
         attachmentsList()
@@ -47,10 +48,10 @@ function AiFreelancer() {
         console.log(_objList.length);
         setSelectedFile(_objList);
     }
-    const handleSelectChange = (event,inx) => {
+    const handleSelectChange = (event, inx) => {
         const _value = event.target.value;
         var allSelected = [...selectedFile];
-        const oneSelected =  {
+        const oneSelected = {
             "document_type": _value,
             "name": "",
             "url": "",
@@ -58,18 +59,18 @@ function AiFreelancer() {
         };
         allSelected[inx] = oneSelected;
         setSelectedFile(allSelected);
-        console.log('select index',inx);
+        console.log('select index', inx);
         console.log(selectedFile);
     };
-    const handleFileInput = (e,inx) => {
-        console.log('file index',inx);
+    const handleFileInput = (e, inx) => {
+        console.log('file index', inx);
         const file = e.target.files[0];
         var _files = [...uploadFiles];
         _files.push(file);
         setUploadFile(_files);
 
         var _selectFiles = [...selectedFile];
-        const oneSelected =  {
+        const oneSelected = {
             "document_type": _selectFiles[inx].document_type,
             "name": file.name,
             "url": `https://myproject-data.s3.eu-west-2.amazonaws.com/images/${file.name}`,
@@ -104,6 +105,13 @@ function AiFreelancer() {
     //     setform(myData);
     // }
 
+    const onSelect = (selectedList, selectedItem) =>{
+        setSelectedSkills([selectedList]);
+    }
+    
+    const onRemove = (selectedList, removedItem)=> {
+        setSelectedSkills([selectedList]);
+    }
 
 
     const handleChange1 = (e) => {
@@ -126,7 +134,7 @@ function AiFreelancer() {
         const freelancerData = {
             name: form.name + " " + form.lastname,
             type: selectedItems,
-            skills: [],
+            skills: selectedSkills,
             shop_name: form.shop_name,
             email: form.email,
             store_address: form.store_address,
@@ -155,9 +163,9 @@ function AiFreelancer() {
                 ternsandconfition: true
             },
             created_by: "1",
-            attachments:selectedFile
+            attachments: selectedFile
         }
-        console.log('add freelancer obj',freelancerData);
+        console.log('add freelancer obj', freelancerData);
         const response = await createData("seller/new", freelancerData)
         if (response.status === 201) {
             toast.success('Successfully Freelancer Added')
@@ -221,6 +229,7 @@ function AiFreelancer() {
             password: "",
             confirm_password: ""
         })
+        setSelectedSkills([]);
     }
 
     useEffect(() => {
@@ -261,14 +270,16 @@ function AiFreelancer() {
                                     <input required name="contact" value={form.contact} onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
                                     <input required name="dob" value={form.dob} onChange={(e) => { handleChange(e) }} id="aipro-email" type='date' />
                                     <br></br>
-                                    <span className="category">Company Name</span> 
+                                    <span className="category">Company Name</span>
                                     {/* <span className="dob">Skills</span> */}
                                     <br></br>
                                     <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
                                     {/* <input required name="skills" value={form.skills} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' /> */}
                                     <br></br>
                                     <label className="label">Skills:</label>
-                                    <SkillsMultiselectDropdown />
+                                    <div className="multi-sel">
+                                        <Multiselect options={skill} onSelect={onSelect} onRemove={onRemove} displayValue="value" />
+                                    </div>
                                     <br></br>
                                     <label>Company Address</label>
                                     <textarea required name="store_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
@@ -316,7 +327,7 @@ function AiFreelancer() {
                                         <br></br>
                                         {selectedFile.map((x, i) =>
                                             <>
-                                                <select name={'select_' + i} onChange={(e)=>handleSelectChange(e,i)} className="frl-proof-sel">
+                                                <select name={'select_' + i} onChange={(e) => handleSelectChange(e, i)} className="frl-proof-sel">
                                                     <option value="">Select</option>
                                                     {filteredOptions.map((data, key) => (
                                                         <option key={'doc_' + key} value={data.value}>{data.value}</option>
@@ -331,7 +342,7 @@ function AiFreelancer() {
                                                     <input
                                                         name={'doc_attach_' + i}
                                                         // multiple
-                                                        onChange={(e)=>handleFileInput(e,i)}
+                                                        onChange={(e) => handleFileInput(e, i)}
                                                         required
                                                         type="file"
                                                         id={'doc_attach_id_' + i}
