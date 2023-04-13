@@ -25,7 +25,7 @@ function CategoryCommission() {
     };
 
     const Productsdata = async () => {
-        const response = await getAllData("master/product_types")
+        const response = await getAllData("master/product_category")
         setcategory(response.data.master[0].data)
     }
 

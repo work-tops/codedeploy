@@ -295,7 +295,7 @@ function AiProductDetails() {
     }
 
     const Productcat = async () => {
-        const response = await getAllData('master/product_types');
+        const response = await getAllData('master/product_category');
         setprocat(response.data.master[0].data);
     }
 
