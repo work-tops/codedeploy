@@ -188,12 +188,9 @@ a {
     margin-right: 10px;
   }
 
-<<<<<<< HEAD
-  .prj-detail {
+  /* .prj-detail {
     background: rgb(156 147 147 / 11%);
-  }
-=======
->>>>>>> main
+  } */
 
   .sub-title,
   .skills-req {
@@ -2668,6 +2665,15 @@ a {
   }
 
   #ai-pro-handle {
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 275px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(222, 171, 113);
+  }
+  .ai-input {
     display: block;
     margin-left: 20px;
     margin-top: 10px;
