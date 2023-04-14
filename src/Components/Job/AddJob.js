@@ -334,16 +334,13 @@ function AddJob() {
                                         <option value="">Select</option>
                                         <option value="£ GBP">£ GBP :</option>
                                         <option value="£ EUR">£ EUR</option>
-
                                     </select>
                                     <br></br>
                                     <label className="label">Budget</label>
                                     <input value={form.budget} required name="budget" onChange={(e) => { handleChange(e) }} id="postcode" placeholder="£ 0" type="number" />
                                     <br></br>
                                     <label>Project Locations</label>
-
                                     <br></br>
-
                                     <input value={form.location} required name="location" onChange={(e) => { handleChange(e) }} id="aipro-barcode" placeholder="Geo Locations" type='text' />
                                     <br></br>
                                     <span className="category">Post Code</span> <span className="start-date-job">Starting Date <span className="optional">(optional)</span></span>
@@ -360,7 +357,6 @@ function AddJob() {
                                     </div>
                                     <span className="category">Project Duration Time</span> <span className="job-expiry-date">Expiry Date</span>
                                     <br></br>
-
                                     <input value={form.project_duration} required name="project_duration" onChange={(e) => { handleChange(e) }} id="postcode" type='text' />
                                     <input value={form.expire_date} required name="expire_date" onChange={(e) => { handleChange(e) }} id="postcode" type='date' />
                                     <br></br>
@@ -368,19 +364,6 @@ function AddJob() {
                                     <Link to="alljob" role="button"><button className="cancel-btn">Cancel</button></Link>
                                 </form >
                             </div >
-                            {/* <div className="freelance-form-div">
-                                <form className="customer_details-form">
-                                    <h5 className="form-title">Customer Details</h5>
-                                    <label className="label">Email ID :</label>
-                                    <input id="cust-ip-box" type='email' />
-                                    <label className="label">Name :</label>
-                                    <input id="cust-ip-box" type='text' />
-                                    <label className="label">Phone Number :</label>
-                                    <input id="cust-ip-box" type='text' />
-                                    <label className="label">Postcode :</label>
-                                    <input id="cust-ip-box" type='text' />
-                                </form>
-                            </div> */}
                         </div >
                     </div >
                 </div >

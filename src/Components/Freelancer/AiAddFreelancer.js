@@ -268,8 +268,6 @@ function AiFreelancer() {
                                     <input required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' />
                                     <input required name="contact" value={form.contact} onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
                                     <br></br>
-                                    <span className="category">Company Name</span>
-                                    {/* <span className="dob">Skills</span> */}
                                     <span className="category">Date of Birth</span> <span className="frl-sector">You Operate as a</span>
                                     <br></br>
                                     <input required name="dob" value={form.dob} onChange={(e) => { handleChange(e) }} id="aipro-email" type='date' />
