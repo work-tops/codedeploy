@@ -5,36 +5,15 @@ import { createData, getAllData } from "../../Services/ProxyService";
 import { uploadImage } from "../../Services/ImageService";
 import toast, { Toaster } from 'react-hot-toast';
 import { Icon } from '@iconify/react';
-import variant_image from "../../Images/product_image.png"
-// import ProductMultiselectDropdown from "../SelectTag/ProductTag";
+import variant_image from "../../Images/product_image.png";
 import Multiselect from "multiselect-react-dropdown";
-import ProductMultiselectDropdown from "../SelectTag/ProductTag";
 function AiProductDetails() {
 
-    const options = [
-        {
-            ProCategories: 'Colour', id: 1
-        },
-        {
-            ProCategories: 'FinshedType', id: 2
-        },
-        {
-            ProCategories: 'Length', id: 3
-        },
-        {
-            ProCategories: 'Width', id: 4
-        },
-        {
-            ProCategories: 'Size', id: 5
-        },
-    ]
-
-    const [selectedMulti, setselectedMulti] = useState([]);
-
-    const handleMulti = (selectedOptions) => {
-        const selectedValues = selectedOptions.map((option) => option.ProCategories);
-        setselectedMulti(selectedValues);
-    };
+    //varient state
+    const [forms1, setForms1] = useState({});
+    const [variants, setVariants] = useState([]);
+    const [isEdit, setEditButton] = useState(false);
+    const [editIndex, setEditVarientIndex] = useState(0);
 
     const [variant, setVarientObject] = useState({
         imageInx: null,
@@ -55,25 +34,12 @@ function AiProductDetails() {
         remaining_quantity: 5,
     });
 
+    //varient functionality
     const variantChange = (e) => {
         const _variant = { ...variant };
         _variant[e.target.name] = e.target.value;
         setVarientObject(_variant);
     };
-
-    const [forms1, setForms1] = useState({});
-    const [variants, setVariants] = useState([]);
-    const [isEdit, setEditButton] = useState(false);
-    const [editIndex, setEditVarientIndex] = useState(0);
-
-    //   const handleChange123 = (event) => {
-    //     const { name, value, type, checked } = event.target;
-    //     setForms1((prevForm) => ({
-    //       ...prevForm,
-    //       [name]: type === "checkbox" ? checked : value,
-
-    //     }));
-    //   };
 
     const handleVariantSubmit = (event) => {
 
@@ -116,10 +82,10 @@ function AiProductDetails() {
         console.log('variant', variant);
         console.log('_form', _form);
         console.log('variants list', variants);
-        resetBillingObject();
+        resetVarientObject();
     };
 
-    const resetBillingObject = () => {
+    const resetVarientObject = () => {
         var _variant = {
             imageInx: null,
             color: "",
@@ -172,30 +138,11 @@ function AiProductDetails() {
         setVariants(_variant);
     };
 
-    const [form, setform] = useState({
-        name: ""
-    })
-    const [procat, setprocat] = useState([])
-    const [selemail, setselemail] = useState([])
-    // const [selectedFile, setSelectedFile] = useState(null);
-    // // console.log(form)
-    // const handleFileInput = (e) => {
-    //     setSelectedFile(e.target.files[0].name);
-    //     // {
-    //     //     "name": e.target.files[0].name,
-    //     //     "url": "https://myproject-data.s3.eu-west-2.amazonaws.com/images/"+e.target.files[0].name,
-    //     //     "type": e.target.files[0].type
-    //     // }
-    // }
-    // const uploadFile = (file) => {
-    //     uploadImage(file);
-    //     console.log('image uploaded');
-    // }
-
+    // file upload --state
     const [selectedFile, setSelectedFile] = useState([]);
     const [actualFiles, setActualFile] = useState([]);
     const [uploadFiles, setUploadFile] = useState([]);
-
+    // file upload --functionality
     const handleFileInput = (e) => {
         const files = e.target.files;
         const fileArray = [];
@@ -221,14 +168,12 @@ function AiProductDetails() {
         setSelectedFile(fileArray);
         setUploadFile(files);
     };
-
     const uploadFile = () => {
         console.log('uploadFiles length', uploadFiles.length);
         for (let i = 0; i < uploadFiles.length; i++) {
             uploadImage(uploadFiles[i]);
         }
     };
-
     const removeImage = async (index) => {
         var selected = [...selectedFile];
         var actual = [...actualFiles];
@@ -240,28 +185,30 @@ function AiProductDetails() {
         setSelectedFile(selected);
         setUploadFile(uploads);
     }
+    //product --state
+    const [form, setform] = useState({
+        name: ""
+    })
+    const [procat, setprocat] = useState([])
+    const [selemail, setselemail] = useState([])
+    const [productTags, setproductTags] = useState([])
+    const [selectedproductTags, setSelectedproductTags] = useState([])
+    const [metadata, setmetadata] = useState([])
 
+    //product --functionality
     const handleChange = (e) => {
         const myData = { ...form };
         myData[e.target.name] = e.target.value;
         setform(myData)
     }
-    const [metadata, setmetadata] = useState([])
-
-    const handleChange1 = (e) => {
-        const myData = { ...metadata };
-        myData[e.target.name] = e.target.value;
-        setmetadata(myData)
-    }
-
-    const Addproducts = async () => {
+    const addProduct = async () => {
         const productdata = {
             seller_email: form.seller_email,
             name: form.name,
             category: form.category,
             type: {},
             description: form.description,
-            tags: selectedMulti,
+            tags: selectedproductTags,
             policy: form.policy,
             handle: form.handle,
             shipping: form.shipping,
@@ -291,20 +238,52 @@ function AiProductDetails() {
 
     const formsubmit = (e) => {
         e.preventDefault()
-        Addproducts()
+        addProduct()
         uploadFile()
     }
 
-    const Productcat = async () => {
+    const onSelect = (selectedList, selectedItem, index) => {
+        var _tags = selectedproductTags;
+        _tags[index].list = selectedList;
+        setSelectedproductTags(_tags);
+    }
+    const onRemove = (selectedList, removedItem, index) => {
+        var _tags = selectedproductTags;
+        _tags[index].list = selectedList;
+        setSelectedproductTags(_tags);
+        console.log('selectedproductTags', selectedproductTags);
+    }
+    const handleTagChange = (event, index) => {
+        var _list = [
+            {
+                id: 1,
+                value: event.target.value
+            }
+        ]
+        var _tags = selectedproductTags;
+        _tags[index].list = _list;
+        setSelectedproductTags(_tags);
+    }
+    const getProductTags = async () => {
+        const response = await getAllData('master/product_tags');
+        setproductTags(response.data.master[0].data);
+        var _selectList = [];
+        response.data.master[0].data.forEach(x=>{
+            _selectList.push({id:x.id,name:x.name,list:[]})
+        })
+        setSelectedproductTags(_selectList);
+    }
+    const getProductCategories = async () => {
         const response = await getAllData('master/product_category');
         setprocat(response.data.master[0].data);
     }
 
-    const Selleremails = async () => {
+    const getSellerList = async () => {
         const response = await getAllData('sellers/all');
         setselemail(response.data.sellers);
     }
 
+    //reset all
     const cleardata = () => {
         setform({
             name: "",
@@ -325,13 +304,13 @@ function AiProductDetails() {
     }
 
     useEffect(() => {
-        Productcat()
-        Selleremails()
+        getProductTags();
+        getProductCategories();
+        getSellerList();
     }, [])
 
     return (
         <>
-
             <div className="">
                 <div className="row">
                     <div className="col-2">
@@ -397,7 +376,7 @@ function AiProductDetails() {
                                                         <div className="modal-content">
                                                             <div className="modal-header">
                                                                 <p>Add Variant</p>
-                                                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetBillingObject}>Close</button>
+                                                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Close</button>
                                                             </div>
                                                             <div className="modal-body row">
                                                                 <div className="col-5">
@@ -477,7 +456,7 @@ function AiProductDetails() {
                                                                         <input value={variant.track_inventory} name="track_inventory" onChange={(e) => { variantChange(e) }} id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
                                                                         <br></br>
                                                                         <button type="button" onClick={(e) => { handleVariantSubmit(e) }} data-bs-dismiss="modal" aria-label="Close" className="create-acc-btn">Submit</button>
-                                                                        <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetBillingObject}>Cancel</button>
+                                                                        <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Cancel</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -558,30 +537,36 @@ function AiProductDetails() {
                                                 />
                                             </label>
 
-                                                <p className="pro-sub-title">Product Handle and Metafields </p>
-                                                <label>Product handle</label>
-                                                <input value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
-                                                <p className="pro-sub-title">Product Meta Fields</p>
-                                                <p className="ai-title-desc">Title tag meta field</p>
-                                                <input value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
-                                                <p className="ai-title-desc">Description tag meta field</p>
-                                                <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
-                                                <p className="pro-sub-title">Product Tag</p>
-                                                <label className="label">Category</label>
-                                                <ProductMultiselectDropdown/>
-                                                <label className="label">Colour</label>
-                                                <ProductMultiselectDropdown/>
-                                                <label className="label">Finish Type</label>
-                                                <ProductMultiselectDropdown/>
-                                                <label className="label">Length</label>
-                                                <ProductMultiselectDropdown/>
-                                                <label className="label">Width</label>
-                                                <ProductMultiselectDropdown/>
-                                                <label className="label">Thickness</label>
-                                                <ProductMultiselectDropdown/>
-                                                <button className="addtag-row-btn">Add Row</button>
-                                            </div>
-                                        </div >
+                                            <p className="pro-sub-title">Product Handle and Metafields </p>
+                                            <label>Product handle</label>
+                                            <input value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
+                                            <p className="pro-sub-title">Product Meta Fields</p>
+                                            <p className="ai-title-desc">Title tag meta field</p>
+                                            <input value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
+                                            <p className="ai-title-desc">Description tag meta field</p>
+                                            <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
+                                            <p className="pro-sub-title">Product Tag</p>
+                                            {productTags.map((x, i) => {
+                                                return <>
+                                                    <label className="label">{x?.name}</label>
+                                                    {x.id == 1 || x.id == 2 ?
+                                                        (
+                                                            <div className="multi-sel">
+                                                                <Multiselect options={x?.list} onRemove={(list, item) => onRemove(list, item, i)} onSelect={(list, item) => onSelect(list, item, i)} displayValue="value" />
+                                                            </div>
+                                                        ) :
+                                                        (
+                                                            <input className="ai-input" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />
+                                                        )
+
+                                                    }
+
+
+                                                </>
+                                            })}
+                                            {/* <button className="addtag-row-btn">Add Row</button> */}
+                                        </div>
+                                    </div >
                                 </form>
                             </div >
                         </div>

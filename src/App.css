@@ -89,6 +89,124 @@ a {
     text-decoration: none;
   }
 
+  /*header.css  // end//*/
+
+
+
+
+
+
+
+  /* customweb.css //start// */
+
+  .key {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .send-proposal {
+    margin-bottom: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(159 114 47 / 86%);
+  }
+
+  .sub-title,
+  .title-desc,
+  .skills-req {
+    margin-left: 30px;
+    margin-right: 10px;
+  }
+
+  /* .prj-detail {
+    background: rgb(156 147 147 / 11%);
+  } */
+
+  .sub-title,
+  .skills-req {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
+  .title-desc {
+    width: 580px;
+    font-size: 12px;
+    color: #776e6e;
+    margin-bottom: 110px;
+  }
+
+  .ending-days {
+    text-align: center;
+    color: rgb(133, 127, 127);
+    font-size: 14px;
+    position: relative;
+    top: 0px;
+    left: 0;
+    right: 0px;
+  }
+
+  .days-left {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(133, 127, 127);
+    font-size: 18px;
+    border-bottom: 1px solid rgb(133, 127, 127);
+    position: relative;
+    top: -18px;
+  }
+
+  .euros {
+    font-size: 30px;
+    font-weight: bold;
+    color: #40c940;
+  }
+
+  .currency {
+    width: 125px;
+    height: 100px;
+    margin-left: 18px;
+    margin-right: 30px;
+    padding-right: 22px;
+    margin-top: -19px;
+    border-right: 1px solid rgb(133, 127, 127);
+  }
+
+  .news-feed {
+    width: 120px;
+    height: 96px;
+    margin-right: 85px;
+    margin-left: 24px;
+    margin-top: 19px;
+    border-right: 1px solid rgb(133, 127, 127);
+    padding-right: 40px;
+    padding-bottom: 3px;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    border-bottom: 1px solid rgb(133, 127, 127);
+
+  }
+
+  .amount,
+  .num {
+    color: #40c940;
+    font-weight: bold;
+    font-size: 34px;
+  }
+
+  .num {
+    position: relative;
+    right: 45px;
+    top: 20px;
+  }
+
   .desc-title {
     text-align: center;
     font-size: 14px;
@@ -925,6 +1043,15 @@ a {
   }
 
   #ai-pro-handle {
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 275px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(222, 171, 113);
+  }
+  .ai-input {
     display: block;
     margin-left: 20px;
     margin-top: 10px;
