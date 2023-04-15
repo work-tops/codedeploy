@@ -26,7 +26,7 @@ function SignUpPage() {
                         <button className="hiring">PROJECT OWNER SIGNUP</button>
                         <button className="fb-sign-in">Sign-Up With LinkedIn</button>
                         <button className="google-sign-in"><img src={google_logo} className="google-logo" /> Sign-Up With Google</button>
-                        <Link to="signupform" role="button">
+                        <Link to="/signupform" role="button">
                             <button className="email-sign-in">Sign-Up</button>
                         </Link>
                     </fieldset>

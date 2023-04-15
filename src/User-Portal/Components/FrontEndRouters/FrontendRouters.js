@@ -9,6 +9,7 @@ import SignUpPage from "../Front-End Pages/SignUpPage";
 import SignUpForm from "../Front-End Pages/SignupForm";
 import JobProposal from "../Front-End Pages/JobProposal";
 import PostJob2 from "../Front-End Pages/PostJob2";
+import HomePage from "../Front-End Pages/HomePage";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -21,6 +22,7 @@ const FrontEndRouters = () => {
             <Route path="/postjob2"><PostJob2 /></Route>
             <Route path="/listjobs"><ListJobs /></Route>
             <Route path="/jobdetails"><JobDetails /></Route>
+            <Route path="/homepage"><HomePage/></Route>
         </Switch>
 
     )
