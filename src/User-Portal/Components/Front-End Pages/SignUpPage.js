@@ -16,17 +16,18 @@ function SignUpPage() {
             <div className="col-12">
                 <div className="bg">
                     <fieldset className="register-field">
-                        <p className="heading">Start living your work dream</p>
+                        <h1 className="signup-tit">Start living your work dream</h1>
                         <p className="note">What do you want to do?(You Can dit this Later)</p>
                         <button className="work">
-                            I WANT TO WORK
+                            SELLER
                             <br></br>
-                            AS A FREELANCER</button>
-                        <button className="hiring">I WANT TO HIRE A FREELANCER</button>
+                            SIGN UP
+                        </button>
+                        <button className="hiring">PROJECT OWNER SIGNUP</button>
                         <button className="fb-sign-in">Sign-Up With LinkedIn</button>
                         <button className="google-sign-in"><img src={google_logo} className="google-logo" /> Sign-Up With Google</button>
                         <Link to="signupform" role="button">
-                            <button className="email-sign-in">Sign-Up With Gmail</button>
+                            <button className="email-sign-in">Sign-Up</button>
                         </Link>
                     </fieldset>
                 </div>
