@@ -9,7 +9,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 function AiProducts() {
 
-    const [product, setproducts] = useState([])
+    const [product, setproducts] = useState([]);
 
     const Productlist = async () => {
         const response = await getAllData('products');
@@ -162,7 +162,7 @@ function AiProducts() {
                                                             <i className="fa-solid fa-ellipsis"></i>
                                                         </a>
                                                         <ul className="dropdown-menu">
-                                                            <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                                            <Link to={`addproduct?${data._id}`} role="button"> <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li></Link>
                                                             <li><a className="dropdown-item" href="#"><i className="fa-solid fa-check"></i> Enable</a></li>
                                                             <li><a className="dropdown-item" href="#"><i className="fa-solid fa-bag-shopping"></i> View in Store</a></li>
                                                             <li><a className="dropdown-item" href="#"><i className="fa-solid fa-circle-user"></i> Reassign</a></li>

@@ -13,6 +13,7 @@ import ServiceLocationMultiselect from "../SelectTag/ServiceLocation";
 function AddServices() {
 
     const [selectedFile, setSelectedFile] = useState({});
+    console.log(selectedFile)
     const [actualFiles, setActualFile] = useState({});
     const [uploadFiles, setUploadFile] = useState([]);
 
@@ -79,7 +80,7 @@ function AddServices() {
             offer_price: form.offer_price,
             display_price: form.display_price,
             terms_and_condition: form.terms_and_condition,
-            attachment: selectedFile,
+            attachment: JSON.stringify(selectedFile),
             created_by: "1",
         }
         const response = await createData("service/new", Servicedata)
@@ -248,7 +249,7 @@ function AddServices() {
                                     <button type="button" onClick={removeImage} className="img-upload-btn-2">Remove</button>
                                     <br></br>
                                     {/* Modal-1 */}
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    {/* <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div>
@@ -271,7 +272,7 @@ function AddServices() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     {/* Modal -2 */}
                                     {selectedFile == undefined || selectedFile == 0 ? (
                                         <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

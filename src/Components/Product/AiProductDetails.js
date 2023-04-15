@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import AiHeader from "../../Components/Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
-import { createData, getAllData } from "../../Services/ProxyService";
+import { createData, getAllData, updateData } from "../../Services/ProxyService";
 import { uploadImage } from "../../Services/ImageService";
 import toast, { Toaster } from 'react-hot-toast';
 import { Icon } from '@iconify/react';
 import variant_image from "../../Images/product_image.png";
 import Multiselect from "multiselect-react-dropdown";
+import {useHistory} from 'react-router-dom';
+
 function AiProductDetails() {
 
     //varient state
-    const [forms1, setForms1] = useState({});
+    const history = useHistory();
     const [variants, setVariants] = useState([]);
     const [isEdit, setEditButton] = useState(false);
     const [editIndex, setEditVarientIndex] = useState(0);
@@ -44,8 +46,7 @@ function AiProductDetails() {
     const handleVariantSubmit = (event) => {
 
         event.preventDefault();
-        var _form = { ...forms1 };
-        _form = {
+        var _form = {
             color: variant.color,
             size: variant.size,
             finish_type: variant.finish_type,
@@ -71,7 +72,6 @@ function AiProductDetails() {
             attachment: selectedFile[parseInt(variant.imageInx)]
         }
 
-        setForms1(_form);
         var _variant = [...variants]
         if (isEdit == true) {
             _variant[editIndex] = _form;
@@ -109,6 +109,7 @@ function AiProductDetails() {
         setEditButton(false);
         setEditVarientIndex(0);
     };
+
     const editVarient = (data, index) => {
         var _variant = {
             imageInx: data?.imageInx,
@@ -186,20 +187,19 @@ function AiProductDetails() {
         setUploadFile(uploads);
     }
     //product --state
-    const [form, setform] = useState({
+    const [form, setProductForm] = useState({
         name: ""
     })
-    const [procat, setprocat] = useState([])
-    const [selemail, setselemail] = useState([])
+    const [productCategory, setproductCategory] = useState([])
+    const [sellerList, setsellerList] = useState([])
     const [productTags, setproductTags] = useState([])
     const [selectedproductTags, setSelectedproductTags] = useState([])
-    const [metadata, setmetadata] = useState([])
 
     //product --functionality
     const handleChange = (e) => {
         const myData = { ...form };
         myData[e.target.name] = e.target.value;
-        setform(myData)
+        setProductForm(myData);
     }
     const addProduct = async () => {
         const productdata = {
@@ -210,13 +210,13 @@ function AiProductDetails() {
             description: form.description,
             tags: selectedproductTags,
             policy: form.policy,
-            handle: form.handle,
             shipping: form.shipping,
             pricing: { price: 100 },
             inventory: { quantity: 100 },
+            handle: form.handle,
             meta_fields: {
-                title: metadata.metatitle,
-                description: metadata.metadescription,
+                title: form.metatitle,
+                description: form.metadescription,
             },
             attachments: selectedFile,
             // variant:form.tags,
@@ -224,12 +224,17 @@ function AiProductDetails() {
             custom_fields: {},
             created_by: "1",
         }
-        console.log(productdata)
-        const response = await createData("admin/product/new", productdata)
+        console.log(productdata);
+        var response = null;
+        if(editProduct != ''){
+            response = await updateData("admin/product/"+editProduct, productdata);
+        }else{
+            response = await createData("admin/product/new", productdata);
+        }
         if (response.status === 201) {
-            toast.success('Successfully Product Added')
-            setform("")
-            cleardata()
+            toast.success('Successfully Product Submitted');
+            clearData();
+            history.push('/allproduct');
         } else {
             toast.error('Something went wrong')
         }
@@ -268,45 +273,67 @@ function AiProductDetails() {
         const response = await getAllData('master/product_tags');
         setproductTags(response.data.master[0].data);
         var _selectList = [];
-        response.data.master[0].data.forEach(x=>{
-            _selectList.push({id:x.id,name:x.name,list:[]})
+        response.data.master[0].data.forEach(x => {
+            _selectList.push({ id: x.id, name: x.name, list: [] })
         })
         setSelectedproductTags(_selectList);
     }
     const getProductCategories = async () => {
         const response = await getAllData('master/product_category');
-        setprocat(response.data.master[0].data);
+        setproductCategory(response.data.master[0].data);
     }
 
     const getSellerList = async () => {
         const response = await getAllData('sellers/all');
-        setselemail(response.data.sellers);
+        setsellerList(response.data.sellers);
+    }
+    const getProductById = async (_id) => {
+        const response = await getAllData('product/'+_id);
+        const _product = response.data.product;
+        setProductForm({
+            name: _product.name,
+            category: _product.seller_email,
+            seller_email: _product.seller_email,
+            description: _product.description,
+            policy: _product.policy,
+            handle: _product.handle,
+            // metatitle: _product,
+            // metadescription: _product
+        });
+        setVariants([_product.variant]);
+        setSelectedproductTags([_product.tags]);
     }
 
     //reset all
-    const cleardata = () => {
-        setform({
+    const clearData = () => {
+        setProductForm({
             name: "",
-            description: "",
-            seller_email: "",
             category: "",
-            tags: "",
-            compare_at: "",
-            price: "",
-            handling_changes: "",
-            sales_price: "",
-            sku: "",
-            barcode: "",
-            min_purchase_qty: "",
-            quantity: "",
-            policy: ""
-        })
+            seller_email: "",
+            description: "",
+            policy: "",
+            handle: "",
+            metatitle: "",
+            metadescription: ""
+        });
+        setActualFile([]);
+        setUploadFile([]);
+        setSelectedFile([]);
+        setVariants([]);
+        getProductTags();
+        resetVarientObject();
     }
-
+    const [editProduct, setEditProducts] = useState('');
     useEffect(() => {
+        var query = window.location.search.substring(1);
+        console.log(query);
         getProductTags();
         getProductCategories();
         getSellerList();
+        if (query) {
+            getProductById(query);
+            setEditProducts(query);
+        }
     }, [])
 
     return (
@@ -342,14 +369,14 @@ function AiProductDetails() {
                                                 <br></br>
                                                 <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
                                                     <option value="">Select</option>
-                                                    {procat.map((data, key) => (
+                                                    {productCategory.map((data, key) => (
                                                         <option key={key} value={data.name}>{data.name}</option>
                                                     ))}
                                                 </select>
 
                                                 <select value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
                                                     <option value="">Select</option>
-                                                    {selemail.map((data, key) => (
+                                                    {sellerList.map((data, key) => (
                                                         <option key={key} value={data.email}>{data.email}</option>
                                                     ))}
                                                 </select>
@@ -376,7 +403,7 @@ function AiProductDetails() {
                                                         <div className="modal-content">
                                                             <div className="modal-header">
                                                                 <p>Add Variant</p>
-                                                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Close</button>
+                                                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject()}>Close</button>
                                                             </div>
                                                             <div className="modal-body row">
                                                                 <div className="col-5">
@@ -388,7 +415,6 @@ function AiProductDetails() {
                                                                         {variant.imageInx == undefined || variant.imageInx == null ? (
                                                                             <Icon className="var-image" icon="mingcute:photo-album-fill" height="24" width="24" />) :
                                                                             (<img src={actualFiles[variant.imageInx]} width="50px" height="50px" className="pro-pre" />)
-
                                                                         }
                                                                         <br></br>
                                                                         <button className="add-img-btn d-none">ADD IMAGE</button>
@@ -407,7 +433,11 @@ function AiProductDetails() {
                                                                         <p className="var-tit">Variants</p>
                                                                         <p className="var-dec">Here all the variants click on variant to edit its details </p>
                                                                         <div className="sel-var-abt-div">
-                                                                            <img src={variant_image} className="sel_var_image" alt="selected-variant" />
+                                                                            {variant.imageInx == undefined || variant.imageInx == null ? (
+                                                                                <Icon className="sel_var_image" icon="mingcute:photo-album-fill" height="24" width="24" />) :
+                                                                                (<img src={actualFiles[variant.imageInx]} className="sel_var_image" alt="selected-variant" />
+                                                                                )
+                                                                            }
                                                                             <small>Finished Type / Colour / Size </small>
                                                                         </div>
                                                                     </div>
@@ -456,7 +486,7 @@ function AiProductDetails() {
                                                                         <input value={variant.track_inventory} name="track_inventory" onChange={(e) => { variantChange(e) }} id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
                                                                         <br></br>
                                                                         <button type="button" onClick={(e) => { handleVariantSubmit(e) }} data-bs-dismiss="modal" aria-label="Close" className="create-acc-btn">Submit</button>
-                                                                        <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Cancel</button>
+                                                                        <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject()}>Cancel</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -489,6 +519,7 @@ function AiProductDetails() {
                                                 <br />
                                                 <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
                                                 <button type='submit' className="create-acc-btn">Add Product</button>
+                                                <button className="btn btn-danger ms-3" onClick={clearData}>Clear</button>
                                             </div>
                                         </div>
                                         <div className="Add-Product-Images">
