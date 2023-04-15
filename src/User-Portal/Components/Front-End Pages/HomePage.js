@@ -9,11 +9,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 function HomePage() {
     const settings = {
-        dots: true,
-        // button: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1
     }
     return (
@@ -59,49 +57,87 @@ function HomePage() {
                             <Icon className="silde-btn" icon="ic:round-chevron-right" width="24" height="24" />
                         </div>
                     </div>
-                    <div className="ms-2 me-2">
+                    <br></br>
+                    <div className="sild-div">
                         <Slider {...settings}>
-                            <div className="ms-2 me-2">
-                                <img src={interior_design} width="260px" height="200px" />
+                            <div>
+                                <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
+                                <h5 className="wr-look-for-title">Kitchen Worktops</h5>
+                                <p className="wr-look-for">Looking for Programming & Technology</p>
                             </div>
-                            <div className="ms-2 me-2">
-                                <img src={interior_design} width="260px" height="200px" />
+                            <div>
+                                <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
+                                <h5 className="wr-look-for-title">Kitchen Worktops</h5>
+                                <p className="wr-look-for">Looking for Programming & Technology</p>
                             </div>
-                            <div className="ms-2 me-2">
-                                <img src={interior_design} width="260px" height="200px" />
+                            <div>
+                                <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
+                                <h5 className="wr-look-for-title">Kitchen Worktops</h5>
+                                <p className="wr-look-for">Looking for Programming & Technology</p>
                             </div>
-                            <div className="ms-2 me-2">
-                                <img src={interior_design} width="260px" height="200px" />
+                            <div>
+                                <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
+                                <h5 className="wr-look-for-title">Kitchen Worktops</h5>
+                                <p className="wr-look-for">Looking for Programming & Technology</p>
                             </div>
-                            <div className="ms-2 me-2">
-                                <img src={interior_design} width="260px" height="200px" />
+                            <div>
+                                <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
+                                <h5 className="wr-look-for-title">Kitchen Worktops</h5>
+                                <p className="wr-look-for">Looking for Programming & Technology</p>
                             </div>
-                            <div className="ms-2 me-2">
-                                <img src={interior_design} width="260px" height="200px" />
+                            <div>
+                                <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
+                                <h5 className="wr-look-for-title">Kitchen Worktops</h5>
+                                <p className="wr-look-for">Looking for Programming & Technology</p>
                             </div>
-                            <div className="ms-2 me-2">
-                                <img src={interior_design} width="260px" height="200px" />
+                            <div>
+                                <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
+                                <h5 className="wr-look-for-title">Kitchen Worktops</h5>
+                                <p className="wr-look-for">Looking for Programming & Technology</p>
                             </div>
-                            <div className="ms-2 me-2">
-                                <img src={interior_design} width="260px" height="200px" />
+                            <div>
+                                <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
+                                <h5 className="wr-look-for-title">Kitchen Worktops</h5>
+                                <p className="wr-look-for">Looking for Programming & Technology</p>
                             </div>
-                            <div className="ms-2 me-2">
-                                <img src={interior_design} width="260px" height="200px" />
+                            <div>
+                                <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
+                                <h5 className="wr-look-for-title">Kitchen Worktops</h5>
+                                <p className="wr-look-for">Looking for Programming & Technology</p>
                             </div>
-                            {/* <div>
-                                <img src={interior_design} width="260px" height="200px" />
-                            </div><div>
-                                <img src={interior_design} width="260px" height="200px" />
-                            </div><div>
-                                <img src={interior_design} width="260px" height="200px" />
-                            </div><div>
-                                <img src={interior_design} width="260px" height="200px" />
-                            </div><div>
-                                <img src={interior_design} width="260px" height="200px" />
-                            </div><div>
-                                <img src={interior_design} width="260px" height="200px" />
-                            </div> */}
+                            <div>
+                                <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
+                                <h5 className="wr-look-for-title">Kitchen Worktops</h5>
+                                <p className="wr-look-for">Looking for Programming & Technology</p>
+                            </div>
                         </Slider>
+                    </div>
+                    <div>
+                        <p className="what-we-do">What we do</p>
+                        <h1 className="our-service-tit">
+                            Our service
+                        </h1>
+                        <div className="row">
+                            <div className="col-4">
+                                <button className="infrastuctures-btn">
+                                    <h6>Interior Design</h6>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod</p>
+                                </button></div>
+                            <div className="col-4"><button className="infrastuctures-btn">
+                                <h6>Architecture</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod</p>
+                            </button>
+                            </div>
+                            <div className="col-4">
+                                <button className="infrastuctures-btn">
+                                    <h6>Planning</h6>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod</p>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col-12">
