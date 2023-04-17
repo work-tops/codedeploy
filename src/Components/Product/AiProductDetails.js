@@ -44,7 +44,6 @@ function AiProductDetails() {
     };
 
     const handleVariantSubmit = (event) => {
-
         event.preventDefault();
         var _form = {
             color: variant.color,
@@ -145,11 +144,13 @@ function AiProductDetails() {
     const [uploadFiles, setUploadFile] = useState([]);
     // file upload --functionality
     const handleFileInput = (e) => {
-        const files = e.target.files;
-        const fileArray = [];
+        // const files = e.target.files;
         const _files = Array.from(e.target.files);
-        const _urls = [];
+        const _urls = [...actualFiles];
+        const fileArray = selectedFile;
+        const upload = uploadFiles;
         _files.forEach((file) => {
+            upload.push(file);
             const reader = new FileReader();
 
             reader.onload = () => {
@@ -159,15 +160,15 @@ function AiProductDetails() {
 
             reader.readAsDataURL(file);
         });
-        for (let i = 0; i < files.length; i++) {
+        for (let i = 0; i < _files.length; i++) {
             fileArray.push({
-                name: files[i].name,
-                url: `https://myproject-data.s3.eu-west-2.amazonaws.com/images/${files[i].name}`,
-                type: files[i].type
+                name: _files[i].name,
+                url: `https://myproject-data.s3.eu-west-2.amazonaws.com/images/${_files[i].name}`,
+                type: _files[i].type
             });
         }
         setSelectedFile(fileArray);
-        setUploadFile(files);
+        setUploadFile(upload);
     };
     const uploadFile = () => {
         console.log('uploadFiles length', uploadFiles.length);
@@ -205,7 +206,7 @@ function AiProductDetails() {
         const productdata = {
             seller_email: form.seller_email,
             name: form.name,
-            category: form.category,
+            // category: form.category,
             type: {},
             description: form.description,
             tags: selectedproductTags,
@@ -278,6 +279,7 @@ function AiProductDetails() {
         })
         setSelectedproductTags(_selectList);
     }
+
     const getProductCategories = async () => {
         const response = await getAllData('master/product_category');
         setproductCategory(response.data.master[0].data);
@@ -287,21 +289,39 @@ function AiProductDetails() {
         const response = await getAllData('sellers/all');
         setsellerList(response.data.sellers);
     }
+
+    // Product by id
     const getProductById = async (_id) => {
         const response = await getAllData('product/'+_id);
         const _product = response.data.product;
+        console.log(_product)
         setProductForm({
             name: _product.name,
-            category: _product.seller_email,
+            category: _product.category,
             seller_email: _product.seller_email,
             description: _product.description,
             policy: _product.policy,
             handle: _product.handle,
-            // metatitle: _product,
-            // metadescription: _product
+            variant: _product.variant,
+            metatitle: _product.meta_fields.title,
+            metadescription: _product.meta_fields.description,
+            tags: _product.tags,
+            attachments: _product.attachments,
+         
+
+
         });
-        setVariants([_product.variant]);
-        setSelectedproductTags([_product.tags]);
+        setVariants(_product.variant);
+        setSelectedproductTags(_product.tags);
+        setproductTags(_product.tags);
+        setSelectedFile(_product.attachments);
+        console.log(_product)
+        var _actFiles = [];
+        _product.attachments.forEach((x)=>{
+            _actFiles.push(x.url);
+        })
+        setActualFile(_actFiles);
+        // setVariants([_product.variant]);
     }
 
     //reset all
@@ -418,12 +438,12 @@ function AiProductDetails() {
                                                                         }
                                                                         <br></br>
                                                                         <button className="add-img-btn d-none">ADD IMAGE</button>
-                                                                        <select value={variant.imageInx} name="imageInx" onChange={(e) => { variantChange(e) }} className="select-category">
+                                                                        <select value={variant?.imageInx} name="imageInx" onChange={(e) => { variantChange(e) }} className="select-category">
                                                                             <option value="" disabled>Add Image</option>
                                                                             {actualFiles.map((file, index) => (
                                                                                 <option value={index}>
                                                                                     {/* <img src={file} width="50px" height="50px" className="pro-pre" /> */}
-                                                                                    {selectedFile[index].name}
+                                                                                    {selectedFile[index]?.name}
                                                                                 </option>
                                                                             ))}
                                                                         </select>
@@ -518,7 +538,7 @@ function AiProductDetails() {
                                                 <label>Return Policy</label>
                                                 <br />
                                                 <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
-                                                <button type='submit' className="create-acc-btn">Add Product</button>
+                                                <button type='submit' className="create-acc-btn">Save Product</button>
                                                 <button className="btn btn-danger ms-3" onClick={clearData}>Clear</button>
                                             </div>
                                         </div>
@@ -537,7 +557,7 @@ function AiProductDetails() {
                                                                 <div className="col-4">
                                                                     <img src={file} width="50px" height="50px" className="pro-pre" />
                                                                 </div>
-                                                                <div className="col-4 fil-name">{selectedFile[index].name}</div>
+                                                                <div className="col-4 fil-name">{selectedFile[index]?.name}</div>
                                                                 <div className="col-4 ">
                                                                     <div className="m-3 text-end">
                                                                         <i className="ri-close-line upload-img-close3" onClick={(e) => { removeImage(index) }}></i>
