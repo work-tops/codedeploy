@@ -34,7 +34,7 @@ function JobDetails() {
                             </Link>
                         </ul>
                     </div>
-                    <div className="row">
+                    <div className="job-det-cols row">
                         <div className="prj-detail col-6">
                             <p className="sub-title">Project Detail</p>
                             <p className="title-desc">A Custom Development Job Involves Designing,Developing,
@@ -51,7 +51,7 @@ function JobDetails() {
                             <p className="skills">Fabrication</p>
                             <p className="skills">Templater</p>
                         </div>
-                        <div className="col-3 economy-desc">
+                        <div className="col-6 economy-desc">
                             <div>
                                 <p className="ending-days">Ends In (Days)</p>
                                 <p className="days-left">10</p>

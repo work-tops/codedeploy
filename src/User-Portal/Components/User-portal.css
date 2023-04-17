@@ -55,7 +55,7 @@ a {
     }
 }
 
-@media screen and (min-device-width: 1024px) and (max-device-width:1700px) {
+@media screen and (min-device-width: 1024px) and (max-device-width:9999px) {
     .header {
         display: grid;
         grid-template-columns: 50% 50%;
@@ -365,7 +365,7 @@ a {
 
     .prj-detail {
         background: rgb(156 147 147 / 11%);
-        margin-left: 127px;
+        margin-left: 7.2rem;
     }
 
     .sub-title,
@@ -407,7 +407,8 @@ a {
 
     .economy-desc {
         background-color: rgb(156 147 147 / 11%);
-        margin-left: 10px;
+        margin-left: 15px;
+        width: 270px !important;
     }
 
     .ending-days {
@@ -511,13 +512,12 @@ a {
     }
 
     .save-btn {
-        width: 200px;
-        padding: 10px;
+        width: 150px;
+        padding: 7px;
         font-size: 17px;
         color: #d20a20;
         font-weight: bold;
-        margin-left: 40px;
-        /* margin-right: 10px; */
+        margin-left: 3.7rem;
         border: 2px solid #d20a20;
         margin-bottom: 20px;
         cursor: pointer;
@@ -536,7 +536,7 @@ a {
         height: 75px;
         width: 75px;
         border-radius: 45px;
-        margin-left: 115px;
+        margin-left: 6.5rem;
         border: 1px solid;
         margin-top: 20px;
     }
@@ -544,11 +544,11 @@ a {
     .emp-name {
         text-align: center;
         font-weight: 600;
-        margin-left: 25px;
+        margin-left: 15px;
     }
 
     .open-job-1 {
-        margin-left: 65px;
+        margin-left: 30px;
         border-top: none;
         border-bottom: none;
         border-left: none;
@@ -579,12 +579,12 @@ a {
 
     .clarification-board {
         display: inline;
-        font-size: 25px;
+        font-size: 18px;
     }
 
     .ask-a-que {
         color: #0c4664;
-        margin-left: 50px;
+        margin-left: 45px;
         font-weight: 500;
         width: 200px;
         border: 2px solid #0c4664;
@@ -594,7 +594,7 @@ a {
     }
 
     #msg-box {
-        width: 511px;
+        width: 500px;
         padding-bottom: 184px;
         margin-top: 30px;
         border: 1px solid rgb(133, 127, 127);
@@ -609,7 +609,7 @@ a {
 
     .send-box {
         background: rgb(156 147 147 / 11%);
-        width: 511px;
+        width: 500px;
         position: relative;
         bottom: 1px;
         border: 1px solid rgb(133, 127, 127);
@@ -622,7 +622,7 @@ a {
         color: #fff;
         background: #0c4664;
         text-transform: uppercase;
-        margin-left: 25.7rem;
+        margin-left: 25rem;
         border: none;
         cursor: pointer;
         font-size: 14px;
@@ -631,14 +631,15 @@ a {
 
     .container2 {
         background: rgb(156 147 147 / 11%);
-        margin-left: 11px;
+        margin-left: 3px;
+        width: 270px !important;
     }
 
     .report-title {
-        font-size: 22px;
-        margin-left: 25px;
+        font-size: 16px;
+        margin-left: 20px;
         border-bottom: 1px solid grey;
-        margin-right: 30px;
+        margin-right: 20px;
         margin-top: 10px;
     }
 
@@ -647,11 +648,12 @@ a {
         padding: 8px;
         border: 1px solid rgb(133, 127, 127);
         background: rgb(156 147 147 / 11%);
-        margin-left: 7px;
+        margin-left: 20px;
     }
 
     #report-box {
-        width: 241px;
+        width: 230px;
+        padding: 6px;
     }
 
     #report-box::placeholder {
@@ -660,13 +662,13 @@ a {
 
     #desc-box {
         margin-top: 20px;
-        width: 241px;
+        width: 230px;
         padding-bottom: 100px;
     }
 
     .submit {
         border-radius: 25px;
-        margin-left: 40px;
+        margin-left: 60px;
         margin-top: 20px;
         width: 150px;
         padding: 5px;
@@ -969,7 +971,8 @@ a {
     }
 
     .bg,
-    .bg-form {
+    .bg-form,
+    .bg-form-1 {
         background: url(../Components/Images/bg1.jpg);
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -982,7 +985,11 @@ a {
     }
 
     .bg-form {
-        height: 785px;
+        height: 630px;
+    }
+
+    .bg-form-1 {
+        height: 863px;
     }
 
     .register-field,
@@ -992,7 +999,7 @@ a {
         right: 255px;
         border: none;
         position: absolute;
-        top: 30px;
+        top: 15px;
     }
 
     .register-field {
@@ -1295,7 +1302,7 @@ a {
     .n-list {
         background-color: #faf8f8;
         width: 330px;
-        margin-left: 29px;
+        margin-left: 4rem;
         padding: 10px 15px 10px 10px;
     }
 
@@ -1673,5 +1680,202 @@ a {
     .optional {
         font-size: 13px;
         color: rgb(128, 121, 121);
+    }
+
+    /*  */
+    .mordern-interior-tit {
+        margin-left: 35px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+        position: relative;
+        top: 14px;
+        color: #bdb5b5;
+    }
+
+    .morder-interior-h1 {
+        margin-left: 30px;
+        width: 250px;
+    }
+
+    .mor-int-desc li {
+        font-size: 13px;
+        width: 370px;
+    }
+
+    .int-des-cont-btn {
+        margin-left: 30px;
+        width: 125px;
+        padding: 7px;
+        border: none;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 500;
+        background: #0c4664;
+        color: #fff;
+        margin-bottom: 10px;
+        border-radius: 100px 4px;
+    }
+
+    .interior-static-image {
+        width: 480px;
+        height: 320px;
+        position: relative;
+        bottom: 150px;
+        left: 100px;
+        border-radius: 100px 0px;
+        z-index: 9999;
+    }
+
+    .int-des-border {
+        border: 2px solid;
+        border-color: #507a93;
+        position: absolute;
+        top: 180px;
+        left: 520px;
+        width: 480px;
+        height: 320px;
+        border-radius: 100px 0px;
+    }
+
+    .signup-sub-tit {
+        text-transform: uppercase;
+        font-weight: 700;
+        position: relative;
+        left: 100px;
+        top: 20px;
+    }
+
+    .signup-tit {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .categories-list {
+        margin-left: 30px;
+        font-weight: 600;
+    }
+
+    .silde-btn {
+        border-radius: 25px;
+        border: 1px solid;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .silde-btn:hover {
+        background: lightseagreen;
+        color: #fff;
+        font-size: 10px;
+        transition: all 0.5s;
+    }
+
+    .slick-prev {
+        display: inline !important;
+    }
+
+    .trd-membrt {
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .id-prof-dwn {
+        padding: 10px;
+        width: 200px;
+        position: relative;
+        left: 118px;
+        top: 18px;
+    }
+
+    .id-ver-label {
+        position: relative;
+        text-transform: capitalize;
+        left: 98px;
+        top: 10px;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #trd-ip-bx {
+        position: relative;
+        top: 15px;
+        padding: 10px;
+        width: 500px;
+        left: 115px;
+        margin-bottom: 10px;
+        border: 1px solid black;
+    }
+
+    .upd-fil {
+        position: relative;
+        top: 49px;
+        padding: 14px;
+        border: none;
+        font-size: 14px;
+        width: 160px;
+        border-radius: 25px;
+        font-weight: 500;
+    }
+
+    .sild-div {
+        margin-left: 30px;
+    }
+
+    .wr-look-for-title {
+        color: #fff;
+        position: relative;
+        bottom: 285px;
+        left: 20px;
+    }
+
+    .wr-look-for {
+        font-size: 12px;
+        position: relative;
+        bottom: 285px;
+        color: #fff;
+        left: 20px;
+    }
+
+    .slid-img-hmp {
+        border-radius: 10px;
+    }
+
+    .what-we-do {
+        margin-left: 30px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .our-service-tit {
+        margin-left: 25px;
+        position: relative;
+        bottom: 15px;
+    }
+    .infrastuctures-btn {
+        padding: 10px;
+        border: none;
+        font-size: 16px;
+        padding-bottom: 10px;
+        margin-left: 30px;
+        border-radius: 100px 1px;
+        width: 300px;
+        margin-bottom: 15px;
+        background: #f4f4f4;
+    }
+    .infrastuctures-btn h6{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .infrastuctures-btn p {
+        font-size: 14px;
+        width: 189px;
+        position: relative;
+        left: 45px;
+    }
+    .infrastuctures-btn:hover{
+        color: #fff;
+        background: #0c4664;
+        transition: all .5s;
     }
 }
