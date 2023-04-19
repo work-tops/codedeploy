@@ -10,15 +10,21 @@ import { Icon } from '@iconify/react';
 import product_image from '../../Images/employee.png'
 import Multiselect from "multiselect-react-dropdown";
 import SkillsMultiselectDropdown from "../SelectTag/SelectTag";
+import { useHistory } from 'react-router-dom';
 
 function AiFreelancer() {
 
+    const history = useHistory();
     const [form, setform] = useState([])
+    console.log(form)
     const [selectedItems, setSelectedItems] = useState([]);
+    console.log(selectedItems)
     const [freel, setfreel] = useState([])
     const [skill, setskill] = useState([])
     const [doctype, setdoctype] = useState([])
     const [selectedSkills, setSelectedSkills] = useState([])
+    const [address, setAddress] = useState(false)
+    console.log(address)
 
     useEffect(() => {
         attachmentsList()
@@ -29,6 +35,13 @@ function AiFreelancer() {
         myData[e.target.name] = e.target.value;
         setform(myData)
     }
+
+    const handlechange1 = (e) => {
+        setAddress({
+            ...address,
+            [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
+        });
+    };
 
     // upload images
 
@@ -100,17 +113,18 @@ function AiFreelancer() {
         selected[index].type = '';
         setSelectedFile(selected);
     };
+
     // const handleChange1 = (e) => {
     //     const myData = { ...form };
     //     myData[e.target.name] = e.target.checked;
     //     setform(myData);
     // }
 
-    const onSelect = (selectedList, selectedItem) =>{
+    const onSelect = (selectedList, selectedItem) => {
         setSelectedSkills([selectedList]);
     }
-    
-    const onRemove = (selectedList, removedItem)=> {
+
+    const onRemove = (selectedList, removedItem) => {
         setSelectedSkills([selectedList]);
     }
 
@@ -134,44 +148,38 @@ function AiFreelancer() {
     const AddFreelancer = async () => {
         const freelancerData = {
             name: form.name + " " + form.lastname,
-            type: selectedItems,
-            skills: selectedSkills,
-            shop_name: form.shop_name,
+            first_name: form.name,
+            last_name: form.lastname,
             email: form.email,
-            store_address: form.store_address,
-            city: "default",
-            zipcode: "default",
-            country: "default",
-            billing_address: form.sbilling_address,
-            // city: form.city,
-            // country: form.country,
-            // zipcode: form.zipcode,
-            contact: form.contact,
-            tags: form.tags,
-            store_description: form.store_description,
-            seller_description: form.seller_description,
-            policy: form.policy,
+            phone: form.contact,
             password: form.password,
             confirm_password: form.confirm_password,
-            extra_information: {
-                company_name: "test option",
-                mobile_number: "test value",
-                company_address: "test option",
-                varification_doc: "test.jpg",
-                id_proof: "test.jpg",
-                bank_details: "test.jpg",
-                others: "test.jpg",
-                ternsandconfition: true
-            },
+            dob: form.dob,
+            operate_as: form.operate_as,
+            business_name: form.shop_name,
+            no_of_employees: form.no_of_employees,
+            role: "Freelancer",
+            type: selectedItems,
+            skills: selectedSkills,
+            secondary_skills: [],
+            company_address: form.store_address,
+
+            billing_address: address.address == true ? form.store_address : form.billing_address,
+            // billing_address: form.sbilling_address,
+            description: form.store_description,
+            terms_and_condition: true,
+            is_active: true,
+            is_approved: true,
             created_by: "1",
             attachments: selectedFile
         }
         console.log('add freelancer obj', freelancerData);
-        const response = await createData("seller/new", freelancerData)
+        const response = await createData("register", freelancerData)
         if (response.status === 201) {
             toast.success('Successfully Freelancer Added')
-            setform("")
-            cleardata()
+            setform("");
+            cleardata();
+            history.push('/allfreelancer');
         } else {
             toast.error('Something went wrong')
         }
@@ -214,8 +222,10 @@ function AiFreelancer() {
             name: "",
             lastname: "",
             dob: "",
+            operate_as: "",
             skills: "",
             billing_address: "",
+            no_of_employees: "",
             shop_name: "",
             email: "",
             store_address: "",
@@ -251,13 +261,14 @@ function AiFreelancer() {
                 <div className="col-10">
                     <div>
                         <AiHeader />
+                            <form onSubmit={(e) => { formsubmit(e) }}>
                         <div className="content-div">
                             <div>
                                 <p className="ai-title">Freelancer/Add Freelancer</p>
                                 <p className="ai-add-title">Add Freelancer</p>
                                 <p className="ai-title-desc">Here you can add your freelancer</p>
                                 <br></br>
-                                <form onSubmit={(e) => { formsubmit(e) }} className="add-seller-form">
+                                <div  className="add-seller-form">
                                     <span className="category">First Name</span> <span className="seller-email">Last Name</span>
                                     <br></br>
                                     <input required name="name" value={form.name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
@@ -271,48 +282,48 @@ function AiFreelancer() {
                                     <span className="category">Date of Birth</span> <span className="frl-sector">You Operate as a</span>
                                     <br></br>
                                     <input required name="dob" value={form.dob} onChange={(e) => { handleChange(e) }} id="aipro-email" type='date' />
-                                    <select className="select-category">
+                                    <select name="operate_as" value={form.operate_as} onChange={(e) => { handleChange(e) }} className="select-category">
                                         <option>Select</option>
-                                        <option>Self-employed / Sole Trader</option>
-                                        <option>Limited Company</option>
-                                        <option>Ordinary Partnership</option>
-                                        <option>Limited Partnership</option>
+                                        <option value="">Self-employed / Sole Trader</option>
+                                        <option value="Limited Company">Limited Company</option>
+                                        <option value="Ordinary Partnership">Ordinary Partnership</option>
+                                        <option value="Limited Partnership">Limited Partnership</option>
                                     </select>
                                     <br></br>
                                     <span className="category">Bussiness Name</span> <span className="noe">No.of Employee</span>
                                     <br></br>
                                     <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
-                                    <select className="select-category">
-                                        <option>Select</option>
-                                        <option>Myself Only</option>
-                                        <option>2-5</option>
-                                        <option>6-10 </option>
-                                        <option>10+</option>
+                                    <select name="no_of_employees" value={form.no_of_employees} onChange={(e) => { handleChange(e) }} className="select-category">
+                                        <option value="">Select</option>
+                                        <option value="Myself Only">Myself Only</option>
+                                        <option value="2-5">2-5</option>
+                                        <option value="6-10">6-10 </option>
+                                        <option value="10+">10+</option>
                                     </select>
                                     <br></br>
-                                    <label className="label">Skills:</label>
+                                    <label className="label">Primary Skills:</label>
                                     <div className="multi-sel">
                                         <Multiselect options={skill} onSelect={onSelect} onRemove={onRemove} displayValue="value" />
                                     </div>
-                                    <label className="label">Primary Skill</label>
-                                    <select id="aipro-name">
-                                        <option>Select</option>
-                                        <option>Skill 1</option>
-                                        <option>Skill 2</option>
-                                        <option>Skill 3</option>
-                                        <option>Skill 4</option>
-                                    </select>
-                                    <br></br>
+
+
                                     <label className="label">Secondary Skill</label>
-                                    <SkillsMultiselectDropdown /> 
-                                    <br></br>
+                                    <SkillsMultiselectDropdown />
+
                                     <label>Company Address</label>
                                     <textarea required name="store_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+
                                     <label>
-                                        Billing Address <input type='checkbox' id="bill-check" />
+                                        Billing Address <input checked={address.address} name="address" onChange={handlechange1} type='checkbox' id="bill-check" />
                                         <span className="billing-add-note">{' '}address and the billing address are same.</span>
                                     </label>
-                                    <textarea required name="sbilling_address" value={form.sbilling_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+                                    {address.address == true ? (
+                                        <textarea disabled required name="sbilling_address" value={form.sbilling_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+
+                                    ) : (
+                                        <textarea required name="sbilling_address" value={form.sbilling_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+
+                                    )}
                                     <label>Description</label>
                                     <textarea required name="store_description" value={form.store_description} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
                                     <br></br>
@@ -321,33 +332,34 @@ function AiFreelancer() {
                                     <input required name="password" value={form.password} onChange={(e) => { handleChange(e) }} id="aipro-category" type='password' />
                                     <input required name="confirm_password" value={form.confirm_password} onChange={(e) => { handleChange(e) }} id="aipro-email" type='password' />
                                     <br></br>
-                                    <input id="terms-conditions" type='checkbox' /><span className="agree-note">You agree to the terms and conditions.</span>
+                                    <input required name="termsandcond" value={form.termsandcond} onChange={(e) => { handleChange(e) }} id="terms-conditions" type='checkbox' /><span className="agree-note">You agree to the terms and conditions.</span>
                                     <br></br>
                                     <button type="submit" className="create-acc-btn">Create Account</button>
                                     <Link to="allfreelancer" role="button"><button className="cancel-btn">Cancel</button></Link>
-                                </form>
+                                </div>
+                               
                             </div>
                             <div className="row">
                                 <div className="freelance-form-div col-12">
-                                    <form className="freelance-form">
+                                    <div className="freelance-form">
                                         <h5 className="form-title">Freelancer Type</h5>
-                                        <input type='checkbox' id="ff-chbox" /><span>Fabricators</span>
-                                        <br></br>
-                                        <input type='checkbox' id="ff-chbox" /><span>Kitchen Designer</span>
-                                        <br></br>
-                                        <input type='checkbox' id="ff-chbox" /><span>Interior Designer</span>
-                                        <br></br>
-                                        <input type='checkbox' id="ff-chbox" /><span>Stone Seller</span>
-                                        <br></br>
-                                        <input type='checkbox' id="ff-chbox" /><span>Slink Manufacture</span>
-                                        <br></br>
-                                        <input type='checkbox' id="ff-chbox" /><span>Tap Seller</span>
-                                        <br></br>
-                                        <input type='checkbox' id="ff-chbox" /><span>Construction Company</span>
-                                    </form>
+                                        {freel.map((data, key) => (
+                                            < div style={{marginLeft:"15px"}}>
+                                                <input
+                                                    value={data.id}
+                                                    name="type"
+                                                    onChange={handleChange1}
+                                                    type="checkbox"
+                                                    id={`ff-chbox-${data.id}`}
+                                                />
+                                                <label htmlFor={`ff-chbox-${data.id}`}>{data.value}</label>
+                                                <br />
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                                 <div className="freelance-form-div col-12">
-                                    <form className="freelance-form1">
+                                    <div className="freelance-form1">
                                         <h5 className="form-title">Documents</h5>
                                         <br></br>
                                         {selectedFile.map((x, i) =>
@@ -386,10 +398,11 @@ function AiFreelancer() {
 
                                             </>
                                         )}
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -11,18 +11,18 @@ function AllFreelancer() {
     const [freelanc, setfreelanc] = useState([])
 
     const freelancList = async () => {
-        const response = await getAllData('sellers/all');
-        setfreelanc(response.data.sellers);
+        const response = await getAllData('admin/users');
+        setfreelanc(response.data.users);
         setShowSpinner(false);
     }
     const freelancdel = async (data) => {
-        const response = await deleteData('seller/' + data._id);
-        if (response.status === 201) {
-            toast.success('Successfully Freelancer Added')
-            freelancList()
-        } else {
-            toast.error('Something went wrong')
-        }
+        // const response = await deleteData('seller/' + data._id);
+        // if (response.status === 201) {
+        //     toast.success('Successfully Freelancer Added')
+        //     freelancList()
+        // } else {
+        //     toast.error('Something went wrong')
+        // }
     }
 
     const [showSpinner, setShowSpinner] = useState(true);
@@ -146,7 +146,7 @@ function AllFreelancer() {
                                         <td id="td">{data._id}</td>
                                         <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
                                         <td id="td">{data.name}</td>
-                                        <td id="td">{data.shop_name}</td>
+                                        <td id="td">{data.business_name}</td>
                                         <td id="td"><span className="pro-status-approved">Verified</span></td>
                                         <td id="td">31 Mar 2023</td>
                                         <td id="td"><span className="pro-status-approved">Approved</span></td>

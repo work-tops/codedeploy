@@ -17,8 +17,8 @@ const FrontEndRouters = () => {
             <Route path='/jobproposal'><JobProposal /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path='/signupform'><SignUpForm /></Route>
-            <Route path="/tradesignupform"><TradeSignUpForm/></Route>
             <Route path='/signuppage'><SignUpPage /></Route>
+            <Route path="/tradesignupform"><TradeSignUpForm/></Route>
             <Route path="/proposallist"><ProposalList /></Route>
             <Route path="/postjob1"><PostJob1 /></Route>
             <Route path="/postjob2"><PostJob2 /></Route>

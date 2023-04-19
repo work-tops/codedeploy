@@ -7,13 +7,14 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Icon } from '@iconify/react';
 import variant_image from "../../Images/product_image.png";
 import Multiselect from "multiselect-react-dropdown";
-import {useHistory} from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 function AiProductDetails() {
 
     //varient state
     const history = useHistory();
     const [variants, setVariants] = useState([]);
+    console.log(variants)
     const [isEdit, setEditButton] = useState(false);
     const [editIndex, setEditVarientIndex] = useState(0);
 
@@ -36,11 +37,20 @@ function AiProductDetails() {
         remaining_quantity: 5,
     });
 
+    console.log(Boolean(variant.required_shipping))
+
     //varient functionality
     const variantChange = (e) => {
         const _variant = { ...variant };
         _variant[e.target.name] = e.target.value;
         setVarientObject(_variant);
+    };
+
+    const handlechange1 = (e) => {
+        setVarientObject({
+            ...variant,
+            [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
+        });
     };
 
     const handleVariantSubmit = (event) => {
@@ -50,23 +60,23 @@ function AiProductDetails() {
             size: variant.size,
             finish_type: variant.finish_type,
             shipping: {
-                required_shipping: variant.required_shipping,
-                charge_tax: variant.charge_tax,
+                required_shipping: Boolean(variant.required_shipping),
+                charge_tax: Boolean(variant.charge_tax),
             },
             pricing: {
                 price: variant.price,
                 compare_at: variant.compare_at,
                 handling_changes: variant.handling_changes,
                 sales_price: variant.sales_price,
-                charge_taxes: variant.charge_taxes,
+                charge_taxes: Boolean(variant.charge_taxes),
             },
             inventory: {
                 sku: variant.sku,
                 barcode: variant.barcode,
                 min_purchase_qty: variant.min_purchase_qty,
                 quantity: variant.quantity,
-                track_inventory: variant.track_inventory,
                 remaining_quantity: variant.remaining_quantity,
+                track_inventory: Boolean(variant.track_inventory),
             },
             attachment: selectedFile[parseInt(variant.imageInx)]
         }
@@ -119,14 +129,15 @@ function AiProductDetails() {
             compare_at: data?.pricing?.compare_at,
             handling_changes: data?.pricing?.handling_changes,
             sales_price: data?.pricing?.sales_price,
-            required_shipping: false,
-            charge_taxes: false,
+            required_shipping: data?.shipping?.required_shipping,
+            charge_taxes: data?.pricing?.charge_taxes,
             sku: data?.inventory?.sku,
             barcode: data?.inventory?.barcode,
             min_purchase_qty: data?.inventory?.min_purchase_qty,
             quantity: data?.inventory?.quantity,
-            track_inventory: false,
+            track_inventory: data?.inventory?.track_inventory,
             remaining_quantity: 5,
+
         }
         setVarientObject(_variant);
         setEditButton(true);
@@ -199,7 +210,16 @@ function AiProductDetails() {
     //product --functionality
     const handleChange = (e) => {
         const myData = { ...form };
-        myData[e.target.name] = e.target.value;
+        if (e.target.name == 'type') {
+            var _pd = productCategory.find(x => x.name == e.target.value);
+            var _type = {
+                id: _pd ? _pd.id : 1,
+                name: e.target.value
+            }
+            myData[e.target.name] = _type;
+        } else {
+            myData[e.target.name] = e.target.value;
+        }
         setProductForm(myData);
     }
     const addProduct = async () => {
@@ -207,7 +227,7 @@ function AiProductDetails() {
             seller_email: form.seller_email,
             name: form.name,
             // category: form.category,
-            type: {},
+            type: form.type,
             description: form.description,
             tags: selectedproductTags,
             policy: form.policy,
@@ -227,9 +247,9 @@ function AiProductDetails() {
         }
         console.log(productdata);
         var response = null;
-        if(editProduct != ''){
-            response = await updateData("admin/product/"+editProduct, productdata);
-        }else{
+        if (editProduct != '') {
+            response = await updateData("admin/product/" + editProduct, productdata);
+        } else {
             response = await createData("admin/product/new", productdata);
         }
         if (response.status === 201) {
@@ -243,9 +263,15 @@ function AiProductDetails() {
     }
 
     const formsubmit = (e) => {
-        e.preventDefault()
-        addProduct()
-        uploadFile()
+        if (variants.length === 0) {
+            toast.error("You have to add at least one variant")
+            e.preventDefault()
+
+        } else {
+            e.preventDefault()
+            addProduct()
+            uploadFile()
+        }
     }
 
     const onSelect = (selectedList, selectedItem, index) => {
@@ -257,7 +283,6 @@ function AiProductDetails() {
         var _tags = selectedproductTags;
         _tags[index].list = selectedList;
         setSelectedproductTags(_tags);
-        console.log('selectedproductTags', selectedproductTags);
     }
     const handleTagChange = (event, index) => {
         var _list = [
@@ -292,7 +317,7 @@ function AiProductDetails() {
 
     // Product by id
     const getProductById = async (_id) => {
-        const response = await getAllData('product/'+_id);
+        const response = await getAllData('product/' + _id);
         const _product = response.data.product;
         console.log(_product)
         setProductForm({
@@ -307,17 +332,17 @@ function AiProductDetails() {
             metadescription: _product.meta_fields.description,
             tags: _product.tags,
             attachments: _product.attachments,
-         
-
+            type: _product.type,
 
         });
+        // setproductCategory([_product.type])
         setVariants(_product.variant);
         setSelectedproductTags(_product.tags);
         setproductTags(_product.tags);
+        console.log(_product.tags)
         setSelectedFile(_product.attachments);
-        console.log(_product)
         var _actFiles = [];
-        _product.attachments.forEach((x)=>{
+        _product.attachments.forEach((x) => {
             _actFiles.push(x.url);
         })
         setActualFile(_actFiles);
@@ -342,6 +367,7 @@ function AiProductDetails() {
         setVariants([]);
         getProductTags();
         resetVarientObject();
+
     }
     const [editProduct, setEditProducts] = useState('');
     useEffect(() => {
@@ -387,10 +413,14 @@ function AiProductDetails() {
                                                 <br></br>
                                                 <span className="category">Category</span> <span className="seller-email">Seller Email</span>
                                                 <br></br>
-                                                <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
+                                                <select
+                                                    value={form.type?.name}
+                                                    required name="type" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
                                                     <option value="">Select</option>
                                                     {productCategory.map((data, key) => (
-                                                        <option key={key} value={data.name}>{data.name}</option>
+                                                        <option key={key} value={data.name}>
+                                                            {data.name}
+                                                        </option>
                                                     ))}
                                                 </select>
 
@@ -489,8 +519,12 @@ function AiProductDetails() {
                                                                         <label className="label">Sales Price</label>
                                                                         <input value={variant.sales_price} name="sales_price" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
                                                                         <br></br>
-                                                                        <input name="required_shipping" onChange={(e) => { variantChange(e) }} id="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
-                                                                        <input name="charge_taxes" onChange={(e) => { variantChange(e) }} id="aipro-checkbox2" type='checkbox' value="true" /><span className="chc-span">Charge Taxes on this product</span>
+                                                                        <input checked={variant.required_shipping} name="required_shipping" onChange={handlechange1} id="aipro-checkbox1" type='checkbox' />
+                                                                        <span className="chc-span">Shipping Requires</span>
+                                                                        <input checked={variant.charge_taxes} name="charge_taxes" onChange={handlechange1} id="aipro-checkbox2" type='checkbox' />
+                                                                        <span className="chc-span">Charge Taxes on this product</span>
+                                                                        {/* <input defaultValue={variant.required_shipping} name="required_shipping" onChange={(e) => { variantChange(e) }} id="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
+                                                                        <input defaultValue={variant.charge_taxes} name="charge_taxes" onChange={(e) => { variantChange(e) }} id="aipro-checkbox2" type='checkbox' value="true" /><span className="chc-span">Charge Taxes on this product</span> */}
                                                                         <br></br>
                                                                         <br></br>
                                                                         <p className="var-tit">Inventory</p>
@@ -503,7 +537,7 @@ function AiProductDetails() {
                                                                         <label>Quantity</label>
                                                                         <input value={variant.quantity} name="quantity" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
                                                                         <br></br>
-                                                                        <input value={variant.track_inventory} name="track_inventory" onChange={(e) => { variantChange(e) }} id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
+                                                                        <input checked={variant.track_inventory} name="track_inventory" onChange={handlechange1} id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
                                                                         <br></br>
                                                                         <button type="button" onClick={(e) => { handleVariantSubmit(e) }} data-bs-dismiss="modal" aria-label="Close" className="create-acc-btn">Submit</button>
                                                                         <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject()}>Cancel</button>
@@ -539,7 +573,8 @@ function AiProductDetails() {
                                                 <br />
                                                 <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
                                                 <button type='submit' className="create-acc-btn">Save Product</button>
-                                                <button className="btn btn-danger ms-3" onClick={clearData}>Clear</button>
+                                                {/* <button className="btn btn-danger ms-3" onClick={clearData}>Clear</button> */}
+                                                <Link to="/allproduct"><button className="btn btn-danger ms-3">Cancel</button></Link> 
                                             </div>
                                         </div>
                                         <div className="Add-Product-Images">
@@ -580,7 +615,6 @@ function AiProductDetails() {
                                                     name="attachments"
                                                     multiple
                                                     onChange={handleFileInput}
-                                                    required
                                                     type="file"
                                                     id="select-basic"
                                                     accept="image/*"
@@ -598,16 +632,18 @@ function AiProductDetails() {
                                             <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
                                             <p className="pro-sub-title">Product Tag</p>
                                             {productTags.map((x, i) => {
+                                                const defaultSelectedValues = selectedproductTags[i]?.list || []; 
                                                 return <>
                                                     <label className="label">{x?.name}</label>
+                                                  {   console.log(x)}
                                                     {x.id == 1 || x.id == 2 ?
+                                                            (
+                                                                <div className="multi-sel">
+                                                                    <Multiselect selectedValues={defaultSelectedValues} options={x?.list} onRemove={(list, item) => onRemove(list, item, i)} onSelect={(list, item) => onSelect(list, item, i)} displayValue="value" />
+                                                                </div>
+                                                            ) :
                                                         (
-                                                            <div className="multi-sel">
-                                                                <Multiselect options={x?.list} onRemove={(list, item) => onRemove(list, item, i)} onSelect={(list, item) => onSelect(list, item, i)} displayValue="value" />
-                                                            </div>
-                                                        ) :
-                                                        (
-                                                            <input className="ai-input" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />
+                                                            <input  className="ai-input" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />
                                                         )
 
                                                     }
