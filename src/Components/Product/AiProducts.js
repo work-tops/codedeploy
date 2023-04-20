@@ -9,7 +9,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 function AiProducts() {
 
-    const [product, setproducts] = useState([]);
+    const [product, setproducts] = useState([]); 
 
     const Productlist = async () => {
         const response = await getAllData('products');
