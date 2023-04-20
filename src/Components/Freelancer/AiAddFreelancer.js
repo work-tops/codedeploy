@@ -9,10 +9,29 @@ import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import product_image from '../../Images/employee.png'
 import Multiselect from "multiselect-react-dropdown";
-import SkillsMultiselectDropdown from "../SelectTag/SelectTag";
 import { useHistory } from 'react-router-dom';
 
 function AiFreelancer() {
+
+    // Secondary Skill static data 
+
+    const Secondarydata = [
+        {
+            Skills: 'HTML', id: 1
+        },
+        {
+            Skills: 'CSS', id: 2
+        },
+        {
+            Skills: 'Java', id: 3
+        },
+        {
+            Skills: 'React', id: 4
+        },
+        {
+            Skills: 'BootStrap', id: 5
+        },
+    ]
 
     const history = useHistory();
     const [form, setform] = useState([])
@@ -21,8 +40,10 @@ function AiFreelancer() {
     console.log(selectedItems)
     const [freel, setfreel] = useState([])
     const [skill, setskill] = useState([])
+    console.log(skill)
     const [doctype, setdoctype] = useState([])
     const [selectedSkills, setSelectedSkills] = useState([])
+    console.log(selectedSkills)
     const [address, setAddress] = useState(false)
     console.log(address)
 
@@ -160,8 +181,8 @@ function AiFreelancer() {
             no_of_employees: form.no_of_employees,
             role: "Freelancer",
             type: selectedItems,
+            primary_skill: form.primary_skill,
             skills: selectedSkills,
-            secondary_skills: [],
             company_address: form.store_address,
 
             billing_address: address.address == true ? form.store_address : form.billing_address,
@@ -261,147 +282,152 @@ function AiFreelancer() {
                 <div className="col-10">
                     <div>
                         <AiHeader />
-                            <form onSubmit={(e) => { formsubmit(e) }}>
-                        <div className="content-div">
-                            <div>
-                                <p className="ai-title">Freelancer/Add Freelancer</p>
-                                <p className="ai-add-title">Add Freelancer</p>
-                                <p className="ai-title-desc">Here you can add your freelancer</p>
-                                <br></br>
-                                <div  className="add-seller-form">
-                                    <span className="category">First Name</span> <span className="seller-email">Last Name</span>
+                        <form onSubmit={(e) => { formsubmit(e) }}>
+                            <div className="content-div">
+                                <div>
+                                    <p className="ai-title">Freelancer/Add Freelancer</p>
+                                    <p className="ai-add-title">Add Freelancer</p>
+                                    <p className="ai-title-desc">Here you can add your freelancer</p>
                                     <br></br>
-                                    <input required name="name" value={form.name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
-                                    <input required name="lastname" value={form.lastname} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
-                                    <br></br>
-                                    <span className="category">Email</span> <span className="seller-ph-no">Phone Number</span>
-                                    <br></br>
-                                    <input required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' />
-                                    <input required name="contact" value={form.contact} onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
-                                    <br></br>
-                                    <span className="category">Date of Birth</span> <span className="frl-sector">You Operate as a</span>
-                                    <br></br>
-                                    <input required name="dob" value={form.dob} onChange={(e) => { handleChange(e) }} id="aipro-email" type='date' />
-                                    <select name="operate_as" value={form.operate_as} onChange={(e) => { handleChange(e) }} className="select-category">
-                                        <option>Select</option>
-                                        <option value="">Self-employed / Sole Trader</option>
-                                        <option value="Limited Company">Limited Company</option>
-                                        <option value="Ordinary Partnership">Ordinary Partnership</option>
-                                        <option value="Limited Partnership">Limited Partnership</option>
-                                    </select>
-                                    <br></br>
-                                    <span className="category">Bussiness Name</span> <span className="noe">No.of Employee</span>
-                                    <br></br>
-                                    <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
-                                    <select name="no_of_employees" value={form.no_of_employees} onChange={(e) => { handleChange(e) }} className="select-category">
-                                        <option value="">Select</option>
-                                        <option value="Myself Only">Myself Only</option>
-                                        <option value="2-5">2-5</option>
-                                        <option value="6-10">6-10 </option>
-                                        <option value="10+">10+</option>
-                                    </select>
-                                    <br></br>
-                                    <label className="label">Primary Skills:</label>
-                                    <div className="multi-sel">
-                                        <Multiselect options={skill} onSelect={onSelect} onRemove={onRemove} displayValue="value" />
-                                    </div>
-
-
-                                    <label className="label">Secondary Skill</label>
-                                    <SkillsMultiselectDropdown />
-
-                                    <label>Company Address</label>
-                                    <textarea required name="store_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
-
-                                    <label>
-                                        Billing Address <input checked={address.address} name="address" onChange={handlechange1} type='checkbox' id="bill-check" />
-                                        <span className="billing-add-note">{' '}address and the billing address are same.</span>
-                                    </label>
-                                    {address.address == true ? (
-                                        <textarea disabled required name="sbilling_address" value={form.sbilling_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
-
-                                    ) : (
-                                        <textarea required name="sbilling_address" value={form.sbilling_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
-
-                                    )}
-                                    <label>Description</label>
-                                    <textarea required name="store_description" value={form.store_description} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
-                                    <br></br>
-                                    <span className="category">Password</span> <span className="seller-email">Confirm Password</span>
-                                    <br></br>
-                                    <input required name="password" value={form.password} onChange={(e) => { handleChange(e) }} id="aipro-category" type='password' />
-                                    <input required name="confirm_password" value={form.confirm_password} onChange={(e) => { handleChange(e) }} id="aipro-email" type='password' />
-                                    <br></br>
-                                    <input required name="termsandcond" value={form.termsandcond} onChange={(e) => { handleChange(e) }} id="terms-conditions" type='checkbox' /><span className="agree-note">You agree to the terms and conditions.</span>
-                                    <br></br>
-                                    <button type="submit" className="create-acc-btn">Create Account</button>
-                                    <Link to="allfreelancer" role="button"><button className="cancel-btn">Cancel</button></Link>
-                                </div>
-                               
-                            </div>
-                            <div className="row">
-                                <div className="freelance-form-div col-12">
-                                    <div className="freelance-form">
-                                        <h5 className="form-title">Freelancer Type</h5>
-                                        {freel.map((data, key) => (
-                                            < div style={{marginLeft:"15px"}}>
-                                                <input
-                                                    value={data.id}
-                                                    name="type"
-                                                    onChange={handleChange1}
-                                                    type="checkbox"
-                                                    id={`ff-chbox-${data.id}`}
-                                                />
-                                                <label htmlFor={`ff-chbox-${data.id}`}>{data.value}</label>
-                                                <br />
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className="freelance-form-div col-12">
-                                    <div className="freelance-form1">
-                                        <h5 className="form-title">Documents</h5>
+                                    <div className="add-seller-form">
+                                        <span className="category">First Name</span> <span className="seller-email">Last Name</span>
                                         <br></br>
-                                        {selectedFile.map((x, i) =>
-                                            <>
-                                                <select name={'select_' + i} onChange={(e) => handleSelectChange(e, i)} className="frl-proof-sel">
-                                                    <option value="">Select</option>
-                                                    {filteredOptions.map((data, key) => (
-                                                        <option key={'doc_' + key} value={data.value}>{data.value}</option>
-                                                    ))}
-                                                </select>
+                                        <input required name="name" value={form.name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
+                                        <input required name="lastname" value={form.lastname} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
+                                        <br></br>
+                                        <span className="category">Email</span> <span className="seller-ph-no">Phone Number</span>
+                                        <br></br>
+                                        <input required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' />
+                                        <input required name="contact" value={form.contact} onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
+                                        <br></br>
+                                        <span className="category">Date of Birth</span> <span className="frl-sector">You Operate as a</span>
+                                        <br></br>
+                                        <input required name="dob" value={form.dob} onChange={(e) => { handleChange(e) }} id="aipro-email" type='date' />
+                                        <select name="operate_as" value={form.operate_as} onChange={(e) => { handleChange(e) }} className="select-category">
+                                            <option>Select</option>
+                                            <option value="">Self-employed / Sole Trader</option>
+                                            <option value="Limited Company">Limited Company</option>
+                                            <option value="Ordinary Partnership">Ordinary Partnership</option>
+                                            <option value="Limited Partnership">Limited Partnership</option>
+                                        </select>
+                                        <br></br>
+                                        <span className="category">Bussiness Name</span> <span className="noe">No.of Employee</span>
+                                        <br></br>
+                                        <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
+                                        <select name="no_of_employees" value={form.no_of_employees} onChange={(e) => { handleChange(e) }} className="select-category">
+                                            <option value="">Select</option>
+                                            <option value="Myself Only">Myself Only</option>
+                                            <option value="2-5">2-5</option>
+                                            <option value="6-10">6-10 </option>
+                                            <option value="10+">10+</option>
+                                        </select>
+                                        <br></br>
+                                        <label className="label">Primary Skills:</label>
 
-                                                <label htmlFor="select-basic" className="mb-75 me-75" style={{ fontSize: "small", color: "blue" }}>
-                                                    <button type="button" className="upload-doc-btn ms-2" onClick={() => document.getElementById(`doc_attach_id_${i}`).click()}>
-                                                        Upload
-                                                    </button>
+                                        <select  name="primary_skill" value={form.primary_skill} onChange={(e) => { handleChange(e) }} className="select-category">
+                                            <option value="">Select</option>
+                                            {skill.map((data, key) => (
+                                                <option key={key} value={data.value}>{data.value}</option>
+                                            ))}
+                                        </select>
+                                        
+                                        <label className="label">Secondary Skill</label>
+                                        <div className="multi-sel-service">
+                                           <Multiselect options={skill} onSelect={onSelect} onRemove={onRemove} displayValue="value" />
+                                        </div>
 
-                                                    <input
-                                                        name={'doc_attach_' + i}
-                                                        // multiple
-                                                        onChange={(e) => handleFileInput(e, i)}
-                                                        required
-                                                        type="file"
-                                                        id={'doc_attach_id_' + i}
-                                                        accept="image/*"
-                                                        style={{ display: "none" }}
-                                                    />
-                                                </label>
-                                                <br></br>
-                                                {x.name != '' && x.name != undefined ?
-                                                    (<div key={'dic_key' + i}>
-                                                        <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
-                                                        <span className="kitchen-plan-div">{x.name}</span>
-                                                        <i className="ri-close-line upload-img-close3" onClick={() => removeImage(i)}></i>
-                                                    </div>) : <></>
-                                                }
+                                        <label>Company Address</label>
+                                        <textarea required name="store_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
 
-                                            </>
+                                        <label>
+                                            Billing Address <input checked={address.address} name="address" onChange={handlechange1} type='checkbox' id="bill-check" />
+                                            <span className="billing-add-note">{' '}address and the billing address are same.</span>
+                                        </label>
+                                        {address.address == true ? (
+                                            <textarea disabled required name="sbilling_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+
+                                        ) : (
+                                            <textarea required name="sbilling_address" value={form.sbilling_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+
                                         )}
+                                        <label>Description</label>
+                                        <textarea required name="store_description" value={form.store_description} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+                                        <br></br>
+                                        <span className="category">Password</span> <span className="seller-email">Confirm Password</span>
+                                        <br></br>
+                                        <input required name="password" value={form.password} onChange={(e) => { handleChange(e) }} id="aipro-category" type='password' />
+                                        <input required name="confirm_password" value={form.confirm_password} onChange={(e) => { handleChange(e) }} id="aipro-email" type='password' />
+                                        <br></br>
+                                        <input required name="termsandcond" value={form.termsandcond} onChange={(e) => { handleChange(e) }} id="terms-conditions" type='checkbox' /><span className="agree-note">You agree to the terms and conditions.</span>
+                                        <br></br>
+                                        <button type="submit" className="create-acc-btn">Create Account</button>
+                                        <Link to="allfreelancer" role="button"><button className="cancel-btn">Cancel</button></Link>
+                                    </div>
+
+                                </div>
+                                <div className="row">
+                                    <div className="freelance-form-div col-12">
+                                        <div className="freelance-form">
+                                            <h5 className="form-title">Freelancer Type</h5>
+                                            {freel.map((data, key) => (
+                                                < div style={{ marginLeft: "15px" }}>
+                                                    <input
+                                                        value={data.id}
+                                                        name="type"
+                                                        onChange={handleChange1}
+                                                        type="checkbox"
+                                                        id={`ff-chbox-${data.id}`}
+                                                    />
+                                                    <label htmlFor={`ff-chbox-${data.id}`}>{data.value}</label>
+                                                    <br />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className="freelance-form-div col-12">
+                                        <div className="freelance-form1">
+                                            <h5 className="form-title">Documents</h5>
+                                            <br></br>
+                                            {selectedFile.map((x, i) =>
+                                                <>
+                                                    <select name={'select_' + i} onChange={(e) => handleSelectChange(e, i)} className="frl-proof-sel">
+                                                        <option value="">Select</option>
+                                                        {filteredOptions.map((data, key) => (
+                                                            <option key={'doc_' + key} value={data.value}>{data.value}</option>
+                                                        ))}
+                                                    </select>
+
+                                                    <label htmlFor="select-basic" className="mb-75 me-75" style={{ fontSize: "small", color: "blue" }}>
+                                                        <button type="button" className="upload-doc-btn ms-2" onClick={() => document.getElementById(`doc_attach_id_${i}`).click()}>
+                                                            Upload
+                                                        </button>
+
+                                                        <input
+                                                            name={'doc_attach_' + i}
+                                                            // multiple
+                                                            onChange={(e) => handleFileInput(e, i)}
+                                                            required
+                                                            type="file"
+                                                            id={'doc_attach_id_' + i}
+                                                            accept="image/*"
+                                                            style={{ display: "none" }}
+                                                        />
+                                                    </label>
+                                                    <br></br>
+                                                    {x.name != '' && x.name != undefined ?
+                                                        (<div key={'dic_key' + i}>
+                                                            <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
+                                                            <span className="kitchen-plan-div">{x.name}</span>
+                                                            <i className="ri-close-line upload-img-close3" onClick={() => removeImage(i)}></i>
+                                                        </div>) : <></>
+                                                    }
+
+                                                </>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         </form>
                     </div>
                 </div>

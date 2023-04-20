@@ -9,6 +9,7 @@ import { createData, getAllData } from "../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
 import ServiceMultiselectDropdown from "../SelectTag/ServiceTag";
 import ServiceLocationMultiselect from "../SelectTag/ServiceLocation";
+import Multiselect from "multiselect-react-dropdown";
 
 function AddServices() {
 
@@ -16,11 +17,16 @@ function AddServices() {
     console.log(selectedFile)
     const [actualFiles, setActualFile] = useState({});
     const [uploadFiles, setUploadFile] = useState([]);
+    const [cate, setcate] = useState([])
+    const [selemail, setselemail] = useState([])
+    const [servitag, setServitag] = useState([])
+    const [locations, setLocations] = useState([])
+    console.log(locations)
 
     const handleFileInput = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
-    
+
         reader.onload = () => {
             const url = reader.result;
             setActualFile(url);
@@ -48,7 +54,7 @@ function AddServices() {
         setSelectedFile({});
         setActualFile({});
         setUploadFile([]);
-      };
+    };
 
 
     const [form, setform] = useState([])
@@ -119,22 +125,60 @@ function AddServices() {
         })
     }
 
-    const [cate, setcate] = useState([])
-    const [selemail, setselemail] = useState([])
-
-
     const Jobslist = async () => {
         const response = await getAllData('master/service_category');
         setcate(response.data.master[0].data);
-
     }
+
     const selleremails = async () => {
         const response = await getAllData('sellers/all');
         setselemail(response.data.sellers);
     }
+
+    const onSelect = (selectedList, index) => {
+        if (index >= 0 && index < locations.length) {
+            const updatedLocations = [...locations];
+            updatedLocations[index].list = selectedList;
+            setLocations(updatedLocations);
+        }
+    };
+
+    const onRemove = (selectedList, index) => {
+        if (index >= 0 && index < locations.length) {
+            const updatedLocations = [...locations];
+            updatedLocations[index].list = updatedLocations[index].list.filter(
+                (item) => !selectedList.includes(item)
+            );
+            setLocations(updatedLocations);
+        }
+    };
+    // const handleTagChange = (event, index) => {
+    //     var _list = [
+    //         {
+    //             id: 1,
+    //             value: event.target.value
+    //         }
+    //     ]
+    //     // var _tags = selectedproductTags;
+    //     _tags[index].list = _list;
+    //     // setSelectedproductTags(_tags);
+    // }
+    const ServiceTags = async () => {
+        const response = await getAllData("master/service_tags");
+        setServitag(response.data.master[0].data);
+        const _selectList = response.data.master[0].data.map((x) => ({
+            id: x.id,
+            name: x.name,
+            list: [],
+        }));
+        setLocations(_selectList);
+    };
+
+
     useEffect(() => {
         Jobslist()
         selleremails()
+        ServiceTags()
     }, [])
 
 
@@ -176,10 +220,26 @@ function AddServices() {
                                     <label className="label">Description</label>
                                     <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
                                     <br></br>
-                                    <label className="label">Service Location</label>
+                                    {servitag.map((data, index) =>
+                                        data.id == 2 || data.id == 3 ? (
+                                            <div key={data.id}>
+                                                <label className="label">Service {data.name}</label>
+                                                <div className="multi-sel-service">
+                                                    <Multiselect
+                                                        options={data.list}
+                                                        onRemove={(selectedList) => onRemove(selectedList, index)}
+                                                        onSelect={(selectedList) => onSelect(selectedList, index)}
+                                                        displayValue="value"
+                                                    />
+                                                </div>
+                                            </div>
+                                        ) : null
+                                    )}
+
+                                    {/* <label className="label">Service Location</label>
                                     <ServiceLocationMultiselect />
                                     <label className="label">Service Range</label>
-                                    <ServiceMultiselectDropdown />
+                                    <ServiceMultiselectDropdown /> */}
                                     {/* <input value={form.service_tag} required name="service_tag" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input> */}
                                     <br></br>
                                     <input id="aipro-checkbox1" type='checkbox' /><span className="chc-span">Shipping Requires</span>
@@ -190,13 +250,16 @@ function AddServices() {
                                     <br></br>
                                     <select value={form.price_type} required name="price_type" onChange={(e) => { handleChange(e) }} id="aipro-category">
                                         <option value="">Select Option</option>
-                                        <option value="Per Hour Cost">Per Hour Cost</option>
-                                        <option value="Fixed Price">Fixed Price</option>
+                                        <option value="Per Hour">Per Hour</option>
+                                        <option value="Once off">Once off</option>
+                                        <option value="Per visit">Per visit</option>
+                                        <option value="Per session ( Package)">Per session ( Package)</option>
+                                        <option value="Per day">Per day</option>
                                     </select>
                                     <input value={form.price} required name="price" onChange={(e) => { handleChange(e) }} id="aipro-email" type='number' />
                                     <br></br>
                                     <br></br>
-                                    <span className="category">Office Price</span> <span className="displayprice">Display Price</span>
+                                    <span className="category">Offer Price</span> <span className="displayprice">Display Price</span>
                                     <br></br>
                                     <input value={form.offer_price} required name="offer_price" onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
                                     <input value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} id="aipro-email" type='number' />
@@ -215,12 +278,12 @@ function AddServices() {
                                         <option value="Active">Active</option>
                                     </select>
                                     <p className="ai-pro-title">Service Images</p>
-                                   
-                                    {selectedFile?.name == undefined || selectedFile?.name == null? (
+
+                                    {selectedFile?.name == undefined || selectedFile?.name == null ? (
                                         <div className="ai-image-drag">
-                                        <i className="ai-img-icon ri-image-fill"></i>
-                                        <small className="chose-file">No File Chosen</small>
-                                    </div>
+                                            <i className="ai-img-icon ri-image-fill"></i>
+                                            <small className="chose-file">No File Chosen</small>
+                                        </div>
                                     ) : (
                                         <>
                                             {/* {actualFiles.map((file) => ( */}
@@ -230,21 +293,21 @@ function AddServices() {
                                     )}
                                     <br></br>
                                     <label htmlFor="select-basic" className="mb-75 me-75" style={{ fontSize: "small", color: "blue" }}>
-                                            <button type="button" className="img-upload-btn-1" onClick={() => document.getElementById('select-basic').click()}>
-                                                Upload Images
-                                            </button>
-                                            <input
-                                                name="attachments"
-                                                // multiple
-                                                onChange={handleFileInput}
-                                                required
-                                                type="file"
-                                                id="select-basic"
-                                                accept="image/*"
-                                                style={{ display: "none" }}
-                                            />
-                                        </label>
-                                  
+                                        <button type="button" className="img-upload-btn-1" onClick={() => document.getElementById('select-basic').click()}>
+                                            Upload Images
+                                        </button>
+                                        <input
+                                            name="attachments"
+                                            // multiple
+                                            onChange={handleFileInput}
+                                            required
+                                            type="file"
+                                            id="select-basic"
+                                            accept="image/*"
+                                            style={{ display: "none" }}
+                                        />
+                                    </label>
+
                                     {' '}
                                     <button type="button" onClick={removeImage} className="img-upload-btn-2">Remove</button>
                                     <br></br>
@@ -306,7 +369,7 @@ function AddServices() {
                                                                 <tr>
                                                                     <td>
                                                                         {/* {actualFiles.map((file) => ( */}
-                                                                            <img src={actualFiles} alt="product-img" className="attached-img1" />
+                                                                        <img src={actualFiles} alt="product-img" className="attached-img1" />
                                                                         {/* ))} */}
                                                                         <i class="ri-close-line upload-img-close1"></i>
                                                                     </td>
@@ -336,9 +399,9 @@ function AddServices() {
                             </div>
                         </form>
                     </div>
-                </div>
+                </div >
                 <Toaster />
-            </div>
+            </div >
         </>
     )
 }

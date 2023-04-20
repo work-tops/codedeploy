@@ -206,6 +206,7 @@ function AiProductDetails() {
     const [sellerList, setsellerList] = useState([])
     const [productTags, setproductTags] = useState([])
     const [selectedproductTags, setSelectedproductTags] = useState([])
+    console.log(selectedproductTags)
 
     //product --functionality
     const handleChange = (e) => {
@@ -278,12 +279,15 @@ function AiProductDetails() {
         var _tags = selectedproductTags;
         _tags[index].list = selectedList;
         setSelectedproductTags(_tags);
+        console.log(_tags)
     }
     const onRemove = (selectedList, removedItem, index) => {
         var _tags = selectedproductTags;
         _tags[index].list = selectedList;
         setSelectedproductTags(_tags);
+        console.log(_tags)
     }
+
     const handleTagChange = (event, index) => {
         var _list = [
             {
@@ -633,6 +637,7 @@ function AiProductDetails() {
                                             <p className="pro-sub-title">Product Tag</p>
                                             {productTags.map((x, i) => {
                                                 const defaultSelectedValues = selectedproductTags[i]?.list || []; 
+                                                console.log(defaultSelectedValues)
                                                 return <>
                                                     <label className="label">{x?.name}</label>
                                                   {   console.log(x)}

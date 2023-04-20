@@ -35,7 +35,7 @@ function AddJob() {
     const handleFileInput = (e) => {
         const files = e.target.files;
         const fileArray = [];
-        
+
         for (let i = 0; i < files.length; i++) {
             fileArray.push({
                 name: files[i].name,
@@ -83,6 +83,7 @@ function AddJob() {
             budget_type: form.budget_type,
             currency: form.currency,
             budget: form.budget,
+            max_budget: form.budget_type === "No Idea" ? form.max_budget : 0,
             location: form.location,
             job_status: form.job_status,
             status: form.status,
@@ -107,10 +108,11 @@ function AddJob() {
     }
 
     const formsubmit = (e) => {
-        e.preventDefault()
-        uploadFile()
+        e.preventDefault();
+        uploadFile();
         AddJobs();
         setValue("");
+        setSelectedFile("")
     }
 
     const cleardata = () => {
@@ -123,6 +125,7 @@ function AddJob() {
             budget_type: "",
             currency: "",
             budget: "",
+            max_budget: "",
             visibility: "",
             location: "",
             job_status: "",
@@ -156,7 +159,7 @@ function AddJob() {
     const removeImage = async (index) => {
         var selected = [...selectedFile];
         var uploads = [...uploadFiles];
-        selected.splice(index,1);
+        selected.splice(index, 1);
         uploads.splice(index, 1);
         setSelectedFile(selected);
         setUploadFile(uploads);
@@ -243,14 +246,14 @@ function AddJob() {
                                     <br></br>
                                     <table className="added-fil-table">
                                         <tr className="doc-ad-bg">
-                                            {selectedFile.map((file,index) => (
+                                            {selectedFile.map((file, index) => (
                                                 // <div className="col">
                                                 //     <img height={100} src={file} alt="dashboard" className="" />
                                                 // </div>
                                                 <td>
                                                     <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
                                                     <span className="kitchen-plan-div">{file.name}</span>
-                                                    <i className="ri-close-line upload-img-close3"  onClick={(e) => { removeImage(index) }}></i>
+                                                    <i className="ri-close-line upload-img-close3" onClick={(e) => { removeImage(index) }}></i>
                                                 </td>
                                             ))}
                                             <td className="d-none">
@@ -336,9 +339,23 @@ function AddJob() {
                                         <option value="£ EUR">£ EUR</option>
                                     </select>
                                     <br></br>
-                                    <label className="label">Budget</label>
-                                    <input value={form.budget} required name="budget" onChange={(e) => { handleChange(e) }} id="postcode" placeholder="£ 0" type="number" />
-                                    <br></br>
+                                    <div className="row">
+                                        <div className="col-lg-4">
+                                            <label className="label">Budget</label>
+                                            <input value={form.budget} required name="budget" onChange={(e) => { handleChange(e) }} id="postcode" placeholder="£ 0" type="number" />
+                                            <br></br>
+                                        </div>
+                                        <div className="col">
+                                            {form.budget_type == "No Idea" ? (
+                                                <>
+                                                    <label className="label">Max Budget</label>
+                                                    <input value={form.max_budget} required name="max_budget" onChange={(e) => { handleChange(e) }} id="postcode" placeholder="£ 0" type="number" />
+                                                    <br></br>
+                                                </>
+                                            ) : ("")}
+                                        </div>
+                                    </div>
+
                                     <label>Project Locations</label>
                                     <br></br>
                                     <input value={form.location} required name="location" onChange={(e) => { handleChange(e) }} id="aipro-barcode" placeholder="Geo Locations" type='text' />
@@ -353,7 +370,7 @@ function AddJob() {
                                         <input id="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
                                     </div>
                                     <div className="prj-radio-div">
-                                        <input id="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon icon="ph:lock-simple-fill" width="24" height="24" /> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
+                                        <input id="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="private" type="radio" /><Icon icon="ph:lock-simple-fill" width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
                                     </div>
                                     <span className="category">Project Duration Time</span> <span className="job-expiry-date">Expiry Date</span>
                                     <br></br>
