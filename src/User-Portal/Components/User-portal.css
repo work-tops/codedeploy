@@ -1495,7 +1495,7 @@ a {
         border: 1px solid #000;
         color: #000;
         font-weight: bold;
-        margin-top: 10px;
+        /* margin-top: 10px; */
         /* padding: 13px; */
         cursor: pointer;
 

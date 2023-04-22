@@ -19,7 +19,7 @@ const FrontEndRouters = () => {
             <Route path="/postjob1"><PostJob1 /></Route>
             <Route path="/postjob2"><PostJob2 /></Route>
             <Route path="/listjobs"><ListJobs /></Route>
-            <Route path="/jobdetails"><JobDetails /></Route>
+            <Route path="/jobdetails/:jobid"><JobDetails /></Route>
             <Route path="/homepage"><HomePage/></Route>
             <Route path="/user/"><HomePage/></Route>
         </Switch>
