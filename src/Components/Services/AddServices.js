@@ -10,9 +10,11 @@ import toast, { Toaster } from 'react-hot-toast';
 import ServiceMultiselectDropdown from "../SelectTag/ServiceTag";
 import ServiceLocationMultiselect from "../SelectTag/ServiceLocation";
 import Multiselect from "multiselect-react-dropdown";
+import { useHistory } from 'react-router-dom';
 
 function AddServices() {
 
+    const history = useHistory();
     const [selectedFile, setSelectedFile] = useState({});
     console.log(selectedFile)
     const [actualFiles, setActualFile] = useState({});
@@ -94,6 +96,7 @@ function AddServices() {
             toast.success('Successfully Service Added')
             setform("")
             cleardata()
+            history.push('/allservices');
         } else {
             toast.error('Something went wrong')
         }

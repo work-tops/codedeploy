@@ -19,7 +19,7 @@ function AllJob() {
     const Jobstdel = async (data) => {
         const response = await deleteData('job/' + data._id);
         if (response.status === 201) {
-            toast.success('Successfully Freelancer Added')
+            toast.success('Successfully Job Deleted')
             Jobslist()
         } else {
             toast.error('Something went wrong')
@@ -108,31 +108,48 @@ function AllJob() {
                             <tbody>
                                 <tr className="product-heading ">
                                     <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                    <td id="td">Job ID <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Job ID 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Category <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Category 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Title <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Title 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Budget <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Budget 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Job Status <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Job Status 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Exp Date <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Exp Date 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Status <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Status 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
+                                        <br></br>
+                                        <input id="filter-search" type="search" />
+                                    </td>
+                                    <td id="td">Created date 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
+                                        <br></br>
+                                        <input id="filter-search" type="search" />
+                                    </td>
+                                    <td id="td">Modified date 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
@@ -149,6 +166,8 @@ function AllJob() {
                                         {/* <td id="td">10 April 2023</td> */}
                                         <td id="td">{data?.expire_date}</td>
                                         <td id="td"><span className="pro-status-approved">Approved</span></td>
+                                        <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
+                                        <td id="td"><span >{(data.modified_date).slice(0, 10)}</span></td>
                                         <td id="td">
                                             <div className="dropdown">
                                                 <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

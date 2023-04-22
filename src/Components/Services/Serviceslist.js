@@ -18,9 +18,9 @@ function Serviceslist() {
     }
 
     const productdel = async (data) => {
-        const response = await deleteData('admin/product/' + data._id);
+        const response = await deleteData('service/' + data._id);
         if (response.status === 201) {
-            toast.success('Successfully Freelancer Added')
+            toast.success('Successfully Service deleted')
             Productlist()
         } else {
             toast.error('Something went wrong')
@@ -120,27 +120,42 @@ function Serviceslist() {
                                             <br></br>
                                             <input id="filter-search" type="search" />
                                         </td> */}
-                                            <td id="td">Name <i className="ri-arrow-down-s-fill"></i>
+                                            <td id="td">Name 
+                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
                                                 <br></br>
                                                 <input id="filter-search" type="search" />
                                             </td>
-                                            <td id="td">Seller <i className="ri-arrow-down-s-fill"></i>
+                                            <td id="td">Seller 
+                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
                                                 <br></br>
                                                 <input id="filter-search" type="search" />
                                             </td>
-                                            <td id="td">Price Type <i className="ri-arrow-down-s-fill"></i>
+                                            <td id="td">Price Type 
+                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
                                                 <br></br>
                                                 <input id="filter-search" type="search" />
                                             </td>
-                                            <td id="td">Price <i className="ri-arrow-down-s-fill"></i>
+                                            <td id="td">Price 
+                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
                                                 <br></br>
                                                 <input id="filter-search" type="search" />
                                             </td>
 
-                                            <td id="td">Status <i className="ri-arrow-down-s-fill"></i>
+                                            <td id="td">Status 
+                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
                                                 <br></br>
                                                 <input id="filter-search" type="search" />
                                             </td>
+                                            <td id="td">Created date 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
+                                        <br></br>
+                                        <input id="filter-search" type="search" />
+                                    </td>
+                                    <td id="td">Modified date 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
+                                        <br></br>
+                                        <input id="filter-search" type="search" />
+                                    </td>
                                             <td id="td" className="rounded-end">Action</td>
                                         </tr>
                                         {lists.map((data, key) => (
@@ -153,6 +168,8 @@ function Serviceslist() {
                                                 <td id="td">{data.price_type} </td>
                                                 <td id="td">£ {data.price}</td>
                                                 <td id="td"><span className="pro-status-approved">{data.status}</span></td>
+                                                <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
+                                        <td id="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
                                                 <td id="td">
                                                     <div className="dropdown">
                                                         <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

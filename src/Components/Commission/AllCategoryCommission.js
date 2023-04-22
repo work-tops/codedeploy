@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { Link } from "react-router-dom";
-import { getAllData } from "../../Services/ProxyService";
+import { getAllData, deleteData } from "../../Services/ProxyService";
 import ReactPaginate from 'react-paginate';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -16,6 +16,16 @@ function AllCategoryCommission() {
     useEffect(() => {
         Catcomdata()
     }, [])
+
+    const commmissiondel = async (data) => {
+        const response = await deleteData('commission/' + data._id);
+        if (response.status === 201) {
+            toast.success('Successfully Commission Deleted')
+            Catcomdata()
+        } else {
+            toast.error('Something went wrong')
+        }
+    }
 
     const [listPerPage] = useState(10);
     const [pageNumber, setPageNumber] = useState(0);
@@ -80,23 +90,38 @@ function AllCategoryCommission() {
                         <table className="allproducts-table">
                             <tr className="product-heading ">
                                 <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                <td id="td">Category ID <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">Category ID 
+                                {/* <i class="ri-arrow-down-s-fill"></i> */}
                                     <br></br>
                                     <input id="filter-search" type="search" />
                                 </td>
-                                <td id="td">Category Name <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">Category Name 
+                                {/* <i class="ri-arrow-down-s-fill"></i> */}
                                     <br></br>
                                     <input id="filter-search" type="search" />
                                 </td>
-                                <td id="td">Commission Type <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">Commission Type 
+                                {/* <i class="ri-arrow-down-s-fill"></i> */}
                                     <br></br>
                                     <input id="filter-search" type="search" />
                                 </td>
-                                <td id="td">First Commission <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">First Commission 
+                                {/* <i class="ri-arrow-down-s-fill"></i> */}
                                     <br></br>
                                     <input id="filter-search" type="search" />
                                 </td>
-                                <td id="td">Second Commission <i class="ri-arrow-down-s-fill"></i>
+                                <td id="td">Second Commission 
+                                {/* <i class="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
+                                </td>
+                                <td id="td">Created date
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
+                                </td>
+                                <td id="td">Modified date
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                     <br></br>
                                     <input id="filter-search" type="search" />
                                 </td>
@@ -118,7 +143,8 @@ function AllCategoryCommission() {
                                     ) : (
                                         <span> {data.second_commission}</span>
                                     )}</td>
-                                   
+                                             <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
+                                        <td id="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
                                     <td id="td">
                                         <div class="dropdown">
                                             <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -126,7 +152,7 @@ function AllCategoryCommission() {
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                                <li><a class="dropdown-item" onClick={()=>{commmissiondel(data)}}><i class="fa-solid fa-trash"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>

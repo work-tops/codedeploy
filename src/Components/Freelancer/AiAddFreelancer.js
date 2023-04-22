@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import { uploadImage } from "../../Services/ImageService";
-import { createData, getAllData } from "../../Services/ProxyService";
+import { createData, getAllData, updateData } from "../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
@@ -40,14 +40,22 @@ function AiFreelancer() {
     console.log(selectedItems)
     const [freel, setfreel] = useState([])
     const [skill, setskill] = useState([])
-    console.log(skill)
     const [doctype, setdoctype] = useState([])
+    console.log(doctype)
     const [selectedSkills, setSelectedSkills] = useState([])
     console.log(selectedSkills)
-    const [address, setAddress] = useState(false)
+    const [address, setAddress] = useState(false);
+
+    // {form.company_address === form.billing_address ? setAddress(true) : setAddress(false)}
+
     console.log(address)
 
     useEffect(() => {
+        if (form.company_address === form.billing_address) {
+            setAddress(true);
+        } else {
+            setAddress(false);
+        }
         attachmentsList()
     }, [])
 
@@ -168,16 +176,16 @@ function AiFreelancer() {
 
     const AddFreelancer = async () => {
         const freelancerData = {
-            name: form.name + " " + form.lastname,
-            first_name: form.name,
-            last_name: form.lastname,
+            name: form.first_name + " " + form.last_name,
+            first_name: form.first_name,
+            last_name: form.last_name,
             email: form.email,
-            phone: form.contact,
+            phone: form.phone,
             password: form.password,
             confirm_password: form.confirm_password,
             dob: form.dob,
             operate_as: form.operate_as,
-            business_name: form.shop_name,
+            business_name: form.business_name,
             no_of_employees: form.no_of_employees,
             role: "Freelancer",
             type: selectedItems,
@@ -185,9 +193,9 @@ function AiFreelancer() {
             skills: selectedSkills,
             company_address: form.store_address,
 
-            billing_address: address.address == true ? form.store_address : form.billing_address,
+            billing_address: address.address == true ? form.company_address : form.billing_address,
             // billing_address: form.sbilling_address,
-            description: form.store_description,
+            description: form.description,
             terms_and_condition: true,
             is_active: true,
             is_approved: true,
@@ -195,7 +203,13 @@ function AiFreelancer() {
             attachments: selectedFile
         }
         console.log('add freelancer obj', freelancerData);
-        const response = await createData("register", freelancerData)
+        var response = null;
+        if (edituserid != '') {
+            response = await updateData("admin/user/" + edituserid, freelancerData)
+        } else {
+            response = await createData("register", freelancerData)
+        }
+
         if (response.status === 201) {
             toast.success('Successfully Freelancer Added')
             setform("");
@@ -218,7 +232,6 @@ function AiFreelancer() {
         setfreel(response.data.master[0].data);
     }
 
-
     const Sellerskills = async () => {
         const response = await getAllData('master/skills');
         setskill(response.data.master[0].data);
@@ -232,30 +245,78 @@ function AiFreelancer() {
     const [selectedValues, setSelectedValues] = useState([]);
     const docValue = selectedValues.join(', ');
     const [searchValue, setSearchValue] = useState('');
-    const filteredOptions = doctype.filter(option =>
-        !selectedValues.includes(option.value) && option.value.toLowerCase().includes(searchValue.toLowerCase())
-    );
+    // const filteredOptions = doctype.filter(option =>
+    //     !selectedValues.includes(option.value) && option.value.toLowerCase().includes(searchValue.toLowerCase())
+    // );
 
+    // Freelance by id
+    const getFreelanceById = async (_id) => {
+        const response = await getAllData('admin/user/' + _id);
+        const _userdata = response.data.user;
+        console.log(_userdata)
+        setform({
+            // name: _userdata.first_name + " " + _userdata.last_name,
+            first_name: _userdata.first_name,
+            last_name: _userdata.last_name,
+            email: _userdata.email,
+            phone: _userdata.phone,
+            password: _userdata.password,
+            confirm_password: _userdata.confirm_password,
+            dob: (_userdata.dob).slice(0, 10),
+            operate_as: _userdata.operate_as,
+            business_name: _userdata.business_name,
+            no_of_employees: _userdata.no_of_employees,
+            role: "Freelancer",
+            type: _userdata.type,
+            primary_skill: _userdata.primary_skill,
+            skills: selectedSkills,
+            billing_address: address.address == true ? _userdata.company_address : _userdata.billing_address,
+            company_address: _userdata.company_address,
+            // billing_address: _userdata.billing_address,
+            description: _userdata.description,
+            attachments: _userdata.attachments,
 
+        });
+        // setproductCategory([_product.type])
+        setfreel(_userdata.type);
+        setSelectedFile(_userdata.attachments);
+        // setdoctype(_userdata.attachments)
+        // _userdata.attachments.map((data) => (
+        //     setdoctype(data.document_type)
+        //     // console.log(data.document_type)
+        // ))
+
+        // setSelectedproductTags(_product.tags);
+        // setproductTags(_product.tags);
+        // console.log(_product.tags)
+        // var _actFiles = [];
+        // _product.attachments.forEach((x) => {
+        //     _actFiles.push(x.url);
+        // })
+        // setActualFile(_actFiles);
+        // setVariants([_product.variant]);
+    }
 
     const cleardata = () => {
         setform({
-            name: "",
-            lastname: "",
+            first_name: "",
+            last_name: "",
+            phone: "",
+            email: "",
             dob: "",
             operate_as: "",
             skills: "",
             billing_address: "",
             no_of_employees: "",
             shop_name: "",
-            email: "",
-            store_address: "",
+            company_address: "",
+            business_name: "",
             city: "",
             country: "",
             zipcode: "",
             contact: "",
             tags: "",
-            store_description: "",
+            description: "",
             seller_description: "",
             policy: "",
             password: "",
@@ -264,13 +325,20 @@ function AiFreelancer() {
         setSelectedSkills([]);
     }
 
+    const [edituserid, setEdituserid] = useState('');
+    console.log(edituserid)
+
     useEffect(() => {
+        var query = window.location.search.substring(1);
         freelancetype()
         Sellerskills()
         freelancedoctype()
+        if (query) {
+            getFreelanceById(query);
+            setEdituserid(query);
+        }
     }, [])
 
-    // Skills
 
 
     return (
@@ -292,13 +360,13 @@ function AiFreelancer() {
                                     <div className="add-seller-form">
                                         <span className="category">First Name</span> <span className="seller-email">Last Name</span>
                                         <br></br>
-                                        <input required name="name" value={form.name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
-                                        <input required name="lastname" value={form.lastname} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
+                                        <input required name="first_name" value={form.first_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
+                                        <input required name="last_name" value={form.last_name} onChange={(e) => { handleChange(e) }} id="aipro-email" type='text' />
                                         <br></br>
                                         <span className="category">Email</span> <span className="seller-ph-no">Phone Number</span>
                                         <br></br>
                                         <input required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' />
-                                        <input required name="contact" value={form.contact} onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
+                                        <input required name="phone" value={form.phone} onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
                                         <br></br>
                                         <span className="category">Date of Birth</span> <span className="frl-sector">You Operate as a</span>
                                         <br></br>
@@ -313,7 +381,7 @@ function AiFreelancer() {
                                         <br></br>
                                         <span className="category">Bussiness Name</span> <span className="noe">No.of Employee</span>
                                         <br></br>
-                                        <input required name="shop_name" value={form.shop_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
+                                        <input required name="business_name" value={form.business_name} onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' />
                                         <select name="no_of_employees" value={form.no_of_employees} onChange={(e) => { handleChange(e) }} className="select-category">
                                             <option value="">Select</option>
                                             <option value="Myself Only">Myself Only</option>
@@ -324,34 +392,34 @@ function AiFreelancer() {
                                         <br></br>
                                         <label className="label">Primary Skills:</label>
 
-                                        <select  name="primary_skill" value={form.primary_skill} onChange={(e) => { handleChange(e) }} className="select-category">
+                                        <select name="primary_skill" value={form.primary_skill} onChange={(e) => { handleChange(e) }} className="select-category">
                                             <option value="">Select</option>
                                             {skill.map((data, key) => (
                                                 <option key={key} value={data.value}>{data.value}</option>
                                             ))}
                                         </select>
-                                        
+
                                         <label className="label">Secondary Skill</label>
                                         <div className="multi-sel-service">
-                                           <Multiselect options={skill} onSelect={onSelect} onRemove={onRemove} displayValue="value" />
+                                            <Multiselect options={skill} onSelect={onSelect} onRemove={onRemove} displayValue="value" />
                                         </div>
 
                                         <label>Company Address</label>
-                                        <textarea required name="store_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+                                        <textarea required name="company_address" value={form.company_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
 
                                         <label>
                                             Billing Address <input checked={address.address} name="address" onChange={handlechange1} type='checkbox' id="bill-check" />
                                             <span className="billing-add-note">{' '}address and the billing address are same.</span>
                                         </label>
-                                        {address.address == true ? (
-                                            <textarea disabled required name="sbilling_address" value={form.store_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+
+                                        {address.address == true || address == true ? (
+                                            <textarea disabled required name="billing_address" value={form.company_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
 
                                         ) : (
-                                            <textarea required name="sbilling_address" value={form.sbilling_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
-
+                                            <textarea required name="billing_address" value={form.billing_address} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
                                         )}
                                         <label>Description</label>
-                                        <textarea required name="store_description" value={form.store_description} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
+                                        <textarea required name="description" value={form.description} onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
                                         <br></br>
                                         <span className="category">Password</span> <span className="seller-email">Confirm Password</span>
                                         <br></br>
@@ -390,9 +458,9 @@ function AiFreelancer() {
                                             <br></br>
                                             {selectedFile.map((x, i) =>
                                                 <>
-                                                    <select name={'select_' + i} onChange={(e) => handleSelectChange(e, i)} className="frl-proof-sel">
+                                                    <select value={x.document_type} name={'select_' + i} onChange={(e) => handleSelectChange(e, i)} className="frl-proof-sel">
                                                         <option value="">Select</option>
-                                                        {filteredOptions.map((data, key) => (
+                                                        {doctype.map((data, key) => (
                                                             <option key={'doc_' + key} value={data.value}>{data.value}</option>
                                                         ))}
                                                     </select>
@@ -406,7 +474,7 @@ function AiFreelancer() {
                                                             name={'doc_attach_' + i}
                                                             // multiple
                                                             onChange={(e) => handleFileInput(e, i)}
-                                                            required
+                                                            // required
                                                             type="file"
                                                             id={'doc_attach_id_' + i}
                                                             accept="image/*"

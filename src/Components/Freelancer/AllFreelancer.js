@@ -15,14 +15,15 @@ function AllFreelancer() {
         setfreelanc(response.data.users);
         setShowSpinner(false);
     }
+
     const freelancdel = async (data) => {
-        // const response = await deleteData('seller/' + data._id);
-        // if (response.status === 201) {
-        //     toast.success('Successfully Freelancer Added')
-        //     freelancList()
-        // } else {
-        //     toast.error('Something went wrong')
-        // }
+        const response = await deleteData('admin/user/' + data._id);
+        if (response.status === 200) {
+            toast.success('Successfully Freelancer Deleted')
+            freelancList()
+        } else {
+            toast.error('Something went wrong')
+        }
     }
 
     const [showSpinner, setShowSpinner] = useState(true);
@@ -110,31 +111,48 @@ function AllFreelancer() {
                             <tbody>
                                 <tr className="product-heading ">
                                     <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                    <td id="td">Freelancer ID <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Freelancer ID 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Freelancer Profile <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Freelancer Profile 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Name <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Name 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Company Name <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Company Name 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Verfication <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Verfication 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Date <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Date 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
-                                    <td id="td">Status <i className="ri-arrow-down-s-fill"></i>
+                                    <td id="td">Status 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
+                                        <br></br>
+                                        <input id="filter-search" type="search" />
+                                    </td>
+                                    <td id="td">Created date 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
+                                        <br></br>
+                                        <input id="filter-search" type="search" />
+                                    </td>
+                                    <td id="td">Modified date 
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
                                         <br></br>
                                         <input id="filter-search" type="search" />
                                     </td>
@@ -150,13 +168,15 @@ function AllFreelancer() {
                                         <td id="td"><span className="pro-status-approved">Verified</span></td>
                                         <td id="td">31 Mar 2023</td>
                                         <td id="td"><span className="pro-status-approved">Approved</span></td>
+                                        <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
+                                        <td id="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
                                         <td id="td">
                                             <div className="dropdown">
                                                 <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i className="fa-solid fa-ellipsis"></i>
                                                 </a>
                                                 <ul className="dropdown-menu">
-                                                    <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+                                                <Link to={`addfreelancer?${data._id}`} role="button"><li><a  className="dropdown-item" ><i className="fa-solid fa-pencil"></i> Edit</a></li></Link>
                                                     <li><a className="dropdown-item" href="#"><i className="fa-solid fa-check"></i> Enable</a></li>
                                                     <li><a className="dropdown-item" href="#"><i className="fa-solid fa-ban"></i> Deny</a></li>
                                                     <li><a className="dropdown-item" href="#"><i className="fa-solid fa-envelope"></i> Send Message</a></li>

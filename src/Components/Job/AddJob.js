@@ -8,10 +8,12 @@ import data from "../../Data/CustomerMailData";
 import { uploadImage } from "../../Services/ImageService";
 import { Link } from "react-router-dom";
 import product_image from '../../Images/employee.png'
+import { useHistory } from 'react-router-dom';
 function AddJob() {
 
     //Customer Email (Javascript-Fun) 
 
+    const history = useHistory();
     const [value, setValue] = useState('');
     console.log(value)
 
@@ -30,7 +32,6 @@ function AddJob() {
     const [selectedFile, setSelectedFile] = useState([]);
     const [actualFiles, setActualFile] = useState([]);
     const [uploadFiles, setUploadFile] = useState([]);
-    console.log(selectedFile)
 
     const handleFileInput = (e) => {
         const files = e.target.files;
@@ -99,7 +100,7 @@ function AddJob() {
         const response = await createData("job/new", productdata)
         if (response.status === 201) {
             toast.success('Successfully Product Added')
-            setform("")
+            history.push('/alljob');
             cleardata()
         } else {
             toast.error('Something went wrong')
@@ -112,7 +113,6 @@ function AddJob() {
         uploadFile();
         AddJobs();
         setValue("");
-        setSelectedFile("")
     }
 
     const cleardata = () => {
@@ -136,7 +136,8 @@ function AddJob() {
             created_by: "",
             postcode: "",
             startdate: "",
-        })
+        });
+        setSelectedFile([]);
     }
 
     const [cate, setcate] = useState([])

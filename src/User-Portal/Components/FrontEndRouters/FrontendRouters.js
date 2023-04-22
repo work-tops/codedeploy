@@ -21,6 +21,7 @@ const FrontEndRouters = () => {
             <Route path="/listjobs"><ListJobs /></Route>
             <Route path="/jobdetails"><JobDetails /></Route>
             <Route path="/homepage"><HomePage/></Route>
+            <Route path="/user/"><HomePage/></Route>
         </Switch>
 
     )
