@@ -43,10 +43,10 @@ function HeaderPage() {
                 <Link to="/hiw" role="button">
                 <button className="options">HOW IT WORKS</button>
                 </Link>
-                <Link to="/signuppage" role="button">
+                <Link to="/signup" role="button">
                 <button className="options">LOG IN</button>
                 </Link>
-                <Link to="/signupform" role="button">
+                <Link to="/signup" role="button">
                 <button className="options">SIGN UP</button>
                 </Link>
                 <Link to="/frl" role="button">

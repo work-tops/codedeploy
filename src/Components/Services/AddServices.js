@@ -9,12 +9,21 @@ import { createData, getAllData } from "../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
 import ServiceMultiselectDropdown from "../SelectTag/ServiceTag";
 import ServiceLocationMultiselect from "../SelectTag/ServiceLocation";
+import Multiselect from "multiselect-react-dropdown";
+import { useHistory } from 'react-router-dom';
 
 function AddServices() {
 
+    const history = useHistory();
     const [selectedFile, setSelectedFile] = useState({});
+    console.log(selectedFile)
     const [actualFiles, setActualFile] = useState({});
     const [uploadFiles, setUploadFile] = useState([]);
+    const [cate, setcate] = useState([])
+    const [selemail, setselemail] = useState([])
+    const [servitag, setServitag] = useState([])
+    const [locations, setLocations] = useState([])
+    console.log(locations)
 
     const handleFileInput = (e) => {
         const file = e.target.files[0];
@@ -79,7 +88,7 @@ function AddServices() {
             offer_price: form.offer_price,
             display_price: form.display_price,
             terms_and_condition: form.terms_and_condition,
-            attachment: selectedFile,
+            attachment: JSON.stringify(selectedFile),
             created_by: "1",
         }
         const response = await createData("service/new", Servicedata)
@@ -87,6 +96,7 @@ function AddServices() {
             toast.success('Successfully Service Added')
             setform("")
             cleardata()
+            history.push('/allservices');
         } else {
             toast.error('Something went wrong')
         }
@@ -118,22 +128,60 @@ function AddServices() {
         })
     }
 
-    const [cate, setcate] = useState([])
-    const [selemail, setselemail] = useState([])
-
-
     const Jobslist = async () => {
         const response = await getAllData('master/service_category');
         setcate(response.data.master[0].data);
-
     }
+
     const selleremails = async () => {
         const response = await getAllData('sellers/all');
         setselemail(response.data.sellers);
     }
+
+    const onSelect = (selectedList, index) => {
+        if (index >= 0 && index < locations.length) {
+            const updatedLocations = [...locations];
+            updatedLocations[index].list = selectedList;
+            setLocations(updatedLocations);
+        }
+    };
+
+    const onRemove = (selectedList, index) => {
+        if (index >= 0 && index < locations.length) {
+            const updatedLocations = [...locations];
+            updatedLocations[index].list = updatedLocations[index].list.filter(
+                (item) => !selectedList.includes(item)
+            );
+            setLocations(updatedLocations);
+        }
+    };
+    // const handleTagChange = (event, index) => {
+    //     var _list = [
+    //         {
+    //             id: 1,
+    //             value: event.target.value
+    //         }
+    //     ]
+    //     // var _tags = selectedproductTags;
+    //     _tags[index].list = _list;
+    //     // setSelectedproductTags(_tags);
+    // }
+    const ServiceTags = async () => {
+        const response = await getAllData("master/service_tags");
+        setServitag(response.data.master[0].data);
+        const _selectList = response.data.master[0].data.map((x) => ({
+            id: x.id,
+            name: x.name,
+            list: [],
+        }));
+        setLocations(_selectList);
+    };
+
+
     useEffect(() => {
         Jobslist()
         selleremails()
+        ServiceTags()
     }, [])
 
 
@@ -155,6 +203,7 @@ function AddServices() {
                                     <h4 className="ms-3 mt-1">Add Services</h4>
                                     <p className="med-sub-title">Here You Can add Services to your profile</p>
 
+<<<<<<< HEAD
                                     <label className="label-name">Service Title</label>
                                     <input value={form.title} required name="title" onChange={(e) => { handleChange(e) }} className="input-focus input-box-440 d-block" type='text' />
 
@@ -221,6 +270,75 @@ function AddServices() {
                                     <textarea value={form.terms_and_condition} required name="terms_and_condition" onChange={(e) => { handleChange(e) }} className="textarea-2 input-focus d-block"></textarea>
 
                                     <input type='submit' className="create-btn" value='Add Services' />
+=======
+                                    <label>Service Title</label>
+                                    <input value={form.title} required name="title" onChange={(e) => { handleChange(e) }} id="aipro-name" type='text' />
+                                    <br></br>
+                                    <span className="category">Service Category</span> <span className="service-email">Service Email</span>
+                                    <br></br>
+                                    <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category">
+                                        <option value="">Select Option</option>
+                                        {cate?.map((data) => (
+                                            <option value={data.value}>{data.value}</option>
+                                        ))}
+                                    </select>
+                                    <select value={form.email} required name="email" onChange={(e) => { handleChange(e) }} id="aipro-category">
+                                        <option value="">Select Freelancer</option>
+                                        {selemail.map((data) => (
+                                            <option value={data.email}>{data.email}</option>
+                                        ))}
+                                    </select>
+                                    <label className="label">Description</label>
+                                    <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
+                                    <br></br>
+                                    {servitag.map((data, index) =>
+                                        data.id == 2 || data.id == 3 ? (
+                                            <div key={data.id}>
+                                                <label className="label">Service {data.name}</label>
+                                                <div className="multi-sel-service">
+                                                    <Multiselect
+                                                        options={data.list}
+                                                        onRemove={(selectedList) => onRemove(selectedList, index)}
+                                                        onSelect={(selectedList) => onSelect(selectedList, index)}
+                                                        displayValue="value"
+                                                    />
+                                                </div>
+                                            </div>
+                                        ) : null
+                                    )}
+
+                                    {/* <label className="label">Service Location</label>
+                                    <ServiceLocationMultiselect />
+                                    <label className="label">Service Range</label>
+                                    <ServiceMultiselectDropdown /> */}
+                                    {/* <input value={form.service_tag} required name="service_tag" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input> */}
+                                    <br></br>
+                                    <input id="aipro-checkbox1" type='checkbox' /><span className="chc-span">Shipping Requires</span>
+                                    <input id="aipro-checkbox2" type='checkbox' /><span className="chc-span">Charge Taxes on this product</span>
+                                    <br></br>
+                                    <br></br>
+                                    <span className="category">Price Type</span> <span className="service-price">Price</span>
+                                    <br></br>
+                                    <select value={form.price_type} required name="price_type" onChange={(e) => { handleChange(e) }} id="aipro-category">
+                                        <option value="">Select Option</option>
+                                        <option value="Per Hour">Per Hour</option>
+                                        <option value="Once off">Once off</option>
+                                        <option value="Per visit">Per visit</option>
+                                        <option value="Per session ( Package)">Per session ( Package)</option>
+                                        <option value="Per day">Per day</option>
+                                    </select>
+                                    <input value={form.price} required name="price" onChange={(e) => { handleChange(e) }} id="aipro-email" type='number' />
+                                    <br></br>
+                                    <br></br>
+                                    <span className="category">Offer Price</span> <span className="displayprice">Display Price</span>
+                                    <br></br>
+                                    <input value={form.offer_price} required name="offer_price" onChange={(e) => { handleChange(e) }} id="aipro-category" type='number' />
+                                    <input value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} id="aipro-email" type='number' />
+                                    <label className="label">Terms & Conditions</label>
+                                    <textarea value={form.terms_and_condition} required name="terms_and_condition" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
+                                    <br></br>
+                                    <input type='submit' className="create-acc-btn" value='Add Services' />
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
 
                                 </div>
 
@@ -231,7 +349,11 @@ function AddServices() {
                                         <option value="Draft">Draft</option>
                                         <option value="Active">Active</option>
                                     </select>
+<<<<<<< HEAD
                                     <p className="label-name service-img-label">Service Images</p>
+=======
+                                    <p className="ai-pro-title">Service Images</p>
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
 
                                     {selectedFile?.name == undefined || selectedFile?.name == null ? (
                                         <div className="ai-image-drag">
@@ -247,6 +369,12 @@ function AddServices() {
                                     )}
 
                                     <label htmlFor="select-basic" className="mb-75 me-75" style={{ fontSize: "small", color: "blue" }}>
+<<<<<<< HEAD
+=======
+                                        <button type="button" className="img-upload-btn-1" onClick={() => document.getElementById('select-basic').click()}>
+                                            Upload Images
+                                        </button>
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                         <input
                                             name="attachments"
                                             // multiple
@@ -262,7 +390,7 @@ function AddServices() {
                                     {' '}
 
                                     {/* Modal-1 */}
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    {/* <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div>
@@ -285,7 +413,7 @@ function AddServices() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     {/* Modal -2 */}
                                     {selectedFile == undefined || selectedFile == 0 ? (
                                         <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -355,9 +483,9 @@ function AddServices() {
                             </div>
                         </form>
                     </div>
-                </div>
+                </div >
                 <Toaster />
-            </div>
+            </div >
         </>
     )
 }

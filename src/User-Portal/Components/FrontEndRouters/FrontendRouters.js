@@ -6,10 +6,10 @@ import ListJobs from "../Front-End Pages/ListJobs";
 import JobDetails from "../Front-End Pages/JobDetails";
 import ProjectListing from "../Front-End Pages/ProjectListing";
 import SignUpPage from "../Front-End Pages/SignUpPage";
-import SignUpForm from "../Front-End Pages/SignupForm";
 import JobProposal from "../Front-End Pages/JobProposal";
 import PostJob2 from "../Front-End Pages/PostJob2";
 import HomePage from "../Front-End Pages/HomePage";
+<<<<<<< HEAD
 import TradeSignUpForm from "../Front-End Pages/TradeMemberSignupForm";
 import UserLogin from '../Front-End Pages/Userlogin'
 import ForgetPasswordForm from "../authentication/ForgetPasswordForm";
@@ -19,20 +19,21 @@ import ProjectOwnerRegister from "../Front-End Pages/ProjectOwnerRegister";
 import SellerRegister from "../Front-End Pages/SellerSignUp";
 import FrontendAddProduct from '../Front-End Pages/FrontendAddProduct'
 // import FrontEndAllProducts from "../Front-End Pages/FrontendAllProducts";
+=======
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
 const FrontEndRouters = () => {
     return (
         <Switch>
             <Route path='/jobproposal'><JobProposal /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
-            <Route path='/signupform'><SignUpForm /></Route>
-            <Route path="/tradesignupform"><TradeSignUpForm/></Route>
-            <Route path='/signuppage'><SignUpPage /></Route>
+            <Route path='/signup'><SignUpPage /></Route>
             <Route path="/proposallist"><ProposalList /></Route>
             <Route path="/postjob1"><PostJob1 /></Route>
             <Route path="/postjob2"><PostJob2 /></Route>
             <Route path="/listjobs"><ListJobs /></Route>
-            <Route path="/jobdetails"><JobDetails /></Route>
+            <Route path="/jobdetails/:jobid"><JobDetails /></Route>
             <Route path="/homepage"><HomePage/></Route>
+<<<<<<< HEAD
             <Route path='/userlog'><UserLogin/></Route>
             <Route path='/forgetpassword'><ForgetPasswordForm/></Route>
             <Route path='/loginportal'><LoginPortal/></Route>
@@ -41,6 +42,9 @@ const FrontEndRouters = () => {
             <Route path='/sellersignup'><SellerRegister/></Route>
             <Route path='/user/addproduct'><FrontendAddProduct/></Route>
             {/* <Route path='/user/allproduct'><FrontEndAllProducts/></Route> */}
+=======
+            <Route path="/user/"><HomePage/></Route>
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
         </Switch>
 
     )

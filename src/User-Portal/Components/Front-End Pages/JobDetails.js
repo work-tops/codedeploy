@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeaderPage from "../Header/HeaderPage";
 import Menubar from "../Menubar/Menubar";
 import JobDetailsPost from "../Post/JobDetailsPost";
@@ -6,9 +6,20 @@ import Footer from "../Footer/Footer";
 import newsfeed from "../Images/newsfeed.png"
 import profileImg from "../Images/employee.png"
 import currency from "../Images/Currency.png"
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { getAllData } from "../../../Services/ProxyService";
 
 function JobDetails() {
+    let { jobid } = useParams();
+    const [jobdata, setJobdata]=useState([])
+
+    const getJobsById = async () => {
+        const response = await getAllData('job/' + jobid);
+        setJobdata(response.data.job);
+    }
+    useEffect(()=>{
+        getJobsById()
+    }, [])
     return (
         <>
             <div className="row">
@@ -28,7 +39,7 @@ function JobDetails() {
                             <li><i class="fa-solid fa-sterling-sign"></i>Medium Level</li>
                             <li><i class="fa-solid fa-location-dot"></i>United Kingdom</li>
                             <li><i class="fa-regular fa-building"></i>Type Fixed</li>
-                            <li><i class="fa-solid fa-business-time"></i>Duration: 1 to 3 Months</li>
+                            <li><i class="fa-solid fa-business-time"></i>Duration: {jobdata.project_duration}</li>
                             <Link to="/jobproposal">
                                 <button className="send-proposal">SEND PROPOSAL</button>
                             </Link>
@@ -37,14 +48,7 @@ function JobDetails() {
                     <div className="job-det-cols row">
                         <div className="prj-detail col-6">
                             <p className="sub-title">Project Detail</p>
-                            <p className="title-desc">A Custom Development Job Involves Designing,Developing,
-                                And Maintaining A Unique Website Tailored To a Client's
-                                Specific Needs.This Includes Tasks Such As Understanding
-                                The Client's Requirements, Creating A User Interface,
-                                Developing Functional Features,Optimizing Website Speed
-                                and Performance , And Ensuring Website Security.The Job
-                                Also Includes Testing and Debugging the Code,Implementing
-                                Updates, And Providing Technical Support As Needed.
+                            <p className="title-desc">{jobdata.project_description}
                             </p>
                             <p className="skills-req">Skills Requried</p>
                             <br></br>
@@ -62,7 +66,7 @@ function JobDetails() {
                                         <img src={currency} alt="euro-currency" className="currency" />
                                     </div>
                                     <div>
-                                        <p className="amount"><i class="fa-sharp euros fa-solid fa-sterling-sign"></i>{' '}3456</p>
+                                        <p className="amount"><i class="fa-sharp euros fa-solid fa-sterling-sign"></i>{' '}{jobdata.max_budget}</p>
                                         <p className="received-proposals">Client Budget</p>
                                     </div>
                                 </div>
@@ -85,7 +89,7 @@ function JobDetails() {
                             </div>
                             <div className="personal-profile">
                                 <img src={profileImg} className="profile-img" alt="profile-pic" />
-                                <p className="emp-name">Gravita Basnal</p>
+                                <p className="emp-name">{jobdata.customer_email}</p>
                                 <p className="open-job-1">Open Jobs</p>
                                 <p className="open-job-2">Open Jobs</p>
                                 <p className="open-job-2">Open Jobs</p>

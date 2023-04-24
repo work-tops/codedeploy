@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import AiHeader from "../../Components/Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
-import { createData, getAllData } from "../../Services/ProxyService";
+import { createData, getAllData, updateData } from "../../Services/ProxyService";
 import { uploadImage } from "../../Services/ImageService";
 import toast, { Toaster } from 'react-hot-toast';
 import { Icon } from '@iconify/react';
 import variant_image from "../../Images/product_image.png";
 import Multiselect from "multiselect-react-dropdown";
+import { useHistory, Link } from 'react-router-dom';
+
 function AiProductDetails() {
 
     //varient state
-    const [forms1, setForms1] = useState({});
+    const history = useHistory();
     const [variants, setVariants] = useState([]);
+    console.log(variants)
     const [isEdit, setEditButton] = useState(false);
     const [editIndex, setEditVarientIndex] = useState(0);
 
@@ -34,6 +37,8 @@ function AiProductDetails() {
         remaining_quantity: 5,
     });
 
+    console.log(Boolean(variant.required_shipping))
+
     //varient functionality
     const variantChange = (e) => {
         const _variant = { ...variant };
@@ -41,37 +46,41 @@ function AiProductDetails() {
         setVarientObject(_variant);
     };
 
-    const handleVariantSubmit = (event) => {
+    const handlechange1 = (e) => {
+        setVarientObject({
+            ...variant,
+            [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
+        });
+    };
 
+    const handleVariantSubmit = (event) => {
         event.preventDefault();
-        var _form = { ...forms1 };
-        _form = {
+        var _form = {
             color: variant.color,
             size: variant.size,
             finish_type: variant.finish_type,
             shipping: {
-                required_shipping: variant.required_shipping,
-                charge_tax: variant.charge_tax,
+                required_shipping: Boolean(variant.required_shipping),
+                charge_tax: Boolean(variant.charge_tax),
             },
             pricing: {
                 price: variant.price,
                 compare_at: variant.compare_at,
                 handling_changes: variant.handling_changes,
                 sales_price: variant.sales_price,
-                charge_taxes: variant.charge_taxes,
+                charge_taxes: Boolean(variant.charge_taxes),
             },
             inventory: {
                 sku: variant.sku,
                 barcode: variant.barcode,
                 min_purchase_qty: variant.min_purchase_qty,
                 quantity: variant.quantity,
-                track_inventory: variant.track_inventory,
                 remaining_quantity: variant.remaining_quantity,
+                track_inventory: Boolean(variant.track_inventory),
             },
             attachment: selectedFile[parseInt(variant.imageInx)]
         }
 
-        setForms1(_form);
         var _variant = [...variants]
         if (isEdit == true) {
             _variant[editIndex] = _form;
@@ -109,6 +118,7 @@ function AiProductDetails() {
         setEditButton(false);
         setEditVarientIndex(0);
     };
+
     const editVarient = (data, index) => {
         var _variant = {
             imageInx: data?.imageInx,
@@ -119,14 +129,15 @@ function AiProductDetails() {
             compare_at: data?.pricing?.compare_at,
             handling_changes: data?.pricing?.handling_changes,
             sales_price: data?.pricing?.sales_price,
-            required_shipping: false,
-            charge_taxes: false,
+            required_shipping: data?.shipping?.required_shipping,
+            charge_taxes: data?.pricing?.charge_taxes,
             sku: data?.inventory?.sku,
             barcode: data?.inventory?.barcode,
             min_purchase_qty: data?.inventory?.min_purchase_qty,
             quantity: data?.inventory?.quantity,
-            track_inventory: false,
+            track_inventory: data?.inventory?.track_inventory,
             remaining_quantity: 5,
+
         }
         setVarientObject(_variant);
         setEditButton(true);
@@ -144,11 +155,13 @@ function AiProductDetails() {
     const [uploadFiles, setUploadFile] = useState([]);
     // file upload --functionality
     const handleFileInput = (e) => {
-        const files = e.target.files;
-        const fileArray = [];
+        // const files = e.target.files;
         const _files = Array.from(e.target.files);
-        const _urls = [];
+        const _urls = [...actualFiles];
+        const fileArray = selectedFile;
+        const upload = uploadFiles;
         _files.forEach((file) => {
+            upload.push(file);
             const reader = new FileReader();
 
             reader.onload = () => {
@@ -158,15 +171,15 @@ function AiProductDetails() {
 
             reader.readAsDataURL(file);
         });
-        for (let i = 0; i < files.length; i++) {
+        for (let i = 0; i < _files.length; i++) {
             fileArray.push({
-                name: files[i].name,
-                url: `https://myproject-data.s3.eu-west-2.amazonaws.com/images/${files[i].name}`,
-                type: files[i].type
+                name: _files[i].name,
+                url: `https://myproject-data.s3.eu-west-2.amazonaws.com/images/${_files[i].name}`,
+                type: _files[i].type
             });
         }
         setSelectedFile(fileArray);
-        setUploadFile(files);
+        setUploadFile(upload);
     };
     const uploadFile = () => {
         console.log('uploadFiles length', uploadFiles.length);
@@ -186,37 +199,46 @@ function AiProductDetails() {
         setUploadFile(uploads);
     }
     //product --state
-    const [form, setform] = useState({
+    const [form, setProductForm] = useState({
         name: ""
     })
-    const [procat, setprocat] = useState([])
-    const [selemail, setselemail] = useState([])
+    const [productCategory, setproductCategory] = useState([])
+    const [sellerList, setsellerList] = useState([])
     const [productTags, setproductTags] = useState([])
     const [selectedproductTags, setSelectedproductTags] = useState([])
-    const [metadata, setmetadata] = useState([])
+    console.log(selectedproductTags)
 
     //product --functionality
     const handleChange = (e) => {
         const myData = { ...form };
-        myData[e.target.name] = e.target.value;
-        setform(myData)
+        if (e.target.name == 'type') {
+            var _pd = productCategory.find(x => x.name == e.target.value);
+            var _type = {
+                id: _pd ? _pd.id : 1,
+                name: e.target.value
+            }
+            myData[e.target.name] = _type;
+        } else {
+            myData[e.target.name] = e.target.value;
+        }
+        setProductForm(myData);
     }
     const addProduct = async () => {
         const productdata = {
             seller_email: form.seller_email,
             name: form.name,
-            category: form.category,
-            type: {},
+            // category: form.category,
+            type: form.type,
             description: form.description,
             tags: selectedproductTags,
             policy: form.policy,
-            handle: form.handle,
             shipping: form.shipping,
             pricing: { price: 100 },
             inventory: { quantity: 100 },
+            handle: form.handle,
             meta_fields: {
-                title: metadata.metatitle,
-                description: metadata.metadescription,
+                title: form.metatitle,
+                description: form.metadescription,
             },
             attachments: selectedFile,
             // variant:form.tags,
@@ -224,12 +246,17 @@ function AiProductDetails() {
             custom_fields: {},
             created_by: "1",
         }
-        console.log(productdata)
-        const response = await createData("admin/product/new", productdata)
+        console.log(productdata);
+        var response = null;
+        if (editProduct != '') {
+            response = await updateData("admin/product/" + editProduct, productdata);
+        } else {
+            response = await createData("admin/product/new", productdata);
+        }
         if (response.status === 201) {
-            toast.success('Successfully Product Added')
-            setform("")
-            cleardata()
+            toast.success('Successfully Product Submitted');
+            clearData();
+            history.push('/allproduct');
         } else {
             toast.error('Something went wrong')
         }
@@ -237,22 +264,30 @@ function AiProductDetails() {
     }
 
     const formsubmit = (e) => {
-        e.preventDefault()
-        addProduct()
-        uploadFile()
+        if (variants.length === 0) {
+            toast.error("You have to add at least one variant")
+            e.preventDefault()
+
+        } else {
+            e.preventDefault()
+            addProduct()
+            uploadFile()
+        }
     }
 
     const onSelect = (selectedList, selectedItem, index) => {
         var _tags = selectedproductTags;
         _tags[index].list = selectedList;
         setSelectedproductTags(_tags);
+        console.log(_tags)
     }
     const onRemove = (selectedList, removedItem, index) => {
         var _tags = selectedproductTags;
         _tags[index].list = selectedList;
         setSelectedproductTags(_tags);
-        console.log('selectedproductTags', selectedproductTags);
+        console.log(_tags)
     }
+
     const handleTagChange = (event, index) => {
         var _list = [
             {
@@ -273,40 +308,82 @@ function AiProductDetails() {
         })
         setSelectedproductTags(_selectList);
     }
+
     const getProductCategories = async () => {
         const response = await getAllData('master/product_category');
-        setprocat(response.data.master[0].data);
+        setproductCategory(response.data.master[0].data);
     }
 
     const getSellerList = async () => {
         const response = await getAllData('sellers/all');
-        setselemail(response.data.sellers);
+        setsellerList(response.data.sellers);
+    }
+
+    // Product by id
+    const getProductById = async (_id) => {
+        const response = await getAllData('product/' + _id);
+        const _product = response.data.product;
+        console.log(_product)
+        setProductForm({
+            name: _product.name,
+            category: _product.category,
+            seller_email: _product.seller_email,
+            description: _product.description,
+            policy: _product.policy,
+            handle: _product.handle,
+            variant: _product.variant,
+            metatitle: _product.meta_fields.title,
+            metadescription: _product.meta_fields.description,
+            tags: _product.tags,
+            attachments: _product.attachments,
+            type: _product.type,
+
+        });
+        // setproductCategory([_product.type])
+        setVariants(_product.variant);
+        setSelectedproductTags(_product.tags);
+        setproductTags(_product.tags);
+        console.log(_product.tags)
+        setSelectedFile(_product.attachments);
+        var _actFiles = [];
+        _product.attachments.forEach((x) => {
+            _actFiles.push(x.url);
+        })
+        setActualFile(_actFiles);
+        // setVariants([_product.variant]);
     }
 
     //reset all
-    const cleardata = () => {
-        setform({
+    const clearData = () => {
+        setProductForm({
             name: "",
-            description: "",
-            seller_email: "",
             category: "",
-            tags: "",
-            compare_at: "",
-            price: "",
-            handling_changes: "",
-            sales_price: "",
-            sku: "",
-            barcode: "",
-            min_purchase_qty: "",
-            quantity: "",
-            policy: ""
-        })
-    }
+            seller_email: "",
+            description: "",
+            policy: "",
+            handle: "",
+            metatitle: "",
+            metadescription: ""
+        });
+        setActualFile([]);
+        setUploadFile([]);
+        setSelectedFile([]);
+        setVariants([]);
+        getProductTags();
+        resetVarientObject();
 
+    }
+    const [editProduct, setEditProducts] = useState('');
     useEffect(() => {
+        var query = window.location.search.substring(1);
+        console.log(query);
         getProductTags();
         getProductCategories();
         getSellerList();
+        if (query) {
+            getProductById(query);
+            setEditProducts(query);
+        }
     }, [])
 
     return (
@@ -335,6 +412,7 @@ function AiProductDetails() {
                                             </div>
 
                                             <div >
+<<<<<<< HEAD
                                                 <label className="label-name d-block">Product Name</label>
                                                 <input value={form.name} required name="name" onChange={(e) => { handleChange(e) }} className="input-box-440 input-focus d-block" type='text' />
                                                 <div className="d-inline-block">
@@ -357,6 +435,41 @@ function AiProductDetails() {
                                                 </div>
                                                 <label className="label-name">Description</label>
                                                 <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} className="input-focus textarea-2 d-block"></textarea>
+=======
+                                                <label>Product Name</label>
+                                                <input value={form.name} required name="name" onChange={(e) => { handleChange(e) }} id="aipro-name" type='text' />
+                                                <br></br>
+                                                <span className="category">Category</span> <span className="seller-email">Seller Email</span>
+                                                <br></br>
+                                                <select
+                                                    value={form.type?.name}
+                                                    required name="type" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
+                                                    <option value="">Select</option>
+                                                    {productCategory.map((data, key) => (
+                                                        <option key={key} value={data.name}>
+                                                            {data.name}
+                                                        </option>
+                                                    ))}
+                                                </select>
+
+                                                <select value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
+                                                    <option value="">Select</option>
+                                                    {sellerList.map((data, key) => (
+                                                        <option key={key} value={data.email}>{data.email}</option>
+                                                    ))}
+                                                </select>
+                                                {/* <input value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' /> */}
+                                                {/* <input value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' /> */}
+                                                <br />
+                                                <label>Description</label>
+                                                <br />
+                                                <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
+                                                <br />
+                                                {/* <label>Product Tag</label>
+                                                <br />
+                                                <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input> */}
+                                                <br></br>
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                 {/*  */}
                                                 {/* <!-- Button trigger modal --> */}
                                                 <button className="update-btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -368,8 +481,13 @@ function AiProductDetails() {
                                                     <div className="modal-dialog modal-lg">
                                                         <div className="modal-content">
                                                             <div className="modal-header">
+<<<<<<< HEAD
                                                                 <p className="head-title">Add Variant</p>
                                                                 <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Close</button>
+=======
+                                                                <p>Add Variant</p>
+                                                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject()}>Close</button>
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                             </div>
                                                             <div className="modal-body row">
                                                                 <div className="col-5">
@@ -380,16 +498,24 @@ function AiProductDetails() {
                                                                         {variant.imageInx == undefined || variant.imageInx == null ? (
                                                                             <Icon className="var-image" icon="mingcute:photo-album-fill" height="24" width="24" />) :
                                                                             (<img src={actualFiles[variant.imageInx]} width="50px" height="50px" className="pro-pre" />)
-
                                                                         }
 
                                                                         <button className="add-img-btn d-none">ADD IMAGE</button>
+<<<<<<< HEAD
                                                                         <select value={variant.imageInx} name="imageInx" onChange={(e) => { variantChange(e) }} className="input-focus Dropdown-box-200">
                                                                             <option value="" disabled>Add Image</option>
                                                                             {actualFiles.map((file, index) => (
                                                                                 <option value={index}>
                                                                                     <img src={file} width="50px" height="50px" className="pro-pre" />
                                                                                     {selectedFile[index].name}
+=======
+                                                                        <select value={variant?.imageInx} name="imageInx" onChange={(e) => { variantChange(e) }} className="select-category">
+                                                                            <option value="" disabled>Add Image</option>
+                                                                            {actualFiles.map((file, index) => (
+                                                                                <option value={index}>
+                                                                                    {/* <img src={file} width="50px" height="50px" className="pro-pre" /> */}
+                                                                                    {selectedFile[index]?.name}
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                                                 </option>
                                                                             ))}
                                                                         </select>
@@ -399,7 +525,11 @@ function AiProductDetails() {
                                                                         <p className="sub-topic-title">Variants</p>
                                                                         <p className="med-sub-title">Here all the variants click on variant to edit its details </p>
                                                                         <div className="sel-var-abt-div">
-                                                                            <img src={variant_image} className="sel_var_image" alt="selected-variant" />
+                                                                            {variant.imageInx == undefined || variant.imageInx == null ? (
+                                                                                <Icon className="sel_var_image" icon="mingcute:photo-album-fill" height="24" width="24" />) :
+                                                                                (<img src={actualFiles[variant.imageInx]} className="sel_var_image" alt="selected-variant" />
+                                                                                )
+                                                                            }
                                                                             <small>Finished Type / Colour / Size </small>
                                                                         </div>
                                                                     </div>
@@ -429,6 +559,7 @@ function AiProductDetails() {
                                                                         <label className="label-name">Handling Charges</label>
                                                                         <input value={variant.handling_changes} name="handling_changes" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
                                                                         <label className="label">Sales Price</label>
+<<<<<<< HEAD
                                                                         <input value={variant.sales_price} name="sales_price" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
 
                                                                         <input name="required_shipping" onChange={(e) => { variantChange(e) }} className="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
@@ -449,6 +580,32 @@ function AiProductDetails() {
                                                                         <button type="button" onClick={(e) => { handleVariantSubmit(e) }} data-bs-dismiss="modal" aria-label="Close" className="create-btn">Submit</button>
                                                                         <button type="button" className="remove-btn" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Cancel</button>
                                                                         </div>
+=======
+                                                                        <input value={variant.sales_price} name="sales_price" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
+                                                                        <br></br>
+                                                                        <input checked={variant.required_shipping} name="required_shipping" onChange={handlechange1} id="aipro-checkbox1" type='checkbox' />
+                                                                        <span className="chc-span">Shipping Requires</span>
+                                                                        <input checked={variant.charge_taxes} name="charge_taxes" onChange={handlechange1} id="aipro-checkbox2" type='checkbox' />
+                                                                        <span className="chc-span">Charge Taxes on this product</span>
+                                                                        {/* <input defaultValue={variant.required_shipping} name="required_shipping" onChange={(e) => { variantChange(e) }} id="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
+                                                                        <input defaultValue={variant.charge_taxes} name="charge_taxes" onChange={(e) => { variantChange(e) }} id="aipro-checkbox2" type='checkbox' value="true" /><span className="chc-span">Charge Taxes on this product</span> */}
+                                                                        <br></br>
+                                                                        <br></br>
+                                                                        <p className="var-tit">Inventory</p>
+                                                                        <label>SKU</label>
+                                                                        <input value={variant.sku} name="sku" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='text' />
+                                                                        <label>Barcode</label>
+                                                                        <input value={variant.barcode} name="barcode" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='text' />
+                                                                        <label>Minimum Purchase Quantity</label>
+                                                                        <input value={variant.min_purchase_qty} name="min_purchase_qty" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
+                                                                        <label>Quantity</label>
+                                                                        <input value={variant.quantity} name="quantity" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
+                                                                        <br></br>
+                                                                        <input checked={variant.track_inventory} name="track_inventory" onChange={handlechange1} id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
+                                                                        <br></br>
+                                                                        <button type="button" onClick={(e) => { handleVariantSubmit(e) }} data-bs-dismiss="modal" aria-label="Close" className="create-acc-btn">Submit</button>
+                                                                        <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject()}>Cancel</button>
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -475,9 +632,19 @@ function AiProductDetails() {
                                                         </tbody>
                                                     </table>
                                                 </div>
+<<<<<<< HEAD
                                                 <label className="label-name">Return Policy</label>
                                                 <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} className="input-focus d-block textarea-2"></textarea>
                                                 <button type='submit' className="create-btn">Add Product</button>
+=======
+                                                {/*  */}
+                                                <label>Return Policy</label>
+                                                <br />
+                                                <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
+                                                <button type='submit' className="create-acc-btn">Save Product</button>
+                                                {/* <button className="btn btn-danger ms-3" onClick={clearData}>Clear</button> */}
+                                                <Link to="/allproduct"><button className="btn btn-danger ms-3">Cancel</button></Link> 
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                             </div>
                                         </div>
                                         <div className="Add-Product-Images">
@@ -495,7 +662,7 @@ function AiProductDetails() {
                                                                 <div className="col-4">
                                                                     <img src={file} width="50px" height="50px" className="pro-pre" />
                                                                 </div>
-                                                                <div className="col-4 fil-name">{selectedFile[index].name}</div>
+                                                                <div className="col-4 fil-name">{selectedFile[index]?.name}</div>
                                                                 <div className="col-4 ">
                                                                     <div className="m-3 text-end">
                                                                         <i className="ri-close-line upload-img-close3" onClick={(e) => { removeImage(index) }}></i>
@@ -518,7 +685,6 @@ function AiProductDetails() {
                                                     name="attachments"
                                                     multiple
                                                     onChange={handleFileInput}
-                                                    required
                                                     type="file"
                                                     id="select-basic"
                                                     accept="image/*"
@@ -536,16 +702,32 @@ function AiProductDetails() {
                                             <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} className="input-focus input-box-300" type='text' />
                                             <p className="sub-title">Product Tag</p>
                                             {productTags.map((x, i) => {
+                                                const defaultSelectedValues = selectedproductTags[i]?.list || []; 
+                                                console.log(defaultSelectedValues)
                                                 return <>
+<<<<<<< HEAD
                                                     <label className="label-name">{x?.name}</label>
+=======
+                                                    <label className="label">{x?.name}</label>
+                                                  {   console.log(x)}
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                     {x.id == 1 || x.id == 2 ?
+                                                            (
+                                                                <div className="multi-sel">
+                                                                    <Multiselect selectedValues={defaultSelectedValues} options={x?.list} onRemove={(list, item) => onRemove(list, item, i)} onSelect={(list, item) => onSelect(list, item, i)} displayValue="value" />
+                                                                </div>
+                                                            ) :
                                                         (
+<<<<<<< HEAD
                                                             <div className="input-focus input-box-300">
                                                                 <Multiselect options={x?.list} onRemove={(list, item) => onRemove(list, item, i)} onSelect={(list, item) => onSelect(list, item, i)} displayValue="value" />
                                                             </div>
                                                         ) :
                                                         (
                                                             <input className="input-focus input-box-300" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />
+=======
+                                                            <input  className="ai-input" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />
+>>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                         )
 
                                                     }

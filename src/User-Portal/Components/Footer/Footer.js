@@ -4,7 +4,7 @@ function Footer() {
         <div>
             <div className="footer-box">
                 <div className="Decbase">
-                    <h5 classname="footer-title">M|AI PROJECT</h5>
+                    <h5 className="footer-title">M|AI PROJECT</h5>
                     <p className="desc">But i must explain you all
                         this mistaken
                         idea of denouncing pressure.</p>
@@ -12,7 +12,7 @@ function Footer() {
                 <div className="Quick-Links">
                     <ul type='none'>
                         <li id="links">
-                            <h5 classname="footer-title">Quick Links</h5>
+                            <h5 className="footer-title">Quick Links</h5>
                         </li>
                         <li id="links">About Our Company</li>
                         <li id="links">Service WE Provide</li>
@@ -24,7 +24,7 @@ function Footer() {
                 <div className="Company">
                     <ul type='none'>
                         <li id="links">
-                            <h5 classname="footer-title">Company</h5>
+                            <h5 className="footer-title">Company</h5>
                         </li>
                         <li id="links">About Company</li>
                         <li id="links">Our Testimonials</li>

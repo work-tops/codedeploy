@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import AiHeader from "../Header/AiHeader";
 import AiMenu from "../Menubar/AiMenu";
 import pom from '../../Images/product_image.png'
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import { getAllData } from "../../Services/ProxyService";
+import { getAllData, deleteData } from "../../Services/ProxyService";
 import ReactPaginate from 'react-paginate';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -18,6 +18,16 @@ function AllCommission() {
     useEffect(() => {
         Catcomdata()
     }, [])
+
+    const commmissiondel = async (data) => {
+        const response = await deleteData('commission/' + data._id);
+        if (response.status === 201) {
+            toast.success('Successfully Commission Deleted')
+            Catcomdata()
+        } else {
+            toast.error('Something went wrong')
+        }
+    }
 
     const [listPerPage] = useState(10);
     const [pageNumber, setPageNumber] = useState(0);
@@ -75,68 +85,87 @@ function AllCommission() {
                         <table className="allproducts-table">
                             <tr className="product-heading ">
                                 <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                <td id="td">Freelancer ID <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                <td id="td">Freelancer ID
+                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
-                                <td id="td">Freelancer Profile <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                <td id="td">Freelancer Profile
+                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
-                                <td id="td">Company Name <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                <td id="td">Company Name
+                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
-                                <td id="td">Email ID <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                <td id="td">Email ID
+                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
-                                <td id="td">Commission Type <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                <td id="td">Commission Type
+                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
-                                <td id="td">First Commission <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                <td id="td">First Commission
+                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
-                                <td id="td">Second Commission <i class="ri-arrow-down-s-fill"></i>
-                                <br></br>
-                                        <input id="filter-search" type="search"/>
+                                <td id="td">Second Commission
+                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
+                                </td>
+                                <td id="td">Created date
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
+                                </td>
+                                <td id="td">Modified date
+                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
+                                    <br></br>
+                                    <input id="filter-search" type="search" />
                                 </td>
                                 <td id="td" className="rounded-end">Action</td>
                             </tr>
                             {lists.map((data, key) => (
-                            <tr key={key}>
-                                <td id="td"><input type='checkbox' /></td>
-                                <td id="td">2456781</td>
-                                <td id="td">Manikandan</td>
-                                <td id="td">Global Stone</td>
-                                <td id="td">{data.email}</td>
-                                <td id="td"> {data.commission_type}</td>
-                                <td id="td">{data.first_commission == "" || data.first_commission == undefined ? (
+                                <tr key={key}>
+                                    <td id="td"><input type='checkbox' /></td>
+                                    <td id="td">2456781</td>
+                                    <td id="td">Manikandan</td>
+                                    <td id="td">Global Stone</td>
+                                    <td id="td">{data.email}</td>
+                                    <td id="td"> {data.commission_type}</td>
+                                    <td id="td">{data.first_commission == "" || data.first_commission == undefined ? (
                                         <span> -</span>
                                     ) : (
                                         <span> {data.first_commission}</span>
                                     )}</td>
-                               <td id="td">{data.second_commission == "" || data.second_commission == undefined ? (
+                                    <td id="td">{data.second_commission == "" || data.second_commission == undefined ? (
                                         <span> -</span>
                                     ) : (
                                         <span> {data.second_commission}</span>
                                     )}</td>
-                                <td id="td">
-                                    <div class="dropdown">
-                                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                                    <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
+                                    <td id="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
+                                    <td id="td">
+                                        <div class="dropdown">
+                                            <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
+                                                <li><a class="dropdown-item" onClick={() => { commmissiondel(data) }}><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
                             ))}
-                           
+
                         </table>
                         <span className="showing-tag-name">Showing 1-30 List</span>
                         <div className="mt-5" >
