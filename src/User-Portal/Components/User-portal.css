@@ -40,7 +40,9 @@ a {
     font-size: calc(10px + 2vmin);
     color: white;
 }
-
+.navbar-standard {
+    background: #003f6b !important;
+}
 .App-link {
     color: #61dafb;
 }
@@ -1693,6 +1695,16 @@ a {
         color: #bdb5b5;
     }
 
+    .mordern-interior-tit-1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+        position: relative;
+        top: 14px;
+        color: #bdb5b5;
+    }
+
     .morder-interior-h1 {
         margin-left: 30px;
         width: 250px;
@@ -1852,6 +1864,7 @@ a {
         position: relative;
         bottom: 15px;
     }
+
     .infrastuctures-btn {
         padding: 10px;
         border: none;
@@ -1863,19 +1876,324 @@ a {
         margin-bottom: 15px;
         background: #f4f4f4;
     }
-    .infrastuctures-btn h6{
+
+    .infrastuctures-btn h6 {
         font-size: 20px;
         font-weight: 600;
     }
+
     .infrastuctures-btn p {
         font-size: 14px;
         width: 189px;
         position: relative;
         left: 45px;
     }
-    .infrastuctures-btn:hover{
+
+    .infrastuctures-btn:hover {
         color: #fff;
         background: #0c4664;
         transition: all .5s;
+    }
+
+    .interior-static-image-1 {
+        width: 480px;
+        height: 400px;
+        position: relative;
+        top: 40px;
+        left: 45px;
+        border-radius: 100px 0px;
+        z-index: 9999;
+        margin-bottom: 40px;
+    }
+
+    .int-des-border-1 {
+        top: 85.7rem;
+        border: 2px solid;
+        border-color: #507a93;
+        position: absolute;
+        width: 480px;
+        height: 400px;
+        border-radius: 100px 0px;
+        left: 25px;
+    }
+
+    .morder-interior-h1-1 {
+        margin-left: 30px;
+        width: 370px;
+    }
+
+    .about-us-desc-hmp {
+        font-size: 13px;
+        width: 300px;
+        margin-left: 32px;
+    }
+
+    .years-of-exp-no {
+        font-size: 199px;
+        font-weight: 700;
+        margin-left: 20px;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: url('../Components/Images/wood-img.jpg');
+    }
+
+    .morder-interior-h1-2 {
+        margin-left: 30px;
+        width: 400px;
+    }
+
+    .interior-static-image-3 {
+        width: 500px;
+        height: 430px;
+        position: relative;
+        bottom: 150px;
+        left: 100px;
+        border-radius: 100px 0px;
+        z-index: 9999;
+    }
+
+    .int-des-border-3 {
+        border: 2px solid;
+        border-color: #507a93;
+        position: absolute;
+        top: 118.3rem;
+        left: 552px;
+        width: 500px;
+        height: 430px;
+        border-radius: 100px 0px;
+    }
+    .no-of-projects-com-by-us h2 {
+        text-align: center;
+        padding-bottom: 35px;
+        padding-top: 20px;
+    }
+    
+    .no-of-projects-com-by-us {
+        background: #f4f4f4;
+        padding-bottom: 50px;
+    }
+    
+    .borders-spl-div {
+        border-bottom: 1px solid black;
+        margin-bottom: 10px;
+        width: 200px;
+        position: relative;
+        bottom: 111px;
+    }
+    
+    .borders-spl-div-1 {
+        width: 200px;
+        border-left: 1px solid;
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+        padding: 17px;
+    }
+
+    .borders-spl-div-2 {
+        width: 200px;
+        border-left: 1px solid;
+        border-bottom: 1px solid;
+        padding: 17px;
+    }
+
+    .current-prj-records-btn {
+        border-radius: 50px 2px;
+        width: 135px;
+        position: relative;
+        right: 55px;
+        top: 65px;
+        border: none;
+        background: #fff;
+    }
+    
+    .current-prj-records-btn2 {
+        border-radius: 50px 2px;
+        width: 135px;
+        position: relative;
+        left: 20px;
+        top: 55px;
+        border: none;
+        background: #fff;
+    }
+    
+    .current-prj-records-btn3 {
+        border-radius: 50px 2px;
+        width: 135px;
+        position: relative;
+        left: 35px;
+        top: 65px;
+        border: none;
+        background: #fff;
+    }
+    
+    .current-prj-records-btn4 {
+        border-radius: 50px 2px;
+        width: 135px;
+        position: relative;
+        left: 65px;
+        top: 55px;
+        border: none;
+        background: #fff;
+    }
+    
+    .no-of-prjlist {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    
+    .years-of-work-col {
+        margin-bottom: 6rem;
+    }
+    
+    .our-client-says {
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    .client-abt-div {
+        border: 1px solid;
+        display: inline-block;
+        width: 420px !important;
+        border-radius: 100px 0px;
+        padding: 17px;
+        position: relative;
+        right: 30rem;
+    }
+    
+    .client-abt-div_1 {
+        border: 1px solid;
+        display: inline-block;
+        width: 420px !important;
+        border-radius: 100px 0px;
+        padding: 17px;
+        position: relative;
+        right: 70rem;
+    }
+    
+    .client-abt-div h5 {
+        margin-left: 90px;
+    }
+    
+    .client-abt-div p {
+        font-size: 13px;
+        width: 300px;
+        margin-left: 90px;
+    }
+    
+    .client-abt-div_1 h5 {
+        margin-left: 90px;
+    }
+    
+    .client-abt-div_1 p {
+        font-size: 13px;
+        width: 300px;
+        margin-left: 90px;
+    }
+    
+    .clint-pro-img {
+        width: 140px;
+        height: 100px;
+        border-radius: 52px 2px;
+        border: 1px solid;
+        position: relative;
+        right: 72rem;
+        top: 25px;
+    }
+    
+    .clint-pro-img_1 {
+        width: 140px;
+        height: 100px;
+        border-radius: 52px 2px;
+        border: 1px solid;
+        position: relative;
+        right: 112rem;
+        top: 25px;
+    }
+    
+    .latest-news-div {
+        background-color: #f4f4f4;
+    }
+
+    .int-des-cont-btn-__1 {
+        width: 150px;
+        padding: 7px;
+        border: none;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 500;
+        background: #0c4664;
+        color: #fff;
+        margin-left: 17rem;
+        margin-bottom: 30px;
+        border-radius: 100px 4px;
+    }
+    .int-des-cont-btn-__2{
+        width: 150px;
+        padding: 7px;
+        border: none;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 500;
+        background: #0c4664;
+        color: #fff;
+        margin-left: 40px;
+        margin-bottom: 30px;
+        border-radius: 100px 4px;
+    }
+
+    .lat-blog-thumbnail {
+        position: relative;
+        margin-bottom: 30px;
+        border-radius: 52px 0px;
+        z-index: 9999;
+        width: 300px;
+        height: 240px;
+        margin-left: 17rem;
+    }
+    .lat-blog-thumbnail-2 {
+        position: relative;
+        margin-bottom: 30px;
+        border-radius: 52px 0px;
+        z-index: 9999;
+        width: 300px;
+        height: 240px;
+        margin-left: 40px;
+    }
+    .lat-blog-border {
+        width: 300px;
+        height: 240px;
+        left: 18rem;
+        position: absolute;
+        border-radius: 52px 2px;
+        top: 202rem;
+        border: 2px solid;
+        border-color: #507a93;
+    }
+    .lat-blog-border-1 {
+        width: 300px;
+        height: 240px;
+        left: 54.5%;
+        position: absolute;
+        border-radius: 52px 2px;
+        top: 202rem;
+        border: 2px solid;
+        border-color: #507a93;
+    }
+    .latest-news-subtit{
+        margin-left: 17rem;
+    }
+    .latest-news-subtitle {
+        width: 300px;
+        margin-left: 17rem;
+        font-size: 13px;
+    }
+    .latest-news-subtit1{
+        margin-left: 40px;
+    }
+    .latest-news-subtitle1 {
+        width: 300px;
+        margin-left:40px;
+        font-size: 13px;
     }
 }

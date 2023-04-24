@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './App.css'
 import './index.css';
+import './Master.css'
 import './User-Portal/Components/User-portal.css'
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';

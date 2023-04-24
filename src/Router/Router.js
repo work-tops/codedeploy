@@ -19,6 +19,7 @@ import AllStaff from "../Components/Staff/AllStaff";
 import AddStaff from "../Components/Staff/AddStaff";
 import FreelancerCommission from "../Components/Commission/FreelancerCommission";
 import AllFreelancerCommission from "../Components/Commission/AllFreelancerCommission";
+// import AdvAllFreelancer from "../User-Portal/Components/AllFreelancer";
 
 const Routers = () => {
     return (
@@ -46,6 +47,7 @@ const Routers = () => {
             <Route path="/allstaff"><AllStaff/></Route>
             <Route path="/addstaff"><AddStaff/></Route>
             {/* Routes for AI Pages //end*/}
+            {/* <Route path='/advallfreelancer'><AdvAllFreelancer/></Route> */}
         </Switch>
 
     )

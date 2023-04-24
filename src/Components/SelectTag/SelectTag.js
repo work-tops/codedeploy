@@ -22,9 +22,7 @@ function SkillsMultiselectDropdown() {
   const [skills] = useState(data)
   return (
     <>
-    <div className="multi-sel-service">
       <Multiselect options={skills} displayValue="Skills"/>
-    </div>
     </>
   )
 }

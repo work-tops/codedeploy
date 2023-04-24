@@ -11,6 +11,14 @@ import JobProposal from "../Front-End Pages/JobProposal";
 import PostJob2 from "../Front-End Pages/PostJob2";
 import HomePage from "../Front-End Pages/HomePage";
 import TradeSignUpForm from "../Front-End Pages/TradeMemberSignupForm";
+import UserLogin from '../Front-End Pages/Userlogin'
+import ForgetPasswordForm from "../authentication/ForgetPasswordForm";
+import LoginPortal from "../Front-End Pages/LoginPortal";
+import RegisterPortal from "../Front-End Pages/RegisterPortal";
+import ProjectOwnerRegister from "../Front-End Pages/ProjectOwnerRegister";
+import SellerRegister from "../Front-End Pages/SellerSignUp";
+import FrontendAddProduct from '../Front-End Pages/FrontendAddProduct'
+// import FrontEndAllProducts from "../Front-End Pages/FrontendAllProducts";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -25,6 +33,14 @@ const FrontEndRouters = () => {
             <Route path="/listjobs"><ListJobs /></Route>
             <Route path="/jobdetails"><JobDetails /></Route>
             <Route path="/homepage"><HomePage/></Route>
+            <Route path='/userlog'><UserLogin/></Route>
+            <Route path='/forgetpassword'><ForgetPasswordForm/></Route>
+            <Route path='/loginportal'><LoginPortal/></Route>
+            <Route path='/registerportal'><RegisterPortal/></Route>
+            <Route path='/projectownersignup'><ProjectOwnerRegister/></Route>
+            <Route path='/sellersignup'><SellerRegister/></Route>
+            <Route path='/user/addproduct'><FrontendAddProduct/></Route>
+            {/* <Route path='/user/allproduct'><FrontEndAllProducts/></Route> */}
         </Switch>
 
     )

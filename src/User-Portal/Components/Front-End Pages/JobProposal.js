@@ -10,6 +10,7 @@ function JobProposal() {
             <div className="row">
                 <div className="col-12 prj-det-header">
                     <Header />
+                    
                 </div>
                 <div className="col-12">
                     <Menubar />

@@ -55,7 +55,7 @@ a {
   }
 }
 
-@media screen and (min-device-width: 992px) and (max-device-width:1700px) {
+@media screen and (min-device-width: 992px) and (max-device-width:9999px) {
 
 
   .options {
@@ -847,9 +847,9 @@ a {
     padding-bottom: 50px;
   }
 
-  #aipro-checkbox1,
-  #aipro-checkbox2,
-  #aipro-checkbox {
+  .aipro-checkbox1,
+  .aipro-checkbox2,
+  .aipro-checkbox {
     margin-left: 20px;
     margin-top: 10px;
     margin-right: 5px;
@@ -916,13 +916,6 @@ a {
     font-size: 14px;
   }
 
-  .ai-title {
-    margin-top: 10px;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-left: 20px;
-  }
-
   .ai-tit {
     margin-top: 10px;
     text-transform: uppercase;
@@ -944,14 +937,6 @@ a {
     text-transform: capitalize;
   }
 
-  .ai-add-title {
-    text-transform: capitalize;
-    font-size: 20px;
-    margin-left: 20px;
-    font-weight: 400;
-    margin-bottom: 0;
-  }
-
   .ai-title-desc {
     font-size: 12px;
     margin-bottom: 0px;
@@ -965,6 +950,10 @@ a {
     text-transform: capitalize;
     margin-left: 10px;
 
+  }
+
+  .filter-search {
+    display: block;
   }
 
   .compareprice {
@@ -1005,7 +994,7 @@ a {
 
   .ai-image-drag {
     border: 2px dotted #000;
-    width: 275px;
+    width: 318px;
     margin-left: 0px;
     margin-bottom: 10px;
   }
@@ -1051,6 +1040,7 @@ a {
     margin-bottom: 10px;
     border: 1px solid rgb(222, 171, 113);
   }
+
   .ai-input {
     display: block;
     margin-left: 20px;
@@ -1095,10 +1085,21 @@ a {
     height: 55px;
   }
 
-  #badge-1 {
-    font-size: 12px;
+  .badge-1 {
+    font-size: 12px !important;
   }
 
+  .service-img-label {
+    margin-top: 4.5rem;
+  }
+  .add_toggle{
+    position: relative;
+    left: 10px;
+  }
+  .remove_toggle{
+    position: relative;
+    right: 15px;
+  }
   .profile-picture {
     width: 35px;
     height: 35px;
@@ -1200,15 +1201,11 @@ a {
     background: none;
   }
 
-  #export-details {
+  .export-details {
     margin-left: 90px;
     margin-top: 50px;
-    border: 1px solid black;
-    border-radius: 0px;
-  }
-
-  #filter-search {
-    width: 100px;
+    border: 1px solid black !important;
+    border-radius: 0px !important;
   }
 
   .add-product-ai {
@@ -1278,17 +1275,6 @@ a {
     background: rgb(254, 247, 247);
   }
 
-  .product-heading #td {
-    border: none;
-  }
-
-  #td {
-    border-bottom: 1px solid rgb(219, 211, 211);
-    width: 1px;
-    font-size: 14px;
-    padding-left: 4px;
-  }
-
   .img {
     width: 50px;
     height: 45px;
@@ -1305,11 +1291,16 @@ a {
     font-weight: 500;
   }
 
-  #td {
-    /* padding: 5px; */
+  .table_data {
+    padding: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-    text-align: center;
+    text-align: justify;
+    border-bottom: 1px solid rgb(219, 211, 211);
+    width: 1px;
+    font-size: 14px;
+    padding-left: 4px;
+    border: none;
   }
 
   .all-pro-pagination button {
@@ -1467,7 +1458,7 @@ a {
     border: 1px solid rgb(222, 171, 113);
   }
 
-  #terms-conditions {
+  .terms-conditions {
     margin-left: 20px;
     margin-top: 15px;
   }
@@ -1557,7 +1548,7 @@ a {
     margin-top: 15px;
   }
 
-  #ff-chbox {
+  .mrgn {
     margin: 10px 5px 10px 30px;
   }
 
@@ -1586,15 +1577,15 @@ a {
     font-size: 14px;
   }
 
-  #more_action {
+  .more_action {
     margin-left: -80px;
     margin-top: 50px;
-    border: 1px solid black;
-    border-radius: 0px;
+    border: 1px solid black !important;
+    border-radius: 0px !important;
   }
 
-  #more_action:focus {
-    outline: none;
+  .more_action:focus {
+    outline: none !important;
   }
 
   /* addseller.css //end*/
@@ -1633,7 +1624,7 @@ a {
   .add_job-attachments {
     padding-bottom: 40px;
     border: 2px dotted #bdb5b5;
-    width: 400px;
+    width: 440px;
     padding-left: 5px;
     padding-top: 5px;
     margin-bottom: 10px;
@@ -1689,7 +1680,7 @@ a {
     font-size: 14px;
   }
 
-  #radio-btn {
+  .radio-btn {
     margin-left: 20px;
     width: 18px;
     height: 18px;
@@ -1789,9 +1780,12 @@ a {
 
   }
 
+  .toggle-btn {
+    position: relative;
+    top: 25px;
+  }
 
-
-  #all-order-search {
+  .all-order-search {
     width: 220px;
     margin-left: 20px;
     padding: 4px;
@@ -1804,7 +1798,7 @@ a {
   }
 
 
-  #all-order-search::placeholder {
+  .all-order-search::placeholder {
     font-size: 14px;
     text-align: justify;
     padding-left: 15px;
@@ -1868,7 +1862,7 @@ a {
     height: 130px;
     color: #bfb3b3;
     margin-left: 10px;
-    margin-top: -35px;
+    margin-top: -15px;
   }
 
   .add-img-des {
@@ -2319,7 +2313,7 @@ a {
     background-color: orange !important;
   }
 
-  #note-list {
+  .note-list {
     color: #000;
     width: 585px;
     cursor: auto;
@@ -2414,15 +2408,13 @@ a {
 
   .per-btn-dis {
     position: relative;
-    /* right: 30px; */
-    right: 1px;
-    border-left: none;
-    padding-top: 4px;
+    right: 20px;
+    padding-top: 10px;
     padding-right: 10px;
-    padding-bottom: 4px;
+    padding-bottom: 10px;
     border: 1px solid black;
     color: black;
-  }
+}
 
   .fix-btn-dis {
     position: relative;
@@ -2570,4 +2562,9 @@ a {
     font-size: 14px;
   }
 
+  /* 
+
+
+
+*/
 }

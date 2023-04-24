@@ -55,12 +55,13 @@ function Serviceslist() {
                         <div className="page-bg">
                             <div className="product-adding-div">
                                 <div>
-                                    <p className="ai-tit">Services/Services list</p>
-                                    <h4 className="ai-seller-title">All Services <span id="badge-1" className="badge bg-secondary">#100</span></h4>
+                                    <p className="capital-title">Services/Services list</p>
+                                    <h4 className="ms-3 mt-1">All Services <span className="badge-1 badge bg-secondary">#100</span></h4>
+                                    <p className="med-sub-title">Here You Can add Services to your profile</p>
                                 </div>
                                 <div className="row">
-                                    <div className="dropdown col-6">
-                                        <button id="more_action" className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div className="dropdown col-3">
+                                        <button className="more_action btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             More Action
                                         </button>
                                         <ul className="dropdown-menu">
@@ -69,7 +70,7 @@ function Serviceslist() {
                                         </ul>
                                     </div>
                                     <div className="col-6">
-                                        <Link to="addservices" role="button"><button className="add-seller">Add Service</button></Link>
+                                        <Link to="addservices" role="button"><button className="create-btn toggle-btn">Add Service</button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -110,50 +111,36 @@ function Serviceslist() {
                                 <table className="allproducts-table">
                                     <tbody>
                                         <tr className="product-heading ">
-                                            <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                            {/* <td id="td">Service ID
-                                            <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td> */}
-                                            {/* <td id="td">Image <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td> */}
-                                            <td id="td">Name <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data rounded-start"><input type='checkbox' /></td>
+                                            <td className="table_data">Name <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0 filter-search" type="search" />
                                             </td>
-                                            <td id="td">Seller <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data">Seller <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
                                             </td>
-                                            <td id="td">Price Type <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data">Price Type <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
                                             </td>
-                                            <td id="td">Price <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data">Price <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
                                             </td>
 
-                                            <td id="td">Status <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data">Status <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search " type="search" />
                                             </td>
-                                            <td id="td" className="rounded-end">Action</td>
+                                            <td className="table_data rounded-end">Action</td>
                                         </tr>
                                         {lists.map((data, key) => (
                                             <tr>
-                                                <td id="td"><input type='checkbox' /></td>
-                                                {/* <td id="td">{data.title}</td> */}
-                                                {/* <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td> */}
-                                                <td id="td">{data.title}</td>
-                                                <td id="td">{data.email}</td>
-                                                <td id="td">{data.price_type} </td>
-                                                <td id="td">£ {data.price}</td>
-                                                <td id="td"><span className="pro-status-approved">{data.status}</span></td>
-                                                <td id="td">
+                                                <td className="table_data"><input type='checkbox' /></td>
+                                                {/* <td className="table_data">{data.title}</td> */}
+                                                {/* <td className="table_data"><img src={pom} alt="pro-thumb" className="img" /></td> */}
+                                                <td className="table_data">{data.title}</td>
+                                                <td className="table_data">{data.email}</td>
+                                                <td className="table_data">{data.price_type} </td>
+                                                <td className="table_data">£ {data.price}</td>
+                                                <td className="table_data"><span className="pro-status-approved">{data.status}</span></td>
+                                                <td className="table_data">
                                                     <div className="dropdown">
                                                         <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i className="fa-solid fa-ellipsis"></i>
@@ -172,17 +159,6 @@ function Serviceslist() {
                                     </tbody>
 
                                 </table>
-
-                                {/* <span className="showing-tag-name">Showing 1-30 List</span>
-                                <div className="all-pro-pagination ">
-                                    <button className="back-btn shadow bg-body rounded"><i className="fa-solid fa-chevron-left"></i></button>
-                                    <button className="shadow bg-body rounded">1</button>
-                                    <button className="shadow bg-body rounded">2</button>
-                                    <button className="shadow bg-body rounded">3</button>
-                                    <button className="shadow bg-body rounded"><i className="fa-solid fa-ellipsis"></i></button>
-                                    <button className="shadow bg-body rounded">25</button>
-                                    <button className="next-btn"><i className="fa-solid fa-chevron-right"></i></button>
-                                </div> */}
 
                                 <div className="mt-5" >
                                     <ReactPaginate

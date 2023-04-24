@@ -1,20 +1,26 @@
 import React from "react";
-
-
+import { Dropdown, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 function Menubar() {
     return (
-        <div>
-            <ul className="menu_bar" type='none'>
-                <li className="menu">Kitchen WorkTops</li>
-                <li className="menu">Bathrooms Top</li>
-                <li className="menu">Island</li>
-                <li className="menu">Willmott</li>
-                <li className="menu">Stones</li>
-                <li className="menu">Sink & Washbasin</li>
-                <li className="menu">Off-cuts</li>
-                <li className="menu">Others</li>
-            </ul>
-        </div>
+        <>
+            <Row className="bg-danger">
+                <Col lg={12}>
+                    <div className="d-flex justify-content-end m-2">
+                        <Link to="/user/addproduct">
+                            <Button className="btn  btn-outline-secondary bg-light text-dark w-100">
+                                Product
+                            </Button>
+                        </Link>
+                        <Link to="">
+                            <Button className="btn btn-outline-secondary bg-light text-dark w-100">
+                                Services
+                            </Button>
+                        </Link>
+                    </div>
+                </Col>
+            </Row >
+        </>
     )
 }
 export default Menubar

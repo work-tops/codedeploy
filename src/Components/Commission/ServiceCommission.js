@@ -76,56 +76,56 @@ function ServiceCommission() {
                         </div>
                         <div className="col-12 page-bg">
                             <div >
-                                <p className="ms-3 ai-sub-title">Commission / Service Commission</p>
-                                <h4 className="ms-3">Service Commission</h4>
-                                <p className="ms-3 ai-tit-desc">Here are setting for Service Commission</p>
+                                <p className="capital-title">Commission / Service Commission</p>
+                                <h4 className="ms-3 mt-1">Service Commission</h4>
+                                <p className="med-sub-title">Here are setting for Service Commission</p>
                                 <div className="imp-note">
                                     <p className="not-tit">Note:</p>
                                     <ul type="none">
-                                        <li id="note-list">% - In this type of commission,the
+                                        <li className="note-list">% - In this type of commission,the
                                             percentage amount will be deducted from the base price of the product.</li>
-                                        <li id="note-list">
+                                        <li className="note-list">
                                             Fixed -In this type of commission ,
                                             the fixed amount will be deducted from the base price.
                                         </li>
-                                        <li id="note-list">% + Fixed - In this type of commission ,
+                                        <li className="note-list">% + Fixed - In this type of commission ,
                                             first the percentage amount will be deducted from the base price of the product
                                             and then a fixed amount will be deducted from the remaining amount.
                                         </li>
-                                        <li id="note-list">
+                                        <li className="note-list">
                                             Fixed + % - In this type of commission , first a fixed amount will be deducted from the base price
                                             and then the percentage amount will be deducted from the remaining price.
                                         </li>
                                     </ul>
                                 </div>
                                 <form onSubmit={(e) => { formsubmit(e) }}>
-                                    <div className="global-com-setting-div">
-                                        <p className="global-com-setting-heading">Service Commission</p>
-                                        <p className="global-desc">Here are the setting for service commission</p>
-                                        <p className="gct">Service Commission Type</p>
-                                        <select value={form.commission_type} required name="commission_type" onChange={(e) => { handlechange(e) }} className="cgct">
+                                    <div className="global-com-setting-div mt-4">
+                                        <p className="head-title ms-3 pt-2">Service Commission</p>
+                                        <p className="med-sub-title">Here are the setting for service commission</p>
+                                        <p className="sub-topic-title">Service Commission Type</p>
+                                        <select value={form.commission_type} required name="commission_type" onChange={(e) => { handlechange(e) }} className="Dropdown-box-600">
                                             <option value="">Choose service commission type</option>
                                             <option value="%">%</option>
                                             <option value="Fixed">Fixed</option>
                                             <option value="% + Fixed">% + Fixed</option>
                                             <option value="Fixed + %">Fixed + %</option>
                                         </select>
-                                        
+
                                         {form.commission_type == "%" || form.commission_type == "Fixed" ? (
                                             <>
                                                 <label className="label">Service Commission</label>
-                                                <input type="number" required value={form.first_commission} id="fgc" name="first_commission" onChange={(e) => { handlechange(e) }} /><button className="per-btn-dis fix-btn-dis" disabled>{form.commission_type}</button>
-                                                
+                                                <input type="number" required value={form.first_commission} className="input-focus input-box-600" name="first_commission" onChange={(e) => { handlechange(e) }} /><button className="per-btn-dis" disabled>{form.commission_type}</button>
+
                                             </>
                                         ) : ""}
                                         {form.commission_type == "% + Fixed" || form.commission_type == "Fixed + %" ? (
                                             <>
                                                 <label className="label">Service Commission</label>
-                                                <input  type="number" required value={form.first_commission} name="first_commission" onChange={(e) => { handlechange(e) }} id="fgc" /><button className="per-btn-dis" disabled>%</button>
-                                                
+                                                <input type="number" required value={form.first_commission} name="first_commission" onChange={(e) => { handlechange(e) }} className="input-focus input-box-600" /><button className="per-btn-dis" disabled>%</button>
+
                                                 <label className="label">Second Service Commission</label>
-                                                <input  type="number" id="fgc" required value={form.second_commission} name="second_commission" onChange={(e) => { handlechange(e) }} /><button className="fix-btn-dis" disabled>FIXED</button>
-                                               
+                                                <input type="number" className="input-focus input-box-600" required value={form.second_commission} name="second_commission" onChange={(e) => { handlechange(e) }} /><button className="per-btn-dis" disabled>FIXED</button>
+
                                             </>
                                         ) : ""}
 
@@ -133,7 +133,7 @@ function ServiceCommission() {
                                         <p className="upd-titl">UPDATE EARLIER PRODUCT PRICE</p>
                                         <div className="form-check form-switch">
                                             <input
-                                            
+
                                                 name="update_old_values"
                                                 checked={form1.update_old_values}
                                                 onChange={handlechange1}
@@ -142,10 +142,9 @@ function ServiceCommission() {
                                                 role="switch"
                                                 id="flexSwitchCheckDefault"
                                             />
-                                            <br></br>
-                                            <p className="switch-des">If you enable this option , all the prices of exisiting products will change according to the given commission value</p>
-                                            <button type="submit" className="create-acc-btn-1">Save Changes</button>
                                         </div>
+                                        <p className="para-text margin-20">If you enable this option , all the prices of exisiting products will change according to the given commission value</p>
+                                        <button type="submit" className="create-btn">Save Changes</button>
                                     </div>
                                 </form>
                             </div>

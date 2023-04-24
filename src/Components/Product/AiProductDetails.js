@@ -268,8 +268,8 @@ function AiProductDetails() {
         const response = await getAllData('master/product_tags');
         setproductTags(response.data.master[0].data);
         var _selectList = [];
-        response.data.master[0].data.forEach(x=>{
-            _selectList.push({id:x.id,name:x.name,list:[]})
+        response.data.master[0].data.forEach(x => {
+            _selectList.push({ id: x.id, name: x.name, list: [] })
         })
         setSelectedproductTags(_selectList);
     }
@@ -321,9 +321,9 @@ function AiProductDetails() {
                             <AiHeader />
                             <div className="page-bg">
                                 <div className="">
-                                    <p className="ai-title">products/edit product</p>
-                                    <h4 className="ai-add-title">Add Product</h4>
-                                    <p className="ai-title-desc">Here You Can add products to your profile</p>
+                                    <p className="capital-title">products/edit product</p>
+                                    <h4 className="Capitalize-title">Add Product</h4>
+                                    <p className="med-sub-title">Here You Can add products to your profile</p>
                                 </div>
                                 <form onSubmit={(e) => { formsubmit(e) }}>
                                     <div className="product-div">
@@ -335,38 +335,31 @@ function AiProductDetails() {
                                             </div>
 
                                             <div >
-                                                <label>Product Name</label>
-                                                <input value={form.name} required name="name" onChange={(e) => { handleChange(e) }} id="aipro-name" type='text' />
-                                                <br></br>
-                                                <span className="category">Category</span> <span className="seller-email">Seller Email</span>
-                                                <br></br>
-                                                <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
-                                                    <option value="">Select</option>
-                                                    {procat.map((data, key) => (
-                                                        <option key={key} value={data.name}>{data.name}</option>
-                                                    ))}
-                                                </select>
-
-                                                <select value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
-                                                    <option value="">Select</option>
-                                                    {selemail.map((data, key) => (
-                                                        <option key={key} value={data.email}>{data.email}</option>
-                                                    ))}
-                                                </select>
-                                                {/* <input value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' /> */}
-                                                {/* <input value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' /> */}
-                                                <br />
-                                                <label>Description</label>
-                                                <br />
-                                                <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
-                                                <br />
-                                                {/* <label>Product Tag</label>
-                                                <br />
-                                                <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input> */}
-                                                <br></br>
+                                                <label className="label-name d-block">Product Name</label>
+                                                <input value={form.name} required name="name" onChange={(e) => { handleChange(e) }} className="input-box-440 input-focus d-block" type='text' />
+                                                <div className="d-inline-block">
+                                                    <label className="label-name d-block">Category</label>
+                                                    <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} className="input-focus Dropdown-box-200">
+                                                        <option value="">Select</option>
+                                                        {procat.map((data, key) => (
+                                                            <option key={key} value={data.name}>{data.name}</option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                                <div className="d-inline-block">
+                                                    <label className="label-name d-block">Seller Email</label>
+                                                    <select value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} className="input-focus Dropdown-box-200">
+                                                        <option value="">Select</option>
+                                                        {selemail.map((data, key) => (
+                                                            <option key={key} value={data.email}>{data.email}</option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                                <label className="label-name">Description</label>
+                                                <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} className="input-focus textarea-2 d-block"></textarea>
                                                 {/*  */}
                                                 {/* <!-- Button trigger modal --> */}
-                                                <button id="aipro-addvariant" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                <button className="update-btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                                     <i className="ri-add-line"></i>Add Variant
                                                 </button>
 
@@ -375,37 +368,36 @@ function AiProductDetails() {
                                                     <div className="modal-dialog modal-lg">
                                                         <div className="modal-content">
                                                             <div className="modal-header">
-                                                                <p>Add Variant</p>
+                                                                <p className="head-title">Add Variant</p>
                                                                 <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Close</button>
                                                             </div>
                                                             <div className="modal-body row">
                                                                 <div className="col-5">
                                                                     <div className="var-img-drop-div">
-                                                                        <p className="add-img-tit">Variant Image</p>
-                                                                        <p className="add-img-des">Add Variant image here</p>
-                                                                        <br></br>
+                                                                        <p className="sub-topic-title">Variant Image</p>
+                                                                        <p className="med-sub-title">Add Variant image here</p>
 
                                                                         {variant.imageInx == undefined || variant.imageInx == null ? (
                                                                             <Icon className="var-image" icon="mingcute:photo-album-fill" height="24" width="24" />) :
                                                                             (<img src={actualFiles[variant.imageInx]} width="50px" height="50px" className="pro-pre" />)
 
                                                                         }
-                                                                        <br></br>
+
                                                                         <button className="add-img-btn d-none">ADD IMAGE</button>
-                                                                        <select value={variant.imageInx} name="imageInx" onChange={(e) => { variantChange(e) }} className="select-category">
+                                                                        <select value={variant.imageInx} name="imageInx" onChange={(e) => { variantChange(e) }} className="input-focus Dropdown-box-200">
                                                                             <option value="" disabled>Add Image</option>
                                                                             {actualFiles.map((file, index) => (
                                                                                 <option value={index}>
-                                                                                    {/* <img src={file} width="50px" height="50px" className="pro-pre" /> */}
+                                                                                    <img src={file} width="50px" height="50px" className="pro-pre" />
                                                                                     {selectedFile[index].name}
                                                                                 </option>
                                                                             ))}
                                                                         </select>
                                                                     </div>
-                                                                    <br></br>
+
                                                                     <div className="var-img-drop-div">
-                                                                        <p className="var-tit">Variants</p>
-                                                                        <p className="var-dec">Here all the variants click on variant to edit its details </p>
+                                                                        <p className="sub-topic-title">Variants</p>
+                                                                        <p className="med-sub-title">Here all the variants click on variant to edit its details </p>
                                                                         <div className="sel-var-abt-div">
                                                                             <img src={variant_image} className="sel_var_image" alt="selected-variant" />
                                                                             <small>Finished Type / Colour / Size </small>
@@ -414,59 +406,58 @@ function AiProductDetails() {
                                                                 </div>
                                                                 <div className="col-7">
                                                                     <div  >
-                                                                        <p className="var-tit">Options</p>
-                                                                        <p className="var-dec">Add Options details here</p>
-                                                                        <label className="label">Colour</label>
-                                                                        <select value={variant.color} name="color" onChange={(e) => { variantChange(e) }} className="sel-colour">
+                                                                        <label className="sub-topic-title">Options</label>
+                                                                        <p className="med-sub-title">Add Options details here</p>
+                                                                        <label className="label-name">Colour</label>
+                                                                        <select value={variant.color} name="color" onChange={(e) => { variantChange(e) }} className="input-focus Dropdown-box-400">
                                                                             <option value="">Select</option>
                                                                             <option value="Black,Gold">Black,Gold</option>
                                                                             <option value="Grey,White">Grey,White</option>
                                                                             <option value="Black,Grey">Black,Grey</option>
                                                                             <option value="Maroon,White">Maroon,White</option>
                                                                         </select>
-                                                                        <label className="label">Size</label>
-                                                                        <input value={variant.size} name="size" onChange={(e) => { variantChange(e) }} type="text" id="opt-ip-box" />
-                                                                        <label className="label">Finish Type</label>
-                                                                        <input value={variant.finish_type} name="finish_type" onChange={(e) => { variantChange(e) }} type="text" id="opt-ip-box" />
-                                                                        <br></br>
-                                                                        <p className="var-tit">Price Details</p>
-                                                                        <label className="label">Price</label>
-                                                                        <input value={variant.price} name="price" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
-                                                                        <label className="label">Compare at Price</label>
-                                                                        <input value={variant.compare_at} name="compare_at" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
-                                                                        <label className="label">Handling Charges</label>
-                                                                        <input value={variant.handling_changes} name="handling_changes" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
+                                                                        <label className="label-name">Size</label>
+                                                                        <input value={variant.size} name="size" onChange={(e) => { variantChange(e) }} type="text" className="input-focus input-box-400" />
+                                                                        <label className="label-name">Finish Type</label>
+                                                                        <input value={variant.finish_type} name="finish_type" onChange={(e) => { variantChange(e) }} type="text" className="input-focus input-box-400" />
+
+                                                                        <label className="sub-topic-title">Price Details</label>
+                                                                        <label className="label-name">Price</label>
+                                                                        <input value={variant.price} name="price" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
+                                                                        <label className="label-name">Compare at Price</label>
+                                                                        <input value={variant.compare_at} name="compare_at" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
+                                                                        <label className="label-name">Handling Charges</label>
+                                                                        <input value={variant.handling_changes} name="handling_changes" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
                                                                         <label className="label">Sales Price</label>
-                                                                        <input value={variant.sales_price} name="sales_price" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
-                                                                        <br></br>
-                                                                        <input name="required_shipping" onChange={(e) => { variantChange(e) }} id="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
-                                                                        <input name="charge_taxes" onChange={(e) => { variantChange(e) }} id="aipro-checkbox2" type='checkbox' value="true" /><span className="chc-span">Charge Taxes on this product</span>
-                                                                        <br></br>
-                                                                        <br></br>
-                                                                        <p className="var-tit">Inventory</p>
-                                                                        <label>SKU</label>
-                                                                        <input value={variant.sku} name="sku" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='text' />
-                                                                        <label>Barcode</label>
-                                                                        <input value={variant.barcode} name="barcode" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='text' />
-                                                                        <label>Minimum Purchase Quantity</label>
-                                                                        <input value={variant.min_purchase_qty} name="min_purchase_qty" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
-                                                                        <label>Quantity</label>
-                                                                        <input value={variant.quantity} name="quantity" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
-                                                                        <br></br>
-                                                                        <input value={variant.track_inventory} name="track_inventory" onChange={(e) => { variantChange(e) }} id="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
-                                                                        <br></br>
-                                                                        <button type="button" onClick={(e) => { handleVariantSubmit(e) }} data-bs-dismiss="modal" aria-label="Close" className="create-acc-btn">Submit</button>
-                                                                        <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Cancel</button>
+                                                                        <input value={variant.sales_price} name="sales_price" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
+
+                                                                        <input name="required_shipping" onChange={(e) => { variantChange(e) }} className="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
+                                                                        <input name="charge_taxes" onChange={(e) => { variantChange(e) }} className="aipro-checkbox2" type='checkbox' value="true" /><span className="chc-span">Charge Taxes on this product</span>
+
+                                                                        <p className="sub-topic-title">Inventory</p>
+                                                                        <label className="label-name">SKU</label>
+                                                                        <input value={variant.sku} name="sku" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='text' />
+                                                                        <label className="label-name">Barcode</label>
+                                                                        <input value={variant.barcode} name="barcode" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='text' />
+                                                                        <label className="label-name">Minimum Purchase Quantity</label>
+                                                                        <input value={variant.min_purchase_qty} name="min_purchase_qty" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
+                                                                        <label className="label-name">Quantity</label>
+                                                                        <input value={variant.quantity} name="quantity" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
+
+                                                                        <input value={variant.track_inventory} name="track_inventory" onChange={(e) => { variantChange(e) }} className="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
+                                                                        <div>
+                                                                        <button type="button" onClick={(e) => { handleVariantSubmit(e) }} data-bs-dismiss="modal" aria-label="Close" className="create-btn">Submit</button>
+                                                                        <button type="button" className="remove-btn" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Cancel</button>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <br></br>
-                                                <div>
-                                                    <table className="sel-var-box">
 
+                                                <div>
+                                                    <table className="input-box-440">
                                                         <tbody>
                                                             {variants.map((data, index) => (
                                                                 <tr>
@@ -484,15 +475,13 @@ function AiProductDetails() {
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                                {/*  */}
-                                                <label>Return Policy</label>
-                                                <br />
-                                                <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
-                                                <button type='submit' className="create-acc-btn">Add Product</button>
+                                                <label className="label-name">Return Policy</label>
+                                                <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} className="input-focus d-block textarea-2"></textarea>
+                                                <button type='submit' className="create-btn">Add Product</button>
                                             </div>
                                         </div>
                                         <div className="Add-Product-Images">
-                                            <p className="ai-pro-title">Product Images</p>
+                                            <p className="label-name">Product Images</p>
                                             {selectedFile == undefined || selectedFile == 0 ? (
                                                 <div className="ai-image-drag">
                                                     <i className="ai-img-icon ri-image-fill"></i>
@@ -516,13 +505,13 @@ function AiProductDetails() {
 
                                                                 </div>
                                                             </div>
-                                                            <br></br>
+
                                                         </>
                                                     ))}
                                                 </div>
                                             )}
                                             <label htmlFor="select-basic" className="mb-75 me-75" style={{ fontSize: "small", color: "blue" }}>
-                                                <button type="button" className="img-upload-btn" onClick={() => document.getElementById('select-basic').click()}>
+                                                <button type="button" className="btn btn-secondary" onClick={() => document.getElementById('select-basic').click()}>
                                                     Upload Images
                                                 </button>
                                                 <input
@@ -537,34 +526,32 @@ function AiProductDetails() {
                                                 />
                                             </label>
 
-                                            <p className="pro-sub-title">Product Handle and Metafields </p>
-                                            <label>Product handle</label>
-                                            <input value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
-                                            <p className="pro-sub-title">Product Meta Fields</p>
-                                            <p className="ai-title-desc">Title tag meta field</p>
-                                            <input value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
-                                            <p className="ai-title-desc">Description tag meta field</p>
-                                            <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} id="ai-pro-handle" type='text' />
-                                            <p className="pro-sub-title">Product Tag</p>
+                                            <p className="sub-title mt-4">Product Handle and Metafields </p>
+                                            <label className="label-name">Product handle</label>
+                                            <input value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} className="input-focus input-box-300" type='text' />
+                                            <p className="sub-title">Product Meta Fields</p>
+                                            <label className="label-name">Title tag meta field</label>
+                                            <input value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} className="input-focus input-box-300" type='text' />
+                                            <label className="label-name">Description tag meta field</label>
+                                            <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} className="input-focus input-box-300" type='text' />
+                                            <p className="sub-title">Product Tag</p>
                                             {productTags.map((x, i) => {
                                                 return <>
-                                                    <label className="label">{x?.name}</label>
+                                                    <label className="label-name">{x?.name}</label>
                                                     {x.id == 1 || x.id == 2 ?
                                                         (
-                                                            <div className="multi-sel">
+                                                            <div className="input-focus input-box-300">
                                                                 <Multiselect options={x?.list} onRemove={(list, item) => onRemove(list, item, i)} onSelect={(list, item) => onSelect(list, item, i)} displayValue="value" />
                                                             </div>
                                                         ) :
                                                         (
-                                                            <input className="ai-input" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />
+                                                            <input className="input-focus input-box-300" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />
                                                         )
 
                                                     }
-
-
                                                 </>
                                             })}
-                                            {/* <button className="addtag-row-btn">Add Row</button> */}
+                                           
                                         </div>
                                     </div >
                                 </form>

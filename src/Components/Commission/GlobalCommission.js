@@ -77,33 +77,33 @@ function GlobalCommission() {
                         </div>
                         <div className="col-12 page-bg">
                             <form onSubmit={(e) => { formsubmit(e) }}>
-                                <p className=" ms-3 ai-sub-title">Commission / Global Commission</p>
-                                <h4 className=" ms-3">Global Commission</h4>
-                                <p className="ms-3 ai-tit-desc">Here are setting for Global Commission</p>
+                                <p className="capital-title">Commission / Global Commission</p>
+                                <h4 className="ms-3 t-1">Global Commission</h4>
+                                <p className="med-sub-title">Here are setting for Global Commission</p>
                                 <div className="imp-note">
                                     <p className="not-tit">Note:</p>
                                     <ul type="none">
-                                        <li id="note-list">% - In this type of commission,the
+                                        <li className="note-list">% - In this type of commission,the
                                             percentage amount will be deducted from the base price of the product.</li>
-                                        <li id="note-list">
+                                        <li className="note-list">
                                             Fixed -In this type of commission ,
                                             the fixed amount will be deducted from the base price.
                                         </li>
-                                        <li id="note-list">% + Fixed - In this type of commission ,
+                                        <li className="note-list">% + Fixed - In this type of commission ,
                                             first the percentage amount will be deducted from the base price of the product
                                             and then a fixed amount will be deducted from the remaining amount.
                                         </li>
-                                        <li id="note-list">
+                                        <li className="note-list">
                                             Fixed + % - In this type of commission , first a fixed amount will be deducted from the base price
                                             and then the percentage amount will be deducted from the remaining price.
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="global-com-setting-div">
-                                    <p className="global-com-setting-heading">Global Commission</p>
-                                    <p className="global-desc">Here are the setting for global commission</p>
-                                    <p className="gct">Global Commission Type</p>
-                                    <select value={form.commission_type} required name="commission_type" onChange={(e) => { handlechange(e) }} className="cgct">
+                                <div className="global-com-setting-div mt-4">
+                                    <p className="head-title ms-3 pt-2">Global Commission</p>
+                                    <p className="med-sub-title">Here are the setting for global commission</p>
+                                    <p className="sub-topic-title">Global Commission Type</p>
+                                    <select value={form.commission_type} required name="commission_type" onChange={(e) => { handlechange(e) }} className="input-focus Dropdown-box-600">
                                         <option value="">Choose global commission type</option>
                                         <option value="%">%</option>
                                         <option value="Fixed">Fixed</option>
@@ -115,36 +115,21 @@ function GlobalCommission() {
 
                                     {form.commission_type == "%" || form.commission_type == "Fixed" ? (
                                         <>
-                                            <label className="label">Global Commission</label>
-                                            <input  type="number" required value={form.first_commission} id="fgc" name="first_commission" onChange={(e) => { handlechange(e) }} /><button className="per-btn-dis fix-btn-dis" disabled>{form.commission_type}</button>
+                                            <label className="label-name">Global Commission</label>
+                                            <input  type="number" required value={form.first_commission} className="input-box-600 input-focus" name="first_commission" onChange={(e) => { handlechange(e) }} /><button className="per-btn-dis " disabled>{form.commission_type}</button>
                                             
                                         </>
                                     ) : ""}
 
                                     {form.commission_type == "% + Fixed" || form.commission_type == "Fixed + %" ? (
                                         <>
-                                            <label className="label">Global Commission</label>
-                                            <input  type="number" required value={form.first_commission} name="first_commission" onChange={(e) => { handlechange(e) }} id="fgc" /><button className="per-btn-dis" disabled>%</button>
-                                            <hr></hr>
-                                            <label className="label">Second Global Commission</label>
-                                            <input  type="number" id="fgc" required value={form.second_commission} name="second_commission" onChange={(e) => { handlechange(e) }} /><button className="fix-btn-dis" disabled>FIXED</button>
+                                            <label className="label-name">Global Commission</label>
+                                            <input  type="number" required value={form.first_commission} name="first_commission" onChange={(e) => { handlechange(e) }} className="input-box-600 input-focus" /><button className="per-btn-dis" disabled>%</button>
+                                            <label className="label-name">Second Global Commission</label>
+                                            <input  type="number" className="input-box-600 input-focus" required value={form.second_commission} name="second_commission" onChange={(e) => { handlechange(e) }} /><button className="per-btn-dis" disabled>FIXED</button>
                                             
                                         </>
                                     ) : ""}
-
-
-
-
-                                    {/* <label className="label">Global Commission</label>
-                                    <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
-                                    <label className="label">Second Global Commission</label>
-                                    <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
-                                    <hr></hr>
-                                    <label className="label">Global Commission</label>
-                                    <input id="fgc" /><button className="fix-btn-dis" disabled>FIXED</button>
-                                    <label className="label">Second Global Commission</label>
-                                    <input id="fgc" /><button className="per-btn-dis" disabled>%</button>
-                                    <hr></hr> */}
                                     <p className="upd-titl">UPDATE EARLIER PRODUCT PRICE</p>
                                     <div className="form-check form-switch">
                                         <input
@@ -155,11 +140,10 @@ function GlobalCommission() {
                                             type="checkbox"
                                             role="switch"
                                             id="flexSwitchCheckDefault"
-                                        />
-                                        <br></br>                                       
-                                        <p className="switch-des">If you enable this option , all the prices of exisiting products will change according to the given commission value</p>
-                                        <button type="submit" className="create-acc-btn-1">Save Changes</button>
+                                        />                  
                                     </div>
+                                        <p className="para-text margin-20">If you enable this option , all the prices of exisiting products will change according to the given commission value</p>
+                                        <button type="submit" className="create-btn">Save Changes</button>
                                 </div>
                             </form>
                         </div>

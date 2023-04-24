@@ -51,14 +51,14 @@ function AllJob() {
                 <div className="page-bg">
                     <div className="product-adding-div">
                         <div>
-                            <p className="ai-tit">job / Job list</p>
-                            <h4 className="ai-seller-title" >All Jobs <span id="badge-1" className="badge bg-secondary">#100</span></h4>
-                            <p className="ai-title-note">Here are the current seller on your store</p>
+                            <p className="capital-title">job / Job list</p>
+                            <h4 className="ms-3 mt-1">All Jobs <span className="badge-1 badge bg-secondary">#100</span></h4>
+                            <p className="med-sub-title">Here are the current seller on your store</p>
                         </div>
 
                         <div className="row">
-                            <div className="dropdown col-6">
-                                <button id="more_action" className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div className="dropdown col-3">
+                                <button className="more_action btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     More Action
                                 </button>
                                 <ul className="dropdown-menu">
@@ -67,7 +67,7 @@ function AllJob() {
                                 </ul>
                             </div>
                             <div className="col-6">
-                                <Link to="addjob" role="button"><button className="add-seller">Post Job</button></Link>
+                                <Link to="addjob" role="button"><button className="toggle-btn create-btn">Post Job</button></Link>
                             </div>
                         </div>
                     </div>
@@ -106,50 +106,50 @@ function AllJob() {
                         </div>
                         <table className="allproducts-table">
                             <tbody>
-                                <tr className="product-heading ">
-                                    <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                    <td id="td">Job ID <i className="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
+                            <tr className="product-heading ">
+                                    <td className="table_data rounded-start"><input type='checkbox' /></td>
+                                    <td className="table_data">Job ID<i className="ri-arrow-down-s-fill"></i>
+                                     
+                                        <input className="width-100 border-0 filter-search" type="search" />
                                     </td>
-                                    <td id="td">Category <i className="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
+                                    <td className="table_data">Category<i className="ri-arrow-down-s-fill"></i>
+                                     
+                                        <input className="width-100 border-0 filter-search" type="search" />
                                     </td>
-                                    <td id="td">Title <i className="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
+                                    <td className="table_data">Title<i className="ri-arrow-down-s-fill"></i>
+                                       
+                                        <input className="width-100 border-0 filter-search" type="search" />
                                     </td>
-                                    <td id="td">Budget <i className="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
+                                    <td className="table_data">Budget<i className="ri-arrow-down-s-fill"></i>
+                                       
+                                        <input className="width-100 border-0 filter-search" type="search" />
                                     </td>
-                                    <td id="td">Job Status <i className="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
+                                    <td className="table_data">Job<i className="ri-arrow-down-s-fill"></i>
+                                        
+                                        <input className="width-100 border-0 filter-search" type="search" />
                                     </td>
-                                    <td id="td">Exp Date <i className="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
+                                    <td className="table_data">Status<i className="ri-arrow-down-s-fill"></i>
+                                        
+                                        <input className="width-100 border-0 filter-search" type="search" />
                                     </td>
-                                    <td id="td">Status <i className="ri-arrow-down-s-fill"></i>
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
+                                    <td className="table_data">Exp<i className="ri-arrow-down-s-fill"></i>
+                                       
+                                        <input className="width-100 border-0 filter-search" type="search" />
                                     </td>
-                                    <td id="td" className="rounded-end">Action</td>
+                                    <td className="table_data rounded-end">Action</td>
                                 </tr>
                                 {lists.map((data, key) => (
                                     <tr key={key}>
-                                        <td id="td"><input type='checkbox' /></td>
-                                        <td id="td">{data._id}</td>
-                                        <td id="td">{data.category}</td>
-                                        <td id="td">{data.project_title}</td>
-                                        <td id="td">{data.budget}</td>
-                                        <td id="td"><span className="pro-status-processing">Processing</span></td>
-                                        {/* <td id="td">10 April 2023</td> */}
-                                        <td id="td">{data?.expire_date}</td>
-                                        <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                        <td id="td">
+                                        <td className="table_data"><input type='checkbox' /></td>
+                                        <td className="table_data">{data._id}</td>
+                                        <td className="table_data">{data.category}</td>
+                                        <td className="table_data">{data.project_title}</td>
+                                        <td className="table_data">{data.budget}</td>
+                                        <td className="table_data"><span className="pro-status-processing">Processing</span></td>
+                                        {/* <td className="table_data">10 April 2023</td> */}
+                                        <td className="table_data">{data?.expire_date}</td>
+                                        <td className="table_data"><span className="pro-status-approved">Approved</span></td>
+                                        <td className="table_data">
                                             <div className="dropdown">
                                                 <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i className="fa-solid fa-ellipsis"></i>

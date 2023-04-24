@@ -54,12 +54,13 @@ function AiProducts() {
                         <div className="page-bg">
                             <div className="product-adding-div">
                                 <div>
-                                    <p className="ai-tit">product/product list</p>
-                                    <h4 className="ai-seller-title">All Products <span id="badge-1" className="badge bg-secondary">#100</span></h4>
+                                    <p className="capital-title">product/product list</p>
+                                    <h4 className="ms-3 mt-1">All Products <span className="badge-1 badge bg-secondary">#100</span></h4>
+                                    <p className="med-sub-title">Here You Can add products to your profile</p>
                                 </div>
                                 <div className="row">
-                                    <div className="dropdown col-6">
-                                        <button id="more_action" className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div className="dropdown col-3">
+                                        <button className="more_action btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             More Action
                                         </button>
                                         <ul className="dropdown-menu">
@@ -68,7 +69,7 @@ function AiProducts() {
                                         </ul>
                                     </div>
                                     <div className="col-6">
-                                        <Link to="addproduct" role="button"><button className="add-seller">Add Products</button></Link>
+                                        <Link to="addproduct" role="button"><button className="toggle-btn create-btn">Add Products</button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -109,54 +110,54 @@ function AiProducts() {
                                 <table className="allproducts-table">
                                     <tbody>
                                         <tr className="product-heading ">
-                                            <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                            <td id="td">Product ID
+                                            <td className="table_data rounded-start"><input type='checkbox' /></td>
+                                            <td className="table_data">Product ID
                                                 <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                                
+                                                <input className="width-100 border-0 filter-search" type="search" />
                                             </td>
-                                            <td id="td">Image <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data">Image <i className="ri-arrow-down-s-fill"></i>
+                                                
+                                                <input className="width-100 border-0 filter-search" type="search" />
                                             </td>
-                                            <td id="td">Name <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data">Name <i className="ri-arrow-down-s-fill"></i>
+                                                
+                                                <input className="width-100 border-0 filter-search" type="search" />
                                             </td>
-                                            <td id="td">Seller <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data">Seller <i className="ri-arrow-down-s-fill"></i>
+                                                
+                                                <input className="width-100 border-0 filter-search" type="search" />
                                             </td>
-                                            <td id="td">Price <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data">Price <i className="ri-arrow-down-s-fill"></i>
+                                                
+                                                <input className="width-100 border-0 filter-search" type="search" />
                                             </td>
-                                            <td id="td">Quantity <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data">Quantity <i className="ri-arrow-down-s-fill"></i>
+                                                
+                                                <input className="width-100 border-0 filter-search" type="search" />
                                             </td>
-                                            <td id="td">Status <i className="ri-arrow-down-s-fill"></i>
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
+                                            <td className="table_data">Status <i className="ri-arrow-down-s-fill"></i>
+                                                
+                                                <input className="width-100 border-0 filter-search" type="search" />
                                             </td>
-                                            <td id="td" className="rounded-end">Action</td>
+                                            <td className="table_data rounded-end">Action</td>
                                         </tr>
                                         {lists.map((data, key) => (
                                             <tr>
-                                                <td id="td"><input type='checkbox' /></td>
-                                                <td id="td">{data._id}</td>
-                                                <td id="td">
+                                                <td className="table_data"><input type='checkbox' /></td>
+                                                <td className="table_data">{data._id}</td>
+                                                <td className="table_data">
                                                     {data.attachments.length > 0 ?
                                                         (<img src={data.attachments[0]?.url} alt="pro-thumb" className="img" />) : (<img src={pom} alt="pro-thumb" className="img" />)
                                                     }
 
                                                 </td>
-                                                <td id="td">{data.name}</td>
-                                                <td id="td">{data.seller_email}</td>
-                                                <td id="td">£ 100</td>
-                                                <td id="td">10 Pcs.</td>
-                                                <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                                <td id="td">
+                                                <td className="table_data">{data.name}</td>
+                                                <td className="table_data">{data.seller_email}</td>
+                                                <td className="table_data">£ 100</td>
+                                                <td className="table_data">10 Pcs.</td>
+                                                <td className="table_data"><span className="pro-status-approved">Approved</span></td>
+                                                <td className="table_data">
                                                     <div className="dropdown">
                                                         <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i className="fa-solid fa-ellipsis"></i>

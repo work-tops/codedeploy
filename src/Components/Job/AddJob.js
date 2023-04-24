@@ -35,7 +35,7 @@ function AddJob() {
     const handleFileInput = (e) => {
         const files = e.target.files;
         const fileArray = [];
-        
+
         for (let i = 0; i < files.length; i++) {
             fileArray.push({
                 name: files[i].name,
@@ -156,7 +156,7 @@ function AddJob() {
     const removeImage = async (index) => {
         var selected = [...selectedFile];
         var uploads = [...uploadFiles];
-        selected.splice(index,1);
+        selected.splice(index, 1);
         uploads.splice(index, 1);
         setSelectedFile(selected);
         setUploadFile(uploads);
@@ -178,13 +178,13 @@ function AddJob() {
                         <AiHeader />
                         <div className="content-div">
                             <div>
-                                <p className="ai-title">post a job / add job</p>
-                                <p className="ai-add-title">Add Job</p>
-                                <p className="ai-title-desc">Here you can add jobs listed in your store</p>
-                                <br></br>
+                                <p className="capital-title">post a job / add job</p>
+                                <h4 className="ms-3 mt-1">Add Job</h4>
+                                <p className="med-sub-title">Here you can add jobs listed in your store</p>
+
                                 <form onSubmit={(e) => { formsubmit(e) }} className="add-seller-form">
-                                    <label className="label">Customer Email</label>
-                                    <input type="text" autoComplete="off" id="aipro-barcode" value={value} onChange={onChange} />
+                                    <label className="label-name">Customer Email</label>
+                                    <input type="text" autoComplete="off" className="input-focus d-block input-box-440" value={value} onChange={onChange} />
                                     <div className="autocom-dropdown">
                                         {selemail.filter(item => {
                                             const searchTerm = value.toLowerCase();
@@ -198,37 +198,29 @@ function AddJob() {
                                                     <p className="cust-email">{item.email}</p>
                                                 </div>)}
                                     </div>
-                                    <br></br>
-                                    <span className="category">Category</span> <span className="seller-email">Sub Category</span>
-                                    <br></br>
-                                    <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} className="select-category">
-                                        <option value="">Select</option>
-                                        {cate.map((data) => (
-                                            <option value={data.category}>{data.category}</option>
-                                        ))}
-                                        {/* <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option> */}
-                                    </select>
-                                    <select value={form.sub_category} required name="sub_category" onChange={(e) => { handleChange(e) }} className="select-category">
-                                        <option value="">Select</option>
-                                        {subcate.map((data) => (
-                                            <option value={data.value}>{data.value}</option>
-                                        ))}
-
-                                    </select>
-                                    <br></br>
-                                    <label>Project Title</label>
-                                    <input value={form.project_title} required name="project_title" onChange={(e) => { handleChange(e) }} id="aipro-barcode" type='text' />
-                                    <label>Description</label>
-                                    <textarea value={form.project_description} required name="project_description" onChange={(e) => { handleChange(e) }} id="aipro-description"></textarea>
-                                    <label>Upload Samples</label><br />
+                                    <div className="d-inline-block">
+                                        <label className="label-name">Category</label>
+                                        <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} className="input-focus Dropdown-box-200">
+                                            <option value="">Select</option>
+                                            {cate.map((data) => (
+                                                <option value={data.category}>{data.category}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div className="d-inline-block">
+                                        <label className="label-name">Sub Category</label>
+                                        <select value={form.sub_category} required name="sub_category" onChange={(e) => { handleChange(e) }} className="input-focus Dropdown-box-200">
+                                            <option value="">Select</option>
+                                            {subcate.map((data) => (
+                                                <option value={data.value}>{data.value}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <label className="label-name">Project Title</label>
+                                    <input value={form.project_title} required name="project_title" onChange={(e) => { handleChange(e) }} className="input-box-440" type='text' />
+                                    <label className="label-name">Description</label>
+                                    <textarea value={form.project_description} required name="project_description" onChange={(e) => { handleChange(e) }} className="textarea-2"></textarea>
+                                    <label className="label-name">Upload Samples</label>
 
                                     <label htmlFor="select-basic" className='mb-75 me-75' size='sm' color='primary'>
                                         <div className="add_job-attachments">
@@ -237,20 +229,18 @@ function AddJob() {
                                             <input name="attachments" multiple onChange={handleFileInput} required type="file" id="select-basic" accept='image/*' style={{ display: 'none' }} />
                                         </div>
                                     </label>
-                                    <br />
-                                    <br></br>
-                                    <label className="label">Files:</label>
-                                    <br></br>
+
+
+                                    <label className="label-name">Files:</label>
+
                                     <table className="added-fil-table">
                                         <tr className="doc-ad-bg">
-                                            {selectedFile.map((file,index) => (
-                                                // <div className="col">
-                                                //     <img height={100} src={file} alt="dashboard" className="" />
-                                                // </div>
+                                            {selectedFile.map((file, index) => (
+
                                                 <td>
                                                     <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
                                                     <span className="kitchen-plan-div">{file.name}</span>
-                                                    <i className="ri-close-line upload-img-close3"  onClick={(e) => { removeImage(index) }}></i>
+                                                    <i className="ri-close-line upload-img-close3" onClick={(e) => { removeImage(index) }}></i>
                                                 </td>
                                             ))}
                                             <td className="d-none">
@@ -321,47 +311,56 @@ function AddJob() {
                                             </div>
                                         </div>
                                     </div>
-                                    <br></br>
-                                    <span className="category">Budget Type</span> <span className="job-currency">Currency</span>
-                                    <br></br>
-                                    <select value={form.budget_type} required name="budget_type" onChange={(e) => { handleChange(e) }} className="select-category">
-                                        <option value="">Select</option>
-                                        <option value="Fixed Price">Fixed Price   :</option>
-                                        <option value="No Idea">No Idea</option>
-                                        <option value="No Range">No Range</option>
-                                    </select>
-                                    <select value={form.currency} required name="currency" onChange={(e) => { handleChange(e) }} className="select-category">
-                                        <option value="">Select</option>
-                                        <option value="£ GBP">£ GBP :</option>
-                                        <option value="£ EUR">£ EUR</option>
-                                    </select>
-                                    <br></br>
-                                    <label className="label">Budget</label>
-                                    <input value={form.budget} required name="budget" onChange={(e) => { handleChange(e) }} id="postcode" placeholder="£ 0" type="number" />
-                                    <br></br>
-                                    <label>Project Locations</label>
-                                    <br></br>
-                                    <input value={form.location} required name="location" onChange={(e) => { handleChange(e) }} id="aipro-barcode" placeholder="Geo Locations" type='text' />
-                                    <br></br>
-                                    <span className="category">Post Code</span> <span className="start-date-job">Starting Date <span className="optional">(optional)</span></span>
-                                    <br></br>
-                                    <input value={form.postcode} required name="postcode" onChange={(e) => { handleChange(e) }} id="postcode" type='text' />
-                                    <input value={form.startdate} required name="startdate" onChange={(e) => { handleChange(e) }} id="postcode" type='date' />
-                                    <br></br>
-                                    <label>Project Visibility</label>
+                                    <div className="d-inline-block">
+                                        <label className="label-name">Budget Type</label>
+                                        <select value={form.budget_type} required name="budget_type" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200">
+                                            <option value="">Select</option>
+                                            <option value="Fixed Price">Fixed Price   :</option>
+                                            <option value="No Idea">No Idea</option>
+                                            <option value="No Range">No Range</option>
+                                        </select>
+                                    </div>
+                                    <div className="d-inline-block">
+                                        <label className="label-name">Currency</label>
+                                        <select value={form.currency} required name="currency" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200">
+                                            <option value="">Select</option>
+                                            <option value="£ GBP">£ GBP :</option>
+                                            <option value="£ EUR">£ EUR</option>
+                                        </select>
+                                    </div>
+                                    <label className="label-name">Budget</label>
+                                    <input value={form.budget} required name="budget" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200" placeholder="£ 0" type="number" />
+
+                                    <label className="label-name">Project Locations</label>
+
+                                    <input value={form.location} required name="location" onChange={(e) => { handleChange(e) }} className="input-focus d-block input-box-440" placeholder="Geo Locations" type='text' />
+                                    <div className="d-inline-block">
+                                        <label className="label-name">Post Code</label>
+                                        <input value={form.postcode} required name="postcode" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200" type='text' />
+                                    </div>
+                                    <div className="d-inline-block">
+                                        <label className="label-name">Starting Date <span className="optional">(optional)</span></label>
+                                        <input value={form.startdate} required name="startdate" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200" type='date' />
+                                    </div>
+                                    <label className="label-name">Project Visibility</label>
                                     <div className="prj-radio-div">
-                                        <input id="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
+                                        <input className="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
                                     </div>
                                     <div className="prj-radio-div">
-                                        <input id="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon icon="ph:lock-simple-fill" width="24" height="24" /> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
+                                        <input className="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon icon="ph:lock-simple-fill" width="24" height="24" /> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
                                     </div>
-                                    <span className="category">Project Duration Time</span> <span className="job-expiry-date">Expiry Date</span>
-                                    <br></br>
-                                    <input value={form.project_duration} required name="project_duration" onChange={(e) => { handleChange(e) }} id="postcode" type='text' />
-                                    <input value={form.expire_date} required name="expire_date" onChange={(e) => { handleChange(e) }} id="postcode" type='date' />
-                                    <br></br>
-                                    <button type="submit" className="create-acc-btn">Post a Job</button>
-                                    <Link to="alljob" role="button"><button className="cancel-btn">Cancel</button></Link>
+                                    <div className="d-inline-block">
+                                        <label className="label-name">Project Duration Time</label>
+                                        <input value={form.project_duration} required name="project_duration" onChange={(e) => { handleChange(e) }} className="input-box-200 input-focus" type='text' />
+                                    </div>
+                                    <div className="d-inline-block">
+                                        <label className="label-name">Expiry Date</label>
+                                        <input value={form.expire_date} required name="expire_date" onChange={(e) => { handleChange(e) }} className="input-box-200 input-focus" type='date' />
+                                    </div>
+                                    <div>
+                                    <button type="submit" className="create-btn">Post a Job</button>
+                                    <Link to="alljob" role="button"><button className="remove-btn">Cancel</button></Link>
+                                    </div>
                                 </form >
                             </div >
                         </div >

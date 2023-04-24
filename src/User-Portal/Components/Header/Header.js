@@ -1,55 +1,47 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import profile from '../Images/employee.png'
-import Ailogo from '../Images/proposal-ai-logo.png'
-function Header() {
+
+import classNames from 'classnames';
+import React from 'react';
+import { Container, Col, Row, Dropdown, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import logo from '../Img/MP-logo.png'
+const Header = () => {
+
+
     return (
-        <div className="header">
-            <div>
-                <img src={Ailogo} alt="DECBASE-logo"  width="190px" height="75px"/>
-            </div>
-            <div className="others">
-                <div>
-                <button className="post_a_project">POST A SERVICE</button>
-                </div>
-                <div className="dropdown">
-                    <a className="btn ddt dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        SEARCH
-                    </a>
-                    <ul className="dropdown-menu">
-                        <li>
-                            <a className="dropdown-item" id="dropdown-item" href="#">
-                                <Link className="route-link" to='/postproject'><span className="search_span">Post </span>Project</Link>
-                                <br></br>
-                                <small id="small-dd">action...</small>
+        <>
+            <Row className='navbar-standard'>
+                <Col lg={2} className='m-2'>
+                    <img src={logo} width="135px" />
+                </Col>
+                <Col lg={3} className='m-2'>
+                    <Button className='btn m-2 text-light border border-0 navbar-standard'>Post A Service</Button>
+                    <Dropdown className='d-inline m-2' >
+                        <Dropdown.Toggle variant="light w-50" id="dropdown-basic">
+                            Search
+                        </Dropdown.Toggle>
 
-                            </a>
-
-                        </li>
-                        <li>
-                            <a className="dropdown-item" id="dropdown-item" href="#">
-                                <Link className="route-link" to='/projectlisting'><span className="search_span">Project </span>Listing</Link>
-                                <br></br>
-                                <small id="small-dd">action...</small></a>
-                        </li>
-                        <li>
-                            <a className="dropdown-item" id="dropdown-item" href="#">
-                                <Link className="route-link" to='/projectdetails'><span className="search_span">Job </span>Details</Link>
-                                <br></br>
-                                <small id="small-dd">action...</small>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                < i className="ri-heart-3-line"></i>
-                <i className="ri-mail-line"></i>
-                <i className="ri-notification-2-line"></i>
-                <div className="profile-div">
-                <img src={profile} alt="profile" className="post-profile" />
-                </div>
-            </div>
-
-        </div>
-    )
-}
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </Col>
+                <Col lg={5} className='m-2'>
+                    <Button className='text-uppercase m-2 text-light  navbar-standard border border-0'>How it works</Button>
+                    {' '}
+                    <Link to='/loginportal'>
+                    <Button className='text-uppercase m-2 text-light  navbar-standard border border-0'>Log in</Button>
+                    </Link>
+                    {' '}
+                    <Link to='/registerportal'>
+                        <Button className='text-uppercase m-2 text-light  navbar-standard border border-0'>Register</Button>
+                    </Link>
+                    {' '}
+                    <Button className='text-uppercase m-2 text-light  navbar-standard border border-0'>Freelancer</Button>
+                </Col>
+            </Row>
+        </>
+    );
+};
 export default Header
