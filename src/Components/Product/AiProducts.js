@@ -110,7 +110,6 @@ function AiProducts() {
                                 <table className="allproducts-table">
                                     <tbody>
                                         <tr className="product-heading ">
-<<<<<<< HEAD
                                             <td className="table_data rounded-start"><input type='checkbox' /></td>
                                             <td className="table_data">Product ID
                                                 <i className="ri-arrow-down-s-fill"></i>
@@ -140,53 +139,6 @@ function AiProducts() {
                                             <td className="table_data">Status <i className="ri-arrow-down-s-fill"></i>
                                                 
                                                 <input className="width-100 border-0 filter-search" type="search" />
-=======
-                                            <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                            <td id="td">Product ID
-                                                {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Image 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Name 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Seller 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Price 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Quantity 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Status 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Created date 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Modified date 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                             </td>
                                             <td className="table_data rounded-end">Action</td>
                                         </tr>
@@ -200,23 +152,12 @@ function AiProducts() {
                                                     }
 
                                                 </td>
-<<<<<<< HEAD
                                                 <td className="table_data">{data.name}</td>
                                                 <td className="table_data">{data.seller_email}</td>
                                                 <td className="table_data">£ 100</td>
                                                 <td className="table_data">10 Pcs.</td>
                                                 <td className="table_data"><span className="pro-status-approved">Approved</span></td>
                                                 <td className="table_data">
-=======
-                                                <td id="td">{data.name}</td>
-                                                <td id="td">{data.seller_email}</td>
-                                                <td id="td">£ 100</td>
-                                                <td id="td">10 Pcs.</td>
-                                                <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                                <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
-                                        <td id="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
-                                                <td id="td">
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                     <div className="dropdown">
                                                         <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i className="fa-solid fa-ellipsis"></i>

@@ -98,125 +98,52 @@ function AllOrders() {
                         </div>
 
                         <table className="allproducts-table">
-<<<<<<< HEAD
-                          <tbody>
-                          <tr className="product-heading ">
-                                    <td className="table_data rounded-start"><input type='checkbox' /></td>
-                                    <td className="table_data">Order ID<i className="ri-arrow-down-s-fill"></i>
-                                     
-                                        <input className="width-100 border-0 filter-search" type="search" />
-                                    </td>
-                                    <td className="table_data">Store Order ID<i className="ri-arrow-down-s-fill"></i>
-                                     
-                                        <input className="width-100 border-0 filter-search" type="search" />
-                                    </td>
-                                    <td className="table_data">Seller ID<i className="ri-arrow-down-s-fill"></i>
-                                       
-                                        <input className="width-100 border-0 filter-search" type="search" />
-                                    </td>
-                                    <td className="table_data"> Payment Mode<i className="ri-arrow-down-s-fill"></i>
-                                       
-                                        <input className="width-100 border-0 filter-search" type="search" />
-                                    </td>
-                                    <td className="table_data">Payment Status<i className="ri-arrow-down-s-fill"></i>
-                                        
-                                        <input className="width-100 border-0 filter-search" type="search" />
-                                    </td>
-                                    <td className="table_data">Tracking ID<i className="ri-arrow-down-s-fill"></i>
-                                        
-                                        <input className="width-100 border-0 filter-search" type="search" />
-                                    </td>
-                                    <td className="table_data">Order Status<i className="ri-arrow-down-s-fill"></i>
-                                       
-                                        <input className="width-100 border-0 filter-search" type="search" />
-                                    </td>
-                                    <td className="table_data rounded-end">Action</td>
-                                </tr>
-                            {lists.map((data, key) => (
-                                <tr key={key}>
-                                    <td classname="table_data"><input type='checkbox' /></td>
-                                    <td classname="table_data">{data.order_id}</td>
-                                    <td classname="table_data">{data.store_order_id}</td>
-                                    <td classname="table_data">{data.seller}</td>
-                                    <td classname="table_data">{data.payment_mode}</td>
-                                    <td classname="table_data"><span className="pro-status-processing">{data.payment_stats}</span></td>
-                                    <td classname="table_data">{data.tracking_id}</td>
-                                    <td classname="table_data"><span className="pro-status-open">{data.order_status}</span></td>
-                                    <td classname="table_data">
-                                        <div className="dropdown">
-                                            <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i className="fa-solid fa-ellipsis"></i>
-                                            </a>
-                                            <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#"><i className="fa-solid fa-eye"></i> View</a></li>
-                                                <li><a className="dropdown-item" href="#"><i className="fa-solid fa-bell"></i> Send Remainder</a></li>
-                                            </ul>
-                                        </div>
-=======
                             <tbody>
                                 <tr className="product-heading ">
-                                    <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                    <td id="td">Order ID
-                                        {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
-                                    </td>
-                                    <td id="td">Store Order ID
-                                        {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Seller Name
-                                        {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Payment Mode
-                                        {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Payment Status
-                                        {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Tracking ID
-                                        {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Order Status
-                                        {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Created date
-                                        {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Modified date
-                                        {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td" className="rounded-end">Action</td>
-                                </tr>
+                                            <td className="table_data rounded-start"><input type='checkbox' /></td>
+                                            <td className="table_data">Order ID <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0 filter-search" type="search" />
+                                            </td>
+                                            <td className="table_data">Store Order ID <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
+                                            </td>
+                                            <td className="table_data">Seller Name <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
+                                            </td>
+                                            <td className="table_data">Payment Mode<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
+                                            </td>
+
+                                            <td className="table_data">Payment Status<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search " type="search" />
+                                            </td>
+                                            <td className="table_data">Tracking ID<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search " type="search" />
+                                            </td>
+                                            <td className="table_data">Order Status<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search " type="search" />
+                                            </td>
+                                            <td className="table_data">Created date<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search " type="search" />
+                                            </td>
+                                            <td className="table_data">Modified date<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search " type="search" />
+                                            </td>
+                                            <td className="table_data rounded-end">Action</td>
+                                        </tr>
                                 {lists.map((data, key) => (
                                     <tr key={key}>
-                                        <td id="td"><input type='checkbox' /></td>
-                                        <td id="td">{data.order_id}</td>
-                                        <td id="td">{data.store_order_id}</td>
-                                        <td id="td">{data.seller}</td>
-                                        <td id="td">{data.payment_mode}</td>
-                                        <td id="td"><span className="pro-status-processing">{data.payment_stats}</span></td>
-                                        <td id="td">{data.tracking_id}</td>
-                                        <td id="td"><span className="pro-status-open">{data.order_status}</span></td>
-                                        <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
-                                        <td id="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
-                                        <td id="td">
+                                        <td classname="td"><input type='checkbox' /></td>
+                                        <td classname="td">{data.order_id}</td>
+                                        <td classname="td">{data.store_order_id}</td>
+                                        <td classname="td">{data.seller}</td>
+                                        <td classname="td">{data.payment_mode}</td>
+                                        <td classname="td"><span className="pro-status-processing">{data.payment_stats}</span></td>
+                                        <td classname="td">{data.tracking_id}</td>
+                                        <td classname="td"><span className="pro-status-open">{data.order_status}</span></td>
+                                        <td classname="td"><span >{(data.created_date).slice(0, 10)}</span></td>
+                                        <td classname="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
+                                        <td classname="td">
                                             <div className="dropdown">
                                                 <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i className="fa-solid fa-ellipsis"></i>

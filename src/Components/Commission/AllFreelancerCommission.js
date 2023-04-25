@@ -50,8 +50,8 @@ function AllCommission() {
                 <div className="page-bg">
                     <div className="product-adding-div">
                         <div>
-                            <br></br>
-                            <h4 className="ai-seller-title" >Freelancer Commission Settings <span id="badge-1" class="badge bg-secondary">#100</span></h4>
+                            
+                            <h4 className="ai-seller-title" >Freelancer Commission Settings <span className="badge-1 badge bg-secondary">#100</span></h4>
                             <p className="ai-title-note">Here are the Freelancer Commission Setting on your store</p>
                         </div>
                         <div className="row">
@@ -84,75 +84,59 @@ function AllCommission() {
                     <div className="all-jobs-div">
                         <table className="allproducts-table">
                             <tr className="product-heading ">
-                                <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                <td id="td">Freelancer ID
-                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
-                                </td>
-                                <td id="td">Freelancer Profile
-                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
-                                </td>
-                                <td id="td">Company Name
-                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
-                                </td>
-                                <td id="td">Email ID
-                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
-                                </td>
-                                <td id="td">Commission Type
-                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
-                                </td>
-                                <td id="td">First Commission
-                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
-                                </td>
-                                <td id="td">Second Commission
-                                    {/* <i class="ri-arrow-down-s-fill"></i> */}
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
-                                </td>
-                                <td id="td">Created date
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
-                                </td>
-                                <td id="td">Modified date
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                    <br></br>
-                                    <input id="filter-search" type="search" />
-                                </td>
-                                <td id="td" className="rounded-end">Action</td>
-                            </tr>
+                                            <td className="table_data rounded-start"><input type='checkbox' /></td>
+                                            <td className="table_data">Freelancer ID <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0 filter-search" type="search" />
+                                            </td>
+                                            <td className="table_data">Freelancer Profile<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
+                                            </td>
+                                            <td className="table_data">Company Name<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
+                                            </td>
+                                            <td className="table_data">Email ID <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
+                                            </td>
+
+                                            <td className="table_data">Commission Type <i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search " type="search" />
+                                            </td>
+                                            <td className="table_data">First Commission<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
+                                            </td>
+                                            <td className="table_data">Second Commission<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search" type="search" />
+                                            </td>
+
+                                            <td className="table_data">Created date<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search " type="search" />
+                                            </td>
+                                            <td className="table_data">Modified date<i className="ri-arrow-down-s-fill"></i>
+                                                <input className="width-100 border-0  filter-search " type="search" />
+                                            </td>
+                                            <td className="table_data rounded-end">Action</td>
+                                        </tr>
                             {lists.map((data, key) => (
                                 <tr key={key}>
-                                    <td id="td"><input type='checkbox' /></td>
-                                    <td id="td">2456781</td>
-                                    <td id="td">Manikandan</td>
-                                    <td id="td">Global Stone</td>
-                                    <td id="td">{data.email}</td>
-                                    <td id="td"> {data.commission_type}</td>
-                                    <td id="td">{data.first_commission == "" || data.first_commission == undefined ? (
+                                    <td classname="td"><input type='checkbox' /></td>
+                                    <td classname="td">2456781</td>
+                                    <td classname="td">Manikandan</td>
+                                    <td classname="td">Global Stone</td>
+                                    <td classname="td">{data.email}</td>
+                                    <td classname="td"> {data.commission_type}</td>
+                                    <td classname="td">{data.first_commission == "" || data.first_commission == undefined ? (
                                         <span> -</span>
                                     ) : (
                                         <span> {data.first_commission}</span>
                                     )}</td>
-                                    <td id="td">{data.second_commission == "" || data.second_commission == undefined ? (
+                                    <td classname="td">{data.second_commission == "" || data.second_commission == undefined ? (
                                         <span> -</span>
                                     ) : (
                                         <span> {data.second_commission}</span>
                                     )}</td>
-                                    <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
-                                    <td id="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
-                                    <td id="td">
+                                    <td classname="td"><span >{(data.created_date).slice(0, 10)}</span></td>
+                                    <td classname="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
+                                    <td classname="td">
                                         <div class="dropdown">
                                             <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa-solid fa-ellipsis"></i>

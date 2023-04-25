@@ -111,7 +111,6 @@ function Serviceslist() {
                                 <table className="allproducts-table">
                                     <tbody>
                                         <tr className="product-heading ">
-<<<<<<< HEAD
                                             <td className="table_data rounded-start"><input type='checkbox' /></td>
                                             <td className="table_data">Name <i className="ri-arrow-down-s-fill"></i>
                                                 <input className="width-100 border-0 filter-search" type="search" />
@@ -142,69 +141,6 @@ function Serviceslist() {
                                                 <td className="table_data">£ {data.price}</td>
                                                 <td className="table_data"><span className="pro-status-approved">{data.status}</span></td>
                                                 <td className="table_data">
-=======
-                                            <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                            {/* <td id="td">Service ID
-                                            <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td> */}
-                                            {/* <td id="td">Image <i className="ri-arrow-down-s-fill"></i>
-                                            <br></br>
-                                            <input id="filter-search" type="search" />
-                                        </td> */}
-                                            <td id="td">Name 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Seller 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Price Type 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Price 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-
-                                            <td id="td">Status 
-                                            {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                                <br></br>
-                                                <input id="filter-search" type="search" />
-                                            </td>
-                                            <td id="td">Created date 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Modified date 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                            <td id="td" className="rounded-end">Action</td>
-                                        </tr>
-                                        {lists.map((data, key) => (
-                                            <tr>
-                                                <td id="td"><input type='checkbox' /></td>
-                                                {/* <td id="td">{data.title}</td> */}
-                                                {/* <td id="td"><img src={pom} alt="pro-thumb" className="img" /></td> */}
-                                                <td id="td">{data.title}</td>
-                                                <td id="td">{data.email}</td>
-                                                <td id="td">{data.price_type} </td>
-                                                <td id="td">£ {data.price}</td>
-                                                <td id="td"><span className="pro-status-approved">{data.status}</span></td>
-                                                <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
-                                        <td id="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
-                                                <td id="td">
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                     <div className="dropdown">
                                                         <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i className="fa-solid fa-ellipsis"></i>

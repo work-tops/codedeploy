@@ -106,7 +106,6 @@ function AllJob() {
                         </div>
                         <table className="allproducts-table">
                             <tbody>
-<<<<<<< HEAD
                             <tr className="product-heading ">
                                     <td className="table_data rounded-start"><input type='checkbox' /></td>
                                     <td className="table_data">Job ID<i className="ri-arrow-down-s-fill"></i>
@@ -136,60 +135,11 @@ function AllJob() {
                                     <td className="table_data">Exp<i className="ri-arrow-down-s-fill"></i>
                                        
                                         <input className="width-100 border-0 filter-search" type="search" />
-=======
-                                <tr className="product-heading ">
-                                    <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                    <td id="td">Job ID 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Category 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Title 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Budget 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Job Status 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Exp Date 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Status 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Created date 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Modified date 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                     </td>
                                     <td className="table_data rounded-end">Action</td>
                                 </tr>
                                 {lists.map((data, key) => (
                                     <tr key={key}>
-<<<<<<< HEAD
                                         <td className="table_data"><input type='checkbox' /></td>
                                         <td className="table_data">{data._id}</td>
                                         <td className="table_data">{data.category}</td>
@@ -200,20 +150,6 @@ function AllJob() {
                                         <td className="table_data">{data?.expire_date}</td>
                                         <td className="table_data"><span className="pro-status-approved">Approved</span></td>
                                         <td className="table_data">
-=======
-                                        <td id="td"><input type='checkbox' /></td>
-                                        <td id="td">{data._id}</td>
-                                        <td id="td">{data.category}</td>
-                                        <td id="td">{data.project_title}</td>
-                                        <td id="td">{data.budget}</td>
-                                        <td id="td"><span className="pro-status-processing">Processing</span></td>
-                                        {/* <td id="td">10 April 2023</td> */}
-                                        <td id="td">{data?.expire_date}</td>
-                                        <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                        <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
-                                        <td id="td"><span >{(data.modified_date).slice(0, 10)}</span></td>
-                                        <td id="td">
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                             <div className="dropdown">
                                                 <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i className="fa-solid fa-ellipsis"></i>

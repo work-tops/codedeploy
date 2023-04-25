@@ -240,13 +240,6 @@ function AddJob() {
                                     <table className="added-fil-table">
                                         <tr className="doc-ad-bg">
                                             {selectedFile.map((file, index) => (
-<<<<<<< HEAD
-
-=======
-                                                // <div className="col">
-                                                //     <img height={100} src={file} alt="dashboard" className="" />
-                                                // </div>
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                 <td>
                                                     <Icon className="file-ico" icon="ic:round-insert-drive-file" color="black" width="40" height="40" />
                                                     <span className="kitchen-plan-div">{file.name}</span>
@@ -321,7 +314,6 @@ function AddJob() {
                                             </div>
                                         </div>
                                     </div>
-<<<<<<< HEAD
                                     <div className="d-inline-block">
                                         <label className="label-name">Budget Type</label>
                                         <select value={form.budget_type} required name="budget_type" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200">
@@ -354,55 +346,10 @@ function AddJob() {
                                         <input value={form.startdate} required name="startdate" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200" type='date' />
                                     </div>
                                     <label className="label-name">Project Visibility</label>
-=======
-                                    <br></br>
-                                    <span className="category">Budget Type</span> <span className="job-currency">Currency</span>
-                                    <br></br>
-                                    <select value={form.budget_type} required name="budget_type" onChange={(e) => { handleChange(e) }} className="select-category">
-                                        <option value="">Select</option>
-                                        <option value="Fixed Price">Fixed Price   :</option>
-                                        <option value="No Idea">No Idea</option>
-                                        <option value="No Range">No Range</option>
-                                    </select>
-                                    <select value={form.currency} required name="currency" onChange={(e) => { handleChange(e) }} className="select-category">
-                                        <option value="">Select</option>
-                                        <option value="£ GBP">£ GBP :</option>
-                                        <option value="£ EUR">£ EUR</option>
-                                    </select>
-                                    <br></br>
-                                    <div className="row">
-                                        <div className="col-lg-4">
-                                            <label className="label">Budget</label>
-                                            <input value={form.budget} required name="budget" onChange={(e) => { handleChange(e) }} id="postcode" placeholder="£ 0" type="number" />
-                                            <br></br>
-                                        </div>
-                                        <div className="col">
-                                            {form.budget_type == "No Idea" ? (
-                                                <>
-                                                    <label className="label">Max Budget</label>
-                                                    <input value={form.max_budget} required name="max_budget" onChange={(e) => { handleChange(e) }} id="postcode" placeholder="£ 0" type="number" />
-                                                    <br></br>
-                                                </>
-                                            ) : ("")}
-                                        </div>
-                                    </div>
-
-                                    <label>Project Locations</label>
-                                    <br></br>
-                                    <input value={form.location} required name="location" onChange={(e) => { handleChange(e) }} id="aipro-barcode" placeholder="Geo Locations" type='text' />
-                                    <br></br>
-                                    <span className="category">Post Code</span> <span className="start-date-job">Starting Date <span className="optional">(optional)</span></span>
-                                    <br></br>
-                                    <input value={form.postcode} required name="postcode" onChange={(e) => { handleChange(e) }} id="postcode" type='text' />
-                                    <input value={form.startdate} required name="startdate" onChange={(e) => { handleChange(e) }} id="postcode" type='date' />
-                                    <br></br>
-                                    <label>Project Visibility</label>
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                     <div className="prj-radio-div">
                                         <input className="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
                                     </div>
                                     <div className="prj-radio-div">
-<<<<<<< HEAD
                                         <input className="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="public" type="radio" /><Icon icon="ph:lock-simple-fill" width="24" height="24" /> <span className="radio-opt"> Public <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
                                     </div>
                                     <div className="d-inline-block">
@@ -416,9 +363,6 @@ function AddJob() {
                                     <div>
                                     <button type="submit" className="create-btn">Post a Job</button>
                                     <Link to="alljob" role="button"><button className="remove-btn">Cancel</button></Link>
-=======
-                                        <input id="radio-btn" onChange={(e) => { handleChange(e) }} name="visibility" value="private" type="radio" /><Icon icon="ph:lock-simple-fill" width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only freelancers that you specifically invite can view the <p className="opt-span">project post and send proposal)</p></span></span>
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                     </div>
                                 </form >
                             </div >

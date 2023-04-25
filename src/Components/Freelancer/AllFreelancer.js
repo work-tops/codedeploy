@@ -110,7 +110,6 @@ function AllFreelancer() {
                         <table className="allproducts-table">
                             <tbody>
                                 <tr className="product-heading ">
-<<<<<<< HEAD
                                     <td className="table_data rounded-start"><input type='checkbox' /></td>
                                     <td className="table_data">Freelancer ID <i className="ri-arrow-down-s-fill"></i>
                                      
@@ -139,59 +138,11 @@ function AllFreelancer() {
                                     <td className="table_data">Status<i className="ri-arrow-down-s-fill"></i>
                                        
                                         <input className="width-100 border-0 filter-search" type="search" />
-=======
-                                    <td id="td" className="rounded-start"><input type='checkbox' /></td>
-                                    <td id="td">Freelancer ID 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Freelancer Profile 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Name 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Company Name 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Verfication 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Date 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Status 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Created date 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
-                                    </td>
-                                    <td id="td">Modified date 
-                                    {/* <i className="ri-arrow-down-s-fill"></i> */}
-                                        <br></br>
-                                        <input id="filter-search" type="search" />
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                     </td>
                                     <td className="table_data rounded-end">Action</td>
                                 </tr>
                                 {lists.map((data, key) => (
                                     <tr key={key}>
-<<<<<<< HEAD
                                         <td className="table_data"><input type='checkbox' /></td>
                                         <td className="table_data">{data._id}</td>
                                         <td className="table_data"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
@@ -201,19 +152,6 @@ function AllFreelancer() {
                                         <td className="table_data">31 Mar 2023</td>
                                         <td className="table_data"><span className="pro-status-approved">Approved</span></td>
                                         <td className="table_data">
-=======
-                                        <td id="td"><input type='checkbox' /></td>
-                                        <td id="td">{data._id}</td>
-                                        <td id="td"><img src={pom} alt="pro-thumb" className="img-curve" /></td>
-                                        <td id="td">{data.name}</td>
-                                        <td id="td">{data.business_name}</td>
-                                        <td id="td"><span className="pro-status-approved">Verified</span></td>
-                                        <td id="td">31 Mar 2023</td>
-                                        <td id="td"><span className="pro-status-approved">Approved</span></td>
-                                        <td id="td"><span >{(data.created_date).slice(0, 10)}</span></td>
-                                        <td id="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
-                                        <td id="td">
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                             <div className="dropdown">
                                                 <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i className="fa-solid fa-ellipsis"></i>

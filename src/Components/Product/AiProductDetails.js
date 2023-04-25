@@ -412,30 +412,6 @@ function AiProductDetails() {
                                             </div>
 
                                             <div >
-<<<<<<< HEAD
-                                                <label className="label-name d-block">Product Name</label>
-                                                <input value={form.name} required name="name" onChange={(e) => { handleChange(e) }} className="input-box-440 input-focus d-block" type='text' />
-                                                <div className="d-inline-block">
-                                                    <label className="label-name d-block">Category</label>
-                                                    <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} className="input-focus Dropdown-box-200">
-                                                        <option value="">Select</option>
-                                                        {procat.map((data, key) => (
-                                                            <option key={key} value={data.name}>{data.name}</option>
-                                                        ))}
-                                                    </select>
-                                                </div>
-                                                <div className="d-inline-block">
-                                                    <label className="label-name d-block">Seller Email</label>
-                                                    <select value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} className="input-focus Dropdown-box-200">
-                                                        <option value="">Select</option>
-                                                        {selemail.map((data, key) => (
-                                                            <option key={key} value={data.email}>{data.email}</option>
-                                                        ))}
-                                                    </select>
-                                                </div>
-                                                <label className="label-name">Description</label>
-                                                <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} className="input-focus textarea-2 d-block"></textarea>
-=======
                                                 <label>Product Name</label>
                                                 <input value={form.name} required name="name" onChange={(e) => { handleChange(e) }} id="aipro-name" type='text' />
                                                 <br></br>
@@ -469,7 +445,6 @@ function AiProductDetails() {
                                                 <br />
                                                 <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input> */}
                                                 <br></br>
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                 {/*  */}
                                                 {/* <!-- Button trigger modal --> */}
                                                 <button className="update-btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -481,13 +456,8 @@ function AiProductDetails() {
                                                     <div className="modal-dialog modal-lg">
                                                         <div className="modal-content">
                                                             <div className="modal-header">
-<<<<<<< HEAD
-                                                                <p className="head-title">Add Variant</p>
-                                                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Close</button>
-=======
                                                                 <p>Add Variant</p>
                                                                 <button type="button" className="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject()}>Close</button>
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                             </div>
                                                             <div className="modal-body row">
                                                                 <div className="col-5">
@@ -501,21 +471,12 @@ function AiProductDetails() {
                                                                         }
 
                                                                         <button className="add-img-btn d-none">ADD IMAGE</button>
-<<<<<<< HEAD
-                                                                        <select value={variant.imageInx} name="imageInx" onChange={(e) => { variantChange(e) }} className="input-focus Dropdown-box-200">
-                                                                            <option value="" disabled>Add Image</option>
-                                                                            {actualFiles.map((file, index) => (
-                                                                                <option value={index}>
-                                                                                    <img src={file} width="50px" height="50px" className="pro-pre" />
-                                                                                    {selectedFile[index].name}
-=======
                                                                         <select value={variant?.imageInx} name="imageInx" onChange={(e) => { variantChange(e) }} className="select-category">
                                                                             <option value="" disabled>Add Image</option>
                                                                             {actualFiles.map((file, index) => (
                                                                                 <option value={index}>
                                                                                     {/* <img src={file} width="50px" height="50px" className="pro-pre" /> */}
                                                                                     {selectedFile[index]?.name}
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                                                 </option>
                                                                             ))}
                                                                         </select>
@@ -559,28 +520,6 @@ function AiProductDetails() {
                                                                         <label className="label-name">Handling Charges</label>
                                                                         <input value={variant.handling_changes} name="handling_changes" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
                                                                         <label className="label">Sales Price</label>
-<<<<<<< HEAD
-                                                                        <input value={variant.sales_price} name="sales_price" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
-
-                                                                        <input name="required_shipping" onChange={(e) => { variantChange(e) }} className="aipro-checkbox1" type='checkbox' value="true" /><span className="chc-span">Shipping Requires</span>
-                                                                        <input name="charge_taxes" onChange={(e) => { variantChange(e) }} className="aipro-checkbox2" type='checkbox' value="true" /><span className="chc-span">Charge Taxes on this product</span>
-
-                                                                        <p className="sub-topic-title">Inventory</p>
-                                                                        <label className="label-name">SKU</label>
-                                                                        <input value={variant.sku} name="sku" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='text' />
-                                                                        <label className="label-name">Barcode</label>
-                                                                        <input value={variant.barcode} name="barcode" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='text' />
-                                                                        <label className="label-name">Minimum Purchase Quantity</label>
-                                                                        <input value={variant.min_purchase_qty} name="min_purchase_qty" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
-                                                                        <label className="label-name">Quantity</label>
-                                                                        <input value={variant.quantity} name="quantity" onChange={(e) => { variantChange(e) }} className="input-focus input-box-400" type='number' />
-
-                                                                        <input value={variant.track_inventory} name="track_inventory" onChange={(e) => { variantChange(e) }} className="aipro-checkbox" type='checkbox' /><span className="chc-span">Track This Product Inventory</span>
-                                                                        <div>
-                                                                        <button type="button" onClick={(e) => { handleVariantSubmit(e) }} data-bs-dismiss="modal" aria-label="Close" className="create-btn">Submit</button>
-                                                                        <button type="button" className="remove-btn" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject}>Cancel</button>
-                                                                        </div>
-=======
                                                                         <input value={variant.sales_price} name="sales_price" onChange={(e) => { variantChange(e) }} id="opt-ip-box" type='number' />
                                                                         <br></br>
                                                                         <input checked={variant.required_shipping} name="required_shipping" onChange={handlechange1} id="aipro-checkbox1" type='checkbox' />
@@ -605,7 +544,6 @@ function AiProductDetails() {
                                                                         <br></br>
                                                                         <button type="button" onClick={(e) => { handleVariantSubmit(e) }} data-bs-dismiss="modal" aria-label="Close" className="create-acc-btn">Submit</button>
                                                                         <button type="button" className="btn btn-danger ms-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => resetVarientObject()}>Cancel</button>
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -632,11 +570,6 @@ function AiProductDetails() {
                                                         </tbody>
                                                     </table>
                                                 </div>
-<<<<<<< HEAD
-                                                <label className="label-name">Return Policy</label>
-                                                <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} className="input-focus d-block textarea-2"></textarea>
-                                                <button type='submit' className="create-btn">Add Product</button>
-=======
                                                 {/*  */}
                                                 <label>Return Policy</label>
                                                 <br />
@@ -644,7 +577,6 @@ function AiProductDetails() {
                                                 <button type='submit' className="create-acc-btn">Save Product</button>
                                                 {/* <button className="btn btn-danger ms-3" onClick={clearData}>Clear</button> */}
                                                 <Link to="/allproduct"><button className="btn btn-danger ms-3">Cancel</button></Link> 
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                             </div>
                                         </div>
                                         <div className="Add-Product-Images">
@@ -705,12 +637,8 @@ function AiProductDetails() {
                                                 const defaultSelectedValues = selectedproductTags[i]?.list || []; 
                                                 console.log(defaultSelectedValues)
                                                 return <>
-<<<<<<< HEAD
-                                                    <label className="label-name">{x?.name}</label>
-=======
                                                     <label className="label">{x?.name}</label>
                                                   {   console.log(x)}
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                     {x.id == 1 || x.id == 2 ?
                                                             (
                                                                 <div className="multi-sel">
@@ -718,16 +646,7 @@ function AiProductDetails() {
                                                                 </div>
                                                             ) :
                                                         (
-<<<<<<< HEAD
-                                                            <div className="input-focus input-box-300">
-                                                                <Multiselect options={x?.list} onRemove={(list, item) => onRemove(list, item, i)} onSelect={(list, item) => onSelect(list, item, i)} displayValue="value" />
-                                                            </div>
-                                                        ) :
-                                                        (
-                                                            <input className="input-focus input-box-300" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />
-=======
                                                             <input  className="ai-input" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />
->>>>>>> e0004006ea07582a2c3865e1d43edd5268976858
                                                         )
 
                                                     }
