@@ -1,13 +1,12 @@
 import React from "react";
-// import AdvanceTableWrapper from "components/common/advance-table/AdvanceTableWrapper";
-import AdvanceTableWrapper from "../components/common/advance-table/AdvanceTableWrapper"
-import AdvanceTable from "../components/common/advance-table/AdvanceTable";
-import AdvanceTableFooter from "../components/common/advance-table/AdvanceTableFooter";
+import AdvanceTableWrapper from "../advance-table/AdvanceTableWrapper";
+import AdvanceTable from "../advance-table/AdvanceTable";
+import AdvanceTableFooter from "../advance-table/AdvanceTableFooter";
 import { Row, Button, Col, Form } from "react-bootstrap";
-import IconButton from "../components/common/IconButton";
-import AdvanceTableSearchBox from "../components/common/advance-table/AdvanceTableSearchBox";
-import product_image from "../Images/product_image.png"
-import CardDropdown from "../components/common/CardDropdown";
+import IconButton from "../advance-table/IconButton";
+import AdvanceTableSearchBox from "../advance-table/AdvanceTableSearchBox";
+import product_image from "../Img/product_image.png"
+// import CardDropdown from "components/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 const columns = [
     {
@@ -61,16 +60,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     },
     {
         productId: '643456',
@@ -80,16 +70,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge p-2 bg-warning">Approval Pending</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     },
     {
         productId: '643456',
@@ -99,16 +80,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge p-2 bg-secondary">Disabled</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     },
     {
         productId: '643456',
@@ -118,16 +90,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     },
     {
         productId: '643456',
@@ -137,16 +100,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     }, {
         productId: '643456',
         image: <img src={product_image} width="40px" height="35px" />,
@@ -155,16 +109,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     },
     {
         productId: '643456',
@@ -174,16 +119,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     }, {
         productId: '643456',
         image: <img src={product_image} width="40px" height="35px" />,
@@ -192,16 +128,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     },
     {
         productId: '643456',
@@ -211,16 +138,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     }, {
         productId: '643456',
         image: <img src={product_image} width="40px" height="35px" />,
@@ -229,16 +147,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     },
     {
         productId: '643456',
@@ -248,16 +157,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     },
     {
         productId: '643456',
@@ -267,16 +167,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     }
     ,
     {
@@ -287,16 +178,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     }
     ,
     {
@@ -307,16 +189,7 @@ const data = [
         price: '£100',
         quantity: "10 Pcs",
         status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
+        
     }
 ];
 

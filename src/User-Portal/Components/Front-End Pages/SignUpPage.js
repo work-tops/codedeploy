@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import HeaderPage from "../Header/HeaderPage";
+import HeaderPage from "../Header/SellerPortalHeader";
 import Menubar from "../Menubar/Menubar";
-import { Link, useHistory   } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import google_logo from "../Images/google-logo.png"
 import Footer from "../Footer/Footer";
 import { createData } from "../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
+import Header from "../Header/Header";
 function SignUpPage() {
     const [toggleForm, setToggleForm] = useState(1);
     const [form, setForm] = useState({})
@@ -23,7 +24,7 @@ function SignUpPage() {
             phone: form.phone,
             password: form.password,
             confirm_password: form.password,
-            role: toggleForm == 3?"Freelancer":"Owner",
+            role: toggleForm == 3 ? "Freelancer" : "Owner",
             terms_and_condition: true,
             is_active: true,
             is_approved: true,
@@ -60,7 +61,7 @@ function SignUpPage() {
     return (
         <div className="row">
             <div className="col-12">
-                <HeaderPage />
+                <Header />
             </div>
             <div className="col-12">
                 <Menubar />
@@ -84,68 +85,72 @@ function SignUpPage() {
                     </div>
                 }
                 {toggleForm == 2 &&
-                <form onSubmit={(e)=>{formSubmit(e)}}>
-                    <div className="bg-form">
-                        <fieldset className="form-field">
-                            <h1 className="signup-tit">Start living your work dream</h1>
-                            <label className="signup-sub-tit">Sign Up as a project owner</label>
-                            <div>
-                                <input type="text" required name="first_name" value={form.first_name} onChange={(e) => { handleChange(e) }} id="fname" placeholder="First Name" />
-                                <input type="text" required name="last_name" value={form.last_name} onChange={(e) => { handleChange(e) }} id="lname" placeholder="Last Name" />
-                                <input type="email" required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="email" placeholder="Email" />
-                                <input type="password" required name="password" value={form.password} onChange={(e) => { handleChange(e) }} id="password" placeholder="Password" />
-                                <p className="terms-and-conditions">
-                                    By Signing up you accept MyProject's Terms of Service.
-                                    I have read and understood MyProject's Privacy Policy.
-                                </p>
-                                <button type="submit" id="sign-up" >SIGN UP</button>
-                                <input type="button" onClick={() => { toggleCard(1) }} id="back" value="Back" />
-                            </div>
-                        </fieldset>
-                    </div>
-                </form>
+                    <form onSubmit={(e) => { formSubmit(e) }}>
+                        <div className="bg-form">
+                            <fieldset className="form-field">
+                                <h1 className="signup-tit">Start living your work dream</h1>
+                                <label className="signup-sub-tit">Sign Up as a project owner</label>
+                                <div>
+                                    <input type="text" required name="first_name" value={form.first_name} onChange={(e) => { handleChange(e) }} id="fname" placeholder="First Name" />
+                                    <input type="text" required name="last_name" value={form.last_name} onChange={(e) => { handleChange(e) }} id="lname" placeholder="Last Name" />
+                                    <input type="email" required name="email" value={form.email} onChange={(e) => { handleChange(e) }} id="email" placeholder="Email" />
+                                    <input type="password" required name="password" value={form.password} onChange={(e) => { handleChange(e) }} id="password" placeholder="Password" />
+                                    <p className="terms-and-conditions">
+                                        By Signing up you accept MyProject's Terms of Service.
+                                        I have read and understood MyProject's Privacy Policy.
+                                    </p>
+                                    <Link to='/userlog'>
+                                        <button type="submit" id="sign-up" >SIGN UP</button>
+                                    </Link>
+                                    <input type="button" onClick={() => { toggleCard(1) }} id="back" value="Back" />
+                                </div>
+                            </fieldset>
+                        </div>
+                    </form>
                 }
                 {toggleForm == 3 &&
-                <form onSubmit={(e)=>{formSubmit(e)}}>
-                    <div className="bg-form-1">
-                        <fieldset className="form-field">
-                            <h1 className="signup-tit">Sign up to be a trade member</h1>
-                            <p className="trd-membrt">Get your free trade profile and easily see the jobs customers are posting near you.</p>
-                            <div>
-                                <label className="id-ver-label">First Name</label>
-                                <input autoComplete="off" required name="first_name" value={form.first_name} onChange={(e) => { handleChange(e) }} type="text" id="trd-ip-bx" />
-                                <label className="id-ver-label">Last Name</label>
-                                <input autoComplete="off" required name="last_name" value={form.last_name} onChange={(e) => { handleChange(e) }} type="text" id="trd-ip-bx" />
-                                <label className="id-ver-label">Email</label>
-                                <input autoComplete="off" required name="email" value={form.email} onChange={(e) => { handleChange(e) }} type="email" id="trd-ip-bx" />
-                                <label className="id-ver-label">Phone Number</label>
-                                <input autoComplete="off" required name="phone" value={form.phone} onChange={(e) => { handleChange(e) }} type="text" id="trd-ip-bx" />
-                                <div className="row">
-                                    <div className="col-6">
-                                        <label className="id-ver-label">Id Verification</label>
-                                        <select className="id-prof-dwn">
-                                            <option value="Driving License">Driving License</option>
-                                            <option value="Passport">Passport</option>
-                                            <option value="Bio Metric">Bio Metric</option>
-                                        </select>
+                    <form onSubmit={(e) => { formSubmit(e) }}>
+                        <div className="bg-form-1">
+                            <fieldset className="form-field">
+                                <h1 className="signup-tit">Sign up to be a trade member</h1>
+                                <p className="trd-membrt">Get your free trade profile and easily see the jobs customers are posting near you.</p>
+                                <div>
+                                    <label className="id-ver-label">First Name</label>
+                                    <input autoComplete="off" required name="first_name" value={form.first_name} onChange={(e) => { handleChange(e) }} type="text" id="trd-ip-bx" />
+                                    <label className="id-ver-label">Last Name</label>
+                                    <input autoComplete="off" required name="last_name" value={form.last_name} onChange={(e) => { handleChange(e) }} type="text" id="trd-ip-bx" />
+                                    <label className="id-ver-label">Email</label>
+                                    <input autoComplete="off" required name="email" value={form.email} onChange={(e) => { handleChange(e) }} type="email" id="trd-ip-bx" />
+                                    <label className="id-ver-label">Phone Number</label>
+                                    <input autoComplete="off" required name="phone" value={form.phone} onChange={(e) => { handleChange(e) }} type="text" id="trd-ip-bx" />
+                                    <div className="row">
+                                        <div className="col-6">
+                                            <label className="id-ver-label">Id Verification</label>
+                                            <select className="id-prof-dwn">
+                                                <option value="Driving License">Driving License</option>
+                                                <option value="Passport">Passport</option>
+                                                <option value="Bio Metric">Bio Metric</option>
+                                            </select>
+                                        </div>
+                                        <div className="col-6">
+                                            <button className="upd-fil">Upload File</button>
+                                        </div>
                                     </div>
-                                    <div className="col-6">
-                                        <button className="upd-fil">Upload File</button>
-                                    </div>
+                                    <p className="terms-and-conditions">
+                                        <input type="checkbox" />I'd like to receive MyProject News, Advice and Tips
+                                        <br></br>
+                                        <br></br>
+                                        <input type="checkbox" />I agree to the MyProject terms & conditions, the Quote Tool terms &
+                                        conditions and the data sharing agreement
+                                    </p>
+                                    <Link to='/userlog'>
+                                        <button type="submit" id="sign-up" >SIGN UP</button>
+                                    </Link>
+                                    <input onClick={() => { toggleCard(1) }} type="button" id="back" value="Back" />
                                 </div>
-                                <p className="terms-and-conditions">
-                                    <input type="checkbox" />I'd like to receive MyProject News, Advice and Tips
-                                    <br></br>
-                                    <br></br>
-                                    <input type="checkbox" />I agree to the MyProject terms & conditions, the Quote Tool terms &
-                                    conditions and the data sharing agreement
-                                </p>
-                                <button id="sign-up" type="submit">SIGN UP</button>
-                                <input onClick={() => { toggleCard(1) }} type="button" id="back" value="Back" />
-                            </div>
-                        </fieldset>
-                    </div>
-                </form>
+                            </fieldset>
+                        </div>
+                    </form>
                 }
 
             </div>

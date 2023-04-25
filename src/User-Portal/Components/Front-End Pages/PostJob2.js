@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../Header/Header";
 import Menubar from "../Menubar/Menubar";
 import PostAJob from "../Post/PostAJobPost";
 import Footer from "../Footer/Footer";
@@ -8,6 +7,7 @@ import { Link, useHistory } from "react-router-dom";
 import { createData, getAllData } from "../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
 import { uploadImage } from "../../../Services/ImageService";
+import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
 function PostJob2() {
     const history = useHistory();
 
@@ -148,7 +148,7 @@ function PostJob2() {
         <>
             <div className="row">
                 <div className="col-12">
-                    <Header />
+                    <ProjectOwnerHeader />
                 </div>
                 <div className="col-12">
                     <Menubar />

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import HeaderPage from "../Header/HeaderPage";
 import Menubar from "../Menubar/Menubar";
 import JobDetailsPost from "../Post/JobDetailsPost";
 import Footer from "../Footer/Footer";
@@ -8,6 +7,7 @@ import profileImg from "../Images/employee.png"
 import currency from "../Images/Currency.png"
 import { Link, useParams } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
+import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
 
 function JobDetails() {
     let { jobid } = useParams();
@@ -24,7 +24,7 @@ function JobDetails() {
         <>
             <div className="row">
                 <div className="col-12">
-                    <HeaderPage />
+                    <ProjectOwnerHeader />
                 </div>
                 <div className="col-12">
                     <Menubar />

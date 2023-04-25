@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import Footer from '../Footer/Footer'
-import HeaderPage from '../Header/HeaderPage'
+import HeaderPage from '../Header/SellerPortalHeader'
 import Menubar from '../Menubar/Menubar'
 import ListPost from '../Post/ListJobPost'
 import { Link } from 'react-router-dom'
 import { getAllData } from "../../../Services/ProxyService";
 import ReactPaginate from 'react-paginate';
+import ProjectOwnerHeader from '../Header/ProjectOwnerHeader'
 // import toast, { Toaster } from 'react-hot-toast';
 function ListJobs() {
     const [jobs, setjobs] = useState([])
@@ -34,7 +35,7 @@ function ListJobs() {
         <>
             <div className='row'>
                 <div className='col-12'>
-                    <HeaderPage />
+                    <ProjectOwnerHeader />
                 </div>
                 <div className='col-12'>
                     <Menubar />

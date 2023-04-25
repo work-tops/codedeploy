@@ -40,9 +40,11 @@ a {
     font-size: calc(10px + 2vmin);
     color: white;
 }
+
 .navbar-standard {
     background: #003f6b !important;
 }
+
 .App-link {
     color: #61dafb;
 }
@@ -1963,17 +1965,18 @@ a {
         height: 430px;
         border-radius: 100px 0px;
     }
+
     .no-of-projects-com-by-us h2 {
         text-align: center;
         padding-bottom: 35px;
         padding-top: 20px;
     }
-    
+
     .no-of-projects-com-by-us {
         background: #f4f4f4;
         padding-bottom: 50px;
     }
-    
+
     .borders-spl-div {
         border-bottom: 1px solid black;
         margin-bottom: 10px;
@@ -1981,7 +1984,7 @@ a {
         position: relative;
         bottom: 111px;
     }
-    
+
     .borders-spl-div-1 {
         width: 200px;
         border-left: 1px solid;
@@ -2006,7 +2009,7 @@ a {
         border: none;
         background: #fff;
     }
-    
+
     .current-prj-records-btn2 {
         border-radius: 50px 2px;
         width: 135px;
@@ -2016,7 +2019,7 @@ a {
         border: none;
         background: #fff;
     }
-    
+
     .current-prj-records-btn3 {
         border-radius: 50px 2px;
         width: 135px;
@@ -2026,7 +2029,7 @@ a {
         border: none;
         background: #fff;
     }
-    
+
     .current-prj-records-btn4 {
         border-radius: 50px 2px;
         width: 135px;
@@ -2036,16 +2039,16 @@ a {
         border: none;
         background: #fff;
     }
-    
+
     .no-of-prjlist {
         font-size: 30px;
         font-weight: 700;
     }
-    
+
     .years-of-work-col {
         margin-bottom: 6rem;
     }
-    
+
     .our-client-says {
         text-align: center;
         text-transform: capitalize;
@@ -2060,7 +2063,7 @@ a {
         position: relative;
         right: 30rem;
     }
-    
+
     .client-abt-div_1 {
         border: 1px solid;
         display: inline-block;
@@ -2070,27 +2073,27 @@ a {
         position: relative;
         right: 70rem;
     }
-    
+
     .client-abt-div h5 {
         margin-left: 90px;
     }
-    
+
     .client-abt-div p {
         font-size: 13px;
         width: 300px;
         margin-left: 90px;
     }
-    
+
     .client-abt-div_1 h5 {
         margin-left: 90px;
     }
-    
+
     .client-abt-div_1 p {
         font-size: 13px;
         width: 300px;
         margin-left: 90px;
     }
-    
+
     .clint-pro-img {
         width: 140px;
         height: 100px;
@@ -2100,7 +2103,7 @@ a {
         right: 72rem;
         top: 25px;
     }
-    
+
     .clint-pro-img_1 {
         width: 140px;
         height: 100px;
@@ -2110,7 +2113,7 @@ a {
         right: 112rem;
         top: 25px;
     }
-    
+
     .latest-news-div {
         background-color: #f4f4f4;
     }
@@ -2128,7 +2131,8 @@ a {
         margin-bottom: 30px;
         border-radius: 100px 4px;
     }
-    .int-des-cont-btn-__2{
+
+    .int-des-cont-btn-__2 {
         width: 150px;
         padding: 7px;
         border: none;
@@ -2151,6 +2155,7 @@ a {
         height: 240px;
         margin-left: 17rem;
     }
+
     .lat-blog-thumbnail-2 {
         position: relative;
         margin-bottom: 30px;
@@ -2160,6 +2165,7 @@ a {
         height: 240px;
         margin-left: 40px;
     }
+
     .lat-blog-border {
         width: 300px;
         height: 240px;
@@ -2170,6 +2176,7 @@ a {
         border: 2px solid;
         border-color: #507a93;
     }
+
     .lat-blog-border-1 {
         width: 300px;
         height: 240px;
@@ -2180,20 +2187,54 @@ a {
         border: 2px solid;
         border-color: #507a93;
     }
-    .latest-news-subtit{
+
+    .latest-news-subtit {
         margin-left: 17rem;
     }
+
     .latest-news-subtitle {
         width: 300px;
         margin-left: 17rem;
         font-size: 13px;
     }
-    .latest-news-subtit1{
+
+    .latest-news-subtit1 {
         margin-left: 40px;
     }
+
     .latest-news-subtitle1 {
         width: 300px;
-        margin-left:40px;
+        margin-left: 40px;
         font-size: 13px;
+    }
+
+    .menuBar_bg {
+        background-color: #F4F2F2;
+    }
+
+    .profile-divider {
+        border-left: 2px solid #fff;
+        height: 40px;
+    }
+
+    .profile-divider img {
+        cursor: pointer;
+    }
+
+    .img-drp {
+        position: relative;
+        bottom: 45px;
+        left: 15px;
+        color: transparent !important;
+    }
+
+    .img-drp:focus {
+        border-radius: 23px !important;
+        position: relative;
+        bottom: 36px;
+        left: 20px;
+    }
+    .post-bg{
+        background: #7fa6c7;
     }
 }
