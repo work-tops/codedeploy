@@ -17,6 +17,7 @@ import RegisterPortal from "../Front-End Pages/RegisterPortal";
 import ProjectOwnerRegister from "../Front-End Pages/ProjectOwnerRegister";
 import SellerRegister from "../Front-End Pages/SellerSignUp";
 import FrontendAddProduct from '../Front-End Pages/FrontendAddProduct'
+import FrontendAddService from "../Front-End Pages/FrontEndAddService";
 // import FrontEndAllProducts from "../Front-End Pages/FrontendAllProducts";
 const FrontEndRouters = () => {
     return (
@@ -37,6 +38,7 @@ const FrontEndRouters = () => {
             <Route path='/projectownersignup'><ProjectOwnerRegister/></Route>
             <Route path='/sellersignup'><SellerRegister/></Route>
             <Route path='/user/addproduct'><FrontendAddProduct/></Route>
+            <Route path='/user/addservices'><FrontendAddService/></Route>
             {/* <Route path='/user/allproduct'><FrontEndAllProducts/></Route> */}
             <Route path="/user/"><HomePage/></Route>
         </Switch>

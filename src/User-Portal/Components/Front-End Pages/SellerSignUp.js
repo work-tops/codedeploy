@@ -82,15 +82,18 @@ const SellerRegister = ({ hasLabel }) => {
 
                         <Form.Group className="mb-3">
                             {hasLabel && <Form.Label>ID Verification</Form.Label>}
-                            <Form.Control
+                            <Form.Select
                                 placeholder={!hasLabel ? 'ID Verification' : ''}
                                 value={formData.idVerification}
                                 name="idVerification"
                                 onChange={handleFieldChange}
-                                type="select"
-                                
                             />
                         </Form.Group>
+
+                        <Button className='mb-3 btn btn-outline-success text-light'>
+                            Upload File
+                        </Button>
+
                         <Form.Group className="mb-3">
                             <Form.Check type="checkbox" id="acceptCheckbox" className="form-check">
                                 <Form.Check.Input
