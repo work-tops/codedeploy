@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import Menubar from "../../Menubar/Menubar";
 import Header from "../../Header/Header";
 import product_image from '../../Images/product_image.png'
 import { Icon } from "@iconify/react";
+import { getAllData } from "../../../../Services/ProxyService";
 
 function ProductList() {
+
+    const [products, setproducts] = useState([]);
+    const [showSpinner, setShowSpinner] = useState(true);
+    const productList = async () => {
+        const response = await getAllData('products');
+        setproducts(response.data.products);
+        setShowSpinner(false);
+    }
+    useEffect(() => {
+        productList()
+    }, [])
     return (
         <>
             <Row>
@@ -114,11 +126,24 @@ function ProductList() {
                         </Form>
                     </Col>
                     <Col lg={9}>
+                    <div style={{ height: '0px' }} className="text-center">
+                                    {showSpinner && (
+                                        <div
+                                            className="spinner-border"
+                                            role="status"
+                                            style={{ width: '70px', height: '70px', fontSize: "20px", opacity: "0.7" }} // set the width and height here
+                                        >
+                                            <span className="sr-only">Loading...</span>
+                                        </div>
+                                    )}
+                                </div>
                         <Row className="mt-3">
+                        {products.map((data, key) => (
                             <Col lg={4}>
                                 <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
+                                    <img src={data?.attachments[0]?.url} width="300px" />
+                                    {/* <img src={product_image} width="300px" /> */}
+                                    <p className="fw-semibold m-1">{data.name}</p>
                                     <small className="m-1">Quartz</small>
                                     <span className="d-block">
                                         <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
@@ -128,285 +153,11 @@ function ProductList() {
                                         <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
                                         (20)
                                     </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
+                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ {data?.variant[0]?.pricing?.price}</p>
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                 </div>
                             </Col>
-
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={product_image} width="300px" />
-                                    <p className="fw-semibold m-1">White Mirror Quartz</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-
+                        ))}
                         </Row>
                     </Col>
                 </Row>
