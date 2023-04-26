@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import Flex from '../utilities/Flex';
+import Flex from '../common/Flex';
 
 export const AdvanceTableFooter = ({
   page,

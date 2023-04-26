@@ -90,9 +90,9 @@ function JobDetails() {
                             <div className="personal-profile">
                                 <img src={profileImg} className="profile-img" alt="profile-pic" />
                                 <p className="emp-name">{jobdata.customer_email}</p>
-                                <p className="open-job-1">Open Jobs</p>
-                                <p className="open-job-2">Open Jobs</p>
-                                <p className="open-job-2">Open Jobs</p>
+                                <p className="open-job-1">Name</p>
+                                <p className="open-job-2">Profession</p>
+                                <p className="open-job-2">Like</p>
                             </div>
                         </div>
                     </div>
@@ -113,9 +113,9 @@ function JobDetails() {
                             <div className="send-box"><button className="send">Send</button></div>
                         </div>
                         <div className="container2 col-3">
-                            <p className="report-title">Report this Job</p>
+                            <p className="report-title">Report this Project</p>
                             <form>
-                                <input type='text' id="report-box" placeholder="Select Reason" />
+                                <input type='text' id="report-box" placeholder="Type Reason" />
                                 <input type='text' id="desc-box" placeholder="Description" />
                                 <input type='button' className="submit" value='Submit' />
                             </form>

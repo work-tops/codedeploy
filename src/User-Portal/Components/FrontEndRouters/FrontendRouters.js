@@ -36,6 +36,11 @@ import POProductEnquiresCard from "../Front-End Pages/MiniCard/POProductEnquiryC
 import POReviewCard from "../Front-End Pages/MiniCard/POReviewCard";
 import ProductList from "../Front-End Pages/Lists/ProductList";
 import ServiceList from '../Front-End Pages/Lists/ServiceList'
+import FrontEndAllProducts from "../Front-End Pages/FrontendAllProducts";
+import ProductDetails from "../Front-End Pages/ProductDetails";
+import WishListProductCard from "../Front-End Pages/MiniCard/WishlistProductCard";
+import ProjectWishListCard from "../Front-End Pages/MiniCard/ProjectWishlistCard";
+import WishListSellerCard from "../Front-End Pages/MiniCard/WishlistSellerCard";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -75,7 +80,11 @@ const FrontEndRouters = () => {
             <Route path='/POReviewsCard'><POReviewCard /></Route>
             <Route path='/productList'><ProductList /></Route>
             <Route path='/servicelist'><ServiceList/></Route>
-            {/* <Route path='/user/allproduct'><FrontEndAllProducts/></Route> */}
+            <Route path='/user/allproduct'><FrontEndAllProducts/></Route>
+            <Route path='/productdetails'><ProductDetails/></Route>
+            <Route path='/wishlist/product'><WishListProductCard/></Route>
+            <Route path='/wishlist/project'><ProjectWishListCard/></Route>
+            <Route path='/wishlist/seller'><WishListSellerCard/></Route>
 
         </Switch>
 
