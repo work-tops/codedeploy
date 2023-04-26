@@ -5,7 +5,7 @@ import AdvanceTableFooter from "../advance-table/AdvanceTableFooter";
 import { Row, Button, Col, Form } from "react-bootstrap";
 import IconButton from "../advance-table/IconButton";
 import product_image from "../Img/product_image.png"
-
+// import CardDropdown from '../utilities/CardDropdown'
 const columns = [
     {
         accessor: 'productId',

@@ -36,7 +36,7 @@ const FrontendAddProduct = () => {
                                     </Breadcrumb>
                                 </div>
                                 <div>
-                                    <Link to="/Seller/Landing">
+                                    <Link to="/addproductcard">
                                         <Button className='m-1 d-block w-100'>Save</Button>
                                     </Link>
                                     {''}

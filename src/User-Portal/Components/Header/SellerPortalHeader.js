@@ -65,11 +65,31 @@ function SellerPortalHeader() {
                             <Dropdown.Toggle className="d-inline bg-transparent border-0" id="dropdown-basic">
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item href="/Project-Owner/profile">Profile</Dropdown.Item>
-                                <Dropdown.Item href="/Project-Owner/Settings">Settings</Dropdown.Item>
-                                <Dropdown.Item href="/user/addproduct">Product</Dropdown.Item>
-                                <Dropdown.Item href="/user/addservices">Services</Dropdown.Item>
-                                <Dropdown.Item href="/userlog">Logout</Dropdown.Item>
+                                <Dropdown.Item>
+                                    <Link to="/MyProfile">
+                                        Profile
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item>
+                                    <Link to="/Project-Owner/Settings">
+                                        Settings
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item href="">
+                                    <Link to="/user/addproduct">
+                                        Product
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item href="">
+                                    <Link to="/user/addservices">
+                                        Services
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item>
+                                    <Link to="/userlog">
+                                        Logout
+                                    </Link>
+                                </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
