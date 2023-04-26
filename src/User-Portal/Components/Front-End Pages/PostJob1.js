@@ -1,15 +1,15 @@
 import React from "react";
-import Header from "../Header/Header";
 import Menubar from "../Menubar/Menubar";
 import PostAJob from "../Post/PostAJobPost";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
 function PostJob1() {
     return (
         <>
             <div className="row">
                 <div className="col-12">
-                    <Header />
+                    <ProjectOwnerHeader />
                 </div>
                 <div className="col-12">
                     <Menubar />

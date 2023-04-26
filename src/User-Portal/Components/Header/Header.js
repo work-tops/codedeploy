@@ -1,7 +1,6 @@
 
-// import classNames from 'classnames';
 import React from 'react';
-import { Container, Col, Row, Dropdown, Button } from 'react-bootstrap';
+import { Container, Col, Row, Dropdown, Button,Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../Img/MP-logo.png'
 const Header = () => {
@@ -11,32 +10,26 @@ const Header = () => {
                 <Col lg={2} className='m-2'>
                     <img src={logo} width="135px" />
                 </Col>
-                <Col lg={3} className='m-2'>
-                    <Button className='btn m-2 text-light border border-0 navbar-standard'>Post A Service</Button>
-                    <Dropdown className='d-inline m-2' >
-                        <Dropdown.Toggle variant="light w-50" id="dropdown-basic">
-                            Search
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Col>
                 <Col lg={5} className='m-2'>
-                    <Button className='text-uppercase m-2 text-light  navbar-standard border border-0'>How it works</Button>
-                    {' '}
-                    <Link to='/loginportal'>
-                    <Button className='text-uppercase m-2 text-light  navbar-standard border border-0'>Log in</Button>
+                    <Form.Group>
+                        <Form.Control 
+                        placeholder='Search'
+                        className='w-75 ms-2 mt-2' type='serach'/>
+                    </Form.Group>
+                </Col>
+                <Col lg={4} className='m-2'>
+                    <Link to='/how-it-works'>
+                        <Button className='text-uppercase m-2 text-light  navbar-standard border border-0'>How it works</Button>
                     </Link>
                     {' '}
-                    <Link to='/registerportal'>
+                    <Link to='/userlog'>
+                        <Button className='text-uppercase m-2 text-light  navbar-standard border border-0'>Log in</Button>
+                    </Link>
+                    {' '}
+                    <Link to='/signup'>
                         <Button className='text-uppercase m-2 text-light  navbar-standard border border-0'>Register</Button>
                     </Link>
                     {' '}
-                    <Button className='text-uppercase m-2 text-light  navbar-standard border border-0'>Freelancer</Button>
                 </Col>
             </Row>
         </>

@@ -4,21 +4,27 @@ import { Link } from "react-router-dom";
 function Menubar() {
     return (
         <>
-            <Row className="bg-danger">
+            <Row style={{background: "#F4F2F2"}}>
                 <Col lg={12}>
-                    <div className="d-flex justify-content-end m-2">
-                        <Link to="/user/addproduct">
-                            <Button className="btn  btn-outline-secondary bg-light text-dark w-100">
-                                Product
-                            </Button>
-                        </Link>
-                        <Link to="">
-                            <Button className="btn btn-outline-secondary bg-light text-dark w-100">
-                                Services
-                            </Button>
-                        </Link>
-                    </div>
-                </Col>
+                    <Row>
+                        <div className="d-flex justify-content-end m-2">
+                            <Col lg={1}>
+                                <Link to="/productlist">
+                                    <Button className="btn bg-transparent text-dark border-0">
+                                        Product
+                                    </Button>
+                                </Link>
+                            </Col>
+                            <Col lg={1}>
+                                <Link to="/servicelist">
+                                    <Button className="btn bg-transparent text-dark border-0">
+                                        Services
+                                    </Button>
+                                </Link>
+                            </Col>
+                        </div>
+                    </Row>
+                </Col >
             </Row >
         </>
     )

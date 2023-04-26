@@ -30,75 +30,90 @@ const LoginForm = ({ hasLabel, layout }) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3">
-        <h3 className='mb-3'>Account Login</h3>
-        {hasLabel && <Form.Label>Email address</Form.Label>}
-        <Form.Control
-          placeholder={!hasLabel ? 'Email address' : ''}
-          value={formData.email}
-          name="email"
-          onChange={handleFieldChange}
-          type="email"
-        />
-      </Form.Group>
+    <>
+      <Form onSubmit={handleSubmit}>
+        <h5 className='d-inline'>Login As:</h5>
+        <Form.Group className="mt-3 mb-3">
+          <Form.Select>
+            <option>Select Role</option>
+            <option>Seller </option>
+            <option>Project Owner </option>
+          </Form.Select>
+        </Form.Group>
 
-      <Form.Group className="mb-3">
-        {hasLabel && <Form.Label>Password</Form.Label>}
-        <Form.Control
-          placeholder={!hasLabel ? 'Password' : ''}
-          value={formData.password}
-          name="password"
-          onChange={handleFieldChange}
-          type="password"
-        />
-      </Form.Group>
+        <Form.Group className="mb-3">
+          {hasLabel && <Form.Label>Email address</Form.Label>}
+          <Form.Control
+            placeholder={!hasLabel ? 'Email address' : ''}
+            value={formData.email}
+            name="email"
+            onChange={handleFieldChange}
+            type="email"
+          />
+        </Form.Group>
 
-      <Row className="justify-content-between align-items-center">
-        <Col xs="auto">
-          <Form.Check type="checkbox" id="rememberMe" className="mb-0">
-            <Form.Check.Input
-              type="checkbox"
-              name="remember"
-              checked={formData.remember}
-              onChange={e =>
-                setFormData({
-                  ...formData,
-                  remember: e.target.checked
-                })
-              }
-            />
-            <Form.Check.Label className="mb-0 text-700">
-              Remember me
-            </Form.Check.Label>
-          </Form.Check>
-        </Col>
+        <Form.Group className="mb-3">
+          {hasLabel && <Form.Label>Password</Form.Label>}
+          <Form.Control
+            placeholder={!hasLabel ? 'Password' : ''}
+            value={formData.password}
+            name="password"
+            onChange={handleFieldChange}
+            type="password"
+          />
+        </Form.Group>
 
-        <Col xs="auto">
-          <Link
-            className="fs--1 mb-0"
-            to={`/forgetpassword`}
-          >
-            Forgot Password?
+        <Row className="justify-content-between align-items-center">
+          <Col xs="auto">
+            <Form.Check type="checkbox" id="rememberMe" className="mb-0">
+              <Form.Check.Input
+                type="checkbox"
+                name="remember"
+                checked={formData.remember}
+                onChange={e =>
+                  setFormData({
+                    ...formData,
+                    remember: e.target.checked
+                  })
+                }
+              /> Remember me</Form.Check>
+          </Col>
+
+          <Col xs="auto">
+            <Link
+              className="fs--1 mb-0"
+              to={`/forgetpassword`}
+            >
+              Forgot Password?
+            </Link>
+          </Col>
+        </Row>
+
+        <Form.Group>
+          <Link to='/Seller/Landing'>
+            <Button
+              type="submit"
+              color="primary"
+              className="mt-3 w-100"
+              disabled={!formData.email || !formData.password}
+            >
+              Log in
+            </Button>
           </Link>
-        </Col>
-      </Row>
-
-      <Form.Group>
-        <Button
-          type="submit"
-          color="primary"
-          className="mt-3 w-100"
-          disabled={!formData.email || !formData.password}
-        >
-          Log in
-        </Button>
-      </Form.Group>
-
-      {/* <Divider className="mt-4">or log in with</Divider> */}
-
-      {/* <SocialAuthButtons /> */}
-    </Form>
+          <Link to='/ProjectOwner/Landing'>
+            <Button
+              type="submit"
+              color="primary"
+              className="mt-3 w-100"
+              disabled={!formData.email || !formData.password}
+            >
+              Log in
+            </Button>
+          </Link>
+        </Form.Group>
+        <p className="text-center mt-3 mb-3">Dont Have an Account ? <Link to='/signup'>Create Account</Link></p>
+      </Form>
+    </>
   );
 };
 

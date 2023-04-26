@@ -4,12 +4,13 @@ import Menubar from "../Menubar/Menubar";
 import JobPost from "../Post/JobProposalPost";
 import Footer from '../Footer/Footer'
 import { Icon } from "@iconify/react";
+import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
 function JobProposal() {
     return (
         <>
             <div className="row">
                 <div className="col-12 prj-det-header">
-                    <Header />
+                    <ProjectOwnerHeader />
                     
                 </div>
                 <div className="col-12">

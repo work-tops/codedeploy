@@ -9,7 +9,6 @@ import SignUpPage from "../Front-End Pages/SignUpPage";
 import JobProposal from "../Front-End Pages/JobProposal";
 import PostJob2 from "../Front-End Pages/PostJob2";
 import HomePage from "../Front-End Pages/HomePage";
-// import TradeSignUpForm from "../Front-End Pages/TradeMemberSignupForm";
 import UserLogin from '../Front-End Pages/Userlogin'
 import ForgetPasswordForm from "../authentication/ForgetPasswordForm";
 import LoginPortal from "../Front-End Pages/LoginPortal";
@@ -18,7 +17,25 @@ import ProjectOwnerRegister from "../Front-End Pages/ProjectOwnerRegister";
 import SellerRegister from "../Front-End Pages/SellerSignUp";
 import FrontendAddProduct from '../Front-End Pages/FrontendAddProduct'
 import FrontendAddService from "../Front-End Pages/FrontEndAddService";
-// import FrontEndAllProducts from "../Front-End Pages/FrontendAllProducts";
+import HowItWorks from "../Front-End Pages/HowItWorks";
+import SellerProfile from "../Front-End Pages/SellerProfile";
+import ProjectOwnerProfile from "../Front-End Pages/ProjectOwnerProfile";
+import ProjectOwnerSettings from "../Front-End Pages/ProjectOwnerSettings";
+import SellerSettings from "../Front-End Pages/SellerSettings";
+import SellerLandingPage from "../Front-End Pages/SellerLandingPage";
+import AddProductCard from "../Front-End Pages/MiniCard/AddProductCard";
+import AddServiceCard from "../Front-End Pages/MiniCard/AddServiceCard";
+import ProposalCard from "../Front-End Pages/MiniCard/ProposalCard";
+import ProductEnquiresCard from "../Front-End Pages/MiniCard/ProductEnquiresCard";
+import ReviewsCard from "../Front-End Pages/MiniCard/ReviewsCard";
+import ProjectOwnerLandingPage from "../Front-End Pages/ProjectOwnerLandingPage";
+import OpenProjectCard from "../Front-End Pages/MiniCard/OpenProjectCard";
+import WorkStreamCard from "../Front-End Pages/MiniCard/WorkStreamCard";
+import InvoicedueCard from "../Front-End Pages/MiniCard/InvoiceDueCard";
+import POProductEnquiresCard from "../Front-End Pages/MiniCard/POProductEnquiryCard";
+import POReviewCard from "../Front-End Pages/MiniCard/POReviewCard";
+import ProductList from "../Front-End Pages/Lists/ProductList";
+import ServiceList from '../Front-End Pages/Lists/ServiceList'
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -30,17 +47,36 @@ const FrontEndRouters = () => {
             <Route path="/postjob2"><PostJob2 /></Route>
             <Route path="/listjobs"><ListJobs /></Route>
             <Route path="/jobdetails/:jobid"><JobDetails /></Route>
-            <Route path="/homepage"><HomePage/></Route>
-            <Route path='/userlog'><UserLogin/></Route>
-            <Route path='/forgetpassword'><ForgetPasswordForm/></Route>
-            <Route path='/loginportal'><LoginPortal/></Route>
-            <Route path='/registerportal'><RegisterPortal/></Route>
-            <Route path='/projectownersignup'><ProjectOwnerRegister/></Route>
-            <Route path='/sellersignup'><SellerRegister/></Route>
-            <Route path='/user/addproduct'><FrontendAddProduct/></Route>
-            <Route path='/user/addservices'><FrontendAddService/></Route>
+            <Route path="/homepage"><HomePage /></Route>
+            <Route path='/userlog'><UserLogin /></Route>
+            <Route path='/forgetpassword'><ForgetPasswordForm /></Route>
+            <Route path='/loginportal'><LoginPortal /></Route>
+            <Route path='/registerportal'><RegisterPortal /></Route>
+            <Route path='/projectownersignup'><ProjectOwnerRegister /></Route>
+            <Route path='/sellersignup'><SellerRegister /></Route>
+            <Route path='/user/addproduct'><FrontendAddProduct /></Route>
+            <Route path='/user/addservices'><FrontendAddService /></Route>
+            <Route path='/how-it-works'><HowItWorks /></Route>
+            <Route path='/Project-Owner/profile'><ProjectOwnerProfile /></Route>
+            <Route path='/Project-Owner/Settings'><ProjectOwnerSettings /></Route>
+            <Route path='/Seller/profile'><SellerProfile /></Route>
+            <Route path='/Seller/Settings'><SellerSettings /></Route>
+            <Route path='/Seller/Landing'><SellerLandingPage /></Route>
+            <Route path='/addproductcard'><AddProductCard /></Route>
+            <Route path='/addservicecard'><AddServiceCard /></Route>
+            <Route path='/proposalcard'><ProposalCard /></Route>
+            <Route path='/productenquirescard'><ProductEnquiresCard /></Route>
+            <Route path='/reviewscard'><ReviewsCard /></Route>
+            <Route path='/ProjectOwner/Landing'><ProjectOwnerLandingPage /></Route>
+            <Route path='/openProjectCard'><OpenProjectCard /></Route>
+            <Route path='/workStreamCard'><WorkStreamCard /></Route>
+            <Route path='/InvoicedueCard'><InvoicedueCard /></Route>
+            <Route path='/POproductenquirescard'><POProductEnquiresCard /></Route>
+            <Route path='/POReviewsCard'><POReviewCard /></Route>
+            <Route path='/productList'><ProductList /></Route>
+            <Route path='/servicelist'><ServiceList/></Route>
             {/* <Route path='/user/allproduct'><FrontEndAllProducts/></Route> */}
-            <Route path="/user/"><HomePage/></Route>
+
         </Switch>
 
     )
