@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 
 const Flex = ({
   justifyContent,
@@ -8,7 +8,7 @@ const Flex = ({
   alignContent,
   inline,
   wrap,
-  className,
+  // className,
   tag: Tag = 'div',
   children,
   breakpoint,
@@ -16,23 +16,24 @@ const Flex = ({
   ...rest
 }) => {
   return (
-    <Tag
-      className={classNames(
-        {
-          [`d-${breakpoint ? breakpoint + '-' : ''}flex`]: !inline,
-          [`d-${breakpoint ? breakpoint + '-' : ''}inline-flex`]: inline,
-          [`flex-${direction}`]: direction,
-          [`justify-content-${justifyContent}`]: justifyContent,
-          [`align-items-${alignItems}`]: alignItems,
-          [`align-content-${alignContent}`]: alignContent,
-          [`flex-${wrap}`]: wrap
-        },
-        className
-      )}
-      {...rest}
-    >
-      {children}
-    </Tag>
+    // <Tag
+    //   className={classNames(
+    //     {
+    //       [`d-${breakpoint ? breakpoint + '-' : ''}flex`]: !inline,
+    //       [`d-${breakpoint ? breakpoint + '-' : ''}inline-flex`]: inline,
+    //       [`flex-${direction}`]: direction,
+    //       [`justify-content-${justifyContent}`]: justifyContent,
+    //       [`align-items-${alignItems}`]: alignItems,
+    //       [`align-content-${alignContent}`]: alignContent,
+    //       [`flex-${wrap}`]: wrap
+    //     },
+    //     className
+    //   )}
+    //   {...rest}
+    // >
+    //   {children}
+    // </Tag>
+    <></>
   );
 };
 
