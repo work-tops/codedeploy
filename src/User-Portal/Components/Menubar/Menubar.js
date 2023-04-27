@@ -22,6 +22,13 @@ function Menubar() {
                                     </Button>
                                 </Link>
                             </Col>
+                            <Col lg={2}>
+                                <Link to="/listjobs">
+                                    <Button className="btn bg-transparent text-dark border-0">
+                                        Project Lists
+                                    </Button>
+                                </Link>
+                            </Col>
                         </div>
                     </Row>
                 </Col >

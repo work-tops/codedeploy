@@ -3,6 +3,7 @@ import Menubar from "../Menubar/Menubar";
 import PostAJob from "../Post/PostAJobPost";
 import Footer from "../Footer/Footer";
 import { Icon } from "@iconify/react";
+import { Button } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { createData, getAllData } from "../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
@@ -253,7 +254,10 @@ function PostJob2() {
                                 <input value={form.expire_date} required name="expire_date" onChange={(e) => { handleChange(e) }} id="postcode-1" type='date' />
                                 <br></br>
                                 {/* <Link to="/listjobs" role="button"> */}
+                                <Link to="/OpenProjectCard">
                                     <button type="submit" className="usr-create-acc-btn">Post a Project</button>
+                                </Link>
+                                    <Button className="ms-5 btn bg-danger">Cancel</Button>
                                 {/* </Link> */}
                             </div>
                             <div className="col-5">

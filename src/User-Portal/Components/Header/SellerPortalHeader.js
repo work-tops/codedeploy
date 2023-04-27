@@ -35,7 +35,28 @@ function SellerPortalHeader() {
                             <Icon icon="clarity:notification-outline-badged" className="mt-2" color="white" width="28" height="28" />
                         </div>
                         <div>
-                            <Icon icon="icon-park-outline:like" color="white" className="mt-2 me-3 ms-3" width="28" height="28" />
+                            <Dropdown>
+                                <Dropdown.Toggle className="d-inline bg-transparent border-0" id="dropdown-basic">
+                                    <Icon icon="icon-park-outline:like" color="white" className="mt-2 me-3 ms-3" width="28" height="28" />
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <Link to='/wishlist/product'>
+                                            Product
+                                        </Link>
+                                    </Dropdown.Item>
+                                    <Dropdown.Item>
+                                        <Link to='/wishlist/project'>
+                                            Project
+                                        </Link>
+                                    </Dropdown.Item>
+                                    <Dropdown.Item >
+                                        <Link to='/wishlist/seller'>
+                                            Seller
+                                        </Link>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </div>
                         <Dropdown>
                             <div className="profile-divider d-inline">

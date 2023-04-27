@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SimpleBarReact from 'simplebar-react';
+// import SimpleBarReact from 'simplebar-react';
 import { Table } from 'react-bootstrap';
 const AdvanceTable = ({
   getTableProps,
@@ -13,7 +13,6 @@ const AdvanceTable = ({
   tableProps
 }) => {
   return (
-    <SimpleBarReact>
       <Table {...getTableProps(tableProps)}>
         <thead className={headerClassName}>
           <tr>
@@ -62,7 +61,6 @@ const AdvanceTable = ({
           })}
         </tbody>
       </Table>
-    </SimpleBarReact>
   );
 };
 AdvanceTable.propTypes = {

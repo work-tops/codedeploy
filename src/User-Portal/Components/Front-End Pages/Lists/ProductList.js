@@ -5,6 +5,7 @@ import Header from "../../Header/Header";
 import product_image from '../../Images/product_image.png'
 import { Icon } from "@iconify/react";
 import { getAllData } from "../../../../Services/ProxyService";
+import { Link } from "react-router-dom";
 
 function ProductList() {
 
@@ -55,74 +56,298 @@ function ProductList() {
                     </div>
                 </Col>
                 <Row>
+                    <Row>
+                        <Col className="fs-6 mt-3 fw-semibold">
+
+                            <span className="bg-dark ms-3 text-white p-2">
+                                Filter <Icon icon="ion:funnel-outline" color="white" width="28" height="28" />
+                            </span>
+
+                        </Col>
+                        <Col className="mt-3">
+                            <span className="badge m-1 bg-secondary">
+                                Celing (25) <Icon icon="ic:sharp-close" color="white" width="14" height="14" />
+                            </span>
+                            <span className="badge m-1 bg-secondary">
+                                Celing (25) <Icon icon="ic:sharp-close" color="white" width="14" height="14" />
+                            </span>
+                            <span className="badge m-1 bg-secondary">
+                                Celing (25) <Icon icon="ic:sharp-close" color="white" width="14" height="14" />
+                            </span>
+                        </Col>
+                    </Row>
                     <Col lg={3}>
                         <Form className="mt-2">
-                            <Form.Label className="ms-2 fw-bold fs-5">
-                                Category
-                            </Form.Label>
-                            <ul type="none">
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                            </ul>
-                            <Form.Label className="ms-2 fw-bold fs-5">
-                                Colour
-                            </Form.Label>
-                            <ul type="none">
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                            </ul>
-                            <Form.Label className="ms-2 fw-bold fs-5">
-                                Finish Type
-                            </Form.Label>
-                            <ul type="none">
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                            </ul>
-                            <Form.Label className="ms-2 fw-bold fs-5">
-                                Length
-                            </Form.Label>
-                            <ul type="none">
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                            </ul>
-                            <Form.Label className="ms-2 fw-bold fs-5">
-                                Width
-                            </Form.Label>
-                            <ul type="none">
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                            </ul>
-                            <Form.Label className="ms-2 fw-bold fs-5">
-                                Thickness
-                            </Form.Label>
-                            <ul type="none">
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                                <li className="fw-semibold">Celing(25)</li>
-                            </ul>
-                            <Form.Label className="ms-2 fw-bold fs-5">
-                                Offers
-                            </Form.Label>
-                            <ul type="none">
-                                <li className="fw-semibold">Celing(25)</li>
-                            </ul>
+                            <Form.Group className="mb-3">
+                                <Form.Label className="ms-2 fw-bold fs-5">
+                                    Category
+                                </Form.Label>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label className="ms-2 fw-bold fs-5">
+                                    Colour
+                                </Form.Label>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label className="ms-2 fw-bold fs-5">
+                                    Finish Type
+                                </Form.Label>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label className="ms-2 fw-bold fs-5">
+                                    Width
+                                </Form.Label>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label className="ms-2 fw-bold fs-5">
+                                    Thickness
+                                </Form.Label>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label className="ms-2 fw-bold fs-5">
+                                    Offers
+                                </Form.Label>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={1} className="ms-3">
+                                        <Form.Check />
+                                    </Col>
+                                    <Col>
+                                        Celing(25)
+                                    </Col>
+                                </Row>
+                            </Form.Group>
                         </Form>
                     </Col>
                     <Col lg={9}>
@@ -160,8 +385,8 @@ function ProductList() {
                         ))}
                         </Row>
                     </Col>
-                </Row>
-            </Row>
+                </Row >
+            </Row >
         </>
     )
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Col, Row, Card, Container, Button, Breadcrumb } from 'react-bootstrap';
+import {useState,React} from 'react';
+import { Col, Row, Card, Container, Button, Breadcrumb,Modal } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import { InputGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
@@ -9,11 +9,16 @@ import SellerPortalHeader from '../Header/SellerPortalHeader'
 import { Link } from 'react-router-dom';
 
 const FrontendAddProduct = () => {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
         <>
             <Row>
                 <Col lg={12}>
-                    < SellerPortalHeader/>
+                    < SellerPortalHeader />
                 </Col>
                 <Col lg={12}>
                     <Menubar />
@@ -32,7 +37,7 @@ const FrontendAddProduct = () => {
                                 </div>
                                 <div>
                                     <Link to="/Seller/Landing">
-                                    <Button className='m-1 d-block w-100'>Save</Button>
+                                        <Button className='m-1 d-block w-100'>Save</Button>
                                     </Link>
                                     {''}
                                     <Button className='m-1 btn btn-warning d-block w-100'>Save as Draft</Button>
@@ -53,26 +58,11 @@ const FrontendAddProduct = () => {
                                                         <Form.Control type="text" className='w-100' />
                                                     </Form.Group>
                                                     <Row className="mb-3 g-3">
-                                                        <Form.Group as={Col}>
+                                                        <Form.Group>
                                                             <Form.Label>SKU</Form.Label>
                                                             <Form.Control className='w-100' type="text" placeholder='eg.324812302' />
                                                         </Form.Group>
 
-                                                        <Form.Group as={Col}>
-                                                            <Form.Label>Weight</Form.Label>
-                                                            <InputGroup className="mb-3 w-100">
-                                                                <FormControl placeholder='0.0' type="number" aria-label="Text input with dropdown button" />
-
-                                                                <DropdownButton
-                                                                    variant="outline-secondary"
-                                                                    title="Kg"
-                                                                    id="input-group-dropdown-2"
-                                                                    align="end"
-                                                                >
-                                                                    <Dropdown.Item href="#">gms</Dropdown.Item>
-                                                                </DropdownButton>
-                                                            </InputGroup>
-                                                        </Form.Group>
                                                         <Form.Group className="mb-3">
                                                             <Form.Label>Description <span className='text-grey'>(Optional)</span></Form.Label>
                                                             <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
@@ -128,14 +118,20 @@ const FrontendAddProduct = () => {
                                                 {/* <Flex justifyContent={between}> */}
                                                 <div className='d-flex justify-content-between'>
                                                     <h5 className='mb-3'>Media</h5>
-                                                    <div>
-                                                        <DropdownButton id="dropdown-basic-button" title="Add media from URL" variant='falcon-default'>
-                                                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                                                            <Dropdown.Divider />
-                                                        </DropdownButton>
-                                                    </div>
+                                                    <Button variant="primary" onClick={handleShow}>
+                                                        Add Media from URL
+                                                    </Button>
+
+                                                    <Modal show={show} onHide={handleClose}>
+                                                        <Modal.Header closeButton>
+                                                            <Modal.Title>Enter or Paste the URL</Modal.Title>
+                                                        </Modal.Header>
+                                                        <Modal.Body>
+                                                            <Form.Control type='text' className='w-100 mb-3' />
+                                                            <Button className='btn btn-outline-success text-light'>Submit</Button>
+                                                        </Modal.Body>
+                                                    </Modal>
+
                                                 </div>
                                                 {/* </Flex> */}
                                                 <div className='mt-3 border-secondary w-100'>

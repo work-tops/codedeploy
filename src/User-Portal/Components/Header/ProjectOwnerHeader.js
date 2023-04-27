@@ -20,19 +20,40 @@ function ProjectOwnerHeader() {
                 </Col>
                 <Col lg={2}>
                     <Link to='/postjob1'>
-                    <Button className="btn ms-2 bg-white mt-2 text-dark">Post A Job</Button>
+                        <Button className="btn ms-2 bg-white mt-2 text-dark">Post A Project</Button>
                     </Link>
                 </Col>
                 <Col lg={3}>
                     <div className="d-flex justify-content-end">
                         <div>
-                        <Icon icon="material-symbols:shopping-cart-outline-rounded" className="mt-2 me-3" color="white" width="28" height="28" />
+                            <Icon icon="material-symbols:shopping-cart-outline-rounded" className="mt-2 me-3" color="white" width="28" height="28" />
                         </div>
                         <div>
                             <Icon icon="clarity:notification-outline-badged" className="mt-2" color="white" width="28" height="28" />
                         </div>
                         <div>
-                            <Icon icon="icon-park-outline:like" color="white" className="mt-2 me-3 ms-3" width="28" height="28" />
+                            <Dropdown>
+                                <Dropdown.Toggle className="d-inline bg-transparent border-0" id="dropdown-basic">
+                                    <Icon icon="icon-park-outline:like" color="white" className="mt-2 me-3 ms-3" width="28" height="28" />
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <Link to='/wishlist/product'>
+                                            Product
+                                        </Link>
+                                    </Dropdown.Item>
+                                    <Dropdown.Item>
+                                        <Link to='/wishlist/project'>
+                                            Project
+                                        </Link>
+                                    </Dropdown.Item>
+                                    <Dropdown.Item >
+                                        <Link to='/wishlist/seller'>
+                                            Seller
+                                        </Link>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </div>
                         <Dropdown>
                             <div className="profile-divider d-inline">
