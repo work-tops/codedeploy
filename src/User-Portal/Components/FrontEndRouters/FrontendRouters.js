@@ -44,7 +44,7 @@ import WishListSellerCard from "../Front-End Pages/MiniCard/WishlistSellerCard";
 const FrontEndRouters = () => {
     return (
         <Switch>
-            <Route path='/jobproposal'><JobProposal /></Route>
+            <Route path='/jobdetails/:jobid/jobproposal'><JobProposal /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path='/signup'><SignUpPage /></Route>
             <Route path="/proposallist"><ProposalList /></Route>

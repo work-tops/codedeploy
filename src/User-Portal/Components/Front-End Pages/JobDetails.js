@@ -11,13 +11,19 @@ import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
 
 function JobDetails() {
     let { jobid } = useParams();
-    const [jobdata, setJobdata]=useState([])
+    const [jobdata, setJobdata] = useState([])
+    const [board, setBoard] = useState(false)
+
+    const showboard = () => {
+        setBoard(!board)
+    }
 
     const getJobsById = async () => {
         const response = await getAllData('job/' + jobid);
         setJobdata(response.data.job);
+        sessionStorage.setItem("jobdata", JSON.stringify(response.data.job))
     }
-    useEffect(()=>{
+    useEffect(() => {
         getJobsById()
     }, [])
     return (
@@ -34,13 +40,13 @@ function JobDetails() {
                 </div>
                 <div className="col-12">
                     <div className="key-description-1">
-                        <h2 className="heading">Custom Website Development</h2>
+                        <h2 className="heading">{jobdata.project_title}</h2>
                         <ul type='none' className="key">
                             <li><i class="fa-solid fa-sterling-sign"></i>Medium Level</li>
-                            <li><i class="fa-solid fa-location-dot"></i>United Kingdom</li>
-                            <li><i class="fa-regular fa-building"></i>Type Fixed</li>
+                            <li><i class="fa-solid fa-location-dot"></i>{jobdata.location}</li>
+                            <li><i class="fa-regular fa-building"></i>{jobdata.budget_type}</li>
                             <li><i class="fa-solid fa-business-time"></i>Duration: {jobdata.project_duration}</li>
-                            <Link to="/jobproposal">
+                            <Link to={`/jobdetails/${jobid}/jobproposal`}>
                                 <button className="send-proposal">SEND PROPOSAL</button>
                             </Link>
                         </ul>
@@ -105,12 +111,17 @@ function JobDetails() {
 
                                 </div>
                                 <div className="col-6">
-                                    <button className="ask-a-que">ASK A QUESTION</button>
-
+                                    <button onClick={showboard} className="ask-a-que">ASK A QUESTION</button>
                                 </div>
                             </div>
-                            <input type='text' id="msg-box" placeholder="Type Your Message Here" />
-                            <div className="send-box"><button className="send">Send</button></div>
+                            {board == true ? (
+                                <>
+                                    <input type='text' id="msg-box" placeholder="Type Your Message Here" />
+                                    <div className="send-box"><button className="send">Send</button></div>
+                                </>
+                            ) : ""}
+
+
                         </div>
                         <div className="container2 col-3">
                             <p className="report-title">Report this Project</p>

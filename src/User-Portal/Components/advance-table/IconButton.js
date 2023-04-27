@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -16,10 +16,10 @@ const IconButton = ({
     {iconAlign === 'right' && children}
     <FontAwesomeIcon
       icon={icon}
-      className={classNames(iconClassName, {
-        'me-1': children && iconAlign === 'left',
-        'ms-1': children && iconAlign === 'right'
-      })}
+      // className={classNames(iconClassName, {
+      //   'me-1': children && iconAlign === 'left',
+      //   'ms-1': children && iconAlign === 'right'
+      // })}
       transform={transform}
     />
     {iconAlign === 'left' || iconAlign === 'middle' ? children : false}
