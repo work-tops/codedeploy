@@ -1,20 +1,13 @@
 import React from "react";
 import { Card, Breadcrumb, Button, DropdownButton, Dropdown, Row, Col} from "react-bootstrap";
 import ServiceAdvancedTable from "../advance-table/ServiceAdvanceTable";
+import { Link } from "react-router-dom";
 
 function AllServices() {
     return (
         <>
             <Card>
                 <Card.Body>
-                    <Breadcrumb className='mb-3 text-uppercase'>
-                        <Breadcrumb.Item href="#">
-                            Services
-                        </Breadcrumb.Item>
-                        <Breadcrumb.Item href="#">
-                           Services List
-                        </Breadcrumb.Item>
-                    </Breadcrumb>
                     <div className='d-flex justify-content-between'>
                         <div>
                             <h4>All Services</h4>
@@ -34,7 +27,9 @@ function AllServices() {
                                     </DropdownButton>
                                 </Col>
                                 <Col lg={6}>
+                                    <Link to="/user/addservices">
                                     <Button className='m-1 bg-success border-success w-100'>Add Services</Button>
+                                    </Link>
                                 </Col>
                             </Row>
                         </div>

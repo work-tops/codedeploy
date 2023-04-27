@@ -1,5 +1,5 @@
-import {useState,React} from 'react';
-import { Col, Row, Card, Container, Button, Breadcrumb,Modal } from 'react-bootstrap';
+import { useState, React } from 'react';
+import { Col, Row, Card, Container, Button, Breadcrumb, Modal } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import { InputGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
@@ -36,13 +36,13 @@ const FrontendAddProduct = () => {
                                     </Breadcrumb>
                                 </div>
                                 <div>
-                                    <Link to="/addproductcard">
-                                        <Button className='m-1 d-block w-100'>Save</Button>
+                                    {/* <Button className='m-1 d-block w-100'>Save</Button> */}
+                                    {''}
+                                    <Link to="/editproduct">
+                                    <Button className='me-3 btn btn-warning d-block w-100'>Save as Draft</Button>
                                     </Link>
                                     {''}
-                                    <Button className='m-1 btn btn-warning d-block w-100'>Save as Draft</Button>
-                                    {''}
-                                    <Button className='m-1 btn btn-success d-block w-100'>Publish Now</Button>
+                                    {/* <Button className='m-1 btn btn-success d-block w-100'>Publish Now</Button> */}
                                     {''}
                                 </div>
                             </div>
@@ -87,11 +87,7 @@ const FrontendAddProduct = () => {
                                                             id="input-group-dropdown-2"
                                                             align="end"
                                                         >
-                                                            <Dropdown.Item href="#">Action</Dropdown.Item>
-                                                            <Dropdown.Item href="#">Another action</Dropdown.Item>
-                                                            <Dropdown.Item href="#">Something else here</Dropdown.Item>
-                                                            <Dropdown.Divider />
-                                                            <Dropdown.Item href="#">Separated link</Dropdown.Item>
+                                                            <Dropdown.Item href="#">lb</Dropdown.Item>
                                                         </DropdownButton>
                                                     </InputGroup>
                                                 </Form.Group>
@@ -172,7 +168,7 @@ const FrontendAddProduct = () => {
                                                 <div className='d-flex justify-content-between'>
                                                     <h5 className='mb-3'>Variants</h5>
                                                     <div>
-                                                        <Button className='bg-transparent text-secondary border-light'>+ Add Variant</Button>
+                                                        <Button className='bg-transparent text-primary'>+ Add Variant</Button>
                                                     </div>
                                                 </div>
                                                 <h6 className='mt-3 mb-3'>OPTIONS</h6>
@@ -221,7 +217,16 @@ const FrontendAddProduct = () => {
                                                 <Button className='bg-transparent text-primary'>+ Add Option</Button>
                                             </Card.Body>
                                         </Card>
+                                        <Row>
+                                            <Col>
+                                                <Link to='/addproductcard'>
+                                                    <Button className='mt-3  btn text-light bg-success border-0'>Add Product</Button>
+                                                </Link>
+                                                <Button className='mt-3  btn text-light border-0 ms-5 bg-danger '>Cancel</Button>
+                                            </Col>
+                                        </Row>
                                     </Col>
+
                                     <Col lg={5}>
                                         <Card className='mt-3'>
                                             <Card.Body>
@@ -248,6 +253,7 @@ const FrontendAddProduct = () => {
                                             </Card.Body>
                                         </Card>
                                         <Card className='mt-3'>
+
                                             <Card.Body>
                                                 <h5 className='mb-3'>Product Tag</h5>
                                                 <Form.Group className='mb-3'>
@@ -312,6 +318,11 @@ const FrontendAddProduct = () => {
                                                 </Form.Group>
                                             </Card.Body>
                                         </Card>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col lg={7}>
+
                                     </Col>
                                 </Row>
                             </Container>
