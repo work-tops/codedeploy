@@ -41,6 +41,14 @@ import ProductDetails from "../Front-End Pages/ProductDetails";
 import WishListProductCard from "../Front-End Pages/MiniCard/WishlistProductCard";
 import ProjectWishListCard from "../Front-End Pages/MiniCard/ProjectWishlistCard";
 import WishListSellerCard from "../Front-End Pages/MiniCard/WishlistSellerCard";
+import MyProfile from "../Front-End Pages/Profile/MyProfile";
+import BussinessInformation from "../Front-End Pages/Profile/BussinessInformation";
+import AllServices from "../Front-End Pages/AllServices";
+import PaymentInfo from "../Front-End Pages/Profile/PaymentInfo";
+import Invoice from "../Front-End Pages/Profile/Invoice";
+import Granite from "../Front-End Pages/Categories/Granite";
+import Quartz from "../Front-End Pages/Categories/Quartz";
+import Marble from "../Front-End Pages/Categories/Marble";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -79,13 +87,20 @@ const FrontEndRouters = () => {
             <Route path='/POproductenquirescard'><POProductEnquiresCard /></Route>
             <Route path='/POReviewsCard'><POReviewCard /></Route>
             <Route path='/productList'><ProductList /></Route>
-            <Route path='/servicelist'><ServiceList/></Route>
-            <Route path='/user/allproduct'><FrontEndAllProducts/></Route>
-            <Route path='/productdetails'><ProductDetails/></Route>
-            <Route path='/wishlist/product'><WishListProductCard/></Route>
-            <Route path='/wishlist/project'><ProjectWishListCard/></Route>
-            <Route path='/wishlist/seller'><WishListSellerCard/></Route>
-
+            <Route path='/servicelist'><ServiceList /></Route>
+            <Route path='/user/allproduct'><FrontEndAllProducts /></Route>
+            <Route path='/productdetails'><ProductDetails /></Route>
+            <Route path='/wishlist/product'><WishListProductCard /></Route>
+            <Route path='/wishlist/project'><ProjectWishListCard /></Route>
+            <Route path='/wishlist/seller'><WishListSellerCard /></Route>
+            <Route path='/MyProfile'><MyProfile /></Route>
+            <Route path='/user/allservices'><AllServices /></Route>
+            <Route path="/BussinessInformation"><BussinessInformation /></Route>
+            <Route path="/paymentinfo"><PaymentInfo /></Route>
+            <Route path="/invoice"><Invoice /></Route>
+            <Route path="/Granite"><Granite /></Route>
+            <Route path="/Quartz"><Quartz /></Route>
+            <Route path="/Marble"><Marble /></Route>
         </Switch>
 
     )
