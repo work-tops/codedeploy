@@ -5,7 +5,7 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 // import SocialAuthButtons from '../authentication/SocialAuthButtons';
-import { createData } from "../../../Services/ProxyService";
+import { createData, getAllData } from "../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
 
 const LoginForm = ({ hasLabel, layout }) => {
@@ -14,7 +14,7 @@ const LoginForm = ({ hasLabel, layout }) => {
     email: '',
     password: '',
     remember: false,
-    role:''
+    role: ''
   });
   console.log(formData)
 
@@ -31,18 +31,21 @@ const LoginForm = ({ hasLabel, layout }) => {
     const _userdetails = {
       email: formData.email,
       password: formData.password,
-      role:formData.role
+      role: formData.role
     }
-    await createData("login", _userdetails).then(response=>{
+    await createData("login", _userdetails).then(async response => {
       console.log(response);
+      await getAllData("admin/user/" + response.data._user._id).then(res => {
+        sessionStorage.setItem('user', JSON.stringify(res.data.user));
+      })
       toast.success('Successfully Logged In')
       sessionStorage.setItem("token", response.data.token);
-      if(formData.role == "Freelancer"){
+      if (formData.role == "Freelancer") {
         history.push("/Seller/Landing");
-      }else{
+      } else {
         history.push("/ProjectOwner/Landing");
       }
-    }).catch(err=>{
+    }).catch(err => {
       toast.error(err.response.data.message);
     })
   }
@@ -66,13 +69,13 @@ const LoginForm = ({ hasLabel, layout }) => {
 
   return (
     <>
-      <Form onSubmit={(e)=>{Login(e)}}>
+      <Form onSubmit={(e) => { Login(e) }}>
         <h5 className='d-inline'>Login As:</h5>
         <Form.Group className="mt-3 mb-3">
-          <Form.Select required name="role" onChange={(e)=>{handleChange(e)}}>
+          <Form.Select required name="role" onChange={(e) => { handleChange(e) }}>
             <option>Select Role</option>
-            <option  value={'Freelancer'}>Seller </option>
-            <option  value={'Owner'}>Project Owner </option>
+            <option value={'Freelancer'}>Seller </option>
+            <option value={'Owner'}>Project Owner </option>
           </Form.Select>
         </Form.Group>
 
@@ -82,7 +85,7 @@ const LoginForm = ({ hasLabel, layout }) => {
             placeholder={!hasLabel ? 'Email address' : ''}
             value={formData.email}
             name="email"
-            onChange={(e)=>{handleChange(e)}}
+            onChange={(e) => { handleChange(e) }}
             type="email"
             required
           />
@@ -94,7 +97,7 @@ const LoginForm = ({ hasLabel, layout }) => {
             placeholder={!hasLabel ? 'Password' : ''}
             value={formData.password}
             name="password"
-            onChange={(e)=>{handleChange(e)}}
+            onChange={(e) => { handleChange(e) }}
             type="password"
             required
           />
@@ -117,26 +120,26 @@ const LoginForm = ({ hasLabel, layout }) => {
               /> Remember me</Form.Check>
           </Col>
 
-          <Col xs="auto">
+          {/* <Col xs="auto">
             <Link
               className="fs--1 mb-0"
               to={`/forgetpassword`}
             >
               Forgot Password?
             </Link>
-          </Col>
+          </Col> */}
         </Row>
 
         <Form.Group>
           {/* <Link to='/Seller/Landing'> */}
-            <Button
-              type="submit"
-              color="primary"
-              className="mt-3 w-100"
-              disabled={!formData.email || !formData.password}
-            >
-              Log in
-            </Button>
+          <Button
+            type="submit"
+            color="primary"
+            className="mt-3 w-100"
+            disabled={!formData.email || !formData.password}
+          >
+            Log in
+          </Button>
           {/* </Link> */}
           {/* <Link to='/ProjectOwner/Landing'>
             <Button

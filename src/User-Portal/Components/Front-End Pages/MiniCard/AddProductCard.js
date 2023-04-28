@@ -13,7 +13,7 @@ function AddProductCard() {
                     <SellerLandingPage />
                 </Col>
                 <Col lg={12}>
-                    {productLength < 1 ?(
+                    {/* {productLength < 1 ?(
                         <Card className="m-5">
                         <Card.Body>
                             <div className="mt-4 d-flex justify-content-center">
@@ -26,11 +26,11 @@ function AddProductCard() {
                             </div>
                         </Card.Body>
                     </Card>
-                    ) : (
+                    ) : ( */}
                         <div className="m-5">
                         <FrontEndAllProducts />
                         </div>
-                    )}
+                    {/*  )} */}
                     
                    
                 </Col>

@@ -81,12 +81,12 @@ function JobProposal() {
                 </div>
                 <div className="col-12">
                     <div className="key-description">
-                        <h2 className="heading">{jobdetails.project_title}</h2>
+                        <h2 className="heading">{jobdetails?.project_title}</h2>
                         <ul type='none' className="key">
                             <li><i className="fa-solid fa-sterling-sign"></i>{lavel} Level</li>
-                            <li><i className="fa-solid fa-location-dot"></i>{jobdetails.location}</li>
-                            <li><i className="fa-regular fa-building"></i>{jobdetails.category}</li>
-                            <li><i className="fa-solid fa-business-time"></i>{jobdetails.project_duration}</li>
+                            <li><i className="fa-solid fa-location-dot"></i>{jobdetails?.location}</li>
+                            <li><i className="fa-regular fa-building"></i>{jobdetails?.category}</li>
+                            <li><i className="fa-solid fa-business-time"></i>{jobdetails?.project_duration}</li>
                         </ul>
                     </div>
                     <form onSubmit={(e)=>{formsubmit(e)}}>

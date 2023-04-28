@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import newsfeed from "../Images/newsfeed.png"
 import profileImg from "../Images/employee.png"
 import currency from "../Images/Currency.png"
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useHistory } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
 import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
 
@@ -13,9 +13,18 @@ function JobDetails() {
     let { jobid } = useParams();
     const [jobdata, setJobdata] = useState([])
     const [board, setBoard] = useState(false)
+    const history = useHistory();
 
     const showboard = () => {
         setBoard(!board)
+    }
+    const sendProposal = () => {
+        var _token = sessionStorage.getItem("token");
+        if(_token != null){
+            history.push(`/jobdetails/${jobid}/jobproposal`);
+        }else{
+            history.push("/userlog");
+        }
     }
 
     const getJobsById = async () => {
@@ -66,9 +75,9 @@ console.log(daysDiff);
                             <li><i class="fa-solid fa-location-dot"></i>{jobdata.location}</li>
                             <li><i class="fa-regular fa-building"></i>{jobdata.category}</li>
                             <li><i class="fa-solid fa-business-time"></i>Duration: {jobdata.project_duration}</li>
-                            <Link to={`/jobdetails/${jobid}/jobproposal`}>
-                                <button className="send-proposal">SEND PROPOSAL</button>
-                            </Link>
+                            {/* <Link to={`/jobdetails/${jobid}/jobproposal`}> */}
+                                <button className="send-proposal" onClick={()=> sendProposal()}>SEND PROPOSAL</button>
+                            {/* </Link> */}
                         </ul>
                     </div>
                     <div className="job-det-cols row">

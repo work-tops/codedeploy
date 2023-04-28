@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row,Col } from "react-bootstrap";
 
 function PostPg() {
+    const [user, setUser] = useState('');
+
+    useEffect(() => {
+        var _user = sessionStorage.getItem('user');
+        var _json = JSON.parse(_user);
+        setUser(_json.name);
+    }, [])
+
     return (
         <Row style={{background: "#7fa6c7"}}>
             <Col className="p-1" lg={12}>
                 <Row>
                     <Col lg={6}>
-                        <h3 className="text-start text-white m-5">Good Afternoon , Abigail</h3>
+                        <h3 className="text-start text-white m-5">Hello , {user}</h3>
                     </Col>
                     <Col lg={6}>
                         <div className="m-5">

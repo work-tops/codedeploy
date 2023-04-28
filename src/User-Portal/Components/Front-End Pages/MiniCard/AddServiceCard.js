@@ -14,7 +14,7 @@ function AddServiceCard() {
                     <SellerLandingPage />
                 </Col>
                 <Col lg={12}>
-                    {serviceLength < 1 ? (
+                    {/* {serviceLength < 1 ? (
                         <Card className="m-5">
                             <Card.Body>
                                 <div className="mt-4 d-flex justify-content-center">
@@ -27,11 +27,11 @@ function AddServiceCard() {
                                 </div>
                             </Card.Body>
                         </Card>
-                    ) : (
+                    ) : ( */}
                         <div className="m-5">
                             <AllServices />
                         </div>
-                    )}
+                    {/* )} */}
 
                 </Col>
             </Row>
