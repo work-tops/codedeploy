@@ -6,6 +6,7 @@ import product_image from '../../Images/product_image.png'
 import { Icon } from "@iconify/react";
 import { getAllData } from "../../../../Services/ProxyService";
 import { Link } from "react-router-dom";
+import Footer from "../../Footer/Footer";
 
 function ProductList() {
 
@@ -351,41 +352,58 @@ function ProductList() {
                         </Form>
                     </Col>
                     <Col lg={9}>
-                    <div style={{ height: '0px' }} className="text-center">
-                                    {showSpinner && (
-                                        <div
-                                            className="spinner-border"
-                                            role="status"
-                                            style={{ width: '70px', height: '70px', fontSize: "20px", opacity: "0.7" }} // set the width and height here
-                                        >
-                                            <span className="sr-only">Loading...</span>
-                                        </div>
-                                    )}
+                        <div style={{ height: '0px' }} className="text-center">
+                            {showSpinner && (
+                                <div
+                                    className="spinner-border"
+                                    role="status"
+                                    style={{ width: '70px', height: '70px', fontSize: "20px", opacity: "0.7" }} // set the width and height here
+                                >
+                                    <span className="sr-only">Loading...</span>
                                 </div>
+                            )}
+                        </div>
                         <Row className="mt-3">
-                        {products.map((data, key) => (
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <img src={data?.attachments[0]?.url} width="300px" />
-                                    {/* <img src={product_image} width="300px" /> */}
-                                    <p className="fw-semibold m-1">{data.name}</p>
-                                    <small className="m-1">Quartz</small>
-                                    <span className="d-block">
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                        (20)
-                                    </span>
-                                    <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ {data?.variant[0]?.pricing?.price}</p>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-                        ))}
+                            {products.map((data, key) => (
+                                <Col lg={4}>
+                                    <div className="mb-3">
+                                        <Link to="/productdetails">
+                                        <img src={data?.attachments[0]?.url} width="300px" />
+                                        </Link>
+                                        {/* <img src={product_image} width="300px" /> */}
+                                        <Link to="/productdetails">
+                                        <p className="fw-semibold m-1">{data.name}</p>
+                                        </Link>
+                                        <small className="m-1">Quartz</small>
+                                        <Row>
+                                        <Col>
+                                            <span className="d-block">
+                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
+                                            </span>
+                                            <small className="mt-3">(20)</small>
+                                        </Col>
+                                        <Col>
+                                            <Icon icon="material-symbols:shopping-cart-outline-rounded" className="mt-2 ms-3 me-1" color="#9da8ba" width="20" height="20" />
+                                            <Icon icon="icon-park-outline:like" color="#9da8ba" className="mt-2 me-3 ms-2" width="20" height="20" />
+                                        </Col>
+                                    </Row>
+                                        <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ {data?.variant[0]?.pricing?.price}</p>
+                                        <Link to="/RequestQuote">
+                                        <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
+                                        </Link>
+                                    </div>
+                                </Col>
+                            ))}
                         </Row>
                     </Col>
                 </Row >
+                <Col lg={12}>
+                    <Footer />
+                </Col>
             </Row >
         </>
     )

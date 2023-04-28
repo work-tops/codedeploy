@@ -1,9 +1,18 @@
 import React from "react";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
+import Header from "../../Header/Header";
+import Footer from "../../Footer/Footer";
+import Menubar from '../../Menubar/Menubar'
 function RequestQuote() {
     return (
         <>
             <Row>
+                <Col lg={12}>
+                    <Header />
+                </Col>
+                <Col lg={12}>
+                    <Menubar />
+                </Col>
                 <Col lg={12}>
                     <div className="d-flex justify-content-center align-items-center mb-3 mt-5">
                         <h4 className="fw-bolder">Request a Quote</h4>
@@ -115,6 +124,9 @@ function RequestQuote() {
                             </Card.Body>
                         </Card>
                     </Row>
+                </Col>
+                <Col lg={12}>
+                    <Footer/>
                 </Col>
             </Row>
         </>

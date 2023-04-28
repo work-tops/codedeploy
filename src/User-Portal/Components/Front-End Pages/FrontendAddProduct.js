@@ -7,6 +7,7 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 import Menubar from '../Menubar/Menubar';
 import SellerPortalHeader from '../Header/SellerPortalHeader'
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 const FrontendAddProduct = () => {
 
@@ -36,13 +37,10 @@ const FrontendAddProduct = () => {
                                     </Breadcrumb>
                                 </div>
                                 <div>
-                                    {/* <Button className='m-1 d-block w-100'>Save</Button> */}
                                     {''}
                                     <Link to="/editproduct">
-                                    <Button className='me-3 btn btn-warning d-block w-100'>Save as Draft</Button>
+                                        <Button className='me-3 btn btn-warning d-block w-100'>Save as Draft</Button>
                                     </Link>
-                                    {''}
-                                    {/* <Button className='m-1 btn btn-success d-block w-100'>Publish Now</Button> */}
                                     {''}
                                 </div>
                             </div>
@@ -58,11 +56,6 @@ const FrontendAddProduct = () => {
                                                         <Form.Control type="text" className='w-100' />
                                                     </Form.Group>
                                                     <Row className="mb-3 g-3">
-                                                        <Form.Group>
-                                                            <Form.Label>SKU</Form.Label>
-                                                            <Form.Control className='w-100' type="text" placeholder='eg.324812302' />
-                                                        </Form.Group>
-
                                                         <Form.Group className="mb-3">
                                                             <Form.Label>Description <span className='text-grey'>(Optional)</span></Form.Label>
                                                             <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
@@ -71,82 +64,11 @@ const FrontendAddProduct = () => {
                                                 </Form>
                                             </Card.Body>
                                         </Card>
-                                    </Col>
-                                    <Col lg={5}>
-                                        <Card className='mt-3 me-3'>
-                                            <Card.Body>
-                                                <h5 className='mb-3'>Pricing</h5>
-                                                <Form.Group className='mb-3'>
-                                                    <Form.Label>Pricing</Form.Label>
-                                                    <InputGroup className="mb-3">
-                                                        <FormControl placeholder='0.00' type="number" aria-label="Text input with dropdown button" />
-
-                                                        <DropdownButton
-                                                            variant="outline-secondary"
-                                                            title="lb"
-                                                            id="input-group-dropdown-2"
-                                                            align="end"
-                                                        >
-                                                            <Dropdown.Item href="#">lb</Dropdown.Item>
-                                                        </DropdownButton>
-                                                    </InputGroup>
-                                                </Form.Group>
-                                                <Form.Group className='mb-3'>
-                                                    <Form.Label>Compare Price</Form.Label>
-                                                    <Form.Control type="number" className='w-100' />
-                                                </Form.Group>
-                                                <Form.Group className='mb-3'>
-                                                    <Form.Label>Handling Charges</Form.Label>
-                                                    <Form.Control type="number" className='w-100' />
-                                                </Form.Group>
-                                                <Form.Group className='mb-3'>
-                                                    <Form.Label>Sales Price</Form.Label>
-                                                    <Form.Control type="number" className='w-100' />
-                                                </Form.Group>
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col lg={7}>
-                                        <Card className='mt-3 me-3'>
-                                            <Card.Body>
-                                                {/* <Flex justifyContent={between}> */}
-                                                <div className='d-flex justify-content-between'>
-                                                    <h5 className='mb-3'>Media</h5>
-                                                    <Button variant="primary" onClick={handleShow}>
-                                                        Add Media from URL
-                                                    </Button>
-
-                                                    <Modal show={show} onHide={handleClose}>
-                                                        <Modal.Header closeButton>
-                                                            <Modal.Title>Enter or Paste the URL</Modal.Title>
-                                                        </Modal.Header>
-                                                        <Modal.Body>
-                                                            <Form.Control type='text' className='w-100 mb-3' />
-                                                            <Button className='btn btn-outline-success text-light'>Submit</Button>
-                                                        </Modal.Body>
-                                                    </Modal>
-
-                                                </div>
-                                                {/* </Flex> */}
-                                                <div className='mt-3 border-secondary w-100'>
-                                                    <small className='d-block text-align-center w-25'>
-                                                        Drag and Drop
-                                                        Your Files Here
-                                                        or
-                                                    </small>
-                                                    <Button className='mt-3 btn text-light btn-outline-secondary'>Browse Files</Button>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
-                                    <Col lg={5}>
                                         <Card className='mt-3 me-3'>
                                             <Card.Body>
                                                 <h5 className='mb-3'>Organization</h5>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label>Vendor</Form.Label>
+                                                    <Form.Label>Seller Email</Form.Label>
                                                     <Form.Control type="text" className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
@@ -159,75 +81,213 @@ const FrontendAddProduct = () => {
                                                 </Form.Group>
                                             </Card.Body>
                                         </Card>
-                                    </Col>
-                                </Row>
-                                <Row >
-                                    <Col lg={7}>
-                                        <Card className='mt-3 me-3'>
-                                            <Card.Body>
-                                                <div className='d-flex justify-content-between'>
-                                                    <h5 className='mb-3'>Variants</h5>
-                                                    <div>
-                                                        <Button className='bg-transparent text-primary'>+ Add Variant</Button>
-                                                    </div>
-                                                </div>
-                                                <h6 className='mt-3 mb-3'>OPTIONS</h6>
-                                                <Row className="mb-3 g-3">
-                                                    <Form.Group as={Col} className='mb-3'>
-
-                                                        <Form.Select className='w-75'>
-                                                            <option>Size</option>
-                                                            <option>Colour</option>
-                                                            <option>Material</option>
-                                                            <option>Style</option>
-                                                        </Form.Select>
-                                                    </Form.Group>
-                                                    <Form.Group as={Col} className='mb-3'>
-                                                        <Form.Control type="text" placeholder='Enter tags' className='w-100' />
-                                                    </Form.Group>
-                                                </Row>
-                                                <Row className="mb-3 g-3">
-                                                    <Form.Group as={Col} className='mb-3'>
-
-                                                        <Form.Select className='w-75'>
-                                                            <option>Size</option>
-                                                            <option>Colour</option>
-                                                            <option>Material</option>
-                                                            <option>Style</option>
-                                                        </Form.Select>
-                                                    </Form.Group>
-                                                    <Form.Group as={Col} className='mb-3'>
-                                                        <Form.Control type="text" placeholder='Enter tags' className='w-100' />
-                                                    </Form.Group>
-                                                </Row>
-                                                <Row className="mb-3 g-3">
-                                                    <Form.Group as={Col} className='mb-3'>
-
-                                                        <Form.Select className='w-75'>
-                                                            <option>Size</option>
-                                                            <option>Colour</option>
-                                                            <option>Material</option>
-                                                            <option>Style</option>
-                                                        </Form.Select>
-                                                    </Form.Group>
-                                                    <Form.Group as={Col} className='mb-3'>
-                                                        <Form.Control type="text" placeholder='Enter tags' className='w-100' />
-                                                    </Form.Group>
-                                                </Row>
-                                                <Button className='bg-transparent text-primary'>+ Add Option</Button>
-                                            </Card.Body>
-                                        </Card>
+                                        <Button onClick={handleShow} className='m-3 bg-transparent text-primary'>+ Add Variant</Button>
                                         <Row>
                                             <Col>
                                                 <Link to='/addproductcard'>
                                                     <Button className='mt-3  btn text-light bg-success border-0'>Add Product</Button>
                                                 </Link>
-                                                <Button className='mt-3  btn text-light border-0 ms-5 bg-danger '>Cancel</Button>
+                                                <Link to="/addproductcard">
+                                                    <Button className='mt-3  btn text-light border-0 ms-5 bg-danger '>Cancel</Button>
+                                                </Link>
                                             </Col>
                                         </Row>
-                                    </Col>
+                                        <div>
 
+                                            {/* <Flex justifyContent={between}> */}
+                                            <div className='d-flex justify-content-between'>
+                                                <Modal
+                                                    show={show}
+                                                    onHide={() => setShow(false)}
+                                                    dialogClassName="modal-xl modal-90w"
+
+                                                    aria-labelledby="example-custom-modal-styling-title"
+                                                >
+                                                    <Modal.Header closeButton>
+                                                        <Modal.Title id="example-custom-modal-styling-title">
+                                                            Variant Details</Modal.Title>
+                                                    </Modal.Header>
+                                                    <Modal.Body>
+                                                        <Row>
+                                                            <Col lg={6}>
+                                                                <Card className='mt-3  me-3'>
+                                                                    <Card.Body>
+                                                                        <div className='d-flex justify-content-between'>
+                                                                            <h5 className='mb-3'>Variants</h5>
+
+                                                                        </div>
+                                                                        <h6 className='mt-3 mb-3'>OPTIONS</h6>
+                                                                        <Row className="mb-3 g-3">
+                                                                            <Form.Group as={Col} className='mb-3'>
+
+                                                                                <Form.Select className='w-75'>
+                                                                                    <option>Size</option>
+                                                                                    <option>Colour</option>
+                                                                                    <option>Material</option>
+                                                                                    <option>Style</option>
+                                                                                </Form.Select>
+                                                                            </Form.Group>
+                                                                            <Form.Group as={Col} className='mb-3'>
+                                                                                <Form.Control type="text" placeholder='Enter tags' className='w-100' />
+                                                                            </Form.Group>
+                                                                        </Row>
+                                                                        <Row className="mb-3 g-3">
+                                                                            <Form.Group as={Col} className='mb-3'>
+
+                                                                                <Form.Select className='w-75'>
+                                                                                    <option>Size</option>
+                                                                                    <option>Colour</option>
+                                                                                    <option>Material</option>
+                                                                                    <option>Style</option>
+                                                                                </Form.Select>
+                                                                            </Form.Group>
+                                                                            <Form.Group as={Col} className='mb-3'>
+                                                                                <Form.Control type="text" placeholder='Enter tags' className='w-100' />
+                                                                            </Form.Group>
+                                                                        </Row>
+                                                                        <Row className="mb-3 g-3">
+                                                                            <Form.Group as={Col} className='mb-3'>
+
+                                                                                <Form.Select className='w-75'>
+                                                                                    <option>Size</option>
+                                                                                    <option>Colour</option>
+                                                                                    <option>Material</option>
+                                                                                    <option>Style</option>
+                                                                                </Form.Select>
+                                                                            </Form.Group>
+                                                                            <Form.Group as={Col} className='mb-3'>
+                                                                                <Form.Control type="text" placeholder='Enter tags' className='w-100' />
+                                                                            </Form.Group>
+                                                                        </Row>
+                                                                        <Button className='bg-transparent text-primary'>+ Add Option</Button>
+                                                                    </Card.Body>
+                                                                </Card>
+                                                            </Col>
+                                                            <Col lg={5}>
+                                                                <Card className='mt-3 me-3'>
+                                                                    <Card.Body>
+                                                                        <h5 className='mb-3'>Pricing</h5>
+                                                                        <Form.Group className='mb-3'>
+                                                                            <Form.Label>Pricing</Form.Label>
+                                                                            <InputGroup className="mb-3">
+                                                                                <FormControl placeholder='0.00' type="number" aria-label="Text input with dropdown button" />
+
+                                                                                <DropdownButton
+                                                                                    variant="outline-secondary"
+                                                                                    title="lb"
+                                                                                    id="input-group-dropdown-2"
+                                                                                    align="end"
+                                                                                >
+                                                                                    <Dropdown.Item href="#">lb</Dropdown.Item>
+                                                                                </DropdownButton>
+                                                                            </InputGroup>
+                                                                        </Form.Group>
+                                                                        <Form.Group className='mb-3'>
+                                                                            <Form.Label>Compare Price</Form.Label>
+                                                                            <Form.Control type="number" className='w-100' />
+                                                                        </Form.Group>
+                                                                        <Form.Group className='mb-3'>
+                                                                            <Form.Label>Handling Charges</Form.Label>
+                                                                            <Form.Control type="number" className='w-100' />
+                                                                        </Form.Group>
+                                                                        <Form.Group className='mb-3'>
+                                                                            <Form.Label>Sales Price</Form.Label>
+                                                                            <Form.Control type="number" className='w-100' />
+                                                                        </Form.Group>
+                                                                        <Form.Group className='mb-3'>
+                                                                            <Row>
+
+                                                                                <Col lg={5}>
+                                                                                    <Form.Check />
+                                                                                    <Form.Label>
+                                                                                        Shipping Requires
+                                                                                    </Form.Label>
+                                                                                </Col>
+                                                                                <Col lg={6}>
+                                                                                    <Form.Check />
+                                                                                    <Form.Label>
+                                                                                        Charge Taxes on this product
+                                                                                    </Form.Label>
+                                                                                </Col>
+                                                                            </Row>
+                                                                        </Form.Group>
+                                                                    </Card.Body>
+                                                                </Card>
+                                                                <Card className='mt-3 me-3'>
+                                                                    <Card.Body>
+                                                                        <h5 className='mb-3'>Inventory</h5>
+                                                                        <Form.Group className='mb-3'>
+                                                                            <Form.Label>SKU</Form.Label>
+                                                                            <Form.Control className='w-100' type="text" placeholder='eg.324812302' />
+                                                                        </Form.Group>
+                                                                        <Form.Group className='mb-3'>
+                                                                            <Form.Label>Barcode</Form.Label>
+                                                                            <Form.Control
+                                                                                className='w-100'
+                                                                                type="text"
+                                                                            />
+                                                                        </Form.Group>
+                                                                        <Form.Group className='mb-3'>
+                                                                            <Form.Label>Minimum Purchase Quantity</Form.Label>
+                                                                            <Form.Control type="number" className='w-100' />
+                                                                        </Form.Group>
+                                                                        <Form.Group className='mb-3'>
+                                                                            <Form.Label>Quantity</Form.Label>
+                                                                            <Form.Control type="number" className='w-100' />
+                                                                        </Form.Group>
+                                                                        <Form.Group className='mb-3'>
+                                                                            <Form.Check />
+                                                                            <Form.Label>
+                                                                                Track this Product Inventory
+                                                                            </Form.Label>
+                                                                        </Form.Group>
+
+                                                                        <Button className='btn bg-success border border-0 m-3'>Submit</Button>
+
+                                                                    </Card.Body>
+                                                                </Card>
+                                                            </Col>
+                                                        </Row>
+                                                    </Modal.Body>
+                                                </Modal>
+
+                                            </div>
+                                            {/* </Flex> */}
+                                        </div>
+                                    </Col>
                                     <Col lg={5}>
+
+                                        <Card className='mt-3'>
+                                            <Card.Body>
+                                                {/* <Flex justifyContent={between}> */}
+                                                <h5 className='mb-3'>Media</h5>
+                                                {/* <div className='d-flex justify-content-between'>
+                                                    <Button variant="primary" onClick={handleShow}>
+                                                    Add Media from URL
+                                                    </Button>
+                                                    
+                                                    <Modal show={show} onHide={handleClose}>
+                                                    <Modal.Header closeButton>
+                                                    <Modal.Title>Enter or Paste the URL</Modal.Title>
+                                                    </Modal.Header>
+                                                        <Modal.Body>
+                                                            <Form.Control type='text' className='w-100 mb-3' />
+                                                            <Button className='btn btn-outline-success text-light'>Submit</Button>
+                                                            </Modal.Body>
+                                                            </Modal>
+                                                            
+                                                        </div> */}
+                                                {/* </Flex> */}
+                                                <div className='mt-3 border-secondary w-100'>
+                                                    <small className='d-block text-align-center'>
+                                                        Drag and Drop
+                                                        Your Files Here
+                                                    </small>
+                                                    <Button className='mt-3 btn text-light btn-outline-secondary'>Browse Files</Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+
                                         <Card className='mt-3'>
                                             <Card.Body>
                                                 <h5 className='mb-3'>Product Handle and Metafields</h5>
@@ -320,14 +380,12 @@ const FrontendAddProduct = () => {
                                         </Card>
                                     </Col>
                                 </Row>
-                                <Row>
-                                    <Col lg={7}>
-
-                                    </Col>
-                                </Row>
                             </Container>
                         </Card.Body >
                     </Card>
+                </Col>
+                <Col lg={12}>
+                    <Footer />
                 </Col>
             </Row>
         </>

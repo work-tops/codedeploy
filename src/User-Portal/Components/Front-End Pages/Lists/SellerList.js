@@ -1,19 +1,26 @@
-import React from "react";
+import { React, useState } from "react";
 import { Icon } from "@iconify/react";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Modal, Form } from "react-bootstrap";
 import worktops from '../../Project images/worktops-installation.jpg'
-import ProjectOwnerHeader from "../../Header/ProjectOwnerHeader";
 import Menubar from "../../Menubar/Menubar";
 import { Link } from "react-router-dom";
 import freelancer from '../../Project images/Freelancer.jpg'
 import huwaei from '../../Project images/Huawei-Logo.png'
 import company_name from '../../Project images/CompanyName.png'
+import Header from "../../Header/Header";
+import Footer from "../../Footer/Footer";
 function SellerList() {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <>
             <Row>
                 <Col lg={12}>
-                    <ProjectOwnerHeader />
+                    <Header />
                 </Col>
                 <Col lg={12}>
                     <Menubar />
@@ -56,7 +63,7 @@ function SellerList() {
                                     <Link to="/RequestQuote">
                                         <Button className="ms-4 text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
                                     </Link>
-                                    <Button className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
+                                    <Button onClick={handleShow} className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
                                 </div>
                             </div>
                         </Col>
@@ -89,7 +96,7 @@ function SellerList() {
                                     <Link to="/RequestQuote">
                                         <Button className="ms-4 text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
                                     </Link>
-                                    <Button className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
+                                    <Button onClick={handleShow} className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
                                 </div>
                             </div>
                         </Col>
@@ -122,7 +129,7 @@ function SellerList() {
                                     <Link to="/RequestQuote">
                                         <Button className="ms-4 text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
                                     </Link>
-                                    <Button className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
+                                    <Button onClick={handleShow} className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
                                 </div>
                             </div>
                         </Col>
@@ -155,7 +162,7 @@ function SellerList() {
                                     <Link to="/RequestQuote">
                                         <Button className="ms-4 text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
                                     </Link>
-                                    <Button className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
+                                    <Button onClick={handleShow} className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
                                 </div>
                             </div>
                         </Col>
@@ -188,7 +195,7 @@ function SellerList() {
                                     <Link to="/RequestQuote">
                                         <Button className="ms-4 text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
                                     </Link>
-                                    <Button className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
+                                    <Button onClick={handleShow} className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
                                 </div>
                             </div>
                         </Col>
@@ -221,11 +228,55 @@ function SellerList() {
                                     <Link to="/RequestQuote">
                                         <Button className="ms-4 text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
                                     </Link>
-                                    <Button className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
+                                    <Button onClick={handleShow} className="ms-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
                                 </div>
                             </div>
                         </Col>
                     </Row>
+                </Col>
+
+                {/* Message Me - Modal */}
+                <div className='d-flex justify-content-between'>
+                    <Modal
+                        show={show}
+                        onHide={() => setShow(false)}
+                        dialogClassName="modal-lg modal-90w"
+
+                        aria-labelledby="example-custom-modal-styling-title"
+                    >
+                        <Modal.Header closeButton>
+                            <Modal.Title id="example-custom-modal-styling-title">
+                                Contact Reliant Plumbing and Heating</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <Form>
+                                <Form.Group className="mb-3">
+                                    <Form.Label className="fw-semibold">
+                                        What's the Message About ?
+                                    </Form.Label>
+                                    <Form.Control type="text" />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label className="fw-semibold">
+                                        Message
+                                    </Form.Label>
+                                    <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Check className="ms-2" />
+                                    <Form.Check.Label>
+                                        I Agree to the terms and conditions.
+                                    </Form.Check.Label>
+                                </Form.Group>
+                            </Form>
+                            <Button className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
+                                SEND
+                            </Button>
+                        </Modal.Body>
+                    </Modal>
+                </div>
+                <Col lg={12}>
+                    <Footer />
                 </Col>
             </Row >
         </>

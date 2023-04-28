@@ -4,10 +4,17 @@ import { Link } from "react-router-dom";
 function Menubar() {
     return (
         <>
-            <Row style={{background: "#F4F2F2"}}>
+            <Row style={{ background: "#F4F2F2" }}>
                 <Col lg={12}>
                     <Row>
                         <div className="d-flex justify-content-end m-2">
+                            <Col lg={1}>
+                                <Link to="/listjobs">
+                                    <Button className="btn bg-transparent text-dark border-0">
+                                        Projects
+                                    </Button>
+                                </Link>
+                            </Col>
                             <Col lg={1}>
                                 <Link to="/productlist">
                                     <Button className="btn bg-transparent text-dark border-0">
@@ -19,13 +26,6 @@ function Menubar() {
                                 <Link to="/servicelist">
                                     <Button className="btn bg-transparent text-dark border-0">
                                         Services
-                                    </Button>
-                                </Link>
-                            </Col>
-                            <Col lg={2}>
-                                <Link to="/listjobs">
-                                    <Button className="btn bg-transparent text-dark border-0">
-                                        Project Lists
                                     </Button>
                                 </Link>
                             </Col>

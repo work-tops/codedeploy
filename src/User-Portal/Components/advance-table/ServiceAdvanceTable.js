@@ -349,7 +349,7 @@ const ServiceAdvancedTable = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                            <IconButton
+                            {/* <IconButton
                                 variant="falcon-default"
                                 size="sm"
                                 icon="plus"
@@ -357,7 +357,7 @@ const ServiceAdvancedTable = () => {
                                 className='me-2'
                             >
                                 <span className="d-none d-sm-inline-block ms-1">New</span>
-                            </IconButton>
+                            </IconButton> */}
                             <IconButton
                                 variant="falcon-default"
                                 size="sm"

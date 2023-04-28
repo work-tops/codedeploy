@@ -6,6 +6,7 @@ import Multiselect from 'multiselect-react-dropdown';
 import Menubar from '../Menubar/Menubar';
 import SellerPortalHeader from '../Header/SellerPortalHeader';
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 
 const FrontendAddService = () => {
@@ -138,9 +139,9 @@ const FrontendAddService = () => {
                                     <Col lg={5}>
                                         <Card className='mt-3 me-3'>
                                             <Card.Body>
+                                                <h5 className='mb-3'>Media</h5>
                                                 {/* <Flex justifyContent={between}> */}
-                                                <div className='d-flex justify-content-between'>
-                                                    <h5 className='mb-3'>Media</h5>
+                                                {/* <div className='d-flex justify-content-between'>
                                                     <Button variant="primary" onClick={handleShow}>
                                                         Add Media from URL
                                                     </Button>
@@ -155,7 +156,7 @@ const FrontendAddService = () => {
                                                         </Modal.Body>
                                                     </Modal>
 
-                                                </div>
+                                                </div> */}
                                                 {/* </Flex> */}
                                                 <div className='mt-3 border-secondary w-100'>
                                                     <small className='d-block text-align-center w-100'>
@@ -201,12 +202,17 @@ const FrontendAddService = () => {
                                         <Link to='/addservicecard'>
                                         <Button className='mt-3  btn text-light bg-success border-0'>Add Services</Button>
                                         </Link>
+                                        <Link to="/addservicecard">
                                         <Button className='mt-3  btn text-light border-0 ms-5 bg-danger '>Cancel</Button>
+                                        </Link>
                                     </Col>
                                 </Row>
                             </Container>
                         </Card.Body >
                     </Card>
+                </Col>
+                <Col lg={12}>
+                    <Footer />
                 </Col>
             </Row>
         </>

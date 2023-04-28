@@ -54,6 +54,9 @@ import SellerList from "../Front-End Pages/Lists/SellerList";
 import ServiceInformation from "../Front-End Pages/Lists/ServiceInformation";
 import RequestQuote from "../Front-End Pages/Lists/RequestQuote";
 import Cart from "../Front-End Pages/Cart/Cart";
+import ContactUs from "../Footer/Contactus";
+import PrivacyPolicy from "../Footer/PrivacyPolicy";
+import TermsOfUse from "../Footer/TermsofUse";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -93,7 +96,6 @@ const FrontEndRouters = () => {
             <Route path='/POReviewsCard'><POReviewCard /></Route>
             <Route path='/productList'><ProductList /></Route>
             <Route path='/servicelist'><ServiceList /></Route>
-            <Route path='/user/allproduct'><FrontEndAllProducts /></Route>
             <Route path='/productdetails'><ProductDetails /></Route>
             <Route path='/wishlist/product'><WishListProductCard /></Route>
             <Route path='/wishlist/project'><ProjectWishListCard /></Route>
@@ -106,11 +108,17 @@ const FrontEndRouters = () => {
             <Route path="/Granite"><Granite /></Route>
             <Route path="/Quartz"><Quartz /></Route>
             <Route path="/Marble"><Marble /></Route>
+            <Route path="/userallproduct"><FrontEndAllProducts/></Route>
+            <Route path="/userallservice"><AllServices/></Route>
             <Route path="/editProduct"><EditProduct/></Route>
             <Route path="/user/sellerList"><SellerList/></Route>
             <Route path="/ServiceInformation"><ServiceInformation/></Route>
             <Route path="/RequestQuote"><RequestQuote/></Route>
             <Route path="/Cart"><Cart/></Route>
+            <Route path="/contactus"><ContactUs/></Route>
+            <Route path="/privacypolicy"><PrivacyPolicy/></Route>
+            <Route path="/contactus"><ContactUs/></Route>
+            <Route path="/termsofuse"><TermsOfUse/></Route>
         </Switch>
 
     )
