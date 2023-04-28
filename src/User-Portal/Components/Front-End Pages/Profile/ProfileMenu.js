@@ -6,7 +6,12 @@ import { Link } from "react-router-dom";
 function ProfileMenu() {
     return (
         <>
+        <div className="justify-content-between">
             <h4 className="m-3">Account Setting</h4>
+            <div>
+                <Button className="bg-primary text-white border-0 ms-3">Back</Button>
+            </div>
+        </div>
             <Link to="/MyProfile">
                 <Button className="m-3 d-block btn bg-transparent text-dark border border-0">
                     My Profile
