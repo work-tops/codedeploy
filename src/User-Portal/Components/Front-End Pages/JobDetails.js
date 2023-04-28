@@ -76,10 +76,10 @@ console.log(daysDiff);
                             <p className="sub-title">Project Detail</p>
                             <p className="title-desc">{jobdata.project_description}
                             </p>
-                            <p className="skills-req">Skills Requried</p>
+                            {/* <p className="skills-req">Skills Requried</p>
                             <br></br>
                             <p className="skills">Fabrication</p>
-                            <p className="skills">Templater</p>
+                            <p className="skills">Templater</p> */}
                         </div>
                         <div className="col-6 economy-desc">
                             <div>

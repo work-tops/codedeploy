@@ -27,6 +27,8 @@ import Roofing from '../../Project images/Roofing.jpg'
 import Tilling from '../../Project images/Tilling.jpg'
 import Stonemasonary from '../../Project images/Stonemasonry.png'
 import { Col, Row, Button, Modal, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 function ServiceList() {
     const [show, setShow] = useState(false);
 
@@ -54,8 +56,8 @@ function ServiceList() {
                                     </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                    <Form.Control type='text'  placeholder="enter your postcode" className='w-100 mb-3' />
-                                    <Button className='btn btn-outline-success text-light'>Search</Button>
+                                    <Form.Control type='text' placeholder="cb236dx" className='w-100 mb-3' />
+                                    <Link to="/user/SellerList"><Button className='btn btn-outline-success text-light'>Search</Button></Link>
                                 </Modal.Body>
                             </Modal>
                         </div>
@@ -75,8 +77,8 @@ function ServiceList() {
                                     </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                    <Form.Control type='text' placeholder="enter your postcode" className='w-100 mb-3' />
-                                    <Button className='btn btn-outline-success text-light'>Search</Button>
+                                    <Form.Control type='text' placeholder="cb236dx" className='w-100 mb-3' />
+                                    <Link to="/user/SellerList"><Button className='btn btn-outline-success text-light'>Search</Button></Link>
                                 </Modal.Body>
                             </Modal>
                         </div>
@@ -96,8 +98,8 @@ function ServiceList() {
                                     </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                    <Form.Control type='text'  placeholder="enter your postcode"  className='w-100 mb-3' />
-                                    <Button className='btn btn-outline-success text-light'>Search</Button>
+                                    <Form.Control type='text' placeholder="cb236dx" className='w-100 mb-3' />
+                                    <Link to="/user/SellerList"><Button className='btn btn-outline-success text-light'>Search</Button></Link>
                                 </Modal.Body>
                             </Modal>
                         </div>
@@ -117,8 +119,8 @@ function ServiceList() {
                                     </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                    <Form.Control type='text' placeholder="enter your postcode" className='w-100 mb-3' />
-                                    <Button className='btn btn-outline-success text-light'>Search</Button>
+                                    <Form.Control type='text' placeholder="cb236dx" className='w-100 mb-3' />
+                                    <Link to="/user/SellerList"><Button className='btn btn-outline-success text-light'>Search</Button></Link>
                                 </Modal.Body>
                             </Modal>
                         </div>
@@ -138,8 +140,8 @@ function ServiceList() {
                                     </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                    <Form.Control type='text' placeholder="enter your postcode" className='w-100 mb-3' />
-                                    <Button className='btn btn-outline-success text-light'>Search</Button>
+                                    <Form.Control type='text' placeholder="cb236dx" className='w-100 mb-3' />
+                                    <Link to="/user/SellerList"><Button className='btn btn-outline-success text-light'>Search</Button></Link>
                                 </Modal.Body>
                             </Modal>
                         </div>
@@ -159,8 +161,8 @@ function ServiceList() {
                                     </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                    <Form.Control type='text' placeholder="enter your postcode" className='w-100 mb-3' />
-                                    <Button className='btn btn-outline-success text-light'>Search</Button>
+                                    <Form.Control type='text' placeholder="cb236dx" className='w-100 mb-3' />
+                                    <Link to="/user/SellerList"><Button className='btn btn-outline-success text-light'>Search</Button></Link>
                                 </Modal.Body>
                             </Modal>
                         </div>

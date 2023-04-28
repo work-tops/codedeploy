@@ -49,6 +49,11 @@ import Invoice from "../Front-End Pages/Profile/Invoice";
 import Granite from "../Front-End Pages/Categories/Granite";
 import Quartz from "../Front-End Pages/Categories/Quartz";
 import Marble from "../Front-End Pages/Categories/Marble";
+import EditProduct from "../Front-End Pages/EditProduct";
+import SellerList from "../Front-End Pages/Lists/SellerList";
+import ServiceInformation from "../Front-End Pages/Lists/ServiceInformation";
+import RequestQuote from "../Front-End Pages/Lists/RequestQuote";
+import Cart from "../Front-End Pages/Cart/Cart";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -102,6 +107,11 @@ const FrontEndRouters = () => {
             <Route path="/Granite"><Granite /></Route>
             <Route path="/Quartz"><Quartz /></Route>
             <Route path="/Marble"><Marble /></Route>
+            <Route path="/editProduct"><EditProduct/></Route>
+            <Route path="/user/sellerList"><SellerList/></Route>
+            <Route path="/ServiceInformation"><ServiceInformation/></Route>
+            <Route path="/RequestQuote"><RequestQuote/></Route>
+            <Route path="/Cart"><Cart/></Route>
         </Switch>
 
     )

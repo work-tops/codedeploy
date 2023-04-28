@@ -26,7 +26,9 @@ function ProjectOwnerHeader() {
                 <Col lg={3}>
                     <div className="d-flex justify-content-end">
                         <div>
+                            <Link to="/Cart">
                             <Icon icon="material-symbols:shopping-cart-outline-rounded" className="mt-2 me-3" color="white" width="28" height="28" />
+                            </Link>
                         </div>
                         <div>
                             <Icon icon="clarity:notification-outline-badged" className="mt-2" color="white" width="28" height="28" />

@@ -199,8 +199,9 @@ const FrontendAddService = () => {
                                 <Row>
                                     <Col lg={7}>
                                         <Link to='/addservicecard'>
-                                        <Button className='mt-3  btn text-light bg-success btn-outline-success'>Add Services</Button>
+                                        <Button className='mt-3  btn text-light bg-success border-0'>Add Services</Button>
                                         </Link>
+                                        <Button className='mt-3  btn text-light border-0 ms-5 bg-danger '>Cancel</Button>
                                     </Col>
                                 </Row>
                             </Container>
