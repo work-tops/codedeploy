@@ -62,6 +62,7 @@ const FrontEndRouters = () => {
             <Route path="/jobdetails/:jobid"><JobDetails /></Route>
             <Route path="/homepage"><HomePage /></Route>
             <Route path='/userlog'><UserLogin /></Route>
+            {/* <Route path='/'><UserLogin /></Route> */}
             <Route path='/forgetpassword'><ForgetPasswordForm /></Route>
             <Route path='/loginportal'><LoginPortal /></Route>
             <Route path='/registerportal'><RegisterPortal /></Route>

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import SellerLandingPage from "../SellerLandingPage";
 import FrontEndAllProducts from "../FrontendAllProducts";
 function AddProductCard() {
+    const productLength = sessionStorage.getItem("productlength")
     return (
         <>
             <Row>
@@ -12,7 +13,8 @@ function AddProductCard() {
                     <SellerLandingPage />
                 </Col>
                 <Col lg={12}>
-                    <Card className="m-5">
+                    {productLength < 1 ?(
+                        <Card className="m-5">
                         <Card.Body>
                             <div className="mt-4 d-flex justify-content-center">
                                 <h3 className="text-center">Please Add your Product Here</h3>
@@ -24,9 +26,13 @@ function AddProductCard() {
                             </div>
                         </Card.Body>
                     </Card>
-                    <div className="m-5">
-                    <FrontEndAllProducts />
-                    </div>
+                    ) : (
+                        <div className="m-5">
+                        <FrontEndAllProducts />
+                        </div>
+                    )}
+                    
+                   
                 </Col>
             </Row>
         </>

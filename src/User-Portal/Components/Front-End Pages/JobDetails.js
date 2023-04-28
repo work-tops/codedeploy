@@ -26,6 +26,26 @@ function JobDetails() {
     useEffect(() => {
         getJobsById()
     }, [])
+
+// Level comparing 
+    let lavel = ""
+    if(jobdata.budget < 1000){
+        lavel="Low"
+    }else if(jobdata.budget > 1000 || jobdata.budget < 3000 ){
+        lavel="Medium"
+    }else if(jobdata.budget > 3001){
+        lavel="High"
+    }
+
+// Date length
+
+const today = new Date().toISOString().substr(0, 10);
+const expire_date = new Date(jobdata.expire_date);
+const timeDiff = expire_date.getTime() - new Date(today).getTime();
+const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+console.log(daysDiff);
+
+
     return (
         <>
             <div className="row">
@@ -42,9 +62,9 @@ function JobDetails() {
                     <div className="key-description-1">
                         <h2 className="heading">{jobdata.project_title}</h2>
                         <ul type='none' className="key">
-                            <li><i class="fa-solid fa-sterling-sign"></i>Medium Level</li>
+                            <li><i class="fa-solid fa-sterling-sign"></i>{lavel} Level</li>
                             <li><i class="fa-solid fa-location-dot"></i>{jobdata.location}</li>
-                            <li><i class="fa-regular fa-building"></i>{jobdata.budget_type}</li>
+                            <li><i class="fa-regular fa-building"></i>{jobdata.category}</li>
                             <li><i class="fa-solid fa-business-time"></i>Duration: {jobdata.project_duration}</li>
                             <Link to={`/jobdetails/${jobid}/jobproposal`}>
                                 <button className="send-proposal">SEND PROPOSAL</button>
@@ -64,7 +84,7 @@ function JobDetails() {
                         <div className="col-6 economy-desc">
                             <div>
                                 <p className="ending-days">Ends In (Days)</p>
-                                <p className="days-left">10</p>
+                                <p className="days-left">{daysDiff}</p>
                             </div>
                             <div>
                                 <div className="flex">

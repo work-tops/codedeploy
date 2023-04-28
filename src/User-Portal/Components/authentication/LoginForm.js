@@ -2,17 +2,50 @@ import Divider from '../authentication/Divider';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { Link, useHistory } from 'react-router-dom';
+// import { toast } from 'react-toastify';
 // import SocialAuthButtons from '../authentication/SocialAuthButtons';
+import { createData } from "../../../Services/ProxyService";
+import toast, { Toaster } from 'react-hot-toast';
 
 const LoginForm = ({ hasLabel, layout }) => {
   // State
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    remember: false
+    remember: false,
+    role:''
   });
+  console.log(formData)
+
+  const history = useHistory();
+
+  const handleChange = (e) => {
+    const myData = { ...formData };
+    myData[e.target.name] = e.target.value;
+    setFormData(myData);
+  }
+
+  const Login = async (e) => {
+    e.preventDefault();
+    const _userdetails = {
+      email: formData.email,
+      password: formData.password,
+      role:formData.role
+    }
+    await createData("login", _userdetails).then(response=>{
+      console.log(response);
+      toast.success('Successfully Logged In')
+      sessionStorage.setItem("token", response.data.token);
+      if(formData.role == "Freelancer"){
+        history.push("/Seller/Landing");
+      }else{
+        history.push("/ProjectOwner/Landing");
+      }
+    }).catch(err=>{
+      toast.error(err.response.data.message);
+    })
+  }
 
   // Handler
   const handleSubmit = e => {
@@ -29,15 +62,17 @@ const LoginForm = ({ hasLabel, layout }) => {
     });
   };
 
+
+
   return (
     <>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={(e)=>{Login(e)}}>
         <h5 className='d-inline'>Login As:</h5>
         <Form.Group className="mt-3 mb-3">
-          <Form.Select>
+          <Form.Select required name="role" onChange={(e)=>{handleChange(e)}}>
             <option>Select Role</option>
-            <option>Seller </option>
-            <option>Project Owner </option>
+            <option  value={'Freelancer'}>Seller </option>
+            <option  value={'Owner'}>Project Owner </option>
           </Form.Select>
         </Form.Group>
 
@@ -47,8 +82,9 @@ const LoginForm = ({ hasLabel, layout }) => {
             placeholder={!hasLabel ? 'Email address' : ''}
             value={formData.email}
             name="email"
-            onChange={handleFieldChange}
+            onChange={(e)=>{handleChange(e)}}
             type="email"
+            required
           />
         </Form.Group>
 
@@ -58,8 +94,9 @@ const LoginForm = ({ hasLabel, layout }) => {
             placeholder={!hasLabel ? 'Password' : ''}
             value={formData.password}
             name="password"
-            onChange={handleFieldChange}
+            onChange={(e)=>{handleChange(e)}}
             type="password"
+            required
           />
         </Form.Group>
 
@@ -69,6 +106,7 @@ const LoginForm = ({ hasLabel, layout }) => {
               <Form.Check.Input
                 type="checkbox"
                 name="remember"
+                value={true}
                 checked={formData.remember}
                 onChange={e =>
                   setFormData({
@@ -90,7 +128,7 @@ const LoginForm = ({ hasLabel, layout }) => {
         </Row>
 
         <Form.Group>
-          <Link to='/Seller/Landing'>
+          {/* <Link to='/Seller/Landing'> */}
             <Button
               type="submit"
               color="primary"
@@ -99,8 +137,8 @@ const LoginForm = ({ hasLabel, layout }) => {
             >
               Log in
             </Button>
-          </Link>
-          <Link to='/ProjectOwner/Landing'>
+          {/* </Link> */}
+          {/* <Link to='/ProjectOwner/Landing'>
             <Button
               type="submit"
               color="primary"
@@ -109,10 +147,11 @@ const LoginForm = ({ hasLabel, layout }) => {
             >
               Log in
             </Button>
-          </Link>
+          </Link> */}
         </Form.Group>
         <p className="text-center mt-3 mb-3">Dont Have an Account ? <Link to='/signup'>Create Account</Link></p>
       </Form>
+      <Toaster />
     </>
   );
 };

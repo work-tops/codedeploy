@@ -6,6 +6,7 @@ import SellerLandingPage from "../SellerLandingPage";
 import AllServices from '../AllServices'
 
 function AddServiceCard() {
+    const serviceLength = sessionStorage.getItem("servicelength")
     return (
         <>
             <Row>
@@ -13,21 +14,25 @@ function AddServiceCard() {
                     <SellerLandingPage />
                 </Col>
                 <Col lg={12}>
-                    <Card className="m-5">
-                        <Card.Body>
-                            <div className="mt-4 d-flex justify-content-center">
-                                <h3 className="text-center">Please Add your Services Here</h3>
-                            </div>
-                            <div className="mt-4 d-flex justify-content-center">
-                                <Link to="/user/addservices">
-                                    <Button className="btn text-white btn-outline-success">Add Services</Button>
-                                </Link>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                    <div className="m-5">
-                        <AllServices />
-                    </div>
+                    {serviceLength < 1 ? (
+                        <Card className="m-5">
+                            <Card.Body>
+                                <div className="mt-4 d-flex justify-content-center">
+                                    <h3 className="text-center">Please Add your Services Here</h3>
+                                </div>
+                                <div className="mt-4 d-flex justify-content-center">
+                                    <Link to="/user/addservices">
+                                        <Button className="btn text-white btn-outline-success">Add Services</Button>
+                                    </Link>
+                                </div>
+                            </Card.Body>
+                        </Card>
+                    ) : (
+                        <div className="m-5">
+                            <AllServices />
+                        </div>
+                    )}
+
                 </Col>
             </Row>
         </>

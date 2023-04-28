@@ -31,16 +31,22 @@ function SignUpPage() {
             created_by: "1",
         }
         console.log('add user', userObject);
-        const response = await createData("register", userObject)
-        if (response.status === 201) {
-            toast.success('Successfully Freelancer Added')
-            setForm({});
-            // clearForm();
-            history.push('/user');
-        } else {
-            toast.error('Something went wrong')
-        }
-        console.log(response);
+        await createData("register", userObject).then(res=>{
+            console.log('response',res);
+            toast.success('Signup success')
+            history.push('/userlog');
+        }).catch(err=>{
+            toast.error(err.response.data.message);
+        })
+        // if (response.status === 201) {
+        //     toast.success('Successfully Freelancer Added')
+        //     setForm({});
+        //     // clearForm();
+        //     history.push('/userlog');
+        // } else {
+        //     toast.error('Something went wrong')
+        // }
+        // console.log(response);
     }
     const formSubmit = (e) => {
         // console.log('submit button triggered');
@@ -99,9 +105,7 @@ function SignUpPage() {
                                         By Signing up you accept MyProject's Terms of Service.
                                         I have read and understood MyProject's Privacy Policy.
                                     </p>
-                                    <Link to='/userlog'>
                                         <button type="submit" id="sign-up" >SIGN UP</button>
-                                    </Link>
                                     <input type="button" onClick={() => { toggleCard(1) }} id="back" value="Back" />
                                 </div>
                             </fieldset>
@@ -121,6 +125,8 @@ function SignUpPage() {
                                     <input autoComplete="off" required name="last_name" value={form.last_name} onChange={(e) => { handleChange(e) }} type="text" id="trd-ip-bx" />
                                     <label className="id-ver-label">Email</label>
                                     <input autoComplete="off" required name="email" value={form.email} onChange={(e) => { handleChange(e) }} type="email" id="trd-ip-bx" />
+                                    <label className="id-ver-label">Password</label>
+                                    <input autoComplete="off" required name="password" value={form.password} onChange={(e) => { handleChange(e) }} type="password" id="trd-ip-bx" />
                                     <label className="id-ver-label">Phone Number</label>
                                     <input autoComplete="off" required name="phone" value={form.phone} onChange={(e) => { handleChange(e) }} type="text" id="trd-ip-bx" />
                                     <div className="row">
@@ -143,16 +149,14 @@ function SignUpPage() {
                                         <input type="checkbox" />I agree to the MyProject terms & conditions, the Quote Tool terms &
                                         conditions and the data sharing agreement
                                     </p>
-                                    <Link to='/userlog'>
                                         <button type="submit" id="sign-up" >SIGN UP</button>
-                                    </Link>
                                     <input onClick={() => { toggleCard(1) }} type="button" id="back" value="Back" />
                                 </div>
                             </fieldset>
                         </div>
                     </form>
                 }
-
+                    <Toaster />
             </div>
             <div className="col-12">
                 <Footer />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdvanceTableWrapper from "../advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../advance-table/AdvanceTable";
 import AdvanceTableFooter from "../advance-table/AdvanceTableFooter";
@@ -6,192 +6,219 @@ import { Row, Button, Col, Form } from "react-bootstrap";
 import IconButton from "../advance-table/IconButton";
 import product_image from "../Img/product_image.png"
 // import CardDropdown from '../utilities/CardDropdown'
-const columns = [
-    {
-        accessor: 'productId',
-        Header: 'Product ID'
-    },
-    {
-        accessor: 'image',
-        Header: 'Image'
-    },
-    {
-        accessor: 'name',
-        Header: 'Name'
-    },
-    {
-        accessor: 'email',
-        Header: 'Seller',
-        Cell: rowData => {
-            const { email } = rowData.row.original
-            return (
-                <a href={'mailto:' + email}>
-                    {email}
-                </a>
-            )
-        }
-    },
-    {
-        accessor: 'price',
-        Header: 'Price'
-    },
-    {
-        accessor: 'quantity',
-        Header: 'Quantity'
-    },
-    {
-        accessor: 'status',
-        Header: 'Status'
-    },
-    {
-        accessor: 'action',
-        Header: 'Action'
-    }
-];
-
-const data = [
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'anna@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "PORTUM KC NATURAL DEKTON",
-        email: 'homer@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge p-2 bg-warning">Approval Pending</span>,
-
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'oscar@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge p-2 bg-secondary">Disabled</span>,
-
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'emily@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "PORTUM KC NATURAL DEKTON",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    }, {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'emily@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "FANTASY BROWN GRANITE123",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    }, {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'emily@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "VENDOME TERRAZZO",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    }, {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "WHITE ROSE ONYXz",
-        email: 'emily@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    }
-    ,
-    {
-        productId: '664345',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    }
-    ,
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-
-    }
-];
+import { getAllData } from "../../../Services/ProxyService";
 
 const AdvancedTable = () => {
+
+    const [product, setproducts] = useState([]); 
+    console.log(product.length)
+
+    const Productlist = async () => {
+        const response = await getAllData('products');
+        setproducts(response.data.products);
+        sessionStorage.setItem("productlength", response.data.products.length)
+    }
+
+    useEffect(()=>{
+        Productlist()
+    }, [])
+
+  
+    const columns = [
+        {
+            accessor: 'productId',
+            Header: 'Product ID'
+        },
+        {
+            accessor: 'image',
+            Header: 'Image'
+        },
+        {
+            accessor: 'name',
+            Header: 'Name'
+        },
+        {
+            accessor: 'email',
+            Header: 'Seller',
+            Cell: rowData => {
+                const { email } = rowData.row.original
+                return (
+                    <a href={'mailto:' + email}>
+                        {email}
+                    </a>
+                )
+            }
+        },
+        {
+            accessor: 'price',
+            Header: 'Price'
+        },
+        {
+            accessor: 'quantity',
+            Header: 'Quantity'
+        },
+        {
+            accessor: 'status',
+            Header: 'Status'
+        },
+        {
+            accessor: 'action',
+            Header: 'Action'
+        }
+    ];
+
+    const data = product.map(product => ({
+        productId: product._id,
+        image: <img src={product.attachments[0].url} width="40px" height="35px" />,
+        name: product.name,
+        email: product.seller_email,
+        price: `£${product.variant[0].pricing.price}`,
+        quantity: `${product.variant[0].inventory.quantity} Pcs`,
+        status: <span className="badge bg-success p-2">Approved</span>
+      }));
+    
+    // const data = [
+  //     // {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "PORTUM KC NATURAL DEKTON",
+    //     //     email: 'homer@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge p-2 bg-warning">Approval Pending</span>,
+    
+    //     },
+    //     // {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "PORTUM KC NATURAL DEKTON",
+    //     //     email: 'homer@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge p-2 bg-warning">Approval Pending</span>,
+    
+    //     // },
+    //     // {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "Marble",
+    //     //     email: 'oscar@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge p-2 bg-secondary">Disabled</span>,
+    
+    //     // },
+    //     // {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "Marble",
+    //     //     email: 'emily@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // },
+    //     // {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "PORTUM KC NATURAL DEKTON",
+    //     //     email: 'jara@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // }, {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "Marble",
+    //     //     email: 'emily@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // },
+    //     // {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "FANTASY BROWN GRANITE123",
+    //     //     email: 'jara@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // }, {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "Marble",
+    //     //     email: 'emily@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // },
+    //     // {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "VENDOME TERRAZZO",
+    //     //     email: 'jara@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // }, {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "WHITE ROSE ONYXz",
+    //     //     email: 'emily@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // },
+    //     // {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "Marble",
+    //     //     email: 'jara@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // },
+    //     // {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "Marble",
+    //     //     email: 'jara@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // }
+    //     // ,
+    //     // {
+    //     //     productId: '664345',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "Marble",
+    //     //     email: 'jara@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // }
+    //     // ,
+    //     // {
+    //     //     productId: '643456',
+    //     //     image: <img src={product_image} width="40px" height="35px" />,
+    //     //     name: "Marble",
+    //     //     email: 'jara@example.com',
+    //     //     price: '£100',
+    //     //     quantity: "10 Pcs",
+    //     //     status: <span className="badge bg-success p-2">Approved</span>,
+    
+    //     // }
+    // ];
+
     function BulAction({ selectedRowIds }) {
         return (
             <Row className="flex-between-center mb-3">
