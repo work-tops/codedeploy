@@ -257,7 +257,9 @@ function PostJob2() {
                                 <Link to="/OpenProjectCard">
                                     <button type="submit" className="usr-create-acc-btn">Post a Project</button>
                                 </Link>
+                                <Link to="/postjob1">
                                     <Button className="ms-5 btn bg-danger">Cancel</Button>
+                                </Link>
                                 {/* </Link> */}
                             </div>
                             <div className="col-5">
