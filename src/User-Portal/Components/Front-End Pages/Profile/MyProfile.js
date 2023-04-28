@@ -42,7 +42,13 @@ function MyProfile() {
                                 </div>
                             </div>
                             <Divider />
-                            <h5 className="ms-5">Personal Information</h5>
+                            <div className="d-flex justify-content-between">
+                                <h5 className="ms-5">Personal Information</h5>
+                                <div>
+                                    <Button className="btn border-0  m-2 bg-secondary">Edit</Button>
+                                    <Button className="btn border-0 m-2  bg-primary">Save</Button>
+                                </div>
+                            </div>
                             <div className="d-flex justify-content-between">
                                 <div className="ms-5">
                                     <Form.Label className="d-block">
@@ -82,7 +88,7 @@ function MyProfile() {
                                     <Form.Label className="d-block fw-semibold">
                                         Rahman
                                     </Form.Label>
-                                    
+
                                     <Form.Group className="mb-3">
                                         <Form.Control value={"Rahman"} type="text" />
                                     </Form.Group>
@@ -105,13 +111,16 @@ function MyProfile() {
                                         <Form.Control value={"Worktops Installation"} type="text" />
                                     </Form.Group>
                                 </div>
-                                <div className="ms-5">
-                                    <Button className="btn border-0  bg-secondary">Edit</Button>
-                                    <Button className="btn border-0 ms-2  bg-primary">Save</Button>
-                                </div>
+
                             </div>
                             <Divider />
+                            <div className="d-flex justify-content-between">
                             <h5 className="ms-5">Address</h5>
+                                <div>
+                                    <Button className="btn border-0  m-2 bg-secondary">Edit</Button>
+                                    <Button className="btn border-0 m-2  bg-primary">Save</Button>
+                                </div>
+                            </div>
                             <div className="d-flex justify-content-between">
                                 <div className="ms-5">
                                     <Form.Label className="d-block">
@@ -152,10 +161,6 @@ function MyProfile() {
                                     <Form.Group className="mb-3">
                                         <Form.Control value={"CDEX323"} type="text" />
                                     </Form.Group>
-                                </div>
-                                <div>
-                                        <Button className="btn border-0  bg-secondary">Edit</Button>
-                                        <Button className="btn border-0 ms-2  bg-primary">Save</Button>
                                 </div>
                             </div>
                         </Card.Body>
