@@ -57,6 +57,7 @@ import Cart from "../Front-End Pages/Cart/Cart";
 import ContactUs from "../Footer/Contactus";
 import PrivacyPolicy from "../Footer/PrivacyPolicy";
 import TermsOfUse from "../Footer/TermsofUse";
+import ShippingPage from "../Front-End Pages/Cart/ShippingPage";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -119,6 +120,7 @@ const FrontEndRouters = () => {
             <Route path="/privacypolicy"><PrivacyPolicy/></Route>
             <Route path="/contactus"><ContactUs/></Route>
             <Route path="/termsofuse"><TermsOfUse/></Route>
+            <Route path="/shippingpage"><ShippingPage/></Route>
         </Switch>
 
     )

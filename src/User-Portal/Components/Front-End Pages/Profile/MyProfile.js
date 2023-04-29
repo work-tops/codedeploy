@@ -4,6 +4,7 @@ import { Row, Col, Card, Button, Form } from "react-bootstrap";
 import profile_img from '../../Project images/Handyman.jpg'
 import Divider from "../../authentication/Divider";
 import { Link } from "react-router-dom";
+import Multiselect from "multiselect-react-dropdown";
 function MyProfile() {
     return (
         <>
@@ -73,13 +74,19 @@ function MyProfile() {
                                     <Form.Label className="d-block">
                                         Primary Skill
                                     </Form.Label>
-                                    <Form.Label className="d-block fw-semibold">
-                                        Fabricator
-                                    </Form.Label>
                                     <Form.Group className="mb-3">
-                                        <Form.Control value={"Fabricator"} type="text" />
+                                        <Form.Select>
+                                            <option>
+                                                Fabricator
+                                            </option>
+                                            <option>
+                                                Kitchen Design
+                                            </option>
+                                            <option>
+                                                Electronic Services
+                                            </option>
+                                        </Form.Select>
                                     </Form.Group>
-
                                 </div>
                                 <div className="ms-5">
                                     <Form.Label className="d-block">
@@ -101,67 +108,31 @@ function MyProfile() {
                                     <Form.Group className="mb-3">
                                         <Form.Control value={"+44567890"} type="text" />
                                     </Form.Group>
-                                    <Form.Label className="d-block">
-                                        Secondary Skill
-                                    </Form.Label>
-                                    <Form.Label className="d-block fw-semibold">
-                                        Worktops Installation
-                                    </Form.Label>
                                     <Form.Group className="mb-3">
-                                        <Form.Control value={"Worktops Installation"} type="text" />
+                                        <Form.Label className="d-block">
+                                            Secondary Skill
+                                        </Form.Label>
+                                        <div style={{ border: '1px solid #d5d6d7', borderRadius: '5px' }}>
+                                            <Multiselect />
+                                        </div>
                                     </Form.Group>
                                 </div>
 
                             </div>
                             <Divider />
                             <div className="d-flex justify-content-between">
-                            <h5 className="ms-5">Address</h5>
+                                <h5 className="ms-5">Address</h5>
                                 <div>
-                                    <Button className="btn border-0  m-2 bg-secondary">Edit</Button>
-                                    <Button className="btn border-0 m-2  bg-primary">Save</Button>
+                                    <Button className="btn border-0  bg-secondary">Edit</Button>
+                                    <Button className="btn border-0 ms-2  bg-primary">Save</Button>
                                 </div>
                             </div>
-                            <div className="d-flex justify-content-between">
-                                <div className="ms-5">
-                                    <Form.Label className="d-block">
-                                        First Line
-                                    </Form.Label>
-                                    <Form.Label className="d-block fw-semibold">
-                                        102
-                                    </Form.Label>
-                                    <Form.Group className="mb-3">
-                                        <Form.Control value={"102"} type="text" />
-                                    </Form.Group>
-                                    <Form.Label className="d-block">
-                                        Country
-                                    </Form.Label>
-                                    <Form.Label className="d-block fw-semibold">
-                                        United Kingdom
-                                    </Form.Label>
-                                    <Form.Group className="mb-3">
-                                        <Form.Control value={"United Kingdom"} type="text" />
-                                    </Form.Group>
-                                </div>
-                                <div>
-                                    <Form.Label className="d-block">
-                                        County
-                                    </Form.Label>
-                                    <Form.Label className="d-block fw-semibold">
-                                        De la la Way
-                                    </Form.Label>
-                                    <Form.Group className="mb-3">
-                                        <Form.Control value={"De la la Way"} type="text" />
-                                    </Form.Group>
-                                    <Form.Label className="d-block">
-                                        Post Code
-                                    </Form.Label>
-                                    <Form.Label className="d-block fw-semibold">
-                                        CDEX323
-                                    </Form.Label>
-                                    <Form.Group className="mb-3">
-                                        <Form.Control value={"CDEX323"} type="text" />
-                                    </Form.Group>
-                                </div>
+                            <Form.Group className="ms-5">
+                            </Form.Group>
+                            <div className="m-5">
+                                <Form.Group>
+                                    <Form.Control as="textarea" placeholder=' Address...' rows={8} />
+                                </Form.Group>
                             </div>
                         </Card.Body>
                     </Card>
