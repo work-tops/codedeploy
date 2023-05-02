@@ -14,11 +14,11 @@ function ServiceInformation() {
                 <Col lg={12}>
                     <div className="d-flex justify-content-between">
                         <Link to="/user/SellerList">
-                        <Button className="bg-transparent border border-0 text-dark d-block m-4">Back to Result</Button>
+                            <Button className="bg-transparent border border-0 text-dark d-block m-4">Back to Result</Button>
                         </Link>
-                        
+
                         <Button className="bg-transparent border border-0 text-dark d-block m-4">Next Trade</Button>
-                        
+
                     </div>
                     <Container>
                         <Row>
@@ -186,12 +186,12 @@ function ServiceInformation() {
                                             </Link>
                                         </div>
                                         <div className="align-items-center justify-content-center d-flex">
-                                            <Link to="/RequestQuote">
-                                            <Button className="m-2 text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
-                                            </Link>
+                                            <Button className="m-2 text-white border-0" style={{ background: "#0d406b" }}>Add to Cart</Button>
                                         </div>
                                         <div className="align-items-center justify-content-center d-flex">
-                                            <Button className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
+                                            <Link to="/RequestQuote">
+                                                <Button className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Request a Quote</Button>
+                                            </Link>
                                         </div>
                                     </Col>
                                 </Row>

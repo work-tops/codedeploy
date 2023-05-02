@@ -7,7 +7,7 @@ import interior_design_2 from "../Images/int-design-3.jpg"
 import ent_men from "../Images/ent-1.jpg"
 import ent_women from "../Images/ent-women.jpg"
 import { Icon } from '@iconify/react';
-// import Slider from 'react-slick'
+import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Header from "../Header/Header";
@@ -31,7 +31,7 @@ function HomePage() {
     }
     return (
         <>
-            {/* <div className="row">
+            <div className="row">
                 <div className="col-12">
                     <Header />
                 </div>
@@ -320,7 +320,7 @@ function HomePage() {
                 <div className="col-12">
                     <Footer />
                 </div>
-            </div > */}
+            </div >
         </>
     )
 }

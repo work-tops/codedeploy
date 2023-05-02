@@ -295,6 +295,7 @@ function Marble() {
                     </Col>
                     <Col lg={9}>
                         <Row className="mt-3">
+                            
                             <Col lg={4}>
                                 <div className="mb-3">
                                     <Link to="/productdetails">
@@ -321,37 +322,9 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
+                                    <Link to="/RequestQuote">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
-                                </div>
-                            </Col>
-
-                            <Col lg={4}>
-                                <div className="mb-3">
-                                    <Link to="/productdetails">
-                                        <img src={product_image} width="300px" />
                                     </Link>
-                                    <Link  to="/productdetails">
-                                        <p className="text-dark fw-semibold m-1">White Mirror Marble</p>
-                                    </Link>
-                                    <small className="m-1">Marble</small>
-                                    <Row>
-                                        <Col>
-                                            <span className="d-block">
-                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                                <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                            </span>
-                                            <small className="mt-3">(20)</small>
-                                        </Col>
-                                        <Col>
-                                            <Icon icon="material-symbols:shopping-cart-outline-rounded" className="mt-2 ms-3 me-1" color="#9da8ba" width="20" height="20" />
-                                            <Icon icon="icon-park-outline:like" color="#9da8ba" className="mt-2 me-3 ms-2" width="20" height="20" />
-                                        </Col>
-                                    </Row>
-                                    <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
-                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                 </div>
                             </Col>
                             <Col lg={4}>
@@ -380,7 +353,9 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
+                                    <Link to="/RequestQuote">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
+                                    </Link>
                                 </div>
                             </Col>
                             <Col lg={4}>
@@ -409,7 +384,9 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
+                                    <Link to="/RequestQuote">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
+                                    </Link>
                                 </div>
                             </Col>
                             <Col lg={4}>
@@ -438,7 +415,9 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
+                                    <Link to="/RequestQuote">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
+                                    </Link>
                                 </div>
                             </Col>
                             <Col lg={4}>
@@ -467,7 +446,9 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
+                                    <Link to="/RequestQuote">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
+                                    </Link>
                                 </div>
                             </Col>
                             <Col lg={4}>
@@ -496,7 +477,9 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
+                                    <Link to="/RequestQuote">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
+                                    </Link>
                                 </div>
                             </Col>
                             <Col lg={4}>
@@ -525,7 +508,9 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
+                                    <Link to="/RequestQuote">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
+                                    </Link>
                                 </div>
                             </Col>
                             <Col lg={4}>
@@ -554,7 +539,40 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
+                                    <Link to="/RequestQuote">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
+                                    </Link>
+                                </div>
+                            </Col>
+                            <Col lg={4}>
+                                <div className="mb-3">
+                                    <Link to="/productdetails">
+                                        <img src={product_image} width="300px" />
+                                    </Link>
+                                    <Link  to="/productdetails">
+                                        <p className="text-dark fw-semibold m-1">White Mirror Marble</p>
+                                    </Link>
+                                    <small className="m-1">Marble</small>
+                                    <Row>
+                                        <Col>
+                                            <span className="d-block">
+                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
+                                            </span>
+                                            <small className="mt-3">(20)</small>
+                                        </Col>
+                                        <Col>
+                                            <Icon icon="material-symbols:shopping-cart-outline-rounded" className="mt-2 ms-3 me-1" color="#9da8ba" width="20" height="20" />
+                                            <Icon icon="icon-park-outline:like" color="#9da8ba" className="mt-2 me-3 ms-2" width="20" height="20" />
+                                        </Col>
+                                    </Row>
+                                    <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
+                                    <Link to="/RequestQuote">
+                                    <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
+                                    </Link>
                                 </div>
                             </Col>
 

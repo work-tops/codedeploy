@@ -8,8 +8,16 @@ import currency from "../Images/Currency.png"
 import { Link, useParams,useHistory } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
 import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
-
+import { Button, Col, Row, Modal, Form } from "react-bootstrap";
+import worktops from '../../Components/Project images/Handyman.jpg'
+import Divider from "../authentication/Divider";
 function JobDetails() {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
     let { jobid } = useParams();
     const [jobdata, setJobdata] = useState([])
     const [board, setBoard] = useState(false)
@@ -150,6 +158,79 @@ console.log(daysDiff);
                                 </>
                             ) : ""}
 
+                            {/* Special Addition by UI */}
+                            <Row>
+                                <Col>
+                                    <Row style={{ width: '500px' }} className="mt-3 border border-dark">
+                                        <Col className="mt-3" lg={3}>
+                                            <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
+                                        </Col>
+                                        <Col className="mt-3" lg={8}>
+                                            <p style={{ fontSize: '14px' }} className="">
+                                                Hi There, Yes, | Do Have Designs And It Will Be Comfortable To Do All Task
+                                                In Phases With Exact Deadlines.
+                                                Can We Have A Short Meeteng To Make Communication Process Faster
+                                                And Easier?
+                                            </p>
+                                            <Button onClick={handleShow} style={{ color: '#ff9f0f', fontSize: '14px' }} className="btn mb-3 bg-transparent border-0">Reply</Button>
+                                        </Col>
+                                    </Row>
+                                    <Row style={{ width: '500px' }} className="mt-3 border border-dark">
+                                        <Col className="mt-3" lg={3}>
+                                            <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
+                                        </Col>
+                                        <Col className="mt-3" lg={8}>
+                                            <p style={{ fontSize: '14px' }} className="">
+                                                Hi There, Yes, | Do Have Designs And It Will Be Comfortable To Do All Task
+                                                In Phases With Exact Deadlines.
+                                                Can We Have A Short Meeteng To Make Communication Process Faster
+                                                And Easier?
+                                            </p>
+                                            <Button onClick={handleShow} style={{ color: '#ff9f0f', fontSize: '14px' }} className="btn mb-3 bg-transparent border-0">Reply</Button>
+                                        </Col>
+                                    </Row>
+                                    {/*  */}
+                                    <div className='d-flex justify-content-between'>
+                                        <Modal
+                                            show={show}
+                                            onHide={() => setShow(false)}
+                                            dialogClassName="modal-lg modal-90w"
+
+                                            aria-labelledby="example-custom-modal-styling-title"
+                                        >
+                                            <Modal.Header closeButton>
+                                                <Modal.Title id="example-custom-modal-styling-title">
+                                                    Please Type Your Message
+                                                </Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <Form.Group className="mb-3">
+                                                    <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
+                                                </Form.Group>
+                                                <Form.Group className="mb-3">
+                                                    <Form.Check className="ms-3" />
+                                                    <Form.Check.Label>
+                                                        I Confirm That This Message Is Essential For The Submission Of My
+                                                        Proposal And | Understand That It Will Be Publicly Posted In The
+                                                        Project's Clarification Board And In Case It Is Used To Spam Or
+                                                        Solely Advertise My Skills, My Rankings Will Be Severely Affected.
+                                                    </Form.Check.Label>
+                                                </Form.Group>
+                                                <div className="m-3">
+                                                    <Divider />
+                                                </div>
+                                                <Button className="btn ms-3 mb-3 bg-transparent" style={{border:'1px solid #0d406b',color:'#0d406b'}}>
+                                                    Send
+                                                </Button>
+                                            </Modal.Body>
+                                        </Modal>
+                                    </div>
+                                    {/*  */}
+
+                                </Col>
+                            </Row>
+
+                            {/* Special Addition by UI */}
 
                         </div>
                         <div className="container2 col-3">

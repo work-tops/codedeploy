@@ -34,10 +34,12 @@ const EditProduct = () => {
                         <div>
                             {/* <Button className='m-1 '>Save</Button> */}
                             {''}
-                            {/* <Button className='m-1 bg-warning border-warning'>Save as Draft</Button> */}
-                            {''}
                             <Link to="/addproductcard">
                                 <Button className='m-1 bg-success border-success'>Publish Now</Button>
+                            </Link>
+                            {''}
+                            <Link to="/user/addproduct">
+                            <Button className='m-1 border border-0 btn bg-danger'>Cancel</Button>
                             </Link>
                             {''}
                         </div>

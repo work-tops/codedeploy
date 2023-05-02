@@ -6,6 +6,7 @@ import product_image from '../../Images/product_image.png'
 import { Icon } from "@iconify/react";
 import { getAllData } from "../../../../Services/ProxyService";
 import { Link } from "react-router-dom";
+import Footer from "../../Footer/Footer";
 
 function ProductList() {
 
@@ -147,13 +148,16 @@ function ProductList() {
                                             (20)
                                         </span>
                                         <p style={{ color: '#f68f57' }} className="fw-bold fs-5">£ {data?.variant[0]?.pricing?.price}</p>
-                                        <Link to="/productdetails"><Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button></Link>
+                                        <Link to={`productdetails/${data._id}`}><Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button></Link>
                                     </div>
                                 </Col>
                             ))}
                         </Row>
                     </Col>
                 </Row >
+                <Col lg={12}>
+                    <Footer />
+                </Col>
             </Row >
         </>
     )

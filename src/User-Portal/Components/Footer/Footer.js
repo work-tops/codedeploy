@@ -1,55 +1,37 @@
 import React from "react";
+import { Row, Col, Button } from "react-bootstrap";
+import logo from '../../Components/Img/MP-logo.png'
+import { Link } from "react-router-dom";
+
+
 function Footer() {
     return (
-        <div>
-            <div className="footer-box">
-                <div className="Decbase">
-                    <h5 className="footer-title">M|AI PROJECT</h5>
-                    <p className="desc">But i must explain you all
-                        this mistaken
-                        idea of denouncing pressure.</p>
-                </div>
-                <div className="Quick-Links">
-                    <ul type='none'>
-                        <li id="links">
-                            <h5 className="footer-title">Quick Links</h5>
-                        </li>
-                        <li id="links">About Our Company</li>
-                        <li id="links">Service WE Provide</li>
-                        <li id="links">Carrer & Opportunity</li>
-                        <li id="links">Privacy & Policy</li>
-                        <li id="links">Contact Us</li>
-                    </ul>
-                </div>
-                <div className="Company">
-                    <ul type='none'>
-                        <li id="links">
-                            <h5 className="footer-title">Company</h5>
-                        </li>
-                        <li id="links">About Company</li>
-                        <li id="links">Our Testimonials</li>
-                        <li id="links">Latest News</li>
-                        <li id="links">Our Mission</li>
-                        <li id="links">Get a free Quot</li>
-                    </ul>
-                </div>
-                <div className="Contact-us">
-                    <h5 id="ctcs">Contact us</h5>
-                    <p id="address">Sagrada Famila,Herba</p>
-                    <p id="address">Street Front USA</p>
-                    <p id="address">brandoxide@gmail.com</p>
-                    <p id="address">002-568423591</p>
-                </div>
-                <div className="Follow-Us">
-                    <h5 id="ctcs">Follow Us</h5>
-                    <i className="ri-facebook-circle-fill"></i>
-                    <i className="ri-twitter-fill"></i>
-                    <i className="ri-instagram-line"></i>
-                    <i className="ri-linkedin-box-fill"></i>
-                </div>
-            </div>
-            <p className="copyrights">CopyRight @ 2020 brandoxide.all right reserved</p>
-        </div>
+        <>
+            <Row>
+                <Col lg={12} className="navbar-standard">
+                    <div className="m-3 d-flex justify-content-between">
+                        <div>
+                            <img src={logo} width="100px" />
+                        </div>
+                        <div className="">
+                            <Link to="/privacypolicy">
+                                <Button className="bg-transparent border-0 m-2">Privacy Policy</Button>
+                            </Link>
+                            <Link to="/termsofuse">
+                                <Button className="bg-transparent border-0 m-2">Terms of Use</Button>
+                            </Link>
+                            <Button className="bg-transparent border-0 m-2">Cookie Settings</Button>
+                            <Link to="/termsofuse">
+                                <Button className="bg-transparent border-0 m-2">Contact us</Button>
+                            </Link>
+                        </div>
+                        <div>
+                            <p style={{ fontSize: '12px' }} className="text-white mt-3">CopyRight @ 2023 MyProject.ai all right reserved</p>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+        </>
     )
 }
 export default Footer
