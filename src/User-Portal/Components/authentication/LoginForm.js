@@ -1,4 +1,4 @@
-import Divider from '../authentication/Divider';
+// import Divider from '../authentication/Divider';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
@@ -69,6 +69,7 @@ const LoginForm = ({ hasLabel, layout }) => {
 
   return (
     <>
+    
       <Form onSubmit={(e) => { Login(e) }}>
         <h5 className='d-inline'>Login As:</h5>
         <Form.Group className="mt-3 mb-3">
@@ -107,6 +108,7 @@ const LoginForm = ({ hasLabel, layout }) => {
           <Col xs="auto">
             <Form.Check type="checkbox" id="rememberMe" className="mb-0">
               <Form.Check.Input
+              required
                 type="checkbox"
                 name="remember"
                 value={true}

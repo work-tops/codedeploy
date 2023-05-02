@@ -12,11 +12,17 @@ function JobProposal() {
     const jobdetails = JSON.parse(jobdatas)
     console.log(jobdetails)
     const [form, setform] = useState([])
+    const [serviceFee, setServiceFee] = useState(20)
+    const [amountUReceive, setAmountUReceive] = useState(20)
     console.log(form)
 
     const handleChange = (e) => {
         const myData = { ...form };
         myData[e.target.name] = e.target.value;
+        if(e.target.name == 'proposal_amount'){
+            var _amount = serviceFee+ parseInt(e.target.value)
+            setAmountUReceive(_amount);
+        }
         setform(myData);
     }
 
@@ -94,13 +100,13 @@ function JobProposal() {
                             <h5 className="propos-title">Proposal Amount</h5>
                             <input required name="proposal_amount" value={form.proposal_amount} onChange={(e)=>{handleChange(e)}} type="number" className="proposal-amt-box" placeholder="Enter Your Proposal Amount" /><Icon icon="gridicons:dropdown" width="24" height="24" />
                             <fieldset className="proposal-fieldset">
-                                <p><span className="pound-sym">(<span className="pounds">£</span>) - 0</span>
+                                <p><span className="pound-sym">(<span className="pounds">£</span>) - {serviceFee}</span>
                                     <span className="proposal-info">"myproject.ai" Service Fee</span>
                                     <i className="fa-solid fa-circle-info info_icon"></i>
                                 </p>
                             </fieldset>
                             <fieldset className="proposal-fieldset">
-                                <p><span className="pound-sym">(<span className="pounds">£</span>) - 0</span> <span className="proposal-info-1">"Amount You'll Receive after" Service Fee education</span>
+                                <p><span className="pound-sym">(<span className="pounds">£</span>) - {amountUReceive}</span> <span className="proposal-info-1">"Amount You'll Receive after" Service Fee education</span>
                                     <i className="fa-solid fa-circle-info info_icon"></i>
                                 </p>
                             </fieldset>

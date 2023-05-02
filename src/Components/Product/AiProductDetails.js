@@ -315,8 +315,8 @@ function AiProductDetails() {
     }
 
     const getSellerList = async () => {
-        const response = await getAllData('sellers/all');
-        setsellerList(response.data.sellers);
+        const response = await getAllData('admin/users');
+        setsellerList(response.data.users);
     }
 
     // Product by id

@@ -29,7 +29,7 @@ function OpenProjectCard() {
                                 <h3 className="text-center">Please Post a Project Here</h3>
                             </div>
                             <div className="mt-4 d-flex justify-content-center">
-                                <Link to="/postjob1">
+                                <Link to="/postjob">
                                     <Button className="btn text-white btn-outline-success">Post Project</Button>
                                 </Link>
                             </div>

@@ -97,7 +97,7 @@ const FrontEndRouters = () => {
             <Route path='/POReviewsCard'><POReviewCard /></Route>
             <Route path='/productList'><ProductList /></Route>
             <Route path='/servicelist'><ServiceList /></Route>
-            <Route path='/productdetails'><ProductDetails /></Route>
+            <Route path='/productdetails/:proid'><ProductDetails /></Route>
             <Route path='/wishlist/product'><WishListProductCard /></Route>
             <Route path='/wishlist/project'><ProjectWishListCard /></Route>
             <Route path='/wishlist/seller'><WishListSellerCard /></Route>

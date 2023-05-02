@@ -34,6 +34,15 @@ function JobDetails() {
             history.push("/userlog");
         }
     }
+    const getLevel = (value) => {
+        if(value <= 1000){
+            return "Low";
+        }else if(value > 1000 || value < 3000 ){
+            return "Medium";
+        }else if(value > 3001){
+            return "High";
+        }
+    }
 
     const getJobsById = async () => {
         const response = await getAllData('job/' + jobid);
@@ -43,16 +52,6 @@ function JobDetails() {
     useEffect(() => {
         getJobsById()
     }, [])
-
-// Level comparing 
-    let lavel = ""
-    if(jobdata.budget < 1000){
-        lavel="Low"
-    }else if(jobdata.budget > 1000 || jobdata.budget < 3000 ){
-        lavel="Medium"
-    }else if(jobdata.budget > 3001){
-        lavel="High"
-    }
 
 // Date length
 
@@ -79,7 +78,7 @@ console.log(daysDiff);
                     <div className="key-description-1">
                         <h2 className="heading">{jobdata.project_title}</h2>
                         <ul type='none' className="key">
-                            <li><i class="fa-solid fa-sterling-sign"></i>{lavel} Level</li>
+                            <li><i class="fa-solid fa-sterling-sign"></i>{getLevel(jobdata?.budget)} Level</li>
                             <li><i class="fa-solid fa-location-dot"></i>{jobdata.location}</li>
                             <li><i class="fa-regular fa-building"></i>{jobdata.category}</li>
                             <li><i class="fa-solid fa-business-time"></i>Duration: {jobdata.project_duration}</li>

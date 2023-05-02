@@ -69,7 +69,6 @@ function AddServices() {
 
     }
 
-
     const AddService = async () => {
         const Servicedata = {
             title: form.title,
@@ -134,8 +133,8 @@ function AddServices() {
     }
 
     const selleremails = async () => {
-        const response = await getAllData('sellers/all');
-        setselemail(response.data.sellers);
+        const response = await getAllData('admin/users');
+        setselemail(response.data.users);
     }
 
     const onSelect = (selectedList, index) => {
@@ -176,7 +175,6 @@ function AddServices() {
         }));
         setLocations(_selectList);
     };
-
 
     useEffect(() => {
         Jobslist()
@@ -231,11 +229,11 @@ function AddServices() {
 
                                     <label className="label-name">Service Location</label>
                                     <div className="Dropdown-box-440">
-                                        <ServiceLocationMultiselect />
+                                    <Multiselect options={servitag[1]?.list} displayValue="value" />
                                     </div>
                                     <label className="label-name">Service Range</label>
                                     <div className="Dropdown-box-440">
-                                        <ServiceMultiselectDropdown />
+                                    <Multiselect options={servitag[2]?.list} displayValue="value" />
                                     </div>
                                     <div className="m-3">
                                         <input className="aipro-checkbox1" type='checkbox' /><span className="chc-span">Shipping Requires</span>

@@ -77,147 +77,7 @@ const AdvancedTable = () => {
         status: <span className="badge bg-success p-2">Approved</span>
       }));
     
-    // const data = [
-  //     // {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "PORTUM KC NATURAL DEKTON",
-    //     //     email: 'homer@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge p-2 bg-warning">Approval Pending</span>,
-    
-    //     },
-    //     // {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "PORTUM KC NATURAL DEKTON",
-    //     //     email: 'homer@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge p-2 bg-warning">Approval Pending</span>,
-    
-    //     // },
-    //     // {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "Marble",
-    //     //     email: 'oscar@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge p-2 bg-secondary">Disabled</span>,
-    
-    //     // },
-    //     // {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "Marble",
-    //     //     email: 'emily@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // },
-    //     // {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "PORTUM KC NATURAL DEKTON",
-    //     //     email: 'jara@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // }, {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "Marble",
-    //     //     email: 'emily@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // },
-    //     // {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "FANTASY BROWN GRANITE123",
-    //     //     email: 'jara@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // }, {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "Marble",
-    //     //     email: 'emily@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // },
-    //     // {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "VENDOME TERRAZZO",
-    //     //     email: 'jara@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // }, {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "WHITE ROSE ONYXz",
-    //     //     email: 'emily@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // },
-    //     // {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "Marble",
-    //     //     email: 'jara@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // },
-    //     // {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "Marble",
-    //     //     email: 'jara@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // }
-    //     // ,
-    //     // {
-    //     //     productId: '664345',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "Marble",
-    //     //     email: 'jara@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // }
-    //     // ,
-    //     // {
-    //     //     productId: '643456',
-    //     //     image: <img src={product_image} width="40px" height="35px" />,
-    //     //     name: "Marble",
-    //     //     email: 'jara@example.com',
-    //     //     price: '£100',
-    //     //     quantity: "10 Pcs",
-    //     //     status: <span className="badge bg-success p-2">Approved</span>,
-    
-    //     // }
-    // ];
+   
 
     function BulAction({ selectedRowIds }) {
         return (
@@ -284,7 +144,7 @@ const AdvancedTable = () => {
             data={data}
             sortable
             pagination
-            perPage={5}
+            // perPage={5}
             selection
             selectionColumnWidth={30}
         >

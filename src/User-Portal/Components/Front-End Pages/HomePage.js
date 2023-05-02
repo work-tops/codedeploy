@@ -7,7 +7,7 @@ import interior_design_2 from "../Images/int-design-3.jpg"
 import ent_men from "../Images/ent-1.jpg"
 import ent_women from "../Images/ent-women.jpg"
 import { Icon } from '@iconify/react';
-import Slider from 'react-slick'
+// import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Header from "../Header/Header";
@@ -74,7 +74,7 @@ function HomePage() {
                     </div>
                     <br></br>
                     <div className="sild-div">
-                        <Slider {...settings}>
+                        {/* <Slider {...settings}>
                             <Link to="/Granite">
                                 <div>
                                     <img src={interior_design} width="290px" className="slid-img-hmp" height="300px" />
@@ -131,7 +131,7 @@ function HomePage() {
                                 <h5 className="wr-look-for-title">Kitchen Worktops</h5>
                                 <p className="wr-look-for">Looking for Programming & Technology</p>
                             </div>
-                        </Slider>
+                        </Slider> */}
                     </div>
                     <div className="mb-5">
                         <p className="what-we-do">What we do</p>
@@ -251,7 +251,7 @@ function HomePage() {
                                 <Icon className="silde-btn" icon="ic:round-chevron-right" width="24" height="24" />
                             </div>
                             <div className="sild-div">
-                                <Slider {...about}>
+                                {/* <Slider {...about}>
                                     <div className="client-abt-div_1">
                                         <h5>Louis Saville </h5>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -270,7 +270,7 @@ function HomePage() {
                                     <span>
                                         <img src={ent_women} className="clint-pro-img" />
                                     </span>
-                                </Slider>
+                                </Slider> */}
                             </div>
                         </div>
                     </div>

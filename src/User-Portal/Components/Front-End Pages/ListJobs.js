@@ -10,14 +10,22 @@ import ProjectOwnerHeader from '../Header/ProjectOwnerHeader'
 // import toast, { Toaster } from 'react-hot-toast';
 function ListJobs() {
     const [jobs, setjobs] = useState([])
-
+    const [showSpinner, setShowSpinner] = useState(true);
     const Jobslist = async () => {
         const response = await getAllData('jobs/all');
         setjobs(response.data.jobs);
         setShowSpinner(false);
     }
+    const getLevel = (value) => {
+        if(value <= 1000){
+            return "Low";
+        }else if(value > 1000 || value < 3000 ){
+            return "Medium";
+        }else if(value > 3001){
+            return "High";
+        }
+    }
 
-    const [showSpinner, setShowSpinner] = useState(true);
     useEffect(() => {
         Jobslist()
     }, [])
@@ -152,6 +160,17 @@ function ListJobs() {
                                     </Link>
                                 </div>
                             </div> */}
+                            <div style={{ height: '0px' }} className="text-center">
+                            {showSpinner && (
+                                <div
+                                    className="spinner-border"
+                                    role="status"
+                                    style={{ width: '70px', height: '70px', fontSize: "20px", opacity: "0.7" }} // set the width and height here
+                                >
+                                    <span className="sr-only">Loading...</span>
+                                </div>
+                            )}
+                        </div>
                              {lists.map((data, key) => (
                             <div key={key} className="row mt-5">
                                 <div className="employee-info col-7">
@@ -164,11 +183,11 @@ function ListJobs() {
 
                                 </div>
                                 <div className="details-to-know col-4">
-                                    <p className="highlights"><i class="fa-solid pound fa-sterling-sign"></i>Medium Level</p>
-                                    <p className="highlights">United Kingdom</p>
-                                    <p className="highlights"><i class="ri-folder-2-line"></i>Type Fixed</p>
+                                    <p className="highlights"><i class="fa-solid pound fa-sterling-sign"></i>{getLevel(data?.budget)} Level</p>
+                                    <p className="highlights">{data?.location}</p>
+                                    <p className="highlights"><i class="ri-folder-2-line"></i>{data?.category}</p>
                                     <p className="highlights"><i class="ri-time-fill"></i>20 to 30 days</p>
-                                    <p className="highlights"><i class="ri-price-tag-3-fill"></i>Job ID:1234MKJH</p>
+                                    <p className="highlights"><i class="ri-price-tag-3-fill"></i>Job ID:{data?._id}</p>
                                     <p className="highlights"><i class="ri-heart-3-fill"></i>Click to Save</p>
                                     <Link to={`jobdetails/${data._id}`} role="button">
                                         <button className="view">VIEW JOB</button>
@@ -176,7 +195,7 @@ function ListJobs() {
                                 </div>
                             </div>
                             ))}
-                           
+                            
                         </div>
                     </div>
                     <div className="mt-5" >
