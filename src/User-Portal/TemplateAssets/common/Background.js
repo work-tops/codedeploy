@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 
 const Background = ({ image, overlay, position, video, className, style }) => {
   const bgStyle = { backgroundImage: `url(${image})`, ...style };
@@ -13,14 +13,14 @@ const Background = ({ image, overlay, position, video, className, style }) => {
 
   return (
     <div
-      className={classNames(
-        'bg-holder',
-        {
-          overlay: overlay,
-          [`overlay-${overlay}`]: typeof overlay === 'string'
-        },
-        className
-      )}
+      // className={classNames(
+      //   'bg-holder',
+      //   {
+      //     overlay: overlay,
+      //     [`overlay-${overlay}`]: typeof overlay === 'string'
+      //   },
+      //   className
+      // )}
       style={bgStyle}
     >
       {video && (

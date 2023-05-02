@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Navbar, Button } from 'react-bootstrap';
@@ -26,10 +26,10 @@ const NavbarStandard = () => {
       variant={isDark ? 'light' : 'dark'}
       fixed="top"
       expand={topNavbarBreakpoint}
-      className={classNames('navbar-standard navbar-theme', {
-        'bg-100': !navbarCollapsed && isDark,
-        'bg-dark': !navbarCollapsed && !isDark
-      })}
+      // className={classNames('navbar-standard navbar-theme', {
+      //   'bg-100': !navbarCollapsed && isDark,
+      //   'bg-dark': !navbarCollapsed && !isDark
+      // })}
     >
       <Container>
 

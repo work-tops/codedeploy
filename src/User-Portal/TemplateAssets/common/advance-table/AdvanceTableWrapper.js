@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import {
@@ -23,7 +23,7 @@ export const IndeterminateCheckbox = React.forwardRef(
     return (
       <Form.Check
         type="checkbox"
-        className={classNames('form-check fs-0 mb-0', className)}
+        // className={classNames('form-check fs-0 mb-0', className)}
       >
         <Form.Check.Input type="checkbox" ref={resolvedRef} {...rest} />
       </Form.Check>
