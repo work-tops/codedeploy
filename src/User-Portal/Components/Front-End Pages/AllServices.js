@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, Breadcrumb, Button, DropdownButton, Dropdown, Row, Col} from "react-bootstrap";
-import ServiceAdvancedTable from "../advance-table/ServiceAdvanceTable";
+import { Card, Button, DropdownButton, Dropdown, Row, Col} from "react-bootstrap";
+import ServiceAdvancedTable from "../../TemplateAssets/AdvanceTables/ServiceAdvanceTable";
 import { Link } from "react-router-dom";
 
 function AllServices() {

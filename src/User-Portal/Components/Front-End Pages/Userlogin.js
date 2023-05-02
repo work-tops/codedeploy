@@ -1,34 +1,22 @@
-import React, {useState} from "react";
-import LoginForm from '../authentication/LoginForm'
-import { Card } from "react-bootstrap";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import Menubar from "../Menubar/Menubar";
-
-
-function UserLogin() {
-
+import React from 'react';
+import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
+import AuthSplitLayout from '../../TemplateAssets/SplitLayout/AuthSplitLayout';
+import Flex from '../../TemplateAssets/common/Flex';
+import LoginForm from '../../TemplateAssets/authentication/LoginForm'
+import FooterStandard from '../Footer/FooterStandard';
+const UserLogin = () => {
     return (
         <>
-            <div className="row">
-                <div className="col-12">
-                    <Header />
-                </div>
-                <div className="col-12">
-                    <Menubar />
-                </div>
-                <div className="col-12">
-                    <div className="d-flex justify-content-center m-3">
-                        <Card className=" w-50">
-                            <Card.Body>
-                                <h1 className="text-center">Login</h1>
-                                <LoginForm />
-                            </Card.Body>
-                        </Card>
-                    </div>
-                </div>
-            </div>
+            <NavbarStandard />
+            <AuthSplitLayout>
+                <Flex alignItems="center" justifyContent="between">
+                    <h3 className=' mb-3'>Login as</h3>
+                </Flex>
+                <LoginForm layout="split" hasLabel />
+            </AuthSplitLayout>
+            {/* <FooterStandard/> */}
         </>
-    )
-}
-export default UserLogin
+    );
+};
+
+export default UserLogin;

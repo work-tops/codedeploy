@@ -5,7 +5,8 @@ import { InputGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import Menubar from '../Menubar/Menubar';
-import SellerPortalHeader from '../Header/SellerPortalHeader'
+import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard'
+// import SellerPortalHeader from '../Header/SellerPortalHeader'
 import { Link, useHistory } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import { uploadImage } from "../../../Services/ImageService";
@@ -341,7 +342,8 @@ const FrontendAddProduct = () => {
         <>
             <Row>
                 <Col lg={12}>
-                    < SellerPortalHeader />
+                    <NavbarStandard/>
+                    {/* < SellerPortalHeader /> */}
                 </Col>
                 <Col lg={12}>
                     <Menubar />

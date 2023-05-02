@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Form, Button, Dropdown } from "react-bootstrap";
-import logo from '../Img/MP-logo.png'
+import logo from '../../TemplateAssets/Images/MP-logo.png'
 import { Icon } from "@iconify/react";
 import { Link, useHistory } from "react-router-dom";
-import sellerProfile from '../Img/employee.png'
-import { useEffect } from "react";
-import { useState } from "react";
+import sellerProfile from '../../TemplateAssets/Images/employee.png'
 function ProjectOwnerHeader() {
     const history = useHistory()
     const sessionclear = () => {

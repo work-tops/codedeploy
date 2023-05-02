@@ -9,7 +9,9 @@ function ProfileMenu() {
         <div className="justify-content-between">
             <h4 className="m-3">Account Setting</h4>
             <div>
+                <Link to="/Seller/Landing">
                 <Button className="bg-primary text-white border-0 ms-3">Back</Button>
+                </Link>
             </div>
         </div>
             <Link to="/MyProfile">

@@ -176,12 +176,12 @@ a {
         color: #fff;
     }
 
-    li {
+    /* li {
         margin-bottom: 10px;
         cursor: pointer;
         margin-top: 15px;
         font-size: 14px;
-    }
+    } */
 
     #links {
         color: #fff;
@@ -1076,75 +1076,14 @@ a {
         background-color: #bfb3b3;
     }
 
-    #fname,
-    #lname,
-    #email,
-    #password {
-        margin-top: 40px;
-        padding: 10px;
-        width: 212px;
-        border-top: none;
-        border-right: none;
-        border-left: none;
-        border-bottom: 2px solid rgb(73 128 192);
-    }
 
-    #fname {
-        margin-left: 118px;
-    }
-
-    #lname {
-        margin-left: 30px;
-    }
-
-    #email,
-    #password {
-        display: block;
-        margin-left: 118px;
-        width: 454px;
-    }
-
-    input:focus {
-        outline: none;
-    }
-
-    .terms-and-conditions {
-        width: 345px;
-        font-size: 12px;
-        font-weight: bold;
-        margin-left: 190px;
-        margin-top: 50px;
-    }
-
-    #sign-up,
-    #back {
-        display: block;
-        margin-left: 270px;
-        padding: 15px;
-        width: 150px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 12px;
-    }
 
     #small-dd {
         color: #7a7070;
     }
 
-    #sign-up {
-        background: rgb(159 114 47 / 86%);
-        color: #fff;
-        margin-top: 30px;
-        font-weight: bold;
-    }
 
-    #back {
-        background: #fff;
-        color: #bfb3b3;
-        margin-top: 10px;
 
-    }
 
     .google-logo {
         width: 20px;
@@ -1794,44 +1733,6 @@ a {
         margin-bottom: 30px;
     }
 
-    .id-prof-dwn {
-        padding: 10px;
-        width: 200px;
-        position: relative;
-        left: 118px;
-        top: 18px;
-    }
-
-    .id-ver-label {
-        position: relative;
-        text-transform: capitalize;
-        left: 98px;
-        top: 10px;
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    #trd-ip-bx {
-        position: relative;
-        top: 15px;
-        padding: 10px;
-        width: 500px;
-        left: 115px;
-        margin-bottom: 10px;
-        border: 1px solid black;
-    }
-
-    .upd-fil {
-        position: relative;
-        top: 49px;
-        padding: 14px;
-        border: none;
-        font-size: 14px;
-        width: 160px;
-        border-radius: 25px;
-        font-weight: 500;
-    }
-
     .sild-div {
         margin-left: 30px;
     }
@@ -2234,7 +2135,9 @@ a {
         bottom: 36px;
         left: 20px;
     }
-    .post-bg{
+
+    .post-bg {
         background: #7fa6c7;
     }
 }
+

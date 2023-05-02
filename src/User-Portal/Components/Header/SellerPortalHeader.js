@@ -1,9 +1,9 @@
 import React from "react";
-import { Row, Col, Form, Button, Dropdown } from "react-bootstrap";
-import logo from '../Img/MP-logo.png'
+import { Row, Col, Form, Dropdown } from "react-bootstrap";
+import logo from '../../TemplateAssets/Images/MP-logo.png'
 import { Icon } from "@iconify/react";
 import { Link, useHistory } from "react-router-dom";
-import sellerProfile from '../Img/employee.png'
+import sellerProfile from '../../TemplateAssets/Images/employee.png'
 function SellerPortalHeader() {
     const history = useHistory()
     const sessionclear = () =>{

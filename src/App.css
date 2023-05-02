@@ -397,12 +397,12 @@ a {
     font-size: 14px;
   }
 
-  li {
+  /* li {
     margin-bottom: 10px;
     cursor: pointer;
     margin-top: 15px;
     font-size: 14px;
-  }
+  } */
 
   .copyrights {
     text-align: center;
@@ -755,19 +755,6 @@ a {
     margin-right: 12px;
   }
 
-  label {
-    display: block;
-    margin-top: 10px;
-    margin-left: 20px;
-    font-size: 14px;
-  }
-
-  .label {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 400;
-  }
 
   #aipro-addvariant,
   #add-product-btn {

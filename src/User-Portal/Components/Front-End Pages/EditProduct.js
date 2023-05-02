@@ -3,9 +3,9 @@ import { Col, Row, Card, Container, Button, Breadcrumb, Form, Modal } from 'reac
 import { InputGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
-import ActionButton from '../common/ActionButton'
+import ActionButton from '../../TemplateAssets/common/ActionButton'
 import { Table } from 'react-bootstrap';
-import profile_img from "../Images/product_image.png"
+import profile_img from "../../TemplateAssets/Images/product_image.png"
 import { Link } from 'react-router-dom';
 
 const EditProduct = () => {

@@ -3,17 +3,20 @@ import Menubar from "../Menubar/Menubar";
 import PostAJob from "../Post/PostAJobPost";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
-import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
+// import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
+import Header from "../Header/Header";
+// import SellerNavBar from "../Header/AdvanceHeader/SellerNavBar";
 function PostJob1() {
     return (
         <>
             <div className="row">
                 <div className="col-12">
-                    <ProjectOwnerHeader />
+                    <Header/>
+                    {/* <SellerNavBar /> */}
                 </div>
-                <div className="col-12">
+                {/* <div className="col-12">
                     <Menubar />
-                </div>
+                </div> */}
                 <div className="col-12">
                     <PostAJob />
                 </div>
