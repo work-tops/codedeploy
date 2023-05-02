@@ -7,7 +7,7 @@ import FooterStandard from '../Footer/FooterStandard';
 const UserLogin = () => {
     return (
         <>
-            <NavbarStandard />
+            {/* <NavbarStandard /> */}
             <AuthSplitLayout>
                 <Flex alignItems="center" justifyContent="between">
                     <h3 className=' mb-3'>Login as</h3>
