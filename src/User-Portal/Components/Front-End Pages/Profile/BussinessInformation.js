@@ -2,7 +2,7 @@ import React from "react";
 import ProfileMenu from "./ProfileMenu";
 import { Row, Col, Card, Button, Form } from "react-bootstrap";
 import profile_img from '../../Project images/Handyman.jpg'
-import Divider from "../../authentication/Divider";
+import Divider from "../../../TemplateAssets/common/Divider";
 function BussinessInformation() {
     return (
         <>

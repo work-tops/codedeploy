@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Button, Form } from "react-bootstrap";
-import product_image from '../Img/product_image1.png'
+import product_image from '../../TemplateAssets/Images/product_image.png'
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Breadcrumb, Button, DropdownButton, Dropdown, Row, Col, Form, Table } from "react-bootstrap";
 // import AdvanceTableSearchBox from '../advance-table/AdvanceTableSearchBox'
-import AdvancedTable from "../advance-table/AdvancedTable"
+import AdvancedTable from "../../TemplateAssets/AdvanceTables/AdvancedTable"
 import { Link } from "react-router-dom";
 
 

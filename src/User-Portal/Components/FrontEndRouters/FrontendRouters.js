@@ -10,9 +10,8 @@ import JobProposal from "../Front-End Pages/JobProposal";
 import PostJob2 from "../Front-End Pages/PostJob2";
 import HomePage from "../Front-End Pages/HomePage";
 import UserLogin from '../Front-End Pages/Userlogin'
-import ForgetPasswordForm from "../authentication/ForgetPasswordForm";
+// import ForgetPasswordForm from "../../../Template Assets/components/authentication/ForgetPasswordForm";
 import LoginPortal from "../Front-End Pages/LoginPortal";
-import RegisterPortal from "../Front-End Pages/RegisterPortal";
 import ProjectOwnerRegister from "../Front-End Pages/ProjectOwnerRegister";
 import SellerRegister from "../Front-End Pages/SellerSignUp";
 import FrontendAddProduct from '../Front-End Pages/FrontendAddProduct'
@@ -61,9 +60,9 @@ import ShippingPage from "../Front-End Pages/Cart/ShippingPage";
 const FrontEndRouters = () => {
     return (
         <Switch>
+            <Route path='/signup'><SignUpPage /></Route>
             <Route path='/jobdetails/:jobid/jobproposal'><JobProposal /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
-            <Route path='/signup'><SignUpPage /></Route>
             <Route path="/proposallist"><ProposalList /></Route>
             <Route path="/postjob1"><PostJob1 /></Route>
             <Route path="/postjob2"><PostJob2 /></Route>
@@ -71,9 +70,9 @@ const FrontEndRouters = () => {
             <Route path="/jobdetails/:jobid"><JobDetails /></Route>
             <Route path="/homepage"><HomePage /></Route>
             <Route path='/userlog'><UserLogin /></Route>
-            <Route path='/forgetpassword'><ForgetPasswordForm /></Route>
+            {/* <Route path='/forgetpassword'><ForgetPasswordForm /></Route> */}
             <Route path='/loginportal'><LoginPortal /></Route>
-            <Route path='/registerportal'><RegisterPortal /></Route>
+            {/* <Route path='/registerportal'><RegisterPortal /></Route> */}
             <Route path='/projectownersignup'><ProjectOwnerRegister /></Route>
             <Route path='/sellersignup'><SellerRegister /></Route>
             <Route path='/user/addproduct'><FrontendAddProduct /></Route>

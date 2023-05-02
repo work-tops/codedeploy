@@ -28,10 +28,10 @@ import Tilling from '../../Project images/Tilling.jpg'
 import Stonemasonary from '../../Project images/Stonemasonry.png'
 import { Col, Row, Button, Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Header from "../../Header/Header";
+// import Header from "../../Header/Header";
 import Menubar from "../../Menubar/Menubar";
 import Footer from "../../Footer/Footer";
-
+import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard'
 function ServiceList() {
     const [show, setShow] = useState(false);
 
@@ -39,10 +39,8 @@ function ServiceList() {
     const handleShow = () => setShow(true);
     return (
         <>
+            <NavbarStandard />
             <Row>
-                <Col lg={12}>
-                    <Header />
-                </Col>
                 <Col lg={12}>
                     <Menubar />
                 </Col>

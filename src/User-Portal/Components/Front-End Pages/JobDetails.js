@@ -10,7 +10,7 @@ import { getAllData } from "../../../Services/ProxyService";
 import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
 import { Button, Col, Row, Modal, Form } from "react-bootstrap";
 import worktops from '../../Components/Project images/Handyman.jpg'
-import Divider from "../authentication/Divider";
+import Divider from "../../TemplateAssets/common/Divider";
 function JobDetails() {
     const [show, setShow] = useState(false);
 

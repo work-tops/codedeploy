@@ -2,7 +2,7 @@
 import React from 'react';
 import { Container, Col, Row, Dropdown, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../Img/MP-logo.png'
+import logo from '../../TemplateAssets/Images/MP-logo.png'
 const Header = () => {
     return (
         <>

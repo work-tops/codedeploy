@@ -1,8 +1,8 @@
 import React from "react";
 import { Row, Col, Card, Button, Form } from "react-bootstrap";
 import ProfileMenu from "./ProfileMenu";
-import Divider from "../../authentication/Divider";
-import InvoiceTable from "../../advance-table/InvoiceTable";
+import Divider from "../../../TemplateAssets/common/Divider";
+import InvoiceTable from "../../../TemplateAssets/AdvanceTables/InvoiceTable";
 
 function Invoice() {
     return (

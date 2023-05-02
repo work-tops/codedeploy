@@ -1,10 +1,10 @@
 import React, { useReducer } from 'react';
 import PropTypes from 'prop-types';
-import AppContext from '../src/User-Portal/Components/context/Context';
+import AppContext from '../src/User-Portal/TemplateAssets/context/Context';
 import { settings } from './config';
-import { getColor, getItemFromStore } from '../src/User-Portal/Components/helpers/utils';
-import { configReducer } from '../src/User-Portal/Components/reducers/configReducer';
-import useToggleStyle from '../src/User-Portal/Components/hooks/useToggleStyle';
+import { getColor, getItemFromStore } from '../src/User-Portal/TemplateAssets/helpers/utils';
+import { configReducer } from '../src/User-Portal/TemplateAssets/reducers/configReducer';
+import useToggleStyle from '../src/User-Portal/TemplateAssets/hooks/useToggleStyle';
 
 const Main = props => {
   const configState = {

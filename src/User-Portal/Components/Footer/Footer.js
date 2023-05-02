@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
-import logo from '../../Components/Img/MP-logo.png'
+import logo from '../../TemplateAssets/Images/MP-logo.png'
 import { Link } from "react-router-dom";
 
 
