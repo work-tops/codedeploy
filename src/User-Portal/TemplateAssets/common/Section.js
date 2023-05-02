@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import Background from './Background';
 import { Container } from 'react-bootstrap';
 
@@ -20,7 +20,9 @@ const Section = ({
   bgClassName && (bgProps.className = bgClassName);
 
   return (
-    <section className={classNames({ [`bg-${bg}`]: bg }, className)} {...rest}>
+    <section 
+    // className={classNames({ [`bg-${bg}`]: bg }, className)} {...rest}
+    >
       {image && <Background {...bgProps} />}
       <Container fluid={fluid}>{children}</Container>
     </section>

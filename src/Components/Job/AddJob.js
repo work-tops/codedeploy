@@ -152,8 +152,8 @@ function AddJob() {
         // console.log(response.data.master[0].data.sub_category);
     }
     const selleremails = async () => {
-        const response = await getAllData('sellers/all');
-        setselemail(response.data.sellers);
+        const response = await getAllData('admin/users');
+        setselemail(response.data.users);
         // setsubcate(response.data.master[0].data.sub_category);
         // console.log(response.data.master[0].data.sub_category);
     }

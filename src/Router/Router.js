@@ -19,13 +19,14 @@ import AllStaff from "../Components/Staff/AllStaff";
 import AddStaff from "../Components/Staff/AddStaff";
 import FreelancerCommission from "../Components/Commission/FreelancerCommission";
 import AllFreelancerCommission from "../Components/Commission/AllFreelancerCommission";
+import ProductList from "../User-Portal/Components/Front-End Pages/Lists/ProductList";
 // import AdvAllFreelancer from "../User-Portal/Components/AllFreelancer";
 
 const Routers = () => {
     return (
         <Switch>
             {/* Routes for AI Pages //start */}
-            <Route exact path='/'><Dashboard /></Route>
+            <Route exact path='/'><ProductList /></Route>
             <Route exact path='/dashboard'><Dashboard /></Route>
             <Route path='/allfreelancer'><AllFreelancer /></Route>
             <Route path='/addfreelancer'><AiFreelancer /></Route>

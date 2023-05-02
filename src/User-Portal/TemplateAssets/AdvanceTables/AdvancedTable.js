@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
@@ -8,6 +8,7 @@ import AdvanceTableSearchBox from "../common/advance-table/AdvanceTableSearchBox
 import product_image from "../Images/product_image.png"
 import CardDropdown from "../common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
+import { getAllData } from "../../../Services/ProxyService";
 const columns = [
     {
         accessor: 'productId',
@@ -320,6 +321,76 @@ const data = [
 ];
 
 const AdvancedTable = () => {
+
+    const [product, setproducts] = useState([]); 
+    console.log(product.length)
+
+    const Productlist = async () => {
+        const response = await getAllData('products');
+        setproducts(response.data.products);
+        sessionStorage.setItem("productlength", response.data.products.length)
+    }
+
+    useEffect(()=>{
+        Productlist()
+    }, [])
+
+  
+    const columns = [
+        {
+            accessor: 'productId',
+            Header: 'Product ID'
+        },
+        {
+            accessor: 'image',
+            Header: 'Image'
+        },
+        {
+            accessor: 'name',
+            Header: 'Name'
+        },
+        {
+            accessor: 'email',
+            Header: 'Seller',
+            Cell: rowData => {
+                const { email } = rowData.row.original
+                return (
+                    <a href={'mailto:' + email}>
+                        {email}
+                    </a>
+                )
+            }
+        },
+        {
+            accessor: 'price',
+            Header: 'Price'
+        },
+        {
+            accessor: 'quantity',
+            Header: 'Quantity'
+        },
+        {
+            accessor: 'status',
+            Header: 'Status'
+        },
+        {
+            accessor: 'action',
+            Header: 'Action'
+        }
+    ];
+
+    const data = product.map(product => ({
+        productId: product._id,
+        image: <img src={product.attachments[0].url} width="40px" height="35px" />,
+        name: product.name,
+        email: product.seller_email,
+        price: `£${product.variant[0].pricing.price}`,
+        quantity: `${product.variant[0].inventory.quantity} Pcs`,
+        status: <span className="badge bg-success p-2">Approved</span>
+      }));
+    
+   
+
     function BulAction({ selectedRowIds }) {
         return (
             <Row className="flex-between-center mb-3">
@@ -388,7 +459,7 @@ const AdvancedTable = () => {
             data={data}
             sortable
             pagination
-            perPage={5}
+            // perPage={5}
             selection
             selectionColumnWidth={30}
         >

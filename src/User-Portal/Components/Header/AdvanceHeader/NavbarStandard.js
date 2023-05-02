@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import React, { useContext, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import team3 from '../../../TemplateAssets/Images/employee.png'
@@ -37,10 +37,10 @@ const NavbarStandard = () => {
       variant={isDark ? 'light' : 'dark'}
       fixed="top"
       expand={topNavbarBreakpoint}
-      className={classNames('navbar-standard navbar-theme', {
-        'bg-100': !navbarCollapsed && isDark,
-        'bg-dark': !navbarCollapsed && !isDark
-      })}
+      // className={classNames('navbar-standard navbar-theme', {
+      //   'bg-100': !navbarCollapsed && isDark,
+      //   'bg-dark': !navbarCollapsed && !isDark
+      // })}
     >
       <Container>
 

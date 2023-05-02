@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import AppContext from '../../TemplateAssets/context/Context';
 
 const CardDropdown = ({
@@ -25,10 +25,10 @@ const CardDropdown = ({
         variant="link"
         size="sm"
         data-boundary="viewport"
-        className={classNames('text-600', {
-          [btnRevealClass]: btnRevealClass,
-          'btn-reveal': !btnRevealClass
-        })}
+        // className={classNames('text-600', {
+        //   [btnRevealClass]: btnRevealClass,
+        //   'btn-reveal': !btnRevealClass
+        // })}
       >
         <FontAwesomeIcon icon={icon} className="fs--2" />
       </Dropdown.Toggle>

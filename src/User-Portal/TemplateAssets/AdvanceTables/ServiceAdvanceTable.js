@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
@@ -8,6 +8,7 @@ import AdvanceTableSearchBox from "../common/advance-table/AdvanceTableSearchBox
 import product_image from "../Images/product_image.png"
 import CardDropdown from "../common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
+import { getAllData } from "../../../Services/ProxyService";
 
 
 const columns = [
@@ -315,6 +316,340 @@ const data = [
 ];
 
 const ServiceAdvancedTable = () => {
+
+    const [service, setService] = useState([])
+
+    const Serviceslist = async () => {
+        const response = await getAllData('services/all');
+        setService(response.data.services);
+        sessionStorage.setItem("servicelength", response.data.services.length)
+    }
+
+    useEffect(()=>{
+        Serviceslist()
+    }, [])
+
+    const columns = [
+        {
+            accessor: 'name',
+            Header: 'Name'
+        },
+        {
+            accessor: 'email',
+            Header: 'Seller',
+            Cell: rowData => {
+                const { email } = rowData.row.original
+                return (
+                    <a href={'mailto:' + email}>
+                        {email}
+                    </a>
+                )
+            }
+        },
+        {
+            accessor: 'priceType',
+            Header: 'PriceType'
+        },
+    
+        {
+            accessor: 'price',
+            Header: 'Price'
+        },
+        {
+            accessor: 'status',
+            Header: 'Status'
+        },
+        {
+            accessor: 'action',
+            Header: 'Action'
+        }
+    ];
+        const data = service.map(_service => ({
+        name: _service.title,
+        priceType: _service.price_type,
+        email: _service.email,
+        price: _service.price,
+        status:_service.status == "Active"?<span className="badge bg-success p-2">{_service.status}</span> : <span className="badge p-2 bg-warning">{_service.status}</span>,
+        action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>Edit</Dropdown.Item>
+                    <Dropdown.Item>Enable</Dropdown.Item>
+                    <Dropdown.Item>View in Store</Dropdown.Item>
+                    <Dropdown.Item>Deny</Dropdown.Item>
+                    <Dropdown.Item>Disable</Dropdown.Item>
+                    <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+                </div>
+            </CardDropdown>
+      }));
+    
+    // const data = [
+    //     {
+    //         name: 'Electronic Servies',
+    //         image: <img src={product_image} width="40px" height="35px" />,
+    //         priceType: "Per Hour Cost",
+    //         email: 'anna@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     },
+    //     {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'homer@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge p-2 bg-warning">Draft</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     },
+    //     {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'oscar@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     },
+    //     {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'emily@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     },
+    //     {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'jara@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     }, {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'emily@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     },
+    //     {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'jara@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     }, {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'emily@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     },
+    //     {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'jara@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     }, {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'emily@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     },
+    //     {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'jara@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     },
+    //     {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'jara@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     }
+    //     ,
+    //     {
+    //         name: 'Minor Home Repair Services',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'jara@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     }
+    //     ,
+    //     {
+    //         name: 'Electronic Servies',
+    
+    //         priceType: "Per Hour Cost",
+    //         email: 'jara@example.com',
+    //         price: '£100',
+    
+    //         status: <span className="badge bg-success p-2">Active</span>,
+    //         action: <CardDropdown>
+    //             <div className="py-2">
+    //                 <Dropdown.Item>Edit</Dropdown.Item>
+    //                 <Dropdown.Item>Enable</Dropdown.Item>
+    //                 <Dropdown.Item>View in Store</Dropdown.Item>
+    //                 <Dropdown.Item>Deny</Dropdown.Item>
+    //                 <Dropdown.Item>Disable</Dropdown.Item>
+    //                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+    //             </div>
+    //         </CardDropdown>
+    //     }
+    // ];
+
     function BulAction({ selectedRowIds }) {
         return (
             <Row className="flex-between-center mb-3">

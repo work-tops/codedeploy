@@ -56,8 +56,10 @@ function PostJob2() {
     }
 
     const AddJobs = async () => {
+        var _user = sessionStorage.getItem('user');
+        var _json = JSON.parse(_user);
         const productdata = {
-            customer_email: "senakrrao@gmail.com",
+            customer_email: _json?.email,
             category: form.category,
             sub_category: form.sub_category,
             project_title: form.project_title,
@@ -76,7 +78,7 @@ function PostJob2() {
             terms_and_condition: true,
             postcode: form.postcode,
             startdate: form.startdate,
-            created_by: "1",
+            created_by: _json?._id,
         }
         const response = await createData("job/new", productdata)
         if (response.status === 201) {
@@ -130,8 +132,8 @@ function PostJob2() {
         setcate(response.data.master[0].data);
     }
     const selleremails = async () => {
-        const response = await getAllData('sellers/all');
-        setselemail(response.data.sellers);
+        const response = await getAllData('admin/users');
+        setselemail(response.data.users);
     }
     const removeImage = async (index) => {
         var selected = [...selectedFile];
@@ -254,10 +256,10 @@ function PostJob2() {
                                 <input value={form.expire_date} required name="expire_date" onChange={(e) => { handleChange(e) }} id="postcode-1" type='date' />
                                 <br></br>
                                 {/* <Link to="/listjobs" role="button"> */}
-                                <Link to="/OpenProjectCard">
+                                {/* <Link to="/OpenProjectCard"> */}
                                     <button type="submit" className="usr-create-acc-btn">Post a Project</button>
-                                </Link>
-                                <Link to="/postjob1">
+                                {/* </Link> */}
+                                <Link to="/listjobs">
                                     <Button className="ms-5 btn bg-danger">Cancel</Button>
                                 </Link>
                                 {/* </Link> */}

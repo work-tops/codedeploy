@@ -3,7 +3,13 @@ import React from 'react';
 import { Container, Col, Row, Dropdown, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../TemplateAssets/Images/MP-logo.png'
+import { useEffect,useState } from 'react';
 const Header = () => {
+    const [token, setToken] = useState(null)
+    useEffect(() => {
+        var _token = sessionStorage.getItem("token");
+        setToken(_token);
+    }, [])
     return (
         <>
             <Row className='navbar-standard'>
@@ -18,9 +24,11 @@ const Header = () => {
                     </Form.Group>
                 </Col>
                 <Col lg={2} className='m-2'>
-                    <Link to='/postjob1'>
+                {token != null &&
+                    <Link to='/postjob2'>
                         <Button className="btn ms-5 bg-white mt-2 text-dark">Post A Project</Button>
                     </Link>
+}
                 </Col>
                 <Col lg={4} className='m-2'>
                     <div className='d-flex justify-content-end'>

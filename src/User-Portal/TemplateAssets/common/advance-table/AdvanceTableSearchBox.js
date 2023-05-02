@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import React, { useState } from 'react';
 import { Button, FormControl, InputGroup } from 'react-bootstrap';
 import { useAsyncDebounce } from 'react-table';
@@ -18,7 +18,9 @@ const AdvanceTableSearchBox = ({
   }, 200);
 
   return (
-    <InputGroup className={classNames(className, 'position-relative')}>
+    <InputGroup 
+    // className={classNames(className, 'position-relative')}
+    >
       <FormControl
         value={value || ''}
         onChange={({ target: { value } }) => {

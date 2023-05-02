@@ -1,17 +1,54 @@
+// import Divider from '../authentication/Divider';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { Link, useHistory } from 'react-router-dom';
+// import { toast } from 'react-toastify';
 // import SocialAuthButtons from '../authentication/SocialAuthButtons';
+import { createData, getAllData } from "../../../Services/ProxyService";
+import toast, { Toaster } from 'react-hot-toast';
 
 const LoginForm = ({ hasLabel, layout }) => {
   // State
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    remember: false
+    remember: false,
+    role: ''
   });
+  console.log(formData)
+
+  const history = useHistory();
+
+  const handleChange = (e) => {
+    const myData = { ...formData };
+    myData[e.target.name] = e.target.value;
+    setFormData(myData);
+  }
+
+  const Login = async (e) => {
+    e.preventDefault();
+    const _userdetails = {
+      email: formData.email,
+      password: formData.password,
+      role: formData.role
+    }
+    await createData("login", _userdetails).then(async response => {
+      console.log(response);
+      await getAllData("admin/user/" + response.data._user._id).then(res => {
+        sessionStorage.setItem('user', JSON.stringify(res.data.user));
+      })
+      toast.success('Successfully Logged In')
+      sessionStorage.setItem("token", response.data.token);
+      if (formData.role == "Freelancer") {
+        history.push("/Seller/Landing");
+      } else {
+        history.push("/ProjectOwner/Landing");
+      }
+    }).catch(err => {
+      toast.error(err.response.data.message);
+    })
+  }
 
   // Handler
   const handleSubmit = e => {
@@ -28,14 +65,18 @@ const LoginForm = ({ hasLabel, layout }) => {
     });
   };
 
+
+
   return (
     <>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className=" mb-3">
-          <Form.Select>
+    
+      <Form onSubmit={(e) => { Login(e) }}>
+        <h5 className='d-inline'>Login As:</h5>
+        <Form.Group className="mt-3 mb-3">
+          <Form.Select required name="role" onChange={(e) => { handleChange(e) }}>
             <option>Select Role</option>
-            <option>Seller </option>
-            <option>Project Owner </option>
+            <option value={'Freelancer'}>Seller </option>
+            <option value={'Owner'}>Project Owner </option>
           </Form.Select>
         </Form.Group>
 
@@ -45,8 +86,9 @@ const LoginForm = ({ hasLabel, layout }) => {
             placeholder={!hasLabel ? 'Email address' : ''}
             value={formData.email}
             name="email"
-            onChange={handleFieldChange}
+            onChange={(e) => { handleChange(e) }}
             type="email"
+            required
           />
         </Form.Group>
 
@@ -56,8 +98,9 @@ const LoginForm = ({ hasLabel, layout }) => {
             placeholder={!hasLabel ? 'Password' : ''}
             value={formData.password}
             name="password"
-            onChange={handleFieldChange}
+            onChange={(e) => { handleChange(e) }}
             type="password"
+            required
           />
         </Form.Group>
 
@@ -65,8 +108,10 @@ const LoginForm = ({ hasLabel, layout }) => {
           <Col xs="auto">
             <Form.Check type="checkbox" id="rememberMe" className="mb-0">
               <Form.Check.Input
+              required
                 type="checkbox"
                 name="remember"
+                value={true}
                 checked={formData.remember}
                 onChange={e =>
                   setFormData({
@@ -77,17 +122,28 @@ const LoginForm = ({ hasLabel, layout }) => {
               /> Remember me</Form.Check>
           </Col>
 
-          <Col xs="auto">
+          {/* <Col xs="auto">
             <Link
               className="fs--1 mb-0"
               to={`/forgetpassword`}
             >
               Forgot Password?
             </Link>
-          </Col>
+          </Col> */}
         </Row>
 
         <Form.Group>
+          {/* <Link to='/Seller/Landing'> */}
+          <Button
+            type="submit"
+            color="primary"
+            className="mt-3 w-100"
+            disabled={!formData.email || !formData.password}
+          >
+            Log in
+          </Button>
+          {/* </Link> */}
+          {/* <Link to='/ProjectOwner/Landing'>
             <Button
               type="submit"
               color="primary"
@@ -97,9 +153,11 @@ const LoginForm = ({ hasLabel, layout }) => {
             >
               Log in
             </Button>
+          </Link> */}
         </Form.Group>
         <p className="text-center mt-3 mb-3">Dont Have an Account ? <Link to='/signup'>Create Account</Link></p>
       </Form>
+      <Toaster />
     </>
   );
 };

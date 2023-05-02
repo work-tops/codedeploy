@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import Flex from '../Flex';
@@ -26,10 +26,10 @@ export const AdvanceTableFooter = ({
   const [isAllVisible, setIsAllVisible] = useState(false);
   return (
     <Flex
-      className={classNames(
-        className,
-        'align-items-center justify-content-between'
-      )}
+      // className={classNames(
+      //   className,
+      //   'align-items-center justify-content-between'
+      // )}
     >
       <Flex alignItems="center" className="fs--1">
         {rowInfo && (
@@ -84,16 +84,16 @@ export const AdvanceTableFooter = ({
             size="sm"
             variant={canPreviousPage ? 'primary' : 'light'}
             onClick={() => previousPage()}
-            className={classNames({ disabled: !canPreviousPage })}
+            // className={classNames({ disabled: !canPreviousPage })}
           >
             Previous
           </Button>
           <Button
             size="sm"
             variant={canNextPage ? 'primary' : 'light'}
-            className={classNames('px-4 ms-2', {
-              disabled: !canNextPage
-            })}
+            // className={classNames('px-4 ms-2', {
+            //   disabled: !canNextPage
+            // })}
             onClick={() => nextPage()}
           >
             Next

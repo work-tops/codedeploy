@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Form, Button, Dropdown } from "react-bootstrap";
 import logo from '../../TemplateAssets/Images/MP-logo.png'
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import sellerProfile from '../../TemplateAssets/Images/employee.png'
 function ProjectOwnerHeader() {
+    const history = useHistory()
+    const sessionclear = () => {
+        sessionStorage.clear();
+        history.push("/userlog")
+    }
+    const [token, setToken] = useState(null)
+    useEffect(() => {
+        var _token = sessionStorage.getItem("token");
+        setToken(_token);
+    }, [])
     return (
         <>
             <Row className="navbar-standard p-2">
@@ -15,19 +25,21 @@ function ProjectOwnerHeader() {
                     <Form.Group>
                         <Form.Control
                             placeholder='Search'
-                            className='w-75 ms-2 mt-2' type='serach' />
+                            className='w-75 ms-2 mt-2' type='search' />
                     </Form.Group>
                 </Col>
                 <Col lg={2}>
-                    <Link to='/postjob1'>
-                        <Button className="btn ms-2 bg-white mt-2 text-dark">Post A Project</Button>
-                    </Link>
+                    {token != null &&
+                        <Link to='/postjob2'>
+                            <Button className="btn ms-2 bg-white mt-2 text-dark">Post A Project</Button>
+                        </Link>
+                    }
                 </Col>
                 <Col lg={3}>
                     <div className="d-flex justify-content-end">
                         <div>
                             <Link to="/Cart">
-                            <Icon icon="material-symbols:shopping-cart-outline-rounded" className="mt-2 me-3" color="white" width="28" height="28" />
+                                <Icon icon="material-symbols:shopping-cart-outline-rounded" className="mt-2 me-3" color="white" width="28" height="28" />
                             </Link>
                         </div>
                         <div>
@@ -84,10 +96,10 @@ function ProjectOwnerHeader() {
                                         Services
                                     </Link>
                                 </Dropdown.Item>
-                                <Dropdown.Item>
-                                    <Link to="/userlog">
-                                        Logout
-                                    </Link>
+                                <Dropdown.Item onClick={sessionclear}>
+                                    {/* <Link to="/userlog"> */}
+                                    Logout
+                                    {/* </Link> */}
                                 </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>

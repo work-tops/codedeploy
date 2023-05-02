@@ -23,8 +23,8 @@ function FreelancerCommission() {
     };
 
     const selleremails = async () => {
-        const response = await getAllData('sellers/all');
-        setsalesemail(response.data.sellers);
+        const response = await getAllData('admin/users');
+        setsalesemail(response.data.users);
     }
 
     useEffect(() => {

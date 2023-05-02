@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import newsfeed from "../Images/newsfeed.png"
 import profileImg from "../Images/employee.png"
 import currency from "../Images/Currency.png"
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useHistory } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
 import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
 import { Button, Col, Row, Modal, Form } from "react-bootstrap";
@@ -21,9 +21,27 @@ function JobDetails() {
     let { jobid } = useParams();
     const [jobdata, setJobdata] = useState([])
     const [board, setBoard] = useState(false)
+    const history = useHistory();
 
     const showboard = () => {
         setBoard(!board)
+    }
+    const sendProposal = () => {
+        var _token = sessionStorage.getItem("token");
+        if(_token != null){
+            history.push(`/jobdetails/${jobid}/jobproposal`);
+        }else{
+            history.push("/userlog");
+        }
+    }
+    const getLevel = (value) => {
+        if(value <= 1000){
+            return "Low";
+        }else if(value > 1000 || value < 3000 ){
+            return "Medium";
+        }else if(value > 3001){
+            return "High";
+        }
     }
 
     const getJobsById = async () => {
@@ -34,6 +52,16 @@ function JobDetails() {
     useEffect(() => {
         getJobsById()
     }, [])
+
+// Date length
+
+const today = new Date().toISOString().substr(0, 10);
+const expire_date = new Date(jobdata.expire_date);
+const timeDiff = expire_date.getTime() - new Date(today).getTime();
+const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+console.log(daysDiff);
+
+
     return (
         <>
             <div className="row">
@@ -50,13 +78,13 @@ function JobDetails() {
                     <div className="key-description-1">
                         <h2 className="heading">{jobdata.project_title}</h2>
                         <ul type='none' className="key">
-                            <li><i class="fa-solid fa-sterling-sign"></i>Medium Level</li>
+                            <li><i class="fa-solid fa-sterling-sign"></i>{getLevel(jobdata?.budget)} Level</li>
                             <li><i class="fa-solid fa-location-dot"></i>{jobdata.location}</li>
-                            <li><i class="fa-regular fa-building"></i>{jobdata.budget_type}</li>
+                            <li><i class="fa-regular fa-building"></i>{jobdata.category}</li>
                             <li><i class="fa-solid fa-business-time"></i>Duration: {jobdata.project_duration}</li>
-                            <Link to={`/jobdetails/${jobid}/jobproposal`}>
-                                <button className="send-proposal">SEND PROPOSAL</button>
-                            </Link>
+                            {/* <Link to={`/jobdetails/${jobid}/jobproposal`}> */}
+                                <button className="send-proposal" onClick={()=> sendProposal()}>SEND PROPOSAL</button>
+                            {/* </Link> */}
                         </ul>
                     </div>
                     <div className="job-det-cols row">
@@ -72,7 +100,7 @@ function JobDetails() {
                         <div className="col-6 economy-desc">
                             <div>
                                 <p className="ending-days">Ends In (Days)</p>
-                                <p className="days-left">10</p>
+                                <p className="days-left">{daysDiff}</p>
                             </div>
                             <div>
                                 <div className="flex">

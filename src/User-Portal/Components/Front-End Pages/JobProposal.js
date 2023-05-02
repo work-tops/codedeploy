@@ -12,11 +12,17 @@ function JobProposal() {
     const jobdetails = JSON.parse(jobdatas)
     console.log(jobdetails)
     const [form, setform] = useState([])
+    const [serviceFee, setServiceFee] = useState(20)
+    const [amountUReceive, setAmountUReceive] = useState(20)
     console.log(form)
 
     const handleChange = (e) => {
         const myData = { ...form };
         myData[e.target.name] = e.target.value;
+        if(e.target.name == 'proposal_amount'){
+            var _amount = serviceFee+ parseInt(e.target.value)
+            setAmountUReceive(_amount);
+        }
         setform(myData);
     }
 
@@ -56,6 +62,16 @@ function JobProposal() {
         });
     }
 
+    // Level comparing 
+    let lavel = ""
+    if(jobdetails.budget < 1000){
+        lavel="Low"
+    }else if(jobdetails.budget > 1000 || jobdetails.budget < 3000 ){
+        lavel="Medium"
+    }else if(jobdetails.budget > 3001){
+        lavel="High"
+    }
+
     return (
         <>
             <div className="row">
@@ -71,36 +87,36 @@ function JobProposal() {
                 </div>
                 <div className="col-12">
                     <div className="key-description">
-                        <h2 className="heading">{jobdetails.project_title}</h2>
+                        <h2 className="heading">{jobdetails?.project_title}</h2>
                         <ul type='none' className="key">
-                            <li><i className="fa-solid fa-sterling-sign"></i>Medium Level</li>
-                            <li><i className="fa-solid fa-location-dot"></i>{jobdetails.location}</li>
-                            <li><i className="fa-regular fa-building"></i>{jobdetails.budget_type}</li>
-                            <li><i className="fa-solid fa-business-time"></i>{jobdetails.project_duration}</li>
+                            <li><i className="fa-solid fa-sterling-sign"></i>{lavel} Level</li>
+                            <li><i className="fa-solid fa-location-dot"></i>{jobdetails?.location}</li>
+                            <li><i className="fa-regular fa-building"></i>{jobdetails?.category}</li>
+                            <li><i className="fa-solid fa-business-time"></i>{jobdetails?.project_duration}</li>
                         </ul>
                     </div>
                     <form onSubmit={(e)=>{formsubmit(e)}}>
                         <div className="layout-1">
                             <h5 className="propos-title">Proposal Amount</h5>
-                            <input name="proposal_amount" value={form.proposal_amount} onChange={(e)=>{handleChange(e)}} type="number" className="proposal-amt-box" placeholder="Enter Your Proposal Amount" /><Icon icon="gridicons:dropdown" width="24" height="24" />
+                            <input required name="proposal_amount" value={form.proposal_amount} onChange={(e)=>{handleChange(e)}} type="number" className="proposal-amt-box" placeholder="Enter Your Proposal Amount" /><Icon icon="gridicons:dropdown" width="24" height="24" />
                             <fieldset className="proposal-fieldset">
-                                <p><span className="pound-sym">(<span className="pounds">£</span>) - 0</span>
+                                <p><span className="pound-sym">(<span className="pounds">£</span>) - {serviceFee}</span>
                                     <span className="proposal-info">"myproject.ai" Service Fee</span>
                                     <i className="fa-solid fa-circle-info info_icon"></i>
                                 </p>
                             </fieldset>
                             <fieldset className="proposal-fieldset">
-                                <p><span className="pound-sym">(<span className="pounds">£</span>) - 0</span> <span className="proposal-info-1">"Amount You'll Receive after" Service Fee education</span>
+                                <p><span className="pound-sym">(<span className="pounds">£</span>) - {amountUReceive}</span> <span className="proposal-info-1">"Amount You'll Receive after" Service Fee education</span>
                                     <i className="fa-solid fa-circle-info info_icon"></i>
                                 </p>
                             </fieldset>
                             <p className="proposal-amt-note">Total Amount the client will see on the proposal</p>
-                            <Form.Control name="completed_duration" value={form.completed_duration} onChange={(e)=>{handleChange(e)}} type="text" className="w-50 ms-5" placeholder="Add completion time" />
+                            <Form.Control required name="completed_duration" value={form.completed_duration} onChange={(e)=>{handleChange(e)}} type="text" className="w-50 ms-5" placeholder="Add completion time" />
                             <br></br>
-                            <textarea name="cover_letter" value={form.cover_letter} onChange={(e)=>{handleChange(e)}} className="cover-letter" placeholder="Cover Letter"></textarea>
+                            <textarea required name="cover_letter" value={form.cover_letter} onChange={(e)=>{handleChange(e)}} className="cover-letter" placeholder="Cover Letter"></textarea>
                             <h5 className="propos-title">Upload File (Optional)</h5>
                             <div className="attachments">
-                                <button>SELECT FILES</button><small>Drop file here to Upload</small>
+                                <button type="button">SELECT FILES</button><small>Drop file here to Upload</small>
                             </div>
                             <button type="submit" className="proposal-send-btn">SEND</button>
                         </div>

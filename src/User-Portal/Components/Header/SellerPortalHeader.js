@@ -2,9 +2,15 @@ import React from "react";
 import { Row, Col, Form, Dropdown } from "react-bootstrap";
 import logo from '../../TemplateAssets/Images/MP-logo.png'
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import sellerProfile from '../../TemplateAssets/Images/employee.png'
 function SellerPortalHeader() {
+    const history = useHistory()
+    const sessionclear = () =>{
+        sessionStorage.clear();
+        history.push("/userlog")
+    }
+
     return (
         <>
             <Row className="navbar-standard p-2">
@@ -85,10 +91,11 @@ function SellerPortalHeader() {
                                         Services
                                     </Link>
                                 </Dropdown.Item>
-                                <Dropdown.Item>
-                                    <Link to="/userlog">
+                                <Dropdown.Item onClick={sessionclear} >
+                                    
+                                    {/* <Link to="/userlog"> */}
                                         Logout
-                                    </Link>
+                                    {/* </Link> */}
                                 </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
