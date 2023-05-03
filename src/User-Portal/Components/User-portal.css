@@ -1459,7 +1459,7 @@ a {
         height: 40px;
         margin-top: 20px;
     }
-
+/* 
     #usr-prj-tit {
         margin-left: 20px;
         padding: 10px;
@@ -1470,7 +1470,7 @@ a {
 
     #usr-prj-tit::placeholder {
         font-size: 14px;
-    }
+    } */
 
     .label1 {
         display: block;
@@ -1526,7 +1526,7 @@ a {
         border: 1px solid;
     }
 
-    #postcode-1 {
+    /* #postcode-1 {
         margin-left: 20px;
         padding: 10px;
         width: 190px;
@@ -1534,9 +1534,9 @@ a {
         border: 1px solid;
         border-radius: 0px;
         margin-top: 3px;
-    }
+    } */
 
-    #aipro-barcode-1 {
+    /* #aipro-barcode-1 {
         width: 521px;
         margin-top: 10px;
         margin-left: 20px;
@@ -1544,7 +1544,7 @@ a {
         padding: 10px;
         display: block;
         border: 1px solid;
-    }
+    } */
 
     .category-1 {
         margin-left: 20px;

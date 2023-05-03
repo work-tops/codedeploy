@@ -6,18 +6,16 @@ import Menubar from "../../Menubar/Menubar";
 import { Icon } from "@iconify/react";
 import { Divider } from "@mui/material";
 import { Link } from "react-router-dom";
+import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 
 function Cart() {
     return (
         <>
             <Row>
-                <Col lg={12}>
-                    <Header />
+                <Col lg={12} className="mb-5">
+                    <NavbarStandard />
                 </Col>
-                <Col lg={12}>
-                    <Menubar />
-                </Col>
-                <Col lg={12}>
+                <Col className="mt-5" lg={12}>
                     <Row>
                         <Col lg={7}>
                             <div className="d-flex justify-content-between">

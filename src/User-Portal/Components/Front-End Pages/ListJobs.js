@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { getAllData } from "../../../Services/ProxyService";
 import ReactPaginate from 'react-paginate';
 import ProjectOwnerHeader from '../Header/ProjectOwnerHeader'
+import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard'
 // import toast, { Toaster } from 'react-hot-toast';
 function ListJobs() {
     const [jobs, setJobs] = useState([]);
@@ -110,11 +111,8 @@ function ListJobs() {
     return (
         <>
             <div className='row'>
-                <div className='col-12'>
-                    <ProjectOwnerHeader />
-                </div>
-                <div className='col-12'>
-                    <Menubar />
+                <div className='col-12 mt-5'>
+                    <NavbarStandard />
                 </div>
                 <div className='col-12'>
                 <div className="project_post">

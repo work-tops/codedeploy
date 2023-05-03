@@ -10,6 +10,7 @@ import Footer from '../Footer/Footer';
 import { uploadImage } from "../../../Services/ImageService";
 import { createData, getAllData } from "../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
+import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard';
 
 
 const FrontendAddService = () => {
@@ -171,15 +172,12 @@ const FrontendAddService = () => {
     return (
         <>
             <Row>
-                <Col lg={12}>
-                    <SellerPortalHeader />
+                <Col lg={12} className='mb-5'>
+                    <NavbarStandard />
                 </Col>
-                <Col lg={12}>
-                    <Menubar />
-                </Col>
-                <Col lg={12}>
+                <Col lg={12} className='mt-4'>
                     <Form onSubmit={(e) => { formsubmit(e) }}>
-                        <Card className='m-1'>
+                        <Card className=''>
                             <Card.Body>
                                 <div className='d-flex justify-content-between'>
                                     <div>
@@ -240,12 +238,12 @@ const FrontendAddService = () => {
                                                     <Row className='g-3 mb-3'>
                                                         <Form.Group as={Col} className='mb-3'>
                                                             <Form.Label>Service Location</Form.Label>
-                                                            <Multiselect options={servitag[1]?.list} displayValue="value"  className='border border-dark rounded' />
+                                                            <Multiselect options={servitag[1]?.list} displayValue="value" className='border border-dark rounded' />
                                                         </Form.Group>
                                                         <Form.Group as={Col} className='ms-2 mb-3'>
                                                             <Form.Label>Service Range
                                                             </Form.Label>
-                                                            <Multiselect options={servitag[2]?.list} displayValue="value"  className='border border-dark rounded' />
+                                                            <Multiselect options={servitag[2]?.list} displayValue="value" className='border border-dark rounded' />
                                                         </Form.Group>
                                                     </Row>
                                                     <Row className='mb-3'>
@@ -343,13 +341,13 @@ const FrontendAddService = () => {
                                                             </label>
 
                                                         </div>
-                                                        {actualFiles.length == 0 || actualFiles.length == undefined ?(
+                                                        {actualFiles.length == 0 || actualFiles.length == undefined ? (
                                                             ""
-                                                        ):(<>
-                                                         <img src={actualFiles} alt="product-img" className="attached-img_1 mt-3" /><br/>
+                                                        ) : (<>
+                                                            <img src={actualFiles} alt="product-img" className="attached-img_1 mt-3" /><br />
                                                             <button type="button" onClick={removeImage} className="btn btn-danger ms-2 mt-3">Remove</button>
                                                         </>)}
-                                                       
+
                                                     </div>
                                                 </Card.Body>
                                             </Card>
@@ -360,20 +358,20 @@ const FrontendAddService = () => {
                                                         <Form.Label>
                                                             Service handle
                                                         </Form.Label>
-                                                        <Form.Control  value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                                        <Form.Control value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                                     </Form.Group>
                                                     <h5 className='mb-3'>Service Metafields</h5>
                                                     <Form.Group className='mb-3'>
                                                         <Form.Label>
                                                             Title Tag Meta Field
                                                         </Form.Label>
-                                                        <Form.Control  value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }}  type="text" placeholder='' className='w-100' />
+                                                        <Form.Control value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                                     </Form.Group>
                                                     <Form.Group className='mb-3'>
                                                         <Form.Label>
                                                             Description Tag Meta Field
                                                         </Form.Label>
-                                                        <Form.Control  value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }}  type="text" placeholder='' className='w-100' />
+                                                        <Form.Control value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                                     </Form.Group>
                                                 </Card.Body>
                                             </Card>

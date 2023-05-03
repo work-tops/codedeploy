@@ -1,16 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import ProposalList from "../Front-End Pages/ProposalList";
-import PostJob1 from "../Front-End Pages/PostJob1";
 import ListJobs from "../Front-End Pages/ListJobs";
 import JobDetails from "../Front-End Pages/JobDetails";
 import ProjectListing from "../Front-End Pages/ProjectListing";
 import SignUpPage from "../Front-End Pages/SignUpPage";
 import JobProposal from "../Front-End Pages/JobProposal";
-import PostJob2 from "../Front-End Pages/PostJob2";
 import HomePage from "../Front-End Pages/HomePage";
-import UserLogin from '../Front-End Pages/Userlogin'
-// import ForgetPasswordForm from "../../../Template Assets/components/authentication/ForgetPasswordForm";
+import UserLogin from '../Front-End Pages/Login/UserLogin'
 import LoginPortal from "../Front-End Pages/LoginPortal";
 import ProjectOwnerRegister from "../Front-End Pages/ProjectOwnerRegister";
 import SellerRegister from "../Front-End Pages/SellerSignUp";
@@ -57,6 +54,8 @@ import ContactUs from "../Footer/Contactus";
 import PrivacyPolicy from "../Footer/PrivacyPolicy";
 import TermsOfUse from "../Footer/TermsofUse";
 import ShippingPage from "../Front-End Pages/Cart/ShippingPage";
+import SellerLogin from "../Front-End Pages/Login/SellerLogin";
+import PostProject from "../../Components/Front-End Pages/Post_Project/postProject";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -64,15 +63,14 @@ const FrontEndRouters = () => {
             <Route path='/jobdetails/:jobid/jobproposal'><JobProposal /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path="/proposallist"><ProposalList /></Route>
-            <Route path="/postjob1"><PostJob1 /></Route>
-            <Route path="/postjob2"><PostJob2 /></Route>
             <Route path="/listjobs"><ListJobs /></Route>
             <Route path="/jobdetails/:jobid"><JobDetails /></Route>
             <Route path="/homepage"><HomePage /></Route>
-            <Route path='/userlog'><UserLogin /></Route>
-            {/* <Route path='/forgetpassword'><ForgetPasswordForm /></Route> */}
+            {/*  */}
+            <Route path='/UserLogin'><UserLogin /></Route>
+            <Route path="/SellerLogin"><SellerLogin/></Route>
+            {/*  */}
             <Route path='/loginportal'><LoginPortal /></Route>
-            {/* <Route path='/registerportal'><RegisterPortal /></Route> */}
             <Route path='/projectownersignup'><ProjectOwnerRegister /></Route>
             <Route path='/sellersignup'><SellerRegister /></Route>
             <Route path='/user/addproduct'><FrontendAddProduct /></Route>
@@ -108,18 +106,19 @@ const FrontEndRouters = () => {
             <Route path="/Granite"><Granite /></Route>
             <Route path="/Quartz"><Quartz /></Route>
             <Route path="/Marble"><Marble /></Route>
-            <Route path="/userallproduct"><FrontEndAllProducts/></Route>
-            <Route path="/userallservice"><AllServices/></Route>
-            <Route path="/editProduct"><EditProduct/></Route>
-            <Route path="/user/sellerList"><SellerList/></Route>
-            <Route path="/ServiceInformation"><ServiceInformation/></Route>
-            <Route path="/RequestQuote"><RequestQuote/></Route>
-            <Route path="/Cart"><Cart/></Route>
-            <Route path="/contactus"><ContactUs/></Route>
-            <Route path="/privacypolicy"><PrivacyPolicy/></Route>
-            <Route path="/contactus"><ContactUs/></Route>
-            <Route path="/termsofuse"><TermsOfUse/></Route>
-            <Route path="/shippingpage"><ShippingPage/></Route>
+            <Route path="/userallproduct"><FrontEndAllProducts /></Route>
+            <Route path="/userallservice"><AllServices /></Route>
+            <Route path="/editProduct"><EditProduct /></Route>
+            <Route path="/user/sellerList"><SellerList /></Route>
+            <Route path="/ServiceInformation"><ServiceInformation /></Route>
+            <Route path="/RequestQuote"><RequestQuote /></Route>
+            <Route path="/Cart"><Cart /></Route>
+            <Route path="/contactus"><ContactUs /></Route>
+            <Route path="/privacypolicy"><PrivacyPolicy /></Route>
+            <Route path="/contactus"><ContactUs /></Route>
+            <Route path="/termsofuse"><TermsOfUse /></Route>
+            <Route path="/shippingpage"><ShippingPage /></Route>
+            <Route path="/PostProject"><PostProject/></Route>
         </Switch>
 
     )

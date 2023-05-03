@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { createData } from "../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
-import Flex from "../../TemplateAssets/common/Flex";
 import { Button, Form } from "react-bootstrap";
 import Divider from "../../TemplateAssets/common/Divider";
 import SocialAuthButtons from "../../TemplateAssets/authentication/SocialAuthButtons";
@@ -42,7 +41,6 @@ function UserRegisterForm(hasLabel) {
         console.log(response);
     }
     const formSubmit = (e) => {
-        // console.log('submit button triggered');
         e.preventDefault();
         registerUser();
     }
@@ -62,13 +60,11 @@ function UserRegisterForm(hasLabel) {
             {toggleForm == 1 &&
                 <div>
                     <>
-                        <Flex alignItems="center" justifyContent="between">
+                        <div className="d-flex justify-content-between">
                             <Button style={{ background: '#fff', color: '#003f6b', border: '1px solid #003f6b' }} onClick={() => { toggleCard(3) }} className="text-uppercase m-2">Seller Sign Up</Button>
                             <Button style={{ background: '#fff', color: '#003f6b', border: '1px solid #003f6b' }} onClick={() => { toggleCard(2) }} className="text-uppercase m-2">PROJECT OWNER SIGNUP</Button>
-                        </Flex>
-                        <Divider>
-                            Or Register With
-                        </Divider>
+                        </div>
+                        <hr></hr>
                         <SocialAuthButtons />
                     </>
                 </div>
@@ -78,7 +74,7 @@ function UserRegisterForm(hasLabel) {
                     <h6 className="text-justify text-uppercase">Project Owner Sign Up :</h6>
                     <div>
                         <Form.Group className="mb-3">
-                            {hasLabel && <Form.Label>First Name</Form.Label>}
+                            {hasLabel && <Form.Label className="text-700">First Name</Form.Label>}
                             <Form.Control
                                 type="text"
                                 required name="first_name"
@@ -89,7 +85,7 @@ function UserRegisterForm(hasLabel) {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            {hasLabel && <Form.Label>Last Name</Form.Label>}
+                            {hasLabel && <Form.Label className="text-700">Last Name</Form.Label>}
                             <Form.Control
                                 type="text"
                                 required name="last_name"
@@ -100,7 +96,7 @@ function UserRegisterForm(hasLabel) {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            {hasLabel && <Form.Label>Email address</Form.Label>}
+                            {hasLabel && <Form.Label className="text-700">Email address</Form.Label>}
                             <Form.Control
                                 type="email"
                                 required
@@ -113,7 +109,7 @@ function UserRegisterForm(hasLabel) {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            {hasLabel && <Form.Label>Password</Form.Label>}
+                            {hasLabel && <Form.Label className="text-700">Password</Form.Label>}
                             <Form.Control
                                 type="password"
                                 required
@@ -131,8 +127,8 @@ function UserRegisterForm(hasLabel) {
                                 I have read and understood MyProject's Privacy Policy.
                             </p>
                         </Form.Group>
-                        <Flex alignItems="center" justifyContent="between">
-                            <Link to='/userlog'>
+                        <div className="d-flex justify-content-between">
+                            <Link to='/userLogin'>
                                 <Button
                                     style={{ background: '#003f6b' }}
                                     className="border-0 d-block m-2 text-uppercase"
@@ -151,7 +147,7 @@ function UserRegisterForm(hasLabel) {
                             >
                                 Back
                             </Button>
-                        </Flex>
+                        </div>
                     </div>
                 </Form >
             }
@@ -161,7 +157,7 @@ function UserRegisterForm(hasLabel) {
                     <h6 className="text-justify text-uppercase">Seller Sign Up :</h6>
                     <div>
                         <Form.Group className="mb-3">
-                            {hasLabel && <Form.Label>First Name</Form.Label>}
+                            {hasLabel && <Form.Label className="text-700">First Name</Form.Label>}
                             <Form.Control
                                 type="text"
                                 autoComplete="off"
@@ -173,7 +169,7 @@ function UserRegisterForm(hasLabel) {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            {hasLabel && <Form.Label>Last Name</Form.Label>}
+                            {hasLabel && <Form.Label className="text-700">Last Name</Form.Label>}
                             <Form.Control
                                 autoComplete="off"
                                 required
@@ -185,7 +181,7 @@ function UserRegisterForm(hasLabel) {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            {hasLabel && <Form.Label>Email address</Form.Label>}
+                            {hasLabel && <Form.Label className="text-700">Email address</Form.Label>}
                             <Form.Control
                                 autoComplete="off"
                                 required
@@ -198,7 +194,7 @@ function UserRegisterForm(hasLabel) {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            {hasLabel && <Form.Label>Phone Number</Form.Label>}
+                            {hasLabel && <Form.Label className="text-700">Phone Number</Form.Label>}
                             <Form.Control
                                 autoComplete="off"
                                 required
@@ -210,7 +206,7 @@ function UserRegisterForm(hasLabel) {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            {hasLabel && <Form.Label>ID Verification</Form.Label>}
+                            {hasLabel && <Form.Label className="text-700">ID Verification</Form.Label>}
                             <Form.Select>
                                 <option value="Driving License">Driving License</option>
                                 <option value="Passport">Passport</option>
@@ -225,19 +221,23 @@ function UserRegisterForm(hasLabel) {
                             </Button>
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Check />
-                            <p className="fw-semibold" style={{ fontSize: '14px' }}>
-                                I'd like to receive MyProject News, Advice and Tip
-                            </p>
-                            <Form.Check />
-                            <p className="fw-semibold" style={{ fontSize: '14px' }}>
-                                I agree to the MyProject terms & conditions, the Quote Tool terms &
+                            <Form.Check
+                            className="me-1"
+                             />
+                            <Form.Check.Label className=" text-700" style={{ fontSize: '14px',verticalAlign:'middle' }}>
+                                 I'd like to receive MyProject News, Advice & Tip
+                            </Form.Check.Label>
+                            <Form.Check
+                            className=""
+                             />
+                            <Form.Check.Label className=" text-700" style={{ fontSize: '14px',verticalAlign:'middle' }}>
+                            I agree to the MyProject terms & conditions, the Quote Tool terms &
                                 conditions and the data sharing agreement
-                            </p>
+                            </Form.Check.Label>
                         </Form.Group>
 
-                        <Flex alignItems="center" justifyContent="between">
-                            <Link to='/userlog'>
+                        <div className="d-flex justify-content-between">
+                            <Link to='/SellerLogin'>
                                 <Button
                                     style={{ background: '#003f6b' }}
                                     className="border-0 d-block m-2 text-uppercase"
@@ -257,7 +257,7 @@ function UserRegisterForm(hasLabel) {
                             >
                                 Back
                             </Button>
-                        </Flex>
+                        </div>
                     </div>
                 </Form>
             }

@@ -1,8 +1,12 @@
 import React from "react";
 import { Card, Button,Col,Row } from "react-bootstrap";
+import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 function ProjectWishListCard() {
     return (
         <>
+        <div className="mb-5">
+        <NavbarStandard/>
+        </div>
             <Row>
                 <Col lg={12}>
                 <h4 className="m-5">Your Wishlists</h4>        
