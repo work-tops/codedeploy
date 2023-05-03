@@ -112,7 +112,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                         lg={7}
                       >
                         <div className="p-4 p-md-5 flex-grow-1">
-                          <h3>Seller Login</h3>
+                          <h3>Freelancer Login</h3>
                           <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3">
                               <Form.Label className='text-700'>Email address</Form.Label>

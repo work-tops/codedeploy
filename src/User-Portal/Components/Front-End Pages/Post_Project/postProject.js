@@ -189,28 +189,11 @@ const PostProject = () => {
 
           {/* Header */}
 
-          {/* Post */}
-          <Col lg={12} className='mb-5' >
-            <Row style={{ background: "#7fa6c7" }}>
-              <Col className="p-4 mt-5" lg={12}>
-                <Row>
-                  <Col lg={12}>
-                    <h3 className="text-center text-uppercase text-white">Post a Project</h3>
-                    <p className='text-center mt-2 text-white'>
-                      Describe What You need,then receive custom proposals from freelancers.
-                    </p>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-          {/* Post */}
-
-          <Col lg={7} className='mt-5 ms-3 me-3'>
+          <Col lg={12} className='mt-5 ms-3 me-3'>
             {/* Note */}
 
-            <Card className="mb-3">
-              <Card.Header as="h3" className='bg-white text-justify ms-3 text-uppercase'>Note</Card.Header>
+            <Card className="m-5">
+              <Card.Header as="h6" className='bg-white text-justify ms-3 text-uppercase'>Note</Card.Header>
               <Card.Body className="position-relative">
                 <Row>
                   <Col xl={10}>
@@ -246,13 +229,13 @@ const PostProject = () => {
 
 
             {/* Post A Project */}
-            <Card className="mb-3">
-              <Card.Header as="h3" className='bg-white text-uppercase text-justify ms-3'>Post A Project</Card.Header>
+            <Card className="mb-3 m-5">
+              <Card.Header as="h6" className='bg-white text-uppercase text-justify ms-3'>Post A Project</Card.Header>
               <Card.Body className="bg-white">
                 <Row className="gx-2 gy-3">
-                  <p className='mt-2 ms-3 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that freelancers can find your project</p>
+                  <p className='mt-2 me-2 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that freelancers can find your project</p>
 
-                  <Col lg={5} className='ms-2'>
+                  <Col lg={5} className='me-2'>
                     <Form.Group>
                       <Form.Label>
                         CATEGORY <span className="text-danger">*</span>
@@ -269,7 +252,7 @@ const PostProject = () => {
                       </Form.Select>
                     </Form.Group>
                   </Col>
-                  <Col lg={5} className='ms-2'>
+                  <Col lg={5} className='me-2'>
                     <Form.Group>
                       <Form.Label>
                         SUB-CATEGORY <span className="text-danger">*</span>
@@ -287,7 +270,7 @@ const PostProject = () => {
                       </Form.Select>
                     </Form.Group>
                   </Col>
-                  <Col lg={10} className='ms-2 '>
+                  <Col lg={10} className='me-2 '>
                     <Form.Group controlId="courseTitle">
                       <Form.Label>
                         PROJECT TITLE <span className="text-danger">*</span>
@@ -303,7 +286,7 @@ const PostProject = () => {
                       />
                     </Form.Group>
                   </Col>
-                  <Col lg={10} className='ms-2'>
+                  <Col lg={10} className='me-2'>
                     <Form.Group className="mb-3">
                       <Form.Label className='text-uppercase'>Project Description <span className="text-danger">*</span> </Form.Label>
                       <Form.Control
@@ -317,7 +300,82 @@ const PostProject = () => {
                       <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive,Projects with good descriptions are more popular with our freelancers</p>
                     </Form.Group>
                   </Col>
-                  <Col lg={5} className='ms-2'>
+                  {/* Upload Samples */}
+                  <Col lg={12} className='me-2 w-100'>
+                    <div >
+                      <Card className="mb-3">
+                        <Card.Header className='bg-white'>
+                          <Form.Label className="mb-0 d-inline-block">
+                            UPLOAD SAMPLE & OTHER HELPFUL (OPTIONAL)
+                            <OverlayTrigger
+                              overlay={<Tooltip id="coverPphotoTooltip">Add cover photo</Tooltip>}
+                            >
+                              <span className="me-2 text-primary fs-0">
+                                <FontAwesomeIcon icon="info-circle" />
+                              </span>
+                            </OverlayTrigger>
+                          </Form.Label>
+                        </Card.Header>
+                        <Card.Body className="bg-white">
+                          <div {...getRootProps({ className: 'dropzone-area py-6' })}>
+                            <input {...getInputProps({ multiple: false })} />
+                            <div className="fs--1">
+                              <img src={cloudUpload} alt="" width={20} className="me-2" />
+                              <span className="d-none d-lg-inline">
+                                Drag your image here
+                                <br />
+                                or,{' '}
+                              </span>
+                              <Button variant="link" size="sm" className="p-0 fs--1">
+                                Browse
+                              </Button>
+                            </div>
+                          </div>
+                          {cover && (
+                            <div className="mt-3">
+                              <Flex
+                                alignItems="center"
+                                className="btn-reveal-trigger"
+                                key={cover.path}
+                              >
+                                <Image
+                                  rounded
+                                  width={40}
+                                  height={40}
+                                  src={cover.preview}
+                                  alt={cover.path}
+                                />
+                                <Flex
+                                  justifyContent="between"
+                                  direction="column"
+                                  className="mx-2 flex-1 text-truncate"
+                                >
+                                  <h6 className="text-truncate">{cover.path}</h6>
+                                  <Flex className="position-relative" alignItems="center">
+                                    <p className="mb-0 fs--1 text-400 line-height-1">
+                                      <strong>{getSize(cover.size)}</strong>
+                                    </p>
+                                  </Flex>
+                                </Flex>
+                                <CardDropdown>
+                                  <div className="py-2">
+                                    <Dropdown.Item
+                                      className="text-danger"
+                                      onClick={() => setCover()}
+                                    >
+                                      Remove
+                                    </Dropdown.Item>
+                                  </div>
+                                </CardDropdown>
+                              </Flex>
+                            </div>
+                          )}
+                        </Card.Body>
+                      </Card>
+                    </div>
+                  </Col>
+                  {/* Upload Samples */}
+                  <Col lg={5} className='me-2'>
                     <Form.Group>
                       <Form.Label className='text-uppercase'>
                         Budget Type <span className="text-danger">*</span>
@@ -335,7 +393,7 @@ const PostProject = () => {
                       </Form.Select>
                     </Form.Group>
                   </Col>
-                  <Col lg={5} className='ms-2'>
+                  <Col lg={5} className='me-2'>
                     <Form.Group>
                       <Form.Label className='text-uppercase'>
                         Currency <span className="text-danger">*</span>
@@ -352,7 +410,7 @@ const PostProject = () => {
                       </Form.Select>
                     </Form.Group>
                   </Col>
-                  <Col lg={5} className='ms-2'>
+                  <Col lg={5} className='me-2'>
                     <Form.Group>
                       <Form.Label className='text-uppercase'>
                         Budget <span className="text-danger">*</span>
@@ -379,7 +437,7 @@ const PostProject = () => {
                       </div>
                     </Form.Group>
                   </Col>
-                  <Col lg={10} className='ms-2 '>
+                  <Col lg={10} className='me-2 '>
                     <Form.Group className="mb-3">
                       <Form.Label className='text-uppercase'>Project Location <span className="text-danger">*</span> </Form.Label>
                       <Form.Control
@@ -392,7 +450,7 @@ const PostProject = () => {
                       />
                     </Form.Group>
                   </Col>
-                  <Col lg={5} className='ms-2'>
+                  <Col lg={5} className='me-2'>
                     <Form.Group>
                       <Form.Label className='text-uppercase'>
                         Post Code <span className="text-danger">*</span>
@@ -407,7 +465,7 @@ const PostProject = () => {
                       />
                     </Form.Group>
                   </Col>
-                  <Col lg={5} className='ms-2'>
+                  <Col lg={5} className='me-2'>
                     <Form.Group>
                       <Form.Label className='text-uppercase'>
                         Starting Date (Optional)<span className="text-danger">*</span>
@@ -433,7 +491,7 @@ const PostProject = () => {
                         value="public"
                         className='d-inline-block'
                       />
-                      <Icon width="24" height="24" icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
+                      <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
                     </Form.Group>
                     <Form.Group className='mb-3'>
                       <Form.Check
@@ -444,11 +502,11 @@ const PostProject = () => {
                         value="private"
                         className='d-inline-block'
                       />
-                      <Icon icon="ph:lock-simple-fill" width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only freelancers that you specifically invite can view the
+                      <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only freelancers that you specifically invite can view the
                         <p className="opt-span">project post and send proposal)</p></span></span>
                     </Form.Group>
                   </Col>
-                  <Col lg={5} className='ms-2'>
+                  <Col lg={5} className='me-2'>
                     <Form.Group>
                       <Form.Label className='text-uppercase'>
                         Project Duration Time <span className="text-danger">*</span>
@@ -462,7 +520,7 @@ const PostProject = () => {
                       />
                     </Form.Group>
                   </Col>
-                  <Col lg={5} className='ms-2'>
+                  <Col lg={5} className='me-2'>
                     <Form.Group>
                       <Form.Label className='text-uppercase'>
                         Expiry Date <span className="text-danger">*</span>
@@ -476,14 +534,14 @@ const PostProject = () => {
                       />
                     </Form.Group>
                   </Col>
-                  <Col lg={10} className='ms-2'>
-                    <div className='d-flex justify-content-between'>
+                  <Col lg={10} className='me-2'>
+                    <div className='d-flex justify-content-start'>
                       <Button
                         type="submit"
-                        className='d-block bg-success'
+                        className='d-block border-0 bg-success'
                       >Post Project</Button>
                       <Link to="/listjobs">
-                        <Button className='d-block bg-danger'>Cancel</Button>
+                        <Button className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
                       </Link>
                     </div>
                   </Col>
@@ -493,81 +551,6 @@ const PostProject = () => {
             {/* Post A Project */}
           </Col>
 
-          {/* Upload Samples */}
-          <Col lg={4} className='ms-3 mt-5 me-3'>
-            <div >
-              <Card className="mb-3">
-                <Card.Header className='bg-white'>
-                  <h6 className="mb-0 d-inline-block">
-                    UPLOAD SAMPLE & OTHER HELPFUL (OPTIONAL)
-                    <OverlayTrigger
-                      overlay={<Tooltip id="coverPphotoTooltip">Add cover photo</Tooltip>}
-                    >
-                      <span className="ms-2 text-primary fs-0">
-                        <FontAwesomeIcon icon="info-circle" />
-                      </span>
-                    </OverlayTrigger>
-                  </h6>
-                </Card.Header>
-                <Card.Body className="bg-white">
-                  <div {...getRootProps({ className: 'dropzone-area py-6' })}>
-                    <input {...getInputProps({ multiple: false })} />
-                    <div className="fs--1">
-                      <img src={cloudUpload} alt="" width={20} className="me-2" />
-                      <span className="d-none d-lg-inline">
-                        Drag your image here
-                        <br />
-                        or,{' '}
-                      </span>
-                      <Button variant="link" size="sm" className="p-0 fs--1">
-                        Browse
-                      </Button>
-                    </div>
-                  </div>
-                  {cover && (
-                    <div className="mt-3">
-                      <Flex
-                        alignItems="center"
-                        className="btn-reveal-trigger"
-                        key={cover.path}
-                      >
-                        <Image
-                          rounded
-                          width={40}
-                          height={40}
-                          src={cover.preview}
-                          alt={cover.path}
-                        />
-                        <Flex
-                          justifyContent="between"
-                          direction="column"
-                          className="mx-2 flex-1 text-truncate"
-                        >
-                          <h6 className="text-truncate">{cover.path}</h6>
-                          <Flex className="position-relative" alignItems="center">
-                            <p className="mb-0 fs--1 text-400 line-height-1">
-                              <strong>{getSize(cover.size)}</strong>
-                            </p>
-                          </Flex>
-                        </Flex>
-                        <CardDropdown>
-                          <div className="py-2">
-                            <Dropdown.Item
-                              className="text-danger"
-                              onClick={() => setCover()}
-                            >
-                              Remove
-                            </Dropdown.Item>
-                          </div>
-                        </CardDropdown>
-                      </Flex>
-                    </div>
-                  )}
-                </Card.Body>
-              </Card>
-            </div>
-          </Col>
-          {/* Upload Samples */}
         </Row>
       </Form>
     </>

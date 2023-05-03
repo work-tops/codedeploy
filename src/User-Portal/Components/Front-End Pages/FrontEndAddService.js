@@ -177,7 +177,7 @@ const FrontendAddService = () => {
                 </Col>
                 <Col lg={12} className='mt-4'>
                     <Form onSubmit={(e) => { formsubmit(e) }}>
-                        <Card className=''>
+                        <Card className='w-100'>
                             <Card.Body>
                                 <div className='d-flex justify-content-between'>
                                     <div>
@@ -190,7 +190,7 @@ const FrontendAddService = () => {
                                     <div>
                                         <Form.Group>
                                             <Form.Group as={Col} className='mb-3'>
-                                                <Form.Label>Status</Form.Label>
+                                                <Form.Label className="text-700">Status</Form.Label>
                                                 <Form.Select value={form.status} required name="status" onChange={(e) => { handleChange(e) }}>
                                                     <option value="">Select</option>
                                                     <option value="Draft">Draft</option>
@@ -208,12 +208,12 @@ const FrontendAddService = () => {
                                                     <h5 className='mb-3'>Add Services</h5>
 
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label>Service Title</Form.Label>
+                                                        <Form.Label className="text-700">Service Title</Form.Label>
                                                         <Form.Control value={form.title} required name="title" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
                                                     </Form.Group>
                                                     <Row className='g-3 mb-3'>
                                                         <Form.Group as={Col} className='mb-3'>
-                                                            <Form.Label>Service Category</Form.Label>
+                                                            <Form.Label className="text-700">Service Category</Form.Label>
                                                             <Form.Select value={form.category} required name="category" onChange={(e) => { handleChange(e) }}>
                                                                 <option value="">Select Option</option>
                                                                 {cate?.map((data) => (
@@ -222,7 +222,7 @@ const FrontendAddService = () => {
                                                             </Form.Select>
                                                         </Form.Group>
                                                         <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label>Service Email</Form.Label>
+                                                            <Form.Label className="text-700">Service Email</Form.Label>
                                                             <Form.Select value={form.email} required name="email" onChange={(e) => { handleChange(e) }}>
                                                                 <option value="">Select Option</option>
                                                                 {selemail.map((data) => (
@@ -232,16 +232,16 @@ const FrontendAddService = () => {
                                                         </Form.Group>
                                                     </Row>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label>Description <span className='text-grey'>(Optional)</span></Form.Label>
+                                                        <Form.Label className="text-700">Description <span className='text-grey'>(Optional)</span></Form.Label>
                                                         <Form.Control value={form.description} required name="description" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Description....' rows={8} />
                                                     </Form.Group>
                                                     <Row className='g-3 mb-3'>
                                                         <Form.Group as={Col} className='mb-3'>
-                                                            <Form.Label>Service Location</Form.Label>
+                                                            <Form.Label className="text-700">Service Location</Form.Label>
                                                             <Multiselect options={servitag[1]?.list} displayValue="value" className='border border-dark rounded' />
                                                         </Form.Group>
                                                         <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label>Service Range
+                                                            <Form.Label className="text-700">Service Range
                                                             </Form.Label>
                                                             <Multiselect options={servitag[2]?.list} displayValue="value" className='border border-dark rounded' />
                                                         </Form.Group>
@@ -265,7 +265,7 @@ const FrontendAddService = () => {
                                                     </Row>
                                                     <Row className='g-3 mb-3'>
                                                         <Form.Group as={Col} className='mb-3'>
-                                                            <Form.Label>Price Type</Form.Label>
+                                                            <Form.Label className="text-700">Price Type</Form.Label>
                                                             <Form.Select value={form.price_type} required name="price_type" onChange={(e) => { handleChange(e) }}>
                                                                 <option value="">Select Option</option>
                                                                 <option value="Per Hour Cost">Per Hour Cost</option>
@@ -273,22 +273,22 @@ const FrontendAddService = () => {
                                                             </Form.Select>
                                                         </Form.Group>
                                                         <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label>Price</Form.Label>
+                                                            <Form.Label className="text-700">Price</Form.Label>
                                                             <Form.Control value={form.price} required name="price" onChange={(e) => { handleChange(e) }} type="text" />
                                                         </Form.Group>
                                                     </Row>
                                                     <Row className='g-3 mb-3'>
                                                         <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label>Offer Price </Form.Label>
+                                                            <Form.Label className="text-700">Offer Price </Form.Label>
                                                             <Form.Control value={form.offer_price} required name="offer_price" onChange={(e) => { handleChange(e) }} type="text" />
                                                         </Form.Group>
                                                         <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label>Display Price</Form.Label>
+                                                            <Form.Label className="text-700">Display Price</Form.Label>
                                                             <Form.Control value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} type="text" />
                                                         </Form.Group>
                                                     </Row>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label>Terms & Conditions</Form.Label>
+                                                        <Form.Label className="text-700">Terms & Conditions</Form.Label>
                                                         <Form.Control value={form.terms_and_condition} required name="terms_and_condition" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='' rows={8} />
                                                     </Form.Group>
 
@@ -355,20 +355,20 @@ const FrontendAddService = () => {
                                                 <Card.Body>
                                                     <h5 className='mb-3'>Service Handle and Metafields</h5>
                                                     <Form.Group className='mb-4'>
-                                                        <Form.Label>
+                                                        <Form.Label className="text-700">
                                                             Service handle
                                                         </Form.Label>
                                                         <Form.Control value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                                     </Form.Group>
                                                     <h5 className='mb-3'>Service Metafields</h5>
                                                     <Form.Group className='mb-3'>
-                                                        <Form.Label>
+                                                        <Form.Label className="text-700">
                                                             Title Tag Meta Field
                                                         </Form.Label>
                                                         <Form.Control value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                                     </Form.Group>
                                                     <Form.Group className='mb-3'>
-                                                        <Form.Label>
+                                                        <Form.Label className="text-700">
                                                             Description Tag Meta Field
                                                         </Form.Label>
                                                         <Form.Control value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />

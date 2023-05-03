@@ -1545,6 +1545,10 @@ a {
         display: block;
         border: 1px solid;
     } */
+    /* .navbar-expand{
+flex-wrap: nowrap !important;
+justify-content: space-evenly !important;
+    } */
 
     .category-1 {
         margin-left: 20px;

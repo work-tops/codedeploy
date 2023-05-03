@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { CourseContext } from 'context/Context';
+import { CourseContext } from '../context/Context';
 
 const useCourses = course => {
   const [isAsc, setIsAsc] = useState(true);

@@ -372,18 +372,18 @@ const FrontendAddProduct = () => {
                                                     <h5 className='mb-3'>Product Information</h5>
 
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label>Name</Form.Label>
+                                                        <Form.Label className="text-700">Name</Form.Label>
                                                         <Form.Control value={form.name} required name="name" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
                                                     </Form.Group>
                                                     <Row className="mb-3 g-3">
                                                         <Form.Group className="mb-3">
-                                                            <Form.Label>Description <span className='text-grey'>(Optional)</span></Form.Label>
+                                                            <Form.Label className="text-700">Description <span className='text-grey'>(Optional)</span></Form.Label>
                                                             <Form.Control value={form.description} required name="description" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Description....' rows={8} />
                                                         </Form.Group>
                                                     </Row>
                                                     <Row className="mb-3 g-3">
                                                         <Form.Group className="mb-3">
-                                                            <Form.Label>Return Policy <span className='text-grey'>(Optional)</span></Form.Label>
+                                                            <Form.Label className="text-700">Return Policy <span className='text-grey'>(Optional)</span></Form.Label>
                                                             <Form.Control value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Policy....' rows={8} />
                                                         </Form.Group>
                                                     </Row>
@@ -393,11 +393,11 @@ const FrontendAddProduct = () => {
                                                 <Card.Body>
                                                     <h5 className='mb-3'>Organization</h5>
                                                     <Form.Group className='mb-3'>
-                                                        <Form.Label>Seller Email</Form.Label>
+                                                        <Form.Label className="text-700">Seller Email</Form.Label>
                                                         <Form.Control value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
                                                     </Form.Group>
                                                     <Form.Group className='mb-3'>
-                                                        <Form.Label>Category</Form.Label>
+                                                        <Form.Label className="text-700">Category</Form.Label>
                                                         <Form.Select value={form.type?.name} required name="type" onChange={(e) => { handleChange(e) }}>
                                                             <option value="">Select</option>
                                                             {productCategory.map((data, key) => (
@@ -473,7 +473,7 @@ const FrontendAddProduct = () => {
                                                                                     <option>Material</option>
                                                                                     <option>Style</option>
                                                                                 </Form.Select> */}
-                                                                                    <Form.Label>Colour</Form.Label>
+                                                                                    <Form.Label className="text-700">Colour</Form.Label>
                                                                                 </Form.Group>
                                                                                 <Form.Group as={Col} className='mb-3'>
                                                                                     <Form.Control value={variant.color} required name="color" onChange={(e) => { variantChange(e) }} type="text" placeholder='Enter tags' className='w-100' />
@@ -481,7 +481,7 @@ const FrontendAddProduct = () => {
                                                                             </Row>
                                                                             <Row className="mb-3 g-3">
                                                                                 <Form.Group as={Col} className='mb-3'>
-                                                                                    <Form.Label>Size</Form.Label>
+                                                                                    <Form.Label className="text-700">Size</Form.Label>
                                                                                     {/* <Form.Select className='w-75'>
                                                                                     <option>Size</option>
                                                                                     <option>Colour</option>
@@ -495,7 +495,7 @@ const FrontendAddProduct = () => {
                                                                             </Row>
                                                                             <Row className="mb-3 g-3">
                                                                                 <Form.Group as={Col} className='mb-3'>
-                                                                                    <Form.Label>Finish Type</Form.Label>
+                                                                                    <Form.Label className="text-700">Finish Type</Form.Label>
                                                                                     {/* <Form.Select className='w-75'>
                                                                                     <option>Size</option>
                                                                                     <option>Colour</option>
@@ -516,7 +516,7 @@ const FrontendAddProduct = () => {
                                                                         <Card.Body>
                                                                             <h5 className='mb-3'>Pricing</h5>
                                                                             <Form.Group className='mb-3'>
-                                                                                <Form.Label>Pricing</Form.Label>
+                                                                                <Form.Label className="text-700">Pricing</Form.Label>
                                                                                 <InputGroup className="mb-3">
                                                                                     <FormControl value={variant.price} name="price" onChange={(e) => { variantChange(e) }} placeholder='0.00' type="number" aria-label="Text input with dropdown button" />
 
@@ -531,28 +531,28 @@ const FrontendAddProduct = () => {
                                                                                 </InputGroup>
                                                                             </Form.Group>
                                                                             <Form.Group className='mb-3'>
-                                                                                <Form.Label>Compare Price</Form.Label>
+                                                                                <Form.Label className="text-700">Compare Price</Form.Label>
                                                                                 <Form.Control value={variant.compare_at} name="compare_at" onChange={(e) => { variantChange(e) }} type="number" className='w-100' />
                                                                             </Form.Group>
                                                                             <Form.Group className='mb-3'>
-                                                                                <Form.Label>Handling Charges</Form.Label>
+                                                                                <Form.Label className="text-700">Handling Charges</Form.Label>
                                                                                 <Form.Control value={variant.handling_changes} name="handling_changes" onChange={(e) => { variantChange(e) }} type="number" className='w-100' />
                                                                             </Form.Group>
                                                                             <Form.Group className='mb-3'>
-                                                                                <Form.Label>Sales Price</Form.Label>
+                                                                                <Form.Label className="text-700">Sales Price</Form.Label>
                                                                                 <Form.Control value={variant.sales_price} name="sales_price" onChange={(e) => { variantChange(e) }} type="number" className='w-100' />
                                                                             </Form.Group>
                                                                             <Form.Group className='mb-3'>
                                                                                 <Row>
                                                                                     <Col lg={5}>
                                                                                         <Form.Check checked={variant.required_shipping} name="required_shipping" onChange={handlechange1} />
-                                                                                        <Form.Label>
+                                                                                        <Form.Label className="text-700">
                                                                                             Shipping Requires
                                                                                         </Form.Label>
                                                                                     </Col>
                                                                                     <Col lg={6}>
                                                                                         <Form.Check checked={variant.charge_taxes} name="charge_taxes" onChange={handlechange1} />
-                                                                                        <Form.Label>
+                                                                                        <Form.Label className="text-700">
                                                                                             Charge Taxes on this product
                                                                                         </Form.Label>
                                                                                     </Col>
@@ -564,11 +564,11 @@ const FrontendAddProduct = () => {
                                                                         <Card.Body>
                                                                             <h5 className='mb-3'>Inventory</h5>
                                                                             <Form.Group className='mb-3'>
-                                                                                <Form.Label>SKU</Form.Label>
+                                                                                <Form.Label className="text-700">SKU</Form.Label>
                                                                                 <Form.Control value={variant.sku} name="sku" onChange={(e) => { variantChange(e) }} className='w-100' type="text" placeholder='eg.324812302' />
                                                                             </Form.Group>
                                                                             <Form.Group className='mb-3'>
-                                                                                <Form.Label>Barcode</Form.Label>
+                                                                                <Form.Label className="text-700">Barcode</Form.Label>
                                                                                 <Form.Control
                                                                                     value={variant.barcode} name="barcode" onChange={(e) => { variantChange(e) }}
                                                                                     className='w-100'
@@ -576,16 +576,16 @@ const FrontendAddProduct = () => {
                                                                                 />
                                                                             </Form.Group>
                                                                             <Form.Group className='mb-3'>
-                                                                                <Form.Label>Minimum Purchase Quantity</Form.Label>
+                                                                                <Form.Label className="text-700">Minimum Purchase Quantity</Form.Label>
                                                                                 <Form.Control value={variant.min_purchase_qty} name="min_purchase_qty" onChange={(e) => { variantChange(e) }} type="number" className='w-100' />
                                                                             </Form.Group>
                                                                             <Form.Group className='mb-3'>
-                                                                                <Form.Label>Quantity</Form.Label>
+                                                                                <Form.Label className="text-700">Quantity</Form.Label>
                                                                                 <Form.Control value={variant.quantity} name="quantity" onChange={(e) => { variantChange(e) }} type="number" className='w-100' />
                                                                             </Form.Group>
                                                                             <Form.Group className='mb-3'>
                                                                                 <Form.Check checked={variant.track_inventory} name="track_inventory" onChange={handlechange1} />
-                                                                                <Form.Label>
+                                                                                <Form.Label className="text-700">
                                                                                     Track this Product Inventory
                                                                                 </Form.Label>
                                                                             </Form.Group>
@@ -668,20 +668,20 @@ const FrontendAddProduct = () => {
                                                 <Card.Body>
                                                     <h5 className='mb-3'>Product Handle and Metafields</h5>
                                                     <Form.Group className='mb-4'>
-                                                        <Form.Label>
+                                                        <Form.Label className="text-700">
                                                             Product handle
                                                         </Form.Label>
                                                         <Form.Control value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                                     </Form.Group>
                                                     <h5 className='mb-3'>Product Metafields</h5>
                                                     <Form.Group className='mb-3'>
-                                                        <Form.Label>
+                                                        <Form.Label className="text-700">
                                                             Title Tag Meta Field
                                                         </Form.Label>
                                                         <Form.Control value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                                     </Form.Group>
                                                     <Form.Group className='mb-3'>
-                                                        <Form.Label>
+                                                        <Form.Label className="text-700">
                                                             Description Tag Meta Field
                                                         </Form.Label>
                                                         <Form.Control value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
@@ -696,67 +696,67 @@ const FrontendAddProduct = () => {
                                                         const defaultSelectedValues = selectedproductTags[i]?.list || [];
                                                         console.log(defaultSelectedValues)
                                                         return <Form.Group className='mb-3'>
-                                                            <Form.Label>{x?.name}</Form.Label>
-                                                            {<Form.Control className="ai-input w-100" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />}
+                                                            <Form.Label className="text-700">{x?.name}</Form.Label>
+                                                            {<Form.Control className="w-100" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />}
                                                         </Form.Group>
                                                     })}
 
                                                     {/* <Form.Group className='mb-3'>
-                                                    <Form.Label>
+                                                    <Form.Label className="text-700">
                                                         Category
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label>
+                                                    <Form.Label className="text-700">
                                                         Colour
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label>
+                                                    <Form.Label className="text-700">
                                                         Finish Type
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label>
+                                                    <Form.Label className="text-700">
                                                         Length
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label>
+                                                    <Form.Label className="text-700">
                                                         Width
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label>
+                                                    <Form.Label className="text-700">
                                                         Thickness
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label>
+                                                    <Form.Label className="text-700">
                                                         Pattern
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label>
+                                                    <Form.Label className="text-700">
                                                         Stock Location
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label>
+                                                    <Form.Label className="text-700">
                                                         Origin
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label>
+                                                    <Form.Label className="text-700">
                                                         Offers
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />

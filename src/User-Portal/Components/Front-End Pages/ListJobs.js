@@ -144,7 +144,6 @@ function ListJobs() {
                                     <small className="keywords">Kitchen</small>
                                     <small className="keywords">New</small>
                                     <small className="keywords">Kitchen Worktops with Island</small>
-
                                 </div>
                                 <div className="details-to-know col-4">
                                     <p className="highlights"><i class="fa-solid pound fa-sterling-sign"></i>Medium Level</p>

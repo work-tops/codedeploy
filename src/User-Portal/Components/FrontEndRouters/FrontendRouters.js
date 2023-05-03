@@ -8,7 +8,7 @@ import SignUpPage from "../Front-End Pages/SignUpPage";
 import JobProposal from "../Front-End Pages/JobProposal";
 import HomePage from "../Front-End Pages/HomePage";
 import UserLogin from '../Front-End Pages/Login/UserLogin'
-import LoginPortal from "../Front-End Pages/LoginPortal";
+// import LoginPortal from "../Front-End Pages/LoginPortal";
 import ProjectOwnerRegister from "../Front-End Pages/ProjectOwnerRegister";
 import SellerRegister from "../Front-End Pages/SellerSignUp";
 import FrontendAddProduct from '../Front-End Pages/FrontendAddProduct'
@@ -30,7 +30,6 @@ import WorkStreamCard from "../Front-End Pages/MiniCard/WorkStreamCard";
 import InvoicedueCard from "../Front-End Pages/MiniCard/InvoiceDueCard";
 import POProductEnquiresCard from "../Front-End Pages/MiniCard/POProductEnquiryCard";
 import POReviewCard from "../Front-End Pages/MiniCard/POReviewCard";
-import ProductList from "../Front-End Pages/Lists/ProductList";
 import ServiceList from '../Front-End Pages/Lists/ServiceList'
 import FrontEndAllProducts from "../Front-End Pages/FrontendAllProducts";
 import ProductDetails from "../Front-End Pages/ProductDetails";
@@ -54,8 +53,10 @@ import ContactUs from "../Footer/Contactus";
 import PrivacyPolicy from "../Footer/PrivacyPolicy";
 import TermsOfUse from "../Footer/TermsofUse";
 import ShippingPage from "../Front-End Pages/Cart/ShippingPage";
-import SellerLogin from "../Front-End Pages/Login/SellerLogin";
+import SellerLogin from "../Front-End Pages/Login/FreelancerLogin";
 import PostProject from "../../Components/Front-End Pages/Post_Project/postProject";
+import ProductList from "../Front-End Pages/ProductList/ProductLists";
+import ProductGrid from "../Front-End Pages/ProductList/ProductGrid";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -63,14 +64,13 @@ const FrontEndRouters = () => {
             <Route path='/jobdetails/:jobid/jobproposal'><JobProposal /></Route>
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path="/proposallist"><ProposalList /></Route>
-            <Route path="/listjobs"><ListJobs /></Route>
             <Route path="/jobdetails/:jobid"><JobDetails /></Route>
             <Route path="/homepage"><HomePage /></Route>
             {/*  */}
             <Route path='/UserLogin'><UserLogin /></Route>
             <Route path="/SellerLogin"><SellerLogin/></Route>
             {/*  */}
-            <Route path='/loginportal'><LoginPortal /></Route>
+            {/* <Route path='/loginportal'><LoginPortal /></Route> */}
             <Route path='/projectownersignup'><ProjectOwnerRegister /></Route>
             <Route path='/sellersignup'><SellerRegister /></Route>
             <Route path='/user/addproduct'><FrontendAddProduct /></Route>
@@ -92,7 +92,7 @@ const FrontEndRouters = () => {
             <Route path='/InvoicedueCard'><InvoicedueCard /></Route>
             <Route path='/POproductenquirescard'><POProductEnquiresCard /></Route>
             <Route path='/POReviewsCard'><POReviewCard /></Route>
-            <Route path='/productList'><ProductList /></Route>
+            {/* <Route path='/productList'><ProductList /></Route> */}
             <Route path='/servicelist'><ServiceList /></Route>
             <Route path='/productdetails/:proid'><ProductDetails /></Route>
             <Route path='/wishlist/product'><WishListProductCard /></Route>
@@ -119,6 +119,9 @@ const FrontEndRouters = () => {
             <Route path="/termsofuse"><TermsOfUse /></Route>
             <Route path="/shippingpage"><ShippingPage /></Route>
             <Route path="/PostProject"><PostProject/></Route>
+            <Route path="/listjobs"><ListJobs/></Route>
+            <Route path="/productlist1"><ProductList/></Route>
+            <Route path="/productgrid1"><ProductGrid/></Route>
         </Switch>
 
     )
