@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import Menubar from "../../Menubar/Menubar";
-import Header from "../../Header/Header";
-import product_image from '../../Images/product_image.png'
 import { Icon } from "@iconify/react";
 import { getAllData } from "../../../../Services/ProxyService";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 
 function ProductList() {
 
@@ -48,20 +47,20 @@ function ProductList() {
     return (
         <>
             <Row>
-                <Col lg={12}>
-                    <Header />
+                <Col className="mb-5" lg={12}>
+                    <NavbarStandard />
                 </Col>
-                <Col lg={12}>
+                {/* <Col lg={12}>
                     <Menubar />
-                </Col>
-                <Col className="shadow" style={{ background: 'white' }} lg={12}>
+                </Col> */}
+                <Col  className="shadow mt-4" style={{ background: 'white' }} lg={12}>
                     <div className="d-flex justify-content-between">
-                        <div className="m-3">
+                        <div className="m-4">
                             <p >
                                 Showing 1-24 of 205 Products
                             </p>
                         </div>
-                        <div className="m-3">
+                        <div className="m-4">
                             <Row>
                                 <Col lg={4}>
                                     <p className="mt-2 fw-bold">Sort By :</p>

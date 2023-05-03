@@ -1,8 +1,12 @@
 import React from "react";
+import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 function HowItWorks(){
     return(
         <>
-        <h1 className="text-center m-5">Coming Soon...</h1>
+        <div className="m-5">
+        <NavbarStandard/>
+        </div>
+        <h1 style={{marginTop:'10rem'}} className="text-center">Coming Soon...</h1>
         </>
     )
 }

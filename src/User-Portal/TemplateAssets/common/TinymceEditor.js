@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Editor } from '@tinymce/tinymce-react';
-import AppContext from 'context/Context';
-import { getColor } from 'helpers/utils';
+import AppContext from '../context/Context';
+import { getColor } from '../helpers/utils';
 
 const TinymceEditor = ({ value, handleChange, height = '50vh' }) => {
   const {

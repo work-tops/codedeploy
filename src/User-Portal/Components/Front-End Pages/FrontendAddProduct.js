@@ -341,15 +341,10 @@ const FrontendAddProduct = () => {
     return (
         <>
             <Row>
-                <Col lg={12}>
+                <Col lg={12} className='mb-5'>
                     <NavbarStandard/>
-                    {/* < SellerPortalHeader /> */}
                 </Col>
-                <Col lg={12}>
-                    <Menubar />
-                </Col>
-                <Col lg={12}>
-
+                <Col lg={12} className='mt-4'>
                     <Card className=''>
                         <Card.Body>
                             <div className='d-flex justify-content-between'>
