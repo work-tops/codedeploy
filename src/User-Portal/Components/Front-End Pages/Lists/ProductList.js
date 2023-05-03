@@ -9,6 +9,7 @@ import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 
 function ProductList() {
 
+    const [mainList, setMainList] = useState([]);
     const [products, setProducts] = useState([]);
     const [productTags, setProductTags] = useState([]);
     const [filterList, setFilterList] = useState([]);
@@ -16,6 +17,7 @@ function ProductList() {
     const getProductList = async () => {
         const response = await getAllData('products');
         setProducts(response.data.products);
+        setMainList(response.data.products);
         setShowSpinner(false);
     }
     const getProductTags = async () => {
@@ -24,7 +26,6 @@ function ProductList() {
         // console.log(productTags);
     }
     const handleFilter = (e) => {
-        console.log(e.target.value);
         var _filters = [...filterList];
         if(e.target.checked == true){
             _filters.push(e.target.value);
@@ -32,13 +33,48 @@ function ProductList() {
             var _inx = _filters.findIndex(x=> x == e.target.value);
             _filters.splice(_inx,1);
         }
+        mainProductList(_filters);
         setFilterList(_filters);
-        console.log(filterList);
     }
     const removeFilter = async (index) => {
         var _filters = [...filterList];
-            _filters.splice(index,1);
+        productTags.forEach((x,i)=>{
+            if(x.list){
+                x.list.forEach((y,j)=>{
+                    if(y.value == _filters[index]){
+                        document.getElementById(`filter_${j}_key_${i}`).checked = false;
+                    }
+                })
+            }
+        })
+        _filters.splice(index,1);
+        mainProductList(_filters);
         setFilterList(_filters);
+    }
+    const mainProductList = async (_filters) => {
+        var _mainList = [...mainList];
+        var _mainFilteredList = [];
+        _filters.map((x)=>{
+            _mainList.map((y)=>{
+                if(y.type.name == x){
+                    _mainFilteredList.push(y);
+                }
+                var _clr = y.variant[0].color?.split(",");
+                if(_clr){
+                    _clr.map((z)=>{
+                        if(z.trim() == x.trim()){
+                            _mainFilteredList.push(y); 
+                        }
+                    })
+                }
+            })
+        });
+        if(_filters.length > 0){
+            setProducts(_mainFilteredList);
+        }
+        else{
+            setProducts(_mainList);
+        }
     }
     useEffect(() => {
         getProductList();
@@ -57,7 +93,7 @@ function ProductList() {
                     <div className="d-flex justify-content-between">
                         <div className="m-4">
                             <p >
-                                Showing 1-24 of 205 Products
+                                {/* Showing 1-24 of 205 Products */}
                             </p>
                         </div>
                         <div className="m-4">
@@ -84,9 +120,9 @@ function ProductList() {
                     <Row>
                         <Col className="fs-6 mt-3 fw-semibold">
 
-                            <span className="bg-dark ms-3 text-white p-2">
+                            {/* <span className="bg-dark ms-3 text-white p-2">
                                 Filter <Icon icon="ion:funnel-outline" color="white" width="28" height="28" />
-                            </span>
+                            </span> */}
 
                         </Col>
                         <Col className="mt-3">
@@ -100,21 +136,21 @@ function ProductList() {
                     <Col lg={3}>
                         <Form className="mt-2">
                             {productTags?.map((data, key) => (
-                                <Form.Group className="mb-3" key={`tags_${key}`}>
+                               data?.list ? <Form.Group className="mb-3" key={`tags_${key}`}>
                                     <Form.Label className="ms-2 fw-bold fs-5">
                                         {data?.name}
                                     </Form.Label>
                                     {data?.list?.map((x,i) => {
                                         return <Row className="mb-3" key={`check_${i}_${x}`}>
                                             <Col lg={1} className="ms-3">
-                                                <Form.Check  value={x?.value} onChange={(e)=>handleFilter(e)} />
+                                                <Form.Check id={`filter_${i}_key_${key}`}  value={x?.value} onChange={(e)=>handleFilter(e)} />
                                             </Col>
                                             <Col> 
-                                               {x?.value}
+                                               <label htmlFor={`filter_${i}_key_${key}`}>{x?.value}</label>
                                             </Col>
                                         </Row>
                                     })}
-                                </Form.Group>
+                                </Form.Group>:<></>
                             ))}
                         </Form>
                     </Col>
