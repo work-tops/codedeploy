@@ -6,7 +6,6 @@ import JobDetails from "../Front-End Pages/JobDetails";
 import ProjectListing from "../Front-End Pages/ProjectListing";
 import SignUpPage from "../Front-End Pages/SignUpPage";
 import JobProposal from "../Front-End Pages/JobProposal";
-import HomePage from "../Front-End Pages/HomePage";
 import UserLogin from '../Front-End Pages/Login/UserLogin'
 // import LoginPortal from "../Front-End Pages/LoginPortal";
 import ProjectOwnerRegister from "../Front-End Pages/ProjectOwnerRegister";
@@ -65,10 +64,9 @@ const FrontEndRouters = () => {
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path="/proposallist"><ProposalList /></Route>
             <Route path="/jobdetails/:jobid"><JobDetails /></Route>
-            <Route path="/homepage"><HomePage /></Route>
             {/*  */}
-            <Route path='/UserLogin'><UserLogin /></Route>
-            <Route path="/SellerLogin"><SellerLogin/></Route>
+            <Route path='/owner'><UserLogin /></Route>
+            <Route path="/freelancer/:login"><SellerLogin/></Route>
             {/*  */}
             {/* <Route path='/loginportal'><LoginPortal /></Route> */}
             <Route path='/projectownersignup'><ProjectOwnerRegister /></Route>

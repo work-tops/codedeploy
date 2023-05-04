@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom"
+import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard"
 // import Slider from "react-slick"
 
 
@@ -33,12 +34,9 @@ function HomePage() {
         <>
             <div className="row">
                 <div className="col-12">
-                    <Header />
+                <NavbarStandard />
                 </div>
-                <div className="col-12">
-                    <Menubar />
-                </div>
-                <div className="col-12">
+                <div className="col-12 mt-5 pt-5">
                     <div className="d-inline-block">
                         <p className="mordern-interior-tit">Mordern Interior</p>
                         <h1 className="morder-interior-h1">Create Your Interior Design</h1>

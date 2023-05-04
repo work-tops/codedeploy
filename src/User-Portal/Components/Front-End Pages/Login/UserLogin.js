@@ -28,11 +28,11 @@ const UserLogin = ({ bgProps }) => {
   }
 
   const Login = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const _userdetails = {
       email: formData.email,
       password: formData.password,
-      role: formData.role
+      role: "Freelancer"
     }
     await createData("login", _userdetails).then(async response => {
       console.log(response);
@@ -41,11 +41,12 @@ const UserLogin = ({ bgProps }) => {
       })
       toast.success('Successfully Logged In')
       sessionStorage.setItem("token", response.data.token);
-      if (formData.role == "Freelancer") {
-        history.push("/Seller/Landing");
-      } else {
-        history.push("/ProjectOwner/Landing");
-      }
+      history.push("/Seller/Landing");
+      // if (formData.role == "Freelancer") {
+      //   history.push("/Seller/Landing");
+      // } else {
+      //   history.push("/ProjectOwner/Landing");
+      // }
     }).catch(err => {
       toast.error(err.response.data.message);
     })
@@ -54,9 +55,10 @@ const UserLogin = ({ bgProps }) => {
   // Handler
   const handleSubmit = e => {
     e.preventDefault();
-    toast.success(`Logged in as ${formData.email}`, {
-      theme: 'colored'
-    });
+    Login();
+    // toast.success(`Logged in as ${formData.email}`, {
+    //   theme: 'colored'
+    // });
   };
 
   const handleFieldChange = e => {
@@ -68,17 +70,19 @@ const UserLogin = ({ bgProps }) => {
   return (
     <>
       <Row>
-        <Col lg={12} className="mb-4">
+        {/* <Col lg={12} className="mb-4">
         <NavbarStandard />
-        </Col>
-        <Row className="mt-5 min-vh-100 bg-100">
+        </Col> */}
+        <Row className="min-vh-100 bg-100">
           <Col xs={6} className="d-none d-lg-block position-relative" style={{ backgroundImage: `url(${worktops})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', objectFit: 'cover' }} />
           <Col sm={10} md={6} className="px-sm-0 align-self-center mx-auto py-5">
             <Row className="g-0 ms-4 justify-content-center">
-              <Col lg={9} xl={8} className="col-xxl-6">
+              <Col lg={9} xl={8} className="col-xxl-8">
                 <Card className='shadow'>
                   <Card.Header style={{ background: '#003f6b' }} className="bg-shape bg-circle-shape  text-center p-2">
+                    <Link to={'/'}>
                     <img src={logo} width="135px" />
+                    </Link>
                   </Card.Header>
                   <Card.Body className="p-4">
                     <Flex alignItems="center" justifyContent="between">
