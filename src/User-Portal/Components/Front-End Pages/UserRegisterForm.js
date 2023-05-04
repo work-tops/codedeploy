@@ -61,7 +61,7 @@ function UserRegisterForm(hasLabel) {
                 <div>
                     <>
                         <div className="d-flex justify-content-between">
-                            <Button style={{ background: '#fff', color: '#003f6b', border: '1px solid #003f6b' }} onClick={() => { toggleCard(3) }} className="text-uppercase m-2">Seller Sign Up</Button>
+                            <Button style={{ background: '#fff', color: '#003f6b', border: '1px solid #003f6b' }} onClick={() => { toggleCard(3) }} className="text-uppercase m-2">Freelancer Sign Up</Button>
                             <Button style={{ background: '#fff', color: '#003f6b', border: '1px solid #003f6b' }} onClick={() => { toggleCard(2) }} className="text-uppercase m-2">PROJECT OWNER SIGNUP</Button>
                         </div>
                         <hr></hr>
@@ -154,7 +154,7 @@ function UserRegisterForm(hasLabel) {
             {toggleForm == 3 &&
 
                 <Form onSubmit={(e) => { formSubmit(e) }}>
-                    <h6 className="text-justify text-uppercase">Seller Sign Up :</h6>
+                    <h6 className="text-justify text-uppercase">Freelancer Sign Up :</h6>
                     <div>
                         <Form.Group className="mb-3">
                             {hasLabel && <Form.Label className="text-700">First Name</Form.Label>}

@@ -8,7 +8,6 @@ import { Icon } from '@iconify/react';
 import { topNavbarBreakpoint } from '../../../../config';
 import AppContext from '../../../TemplateAssets/context/Context';
 import logo from "../../../TemplateAssets/Images/MP-logo.png"
-import UserRegisterForm from '../../Front-End Pages/UserRegisterForm';
 import {
   Card,
   Modal,
@@ -24,9 +23,9 @@ const NavbarStandard = () => {
   const [navbarCollapsed, setNavbarCollapsed] = useState(true);
 
 
-  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+  // const [showRegistrationModal, setShowRegistrationModal] = useState(false);
 
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
 
   return (
@@ -152,14 +151,13 @@ const NavbarStandard = () => {
               <Nav.Item>
                 <Nav.Link
                   as={Link}
-                  to="#!"
+                  to="/signup"
                   className='mt-2 w-100'
-                  onClick={() => setShowRegistrationModal(!showRegistrationModal)}
                   style={{ fontSize: '12px' }}
                 >
                   REGISTER
                 </Nav.Link>
-                <Modal
+                {/* <Modal
                   show={showRegistrationModal}
                   centered
                   onHide={() => setShowRegistrationModal(false)}
@@ -174,7 +172,7 @@ const NavbarStandard = () => {
                       </Card.Body>
                     </Card>
                   </Modal.Body>
-                </Modal>
+                </Modal> */}
               </Nav.Item>
               {/*  Register*/}
 
@@ -200,13 +198,13 @@ const NavbarStandard = () => {
                   <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
                     <div className="bg-white rounded-2 py-2 dark__bg-1000">
                       <Link to="/wishlist/product">
-                        <Dropdown.Item href="#!">Product</Dropdown.Item>
+                        <Dropdown.Item href="#!">Products</Dropdown.Item>
                       </Link>
                       <Link to="/wishlist/project">
-                        <Dropdown.Item href="#!">Project</Dropdown.Item>
+                        <Dropdown.Item href="#!">Projects</Dropdown.Item>
                       </Link>
                       <Link to="/wishlist/seller">
-                        <Dropdown.Item href="#!">Seller</Dropdown.Item>
+                        <Dropdown.Item href="#!">Freelancer</Dropdown.Item>
                       </Link>
                     </div>
                   </Dropdown.Menu>
@@ -252,7 +250,7 @@ const NavbarStandard = () => {
                         Profile
                       </Dropdown.Item>
 
-                      <Dropdown.Item as={Link} to="/user/addproduct">Product</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/user/addproduct">Products</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/user/addservices">Services</Dropdown.Item>
                       {/* <Dropdown.Divider /> */}
                       <Dropdown.Item as={Link} to="/Project-Owner/Settings">
@@ -290,7 +288,7 @@ const NavbarStandard = () => {
                       <Dropdown.Item as={Link} to="/MyProfile">
                         Profile
                       </Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/user/addproduct">Product</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/user/addproduct">Products</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/user/addservices">Services</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/Seller/Settings">
                         Settings

@@ -175,19 +175,13 @@ const FrontendAddService = () => {
                 <Col lg={12} className='mb-5'>
                     <NavbarStandard />
                 </Col>
-                <Col lg={12} className='mt-4'>
+                <Col lg={12} className='mt-5'>
                     <Form onSubmit={(e) => { formsubmit(e) }}>
                         <Card className='w-100'>
                             <Card.Body>
-                                <div className='d-flex justify-content-between'>
-                                    <div>
-                                        <h4 className='mt-2'>Add Services</h4>
-                                        <Breadcrumb>
-                                            <Breadcrumb.Item>Duplicate</Breadcrumb.Item>
-                                            <Breadcrumb.Item>Preview</Breadcrumb.Item>
-                                        </Breadcrumb>
-                                    </div>
-                                    <div>
+                                <div className='d-flex justify-content-end'>
+
+                                    <div className='me-4'>
                                         <Form.Group>
                                             <Form.Group as={Col} className='mb-3'>
                                                 <Form.Label className="text-700">Status</Form.Label>
@@ -204,16 +198,25 @@ const FrontendAddService = () => {
                                     <Row>
                                         <Col lg={7}>
                                             <Card className='mt-3 me-3'>
+                                                <Card.Header>
+                                                    <div>
+                                                        <h6 className='mt-2 text-uppercase'>Add Services</h6>
+                                                        <Breadcrumb style={{ fontSize: '12px' }}>
+                                                            <Breadcrumb.Item>Duplicate</Breadcrumb.Item>
+                                                            <Breadcrumb.Item>Preview</Breadcrumb.Item>
+                                                        </Breadcrumb>
+                                                    </div>
+                                                </Card.Header>
                                                 <Card.Body>
-                                                    <h5 className='mb-3'>Add Services</h5>
+                                                    <h6 className='mb-2 text-uppercase'>Services Information</h6>
 
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label className="text-700">Service Title</Form.Label>
+                                                        <Form.Label className="text-700">Services Title</Form.Label>
                                                         <Form.Control value={form.title} required name="title" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
                                                     </Form.Group>
                                                     <Row className='g-3 mb-3'>
                                                         <Form.Group as={Col} className='mb-3'>
-                                                            <Form.Label className="text-700">Service Category</Form.Label>
+                                                            <Form.Label className="text-700">Services Category</Form.Label>
                                                             <Form.Select value={form.category} required name="category" onChange={(e) => { handleChange(e) }}>
                                                                 <option value="">Select Option</option>
                                                                 {cate?.map((data) => (
@@ -222,7 +225,7 @@ const FrontendAddService = () => {
                                                             </Form.Select>
                                                         </Form.Group>
                                                         <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label className="text-700">Service Email</Form.Label>
+                                                            <Form.Label className="text-700">Services Email</Form.Label>
                                                             <Form.Select value={form.email} required name="email" onChange={(e) => { handleChange(e) }}>
                                                                 <option value="">Select Option</option>
                                                                 {selemail.map((data) => (
@@ -237,11 +240,11 @@ const FrontendAddService = () => {
                                                     </Form.Group>
                                                     <Row className='g-3 mb-3'>
                                                         <Form.Group as={Col} className='mb-3'>
-                                                            <Form.Label className="text-700">Service Location</Form.Label>
+                                                            <Form.Label className="text-700">Services Location</Form.Label>
                                                             <Multiselect options={servitag[1]?.list} displayValue="value" className='border border-dark rounded' />
                                                         </Form.Group>
                                                         <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label className="text-700">Service Range
+                                                            <Form.Label className="text-700">Services Range
                                                             </Form.Label>
                                                             <Multiselect options={servitag[2]?.list} displayValue="value" className='border border-dark rounded' />
                                                         </Form.Group>
@@ -298,7 +301,7 @@ const FrontendAddService = () => {
                                         <Col lg={5}>
                                             <Card className='mt-3 me-3'>
                                                 <Card.Body>
-                                                    <h5 className='mb-3'>Media</h5>
+                                                    <h6 className='mb-2 text-uppercase'>Media</h6>
                                                     {/* <Flex justifyContent={between}> */}
                                                     {/* <div className='d-flex justify-content-between'>
                                                     <Button variant="primary" onClick={handleShow}>
@@ -353,14 +356,14 @@ const FrontendAddService = () => {
                                             </Card>
                                             <Card className='mt-3 me-3'>
                                                 <Card.Body>
-                                                    <h5 className='mb-3'>Service Handle and Metafields</h5>
+                                                    <h6 className='mb-2 text-uppercase'>Services Handle and Metafields</h6>
                                                     <Form.Group className='mb-4'>
                                                         <Form.Label className="text-700">
-                                                            Service handle
+                                                            Services handle
                                                         </Form.Label>
                                                         <Form.Control value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                                     </Form.Group>
-                                                    <h5 className='mb-3'>Service Metafields</h5>
+                                                    <h6 className='mb-2 text-uppercase'>Services Metafields</h6>
                                                     <Form.Group className='mb-3'>
                                                         <Form.Label className="text-700">
                                                             Title Tag Meta Field

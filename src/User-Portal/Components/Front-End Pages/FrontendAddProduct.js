@@ -342,34 +342,27 @@ const FrontendAddProduct = () => {
         <>
             <Row>
                 <Col lg={12} className='mb-5'>
-                    <NavbarStandard/>
+                    <NavbarStandard />
                 </Col>
                 <Col lg={12} className='mt-4'>
                     <Card className=''>
                         <Card.Body>
-                            <div className='d-flex justify-content-between'>
-                                <div>
-                                    <h4 className='mt-2'>Add Product</h4>
-                                    <Breadcrumb>
-                                        <Breadcrumb.Item>Duplicate</Breadcrumb.Item>
-                                        <Breadcrumb.Item>Preview</Breadcrumb.Item>
-                                    </Breadcrumb>
-                                </div>
-                                <div>
-                                    {''}
-                                    {/* <Link to="/editproduct">
-                                        <Button className='me-3 btn btn-warning d-block w-100'>Save as Draft</Button>
-                                    </Link> */}
-                                    {''}
-                                </div>
-                            </div>
                             <Container>
                                 <Form onSubmit={(e) => { formsubmit(e) }}>
                                     <Row>
                                         <Col lg={7}>
                                             <Card className='mt-3 me-3'>
+                                                <Card.Header className='bg-white'>
+                                                    <div>
+                                                        <h6 className='mt-2 text-uppercase'>Add Products</h6>
+                                                        <Breadcrumb style={{fontSize:'12px'}}>
+                                                            <Breadcrumb.Item>Duplicate</Breadcrumb.Item>
+                                                            <Breadcrumb.Item>Preview</Breadcrumb.Item>
+                                                        </Breadcrumb>
+                                                    </div>
+                                                </Card.Header>
                                                 <Card.Body>
-                                                    <h5 className='mb-3'>Product Information</h5>
+                                                    <h6 className='mb-3 text-uppercase'>Products Information</h6>
 
                                                     <Form.Group className="mb-3">
                                                         <Form.Label className="text-700">Name</Form.Label>
@@ -391,7 +384,7 @@ const FrontendAddProduct = () => {
                                             </Card>
                                             <Card className='mt-3 me-3'>
                                                 <Card.Body>
-                                                    <h5 className='mb-3'>Organization</h5>
+                                                    <h6 className='mb-3 text-uppercase'>Organization</h6>
                                                     <Form.Group className='mb-3'>
                                                         <Form.Label className="text-700">Seller Email</Form.Label>
                                                         <Form.Control value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
@@ -432,7 +425,7 @@ const FrontendAddProduct = () => {
                                             <Row>
                                                 <Col>
                                                     {/* <Link to='/addproductcard'> */}
-                                                    <Button type='submit' className='mt-3  btn text-light bg-success border-0'>Add Product</Button>
+                                                    <Button type='submit' className='mt-3  btn text-light bg-success border-0'>Add Products</Button>
                                                     {/* </Link> */}
                                                     <Link to="/addproductcard">
                                                         <Button className='mt-3  btn text-light border-0 ms-5 bg-danger '>Cancel</Button>
@@ -460,7 +453,7 @@ const FrontendAddProduct = () => {
                                                                     <Card className='mt-3  me-3'>
                                                                         <Card.Body>
                                                                             <div className='d-flex justify-content-between'>
-                                                                                <h5 className='mb-3'>Variants</h5>
+                                                                                <h6 className='mb-3 text-uppercase'>Variants</h6>
 
                                                                             </div>
                                                                             <h6 className='mt-3 mb-3'>OPTIONS</h6>
@@ -514,7 +507,7 @@ const FrontendAddProduct = () => {
                                                                 <Col lg={5}>
                                                                     <Card className='mt-3 me-3'>
                                                                         <Card.Body>
-                                                                            <h5 className='mb-3'>Pricing</h5>
+                                                                            <h6 className='mb-3 text-uppercase'>Pricing</h6>
                                                                             <Form.Group className='mb-3'>
                                                                                 <Form.Label className="text-700">Pricing</Form.Label>
                                                                                 <InputGroup className="mb-3">
@@ -553,7 +546,7 @@ const FrontendAddProduct = () => {
                                                                                     <Col lg={6}>
                                                                                         <Form.Check checked={variant.charge_taxes} name="charge_taxes" onChange={handlechange1} />
                                                                                         <Form.Label className="text-700">
-                                                                                            Charge Taxes on this product
+                                                                                            Charge Taxes on this products
                                                                                         </Form.Label>
                                                                                     </Col>
                                                                                 </Row>
@@ -562,7 +555,7 @@ const FrontendAddProduct = () => {
                                                                     </Card>
                                                                     <Card className='mt-3 me-3'>
                                                                         <Card.Body>
-                                                                            <h5 className='mb-3'>Inventory</h5>
+                                                                            <h6 className='mb-3 text-uppercase'>Inventory</h6>
                                                                             <Form.Group className='mb-3'>
                                                                                 <Form.Label className="text-700">SKU</Form.Label>
                                                                                 <Form.Control value={variant.sku} name="sku" onChange={(e) => { variantChange(e) }} className='w-100' type="text" placeholder='eg.324812302' />
@@ -586,7 +579,7 @@ const FrontendAddProduct = () => {
                                                                             <Form.Group className='mb-3'>
                                                                                 <Form.Check checked={variant.track_inventory} name="track_inventory" onChange={handlechange1} />
                                                                                 <Form.Label className="text-700">
-                                                                                    Track this Product Inventory
+                                                                                    Track this Products Inventory
                                                                                 </Form.Label>
                                                                             </Form.Group>
 
@@ -608,7 +601,7 @@ const FrontendAddProduct = () => {
                                             <Card className='mt-3'>
                                                 <Card.Body>
                                                     {/* <Flex justifyContent={between}> */}
-                                                    <h5 className='mb-3'>Media</h5>
+                                                    <h6 className='mb-3 text-uppercase'>Media</h6>
                                                     {/* <div className='d-flex justify-content-between'>
                                                     <Button variant="primary" onClick={handleShow}>
                                                     Add Media from URL
@@ -666,14 +659,14 @@ const FrontendAddProduct = () => {
 
                                             <Card className='mt-3'>
                                                 <Card.Body>
-                                                    <h5 className='mb-3'>Product Handle and Metafields</h5>
+                                                    <h6 className='mb-3 text-uppercase'>Products Handle and Metafields</h6>
                                                     <Form.Group className='mb-4'>
                                                         <Form.Label className="text-700">
-                                                            Product handle
+                                                            Products handle
                                                         </Form.Label>
                                                         <Form.Control value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                                     </Form.Group>
-                                                    <h5 className='mb-3'>Product Metafields</h5>
+                                                    <h6 className='mb-3 text-uppercase'>Products Metafields</h6>
                                                     <Form.Group className='mb-3'>
                                                         <Form.Label className="text-700">
                                                             Title Tag Meta Field
@@ -691,7 +684,7 @@ const FrontendAddProduct = () => {
                                             <Card className='mt-3'>
 
                                                 <Card.Body>
-                                                    <h5 className='mb-3'>Product Tag</h5>
+                                                    <h6 className='mb-3 text-uppercase'>Products Tag</h6>
                                                     {productTags.map((x, i) => {
                                                         const defaultSelectedValues = selectedproductTags[i]?.list || [];
                                                         console.log(defaultSelectedValues)

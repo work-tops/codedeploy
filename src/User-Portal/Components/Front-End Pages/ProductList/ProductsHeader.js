@@ -1,7 +1,5 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Background from '../../../TemplateAssets/common/Background';
-import corner6 from '../../../TemplateAssets/assets/illustrations/corner-6.png';
 import {
   Button,
   Card,
@@ -20,9 +18,8 @@ import { Icon } from '@iconify/react';
 const ListingHeader = ({ layout }) => {
   return (
     <Card className="mb-3 m-4">
-      <Card.Header className="position-relative">
+      <Card.Header className="bg-white position-relative">
         <h5 className="mb-0 mt-1">All Products</h5>
-        <Background image={corner6} className="d-none d-md-block bg-card" />
       </Card.Header>
       <Card.Body className="pt-0 pt-md-3">
         <Row className="g-3 align-items-center">
