@@ -21,6 +21,7 @@ const NavbarStandard = () => {
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [show, setShow] = useState(false);
   const [id, setId] = useState(1);
+  const [user, setUser] = useState({});
 
   const logOut = () => {
     sessionStorage.clear();
@@ -31,6 +32,7 @@ const NavbarStandard = () => {
   useEffect(() => {
     var _user = sessionStorage.getItem('user');
     var _json = JSON.parse(_user);
+    setUser(_json);
     if (_json?.role == "Freelancer") {
       setId(3);
     }
@@ -112,7 +114,7 @@ const NavbarStandard = () => {
 
               <Nav.Link
                 as={Link}
-                to="/how-it-works"
+                to="/listjobs"
                 className='mt-2'
                 style={{ fontSize: '12px' }}
               >
@@ -120,7 +122,7 @@ const NavbarStandard = () => {
               </Nav.Link>
               <Nav.Link
                 as={Link}
-                to="/how-it-works"
+                to="/servicelist"
                 className='mt-2'
                 style={{ fontSize: '12px' }}
               >
@@ -236,7 +238,7 @@ const NavbarStandard = () => {
                         <div className="bg-white rounded-2 py-2 dark__bg-1000">
                           <Dropdown.Item className="fw-bold text-success" href="#!">
                             <FontAwesomeIcon icon="crown" className="me-1" />
-                            <span>Project Owner</span>
+                            <span>{user?.role}</span>
                           </Dropdown.Item>
                           <Dropdown.Divider />
 
