@@ -100,7 +100,7 @@ const NavbarStandard = () => {
 
               <Nav.Link
                 as={Link}
-                to="/how-it-works"
+                to="/listjobs"
                 className='mt-2'
                 style={{ fontSize: '12px' }}
               >
@@ -108,7 +108,7 @@ const NavbarStandard = () => {
               </Nav.Link>
               <Nav.Link
                 as={Link}
-                to="/how-it-works"
+                to="/servicelist"
                 className='mt-2'
                 style={{ fontSize: '12px' }}
               >
