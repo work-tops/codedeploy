@@ -248,21 +248,25 @@ const NavbarStandard = () => {
                             Profile
                           </Dropdown.Item>
 
-                      <Dropdown.Item as={Link} to="/user/addproduct">Products</Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/user/addservices">Services</Dropdown.Item>
-                      {/* <Dropdown.Divider /> */}
-                      <Dropdown.Item as={Link} to="/Project-Owner/Settings">
-                        Settings
-                      </Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/userLogin">
-                        Logout
-                      </Dropdown.Item>
-                    </div>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
-              {/* Project Owner Profile */}
-
+                          <Dropdown.Item as={Link} to="/user/addproduct">Products</Dropdown.Item>
+                          <Dropdown.Item as={Link} to="/user/addservices">Services</Dropdown.Item>
+                          <Dropdown.Item as={Link} to="/OpenProjectCard">My Project's</Dropdown.Item>
+                          <Dropdown.Item as={Link} to="/InvoicedueCard">Invoice Due</Dropdown.Item>
+                          <Dropdown.Item as={Link} to="/productenquirescard">Product Enquires</Dropdown.Item>
+                          <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item>
+                          {/* <Dropdown.Divider /> */}
+                          <Dropdown.Item as={Link} to="/Project-Owner/Settings">
+                            Settings
+                          </Dropdown.Item>
+                          <Dropdown.Item as={Link} to="/userLogin">
+                            Logout
+                          </Dropdown.Item>
+                        </div>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </div>
+                </>
+                  {/* Project Owner Profile */}
 
               {/* Seller Profile */}
               <div>
@@ -288,6 +292,11 @@ const NavbarStandard = () => {
                       </Dropdown.Item>
                       <Dropdown.Item as={Link} to="/user/addproduct">Products</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/user/addservices">Services</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/addproductcard">My Product's</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/addservicecard">My Service's</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/proposalcard">Proposals</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/productenquirescard">Product Enquires</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/Seller/Settings">
                         Settings
                       </Dropdown.Item>
@@ -303,7 +312,7 @@ const NavbarStandard = () => {
           </Navbar.Collapse>
         </div>
       </Container>
-    </Navbar>
+    </Navbar >
   );
 };
 
