@@ -322,7 +322,7 @@ const data = [
 
 const AdvancedTable = () => {
 
-    const [product, setproducts] = useState([]); 
+    const [product, setproducts] = useState([]);
     console.log(product.length)
 
     const Productlist = async () => {
@@ -331,11 +331,11 @@ const AdvancedTable = () => {
         sessionStorage.setItem("productlength", response.data.products.length)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         Productlist()
     }, [])
 
-  
+
     const columns = [
         {
             accessor: 'productId',
@@ -386,10 +386,20 @@ const AdvancedTable = () => {
         email: product.seller_email,
         price: `£${product.variant[0].pricing.price}`,
         quantity: `${product.variant[0].inventory.quantity} Pcs`,
-        status: <span className="badge bg-success p-2">Approved</span>
-      }));
-    
-   
+        status: <span className="badge bg-success p-2">Approved</span>,
+        action: <CardDropdown>
+            <div className="py-2">
+                <Dropdown.Item>Edit</Dropdown.Item>
+                <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
+                <Dropdown.Item>Reassign</Dropdown.Item>
+                <Dropdown.Item>Disable</Dropdown.Item>
+                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+            </div>
+        </CardDropdown>,
+    }));
+
+
 
     function BulAction({ selectedRowIds }) {
         return (
@@ -404,11 +414,6 @@ const AdvancedTable = () => {
                         }
                     </h5>
                 </Col>
-                        <Row className="flex-end-center mt-2 mb-3">
-                            <Col xs="auto">
-                                <AdvanceTableSearchBox table />
-                            </Col>
-                        </Row>
                 <Col xs={8} sm="auto" className="ms-auto text-end ps-0">
                     {Object.keys(selectedRowIds).length > 0 ? (
                         <div className="d-flex">
@@ -429,7 +434,7 @@ const AdvancedTable = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                            <IconButton
+                            {/* <IconButton
                                 variant="falcon-default"
                                 size="sm"
                                 icon="plus"
@@ -437,7 +442,7 @@ const AdvancedTable = () => {
                                 className='me-2'
                             >
                                 <span className="d-none d-sm-inline-block ms-1">New</span>
-                            </IconButton>
+                            </IconButton> */}
                             <IconButton
                                 variant="falcon-default"
                                 size="sm"

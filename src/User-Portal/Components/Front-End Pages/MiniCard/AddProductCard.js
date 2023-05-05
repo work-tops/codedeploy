@@ -27,12 +27,12 @@ function AddProductCard() {
                         </Card.Body>
                     </Card>
                     ) : ( */}
-                        <div className="m-5">
+                    <div className="m-5">
                         <FrontEndAllProducts />
-                        </div>
+                    </div>
                     {/*  )} */}
-                    
-                   
+
+
                 </Col>
             </Row>
         </>

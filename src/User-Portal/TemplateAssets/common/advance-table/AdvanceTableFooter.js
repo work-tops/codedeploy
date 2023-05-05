@@ -25,13 +25,14 @@ export const AdvanceTableFooter = ({
 }) => {
   const [isAllVisible, setIsAllVisible] = useState(false);
   return (
-    <Flex
+    <div
+    className="d-flex justify-content-between align-items-center"
       // className={classNames(
       //   className,
       //   'align-items-center justify-content-between'
       // )}
     >
-      <Flex alignItems="center" className="fs--1">
+      <div className="fs--1 d-flex align-items-center">
         {rowInfo && (
           <p className="mb-0">
             <span className="d-none d-sm-inline-block me-2">
@@ -77,11 +78,12 @@ export const AdvanceTableFooter = ({
             </Form.Select>
           </>
         )}
-      </Flex>
+      </div>
       {navButtons && (
         <Flex>
           <Button
             size="sm"
+            className='me-2'
             variant={canPreviousPage ? 'primary' : 'light'}
             onClick={() => previousPage()}
             // className={classNames({ disabled: !canPreviousPage })}
@@ -90,6 +92,7 @@ export const AdvanceTableFooter = ({
           </Button>
           <Button
             size="sm"
+            className='me-2'
             variant={canNextPage ? 'primary' : 'light'}
             // className={classNames('px-4 ms-2', {
             //   disabled: !canNextPage
@@ -100,7 +103,7 @@ export const AdvanceTableFooter = ({
           </Button>
         </Flex>
       )}
-    </Flex>
+    </div>
   );
 };
 

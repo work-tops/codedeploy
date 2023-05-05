@@ -7,7 +7,7 @@ function PostPg() {
     useEffect(() => {
         var _user = sessionStorage.getItem('user');
         var _json = JSON.parse(_user);
-        setUser(_json.name);
+        setUser(_json?.name);
     }, [])
 
     return (

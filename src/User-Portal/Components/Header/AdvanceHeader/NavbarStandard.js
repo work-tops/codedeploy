@@ -252,7 +252,11 @@ const NavbarStandard = () => {
 
                       <Dropdown.Item as={Link} to="/user/addproduct">Products</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/user/addservices">Services</Dropdown.Item>
-                      {/* <Dropdown.Divider /> */}
+                      <Dropdown.Item as={Link} to="/openProjectCard">My Project's</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/workStreamCard">Workstreams</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/InvoicedueCard">Invoice Due</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/productenquirescard">Product Enquires</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/Project-Owner/Settings">
                         Settings
                       </Dropdown.Item>
@@ -290,6 +294,11 @@ const NavbarStandard = () => {
                       </Dropdown.Item>
                       <Dropdown.Item as={Link} to="/user/addproduct">Products</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/user/addservices">Services</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/addproductcard">My product's</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/addservicecard">My services</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/proposalcard">Proposals</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/productenquirescard">Product Enquires</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/Seller/Settings">
                         Settings
                       </Dropdown.Item>

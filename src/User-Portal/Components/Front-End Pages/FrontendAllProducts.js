@@ -16,8 +16,8 @@ function FrontEndAllProducts() {
             </div>
             <div className="m-3">
               <Row>
-                <Col lg={6}>
-                  <DropdownButton
+                {/* <Col lg={6}> */}
+                  {/* <DropdownButton
                     variant="outline-secondary"
                     title="More Action"
                     id="input-group-dropdown-2"
@@ -26,9 +26,9 @@ function FrontEndAllProducts() {
                   >
                     <Dropdown.Item href="#">Bulk Edit</Dropdown.Item>
                     <Dropdown.Item href="#">Add Product By CSV</Dropdown.Item>
-                  </DropdownButton>
-                </Col>
-                <Col lg={6}>
+                  </DropdownButton> */}
+                {/* </Col> */}
+                <Col lg={12}>
                   <Link to="/user/addproduct">
                     <Button className='m-1 bg-success border-success'>Add Product</Button>
                   </Link>
@@ -38,7 +38,6 @@ function FrontEndAllProducts() {
             </div>
           </div>
           <div className="mt-3">
-            {/* <AdvanceTableSearchBox/> */}
             <AdvancedTable />
           </div>
         </Card.Body>

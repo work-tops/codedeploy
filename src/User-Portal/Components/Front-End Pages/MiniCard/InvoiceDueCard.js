@@ -1,13 +1,13 @@
 
 import React from "react";
 import { Card, Button, Col, Row } from "react-bootstrap";
-import ProjectOwnerLandingPage from "../ProjectOwnerLandingPage";
+import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 function InvoicedueCard() {
     return (
         <>
             <Row>
-                <Col lg={12}>
-                    <ProjectOwnerLandingPage />
+                <Col lg={12} className="mb-5">
+                    <NavbarStandard />
                 </Col>
                 <Col lg={12}>
                     <Card className="m-5">

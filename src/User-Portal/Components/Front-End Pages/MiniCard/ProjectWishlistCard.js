@@ -8,7 +8,7 @@ function ProjectWishListCard() {
         <NavbarStandard/>
         </div>
             <Row>
-                <Col lg={12}>
+                <Col lg={12} className="mb-5">
                 <h4 className="m-5">Your Wishlists</h4>        
             <Card className="m-5">
                 <Card.Body>

@@ -14,7 +14,7 @@ function AllServices() {
                         </div>
                         <div>
                             <Row>
-                                <Col lg={6}>
+                                {/* <Col lg={6}>
                                     <DropdownButton
                                         variant="outline-secondary"
                                         title="More Action"
@@ -25,8 +25,8 @@ function AllServices() {
                                         <Dropdown.Item href="#">Bulk Edit</Dropdown.Item>
                                         <Dropdown.Item href="#">Add Product By CSV</Dropdown.Item>
                                     </DropdownButton>
-                                </Col>
-                                <Col lg={6}>
+                                </Col> */}
+                                <Col lg={12}>
                                     <Link to="/user/addservices">
                                     <Button className='m-1 bg-success border-success w-100'>Add Services</Button>
                                     </Link>

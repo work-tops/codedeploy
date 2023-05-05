@@ -282,7 +282,8 @@ const data = [
         price: '£100',
         
         status: <span className="badge bg-success p-2">Active</span>,
-        action: <CardDropdown>
+        action: 
+        <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
@@ -663,11 +664,11 @@ const ServiceAdvancedTable = () => {
                         }
                     </h5>
                 </Col>
-                        <Row className="flex-end-center mt-2 mb-3">
+                        {/* <Row className="flex-end-center mt-2 mb-3">
                             <Col xs="auto">
                                 <AdvanceTableSearchBox table />
                             </Col>
-                        </Row>
+                        </Row> */}
                 <Col xs={8} sm="auto" className="ms-auto text-end ps-0">
                     {Object.keys(selectedRowIds).length > 0 ? (
                         <div className="d-flex">
@@ -688,7 +689,7 @@ const ServiceAdvancedTable = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                            <IconButton
+                            {/* <IconButton
                                 variant="falcon-default"
                                 size="sm"
                                 icon="plus"
@@ -696,7 +697,7 @@ const ServiceAdvancedTable = () => {
                                 className='me-2'
                             >
                                 <span className="d-none d-sm-inline-block ms-1">New</span>
-                            </IconButton>
+                            </IconButton> */}
                             <IconButton
                                 variant="falcon-default"
                                 size="sm"
