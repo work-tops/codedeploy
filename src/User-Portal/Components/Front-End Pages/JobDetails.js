@@ -2,15 +2,19 @@ import React, { useEffect, useState } from "react";
 import Menubar from "../Menubar/Menubar";
 import JobDetailsPost from "../Post/JobDetailsPost";
 import Footer from "../Footer/Footer";
-import newsfeed from "../Images/newsfeed.png"
-import profileImg from "../Images/employee.png"
-import currency from "../Images/Currency.png"
-import { Link, useParams,useHistory } from "react-router-dom";
+import newsfeed from "../Images/Newsfeed.jpg"
+import profileImg from "../Project images/Handyman.jpg"
+import currency from "../Images/Pound Currency.jpg"
+import { Link, useParams, useHistory } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
 import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
-import { Button, Col, Row, Modal, Form } from "react-bootstrap";
+import { Button, Col, Row, Card, Modal, Form } from "react-bootstrap";
 import worktops from '../../Components/Project images/Handyman.jpg'
-import Divider from "../../TemplateAssets/common/Divider";
+import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
+import { Icon } from "@iconify/react";
+import { Divider } from "@mui/material";
+
+
 function JobDetails() {
     const [show, setShow] = useState(false);
 
@@ -28,18 +32,18 @@ function JobDetails() {
     }
     const sendProposal = () => {
         var _token = sessionStorage.getItem("token");
-        if(_token != null){
+        if (_token != null) {
             history.push(`/jobdetails/${jobid}/jobproposal`);
-        }else{
+        } else {
             history.push("/userlog");
         }
     }
     const getLevel = (value) => {
-        if(value <= 1000){
+        if (value <= 1000) {
             return "Low";
-        }else if(value > 1000 || value < 3000 ){
+        } else if (value > 1000 || value < 3000) {
             return "Medium";
-        }else if(value > 3001){
+        } else if (value > 3001) {
             return "High";
         }
     }
@@ -53,200 +57,320 @@ function JobDetails() {
         getJobsById()
     }, [])
 
-// Date length
+    // Date length
 
-const today = new Date().toISOString().substr(0, 10);
-const expire_date = new Date(jobdata.expire_date);
-const timeDiff = expire_date.getTime() - new Date(today).getTime();
-const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-console.log(daysDiff);
-
+    const today = new Date().toISOString().substr(0, 10);
+    const expire_date = new Date(jobdata.expire_date);
+    const timeDiff = expire_date.getTime() - new Date(today).getTime();
+    const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    console.log(daysDiff);
 
     return (
         <>
-            <div className="row">
-                <div className="col-12">
-                    <ProjectOwnerHeader />
-                </div>
-                <div className="col-12">
-                    <Menubar />
-                </div>
-                <div className="col-12">
-                    <JobDetailsPost />
-                </div>
-                <div className="col-12">
-                    <div className="key-description-1">
-                        <h2 className="heading">{jobdata.project_title}</h2>
-                        <ul type='none' className="key">
-                            <li><i class="fa-solid fa-sterling-sign"></i>{getLevel(jobdata?.budget)} Level</li>
-                            <li><i class="fa-solid fa-location-dot"></i>{jobdata.location}</li>
-                            <li><i class="fa-regular fa-building"></i>{jobdata.category}</li>
-                            <li><i class="fa-solid fa-business-time"></i>Duration: {jobdata.project_duration}</li>
-                            {/* <Link to={`/jobdetails/${jobid}/jobproposal`}> */}
-                                <button className="send-proposal" onClick={()=> sendProposal()}>SEND PROPOSAL</button>
-                            {/* </Link> */}
-                        </ul>
-                    </div>
-                    <div className="job-det-cols row">
-                        <div className="prj-detail col-6">
-                            <p className="sub-title">Project Detail</p>
-                            <p className="title-desc">{jobdata.project_description}
-                            </p>
-                            {/* <p className="skills-req">Skills Requried</p>
-                            <br></br>
-                            <p className="skills">Fabrication</p>
-                            <p className="skills">Templater</p> */}
-                        </div>
-                        <div className="col-6 economy-desc">
-                            <div>
-                                <p className="ending-days">Ends In (Days)</p>
-                                <p className="days-left">{daysDiff}</p>
-                            </div>
-                            <div>
-                                <div className="flex">
-                                    <div>
-                                        <img src={currency} alt="euro-currency" className="currency" />
-                                    </div>
-                                    <div>
-                                        <p className="amount"><i class="fa-sharp euros fa-solid fa-sterling-sign"></i>{' '}{jobdata.max_budget}</p>
-                                        <p className="received-proposals">Client Budget</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div className="flex">
-                                    <div className="img-div">
-                                        <img src={newsfeed} alt="news-feed" className="news-feed" />
-                                    </div>
-                                    <div>
-                                        <p className="num">5</p>
-                                        <p className="proposal">Proposal Received</p>
-                                        <p className="proposal-date">Mar 16 2023</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="save">
-                                <p className="prj-id">Project ID : : 1484KHON</p>
-                                <button className="save-btn"><i class="fa-solid fa-heart"></i>{' '}Saved</button>
-                            </div>
-                            <div className="personal-profile">
-                                <img src={profileImg} className="profile-img" alt="profile-pic" />
-                                <p className="emp-name">{jobdata.customer_email}</p>
-                                <p className="open-job-1">Name</p>
-                                <p className="open-job-2">Profession</p>
-                                <p className="open-job-2">Like</p>
-                            </div>
-                        </div>
-                    </div>
-                    <br></br>
-                    <div className="row">
-                        <div className="container1 col-6">
-                            <div className="row">
-                                <div className="col-6">
-                                    <p className="clarification-board">Clarification Board</p>
+            <Row>
+                <Col lg={12} className="mb-5">
+                    <NavbarStandard />
+                </Col>
 
-                                </div>
-                                <div className="col-6">
-                                    <button onClick={showboard} className="ask-a-que">ASK A QUESTION</button>
-                                </div>
-                            </div>
-                            {board == true ? (
-                                <>
-                                    <input type='text' id="msg-box" placeholder="Type Your Message Here" />
-                                    <div className="send-box"><button className="send">Send</button></div>
-                                </>
-                            ) : ""}
-
-                            {/* Special Addition by UI */}
-                            <Row>
-                                <Col>
-                                    <Row style={{ width: '500px' }} className="mt-3 border border-dark">
-                                        <Col className="mt-3" lg={3}>
-                                            <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
-                                        </Col>
-                                        <Col className="mt-3" lg={8}>
-                                            <p style={{ fontSize: '14px' }} className="">
-                                                Hi There, Yes, | Do Have Designs And It Will Be Comfortable To Do All Task
-                                                In Phases With Exact Deadlines.
-                                                Can We Have A Short Meeteng To Make Communication Process Faster
-                                                And Easier?
-                                            </p>
-                                            <Button onClick={handleShow} style={{ color: '#ff9f0f', fontSize: '14px' }} className="btn mb-3 bg-transparent border-0">Reply</Button>
+                <Col lg={12} className="mt-5">
+                    <Row>
+                        <Col lg={8}>
+                            <Card className="m-4">
+                                <Card.Header as="h6" className='bg-white text-justify  text-uppercase'>Project Details</Card.Header>
+                                <Card.Body className="position-relative">
+                                    <Row>
+                                        <Col xl={12}>
+                                            <p style={{ fontSize: '14px' }} className="text-justify">{jobdata.project_description}</p>
+                                            <h6 className="text-uppercase">Skills Required</h6>
+                                            <div className='d-flex justify-content-start mt-3 mb-1'>
+                                                <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>Fabricator</span>
+                                                <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Templater</span>
+                                            </div>
                                         </Col>
                                     </Row>
-                                    <Row style={{ width: '500px' }} className="mt-3 border border-dark">
-                                        <Col className="mt-3" lg={3}>
-                                            <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
-                                        </Col>
-                                        <Col className="mt-3" lg={8}>
-                                            <p style={{ fontSize: '14px' }} className="">
-                                                Hi There, Yes, | Do Have Designs And It Will Be Comfortable To Do All Task
-                                                In Phases With Exact Deadlines.
-                                                Can We Have A Short Meeteng To Make Communication Process Faster
-                                                And Easier?
-                                            </p>
-                                            <Button onClick={handleShow} style={{ color: '#ff9f0f', fontSize: '14px' }} className="btn mb-3 bg-transparent border-0">Reply</Button>
+                                </Card.Body>
+                            </Card>
+                            <Card className="m-4">
+                                <Card.Header className='bg-white  p-3 d-flex justify-content-between text-uppercase'>
+                                    <h6 className="mt-3">
+                                        Clarification Board
+                                    </h6>
+                                    <Button onClick={showboard} style={{ background: "#003f6b" }} className="border-0 text-uppercase">
+                                        ask a question
+                                    </Button>
+                                </Card.Header>
+                                <Card.Body className="position-relative">
+                                    <Row>
+                                        <Col xl={12}>
+                                            {board == true ? (
+                                                <>
+                                                    <Form>
+                                                        <Form.Group className="mb-3">
+                                                            <Form.Control
+                                                                as="textarea"
+                                                                placeholder='Type Your Message Here'
+                                                                rows={5} />
+                                                        </Form.Group>
+                                                        <div className="d-flex justify-content-end mb-3">
+                                                            <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                                                                Submit
+                                                            </Button>
+                                                        </div>
+                                                    </Form>
+                                                </>
+                                            ) : ""}
                                         </Col>
                                     </Row>
+                                    <Card>
+                                        <Card.Body>
+                                            <Row>
+                                                <Col className="mt-3" lg={3}>
+                                                    <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
+                                                </Col>
+                                                <Col className="mt-3" lg={8}>
+                                                    <p style={{ fontSize: '14px' }} className="">
+                                                        Hi There, Yes, | Do Have Designs And It Will Be Comfortable To Do All Task
+                                                        In Phases With Exact Deadlines.
+                                                        Can We Have A Short Meeteng To Make Communication Process Faster
+                                                        And Easier?
+                                                    </p>
+                                                    <Button
+                                                        onClick={handleShow}
+                                                        style={{ background: '#003f6b', fontSize: '14px' }}
+                                                        className="btn mb-3 text-uppercase border-0">
+                                                        Reply
+                                                    </Button>
+                                                </Col>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
                                     {/*  */}
-                                    <div className='d-flex justify-content-between'>
-                                        <Modal
-                                            show={show}
-                                            onHide={() => setShow(false)}
-                                            dialogClassName="modal-lg modal-90w"
+                                    <Card className="mt-3">
+                                        <Card.Body>
+                                            <Row>
+                                                <Col className="mt-3" lg={3}>
+                                                    <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
+                                                </Col>
+                                                <Col className="mt-3" lg={8}>
+                                                    <p style={{ fontSize: '14px' }} className="">
+                                                        Hi There, Yes, | Do Have Designs And It Will Be Comfortable To Do All Task
+                                                        In Phases With Exact Deadlines.
+                                                        Can We Have A Short Meeteng To Make Communication Process Faster
+                                                        And Easier?
+                                                    </p>
+                                                    <Button
+                                                        onClick={handleShow}
+                                                        style={{ background: '#003f6b', fontSize: '14px' }}
+                                                        className="btn mb-3 text-uppercase border-0">
+                                                        Reply
+                                                    </Button>
+                                                </Col>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
 
-                                            aria-labelledby="example-custom-modal-styling-title"
-                                        >
-                                            <Modal.Header closeButton>
-                                                <Modal.Title id="example-custom-modal-styling-title">
-                                                    Please Type Your Message
-                                                </Modal.Title>
-                                            </Modal.Header>
-                                            <Modal.Body>
-                                                <Form.Group className="mb-3">
-                                                    <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
-                                                </Form.Group>
-                                                <Form.Group className="mb-3">
-                                                    <Form.Check className="ms-3" />
-                                                    <Form.Check.Label>
-                                                        I Confirm That This Message Is Essential For The Submission Of My
-                                                        Proposal And | Understand That It Will Be Publicly Posted In The
-                                                        Project's Clarification Board And In Case It Is Used To Spam Or
-                                                        Solely Advertise My Skills, My Rankings Will Be Severely Affected.
-                                                    </Form.Check.Label>
-                                                </Form.Group>
-                                                <div className="m-3">
-                                                    <Divider />
-                                                </div>
-                                                <Button className="btn ms-3 mb-3 bg-transparent" style={{border:'1px solid #0d406b',color:'#0d406b'}}>
-                                                    Send
-                                                </Button>
-                                            </Modal.Body>
-                                        </Modal>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col lg={4}>
+                            {/*  Customize Details  */}
+                            <Card className="m-4">
+                                <Card.Header className="py-2 text-center  bg-white">
+                                    <h6 className="mb-0">{jobdata.project_title}</h6>
+                                </Card.Header>
+                                <Card.Body className="bg-white">
+                                    <ul className="list-unstyled fs--1 mb-0">
+
+                                        <li>
+                                            <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
+                                                <Icon icon="tabler:currency-pound"
+                                                    className='me-1'
+                                                    style={{ marginTop: '-1px' }}
+                                                    color="#003f6b"
+                                                    width="20"
+                                                    height="20" />
+                                                {getLevel(jobdata?.budget)} Level</p>
+                                        </li>
+                                        <li>
+                                            <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
+                                                <Icon icon="material-symbols:location-on"
+                                                    className='me-1'
+                                                    style={{ marginTop: '-1px' }}
+                                                    color="#003f6b"
+                                                    width="20"
+                                                    height="20" />
+                                                {jobdata.location}</p>
+                                        </li>
+                                        <li>
+                                            <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
+                                                <Icon icon="heroicons-outline:office-building"
+                                                    color="#003f6b"
+                                                    width="20"
+                                                    height="20"
+                                                    style={{ marginTop: '-1px' }}
+                                                    className="me-1"
+                                                />
+                                                {jobdata.category}</p>
+                                        </li>
+                                        <li>
+                                            <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
+                                                <Icon icon="fa6-solid:business-time"
+                                                    color="#003f6b"
+                                                    width="20"
+                                                    height="20"
+                                                    style={{ marginTop: '-1px' }}
+                                                    className="me-1"
+                                                />
+                                                Duration: {jobdata.project_duration}</p>
+                                        </li>
+                                    </ul>
+                                </Card.Body>
+                                <Card.Footer className="bg-white">
+                                    <div>
+                                        <p className="fw-semibold text-center" style={{ color: '#003f6b' }}> <span className="text-success me-2">5</span>Proposals Received</p>
+                                    </div>
+                                </Card.Footer>
+                            </Card>
+                            {/* Customize Details */}
+
+                            {/* Ends In Days  Card*/}
+                            <Card className="m-4 py-2">
+                                <Card.Body className="bg-white">
+                                    {/* Ends In Days */}
+                                    <div className="d-flex justify-content-around">
+                                        <div>
+                                            <p style={{ color: '#003f6b' }} className=" fw-semibold">Ends In </p>
+                                            <p className="text-success fw-bold">{daysDiff} Days</p>
+                                        </div>
+                                        <div>
+                                            <p style={{ color: '#003f6b' }} className=" fw-semibold">Client Budget</p>
+                                            <p className="text-success text-center fw-bold">£ 0</p>
+                                        </div>
+                                    </div>
+                                    {/* Ends In Days */}
+
+                                    {/*  */}
+
+                                    <Divider />
+                                    <div className="mb-2">
+
+                                        <p
+                                            style={{ fontSize: '12px' }}
+                                            className="fw-semibold mt-2 text-center text-uppercase">
+                                            Project ID : : 1484KHON
+                                        </p>
+                                        <div className="d-flex justify-content-center">
+                                            <Button 
+                                            className="bg-transparent  text-danger w-50 border-danger"
+                                            as={Link}
+                                            to="/wishlist/project"
+                                            >
+                                                <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="me-2" color="#003f6b" width="20" height="20" />  Saved
+                                            </Button>
+                                        </div>
                                     </div>
                                     {/*  */}
+                                    <Divider />
+                                    {/* Profile Details */}
+                                    <div className="mt-2 d-flex justify-content-center">
+                                        <img src={profileImg}
+                                            className="rounded-circle  border border-dark"
+                                            width="80px"
+                                            height="75px" />
+                                    </div>
+                                    <p className="text-center mt-2 fw-semibold">
+                                        Email: <span style={{ color: '#003f6b' }} className="fw-semibold">{jobdata.customer_email}</span>
+                                    </p>
+                                    <div className="d-flex justify-content-around">
+                                        <p role="button" style={{ color: '#003f6b' }}>Name</p>
+                                        <p role="button" style={{ color: '#003f6b' }}>Profession</p>
+                                        <p role="button" style={{ color: '#003f6b' }}>Like</p>
+                                    </div>
+                                    {/* Profile Details */}
+                                </Card.Body>
+                                <Card.Footer className="bg-white">
+                                    <Link to={`/jobdetails/${jobid}/jobproposal`}>
+                                        <Button  className="border-0 w-100 text-uppercase" style={{ color: '#fff', background: '#003f6b' }}>
+                                            Send Proposal
+                                        </Button>
+                                    </Link>
+                                </Card.Footer>
+                            </Card>
 
-                                </Col>
-                            </Row>
+                            {/* Report This Project */}
+                            <Card className="m-4 py-2">
+                                <Card.Header as="h6" className="text-uppercase bg-white" >
+                                    Report this Project
+                                </Card.Header>
+                                <Card.Body>
+                                    <Form>
+                                        <Form.Group className="mb-3">
+                                            <Form.Control
+                                                type="text"
+                                                placeholder="Type Reason"
+                                            />
+                                        </Form.Group>
+                                        <Form.Group className="mb-3">
+                                            <Form.Control
+                                                as="textarea"
+                                                placeholder='Description....'
+                                                rows={5} />
+                                        </Form.Group>
+                                        <div className="d-flex justify-content-center">
+                                            <Button style={{ background: '#003f6b' }} className="border-0 w-100 text-uppercase">
+                                                Submit
+                                            </Button>
+                                        </div>
+                                    </Form>
 
-                            {/* Special Addition by UI */}
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            {/* Modal Content */}
+            <Modal
+                show={show}
+                onHide={() => setShow(false)}
+                dialogClassName="modal-lg modal-90w"
 
-                        </div>
-                        <div className="container2 col-3">
-                            <p className="report-title">Report this Project</p>
-                            <form>
-                                <input type='text' id="report-box" placeholder="Type Reason" />
-                                <input type='text' id="desc-box" placeholder="Description" />
-                                <input type='button' className="submit" value='Submit' />
-                            </form>
-                        </div>
+                aria-labelledby="example-custom-modal-styling-title"
+            >
+                <Modal.Header>
+                    <Modal.Title id="example-custom-modal-styling-title">
+                        <h6 className="text-uppercase">
+                        Please Type Your Message
+                        </h6>
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form.Group className="mb-3">
+                        <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Check className="ms-3" />
+                        <Form.Check.Label className="text-700">
+                            I Confirm That This Message Is Essential For The Submission Of My
+                            Proposal And | Understand That It Will Be Publicly Posted In The
+                            Project's Clarification Board And In Case It Is Used To Spam Or
+                            Solely Advertise My Skills, My Rankings Will Be Severely Affected.
+                        </Form.Check.Label>
+                    </Form.Group>
+                    <div className="d-flex justify-content-end mb-3">
+                        <Button onClick={handleClose} style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                            Send
+                        </Button>
                     </div>
-                    <br></br>
-                </div>
-                <div color="col-12">
-                    <Footer />
-                </div>
-            </div>
+                </Modal.Body>
+            </Modal>
+            {/* Modal Content */}
+
+
+
+
+
+
         </>
     )
 }
