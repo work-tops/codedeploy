@@ -36,7 +36,7 @@ const Header = () => {
                         <Button style={{fontSize:'13px'}} className='text-uppercase m-2 text-light  navbar-standard border border-0'>How it works</Button>
                     </Link>
                     {' '}
-                    <Link to='/userlog'>
+                    <Link to='/owner'>
                         <Button style={{fontSize:'13px'}} className='text-uppercase m-2 text-light  navbar-standard border border-0'>Log in</Button>
                     </Link>
                     {' '}

@@ -32,7 +32,7 @@ const UserLogin = ({ bgProps }) => {
     const _userdetails = {
       email: formData.email,
       password: formData.password,
-      role: "Freelancer"
+      role: "Owner"
     }
     await createData("login", _userdetails).then(async response => {
       console.log(response);
@@ -41,7 +41,7 @@ const UserLogin = ({ bgProps }) => {
       })
       toast.success('Successfully Logged In')
       sessionStorage.setItem("token", response.data.token);
-      history.push("/Seller/Landing");
+      history.push("/ProjectOwner/Landing");
       // if (formData.role == "Freelancer") {
       //   history.push("/Seller/Landing");
       // } else {

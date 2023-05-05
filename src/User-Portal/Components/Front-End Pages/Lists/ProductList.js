@@ -130,7 +130,7 @@ function ProductList() {
                                return <span className="badge m-1 bg-secondary" key={`filter_${i}`}>
                                     {x} <Icon icon="ic:sharp-close" onClick={()=>removeFilter(i)} color="white" width="14" height="14" />
                                 </span>
-                            })}
+                            })} 
                         </Col>
                     </Row>
                     <Col lg={3}>

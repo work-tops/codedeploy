@@ -11,6 +11,7 @@ import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
 import { Button, Col, Row, Modal, Form } from "react-bootstrap";
 import worktops from '../../Components/Project images/Handyman.jpg'
 import Divider from "../../TemplateAssets/common/Divider";
+import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 function JobDetails() {
     const [show, setShow] = useState(false);
 
@@ -20,6 +21,7 @@ function JobDetails() {
 
     let { jobid } = useParams();
     const [jobdata, setJobdata] = useState([])
+    const [proposalsList, setProposals] = useState([])
     const [board, setBoard] = useState(false)
     const history = useHistory();
 
@@ -27,11 +29,12 @@ function JobDetails() {
         setBoard(!board)
     }
     const sendProposal = () => {
+        console.log('send proposal')
         var _token = sessionStorage.getItem("token");
         if(_token != null){
-            history.push(`/jobdetails/${jobid}/jobproposal`);
+            history.push(`/jobproposal/${jobid}/jobproposal`);
         }else{
-            history.push("/userlog");
+            history.push("/owner");
         }
     }
     const getLevel = (value) => {
@@ -48,6 +51,15 @@ function JobDetails() {
         const response = await getAllData('job/' + jobid);
         setJobdata(response.data.job);
         sessionStorage.setItem("jobdata", JSON.stringify(response.data.job))
+        getProposals(jobid);
+    }
+    const getProposals = async (id) => {
+        const response = await getAllData('proposals/all');
+        var _data = response.data.proposals;
+        console.log(id)
+        console.log(_data)
+        _data = _data.filter(x=> x.job._id == id);
+        setProposals(_data);
     }
     useEffect(() => {
         getJobsById()
@@ -65,13 +77,13 @@ console.log(daysDiff);
     return (
         <>
             <div className="row">
-                <div className="col-12">
+                {/* <div className="col-12">
                     <ProjectOwnerHeader />
-                </div>
+                </div> */}
                 <div className="col-12">
-                    <Menubar />
+                <NavbarStandard />
                 </div>
-                <div className="col-12">
+                <div className="col-12 mt-5">
                     <JobDetailsPost />
                 </div>
                 <div className="col-12">
@@ -108,7 +120,7 @@ console.log(daysDiff);
                                         <img src={currency} alt="euro-currency" className="currency" />
                                     </div>
                                     <div>
-                                        <p className="amount"><i class="fa-sharp euros fa-solid fa-sterling-sign"></i>{' '}{jobdata.max_budget}</p>
+                                        <p className="amount"><i class="fa-sharp euros fa-solid fa-sterling-sign"></i>{' '}{jobdata.budget}</p>
                                         <p className="received-proposals">Client Budget</p>
                                     </div>
                                 </div>
@@ -119,9 +131,9 @@ console.log(daysDiff);
                                         <img src={newsfeed} alt="news-feed" className="news-feed" />
                                     </div>
                                     <div>
-                                        <p className="num">5</p>
+                                        <p className="num">{proposalsList?.length}</p>
                                         <p className="proposal">Proposal Received</p>
-                                        <p className="proposal-date">Mar 16 2023</p>
+                                       {proposalsList?.length > 0 && <p className="proposal-date">{proposalsList[0]?.created_date}</p>}
                                     </div>
                                 </div>
                             </div>

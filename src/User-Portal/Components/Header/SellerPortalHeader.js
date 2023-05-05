@@ -8,7 +8,7 @@ function SellerPortalHeader() {
     const history = useHistory()
     const sessionclear = () =>{
         sessionStorage.clear();
-        history.push("/userlog")
+        history.push("/owner")
     }
 
     return (

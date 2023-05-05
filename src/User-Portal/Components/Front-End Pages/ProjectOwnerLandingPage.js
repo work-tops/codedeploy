@@ -7,16 +7,17 @@ import ProjectOwnerYourProjects from "./ProjectOwnerYourProjects";
 import Footer from "../Footer/Footer";
 import { Row, Col, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 
 function ProjectOwnerLandingPage() {
     return (
         <>
             <Row>
-                <Col lg={12}>
+                {/* <Col lg={12}>
                     <ProjectOwnerHeader />
-                </Col>
-                <Col lg={12}>
-                    <Menubar />
+                </Col> */}
+                <Col lg={12} className="mt-5">
+                    <NavbarStandard />
                 </Col>
                 <Col lg={12}>
                     <PostPg />

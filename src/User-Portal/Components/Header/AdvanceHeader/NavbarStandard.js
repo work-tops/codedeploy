@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import team3 from '../../../TemplateAssets/Images/employee.png'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Container, Navbar, Button, Form } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import { topNavbarBreakpoint } from '../../../../config';
@@ -22,9 +22,11 @@ const NavbarStandard = () => {
   const [show, setShow] = useState(false);
   const [id, setId] = useState(1);
   const [user, setUser] = useState({});
+  const history = useHistory();
 
   const logOut = () => {
     sessionStorage.clear();
+    history.push("/owner");
     window.location.reload();
   }
 
@@ -33,11 +35,11 @@ const NavbarStandard = () => {
     var _user = sessionStorage.getItem('user');
     var _json = JSON.parse(_user);
     setUser(_json);
-    if (_json?.role == "Freelancer") {
-      setId(3);
-    }
     if (_json?.role == "Owner") {
       setId(2);
+    }
+    if (_json?.role == "Freelancer") {
+      setId(3);
     }
     console.log('navbar_prop', id);
   }, [])
@@ -52,7 +54,7 @@ const NavbarStandard = () => {
       style={{ background: '#003f6b' }}
 
     >
-      <Container fluid>
+      <Container>
         <div className='d-flex' style={{ flexDirection: 'row' }}>
           <div>
             {/* Logo */}
@@ -62,7 +64,7 @@ const NavbarStandard = () => {
             {/* Logo */}
           </div>
           <div>
-            {id == 3 &&
+            {id == 2 &&
               <div className='ms-2 mt-2'>
                 <Link to="/postproject">
                   <Button className='bg-white border-0 me-2' style={{ color: '#003f6b' }}>Post a Project</Button>
@@ -71,15 +73,15 @@ const NavbarStandard = () => {
           </div>
         </div>
         {/* Search */}
-        <Form className="  position-relative">
+        {/* <Form className="  position-relative">
           <Form.Control
             type="search"
             placeholder="Search..."
             aria-label="Search"
             className="rounded-pill ms-5 w-100  search-input"
           />
-          {/* <Icon icon="material-symbols:search" color="#fff" width="24" height="24" /> */}
-        </Form>
+         
+        </Form> */}
         {/* Search */}
         <div className='ms-5'>
           <Navbar.Toggle onClick={() => setNavbarCollapsed(!navbarCollapsed)} />
@@ -105,7 +107,7 @@ const NavbarStandard = () => {
 
               <Nav.Link
                 as={Link}
-                to="/productlist1"
+                to="/productlist"
                 className='mt-2'
                 style={{ fontSize: '12px' }}
               >
@@ -114,7 +116,7 @@ const NavbarStandard = () => {
 
               <Nav.Link
                 as={Link}
-                to="/listjobs"
+                to="/joblist"
                 className='mt-2'
                 style={{ fontSize: '12px' }}
               >

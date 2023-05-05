@@ -36,7 +36,7 @@ function HomePage() {
                 <div className="col-12">
                 <NavbarStandard />
                 </div>
-                <div className="col-12 mt-5 pt-5">
+                <div className="col-12 mt-5 pt-5 container">
                     <div className="d-inline-block">
                         <p className="mordern-interior-tit">Mordern Interior</p>
                         <h1 className="morder-interior-h1">Create Your Interior Design</h1>
