@@ -9,7 +9,7 @@ function Menubar() {
                     <Row>
                         <div className="d-flex justify-content-end m-2">
                             <Col lg={1}>
-                                <Link to="/listjobs">
+                                <Link to="/joblist">
                                     <Button className="btn bg-transparent text-dark border-0">
                                         Projects
                                     </Button>

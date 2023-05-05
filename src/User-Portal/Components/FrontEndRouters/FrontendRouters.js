@@ -6,7 +6,6 @@ import JobDetails from "../Front-End Pages/JobDetails";
 import ProjectListing from "../Front-End Pages/ProjectListing";
 import SignUpPage from "../Front-End Pages/SignUpPage";
 import JobProposal from "../Front-End Pages/JobProposal";
-import HomePage from "../Front-End Pages/HomePage";
 import UserLogin from '../Front-End Pages/Login/UserLogin'
 // import LoginPortal from "../Front-End Pages/LoginPortal";
 import ProjectOwnerRegister from "../Front-End Pages/ProjectOwnerRegister";
@@ -60,15 +59,25 @@ import ProductGrid from "../Front-End Pages/ProductList/ProductGrid";
 const FrontEndRouters = () => {
     return (
         <Switch>
+            {/* proper order routes */}
+            <Route path='/owner'><UserLogin /></Route>
             <Route path='/signup'><SignUpPage /></Route>
-            <Route path='/jobdetails/:jobid/jobproposal'><JobProposal /></Route>
+            <Route path="/freelancer/:login"><SellerLogin /></Route>
+            <Route path="/productlist"><ProductList /></Route>
+            <Route path="/productgrid1"><ProductGrid /></Route>
+            <Route path="/joblist"><ListJobs /></Route>
+            <Route path="/jobdetails/:jobid"><JobDetails /></Route>
+            <Route path='/jobproposal/:jobid/jobproposal'><JobProposal /></Route>
+
+            <Route path='/servicelist'><ServiceList /></Route>
+            
+            <Route path="/PostProject"><PostProject /></Route>
+            {/* proper order routes end */}
+
             <Route path='/projectlisting'><ProjectListing /></Route>
             <Route path="/proposallist"><ProposalList /></Route>
-            <Route path="/jobdetails/:jobid"><JobDetails /></Route>
-            <Route path="/homepage"><HomePage /></Route>
             {/*  */}
-            <Route path='/UserLogin'><UserLogin /></Route>
-            <Route path="/SellerLogin"><SellerLogin/></Route>
+
             {/*  */}
             {/* <Route path='/loginportal'><LoginPortal /></Route> */}
             <Route path='/projectownersignup'><ProjectOwnerRegister /></Route>
@@ -93,7 +102,7 @@ const FrontEndRouters = () => {
             <Route path='/POproductenquirescard'><POProductEnquiresCard /></Route>
             <Route path='/POReviewsCard'><POReviewCard /></Route>
             {/* <Route path='/productList'><ProductList /></Route> */}
-            <Route path='/servicelist'><ServiceList /></Route>
+
             <Route path='/productdetails/:proid'><ProductDetails /></Route>
             <Route path='/wishlist/product'><WishListProductCard /></Route>
             <Route path='/wishlist/project'><ProjectWishListCard /></Route>
@@ -118,11 +127,8 @@ const FrontEndRouters = () => {
             <Route path="/contactus"><ContactUs /></Route>
             <Route path="/termsofuse"><TermsOfUse /></Route>
             <Route path="/shippingpage"><ShippingPage /></Route>
-            <Route path="/PostProject"><PostProject/></Route>
-            <Route path="/listjobs"><ListJobs/></Route>
-            <Route path="/productlist1"><ProductList/></Route>
-            <Route path="/productgrid1"><ProductGrid/></Route>
-            
+
+
         </Switch>
 
     )

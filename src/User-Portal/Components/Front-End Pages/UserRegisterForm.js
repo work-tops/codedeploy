@@ -6,7 +6,7 @@ import { Button, Form } from "react-bootstrap";
 import Divider from "../../TemplateAssets/common/Divider";
 import SocialAuthButtons from "../../TemplateAssets/authentication/SocialAuthButtons";
 function UserRegisterForm(hasLabel) {
-    const [toggleForm, setToggleForm] = useState(1);
+    const [toggleForm, setToggleForm] = useState(2);
     const [form, setForm] = useState({})
     let history = useHistory();
 
@@ -22,7 +22,7 @@ function UserRegisterForm(hasLabel) {
             phone: form.phone,
             password: form.password,
             confirm_password: form.password,
-            role: toggleForm == 3 ? "Freelancer" : "Owner",
+            role: "Owner",
             terms_and_condition: true,
             is_active: true,
             is_approved: true,
@@ -31,10 +31,10 @@ function UserRegisterForm(hasLabel) {
         console.log('add user', userObject);
         const response = await createData("register", userObject)
         if (response.status === 201) {
-            toast.success('Successfully Freelancer Added')
+            toast.success('Successfully Registered')
             setForm({});
             // clearForm();
-            history.push('/user');
+            history.push('/owner');
         } else {
             toast.error('Something went wrong')
         }
@@ -128,7 +128,6 @@ function UserRegisterForm(hasLabel) {
                             </p>
                         </Form.Group>
                         <div className="d-flex justify-content-between">
-                            <Link to='/userLogin'>
                                 <Button
                                     style={{ background: '#003f6b' }}
                                     className="border-0 d-block m-2 text-uppercase"
@@ -137,16 +136,14 @@ function UserRegisterForm(hasLabel) {
                                 >
                                     Sign Up
                                 </Button>
-                            </Link>
 
-                            <Button
+                           <Link to="/owner"> <Button
                                 style={{ background: '#df2020' }}
                                 className="border-0 d-block m-2 text-uppercase"
-                                onClick={() => { toggleCard(1) }}
-                                id="back"
-                            >
+                                id="back">
                                 Back
                             </Button>
+                            </Link>
                         </div>
                     </div>
                 </Form >
@@ -237,7 +234,7 @@ function UserRegisterForm(hasLabel) {
                         </Form.Group>
 
                         <div className="d-flex justify-content-between">
-                            <Link to='/SellerLogin'>
+                            <Link to='/seller'>
                                 <Button
                                     style={{ background: '#003f6b' }}
                                     className="border-0 d-block m-2 text-uppercase"

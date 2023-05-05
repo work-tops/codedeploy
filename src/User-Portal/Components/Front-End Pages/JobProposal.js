@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import toast, { Toaster } from 'react-hot-toast';
 import { createData } from "../../../Services/ProxyService";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
+import { useHistory } from "react-router-dom";
 import { useDropzone } from 'react-dropzone';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -22,16 +23,6 @@ import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
 import Flex from '../../TemplateAssets/common/Flex';
 import CardDropdown from '../../TemplateAssets/common/CardDropdown';
 
-
-
-
-
-
-
-
-
-
-
 function JobProposal() {
     const jobdatas = sessionStorage.getItem("jobdata")
     const jobdetails = JSON.parse(jobdatas)
@@ -39,6 +30,8 @@ function JobProposal() {
     const [form, setform] = useState([])
     const [serviceFee, setServiceFee] = useState(20)
     const [amountUReceive, setAmountUReceive] = useState(20)
+    const [user, setUser] = useState({});
+    const history = useHistory();
     console.log(form)
 
     const handleChange = (e) => {
@@ -54,18 +47,19 @@ function JobProposal() {
     const AddJobproposal = async () => {
         const jobproposal = {
             job: jobdetails,
+            jobId: jobdetails._id,
             proposal_amount: form.proposal_amount,
-            commission: 1000,
-            amount: 1000,
+            commission: serviceFee,
+            amount: amountUReceive,
             completed_duration: form.completed_duration,
             cover_letter: form.cover_letter,
             attachments: [],
-            created_by: "1",
+            created_by: user._id,
         }
         const response = await createData("proposal/new", jobproposal)
         if (response.status === 201) {
             toast.success('Successfully Jobproposal Added')
-            cleardata()
+            history.push(`/jobdetails/${jobdetails?._id}`);
         } else {
             toast.error('Something went wrong')
         }
@@ -96,6 +90,12 @@ function JobProposal() {
     } else if (jobdetails.budget > 3001) {
         lavel = "High"
     }
+    useEffect(() => {
+        var _user = sessionStorage.getItem('user');
+        var _json = JSON.parse(_user);
+        setUser(_json);
+      }, [])
+
 
     // Upload Files(Optional)
     const [cover, setCover] = useState();
@@ -250,12 +250,12 @@ function JobProposal() {
                                                 </Card.Body>
                                             </Card>
                                         </div>
-                                    </Form>
                                     <div className="d-flex justify-content-end">
                                         <Button className="border-0" style={{ background: '#003f6b' }} type="submit">
                                             SEND
                                         </Button>
                                     </div>
+                                    </Form>
                                 </Card.Body>
                             </Card>
                         </Col>

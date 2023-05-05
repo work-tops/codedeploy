@@ -11,16 +11,19 @@ import {
     OverlayTrigger,
     Row,
     Tooltip,
-    
+
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import ReactPaginate from 'react-paginate';
+import Flex from '../../TemplateAssets/common/Flex';
+import SimpleBarReact from 'simplebar-react';
 
 function ListJobs(layout) {
 
     const [jobs, setJobs] = useState([]);
     const [mainList, setMainList] = useState([]);
+    const [filterList, setFilterList] = useState([]);
     const [categories, setCategories] = useState([]);
     const [showSpinner, setShowSpinner] = useState(true);
     const Jobslist = async () => {
@@ -81,26 +84,48 @@ function ListJobs(layout) {
         setJobs(_mainFilterList);
     }
     const categorySearch = (e) => {
-        var _key = e.target.value;
-        console.log(_key);
+        var _filters = [...filterList];
+        if (e.target.checked == true) {
+            _filters.push(e.target.value);
+        } else {
+            var _inx = _filters.findIndex(x => x == e.target.value);
+            _filters.splice(_inx, 1);
+        }
+        mainCategoryFilter(_filters);
+        setFilterList(_filters);    
+    }
+    const mainCategoryFilter = (_filters) => {  
         var _mainList = [...mainList];
         var _mainFilterList = [];
+        _filters.map((x) => {
+            _mainList.map((y) => {
+                if (y.category == x) {
+                    _mainFilterList.push(y);
+                }
+            })
+        });
 
-        if (e.target.checked == true) {
-            _mainList.map((x, i) => {
-                if (x.category == _key) {
-                    _mainFilterList.push(x);
-                }
-            })
-        } else {
-            _mainList.map((x, i) => {
-                if (x.category == _key) {
-                    var _inx = _mainFilterList.findIndex(x => x.category == e.target.value);
-                    _mainFilterList.splice(_inx, 1);
-                }
-            })
+        if (_filters.length > 0) {
+            setJobs(_mainFilterList);
         }
-        setJobs(_mainFilterList);
+        else {
+            setJobs(_mainList);
+        }
+    }
+    const removeFilter = async (key) => {
+        var _filters = [...filterList];
+        var _inxx = categories.findIndex(x=> x.category == _filters[key])
+        document.getElementById(`job_check_${_inxx}`).checked = false;
+        _filters.splice(key, 1);
+        setJobs([...mainList]);
+        setFilterList(_filters);
+    }
+    const resetFilter = async () => {
+        categories.forEach((y, j) => {
+            document.getElementById(`job_check_${j}`).checked = false;
+        })
+        setJobs([...mainList]);
+        setFilterList([]);
     }
 
     useEffect(() => {
@@ -146,7 +171,84 @@ function ListJobs(layout) {
                     <NavbarStandard />
                 </Col>
                 <Col className='mt-5' lg={3}>
-                    <ProjectListFilter />
+                    <Card className="course-filter m-4">
+                        <SimpleBarReact style={{ height: '100%' }}>
+                            <Card.Header as={Flex} className="flex-between-center pt-x1">
+                                {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
+                                <div className='justify-content-xl-between d-flex m-2'>
+                                    <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
+                                        <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
+                                        <span>Filter</span>
+                                    </h5>
+                                    <Button
+                                        variant="outline-secondary"
+                                        size="sm"
+                                        className="ms-2 mt-0 mb-0"
+                                        style={{ fontSize: '12px' }}
+                                        onClick={() => resetFilter()}
+                                    >
+                                        <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
+                                        Reset
+                                    </Button>
+                                </div>
+                                {/* </Flex> */}
+                                {/* {isOffcanvas && (
+                        <Button
+                            onClick={() => setShow(false)}
+                            className="btn-close text-reset"
+                            size="sm"
+                            variant="link"
+                        ></Button>
+                    )} */}
+                            </Card.Header>
+                            <Card.Body className="py-0 mt-2">
+
+                                <Flex wrap="wrap" className=" mb-2">
+                                    {filterList?.map((x, i) => {
+                                        return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon icon="ic:sharp-close" color="white" width="14" height="14" /></span>
+                                    })}
+                                </Flex>
+                                <ul className="list-unstyled">
+                                {categories?.map((x, i) => {
+                                    // return <div key={`job_check_${i}`}>
+                                    //             <input type='checkbox' id={`job_check_${i}`} value={x?.category} onChange={(e) => categorySearch(e)} />{x?.category}
+                                    //             <br></br>
+                                    //         </div>
+
+                                   return <li key={`job_check_${i}`}>
+                                        <Form.Check
+                                            type="checkbox"
+                                            className="form-check d-flex ps-0"
+                                        >
+                                            <Form.Check.Label
+                                                className="fs--1 flex-1 text-truncate"
+                                            >
+                                                {x?.category}
+                                            </Form.Check.Label>
+
+                                            <Form.Check.Input id={`job_check_${i}`} value={x?.category} onChange={(e) => categorySearch(e)}
+                                                type={'checkbox'}
+                                            />
+                                        </Form.Check>
+                                    </li>
+                                })}
+                                </ul>
+                                <Form>
+                                    <Form.Group className='mb-3'>
+                                        <Form.Label className='text-600' style={{ fontWeight: '500', fontSize: '.6944444444rem' }}>Search By Geo Locations</Form.Label>
+                                        <Form.Control placeholder='Geo Locations' onChange={(e) => locationSearch(e)} type='search' />
+                                    </Form.Group>
+                                </Form>
+                                <Form>
+                                    <Form.Group className='mb-3'>
+                                        <Form.Label className='text-600' style={{ fontWeight: '500', fontSize: '.6944444444rem' }}>Range</Form.Label>
+                                        <p className='fw-semibold' style={{ fontSize: '14px' }}>£ 0-10,000</p>
+                                        <Form.Range min={0} max={10000} onChange={(e) => priceSearch(e)} />
+                                    </Form.Group>
+                                </Form>
+                            </Card.Body>
+                        </SimpleBarReact>
+                    </Card>
                 </Col>
 
                 <Col className='mt-5' lg={9}>
@@ -230,9 +332,9 @@ function ListJobs(layout) {
                                         <Row className="g-0 h-100">
                                             <Col lg={8}>
                                                 <div className='d-flex justify-content-start mb-3'>
-                                                    <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>Kitchen</span>
-                                                    <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>New</span>
-                                                    <span className='badge m-1 rounded-pill p-2' style={{ background: '#fde6d8', color: '#9d5228' }}>Kitchen Worktops with Island</span>
+                                                    <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>{data?.category}</span>
+                                                    <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>{data?.sub_category}</span>
+                                                    {/* <span className='badge m-1 rounded-pill p-2' style={{ background: '#fde6d8', color: '#9d5228' }}>Kitchen Worktops with Island</span> */}
                                                 </div>
 
                                                 <div key={key}>
@@ -257,7 +359,7 @@ function ListJobs(layout) {
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:tag" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} /> Job ID : {data?._id}</p>
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="flat-color-icons:like" className='me-1' style={{ marginTop: '-5px' }} color="#003f6b" width="20" height="20" hFlip={true} /> Click to Save</p>
                                                             <Link to={`jobdetails/${data._id}`} role="button">
-                                                                <Button className='border-0' style={{ background: '#003f6b',fontSize:'14px' }}>
+                                                                <Button className='border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
                                                                     VIEW JOB
                                                                 </Button>
                                                             </Link>

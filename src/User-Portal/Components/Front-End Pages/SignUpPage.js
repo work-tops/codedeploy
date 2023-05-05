@@ -7,7 +7,7 @@ function SignUpPage() {
 
     return (
         <>
-            <NavbarStandard />
+            {/* <NavbarStandard /> */}
             <RegisterAuthSplitLayout>
                 <h3 className='mb-3'>Start Living Your Work Dream</h3>
                 <p style={{ fontSize: '12px' }}>What do you want to do?(You Can dit this Later)</p>
