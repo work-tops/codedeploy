@@ -24,6 +24,7 @@ function JobDetails() {
 
     let { jobid } = useParams();
     const [jobdata, setJobdata] = useState([])
+    const [chatList, setChatList] = useState([])
     const [proposalsList, setProposals] = useState([])
     const [board, setBoard] = useState(false)
     const history = useHistory();
@@ -34,9 +35,9 @@ function JobDetails() {
     const sendProposal = () => {
         console.log('send proposal')
         var _token = sessionStorage.getItem("token");
-        if(_token != null){
+        if (_token != null) {
             history.push(`/jobproposal/${jobid}/jobproposal`);
-        }else{
+        } else {
             history.push("/owner");
         }
     }
@@ -61,8 +62,15 @@ function JobDetails() {
         var _data = response.data.proposals;
         console.log(id)
         console.log(_data)
-        _data = _data.filter(x=> x.job._id == id);
+        _data = _data.filter(x => x.job._id == id);
         setProposals(_data);
+    }
+    const askaQuestion = async () => {
+        var _data = document.getElementById('ask_question').value;
+        var _chatList = [...chatList];
+        _chatList.push(_data);
+        setChatList(_chatList);
+        document.getElementById('ask_question').value = '';
     }
     useEffect(() => {
         getJobsById()
@@ -118,12 +126,12 @@ function JobDetails() {
                                                     <Form>
                                                         <Form.Group className="mb-3">
                                                             <Form.Control
-                                                                as="textarea"
+                                                                as="textarea" id="ask_question"
                                                                 placeholder='Type Your Message Here'
                                                                 rows={5} />
                                                         </Form.Group>
                                                         <div className="d-flex justify-content-end mb-3">
-                                                            <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                                                            <Button onClick={() => { askaQuestion() }} style={{ background: '#003f6b' }} className="text-uppercase border-0">
                                                                 Submit
                                                             </Button>
                                                         </div>
@@ -132,53 +140,27 @@ function JobDetails() {
                                             ) : ""}
                                         </Col>
                                     </Row>
-                                    <Card>
-                                        <Card.Body>
-                                            <Row>
-                                                <Col className="mt-3" lg={3}>
-                                                    <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
-                                                </Col>
-                                                <Col className="mt-3" lg={8}>
-                                                    <p style={{ fontSize: '14px' }} className="">
-                                                        Hi There, Yes, | Do Have Designs And It Will Be Comfortable To Do All Task
-                                                        In Phases With Exact Deadlines.
-                                                        Can We Have A Short Meeteng To Make Communication Process Faster
-                                                        And Easier?
-                                                    </p>
-                                                    <Button
-                                                        onClick={handleShow}
-                                                        style={{ background: '#003f6b', fontSize: '14px' }}
-                                                        className="btn mb-3 text-uppercase border-0">
-                                                        Reply
-                                                    </Button>
-                                                </Col>
-                                            </Row>
-                                        </Card.Body>
-                                    </Card>
-                                    {/*  */}
-                                    <Card className="mt-3">
-                                        <Card.Body>
-                                            <Row>
-                                                <Col className="mt-3" lg={3}>
-                                                    <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
-                                                </Col>
-                                                <Col className="mt-3" lg={8}>
-                                                    <p style={{ fontSize: '14px' }} className="">
-                                                        Hi There, Yes, | Do Have Designs And It Will Be Comfortable To Do All Task
-                                                        In Phases With Exact Deadlines.
-                                                        Can We Have A Short Meeteng To Make Communication Process Faster
-                                                        And Easier?
-                                                    </p>
-                                                    <Button
-                                                        onClick={handleShow}
-                                                        style={{ background: '#003f6b', fontSize: '14px' }}
-                                                        className="btn mb-3 text-uppercase border-0">
-                                                        Reply
-                                                    </Button>
-                                                </Col>
-                                            </Row>
-                                        </Card.Body>
-                                    </Card>
+                                    {chatList.map((x) => {
+
+                                       return <Card>
+                                            <Card.Body>
+                                                <Row>
+                                                    <Col className="mt-3" lg={3}>
+                                                        <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
+                                                    </Col>
+                                                    <Col className="mt-3" lg={8}>
+                                                        <p style={{ fontSize: '14px' }} className=""> {x} </p>
+                                                        <Button
+                                                            onClick={handleShow}
+                                                            style={{ background: '#003f6b', fontSize: '14px' }}
+                                                            className="btn mb-3 text-uppercase border-0">
+                                                            Reply
+                                                        </Button>
+                                                    </Col>
+                                                </Row>
+                                            </Card.Body>
+                                        </Card>
+                                    })}
 
                                 </Card.Body>
                             </Card>
@@ -271,10 +253,10 @@ function JobDetails() {
                                             Project ID : : 1484KHON
                                         </p>
                                         <div className="d-flex justify-content-center">
-                                            <Button 
-                                            className="bg-transparent  text-danger w-50 border-danger"
-                                            as={Link}
-                                            to="/wishlist/project"
+                                            <Button
+                                                className="bg-transparent  text-danger w-50 border-danger"
+                                                as={Link}
+                                                to="/wishlist/project"
                                             >
                                                 <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="me-2" color="#003f6b" width="20" height="20" />  Saved
                                             </Button>
@@ -300,9 +282,9 @@ function JobDetails() {
                                     {/* Profile Details */}
                                 </Card.Body>
                                 <Card.Footer className="bg-white">
-                                        <Button  onClick={()=> sendProposal()} className="border-0 w-100 text-uppercase" style={{ color: '#fff', background: '#003f6b' }}>
-                                            Send Proposal
-                                        </Button>
+                                    <Button onClick={() => sendProposal()} className="border-0 w-100 text-uppercase" style={{ color: '#fff', background: '#003f6b' }}>
+                                        Send Proposal
+                                    </Button>
                                 </Card.Footer>
                             </Card>
 
@@ -349,7 +331,7 @@ function JobDetails() {
                 <Modal.Header>
                     <Modal.Title id="example-custom-modal-styling-title">
                         <h6 className="text-uppercase">
-                        Please Type Your Message
+                            Please Type Your Message
                         </h6>
                     </Modal.Title>
                 </Modal.Header>
