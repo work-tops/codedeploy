@@ -79,7 +79,7 @@ const UserLogin = ({ bgProps }) => {
             <Row className="g-0 ms-4 justify-content-center">
               <Col lg={9} xl={8} className="col-xxl-8">
                 <Card className='shadow'>
-                  <Card.Header style={{ background: '#003f6b' }} className="bg-shape bg-circle-shape  text-center p-2">
+                  <Card.Header style={{ background: '#003f6b' }} className="text-center p-2">
                     <Link to={'/'}>
                     <img src={logo} width="135px" />
                     </Link>

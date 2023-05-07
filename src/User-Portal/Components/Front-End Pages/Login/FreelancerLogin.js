@@ -146,16 +146,34 @@ useEffect(() => {
                           <div className="p-4 p-md-5 flex-grow-1">
                             <h3>Freelancer Registration</h3>
                             <Form onSubmit={handleSubmit}>
+                              <Form.Group className='mb-3'>
                               <Form.Label className='text-700'>First Name</Form.Label>
                               <input className='form-control' placeholder="First Name" value={formData.first_name} name="first_name" onChange={handleFieldChange} type="text" />
+                              </Form.Group>
+                              <Form.Group
+                              className='mb-3'
+                              >
                               <Form.Label className='text-700'>Last Name</Form.Label>
                               <input className='form-control' placeholder="Last Name" value={formData.last_name} name="last_name" onChange={handleFieldChange} type="text" />
+                              </Form.Group>
+                              <Form.Group
+                              className='mb-3'
+                              >
                               <Form.Label className='text-700'>Email address</Form.Label>
                               <input className='form-control' placeholder={'Email Address'} value={formData.email} name="email" onChange={handleFieldChange} type="email" />
+                              </Form.Group>
+                              <Form.Group
+                              className='mb-3'
+                              >
                               <Form.Label className='text-700'>Password</Form.Label>
                               <input className='form-control' placeholder={'Password'} value={formData.password} name="password" onChange={handleFieldChange} type="password" />
+                              </Form.Group>
+                              <Form.Group
+                              className='mb-3'
+                              >
                               <Form.Label className='text-700'>Phone</Form.Label>
                               <input className='form-control' placeholder={'Phone'} value={formData.phone} name="phone" onChange={handleFieldChange} type="number" />
+                              </Form.Group>
                               <Row className="justify-content-between align-items-center">
                                 <Col xs="auto">
                                   <Form.Check type="checkbox" id="rememberMe" className="mb-0 mt-3">
@@ -173,10 +191,14 @@ useEffect(() => {
                           </div> : <div className="p-4 p-md-5 flex-grow-1">
                             <h3>Freelancer Login</h3>
                             <Form onSubmit={handleSubmit}>
+                              <Form.Group className='mb-3'>
                               <Form.Label className='text-700'>Email address</Form.Label>
                               <input className='form-control' placeholder={'Email address'} value={formData.email} name="email" onChange={handleFieldChange} type="email" />
+                              </Form.Group>
+                              <Form.Group className='mb-3'>
                               <Form.Label className='text-700'>Password</Form.Label>
                               <input className='form-control' placeholder={'Password'} value={formData.password} name="password" onChange={handleFieldChange} type="password" />
+                              </Form.Group>
                               <Row className="justify-content-between align-items-center">
                                 <Col xs="auto">
                                   <Form.Check type="checkbox" id="rememberMe" className="mb-0">

@@ -21,8 +21,8 @@ const columns = [
         Header: 'Amount'
     },
     {
-        accessor:'status',
-        Header:'Status'
+        accessor: 'status',
+        Header: 'Status'
     }
 ];
 
@@ -34,7 +34,7 @@ const data = [
             Invoice #3611731-1 paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81",
-        status:"Paid"
+        status: "Paid"
     },
     {
         date: '22 MAR 2023',
@@ -43,7 +43,7 @@ const data = [
             Invoice #3611731-1 paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81",
-        status:"Paid"
+        status: "Paid"
     },
     {
         date: '22 MAR 2023',
@@ -52,7 +52,7 @@ const data = [
             Invoice #3611731-1 paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81",
-        status:"Paid"
+        status: "Paid"
     },
 
 ];
@@ -67,7 +67,12 @@ const InvoiceTable = () => {
     };
 
     return (
-        <Card>
+        <Card className="m-3 h-100">
+            <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
+                <h5 className="text-capitalize">
+                    Invoice
+                </h5>
+            </Card.Header>
             <Card.Body>
                 <AdvanceTableWrapper
                     columns={columns}

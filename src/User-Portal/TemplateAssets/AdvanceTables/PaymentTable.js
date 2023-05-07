@@ -52,7 +52,12 @@ const PaymentTable = () => {
     };
 
     return (
-        <Card>
+        <Card className="m-3 h-100">
+            <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
+                <h5 className="text-capitalize">
+                    transactions
+                </h5>
+            </Card.Header>
             <Card.Body>
                 <AdvanceTableWrapper
                     columns={columns}
