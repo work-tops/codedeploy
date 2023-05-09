@@ -1,7 +1,7 @@
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import Flex from '../../../TemplateAssets/common/Flex';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
-import worktops from '../../Project images/Conversions.jpg'
+import worktops from '../../Projectimages/Conversions.jpg'
 import React, { useState } from 'react';
 import { Button, Col, Form, Row, Card } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
@@ -41,7 +41,7 @@ const UserLogin = ({ bgProps }) => {
       })
       toast.success('Successfully Logged In')
       sessionStorage.setItem("token", response.data.token);
-      history.push("/ProjectOwner/Landing");
+      history.push("/OpenProjectCard");
       // if (formData.role == "Freelancer") {
       //   history.push("/Seller/Landing");
       // } else {
@@ -81,7 +81,7 @@ const UserLogin = ({ bgProps }) => {
                 <Card className='shadow'>
                   <Card.Header style={{ background: '#003f6b' }} className="bg-shape bg-circle-shape  text-center p-2">
                     <Link to={'/'}>
-                    <img src={logo} width="135px" />
+                    <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="135px" />
                     </Link>
                   </Card.Header>
                   <Card.Body className="p-4">

@@ -6,11 +6,14 @@ import ProjectOwnerLandingPage from '../ProjectOwnerLandingPage'
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 function OpenProjectCard() {
 
-    const [jobs, setJobs] = useState([])
+    const [jobs, setJobs] = useState([]) 
 
     const getJobList = async () => {
+        var _user = sessionStorage.getItem('user');
+        var _json = JSON.parse(_user);
         const response = await getAllData('jobs/all');
-        setJobs(response.data.jobs);
+        var _data = response.data.jobs.filter(x=> x.created_by == _json._id)
+        setJobs(_data);
     }
     useEffect(() => {
         getJobList()

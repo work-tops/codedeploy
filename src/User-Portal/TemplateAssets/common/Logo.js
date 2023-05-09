@@ -27,7 +27,7 @@ const Logo = ({ at, width, className, textClass, ...rest }) => {
           className
         )}
       >
-        <img className="me-2" src={mai_logo} alt="Logo" width="135px" />
+        <img className="me-2" src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} alt="Logo" width="135px" />
         {/* <span className={classNames('font-sans-serif', textClass)}>falcon</span> */}
       </div>
     </Link>

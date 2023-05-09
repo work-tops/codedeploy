@@ -1,10 +1,10 @@
 import React from "react";
 import { Row, Col, Button, Container } from "react-bootstrap";
-import worktops from '../../Project images/worktops-installation.jpg'
+import worktops from '../../Projectimages/worktops-installation.jpg'
 import { Icon } from "@iconify/react";
 import Divider from "../../../TemplateAssets/common/Divider";
 import { Link } from "react-router-dom";
-import freelancer from '../../Project images/Freelancer.jpg'
+import freelancer from '../../Projectimages/Freelancer.jpg'
 
 
 function ServiceInformation() {

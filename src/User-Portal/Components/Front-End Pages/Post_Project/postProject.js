@@ -180,7 +180,7 @@ const PostProject = () => {
 
   return (
     <>
-      <Form >
+      <Form  onSubmit={(e)=>{formsubmit(e)}}>
         <Row className=" font-sans-serif">
           {/* Header */}
           <Col lg={12} className='mb-5' >

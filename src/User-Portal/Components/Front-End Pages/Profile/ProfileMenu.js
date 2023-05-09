@@ -52,7 +52,7 @@ function ProfileMenu() {
                 Project
             </Button>
 
-            <Link to="/userlog">
+            <Link to="/owner">
                 <Button className="m-3 d-block btn bg-transparent text-dark border border-0">
                     Logout
                 </Button>

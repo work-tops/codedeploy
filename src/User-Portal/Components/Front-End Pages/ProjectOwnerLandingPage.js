@@ -11,9 +11,9 @@ function ProjectOwnerLandingPage() {
                 <Col lg={12} className="mb-5">
                     <NavbarStandard />
                 </Col>
-                <Col lg={12}>
+                {/* <Col lg={12}>
                     <Menubar />
-                </Col>
+                </Col> */}
                 <Col lg={12}>
                     <PostPg />
                 </Col>

@@ -320,15 +320,18 @@ const data = [
     }
 ];
 
-const AdvancedTable = () => {
+const AdvancedTable = () => { 
 
     const [product, setproducts] = useState([]);
     console.log(product.length)
 
     const Productlist = async () => {
+        var _user = sessionStorage.getItem('user');
+        var _json = JSON.parse(_user);
         const response = await getAllData('products');
-        setproducts(response.data.products);
-        sessionStorage.setItem("productlength", response.data.products.length)
+        var _data = response.data.products.filter(x=> x.created_by == _json._id)
+        setproducts(_data);
+        sessionStorage.setItem("productlength", _data.length)
     }
 
     useEffect(() => {
@@ -410,7 +413,7 @@ const AdvancedTable = () => {
                             Object.keys(selectedRowIds).length > 0 ?
                                 'You have selected ' + Object.keys(selectedRowIds).length + ' Product Lists'
                                 :
-                                'Product List'
+                                ''
                         }
                     </h5>
                 </Col>

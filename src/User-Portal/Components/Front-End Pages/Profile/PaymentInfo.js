@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Card, Button, Form } from "react-bootstrap";
 import ProfileMenu from "./ProfileMenu";
 import Divider from "../../../TemplateAssets/common/Divider";
-import atm from '../../Project images/atmcard.png'
+import atm from '../../Projectimages/atmcard.png'
 import PaymentTable from "../../../TemplateAssets/AdvanceTables/PaymentTable";
 
 function PaymentInfo() {

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory,useParams } from 'react-router-dom';
-import logo from '../../../TemplateAssets/Images/MP-logo.png'
 import bgShape from '../../../TemplateAssets/assets/illustrations/bg-shape.png';
 import shape1 from '../../../TemplateAssets/assets/illustrations/shape-1.png';
 import { Card, Button, Col, Form, Row } from 'react-bootstrap';
@@ -71,7 +70,7 @@ const loginUser = async (e) => {
     })
     toast.success('Successfully Logged In')
     sessionStorage.setItem("token", response.data.token);
-    history.push("/Seller/Landing");
+    history.push("/addproductcard");
   }).catch(err => {
     toast.error(err.response.data.message);
   })
@@ -108,7 +107,7 @@ useEffect(() => {
                       <Col style={{ background: '#003f6b' }} lg={5} className="text-white text-center">
                         <div className="position-relative p-4 pt-md-5 pb-md-7">
                           <div className="z-index-1 position-relative light">
-                            <Link to={'/'}> <img src={logo} width="135px" /></Link>
+                            <Link to={'/'}> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png" width="135px" /></Link>
                             <h3 className="mt-5 opacity-75 text-white"> Welcome </h3>
                           </div>
                           {isToggle == false ?<p className="mt-5 text-white">

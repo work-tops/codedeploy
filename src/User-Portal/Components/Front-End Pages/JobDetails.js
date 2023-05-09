@@ -3,13 +3,11 @@ import Menubar from "../Menubar/Menubar";
 import JobDetailsPost from "../Post/JobDetailsPost";
 import Footer from "../Footer/Footer";
 import newsfeed from "../Images/Newsfeed.jpg"
-import profileImg from "../Project images/Handyman.jpg"
 import currency from "../Images/Pound Currency.jpg"
 import { Link, useParams, useHistory } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
 import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
 import { Button, Col, Row, Card, Modal, Form } from "react-bootstrap";
-import worktops from '../../Components/Project images/Handyman.jpg'
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { Icon } from "@iconify/react";
 import { Divider } from "@mui/material";
@@ -146,7 +144,7 @@ function JobDetails() {
                                             <Card.Body>
                                                 <Row>
                                                     <Col className="mt-3" lg={3}>
-                                                        <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
+                                                        <img src="https://prium.github.io/phoenix/v1.11.0/assets/img/team/40x40/57.webp" height="60px" width="60px" className="m-3 rounded-circle" />
                                                     </Col>
                                                     <Col className="mt-3" lg={8}>
                                                         <p style={{ fontSize: '14px' }} className=""> {x} </p>
@@ -266,7 +264,7 @@ function JobDetails() {
                                     <Divider />
                                     {/* Profile Details */}
                                     <div className="mt-2 d-flex justify-content-center">
-                                        <img src={profileImg}
+                                        <img src="https://prium.github.io/phoenix/v1.11.0/assets/img/team/40x40/57.webp"
                                             className="rounded-circle  border border-dark"
                                             width="80px"
                                             height="75px" />

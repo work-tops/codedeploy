@@ -11,7 +11,7 @@ function Footer() {
                 <Col lg={12} className="navbar-standard">
                     <div className="m-3 d-flex justify-content-between">
                         <div>
-                            <img src={logo} width="100px" />
+                            <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="100px" />
                         </div>
                         <div className="">
                             <Link to="/privacypolicy">

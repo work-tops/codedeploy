@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import team3 from '../../../TemplateAssets/Images/employee.png'
+import team3 from './../../../TemplateAssets/Images/employee.png'
 import { Link, useHistory } from 'react-router-dom';
 import { Container, Navbar, Button, Form } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import { topNavbarBreakpoint } from '../../../../config';
 import AppContext from '../../../TemplateAssets/context/Context';
-import logo from "../../../TemplateAssets/Images/MP-logo.png"
 import {
   Card,
   Modal,
@@ -59,7 +58,7 @@ const NavbarStandard = () => {
           <div>
             {/* Logo */}
             <Navbar.Brand className="text-white dark__text-white" as={Link} to="/homepage">
-              <img src={logo} width="125px" />
+              <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="125px" />
             </Navbar.Brand>
             {/* Logo */}
           </div>
@@ -233,7 +232,7 @@ const NavbarStandard = () => {
                         to="#!"
                         className="pe-0 ps-2 nav-link"
                       >
-                        <img src={team3} width="30px" className='bg-white rounded-circle' />
+                        <img src="https://prium.github.io/phoenix/v1.11.0/assets/img/team/40x40/57.webp" width="30px" className='bg-white rounded-circle' />
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
@@ -247,18 +246,18 @@ const NavbarStandard = () => {
                           <Dropdown.Item as={Link} to="/MyProfile">
                             Profile
                           </Dropdown.Item>
-
-                          <Dropdown.Item as={Link} to="/user/addproduct">Products</Dropdown.Item>
-                          <Dropdown.Item as={Link} to="/user/addservices">Services</Dropdown.Item>
-                          <Dropdown.Item as={Link} to="/OpenProjectCard">My Project's</Dropdown.Item>
+                          {id == 2 && <Dropdown.Item as={Link} to="/OpenProjectCard">My Projects</Dropdown.Item>}
+                          {id == 3 && <Dropdown.Item as={Link} to="/addproductcard">My Products</Dropdown.Item>}
+                          {id == 3 && <Dropdown.Item as={Link} to="/addservicecard">My Services</Dropdown.Item>}
+                          {id == 3 && <Dropdown.Item as={Link} to="/proposalcard">Proposals</Dropdown.Item>}
+                          {id == 3 && <Dropdown.Item as={Link} to="/productenquirescard">Product Enquires</Dropdown.Item>}
                           <Dropdown.Item as={Link} to="/InvoicedueCard">Invoice Due</Dropdown.Item>
-                          <Dropdown.Item as={Link} to="/productenquirescard">Product Enquires</Dropdown.Item>
                           <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item>
                           {/* <Dropdown.Divider /> */}
                           <Dropdown.Item as={Link} to="/Project-Owner/Settings">
                             Settings
                           </Dropdown.Item>
-                          <Dropdown.Item as={Link} to="/userLogin">
+                          <Dropdown.Item onClick={()=>{logOut()}}>
                             Logout
                           </Dropdown.Item>
                         </div>
@@ -266,48 +265,8 @@ const NavbarStandard = () => {
                     </Dropdown>
                   </div>
                 </>
-                  {/* Project Owner Profile */}
 
-              {/* Seller Profile */}
-              <div>
-                <Dropdown navbar={true} as="li">
-                  <Dropdown.Toggle
-                    bsPrefix="toggle"
-                    as={Link}
-                    to="#!"
-                    className="pe-0 ps-2 nav-link"
-                  >
-                    <img src={team3} width="30px" className='bg-white rounded-circle' />
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
-                    <div className="bg-white rounded-2 py-2 dark__bg-1000">
-                      <Dropdown.Item className="fw-bold text-success" href="#!">
-                        <FontAwesomeIcon icon="crown" className="me-1" />
-                        <span>Freelancer</span>
-                      </Dropdown.Item>
-                      <Dropdown.Divider />
-                      <Dropdown.Item as={Link} to="/MyProfile">
-                        Profile
-                      </Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/user/addproduct">Products</Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/user/addservices">Services</Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/addproductcard">My Product's</Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/addservicecard">My Service's</Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/proposalcard">Proposals</Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/productenquirescard">Product Enquires</Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/Seller/Settings">
-                        Settings
-                      </Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/SellerLogin">
-                        Logout
-                      </Dropdown.Item>
-                    </div>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
-              {/*Seller Profile  */}
+              }
             </Nav>
           </Navbar.Collapse>
         </div>

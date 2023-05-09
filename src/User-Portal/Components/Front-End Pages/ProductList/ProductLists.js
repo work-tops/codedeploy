@@ -25,6 +25,7 @@ import { slugifyText } from "../../../TemplateAssets/helpers/utils";
 function ProductList() {
 
     const [layout, setLayout] = useState('list');
+    const [isList, setIsList] = useState(true);
     const [mainList, setMainList] = useState([]);
     const [products, setProducts] = useState([]);
     const [productTags, setProductTags] = useState([]);
@@ -71,7 +72,7 @@ function ProductList() {
         productTags.forEach((x, i) => {
             if (x.list) {
                 x.list.forEach((y, j) => {
-                        document.getElementById(`filter_${j}_key_${i}`).checked = false;
+                    document.getElementById(`filter_${j}_key_${i}`).checked = false;
                 })
             }
         })
@@ -141,7 +142,7 @@ function ProductList() {
                                         className="ms-2 mt-0 mb-0"
                                         style={{ fontSize: '12px' }}
                                         onClick={() => resetFilter()}
-                                        >
+                                    >
                                         <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
                                         Reset
                                     </Button>
@@ -247,35 +248,22 @@ function ProductList() {
                                         </Col>
                                         <Col xs="auto" className="p-0">
                                             <Row className="g-2 align-items-center">
-                                                <Col xs="auto" className="d-none d-lg-block">
-                                                    <small className='me-2'>View :</small>
-                                                </Col>
-                                                <Col xs="auto">
-                                                    <OverlayTrigger
-                                                        placement="top"
-                                                        overlay={<Tooltip>Course Grid</Tooltip>}
-                                                    >
-                                                        <Link
-                                                            to="productgrid1"
+                                                <div class="d-flex align-items-center"><small class="fw-semi-bold me-2 d-lg-block lh-1">View:</small>
+                                                    <div class="d-flex">
+                                                    <div onClick={() => { setIsList(false) }}
                                                             className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}
                                                         >
                                                             <Icon icon="material-symbols:grid-on-sharp" width="24" height="24" />
-                                                        </Link>
-                                                    </OverlayTrigger>
-                                                    <OverlayTrigger
-                                                        placement="top"
-                                                        overlay={<Tooltip>Course List</Tooltip>}
-                                                    >
-                                                        <Link
-                                                            to="/productlist"
+                                                        </div>
+                                                        <div onClick={() => { setIsList(true) }}
                                                             className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}
                                                         >
                                                             <Icon icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
-                                                        </Link>
-                                                    </OverlayTrigger>
-                                                </Col>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </Row>
                                         </Col>
                                     </Row>
@@ -283,10 +271,91 @@ function ProductList() {
                             </Row>
                         </Card.Body>
                     </Card>
+                    {isList == false?
+                        <>
+                        <div className="row">
                     {products.map((data, key) => (
-                        <Card className="overflow-hidden m-4">
+                        
+                                <Col lg={6} className='mb-3 px-4'>
+                                    <Card className="h-100  overflow-hidden">
+                                        <Card.Body
+                                            as={Flex}
+                                            direction="column"
+                                            justifyContent="between"
+                                            className="p-0">
+                                            <div>
+                                                <Col lg={12}>
+                                                    <Image src={data?.attachments[0]?.url} alt="" className="w-100 h-100 fit-cover" />
+                                                </Col>
+
+                                                <div className="p-3">
+                                                    <h5 className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark"
+                                                        >
+                                                            {data?.name}
+                                                        </Link>
+                                                    </h5>
+
+                                                </div>
+                                            </div>
+                                            <Row className="g-0 mb-3 align-items-end">
+                                                <Col className="ps-3">
+                                                    <h4 className="fs-1 text-warning d-flex align-items-center">
+                                                        <span style={{ fontSize: '1.2rem', color: '#f68f57' }}>£ {data?.variant[0]?.pricing?.price}</span>
+                                                        <del className="ms-2 fs--1 text-700">£ {data?.variant[0]?.pricing?.compare_at}</del>
+
+                                                    </h4>
+                                                    <p className="mb-0 fs--1 text-800">
+                                                        92,632 Members Purchased
+                                                    </p>
+
+                                                    <Link to="/RequestQuote">
+                                                        <Button
+                                                            size="md"
+                                                            variant="falcon-default"
+                                                            style={{ background: '#003f6b' }}
+                                                            className="fs--1 text-600 mt-3 text-white white-space-nowrap w-50"
+
+                                                        >
+                                                            Get a Quote
+                                                        </Button>
+                                                    </Link>
+                                                </Col>
+                                                <Col xs="auto" className="pe-3">
+                                                    <Link to="/wishlist/product">
+                                                        <Button
+                                                            variant="falcon-default"
+                                                            size="sm"
+                                                            className="me-2 hover-danger"
+                                                        >
+                                                            <Icon icon="flat-color-icons:like" width="20" height="20" />
+                                                        </Button>
+                                                    </Link>
+                                                    <Link to="/Cart">
+                                                        <Button
+                                                            variant="primary"
+                                                            size="sm"
+                                                        >
+                                                            <Icon icon="ic:round-shopping-cart" color="white" width="20" height="20" />
+                                                        </Button>
+                                                    </Link>
+                                                </Col>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                        ))}
+                        </div>
+                        </>:
+                        <>
+                        {products.map((data, key) => (
+                        <>
+                            <Card className="overflow-hidden m-4">
                             <Card.Body className="p-0">
-                                <Row className="g-0">
+                               <Row className="g-0">
                                     <Col md={4} lg={3}>
                                         <Image src={data?.attachments[0]?.url} alt="" className="w-100 h-100 fit-cover" />
                                     </Col>
@@ -377,9 +446,13 @@ function ProductList() {
                                         </Row>
                                     </Col>
                                 </Row>
+                                
                             </Card.Body>
                         </Card>
+                        </>
                     ))}
+                        </>
+                        }
                 </Col>
 
 

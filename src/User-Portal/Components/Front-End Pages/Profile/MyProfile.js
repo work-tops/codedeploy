@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProfileMenu from "./ProfileMenu";
 import { Row, Col, Card, Button, Form } from "react-bootstrap";
-import profile_img from '../../Project images/Handyman.jpg'
+import profile_img from '../../Projectimages/Handyman.jpg'
 import Divider from "../../../TemplateAssets/common/Divider";
 import { Link } from "react-router-dom";
 import Multiselect from "multiselect-react-dropdown";

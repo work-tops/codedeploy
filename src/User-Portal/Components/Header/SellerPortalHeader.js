@@ -15,7 +15,7 @@ function SellerPortalHeader() {
         <>
             <Row className="navbar-standard p-2">
                 <Col lg={2}>
-                    <img src={logo} width="134px" />
+                    <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="134px" />
                 </Col>
                 <Col lg={5}>
                     <Form.Group>

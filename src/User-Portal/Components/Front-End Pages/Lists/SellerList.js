@@ -1,12 +1,12 @@
 import { React, useState } from "react";
 import { Icon } from "@iconify/react";
 import { Row, Col, Button, Modal, Form } from "react-bootstrap";
-import worktops from '../../Project images/worktops-installation.jpg'
+import worktops from '../../Projectimages/worktops-installation.jpg'
 import Menubar from "../../Menubar/Menubar";
 import { Link } from "react-router-dom";
-import freelancer from '../../Project images/Freelancer.jpg'
-import huwaei from '../../Project images/Huawei-Logo.png'
-import company_name from '../../Project images/CompanyName.png'
+import freelancer from '../../Projectimages/Freelancer.jpg'
+import huwaei from '../../Projectimages/Huawei-Logo.png'
+import company_name from '../../Projectimages/CompanyName.png'
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 function SellerList() {
