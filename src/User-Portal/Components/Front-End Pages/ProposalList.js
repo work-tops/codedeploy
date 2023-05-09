@@ -1,411 +1,133 @@
 import React from 'react'
-import Header from '../Header/Header'
-import Menubar from '../Menubar/Menubar'
-import Footer from '../Footer/Footer'
-import ProposalPost from '../Post/ProposalListPost'
-import profile_img from "../Images/employee.png"
-
+import profile_img from "../Project images/7.jpg"
+import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard'
 import { Icon } from '@iconify/react';
+import { Col, Container, Row, Card, Button, Form, Dropdown } from 'react-bootstrap'
+import CardDropdown from '../../TemplateAssets/common/CardDropdown';
+import { Link } from 'react-router-dom';
 
 function ProposalList() {
     return (
-        <div className='row'>
-            <div className='col-12 prj-det-header'>
-                <Header />
-            </div>
-            <div className='col-12'>
-                <Menubar />
-            </div>
-            <div className='col-12'>
-                <ProposalPost />
-            </div>
-            <div className='col-12'>
-                <div className="proposal-content">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="bud-viw-prj d-flex justify-content-between">
-                                <div className='bud-amt'>Budget : £ 3000 </div>
-                                <div className='viw-pr'>View Project</div>
+        <Container>
+            <Row>
+                <Col lg={12} className='mb-5'>
+                    <NavbarStandard />
+                </Col>
+                <Col lg={12} className='mt-4'>
+                    <Card className='mb-3 mt-4'>
+                        <Card.Header className='bg-light'>
+                            <h5 className='text-uppercase'>
+                                Proposal List
+                            </h5>
+                        </Card.Header>
+                        <Card.Body>
+                            <div className='mb-3 d-flex justify-content-between'>
+                                <h5 className='text-capitalize'>
+                                    New Kitchen Worktops with Island
+                                </h5>
+                                <div className='text-uppercase'>
+                                    <span className='badge me-5 mb-2 p-2 bg-primary'>open</span>
+                                    <span className='fw-semibold' style={{ fontSize: '13px' }}>Job Id:1234567</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-6 mb-3"><button className="loc-drp">Location <Icon icon="gridicons:dropdown" />
-                        </button><button className="rating-drp">Rating <Icon icon="gridicons:dropdown" /></button></div>
-                        <div className="col-6 mb-3"><p className="page-prop-list">1-10 Of 25 <Icon icon="material-symbols:chevron-left-rounded" /> <Icon icon="material-symbols:chevron-right-rounded" /></p></div>
-                    </div>
-                    <br></br>
-                    <div>
-                        <table className="frl-pro-list">
-                            <tr className="list-body-div">
-                                <td>
-                                    <img src={profile_img} className="user-frl-profile-pic" />
-                                </td>
-                                <td>
-                                    <div className="row">
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="frl-c-name">IRIE ARTS INC</p>
-                                                    <p className="frl-role">Fabricator , Kitchen Designer</p>
-                                                    <p className="frl-ratings"><Icon icon="ic:round-star-rate" color="#dfc92c" width="24" height="24" /> 4.5/5 (116)</p>
-                                                </div>
-                                                <div className="col-9">
-                                                    <p className="frl-prf-dec">
-                                                        Greetings,i can rank your website high on google top result pages.i can
-                                                        help your site dominate your top competitors with thousands of niche
-                                                        related backlinks and country trageted visitors from google organic searches
-                                                        1. Increase website domain authority to 60+ and higher
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Experience</p>
-                                                    <p className="exp">4 Years</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Duration</p>
-                                                    <p className="exp">3 Months</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Budget</p>
-                                                    <p className="exp">£ 2300</p>
-                                                </div>
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Date</p>
-                                                    <p className="exp">01/04/2023</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="btn-group">
-                                        <button type="button" className="btn user-prj-view-1">View</button>
-                                        <button type="button" className="btn user-prj-dd-1 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span className="visually-hidden">Toggle Dropdown</span>
-                                        </button>
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item" href="#">Action</a></li>
-                                            <li><a className="dropdown-item" href="#">Another action</a></li>
-                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <br></br>
-                            <tr className="list-body-div">
-                                <td>
-                                    <img src={profile_img} className="user-frl-profile-pic" />
-                                </td>
-                                <td>
-                                    <div className="row">
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="frl-c-name">IRIE ARTS INC</p>
-                                                    <p className="frl-role">Fabricator , Kitchen Designer</p>
-                                                    <p className="frl-ratings"><Icon icon="ic:round-star-rate" color="#dfc92c" width="24" height="24" /> 4.5/5 (116)</p>
-                                                </div>
-                                                <div className="col-9">
-                                                    <p className="frl-prf-dec">
-                                                        Greetings,i can rank your website high on google top result pages.i can
-                                                        help your site dominate your top competitors with thousands of niche
-                                                        related backlinks and country trageted visitors from google organic searches
-                                                        1. Increase website domain authority to 60+ and higher
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Experience</p>
-                                                    <p className="exp">4 Years</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Duration</p>
-                                                    <p className="exp">3 Months</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Budget</p>
-                                                    <p className="exp">£ 2300</p>
-                                                </div>
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Date</p>
-                                                    <p className="exp">01/04/2023</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="btn-group">
-                                        <button type="button" className="btn user-prj-view-1">View</button>
-                                        <button type="button" className="btn user-prj-dd-1 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span className="visually-hidden">Toggle Dropdown</span>
-                                        </button>
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item" href="#">Action</a></li>
-                                            <li><a className="dropdown-item" href="#">Another action</a></li>
-                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <br></br>
-                            <tr className="list-body-div">
-                                <td>
-                                    <img src={profile_img} className="user-frl-profile-pic" />
-                                </td>
-                                <td>
-                                    <div className="row">
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="frl-c-name">IRIE ARTS INC</p>
-                                                    <p className="frl-role">Fabricator , Kitchen Designer</p>
-                                                    <p className="frl-ratings"><Icon icon="ic:round-star-rate" color="#dfc92c" width="24" height="24" /> 4.5/5 (116)</p>
-                                                </div>
-                                                <div className="col-9">
-                                                    <p className="frl-prf-dec">
-                                                        Greetings,i can rank your website high on google top result pages.i can
-                                                        help your site dominate your top competitors with thousands of niche
-                                                        related backlinks and country trageted visitors from google organic searches
-                                                        1. Increase website domain authority to 60+ and higher
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Experience</p>
-                                                    <p className="exp">4 Years</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Duration</p>
-                                                    <p className="exp">3 Months</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Budget</p>
-                                                    <p className="exp">£ 2300</p>
-                                                </div>
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Date</p>
-                                                    <p className="exp">01/04/2023</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="btn-group">
-                                        <button type="button" className="btn user-prj-view-1">View</button>
-                                        <button type="button" className="btn user-prj-dd-1 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span className="visually-hidden">Toggle Dropdown</span>
-                                        </button>
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item" href="#">Action</a></li>
-                                            <li><a className="dropdown-item" href="#">Another action</a></li>
-                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <br></br>
-                            <tr className="list-body-div">
-                                <td>
-                                    <img src={profile_img} className="user-frl-profile-pic" />
-                                </td>
-                                <td>
-                                    <div className="row">
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="frl-c-name">IRIE ARTS INC</p>
-                                                    <p className="frl-role">Fabricator , Kitchen Designer</p>
-                                                    <p className="frl-ratings"><Icon icon="ic:round-star-rate" color="#dfc92c" width="24" height="24" /> 4.5/5 (116)</p>
-                                                </div>
-                                                <div className="col-9">
-                                                    <p className="frl-prf-dec">
-                                                        Greetings,i can rank your website high on google top result pages.i can
-                                                        help your site dominate your top competitors with thousands of niche
-                                                        related backlinks and country trageted visitors from google organic searches
-                                                        1. Increase website domain authority to 60+ and higher
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Experience</p>
-                                                    <p className="exp">4 Years</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Duration</p>
-                                                    <p className="exp">3 Months</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Budget</p>
-                                                    <p className="exp">£ 2300</p>
-                                                </div>
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Date</p>
-                                                    <p className="exp">01/04/2023</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="btn-group">
-                                        <button type="button" className="btn user-prj-view-1">View</button>
-                                        <button type="button" className="btn user-prj-dd-1 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span className="visually-hidden">Toggle Dropdown</span>
-                                        </button>
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item" href="#">Action</a></li>
-                                            <li><a className="dropdown-item" href="#">Another action</a></li>
-                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <br></br>
-                            <tr className="list-body-div">
-                                <td>
-                                    <img src={profile_img} className="user-frl-profile-pic" />
-                                </td>
-                                <td>
-                                    <div className="row">
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="frl-c-name">IRIE ARTS INC</p>
-                                                    <p className="frl-role">Fabricator , Kitchen Designer</p>
-                                                    <p className="frl-ratings"><Icon icon="ic:round-star-rate" color="#dfc92c" width="24" height="24" /> 4.5/5 (116)</p>
-                                                </div>
-                                                <div className="col-9">
-                                                    <p className="frl-prf-dec">
-                                                        Greetings,i can rank your website high on google top result pages.i can
-                                                        help your site dominate your top competitors with thousands of niche
-                                                        related backlinks and country trageted visitors from google organic searches
-                                                        1. Increase website domain authority to 60+ and higher
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Experience</p>
-                                                    <p className="exp">4 Years</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Duration</p>
-                                                    <p className="exp">3 Months</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Budget</p>
-                                                    <p className="exp">£ 2300</p>
-                                                </div>
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Date</p>
-                                                    <p className="exp">01/04/2023</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="btn-group">
-                                        <button type="button" className="btn user-prj-view-1">View</button>
-                                        <button type="button" className="btn user-prj-dd-1 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span className="visually-hidden">Toggle Dropdown</span>
-                                        </button>
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item" href="#">Action</a></li>
-                                            <li><a className="dropdown-item" href="#">Another action</a></li>
-                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <br></br>
-                            <tr className="list-body-div">
-                                <td>
-                                    <img src={profile_img} className="user-frl-profile-pic" />
-                                </td>
-                                <td>
-                                    <div className="row">
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="frl-c-name">IRIE ARTS INC</p>
-                                                    <p className="frl-role">Fabricator , Kitchen Designer</p>
-                                                    <p className="frl-ratings"><Icon icon="ic:round-star-rate" color="#dfc92c" width="24" height="24" /> 4.5/5 (116)</p>
-                                                </div>
-                                                <div className="col-9">
-                                                    <p className="frl-prf-dec">
-                                                        Greetings,i can rank your website high on google top result pages.i can
-                                                        help your site dominate your top competitors with thousands of niche
-                                                        related backlinks and country trageted visitors from google organic searches
-                                                        1. Increase website domain authority to 60+ and higher
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12">
-                                            <div className="row">
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Experience</p>
-                                                    <p className="exp">4 Years</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Duration</p>
-                                                    <p className="exp">3 Months</p>
-                                                </div>
-                                                <div className="col-2">
-                                                    <p className="exp-tit" >Budget</p>
-                                                    <p className="exp">£ 2300</p>
-                                                </div>
-                                                <div className="col-3">
-                                                    <p className="exp-tit" >Date</p>
-                                                    <p className="exp">01/04/2023</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="btn-group">
-                                        <button type="button" className="btn user-prj-view-1">View</button>
-                                        <button type="button" className="btn user-prj-dd-1 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span className="visually-hidden">Toggle Dropdown</span>
-                                        </button>
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item" href="#">Action</a></li>
-                                            <li><a className="dropdown-item" href="#">Another action</a></li>
-                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <br></br>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div className='col-12'>
-                <Footer />
-            </div>
 
-        </div>
+                        </Card.Body>
+                    </Card>
+                    <Card className='mb-3'>
+                        <Card.Body>
+                            <div className='mb-3 d-flex justify-content-between'>
+                                <h5 className='text-capitalize'>
+                                    Budget : £ 3000
+                                </h5>
+                                <Button className='border-0 bg-success'>
+                                    View Project
+                                </Button>
+                            </div>
+                            <Form.Label>Sort By :</Form.Label>
+                            <Form.Select className='w-50'>
+                                <option>Location</option>
+                                <option>Rating</option>
+                            </Form.Select>
+                        </Card.Body>
+                    </Card>
+                    <Card className='mb-3'>
+                        <Card.Body>
+                            <Row className='justify-content-around'>
+                                <Col lg={7} className='mb-3'>
+                                    <Card>
+                                        <Card.Body>
+                                            <Row>
+                                                <Col lg={4} className='mb-3'>
+                                                    <img src={profile_img} className="mb-3 rounded-circle" width="100px" height="100px" />
+                                                    <h5 className="fw-bold mb-3">IRIE ARTS INC</h5>
+                                                    <p className="text-900 fw-semibold mb-3" style={{ fontSize: '14px' }}>Fabricator , Kitchen Designer</p>
+                                                    <p className="text-900 fw-semibold mb-3" style={{ fontSize: '14px' }}><Icon style={{ marginTop: '-5px' }} icon="ic:round-star-rate" c color="#fe9e0f" width="24" height="24" /> 4.5/5 (116)</p>
+                                                </Col>
+                                                <Col lg={8} className="mb-3 text-900 text-justify" style={{ fontSize: '14px' }}>
+                                                    Greetings,i can rank your website high on google top result pages.i can
+                                                    help your site dominate your top competitors with thousands of niche
+                                                    related backlinks and country trageted visitors from google organic searches
+                                                    1. Increase website domain authority to 60+ and higher
+                                                    Greetings,i can rank your website high on google top result pages.i can
+                                                    help your site dominate your top competitors with thousands of niche
+                                                    related backlinks and country trageted visitors from google organic searches
+                                                    1. Increase website domain authority to 60+ and higher
+                                                    Greetings,i can rank your website high on google top result pages.i can
+                                                    help your site dominate your top competitors with thousands of niche
+                                                    related backlinks and country trageted visitors from google organic searches
+                                                    1. Increase website domain authority to 60+ and higher
+                                                </Col>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                                <Col lg={5} className=''>
+                                    <Card>
+                                        <Card.Header>
+                                            <div className="position-absolute top-0 end-0 m-3">
+                                                <CardDropdown iconClassName="fs--1" drop="bottom">
+                                                    <div className="py-2">
+                                                        <Dropdown.Item as={Link} to="/proposalDetails" className="text-success">
+                                                            Accept
+                                                        </Dropdown.Item>
+                                                        <Dropdown.Item as={Link} to="/proposalDetails"  className="text-primary">
+                                                            Reply
+                                                        </Dropdown.Item>
+                                                        <Dropdown.Item  disabled className="text-danger">
+                                                            Decline
+                                                        </Dropdown.Item>
+                                                    </div>
+                                                </CardDropdown>
+                                            </div>
+                                        </Card.Header>
+                                        <Card.Body>
+                                            <div >
+                                                <p className="me-2 fw-semibold text-900" >Experience : <span className='text-justify' style={{ fontSize: '14px' }}>4 Years</span></p>
+
+                                            </div>
+                                            <div >
+                                                <p className="me-2 fw-semibold text-900" >Duration : <span className='text-justify' style={{ fontSize: '14px' }}>3 Months</span></p>
+
+                                            </div>
+                                            <div >
+                                                <p className="me-2 fw-semibold text-900" >Budget : <span className='text-justify' style={{ fontSize: '14px' }}>£ 2300</span></p>
+
+                                            </div>
+                                            <div >
+                                                <p className="me-2 fw-semibold text-900" >Date : <span className='text-justify' style={{ fontSize: '14px' }}>01/04/2023</span></p>
+
+                                            </div>
+                                            <Button className='w-100' style={{ background: '#003f6b' }}>View</Button>
+                                        </Card.Body>
+                                    </Card >
+                                </Col>
+                            </Row>
+                        </Card.Body>
+                    </Card>
+                </Col >
+            </Row >
+        </Container >
     )
 }
 export default ProposalList
+
