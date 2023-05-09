@@ -66,7 +66,7 @@ export const AdvanceTableFooter = ({
             <p className="mb-0 mx-2">Rows per page:</p>
             <Form.Select
               size="sm"
-              className="w-auto"
+              className="me-4 w-auto"
               onChange={e => setPageSize(Number(e.target.value))}
               defaultValue={pageSize}
             >
@@ -80,10 +80,10 @@ export const AdvanceTableFooter = ({
         )}
       </div>
       {navButtons && (
-        <Flex>
+        <div className='d-block'>
           <Button
             size="sm"
-            className='me-2'
+            className='w-100 px-4 ms-2 mb-2'
             variant={canPreviousPage ? 'primary' : 'light'}
             onClick={() => previousPage()}
             // className={classNames({ disabled: !canPreviousPage })}
@@ -92,7 +92,7 @@ export const AdvanceTableFooter = ({
           </Button>
           <Button
             size="sm"
-            className='me-2'
+            className='w-100 px-4 ms-2'
             variant={canNextPage ? 'primary' : 'light'}
             // className={classNames('px-4 ms-2', {
             //   disabled: !canNextPage
@@ -101,7 +101,7 @@ export const AdvanceTableFooter = ({
           >
             Next
           </Button>
-        </Flex>
+        </div>
       )}
     </div>
   );

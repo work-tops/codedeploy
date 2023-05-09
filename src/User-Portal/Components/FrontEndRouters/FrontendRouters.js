@@ -56,6 +56,9 @@ import SellerLogin from "../Front-End Pages/Login/FreelancerLogin";
 import PostProject from "../../Components/Front-End Pages/Post_Project/postProject";
 import ProductList from "../Front-End Pages/ProductList/ProductLists";
 import ProductGrid from "../Front-End Pages/ProductList/ProductGrid";
+import PostJob1 from "../Front-End Pages/PostJob1";
+import PostJob2 from "../Front-End Pages/PostJob2";
+import PublicProfile from "../Front-End Pages/Profile/PublicProfile";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -70,7 +73,7 @@ const FrontEndRouters = () => {
             <Route path='/jobproposal/:jobid/jobproposal'><JobProposal /></Route>
 
             <Route path='/servicelist'><ServiceList /></Route>
-            
+
             <Route path="/PostProject"><PostProject /></Route>
             {/* proper order routes end */}
 
@@ -127,8 +130,9 @@ const FrontEndRouters = () => {
             <Route path="/contactus"><ContactUs /></Route>
             <Route path="/termsofuse"><TermsOfUse /></Route>
             <Route path="/shippingpage"><ShippingPage /></Route>
-
-
+            <Route path="/postjob1"><PostJob1 /></Route>
+            <Route path="/postjob2"><PostJob2/></Route>
+            <Route path="/profile_publicview"><PublicProfile/></Route>
         </Switch>
 
     )

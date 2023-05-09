@@ -92,7 +92,7 @@ const NavbarStandard = () => {
                 as={Link}
                 to="/how-it-works"
                 className='mt-2'
-                style={{ fontSize: '12px', width: '102px' }}
+                style={{ fontSize: '12px' }}
               >
                 HOW IT WORKS
               </Nav.Link>

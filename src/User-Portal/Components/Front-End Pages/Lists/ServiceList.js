@@ -38,7 +38,8 @@ import {
     Form,
     OverlayTrigger,
     Tooltip,
-    Modal
+    Modal,
+    ListGroup, ListGroupItem
 } from 'react-bootstrap';
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard'
 import Flex from '../../../TemplateAssets/common/Flex';
@@ -81,7 +82,7 @@ function ServiceList(layout) {
                     <NavbarStandard />
                 </Col>
                 <Col lg={12} className="mt-5">
-                    <Card className="mb-3 m-4">
+                    <Card className="mb-3 d-flex justify-content-between m-4">
                         <Card.Header className="bg-white position-relative">
                             <h6 className="mb-0 mt-1 text-uppercase">Services Lists</h6>
                         </Card.Header>
@@ -158,11 +159,11 @@ function ServiceList(layout) {
                         work with tradespeople and ensure a successful project from start to finish.
                     </p>
                 </div>
-                
-                {/*Service List Grid  */}
-                <Row className="d-flex justify-content-center gap-2">
 
-                    <Col lg={5} className='mb-3'>
+                {/*Service List Grid  */}
+                <Row className="d-flex justify-content-around gap-2 align-items-center">
+                   
+                <Col lg={5} className='mb-3'>
                         <Card style={{ width: '527px' }} className=" overflow-hidden">
                             <Card.Body
                                 as={Flex}
@@ -180,7 +181,7 @@ function ServiceList(layout) {
                                                     style={{ fontSize: '1rem' }}
                                                     className="text-dark text-uppercase"
                                                 >
-                                                    Worktops Installation
+                                                    worktops installation
                                                 </Link>
                                             </h5>
                                         </div>
@@ -189,7 +190,6 @@ function ServiceList(layout) {
                             </Card.Body>
                         </Card>
                     </Col>
-                    {/*  */}
                     <Col lg={5} className='mb-3'>
                         <Card style={{ width: '527px' }} className=" overflow-hidden">
                             <Card.Body
@@ -235,7 +235,7 @@ function ServiceList(layout) {
                                                     style={{ fontSize: '1rem' }}
                                                     className="text-dark text-uppercase"
                                                 >
-                                                    BrickLaying
+                                                    bricklaying
                                                 </Link>
                                             </h5>
                                         </div>
@@ -244,7 +244,6 @@ function ServiceList(layout) {
                             </Card.Body>
                         </Card>
                     </Col>
-                    {/*  */}
                     <Col lg={5} className='mb-3'>
                         <Card style={{ width: '527px' }} className=" overflow-hidden">
                             <Card.Body
