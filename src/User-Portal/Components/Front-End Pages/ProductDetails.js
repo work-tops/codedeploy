@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Icon } from "@iconify/react";
 import { Link, useParams } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
-import worktops from '../Project images/7.jpg'
+import worktops from '../Projectimages/7.jpg'
 import { Divider } from "@mui/material";
 function ProductDetails() {
     let { proid } = useParams();

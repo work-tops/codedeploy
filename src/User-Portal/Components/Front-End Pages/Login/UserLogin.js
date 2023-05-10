@@ -83,11 +83,7 @@ const UserLogin = ({ bgProps }) => {
                 <Card className='shadow'>
                   <Card.Header style={{ background: '#003f6b' }} className="text-center p-2">
                     <Link to={'/'}>
-<<<<<<< HEAD
                     <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="135px" />
-=======
-                      <img src={logo} width="135px" />
->>>>>>> 832f89e943e62281a4d5777db7b397490466b9ce
                     </Link>
                   </Card.Header>
                   <Card.Body className="p-4">

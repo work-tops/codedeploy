@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
-import worktops from '../../Project images/Painting.jpg'
+import worktops from '../../Projectimages/Painting.jpg'
 import { Col, Row, Card, Container, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import envelope from '../../Project images/16.png';
+import envelope from '../../Projectimages/16.png';
 
 function UserConMail() {
     return (

@@ -3,7 +3,7 @@ import { Row, Col, Card, Button, Container } from "react-bootstrap";
 import bgShape from '../../../TemplateAssets/assets/illustrations/bg-shape.png';
 import shape1 from '../../../TemplateAssets/assets/illustrations/shape-1.png';
 import { Link } from "react-router-dom";
-import logoutImg from '../../Project images/45.png';
+import logoutImg from '../../Projectimages/45.png';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

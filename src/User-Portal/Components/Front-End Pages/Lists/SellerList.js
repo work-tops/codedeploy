@@ -1,12 +1,7 @@
 import { React, useState } from "react";
 import { Icon } from "@iconify/react";
-<<<<<<< HEAD
-import { Row, Col, Button, Modal, Form } from "react-bootstrap";
-import worktops from '../../Projectimages/worktops-installation.jpg'
-=======
 import { Row, Col, Button, Modal, Form, Card, CardGroup, Container } from "react-bootstrap";
-import worktops from '../../Project images/worktops-installation.jpg'
->>>>>>> 832f89e943e62281a4d5777db7b397490466b9ce
+import worktops from '../../Projectimages/worktops-installation.jpg'
 import Menubar from "../../Menubar/Menubar";
 import { Link } from "react-router-dom";
 import freelancer from '../../Projectimages/Freelancer.jpg'

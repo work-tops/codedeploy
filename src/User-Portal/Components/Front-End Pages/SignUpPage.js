@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Col, Row, Button,Form } from 'react-bootstrap';
 import logo from '../../TemplateAssets/Images/MP-logo.png'
-import worktops from '../../Components/Project images/Flooring.jpg'
+import worktops from '../../Components/Projectimages/Flooring.jpg'
 import  { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { createData } from "../../../Services/ProxyService";

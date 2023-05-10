@@ -5,7 +5,7 @@ import shape1 from '../../../TemplateAssets/assets/illustrations/shape-1.png';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import envelope from '../../Project images/16.png';
+import envelope from '../../Projectimages/16.png';
 
 function FreelanceConMail() {
     return (

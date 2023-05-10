@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { Col, Container, Row, Card, Button, Dropdown, Form, Modal } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
-import profile_img from "../Project images/7.jpg"
+import profile_img from "../Projectimages/7.jpg"
 
 function ProposalDetails() {
     const [show, setShow] = useState(false);

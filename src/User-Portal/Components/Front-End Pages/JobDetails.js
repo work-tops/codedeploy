@@ -7,12 +7,8 @@ import currency from "../Images/Pound Currency.jpg"
 import { Link, useParams, useHistory } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
 import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
-<<<<<<< HEAD
-import { Button, Col, Row, Card, Modal, Form } from "react-bootstrap";
-=======
 import { Button, Col, Row, Card, Modal, Form, Container } from "react-bootstrap";
-import worktops from '../../Components/Project images/Handyman.jpg'
->>>>>>> 832f89e943e62281a4d5777db7b397490466b9ce
+import worktops from '../../Components/Projectimages/Handyman.jpg'
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { Icon } from "@iconify/react";
 import { Divider } from "@mui/material";
@@ -165,27 +161,6 @@ function JobDetails() {
                                             </Card>
                                         })}
 
-<<<<<<< HEAD
-                                       return <Card>
-                                            <Card.Body>
-                                                <Row>
-                                                    <Col className="mt-3" lg={3}>
-                                                        <img src="https://prium.github.io/phoenix/v1.11.0/assets/img/team/40x40/57.webp" height="60px" width="60px" className="m-3 rounded-circle" />
-                                                    </Col>
-                                                    <Col className="mt-3" lg={8}>
-                                                        <p style={{ fontSize: '14px' }} className=""> {x} </p>
-                                                        <Button
-                                                            onClick={handleShow}
-                                                            style={{ background: '#003f6b', fontSize: '14px' }}
-                                                            className="btn mb-3 text-uppercase border-0">
-                                                            Reply
-                                                        </Button>
-                                                    </Col>
-                                                </Row>
-                                            </Card.Body>
-                                        </Card>
-                                    })}
-=======
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -197,7 +172,6 @@ function JobDetails() {
                                     </Card.Header>
                                     <Card.Body className="bg-white">
                                         <ul className="list-unstyled fs--1 mb-0">
->>>>>>> 832f89e943e62281a4d5777db7b397490466b9ce
 
                                             <li>
                                                 <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
@@ -291,7 +265,7 @@ function JobDetails() {
                                         <Divider />
                                         {/* Profile Details */}
                                         <div className="mt-2 d-flex justify-content-center">
-                                            <img src={profileImg}
+                                            <img src={worktops}
                                                 className="rounded-circle  border border-dark"
                                                 width="80px"
                                                 height="75px" />
@@ -304,105 +278,6 @@ function JobDetails() {
                                             <p role="button" style={{ color: '#003f6b' }}>Profession</p>
                                             <p role="button" style={{ color: '#003f6b' }}>Like</p>
                                         </div>
-<<<<<<< HEAD
-                                    </div>
-                                    {/*  */}
-                                    <Divider />
-                                    {/* Profile Details */}
-                                    <div className="mt-2 d-flex justify-content-center">
-                                        <img src="https://prium.github.io/phoenix/v1.11.0/assets/img/team/40x40/57.webp"
-                                            className="rounded-circle  border border-dark"
-                                            width="80px"
-                                            height="75px" />
-                                    </div>
-                                    <p className="text-center mt-2 fw-semibold">
-                                        Email: <span style={{ color: '#003f6b' }} className="fw-semibold">{jobdata.customer_email}</span>
-                                    </p>
-                                    <div className="d-flex justify-content-around">
-                                        <p role="button" style={{ color: '#003f6b' }}>Name</p>
-                                        <p role="button" style={{ color: '#003f6b' }}>Profession</p>
-                                        <p role="button" style={{ color: '#003f6b' }}>Like</p>
-                                    </div>
-                                    {/* Profile Details */}
-                                </Card.Body>
-                                <Card.Footer className="bg-white">
-                                    <Button onClick={() => sendProposal()} className="border-0 w-100 text-uppercase" style={{ color: '#fff', background: '#003f6b' }}>
-                                        Send Proposal
-                                    </Button>
-                                </Card.Footer>
-                            </Card>
-
-                            {/* Report This Project */}
-                            <Card className="m-4 py-2">
-                                <Card.Header as="h6" className="text-uppercase bg-white" >
-                                    Report this Project
-                                </Card.Header>
-                                <Card.Body>
-                                    <Form>
-                                        <Form.Group className="mb-3">
-                                            <Form.Control
-                                                type="text"
-                                                placeholder="Type Reason"
-                                            />
-                                        </Form.Group>
-                                        <Form.Group className="mb-3">
-                                            <Form.Control
-                                                as="textarea"
-                                                placeholder='Description....'
-                                                rows={5} />
-                                        </Form.Group>
-                                        <div className="d-flex justify-content-center">
-                                            <Button style={{ background: '#003f6b' }} className="border-0 w-100 text-uppercase">
-                                                Submit
-                                            </Button>
-                                        </div>
-                                    </Form>
-
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-            {/* Modal Content */}
-            <Modal
-                show={show}
-                onHide={() => setShow(false)}
-                dialogClassName="modal-lg modal-90w"
-
-                aria-labelledby="example-custom-modal-styling-title"
-            >
-                <Modal.Header>
-                    <Modal.Title id="example-custom-modal-styling-title">
-                        <h6 className="text-uppercase">
-                            Please Type Your Message
-                        </h6>
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Form.Group className="mb-3">
-                        <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Check className="ms-3" />
-                        <Form.Check.Label className="text-700">
-                            I Confirm That This Message Is Essential For The Submission Of My
-                            Proposal And | Understand That It Will Be Publicly Posted In The
-                            Project's Clarification Board And In Case It Is Used To Spam Or
-                            Solely Advertise My Skills, My Rankings Will Be Severely Affected.
-                        </Form.Check.Label>
-                    </Form.Group>
-                    <div className="d-flex justify-content-end mb-3">
-                        <Button onClick={handleClose} style={{ background: '#003f6b' }} className="text-uppercase border-0">
-                            Send
-                        </Button>
-                    </div>
-                </Modal.Body>
-            </Modal>
-            {/* Modal Content */}
-
-
-=======
                                         {/* Profile Details */}
                                     </Card.Body>
                                     <Card.Footer className="bg-white">
@@ -411,7 +286,6 @@ function JobDetails() {
                                         </Button>
                                     </Card.Footer>
                                 </Card>
->>>>>>> 832f89e943e62281a4d5777db7b397490466b9ce
 
                                 {/* Report This Project */}
                                 <Card className="m-4 py-2">

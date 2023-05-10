@@ -1,5 +1,5 @@
 import React from 'react'
-import profile_img from "../Project images/7.jpg"
+import profile_img from "../Projectimages/7.jpg"
 import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard'
 import { Icon } from '@iconify/react';
 import { Col, Container, Row, Card, Button, Form, Dropdown } from 'react-bootstrap'

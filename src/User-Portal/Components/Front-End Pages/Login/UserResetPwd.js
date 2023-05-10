@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
-import worktops from '../../Project images/worktops-installation.jpg'
+import worktops from '../../Projectimages/worktops-installation.jpg'
 import { Button, Col, Form, Row, Card, Container } from 'react-bootstrap';
 
 

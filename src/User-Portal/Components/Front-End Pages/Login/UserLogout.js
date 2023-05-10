@@ -1,10 +1,10 @@
 import React from "react";
 import { Row, Col, Card, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logoutImg from '../../Project images/45.png';
+import logoutImg from '../../Projectimages/45.png';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import worktops from '../../Project images/Extensions.jpg'
+import worktops from '../../Projectimages/Extensions.jpg'
 function UserLogout() {
     return (
         <>

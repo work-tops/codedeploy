@@ -1,21 +1,12 @@
 import React from "react";
-<<<<<<< HEAD
-import { Row, Col, Button, Container } from "react-bootstrap";
+import { Row, Col, Button, Container, Card, Form } from "react-bootstrap";
 import worktops from '../../Projectimages/worktops-installation.jpg'
 import { Icon } from "@iconify/react";
 import Divider from "../../../TemplateAssets/common/Divider";
 import { Link } from "react-router-dom";
 import freelancer from '../../Projectimages/Freelancer.jpg'
-=======
-import { Row, Col, Button, Container, Card, Form } from "react-bootstrap";
-import worktops from '../../Project images/worktops-installation.jpg'
-import { Icon } from "@iconify/react";
-import Divider from "../../../TemplateAssets/common/Divider";
-import { Link } from "react-router-dom";
-import freelancer from '../../Project images/Freelancer.jpg'
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
->>>>>>> 832f89e943e62281a4d5777db7b397490466b9ce
 
 
 function ServiceInformation() {
