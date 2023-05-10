@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState,useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { Row, Col, Button, Modal, Form, Card, CardGroup, Container } from "react-bootstrap";
 import worktops from '../../Projectimages/worktops-installation.jpg'
@@ -10,12 +10,25 @@ import company_name from '../../Projectimages/CompanyName.png'
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
+import { getAllData } from "../../../../Services/ProxyService";
 function SellerList() {
 
     const [show, setShow] = useState(false);
+    const [sellersList, setSellers] = useState([]);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const getSellers = async ()=>{
+        await getAllData('admin/users').then((res)=>{
+            var _response = res.data.users;
+            var _sellers = _response.filter(x=> x.role == "Freelancer");
+            setSellers(_sellers);
+        })
+
+    }
+    useEffect(()=>{
+        getSellers()
+    },[])
 
     return (
        
@@ -27,7 +40,8 @@ function SellerList() {
                 </Col>
                 <Col lg={12}>
                     <Row className="justify-content-around">
-                    <Col lg={4} >
+                        {sellersList.map((data,index)=>{
+                            return <Col lg={4} >
                         <Card className="mt-4 mb-1">
                         <div className="d-flex justify-content-end mt-2">
                             <Icon className="d-block m-2" icon="material-symbols:share-outline" color="black" width="20" height="20" />
@@ -35,9 +49,14 @@ function SellerList() {
                                 <Icon icon="flat-color-icons:like" className="d-block m-2" width="20" height="20" />
                                 </Link>
                                 </div>
-                            <Link to="/ServiceInformation"><Card.Img variant='top' width="100%" src={freelancer} alt="Card image cap" /></Link>
+                            <Link to="/ServiceInformation">
+                                {data.attachments.length > 0 ?
+                                <Card.Img variant='top' width="100%" src={data.attachments[0]?.url} alt="Card image cap" />:
+                                <Card.Img variant='top' width="100%" src={freelancer} alt="Card image cap" />
+                                }
+                            </Link>
                             <Card.Body>
-                                <Link to="/ServiceInformation"><Card.Title className="text-justify" as='h5'>Reliant Plumbing and Heating
+                                <Link to="/ServiceInformation"><Card.Title className="text-justify" as='h5'>{data.name}
                                 </Card.Title></Link>
                                 <p className="text-justify">
                                     <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span>
@@ -60,171 +79,8 @@ function SellerList() {
                         </Card.Body>
                         </Card>
                         </Col>
-                        <Col lg={4} >
-                        <Card className="mt-4 mb-1">
-                        <div className="d-flex justify-content-end mt-2">
-                            <Icon className="d-block m-2" icon="material-symbols:share-outline" color="black" width="20" height="20" />
-                            <Link to="/wishlist/seller">
-                                <Icon icon="flat-color-icons:like" className="d-block m-2" width="20" height="20" />
-                                </Link>
-                                </div>
-                            <Link to="/ServiceInformation"><Card.Img variant='top' width="100%" src={freelancer} alt="Card image cap" /></Link>
-                            <Card.Body>
-                                <Link to="/ServiceInformation"><Card.Title className="text-justify" as='h5'>Reliant Plumbing and Heating
-                                </Card.Title></Link>
-                                <p className="text-justify">
-                                    <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span>
-                                </p>
-                                <p className="text-justify" style={{ fontSize: '14px' }}>
-                                    <Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" />
-                                    <span className="fw-semibold" style={{ color: '#288ce1' }}>(4.5 Reviews)</span>
-                                </p>
-                                <Card.Text className="text-justify" style={{fontSize:'14px'}}>
-                                Reliant Plumbing & Heating are a prompt, reliable and affordable 
-                                Cambridge company that offers a variety of Plumbing 
-                                solutions and services.
-                                </Card.Text>
-                                <div className="d-flex justify-content-between">
-                                    <Link to="/RequestQuote">
-                                        <Button className=" text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
-                                    </Link>
-                     <Button onClick={handleShow} className=" bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
-                     </div>
-                        </Card.Body>
-                        </Card>
-                        </Col>
-                        <Col lg={4} >
-                        <Card className="mt-4 mb-1">
-                        <div className="d-flex justify-content-end mt-2">
-                            <Icon className="d-block m-2" icon="material-symbols:share-outline" color="black" width="20" height="20" />
-                            <Link to="/wishlist/seller">
-                                <Icon icon="flat-color-icons:like" className="d-block m-2" width="20" height="20" />
-                                </Link>
-                                </div>
-                            <Link to="/ServiceInformation"><Card.Img variant='top' width="100%" src={freelancer} alt="Card image cap" /></Link>
-                            <Card.Body>
-                                <Link to="/ServiceInformation"><Card.Title className="text-justify" as='h5'>Reliant Plumbing and Heating
-                                </Card.Title></Link>
-                                <p className="text-justify">
-                                    <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span>
-                                </p>
-                                <p className="text-justify" style={{ fontSize: '14px' }}>
-                                    <Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" />
-                                    <span className="fw-semibold" style={{ color: '#288ce1' }}>(4.5 Reviews)</span>
-                                </p>
-                                <Card.Text className="text-justify" style={{fontSize:'14px'}}>
-                                Reliant Plumbing & Heating are a prompt, reliable and affordable 
-                                Cambridge company that offers a variety of Plumbing 
-                                solutions and services.
-                                </Card.Text>
-                                <div className="d-flex justify-content-between">
-                                    <Link to="/RequestQuote">
-                                        <Button className=" text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
-                                    </Link>
-                     <Button onClick={handleShow} className=" bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
-                     </div>
-                        </Card.Body>
-                        </Card>
-                        </Col>
-                        <Col lg={4} >
-                        <Card className="mt-4 mb-1">
-                        <div className="d-flex justify-content-end mt-2">
-                            <Icon className="d-block m-2" icon="material-symbols:share-outline" color="black" width="20" height="20" />
-                            <Link to="/wishlist/seller">
-                                <Icon icon="flat-color-icons:like" className="d-block m-2" width="20" height="20" />
-                                </Link>
-                                </div>
-                            <Link to="/ServiceInformation"><Card.Img variant='top' width="100%" src={freelancer} alt="Card image cap" /></Link>
-                            <Card.Body>
-                                <Link to="/ServiceInformation"><Card.Title className="text-justify" as='h5'>Reliant Plumbing and Heating
-                                </Card.Title></Link>
-                                <p className="text-justify">
-                                    <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span>
-                                </p>
-                                <p className="text-justify" style={{ fontSize: '14px' }}>
-                                    <Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" />
-                                    <span className="fw-semibold" style={{ color: '#288ce1' }}>(4.5 Reviews)</span>
-                                </p>
-                                <Card.Text className="text-justify" style={{fontSize:'14px'}}>
-                                Reliant Plumbing & Heating are a prompt, reliable and affordable 
-                                Cambridge company that offers a variety of Plumbing 
-                                solutions and services.
-                                </Card.Text>
-                                <div className="d-flex justify-content-between">
-                                    <Link to="/RequestQuote">
-                                        <Button className=" text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
-                                    </Link>
-                     <Button onClick={handleShow} className=" bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
-                     </div>
-                        </Card.Body>
-                        </Card>
-                        </Col>
-                        <Col lg={4} >
-                        <Card className="mt-4 mb-1">
-                        <div className="d-flex justify-content-end mt-2">
-                            <Icon className="d-block m-2" icon="material-symbols:share-outline" color="black" width="20" height="20" />
-                            <Link to="/wishlist/seller">
-                                <Icon icon="flat-color-icons:like" className="d-block m-2" width="20" height="20" />
-                                </Link>
-                                </div>
-                            <Link to="/ServiceInformation"><Card.Img variant='top' width="100%" src={freelancer} alt="Card image cap" /></Link>
-                            <Card.Body>
-                                <Link to="/ServiceInformation"><Card.Title className="text-justify" as='h5'>Reliant Plumbing and Heating
-                                </Card.Title></Link>
-                                <p className="text-justify">
-                                    <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span>
-                                </p>
-                                <p className="text-justify" style={{ fontSize: '14px' }}>
-                                    <Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" />
-                                    <span className="fw-semibold" style={{ color: '#288ce1' }}>(4.5 Reviews)</span>
-                                </p>
-                                <Card.Text className="text-justify" style={{fontSize:'14px'}}>
-                                Reliant Plumbing & Heating are a prompt, reliable and affordable 
-                                Cambridge company that offers a variety of Plumbing 
-                                solutions and services.
-                                </Card.Text>
-                                <div className="d-flex justify-content-between">
-                                    <Link to="/RequestQuote">
-                                        <Button className=" text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
-                                    </Link>
-                     <Button onClick={handleShow} className=" bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
-                     </div>
-                        </Card.Body>
-                        </Card>
-                        </Col>
-                        <Col lg={4} >
-                        <Card className="mt-4 mb-1">
-                        <div className="d-flex justify-content-end mt-2">
-                            <Icon className="d-block m-2" icon="material-symbols:share-outline" color="black" width="20" height="20" />
-                            <Link to="/wishlist/seller">
-                                <Icon icon="flat-color-icons:like" className="d-block m-2" width="20" height="20" />
-                                </Link>
-                                </div>
-                            <Link to="/ServiceInformation"><Card.Img variant='top' width="100%" src={freelancer} alt="Card image cap" /></Link>
-                            <Card.Body>
-                                <Link to="/ServiceInformation"><Card.Title className="text-justify" as='h5'>Reliant Plumbing and Heating
-                                </Card.Title></Link>
-                                <p className="text-justify">
-                                    <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span>
-                                </p>
-                                <p className="text-justify" style={{ fontSize: '14px' }}>
-                                    <Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" />
-                                    <span className="fw-semibold" style={{ color: '#288ce1' }}>(4.5 Reviews)</span>
-                                </p>
-                                <Card.Text className="text-justify" style={{fontSize:'14px'}}>
-                                Reliant Plumbing & Heating are a prompt, reliable and affordable 
-                                Cambridge company that offers a variety of Plumbing 
-                                solutions and services.
-                                </Card.Text>
-                                <div className="d-flex justify-content-between">
-                                    <Link to="/RequestQuote">
-                                        <Button className=" text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
-                                    </Link>
-                     <Button onClick={handleShow} className=" bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
-                     </div>
-                        </Card.Body>
-                        </Card>
-                        </Col>
+                        })}
+                        
                         </Row>
                     </Col>
                         
