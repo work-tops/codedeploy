@@ -55,6 +55,7 @@ function JobProposal() {
             cover_letter: form.cover_letter,
             attachments: [],
             created_by: user._id,
+            is_approved:false
         }
         const response = await createData("proposal/new", jobproposal)
         if (response.status === 201) {

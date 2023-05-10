@@ -5,26 +5,26 @@ import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
 import { Row, Button, Col, Form } from "react-bootstrap";
 import { Icon } from "@iconify/react";
 import { getAllData } from "../../../Services/ProxyService";
+import { Link } from "react-router-dom";
 
 
 const AdvancedTable = () => {
 
-    const [product, setproducts] = useState([]);
-    console.log(product.length)
+    const [proposals,setProposals] = useState([]);
+    const [user, setUser] = useState([]);
 
-    const Productlist = async () => {
+    const getProposals = async() =>{
         var _user = sessionStorage.getItem('user');
         var _json = JSON.parse(_user);
-        const response = await getAllData('products');
-        var _data = response.data.products.filter(x => x.created_by == _json._id)
-        setproducts(_data);
-        sessionStorage.setItem("productlength", _data.length)
+        setUser(_json);
+        const response = await getAllData('proposals/all');
+        var _data = response.data.proposals;
+        _data = _data.filter(x => x.created_by == _json._id);
+        setProposals(_data);
     }
-
-    useEffect(() => {
-        Productlist()
-    }, [])
-
+    useEffect(()=>{
+        getProposals();
+    },[])
 
     const columns = [
         {
@@ -51,12 +51,12 @@ const AdvancedTable = () => {
         }
     ];
 
-    const data = product.map(product => ({
-        proposalID: "2456781",
-        projectTitle: "Emeka Warehouse",
-        price: "£ 77.00",
-        status: <span className="badge bg-success p-2">Accepted</span>,
-        action: <Icon className="ms-3" icon="ic:outline-remove-red-eye" color="#003f6b" width="20" height="20" />
+    const data = proposals.map(x => ({
+        proposalID: x?._id,
+        projectTitle: x?.job?.project_title,
+        price: x?.amount,
+        status: <span className={`badge ${x.is_approved?'bg-success':'bg-danger'} p-2`}>{x.is_approved == true? `Accepted`:`Pending`}</span>,
+        action: <Link to={'/proposalDetails'}><Icon className="ms-3" icon="ic:outline-remove-red-eye" color="#003f6b" width="20" height="20" /></Link>
     }));
 
 
