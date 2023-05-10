@@ -357,16 +357,16 @@ function ProductList() {
                             <Card.Body className="p-0">
                                <Row className="g-0">
                                     <Col md={4} lg={3}>
-                                        <Image src={data?.attachments[0]?.url} alt="" className="w-100 h-100 fit-cover" />
+                                        <Link to={`productdetails/${data._id}`}>
+                                            <Image src={data?.attachments[0]?.url} alt="" className="w-100 h-100 fit-cover" />
+                                        </Link>
                                     </Col>
                                     <Col md={8} lg={9} className="p-x1">
                                         <Row className="g-0 h-100">
                                             <Col lg={8}>
 
                                                 <h4 className="mt-3 text-justify mt-sm-0 fs-0 fs-lg-1">
-                                                    <Link to="/productdetails"
-                                                        className="text-900"
-                                                    >
+                                                    <Link className="text-900" to={`productdetails/${data._id}`}>
                                                         {data?.name}
                                                     </Link>
                                                 </h4>

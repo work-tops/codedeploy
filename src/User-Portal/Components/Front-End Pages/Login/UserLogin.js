@@ -3,7 +3,7 @@ import Flex from '../../../TemplateAssets/common/Flex';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
 import worktops from '../../Projectimages/Conversions.jpg'
 import React, { useState } from 'react';
-import { Button, Col, Form, Row, Card } from 'react-bootstrap';
+import { Button, Col, Form, Row, Card, Container } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { createData, getAllData } from "../../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
@@ -69,19 +69,25 @@ const UserLogin = ({ bgProps }) => {
   };
   return (
     <>
-      <Row>
-        {/* <Col lg={12} className="mb-4">
-        <NavbarStandard />
-        </Col> */}
-        <Row className="min-vh-100 bg-100">
-          <Col xs={6} className="d-none d-lg-block position-relative" style={{ backgroundImage: `url(${worktops})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', objectFit: 'cover' }} />
-          <Col sm={10} md={6} className="px-sm-0 align-self-center mx-auto py-5">
-            <Row className="g-0 ms-4 justify-content-center">
+
+
+      <Row className="min-vh-100 bg-100">
+        <Col xs={6} className="d-none d-lg-block position-relative">
+          <div style={{ backgroundImage: `url(${worktops})` }} className="bg-holder">
+          </div>
+        </Col>
+        <Col sm={10} md={6} className="px-sm-0 align-self-center mx-auto py-5">
+          <Container>
+            <Row className="g-0  justify-content-center">
               <Col lg={9} xl={8} className="col-xxl-8">
                 <Card className='shadow'>
                   <Card.Header style={{ background: '#003f6b' }} className="text-center p-2">
                     <Link to={'/'}>
+<<<<<<< HEAD
                     <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="135px" />
+=======
+                      <img src={logo} width="135px" />
+>>>>>>> 832f89e943e62281a4d5777db7b397490466b9ce
                     </Link>
                   </Card.Header>
                   <Card.Body className="p-4">
@@ -135,7 +141,7 @@ const UserLogin = ({ bgProps }) => {
                           <Col xs="auto">
                             <Link
                               className="fs--1 mb-0"
-                              to='#'
+                              to='/user/forgetpassword'
                             >
                               Forgot Password?
                             </Link>
@@ -160,9 +166,9 @@ const UserLogin = ({ bgProps }) => {
                 </Card>
               </Col>
             </Row>
-          </Col >
-        </Row >
-      </Row>
+          </Container>
+        </Col >
+      </Row >
     </>
   );
 };

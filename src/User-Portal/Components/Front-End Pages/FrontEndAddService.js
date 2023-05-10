@@ -177,8 +177,7 @@ const FrontendAddService = () => {
                 </Col>
                 <Col lg={12} className='mt-5'>
                     <Form onSubmit={(e) => { formsubmit(e) }}>
-                        <Card className='w-100'>
-                            <Card.Body>
+                        
                                 <div className='d-flex justify-content-end'>
 
                                     <div className='me-4'>
@@ -391,14 +390,10 @@ const FrontendAddService = () => {
                                         </Col>
                                     </Row>
                                 </Container>
-                            </Card.Body >
-                        </Card>
+                            
                     </Form>
                 </Col>
                 <Toaster />
-                <Col lg={12}>
-                    <Footer />
-                </Col>
             </Row>
         </>
     )

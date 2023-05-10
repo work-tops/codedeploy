@@ -208,7 +208,7 @@ useEffect(() => {
                                   </Form.Check>
                                 </Col>
                                 <Col xs="auto">
-                                  <Link className="fs--1 mb-0" to="#">
+                                  <Link className="fs--1 mb-0" to="/freelance/forgetpassword">
                                     Forgot Password?
                                   </Link>
                                 </Col>

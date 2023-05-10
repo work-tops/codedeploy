@@ -59,6 +59,15 @@ import ProductGrid from "../Front-End Pages/ProductList/ProductGrid";
 import PostJob1 from "../Front-End Pages/PostJob1";
 import PostJob2 from "../Front-End Pages/PostJob2";
 import PublicProfile from "../Front-End Pages/Profile/PublicProfile";
+import ForgetPasswordFreelancer from "../Front-End Pages/Login/FreelancerForgetPassword";
+import FreelanceConMail from "../Front-End Pages/Login/FreelancerConMail";
+import FreelancerResetPwd from "../Front-End Pages/Login/FreelancerRestPwd";
+import FreelancerLogout from "../Front-End Pages/Login/FreelancerLogout";
+import UserForgetPassword from "../Front-End Pages/Login/UserForgetPassword";
+import UserResetPwd from "../Front-End Pages/Login/UserResetPwd";
+import UserConMail from "../Front-End Pages/Login/UserConMail";
+import UserLogout from "../Front-End Pages/Login/UserLogout";
+import ProposalDetails from "../Front-End Pages/ProposalDetails";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -78,8 +87,11 @@ const FrontEndRouters = () => {
             {/* proper order routes end */}
 
             <Route path='/projectlisting'><ProjectListing /></Route>
+            
+            {/* Proposal  */}
             <Route path="/proposallist"><ProposalList /></Route>
-            {/*  */}
+            <Route path="/proposalDetails"><ProposalDetails/></Route>
+            {/* Proposal  */}
 
             {/*  */}
             {/* <Route path='/loginportal'><LoginPortal /></Route> */}
@@ -131,8 +143,20 @@ const FrontEndRouters = () => {
             <Route path="/termsofuse"><TermsOfUse /></Route>
             <Route path="/shippingpage"><ShippingPage /></Route>
             <Route path="/postjob1"><PostJob1 /></Route>
-            <Route path="/postjob2"><PostJob2/></Route>
-            <Route path="/profile_publicview"><PublicProfile/></Route>
+            <Route path="/postjob2"><PostJob2 /></Route>
+            {/* New Pages */}
+            <Route path="/profile_publicview"><PublicProfile /></Route>
+            {/* Freelancer */}
+            <Route path="/freelance/forgetpassword"><ForgetPasswordFreelancer /></Route>
+            <Route path="/freelance/confirm-mail"><FreelanceConMail /></Route>
+            <Route path="/freelance/reset-pwd"><FreelancerResetPwd /></Route>
+            <Route path="/freelance/logout"><FreelancerLogout /></Route>
+            {/* Project Owner */}
+            <Route path="/user/reset-pwd"><UserResetPwd /></Route>
+            <Route path="/user/confirm-mail"><UserConMail /></Route>
+            <Route path="/user/logout"><UserLogout /></Route>
+            <Route path="/user/forgetpassword"><UserForgetPassword /></Route>
+            {/* New Pages */}
         </Switch>
 
     )
