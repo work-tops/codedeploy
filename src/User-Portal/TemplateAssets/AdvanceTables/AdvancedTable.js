@@ -3,8 +3,6 @@ import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
 import { Row, Button, Col, Form } from "react-bootstrap";
-import IconButton from "../common/IconButton";
-import AdvanceTableSearchBox from "../common/advance-table/AdvanceTableSearchBox";
 import product_image from "../Images/product_image.png"
 import CardDropdown from "../common/CardDropdown";
 import { Dropdown } from "react-bootstrap";

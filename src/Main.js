@@ -4,7 +4,7 @@ import AppContext from '../src/User-Portal/TemplateAssets/context/Context';
 import { settings } from './config';
 import { getColor, getItemFromStore } from '../src/User-Portal/TemplateAssets/helpers/utils';
 import { configReducer } from '../src/User-Portal/TemplateAssets/reducers/configReducer';
-// import useToggleStyle from '../src/User-Portal/TemplateAssets/hooks/useToggleStyle';
+import useToggleStyle from '../src/User-Portal/TemplateAssets/hooks/useToggleStyle';
 
 const Main = props => {
   const configState = {
@@ -26,11 +26,11 @@ const Main = props => {
 
   const [config, configDispatch] = useReducer(configReducer, configState);
 
-  // const { isLoaded } = useToggleStyle(
-  //   config.isRTL,
-  //   config.isDark,
-  //   configDispatch
-  // );
+  const { isLoaded } = useToggleStyle(
+    config.isRTL,
+    config.isDark,
+    configDispatch
+  );
 
   const setConfig = (key, value) => {
     configDispatch({

@@ -2,6 +2,7 @@
 import React from "react";
 import { Card, Button, Col, Row } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
+import ProposalsTable from "../../../TemplateAssets/AdvanceTables/ProposalsTable";
 function ProposalCard() {
     return (
         <>
@@ -11,8 +12,12 @@ function ProposalCard() {
                 </Col>
                 <Col lg={12}>
                     <Card className="m-5">
+                        <Card.Header as="h5" className="bg-light text-uppercase">
+                            Proposals
+                        </Card.Header>
                         <Card.Body>
-                            <h1 className="text-center">Coming Soon...</h1>
+                            {/* <h1 className="text-center">Coming Soon...</h1> */}
+                            <ProposalsTable />
                         </Card.Body>
                     </Card>
                 </Col>
