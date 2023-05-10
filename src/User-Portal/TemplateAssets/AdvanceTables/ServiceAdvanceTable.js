@@ -164,14 +164,14 @@ const ServiceAdvancedTable = () => {
                             >
                                 <span className="d-none d-sm-inline-block ms-1">New</span>
                             </IconButton> */}
-                            <IconButton
+                            {/* <IconButton
                                 variant="falcon-default"
                                 size="sm"
                                 icon="external-link-alt"
                                 transform="shrink-3"
                             >
                                 <span className="d-none d-sm-inline-block ms-1">Export</span>
-                            </IconButton>
+                            </IconButton> */}
                         </div>
                     )}
                 </Col>
