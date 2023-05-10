@@ -15,7 +15,7 @@ import FrontEndRouters from './User-Portal/Components/FrontEndRouters/FrontendRo
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Main>
         <Routers />
         <FrontEndRouters />
