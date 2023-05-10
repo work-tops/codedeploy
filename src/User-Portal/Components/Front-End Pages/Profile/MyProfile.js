@@ -80,13 +80,13 @@ function MyProfile() {
                                                             <td className="p-1" style={{ width: '35%' }}>
                                                                 First Name:
                                                             </td>
-                                                            <td className="p-1 text-600">Peter </td>
+                                                            <td className="p-1 text-600">{user?.first_name} </td>
                                                         </tr>
                                                         <tr>
                                                             <td className="p-1" style={{ width: '35%' }}>
                                                                 Last Name :
                                                             </td>
-                                                            <td className="p-1 text-600">Leverkus</td>
+                                                            <td className="p-1 text-600">{user?.last_name}</td>
                                                         </tr>
                                                         <tr>
                                                             <td className="p-1" style={{ width: '35%' }}>
@@ -94,7 +94,7 @@ function MyProfile() {
                                                             </td>
                                                             <td className="p-1">
                                                                 <Link to="mailto:goodguy@nicemail.com" className="text-600">
-                                                                    testworktops@gmail.com
+                                                                {user?.email}
                                                                 </Link>
                                                             </td>
                                                         </tr>
@@ -104,9 +104,8 @@ function MyProfile() {
                                                             </td>
                                                             <td className="p-1">
                                                                 <Link to="tel:+01234567890" className="text-600">
-                                                                    +012-345-67890
+                                                                {user?.phone}
                                                                 </Link>
-
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -115,7 +114,7 @@ function MyProfile() {
                                                             </td>
                                                             <td className="p-1">
                                                                 <Link to="1 De La Warr Way, Cambridge, CB23 6DX" className="text-600">
-                                                                    1 De La Warr Way, Cambridge, CB23 6DX
+                                                                {user?.address}
                                                                 </Link>
 
                                                             </td>

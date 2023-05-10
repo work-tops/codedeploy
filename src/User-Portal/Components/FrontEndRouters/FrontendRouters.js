@@ -94,9 +94,6 @@ const FrontEndRouters = () => {
             {/* Proposal  */}
 
             {/*  */}
-            {/* <Route path='/loginportal'><LoginPortal /></Route> */}
-            <Route path='/projectownersignup'><ProjectOwnerRegister /></Route>
-            <Route path='/sellersignup'><SellerRegister /></Route>
             <Route path='/user/addproduct'><FrontendAddProduct /></Route>
             <Route path='/user/addservices'><FrontendAddService /></Route>
             <Route path='/how-it-works'><HowItWorks /></Route>
