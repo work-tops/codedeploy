@@ -25,8 +25,12 @@ const NavbarStandard = () => {
 
   const logOut = () => {
     sessionStorage.clear();
-    history.push("/owner");
-    window.location.reload();
+    if(user.role == "Owner"){
+      history.push("/owner");
+    }else{
+      history.push("/freelancer/true");
+    }
+    // window.location.reload();
   }
 
   // 1 for enduser, 2 for owner, 3 for freelancer
