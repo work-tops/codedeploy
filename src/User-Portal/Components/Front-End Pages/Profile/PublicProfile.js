@@ -1,6 +1,6 @@
 import React from "react";
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard'
-import trainer from '../../Project images/trainer.png'
+import trainer from '../../Projectimages/trainer.png'
 import { Row, Col, Card, Button } from "react-bootstrap";
 import { Icon } from "@iconify/react";
 import ProductGrid from "../ProductList/ProductGrid";

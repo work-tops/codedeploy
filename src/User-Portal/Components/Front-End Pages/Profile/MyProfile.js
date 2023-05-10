@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Card, Form, Table, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import student from '../../Project images/student.png'
-import chip from '../../Project images/chip.png'
+import student from '../../Projectimages/student.png'
+import chip from '../../Projectimages/chip.png'
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import CardDropdown from "../../../TemplateAssets/common/CardDropdown";
-import coverimg from '../../Project images/7.jpg'
-import mastercard from '../../Project images/master-card.png'
+import coverimg from '../../Projectimages/7.jpg'
+import mastercard from '../../Projectimages/master-card.png'
 import PaymentTable from "../../../TemplateAssets/AdvanceTables/PaymentTable";
 import InvoiceTable from "../../../TemplateAssets/AdvanceTables/InvoiceTable";
 
