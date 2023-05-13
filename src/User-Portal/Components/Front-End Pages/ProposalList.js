@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import { Col, Container, Row, Card, Button, Form, Dropdown, Modal } from 'react-bootstrap'
 import CardDropdown from '../../TemplateAssets/common/CardDropdown';
 import { Link } from 'react-router-dom';
+import ProposalListsTable from '../../TemplateAssets/AdvanceTables/ProposalListsTable';
 
 function ProposalList() {
 
@@ -58,78 +59,9 @@ function ProposalList() {
                             </Form.Select>
                         </Card.Body>
                     </Card>
-                    <Card className='mb-3'>
+                    <Card>
                         <Card.Body>
-                            <Row className='justify-content-around'>
-                                <Col lg={7} className='mb-3'>
-                                    <Card>
-                                        <Card.Body>
-                                            <Row>
-                                                <Col lg={4} className='mb-3'>
-                                                    <img src={profile_img} className="mb-3 rounded-circle" width="100px" height="100px" />
-                                                    <h5 className="fw-bold mb-3">IRIE ARTS INC</h5>
-                                                    <p className="text-900 fw-semibold mb-3" style={{ fontSize: '14px' }}>Fabricator , Kitchen Designer</p>
-                                                    <p className="text-900 fw-semibold mb-3" style={{ fontSize: '14px' }}><Icon style={{ marginTop: '-5px' }} icon="ic:round-star-rate" c color="#fe9e0f" width="24" height="24" /> 4.5/5 (116)</p>
-                                                </Col>
-                                                <Col lg={8} className="mb-3 text-900 text-justify" style={{ fontSize: '14px' }}>
-                                                    Greetings,i can rank your website high on google top result pages.i can
-                                                    help your site dominate your top competitors with thousands of niche
-                                                    related backlinks and country trageted visitors from google organic searches
-                                                    1. Increase website domain authority to 60+ and higher
-                                                    Greetings,i can rank your website high on google top result pages.i can
-                                                    help your site dominate your top competitors with thousands of niche
-                                                    related backlinks and country trageted visitors from google organic searches
-                                                    1. Increase website domain authority to 60+ and higher
-                                                    Greetings,i can rank your website high on google top result pages.i can
-                                                    help your site dominate your top competitors with thousands of niche
-                                                    related backlinks and country trageted visitors from google organic searches
-                                                    1. Increase website domain authority to 60+ and higher
-                                                </Col>
-                                            </Row>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                                <Col lg={5} className=''>
-                                    <Card>
-                                        <Card.Header>
-                                            <div className="position-absolute top-0 end-0 m-3">
-                                                <CardDropdown iconClassName="fs--1" drop="bottom">
-                                                    <div className="py-2">
-                                                        <Dropdown.Item as={Link} to="/proposalDetails" className="text-success">
-                                                            Accept
-                                                        </Dropdown.Item>
-                                                        <Dropdown.Item as={Link} to="/proposalDetails" className="text-primary">
-                                                            Reply
-                                                        </Dropdown.Item>
-                                                        <Dropdown.Item disabled className="text-danger">
-                                                            Decline
-                                                        </Dropdown.Item>
-                                                    </div>
-                                                </CardDropdown>
-                                            </div>
-                                        </Card.Header>
-                                        <Card.Body>
-                                            <div >
-                                                <p className="me-2 fw-semibold text-900" >Experience : <span className='text-justify' style={{ fontSize: '14px' }}>4 Years</span></p>
-
-                                            </div>
-                                            <div >
-                                                <p className="me-2 fw-semibold text-900" >Duration : <span className='text-justify' style={{ fontSize: '14px' }}>3 Months</span></p>
-
-                                            </div>
-                                            <div >
-                                                <p className="me-2 fw-semibold text-900" >Budget : <span className='text-justify' style={{ fontSize: '14px' }}>£ 2300</span></p>
-
-                                            </div>
-                                            <div >
-                                                <p className="me-2 fw-semibold text-900" >Date : <span className='text-justify' style={{ fontSize: '14px' }}>01/04/2023</span></p>
-
-                                            </div>
-                                            <Button onClick={handleShow} className='w-100' style={{ background: '#003f6b' }}>View</Button>
-                                        </Card.Body>
-                                    </Card >
-                                </Col>
-                            </Row>
+                            <ProposalListsTable/>
                         </Card.Body>
                     </Card>
                 </Col >
@@ -207,15 +139,15 @@ function ProposalList() {
                             <Col lg={4}>
                                 <Card className='mt-3 me-3'>
                                     <Card.Body>
-                                        <p  className='text-end'>Fixed Price</p>
+                                        <p className='text-end'>Fixed Price</p>
                                         <p className='fw-semibold'>Details</p>
                                         <div className='d-flex justify-content-between'>
-                                        <p>Deposit</p>
-                                        <p className='text-success'>£ 200</p>
+                                            <p>Deposit</p>
+                                            <p className='text-success'>£ 200</p>
                                         </div>
                                         <div className='d-flex justify-content-between'>
-                                        <p>Proposal ID</p>
-                                        <p className='text-warning'>243623456</p>
+                                            <p>Proposal ID</p>
+                                            <p className='text-warning'>243623456</p>
                                         </div>
                                         <p role='button' className='fw-semibold text-900'><Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className='me-2' width="20" height="20" />Mark as Favourite</p>
                                         <div className='mt-3 d-flex justify-content-between'>

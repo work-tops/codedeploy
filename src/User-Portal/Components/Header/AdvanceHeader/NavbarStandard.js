@@ -25,9 +25,9 @@ const NavbarStandard = () => {
 
   const logOut = () => {
     sessionStorage.clear();
-    if(user.role == "Owner"){
+    if (user.role == "Owner") {
       history.push("/owner");
-    }else{
+    } else {
       history.push("/freelancer/true");
     }
     // window.location.reload();
@@ -57,24 +57,24 @@ const NavbarStandard = () => {
       style={{ background: '#003f6b' }}
 
     >
-      <Container>
-        <div className='d-flex' style={{ flexDirection: 'row' }}>
-          <div>
-            {/* Logo */}
-            <Navbar.Brand className="text-white dark__text-white" as={Link} to="/homepage">
-              <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="125px" />
-            </Navbar.Brand>
-            {/* Logo */}
-          </div>
-          <div>
-            {id == 2 &&
-              <div className='ms-2 mt-2'>
-                <Link to="/postproject">
-                  <Button className='bg-white border-0 me-2' style={{ color: '#003f6b' }}>Post a Project</Button>
-                </Link>
-              </div>}
-          </div>
+      <Container className='d-flex justify-content-between'>
+        {/* <div className='d-flex' style={{ flexDirection: 'row', justifyContent: 'space-between' }}> */}
+        <div>
+          {/* Logo */}
+          <Navbar.Brand className="text-white dark__text-white" as={Link} to="/homepage">
+            <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="125px" />
+          </Navbar.Brand>
+          {/* Logo */}
         </div>
+        <div>
+          {id == 2 &&
+            <div className=''>
+              <Link to="/postproject">
+                <Button className='bg-white border-0 me-2' style={{ color: '#003f6b' }}>Post a Project</Button>
+              </Link>
+            </div>}
+        </div>
+
         {/* Search */}
         {/* <Form className="  position-relative">
           <Form.Control
@@ -86,7 +86,7 @@ const NavbarStandard = () => {
          
         </Form> */}
         {/* Search */}
-        <div className='ms-5'>
+        <div className=''>
           <Navbar.Toggle onClick={() => setNavbarCollapsed(!navbarCollapsed)} />
           <Navbar.Collapse className="scrollbar">
 
@@ -251,17 +251,19 @@ const NavbarStandard = () => {
                             Profile
                           </Dropdown.Item>
                           {id == 2 && <Dropdown.Item as={Link} to="/OpenProjectCard">My Projects</Dropdown.Item>}
+                          {id == 2 && <Dropdown.Item as={Link} to="/workstreamcard">Workstreams</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/addproductcard">My Products</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/addservicecard">My Services</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/proposalcard">Proposals</Dropdown.Item>}
-                          {id == 3 && <Dropdown.Item as={Link} to="/productenquirescard">Product Enquires</Dropdown.Item>}
+                          {id == 3 && <Dropdown.Item as={Link} to="/sellerEnquirescard">Enquires</Dropdown.Item>}
                           <Dropdown.Item as={Link} to="/InvoicedueCard">Invoice Due</Dropdown.Item>
+                          {id == 2 && <Dropdown.Item as={Link} to="/ownerEnquirescard">Enquiries</Dropdown.Item>}
                           <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item>
                           {/* <Dropdown.Divider /> */}
                           <Dropdown.Item as={Link} to="/Project-Owner/Settings">
                             Settings
                           </Dropdown.Item>
-                          <Dropdown.Item onClick={()=>{logOut()}}>
+                          <Dropdown.Item onClick={() => { logOut() }}>
                             Logout
                           </Dropdown.Item>
                         </div>
@@ -274,6 +276,7 @@ const NavbarStandard = () => {
             </Nav>
           </Navbar.Collapse>
         </div>
+        {/* </div> */}
       </Container>
     </Navbar >
   );

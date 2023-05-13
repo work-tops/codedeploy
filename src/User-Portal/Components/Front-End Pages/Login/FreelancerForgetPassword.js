@@ -64,7 +64,7 @@ function ForgetPasswordFreelancer() {
                                         className="d-flex justify-content-center align-items-center"
                                     >
                                         <div className="p-4 p-md-5 flex-grow-1">
-                                            <h3 className="mb-3"> Forgot your password?</h3>
+                                            <h4 className="mb-3"> Forgot your password?</h4>
                                             <p style={{ fontSize: '14px' }}>Enter your email and we'll send you a reset link.</p>
                                             <Form className="mt-3">
                                                 <Form.Group className="mb-3">

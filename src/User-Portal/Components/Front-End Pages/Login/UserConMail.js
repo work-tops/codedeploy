@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
-import worktops from '../../Projectimages/Painting.jpg'
+import worktops from '../../Projectimages/Restoring.jpg'
 import { Col, Row, Card, Container, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import envelope from '../../Projectimages/16.png';
+import { easeBackInOut } from "d3";
 
 function UserConMail() {
     return (
@@ -25,24 +26,26 @@ function UserConMail() {
                                         </Link>
                                     </Card.Header>
                                     <Card.Body className="p-4">
-                                        <img
-                                            className="d-block mb-3 mx-auto"
-                                            src={envelope}
-                                            alt="sent"
-                                            width={100}
-                                        />
-                                        <h3 className="text-center mb-3">Please check your email!</h3>
-                                        <p style={{ fontSize: '14px' }} className="text-justify ">
+                                        <div className="d-flex justify-content-center mb-1">
+                                            <img
+                                                className="d-block mx-auto mt-3 mb-3"
+                                                src={envelope}
+                                                alt="sent"
+                                                width={100}
+                                            />
+                                        </div>
+                                        <h4 className="text-center m-3">Please check your email!</h4>
+                                        <p style={{ fontSize: '14px' }} className="text-center m-3">
                                             An email has been sent to <span className="text-success fw-bold">test1@gmail.com</span >. Please click on the
                                             included link to reset your password.
                                         </p>
                                         <div className="d-flex justify-content-center">
                                             <Button
-                                                style={{ background: '#003f6b' }}
-                                                size="sm"
                                                 as={Link}
                                                 to="/owner"
-                                                className="border-0 p-2 "
+                                                style={{ background: '#003f6b' }}
+                                                size="sm"
+                                                className="border-0 p-2 mb-3 mt-3"
                                             >
                                                 <FontAwesomeIcon
                                                     icon="chevron-left"

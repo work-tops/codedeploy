@@ -25,54 +25,33 @@ function FreelanceConMail() {
                             alt=""
                             width="150"
                         />
-                        <Card className="overflow-hidden z-index-1">
-                            <Card.Body className="p-0">
-                                <Row className="h-100 g-0">
-                                    <Col style={{ background: '#003f6b' }} lg={5} className="text-white text-center">
-
-                                        <div className="position-relative p-4 pt-md-5 pb-md-7">
-                                            <div className="z-index-1 position-relative light">
-                                                <Link to={'/'}> <img src={logo} width="135px" /></Link>
-                                                {/* <h3 className="mt-5 opacity-75 text-white"> Welcome </h3> */}
-                                            </div>
-
+                        <Card className='shadow'>
+                                    <Card.Header style={{ background: '#003f6b' }} className="text-center p-2">
+                                        <Link to={'/'}>
+                                            <img src={logo} width="135px" />
+                                        </Link>
+                                    </Card.Header>
+                                    <Card.Body className="p-4">
+                                        <div className="d-flex justify-content-center mb-1">
+                                            <img
+                                                className="d-block mx-auto mt-3 mb-3"
+                                                src={envelope}
+                                                alt="sent"
+                                                width={100}
+                                            />
                                         </div>
-                                        <div className="mt-3 mb-4 mt-md-4 mb-md-5 light">
-                                            <p className="mb-0 mt-4 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">
-                                                Read our{' '}
-                                                <Link
-                                                    className="text-decoration-underline text-white"
-                                                    to="#!"
-                                                >
-                                                    terms
-                                                </Link>{' '}
-                                                and{' '}
-                                                <Link
-                                                    className="text-decoration-underline text-white"
-                                                    to="#!"
-                                                >
-                                                    conditions{' '}
-                                                </Link>
-                                            </p>
-                                        </div>
-                                    </Col>
-                                    <Col md={7}>
-                                        <img
-                                            className="d-block mx-auto mt-5 mb-4"
-                                            src={envelope}
-                                            alt="sent"
-                                            width={100}
-                                        />
-                                        <h3 className="text-justify m-3">Please check your email!</h3>
-                                        <p style={{ fontSize:'14px' }} className="text-justify m-3">
+                                        <h4 className="text-center m-3">Please check your email!</h4>
+                                        <p style={{ fontSize: '14px' }} className="text-center m-3">
                                             An email has been sent to <span className="text-success fw-bold">test1@gmail.com</span >. Please click on the
                                             included link to reset your password.
                                         </p>
                                         <div className="d-flex justify-content-center">
                                             <Button
+                                                as={Link}
+                                                to="/owner"
                                                 style={{ background: '#003f6b' }}
                                                 size="sm"
-                                                className="border-0 p-2 mb-5 mt-3"
+                                                className="border-0 p-2 mb-3 mt-3"
                                             >
                                                 <FontAwesomeIcon
                                                     icon="chevron-left"
@@ -81,10 +60,8 @@ function FreelanceConMail() {
                                                 Return to login
                                             </Button>
                                         </div>
-                                    </Col>
-                                </Row>
-                            </Card.Body>
-                        </Card>
+                                    </Card.Body>
+                                </Card>
                     </Col>
                 </Row>
             </Container>

@@ -349,7 +349,7 @@ function ProductDetails() {
                                                         Add to Cart
                                                     </Button>
                                                 </Link>
-                                                <Link to="/RequestQuote">
+                                                <Link to="/GetQuote">
                                                     <Button
                                                         style={{ background: '#003f6b' }}
                                                         size="lg"

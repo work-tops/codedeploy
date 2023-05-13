@@ -1,7 +1,8 @@
 import { React, useState } from "react";
 import { Col, Container, Row, Card, Button, Dropdown, Form, Modal } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
-import profile_img from "../Projectimages/7.jpg"
+import profile_img from "../Projectimages/Handyman.jpg"
+import { Link } from "react-router-dom";
 
 function ProposalDetails() {
     const [show, setShow] = useState(false);
@@ -70,20 +71,16 @@ function ProposalDetails() {
                                         </Row>
                                     </Card.Body>
                                 </Card>
-                                <Card>
+                                <Card className="mb-3">
                                     <Card.Header>
-                                        <div className="d-flex justify-content-center btn-group">
-                                            <Button className="bg-transparent text-secondary border-secondary">Send Message</Button>
-                                            <Button className="bg-transparent text-secondary border-secondary">Request NDA</Button>
-                                            <Button className="bg-transparent text-secondary border-secondary">Request Fund</Button>
-                                        </div>
+                                        <h5 className="bg-transparent text-900 border-secondary">Send Message</h5>
                                     </Card.Header>
                                     <Card.Body>
                                         <Form>
                                             <Form.Group className="mb-3">
                                                 <Form.Control
                                                     as="textarea" id="ask_question"
-                                                    placeholder='Click Here to Reply'
+                                                    placeholder='Send Your Message'
                                                     rows={5} />
                                             </Form.Group>
                                             <Form.Check type="checkbox" id="rememberMe" className="mb-0">
@@ -94,12 +91,12 @@ function ProposalDetails() {
                                                 </Form.Check.Label>
                                             </Form.Check>
                                             <div className="d-flex justify-content-end mb-3">
-                                                <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                <Button as={Link} to="/owner" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
                                                     SEND
                                                 </Button>
                                             </div>
                                         </Form>
-                                        <Card>
+                                        <Card className="">
                                             <Card.Body>
                                                 <Row>
                                                     <Col className="mt-3" lg={3}>
@@ -155,9 +152,9 @@ function ProposalDetails() {
                                                     </Dropdown.Toggle>
 
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item className="text-success">Accept</Dropdown.Item>
-                                                        <Dropdown.Item className="text-danger">Decline</Dropdown.Item>
-                                                      </Dropdown.Menu>
+                                                        <Dropdown.Item as={Link} to="/owner" className="text-success">Accept</Dropdown.Item>
+                                                        <Dropdown.Item  as={Link} to="/proposallist" className="text-danger">Decline</Dropdown.Item>
+                                                    </Dropdown.Menu>
                                                 </Dropdown>
                                                 {/* Accepted */}
                                                 <Button className="border-0 bg-success mt-2 d-block">Accepted</Button>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
-import worktops from '../../Projectimages/bricklaying.jpg'
+import worktops from '../../Projectimages/paint.jpg'
 import { Button, Col, Form, Row, Card, Container } from 'react-bootstrap';
 
 function UserForgetPassword() {
@@ -23,7 +23,7 @@ function UserForgetPassword() {
                                         </Link>
                                     </Card.Header>
                                     <Card.Body className="p-4">
-                                        <h3 className="mb-3"> Forgot your password?</h3>
+                                        <h4 className="mb-3"> Forgot your password?</h4>
                                         <p style={{ fontSize: '14px' }}>Enter your email and we'll send you a reset link.</p>
                                         <Form className="mt-3">
                                             <Form.Group className="mb-3">

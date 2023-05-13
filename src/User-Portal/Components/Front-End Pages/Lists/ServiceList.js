@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import bathroom_fitting from '../../Projectimages/Bathroom Fitting.jpg'
+import bathroom_fitting from '../../Projectimages/BathroomFitting.jpg'
 import worktops from "../../Projectimages/worktops-installation.jpg"
 import bricklaying from '../../Projectimages/bricklaying.jpg'
 import carpenterwork from '../../Projectimages/carpenter-working-with-circular-saw.jpg'
@@ -58,854 +58,576 @@ function ServiceList(layout) {
         <>
             <Container>
                 <Row>
-                    {/* Post Code Modal */}
+
+
+                    <Col lg={12} className="mb-5">
+                        <NavbarStandard />
+                    </Col>
+                    {/* Location Modal */}
                     <div className='d-flex justify-content-between'>
                         <Modal show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
-                                <Modal.Title>What is Your Post Code ?
+                                <Modal.Title>What is Your Location ?
                                     <p>
                                         It will help us to find the closest tradeperson to you.
                                     </p>
                                 </Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                                <Form.Control type='text' placeholder="cb236dx" className='w-100 mb-3' />
+                                <Form.Control type='text' placeholder="Cambridge" className='w-100 mb-3' />
                                 <Link to="/user/SellerList"><Button className='btn btn-outline-success text-light'>Search</Button></Link>
                             </Modal.Body>
                         </Modal>
                     </div>
                     {/*  */}
-
-
-
-
-                    <Col lg={12} className="mb-5">
-                        <NavbarStandard />
-                    </Col>
-                    <Col lg={12} className="mt-5">
-                        <Card className="mb-3 d-flex justify-content-between m-4">
-                            <Card.Header className="bg-white position-relative">
-                                <h6 className="mb-0 mt-1 text-uppercase">Services Lists</h6>
-                            </Card.Header>
-                            <Card.Body className="pt-0 pt-md-3">
-                                <Row className="g-3 align-items-center">
-                                    <Col xs="auto" className="d-xl-none">
-                                        <Button
-                                            className="position-relative p-0"
-                                            size="sm"
-                                            variant="link"
-                                        >
-                                            <FontAwesomeIcon icon="filter" className="fs-0 text-700" />
-                                        </Button>
-                                    </Col>
-                                    <Col>
-                                        <Form className="position-relative">
-                                            <Form.Control
-                                                type="search"
-                                                placeholder="Search..."
-                                                size="sm"
-                                                aria-label="Search"
-                                                className="rounded search-input ps-4"
-                                            />
-                                            <FontAwesomeIcon
-                                                icon="search"
-                                                className="fs--1 text-400 position-absolute text-400 start-0 top-50 translate-middle-y ms-2"
-                                            />
-                                        </Form>
-                                    </Col>
-                                    <Col xs="auto" className="col-md">
-                                        <Row className="g-0 justify-content-end">
-                                            <Col xs="auto" className="p-0">
-                                                <Row className="g-2 align-items-center">
-                                                    <Col xs="auto" className="d-none d-lg-block">
-                                                        <small className='me-2'>View :</small>
-                                                    </Col>
-                                                    <Col xs="auto">
-                                                        <OverlayTrigger
-                                                            placement="top"
-                                                            overlay={<Tooltip>Course Grid</Tooltip>}
-                                                        >
-                                                            <Link
-                                                                to="#"
-                                                                className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
-                                                                    }`}
-                                                            >
-                                                                <Icon icon="material-symbols:grid-on-sharp" width="24" height="24" />
-                                                            </Link>
-                                                        </OverlayTrigger>
-                                                        <OverlayTrigger
-                                                            placement="top"
-                                                            overlay={<Tooltip>Course List</Tooltip>}
-                                                        >
-                                                            <Link
-                                                                to="#"
-                                                                className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
-                                                                    }`}
-                                                            >
-                                                                <Icon icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
-                                                            </Link>
-                                                        </OverlayTrigger>
+                    <Container>
+                        <Row>
+                            <Col lg={12} className="mt-5">
+                                <Card className="">
+                                    <Card.Header className="bg-white position-relative">
+                                        <h6 className="mb-0 mt-1 text-uppercase">Services Lists</h6>
+                                    </Card.Header>
+                                    <Card.Body className="pt-0 pt-md-3">
+                                        <Row className="g-3 align-items-center">
+                                            <Col xs="auto" className="d-xl-none">
+                                                <Button
+                                                    className="position-relative p-0"
+                                                    size="sm"
+                                                    variant="link"
+                                                >
+                                                    <FontAwesomeIcon icon="filter" className="fs-0 text-700" />
+                                                </Button>
+                                            </Col>
+                                            <Col>
+                                                <Form className="position-relative">
+                                                    <Form.Control
+                                                        type="search"
+                                                        placeholder="Search..."
+                                                        size="sm"
+                                                        aria-label="Search"
+                                                        className="rounded search-input ps-4"
+                                                    />
+                                                    <FontAwesomeIcon
+                                                        icon="search"
+                                                        className="fs--1 text-400 position-absolute text-400 start-0 top-50 translate-middle-y ms-2"
+                                                    />
+                                                </Form>
+                                            </Col>
+                                            <Col xs="auto" className="col-md">
+                                                <Row className="g-0 justify-content-end">
+                                                    <Col xs="auto" className="p-0">
+                                                        <Row className="g-2 align-items-center">
+                                                            <Col xs="auto" className="d-none d-lg-block">
+                                                                <small className='me-2'>View :</small>
+                                                            </Col>
+                                                            <Col xs="auto">
+                                                                <OverlayTrigger
+                                                                    placement="top"
+                                                                    overlay={<Tooltip>Course Grid</Tooltip>}
+                                                                >
+                                                                    <Link
+                                                                        to="#"
+                                                                        className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
+                                                                            }`}
+                                                                    >
+                                                                        <Icon icon="material-symbols:grid-on-sharp" width="24" height="24" />
+                                                                    </Link>
+                                                                </OverlayTrigger>
+                                                                <OverlayTrigger
+                                                                    placement="top"
+                                                                    overlay={<Tooltip>Course List</Tooltip>}
+                                                                >
+                                                                    <Link
+                                                                        to="#"
+                                                                        className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
+                                                                            }`}
+                                                                    >
+                                                                        <Icon icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
+                                                                    </Link>
+                                                                </OverlayTrigger>
+                                                            </Col>
+                                                        </Row>
                                                     </Col>
                                                 </Row>
                                             </Col>
                                         </Row>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                            <p className="text-center text-900 mt-3 mb-3">
+                                From tree surgeons to tilers, from plumbers to plasterers, we have detailed advice on how to choose, hire and
+                                work with tradespeople and ensure a successful project from start to finish.
+                            </p>
+                            <Container>
+                                <Row >
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={worktops} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title>
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            worktops installation
+                                                        </Link>
+                                                    </h5>
+                                                </Card.Title>
+                                            </Card.Body>
+                                        </Card>
                                     </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={bathroom_fitting} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Bathroom Fitting
+                                                        </Link>
+                                                    </h5>
+                                                </Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={carpenterwork} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Carpentry & Joinery
+                                                        </Link>
+                                                    </h5>
+                                                </Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={bricklaying} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            bricklaying
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={carpetFitting} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Carpet Fitting
+                                                        </Link>
+                                                    </h5>
+                                                </Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Chimneys} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Chimneys & fireplaces
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Conservatories} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Conservatories
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Conversions} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Conversions
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Damp_proofing} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Damp proofing
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Demolition_cleaning} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Demolition & Clearing
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Driveways} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Drive Ways
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Electrical} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Electrical
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Extensions} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Extensions
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Facias} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Fascias,soffits & guttering
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Fencing} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Fencing
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Flooring} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Flooring
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={GroundWork} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Groundwork & Foundations
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Handyman} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Handyman
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Locksmiths} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Lock Smiths
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Painting} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Painting & Decorating
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Plastering} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Plastering
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Plumbing} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Plumbing
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Restoration} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Restoration
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Roofing} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Roofing
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={LandScaping} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Landscape Gardening
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Stonemasonary} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Stonemasonry
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                        <Card className="mb-3">
+                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Tilling} alt="Card image cap" />
+                                            <Card.Body>
+                                                <Card.Title >
+                                                    <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                        <Link
+                                                            to="#"
+                                                            style={{ fontSize: '1rem' }}
+                                                            className="text-dark text-uppercase"
+                                                        >
+                                                            Tilling
+                                                        </Link>
+                                                    </h5></Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+
                                 </Row>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <div className="d-flex justify-content-center align-items-center fw-semibold mt-2 w-100">
-                        <p className="text-center mb-3 w-75">
-                            From tree surgeons to tilers, from plumbers to plasterers, we have detailed advice on how to choose, hire and
-                            work with tradespeople and ensure a successful project from start to finish.
-                        </p>
-                    </div>
-
-                    {/*Service List Grid  */}
-                    <Row className="d-flex justify-content-around gap-2 align-items-center">
-
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={worktops} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        worktops installation
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={bathroom_fitting} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Bathroom Fitting
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={bricklaying} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        bricklaying
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={carpenterwork} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Carpentry & Joinery
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={carpetFitting} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Carpet Fitting
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Chimneys} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Chimneys & fireplaces
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Conservatories} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Conservatories
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Conversions} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Conversions
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Damp_proofing} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Damp proofing
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Demolition_cleaning} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Demolition & Clearing
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Driveways} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Drive Ways
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Electrical} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Electrical
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Extensions} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Extensions
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Facias} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Fascias,soffits & guttering
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Fencing} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Fencing
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Flooring} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Flooring
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={GroundWork} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Groundwork & Foundations
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Handyman} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Handyman
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={LandScaping} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Landscape Gardening
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Locksmiths} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Lock Smiths
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Painting} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Painting & Decorating
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Plumbing} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Plumbing
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Plastering} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Plastering
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Restoration} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Restoration
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Roofing} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Roofing
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Stonemasonary} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Stonemasonry
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col lg={5} className='mb-3'>
-                            <Card style={{ width: '527px' }} className=" overflow-hidden">
-                                <Card.Body
-                                    as={Flex}
-                                    direction=""
-                                    justifyContent="between"
-                                    className="p-0"
-                                >
-                                    <div>
-                                        <Col lg={12}>
-                                            <Image src={Tilling} width="527px" height="275px" alt="" className="fit-cover" />
-                                            <div className="p-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
-                                                    <Link
-                                                        to="#"
-                                                        style={{ fontSize: '1rem' }}
-                                                        className="text-dark text-uppercase"
-                                                    >
-                                                        Tilling
-                                                    </Link>
-                                                </h5>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        {/*  */}
-                    </Row>
+                            </Container>
+                        </Row>
+                    </Container>
                 </Row>
             </Container>
         </>

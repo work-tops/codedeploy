@@ -1,5 +1,4 @@
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
-import Flex from '../../../TemplateAssets/common/Flex';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
 import worktops from '../../Projectimages/Conversions.jpg'
 import React, { useState } from 'react';
@@ -7,9 +6,8 @@ import { Button, Col, Form, Row, Card, Container } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { createData, getAllData } from "../../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
-import Background from '../../../TemplateAssets/common/Background';
 
-const UserLogin = ({ bgProps }) => {
+const UserLogin = ({  }) => {
   // State
   const [formData, setFormData] = useState({
     email: '',
@@ -80,16 +78,16 @@ const UserLogin = ({ bgProps }) => {
           <Container>
             <Row className="g-0  justify-content-center">
               <Col lg={9} xl={8} className="col-xxl-8">
-                <Card className='shadow'>
+                <Card>
                   <Card.Header style={{ background: '#003f6b' }} className="text-center p-2">
                     <Link to={'/'}>
                     <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="135px" />
                     </Link>
                   </Card.Header>
                   <Card.Body className="p-4">
-                    <Flex alignItems="center" justifyContent="between">
-                      <h3 className=' mb-3'>Project Owner Login</h3>
-                    </Flex>
+                    <div className="d-flex align-items-center justify-content-between">
+                      <h4 className=' mb-3'>Project Owner Login</h4>
+                    </div>
                     <>
                       <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
@@ -136,7 +134,7 @@ const UserLogin = ({ bgProps }) => {
 
                           <Col xs="auto">
                             <Link
-                              className="fs--1 mb-0"
+                              className="fs--1 fw-semibold text-primary mb-0"
                               to='/user/forgetpassword'
                             >
                               Forgot Password?
@@ -155,7 +153,7 @@ const UserLogin = ({ bgProps }) => {
                           </Button>
                         </Form.Group>
                       </Form>
-                      <p className="text-center mt-3 mb-3">Dont Have an Account ? <Link to='/signup'>Create Account</Link></p>
+                      <p className="text-center fw-semibold text-900 mt-3 mb-3">Dont Have an Account ? <Link to='/signup'>Create Account</Link></p>
                       <Toaster />
                     </>
                   </Card.Body>

@@ -11,12 +11,11 @@ import {
     Card,
     Dropdown,
     Image,
-    OverlayTrigger,
-    Tooltip,
     InputGroup,
     Row,
     Col,
-    Form
+    Form,
+    Container
 } from 'react-bootstrap';
 import { getSize } from '../../TemplateAssets/helpers/utils';
 import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
@@ -94,7 +93,7 @@ function JobProposal() {
         var _user = sessionStorage.getItem('user');
         var _json = JSON.parse(_user);
         setUser(_json);
-      }, [])
+    }, [])
 
 
     // Upload Files(Optional)
@@ -119,11 +118,12 @@ function JobProposal() {
                     <NavbarStandard />
                 </Col>
 
-                <Col lg={12} className="mt-5">
+                {/* <Col lg={12} className="mt-4"> */}
+                <Container className="mt-5">
                     <Row>
                         <Col lg={8}>
-                            <Card className="m-4">
-                                <Card.Header as="h6" className="bg-white text-uppercase">
+                            <Card className="mb-3">
+                                <Card.Header as="h4" className="bg-light text-uppercase">
                                     Project Proposal
                                 </Card.Header>
                                 <Card.Body>
@@ -250,20 +250,20 @@ function JobProposal() {
                                                 </Card.Body>
                                             </Card>
                                         </div>
-                                    <div className="d-flex justify-content-end">
-                                        <Button className="border-0" style={{ background: '#003f6b' }} type="submit">
-                                            SEND
-                                        </Button>
-                                    </div>
+                                        <div className="d-flex justify-content-end">
+                                            <Button className="border-0" style={{ background: '#003f6b',fontSize:'14px' }} type="submit">
+                                                SEND
+                                            </Button>
+                                        </div>
                                     </Form>
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col lg={4}>
                             {/*  Customize Details  */}
-                            <Card className="m-4">
-                                <Card.Header className="py-2 text-center  bg-white">
-                                    <h6 className="mb-0">{jobdetails?.project_title}</h6>
+                            <Card className="mb-3">
+                                <Card.Header className="py-2 text-center  bg-light">
+                                    <h4 className="mb-0">{jobdetails?.project_title}</h4>
                                 </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
@@ -319,7 +319,8 @@ function JobProposal() {
                             {/* Customize Details */}
                         </Col>
                     </Row>
-                </Col>
+                    {/* </Col> */}
+                </Container>
                 <Toaster />
             </Row>
         </>

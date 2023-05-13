@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
-import worktops from '../../Projectimages/worktops-installation.jpg'
+import worktops from '../../Projectimages/Electric.jpg'
 import { Button, Col, Form, Row, Card, Container } from 'react-bootstrap';
 
 
@@ -25,7 +25,7 @@ function UserResetPwd() {
                                     </Card.Header>
                                     <Card.Body className="p-4">
                                         <Form className="">
-                                            <h3 className="mb-3">Reset Password</h3>
+                                            <h4 className="mb-3">Reset Password</h4>
                                             <Form.Group className="mb-3">
                                                 <Form.Label>New Password</Form.Label>
                                                 <Form.Control
