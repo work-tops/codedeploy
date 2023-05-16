@@ -68,6 +68,10 @@ import UserResetPwd from "../Front-End Pages/Login/UserResetPwd";
 import UserConMail from "../Front-End Pages/Login/UserConMail";
 import UserLogout from "../Front-End Pages/Login/UserLogout";
 import ProposalDetails from "../Front-End Pages/ProposalDetails";
+import OwnerEnquiryDetails from "../Front-End Pages/EnquiryDetailedView";
+import SellerEnquiryCard from "../Front-End Pages/MiniCard/POProductEnquiryCard";
+import SellerEnquiryDetails from "../Front-End Pages/SellerEnquiryDetailedView";
+import GetQuote from "../Front-End Pages/Lists/GetQuote";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -87,10 +91,10 @@ const FrontEndRouters = () => {
             {/* proper order routes end */}
 
             <Route path='/projectlisting'><ProjectListing /></Route>
-            
+
             {/* Proposal  */}
             <Route path="/proposallist"><ProposalList /></Route>
-            <Route path="/proposalDetails"><ProposalDetails/></Route>
+            <Route path="/proposalDetails"><ProposalDetails /></Route>
             {/* Proposal  */}
 
             {/*  */}
@@ -105,13 +109,21 @@ const FrontEndRouters = () => {
             <Route path='/addproductcard'><AddProductCard /></Route>
             <Route path='/addservicecard'><AddServiceCard /></Route>
             <Route path='/proposalcard'><ProposalCard /></Route>
-            <Route path='/productenquirescard'><ProductEnquiresCard /></Route>
+            {/* Enquries */}
+            <Route path='/ownerEnquirescard'><ProductEnquiresCard /></Route>
+            <Route path="/ownerEnquireDetails"><OwnerEnquiryDetails /></Route>
+            <Route path='/sellerEnquirescard'><SellerEnquiryCard /></Route>
+            <Route path="/sellerEnquireDetails"><SellerEnquiryDetails /></Route>
+            {/* Enquries */}
+            {/* Quote */}
+            <Route path="/RequestQuote"><RequestQuote /></Route>
+            <Route path="/GetQuote"><GetQuote /></Route>
+            {/* Quote */}
             <Route path='/reviewscard'><ReviewsCard /></Route>
             <Route path='/ProjectOwner/Landing'><ProjectOwnerLandingPage /></Route>
             <Route path='/openProjectCard'><OpenProjectCard /></Route>
             <Route path='/workStreamCard'><WorkStreamCard /></Route>
             <Route path='/InvoicedueCard'><InvoicedueCard /></Route>
-            <Route path='/POproductenquirescard'><POProductEnquiresCard /></Route>
             <Route path='/POReviewsCard'><POReviewCard /></Route>
             {/* <Route path='/productList'><ProductList /></Route> */}
 
@@ -132,7 +144,7 @@ const FrontEndRouters = () => {
             <Route path="/editProduct"><EditProduct /></Route>
             <Route path="/user/sellerList"><SellerList /></Route>
             <Route path="/ServiceInformation"><ServiceInformation /></Route>
-            <Route path="/RequestQuote"><RequestQuote /></Route>
+
             <Route path="/Cart"><Cart /></Route>
             <Route path="/contactus"><ContactUs /></Route>
             <Route path="/privacypolicy"><PrivacyPolicy /></Route>

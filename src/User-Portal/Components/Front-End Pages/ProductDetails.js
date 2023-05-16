@@ -30,7 +30,7 @@ function ProductDetails() {
                         <Card className="overflow-hidden light">
                             <Card.Body className="bg-dark">
                                 <Row>
-                                    <Col xl={8} className="position-relative">
+                                    <Col sm={12} md={12} lg={8} xl={8} className="position-relative">
                                         <Row className="g-3 align-items-center">
                                             <Col lg={5}>
                                                 <div className="position-relative text-center ">
@@ -83,9 +83,8 @@ function ProductDetails() {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Row className="">
-                        <Col lg={8}>
-
+                    <Row >
+                        <Col sm={12} lg={8} xl={8} md={12}>
                             {/* Product Images */}
                             <Card className="mb-3">
                                 <Card.Header as="h5" className="bg-light">
@@ -322,23 +321,23 @@ function ProductDetails() {
                         <Col lg={4}>
                             <div className="course-details-sticky-sidebar mb-lg-8 mt-xl-n10 pe-xl-4 pe-xxl-7">
                                 {/* Plan Your Carrer */}
-                                <Card className="mt-5">
+                                <Card className="mt-5 mb-3">
                                     <Card.Header as="h5" className="bg-light text-capitalize">
-                                        Plan Your Carrer
+                                        Get  Quote Now
                                     </Card.Header>
                                     <Card.Body>
                                         <Row>
                                             <Col md={7} lg={12} className="order-md-1 order-lg-0">
-                                                <h2 className="fw-medium d-flex align-items-center">
+                                                <h2 className="fw-medium mb-3 d-flex align-items-center">
                                                     £ {prodata.variant?.[0]?.pricing?.price}
                                                     {' '}
                                                     <del className="ms-2 fs--1 text-500">£ {prodata.variant?.[0]?.pricing?.compare_at}</del>
                                                     <span style={{ background: '#ff4242', fontSize: '12px' }} className="badge ms-2">{Math.round(100 - (prodata.variant?.[0]?.pricing?.price / prodata.variant?.[0]?.pricing?.compare_at * 100))}%</span>
                                                 </h2>
-                                                <p className="text-danger fs--1 fw-semi-bold">
+                                                {/* <p className="text-danger fs--1 fw-semi-bold">
                                                     <FontAwesomeIcon icon={['far', 'clock']} className="me-2" />
                                                     Sale ends in 13h : 25m : 54s
-                                                </p>
+                                                </p> */}
 
                                                 <Link to="/Cart">
                                                     <Button
@@ -349,7 +348,7 @@ function ProductDetails() {
                                                         Add to Cart
                                                     </Button>
                                                 </Link>
-                                                <Link to="/RequestQuote">
+                                                <Link to="/GetQuote">
                                                     <Button
                                                         style={{ background: '#003f6b' }}
                                                         size="lg"

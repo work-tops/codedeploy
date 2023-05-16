@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Card, Button, Col, Row } from "react-bootstrap";
+import { Card, Button, Col, Form, Row, Container, InputGroup, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getAllData } from "../../../../Services/ProxyService";
 import ProjectOwnerLandingPage from '../ProjectOwnerLandingPage'
+import { Icon } from "@iconify/react";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
+
 function OpenProjectCard() {
 
-    const [jobs, setJobs] = useState([]) 
-
+    const [jobs, setJobs] = useState([])
     const getJobList = async () => {
         var _user = sessionStorage.getItem('user');
         var _json = JSON.parse(_user);
         const response = await getAllData('jobs/all');
-        var _data = response.data.jobs.filter(x=> x.created_by == _json._id)
+        var _data = response.data.jobs.filter(x => x.created_by == _json._id)
         setJobs(_data);
     }
     useEffect(() => {
@@ -25,37 +26,48 @@ function OpenProjectCard() {
                 <Col lg={12} className="mb-5">
                     <ProjectOwnerLandingPage />
                 </Col>
-                <Col lg={12}>
-                    <h4 className="ms-5">Open Projects</h4>
-                    <Card className="m-5 d-none">
+                {/* <Col lg={12}> */}
+                <Container>
+                    <h4 className="mb-3 text-uppercase">Open Projects</h4>
+                    <Card className="mb-3 d-none">
                         <Card.Body>
                             <div className="mt-4 d-flex justify-content-center">
                                 <h3 className="text-center">Please Post a Project Here</h3>
                             </div>
                             <div className="mt-4 d-flex justify-content-center">
-                                <Link to="/postjob">
-                                    <Button className="btn  text-white btn-outline-success">Post Project</Button>
+                                <Link to="/postproject">
+                                    <Button style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 text-uppercase">Post Project</Button>
                                 </Link>
                             </div>
                         </Card.Body>
                     </Card>
 
                     {jobs.map((data, key) => (
-                        <Card className="me-5 ms-5 mt-4 mb-3" key={`jobs_${key}`}>
-                            <Card.Header className="bg-white">
-                            <h6 className="text-uppercase">{data?.project_title}</h6>
+                        <Card className="mb-3" key={`jobs_${key}`}>
+                            <Card.Header className="bg-light">
+                                <h5 className="text-uppercase">{data?.project_title}</h5>
                             </Card.Header>
                             <Card.Body>
                                 <Row>
-                                    <Col lg={9}>
-                                            <p style={{fontSize:'14px'}} className="text-justify">{data?.project_description}</p>
+                                    <Col lg={8}>
+                                        <p style={{ fontSize: '14px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: "nowrap", }} className="text-justify">{data?.project_description}</p>
                                     </Col>
-                                    <Col lg={3}>
-                                        <div className="d-flex justify-content-center mt-5">
-                                        <Link to={`jobdetails/${data._id}`} role="button">
-                                        <Button className="text-uppercase border-0" style={{background:'#003f6b'}}>View</Button>
-                                        </Link>
+                                    <Col lg={4}>
+                                        <div className="d-flex justify-content-center mb-3">
+                                            <p style={{ color: '#003f6b' }} className=" fw-semibold">Client Budget<span className="ms-2 text-success text-center fw-bold">£ 200</span></p>
                                         </div>
+                                        <InputGroup className="d-flex justify-content-center mb-3">
+                                            <Button as={Link} to={`jobdetails/${data._id}`} className="text-uppercase  border-0" style={{ background: '#003f6b', fontSize: '14px' }}>View</Button>
+                                            {/* <Button className="bg-transparent text-dark border-dark"> */}
+                                            <Dropdown>
+                                                <Dropdown.Toggle style={{ background: '#003f6b', border: "none" }}>
+                                                </Dropdown.Toggle>
+                                                <Dropdown.Menu>
+                                                    <Dropdown.Item as={Link} to="/proposallist">View Proposals</Dropdown.Item>
+                                                </Dropdown.Menu>
+                                            </Dropdown>
+                                            {/* </Button> */}
+                                        </InputGroup>
                                     </Col>
                                 </Row>
                                 {/* <table border="1px solid black" className="user-project-details-table">
@@ -84,7 +96,52 @@ function OpenProjectCard() {
                             </Card.Body>
                         </Card>
                     ))}
-                </Col >
+                    {/* pagination */}
+                    <Card className="mt-3 mb-3">
+                        <Card.Body>
+                            <Row className="g-3 flex-center justify-content-between">
+                                <Col xs="auto" className="d-flex align-items-center">
+                                    <small className="d-none d-lg-block me-2">Show:</small>
+                                    <Form.Select
+                                        size="sm"
+                                        // value={itemsPerPage}
+                                        // onChange={({ target }) => {
+                                        //     setItemsPerPage(target.value);
+                                        //     setCoursePerPage(target.value);
+                                        // }}
+                                        style={{ maxWidth: '4.875rem' }}
+                                    >
+                                        <option >1</option>
+                                        <option >2</option>
+                                        <option >3</option>
+                                        <option >All</option>
+                                    </Form.Select>
+                                </Col>
+                                <Col xs="auto" className="d-flex">
+                                    <div>
+                                        <Button
+                                            variant="falcon-default"
+                                            className="me-2"
+                                        >
+                                            Preview
+                                        </Button>
+                                    </div>
+
+                                    <div>
+                                        <Button
+                                            variant="falcon-default"
+                                        >
+                                            Next
+                                        </Button>
+
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Card.Body>
+                    </Card>
+                    {/* pagination */}
+                </Container>
+                {/* </Col > */}
             </Row >
         </>
     )

@@ -35,7 +35,7 @@ function ServiceInformation() {
                                                 <h2 className="fw-bold text-white">
                                                     Reliant Plumbing and Heating
                                                 </h2>
-                                                <p className="text-justify text-white" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span></p>
+                                                <p className="text-justify text-white" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span></p>
                                                 <p className="text-white fw-semi-bold fs--1">
                                                     <span className="me-1">4.5</span>
                                                     <span>
@@ -55,7 +55,7 @@ function ServiceInformation() {
                                         <hr className="text-secondary text-opacity-50" />
                                         <ul className="list-unstyled d-flex flex-wrap gap-3 fs--1 fw-semi-bold text-300 mt-3 mb-0">
 
-                                            <Link to="/servicelist" className="text-300">
+                                            <Link to="/user/sellerlist" className="text-300">
                                                 <li role="button" className="text-primary">
                                                     Back
                                                 </li>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logoutImg from '../../Projectimages/45.png';
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import worktops from '../../Projectimages/Extensions.jpg'
+import worktops from '../../Projectimages/Carpent.jpg'
 function UserLogout() {
     return (
         <>
@@ -24,12 +24,14 @@ function UserLogout() {
                                         </Link>
                                     </Card.Header>
                                     <Card.Body className="p-4">
-                                        <img
-                                            className="d-block mx-auto mt-5 mb-4"
-                                            src={logoutImg}
-                                            alt="sent"
-                                            width={100}
-                                        />
+                                        <div className="d-flex justify-content-center mb-1">
+                                            <img
+                                                className="d-block mx-auto mt-5 mb-4"
+                                                src={logoutImg}
+                                                alt="sent"
+                                                width={100}
+                                            />
+                                        </div>
                                         <h3 className="text-center m-3">See you again!</h3>
                                         <p style={{ fontSize: '14px' }} className="text-center m-3">
                                             Thanks for using <span className="fw-semibold" style={{ color: '#003f6b' }}>MyProject.ai</span>

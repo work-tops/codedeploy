@@ -7,7 +7,7 @@ import {
     InputGroup,
     OverlayTrigger,
     Row,
-    Tooltip, Collapse, Image
+    Tooltip, Collapse, Image, Container
 } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Flex from '../../../TemplateAssets/common/Flex'
@@ -126,29 +126,31 @@ function ProductList() {
                 <Col lg={12} className='mb-5'>
                     <NavbarStandard />
                 </Col>
-                <Col className='mt-5' lg={3}>
-                    <Card className="m-4 course-filter">
-                        <SimpleBarReact style={{ height: '100%' }}>
-                            <Card.Header as={Flex} className="flex-between-center pt-x1">
-                                {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
-                                <div className='justify-content-xl-between d-flex m-2'>
-                                    <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
-                                        <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
-                                        <span>Filter</span>
-                                    </h5>
-                                    <Button
-                                        variant="outline-secondary"
-                                        size="sm"
-                                        className="ms-2 mt-0 mb-0"
-                                        style={{ fontSize: '12px' }}
-                                        onClick={() => resetFilter()}
-                                    >
-                                        <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
-                                        Reset
-                                    </Button>
-                                </div>
-                                {/* </Flex> */}
-                                {/* {isOffcanvas && (
+                <Container>
+                    <Row>
+                        <Col className='mb-3' lg={3}>
+                            <Card className="mt-5">
+                                <SimpleBarReact style={{ height: '100%' }}>
+                                    <Card.Header as={Flex} className="flex-between-center pt-x1">
+                                        {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
+                                        <div className='justify-content-between d-flex m-2'>
+                                            <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
+                                                <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
+                                                <span>Filter</span>
+                                            </h5>
+                                            <Button
+                                                variant="outline-secondary"
+                                                size="sm"
+                                                className=" mt-0 mb-0"
+                                                style={{ fontSize: '12px' }}
+                                                onClick={() => resetFilter()}
+                                            >
+                                                <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
+                                                Reset
+                                            </Button>
+                                        </div>
+                                        {/* </Flex> */}
+                                        {/* {isOffcanvas && (
                         <Button
                             onClick={() => setShow(false)}
                             className="btn-close text-reset"
@@ -156,238 +158,232 @@ function ProductList() {
                             variant="link"
                         ></Button>
                     )} */}
-                            </Card.Header>
-                            <Card.Body className="py-0 mt-2">
+                                    </Card.Header>
+                                    <Card.Body className="py-0 mt-2">
 
-                                <div className="d-flex flex-wrap mb-2">
-                                    {filterList?.map((x, i) => {
-                                        return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon icon="ic:sharp-close" color="white" width="14" height="14" /></span>
-                                    })}
-                                </div>
+                                        <div className="d-flex flex-wrap mb-2">
+                                            {filterList?.map((x, i) => {
+                                                return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon icon="ic:sharp-close" className="cursor-pointer" color="white" width="14" height="14" /></span>
+                                            })}
+                                        </div>
 
-                                <ul className="list-unstyled mt-1">
-                                    {productTags?.map((data, key) => (
-                                        <FilterItem
-                                            key={slugifyText(data?.name)}
-                                            index={key}
-                                            data={data}
-                                            filterList={filterList}
-                                            setFilterList={setFilterList}
-                                            handleFilter={handleFilter}
-                                        />))}
-                                </ul>
-                            </Card.Body>
-                        </SimpleBarReact>
-                    </Card>
-                </Col>
-                <Col className='mt-5' lg={9}>
-                    <Card className="mb-3 m-4">
-                        <Card.Header className="bg-white position-relative">
-                            <h5 className="mb-0 mt-1">All Products</h5>
-                        </Card.Header>
-                        <Card.Body className="pt-0 pt-md-3">
-                            <Row className="g-3 align-items-center">
-                                <Col xs="auto" className="d-xl-none">
-                                    <Button
-                                        className="position-relative p-0"
-                                        size="sm"
-                                        variant="link"
-                                    >
-                                        <FontAwesomeIcon icon="filter" className="fs-0 text-700" />
-                                    </Button>
-                                </Col>
-                                <Col>
-                                    <Form className="position-relative">
-                                        <Form.Control
-                                            type="search"
-                                            placeholder="Search..."
-                                            onChange={(e) => mainSearch(e)}
-                                            size="sm"
-                                            aria-label="Search"
-                                            className="rounded search-input ps-4"
-                                        />
-                                        <FontAwesomeIcon
-                                            icon="search"
-                                            className="fs--1 text-400 position-absolute text-400 start-0 top-50 translate-middle-y ms-2"
-                                        />
-                                    </Form>
-                                </Col>
-                                <Col xs="auto" className="col-md">
-                                    <Row className="g-0 justify-content-end">
-                                        <Col
-                                            xs="auto"
-                                            className="position-md-static position-absolute top-0 end-0 me-3 mt-3 mt-md-0"
-                                        >
-                                            <Form as={Row} className="mt-2 gx-2 d-none">
-                                                <Col xs="auto" className="d-none d-lg-block">
-                                                    <small className='me-2'>Sort By:</small>
-                                                </Col>
-                                                <Col xs="auto">
-                                                    <InputGroup size="sm">
-                                                        <Form.Select
-                                                            className=""
-                                                            defaultValue="price"
-                                                            style={{ maxWidth: '6.7rem' }}
-                                                        >
-                                                            <option value="price">Price</option>
-                                                            <option value="rating">Rating</option>
-                                                            <option value="review">Review</option>
-                                                        </Form.Select>
-                                                        <InputGroup.Text
-                                                            as={Button}
-                                                            variant="link"
-                                                            className="border border-300 text-700"
-                                                        >
-                                                            <FontAwesomeIcon
-                                                                icon={'sort-amount-up'}
-                                                            />
-                                                        </InputGroup.Text>
-                                                    </InputGroup>
-                                                </Col>
+                                        <ul className="list-unstyled mt-1">
+                                            {productTags?.map((data, key) => (
+                                                <FilterItem
+                                                    key={slugifyText(data?.name)}
+                                                    index={key}
+                                                    data={data}
+                                                    filterList={filterList}
+                                                    setFilterList={setFilterList}
+                                                    handleFilter={handleFilter}
+                                                />))}
+                                        </ul>
+                                    </Card.Body>
+                                </SimpleBarReact>
+                            </Card>
+                        </Col>
+                        <Col className='mb-3' lg={9}>
+                            <Card className="mt-5">
+                                <Card.Header className="bg-light position-relative">
+                                    <h4 className="text-uppercase  mb-0 mt-1">All Products</h4>
+                                </Card.Header>
+                                <Card.Body className="pt-0 pt-md-3">
+                                    <Row className="g-3 align-items-center">
+                                        <Col xs="auto" className="d-xl-none">
+                                            <Button
+                                                className="position-relative p-0"
+                                                size="sm"
+                                                variant="link"
+                                            >
+                                                <FontAwesomeIcon icon="filter" className="fs-0 text-700" />
+                                            </Button>
+                                        </Col>
+                                        <Col>
+                                            <Form className="position-relative">
+                                                <Form.Control
+                                                    type="search"
+                                                    placeholder="Search..."
+                                                    onChange={(e) => mainSearch(e)}
+                                                    size="sm"
+                                                    aria-label="Search"
+                                                    className="rounded search-input ps-4"
+                                                />
+                                                <FontAwesomeIcon
+                                                    icon="search"
+                                                    className="fs--1 text-400 position-absolute text-400 start-0 top-50 translate-middle-y ms-2"
+                                                />
                                             </Form>
                                         </Col>
-                                        <Col xs="auto" className="p-0">
-                                            <Row className="g-2 align-items-center">
-                                                <div class="d-flex align-items-center"><small class="fw-semi-bold me-2 d-lg-block lh-1">View:</small>
-                                                    <div class="d-flex">
-                                                        <div onClick={() => { setIsList(false) }}
-                                                            className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
-                                                                }`}
-                                                        >
-                                                            <Icon icon="material-symbols:grid-on-sharp" width="24" height="24" />
+                                        <Col xs="auto" className="col-md">
+                                            <Row className="g-0 justify-content-end">
+                                                <Col
+                                                    xs="auto"
+                                                    className="position-md-static position-absolute top-0 end-0 me-3 mt-3 mt-md-0"
+                                                >
+                                                    <Form as={Row} className="mt-2 gx-2 d-none">
+                                                        <Col xs="auto" className="d-none d-lg-block">
+                                                            <small className='me-2'>Sort By:</small>
+                                                        </Col>
+                                                        <Col xs="auto">
+                                                            <InputGroup size="sm">
+                                                                <Form.Select
+                                                                    className=""
+                                                                    defaultValue="price"
+                                                                    style={{ maxWidth: '6.7rem' }}
+                                                                >
+                                                                    <option value="price">Price</option>
+                                                                    <option value="rating">Rating</option>
+                                                                    <option value="review">Review</option>
+                                                                </Form.Select>
+                                                                <InputGroup.Text
+                                                                    as={Button}
+                                                                    variant="link"
+                                                                    className="border border-300 text-700"
+                                                                >
+                                                                    <FontAwesomeIcon
+                                                                        icon={'sort-amount-up'}
+                                                                    />
+                                                                </InputGroup.Text>
+                                                            </InputGroup>
+                                                        </Col>
+                                                    </Form>
+                                                </Col>
+                                                <Col xs="auto" className="p-0">
+                                                    <Row className="g-2 align-items-center">
+                                                        <div class="d-flex align-items-center"><small class="fw-semi-bold me-2 d-lg-block lh-1">View:</small>
+                                                            <div class="d-flex">
+                                                                <div onClick={() => { setIsList(false) }}
+                                                                    className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
+                                                                        }`}
+                                                                >
+                                                                    <Icon icon="material-symbols:grid-on-sharp" width="24" height="24" />
+                                                                </div>
+                                                                <div onClick={() => { setIsList(true) }}
+                                                                    className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
+                                                                        }`}
+                                                                >
+                                                                    <Icon icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div onClick={() => { setIsList(true) }}
-                                                            className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
-                                                                }`}
-                                                        >
-                                                            <Icon icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                    </Row>
+                                                </Col>
                                             </Row>
                                         </Col>
                                     </Row>
-                                </Col>
-                            </Row>
-                        </Card.Body>
-                    </Card>
-                    {isList == false ?
-                        <>
-                            <div className="row">
-                                {products.map((data, key) => (
-
-                                    <Col lg={6} className='mb-3 px-4'>
-                                        <Card className="h-100  overflow-hidden">
-                                            <Card.Body
-                                                as={Flex}
-                                                direction="column"
-                                                justifyContent="between"
-                                                className="p-0">
-                                                <div>
-                                                    <Col lg={12}>
-                                                        <Image src={data?.attachments[0]?.url} alt="" className="w-100 h-100 fit-cover" />
-                                                    </Col>
-
-                                                    <div className="p-3">
-                                                        <h5 className="fs-0 mb-2">
-                                                            <Link
-                                                                to="#"
-                                                                style={{ fontSize: '1rem' }}
-                                                                className="text-dark"
-                                                            >
-                                                                {data?.name}
-                                                            </Link>
-                                                        </h5>
-
-                                                    </div>
-                                                </div>
-                                                <Row className="g-0 mb-3 align-items-end">
-                                                    <Col className="ps-3">
-                                                        <h4 className="fs-1 text-warning d-flex align-items-center">
-                                                            <span style={{ fontSize: '1.2rem', color: '#f68f57' }}>£ {data?.variant[0]?.pricing?.price}</span>
-                                                            <del className="ms-2 fs--1 text-700">£ {data?.variant[0]?.pricing?.compare_at}</del>
-
-                                                        </h4>
-                                                        <p className="mb-0 fs--1 text-800">
-                                                            92,632 Members Purchased
-                                                        </p>
-
-                                                        <Link to="/RequestQuote">
-                                                            <Button
-                                                                size="md"
-                                                                variant="falcon-default"
-                                                                style={{ background: '#003f6b' }}
-                                                                className="fs--1 text-600 mt-3 text-white white-space-nowrap w-50"
-
-                                                            >
-                                                                Get a Quote
-                                                            </Button>
-                                                        </Link>
-                                                    </Col>
-                                                    <Col xs="auto" className="pe-3">
-                                                        <Link to="/wishlist/product">
-                                                            <Button
-                                                                variant="falcon-default"
-                                                                size="sm"
-                                                                className="me-2 hover-danger"
-                                                            >
-                                                                <Icon icon="flat-color-icons:like" width="20" height="20" />
-                                                            </Button>
-                                                        </Link>
-                                                        <Link to="/Cart">
-                                                            <Button
-                                                                variant="primary"
-                                                                size="sm"
-                                                            >
-                                                                <Icon icon="ic:round-shopping-cart" color="white" width="20" height="20" />
-                                                            </Button>
-                                                        </Link>
-                                                    </Col>
-                                                </Row>
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
-                                ))}
-                            </div>
-                        </> :
-                        <>
-                            {products.map((data, key) => (
+                                </Card.Body>
+                            </Card>
+                            {isList == false ?
                                 <>
-                                    <Card className="overflow-hidden m-4">
-                                        <Card.Body className="p-0">
-                                            <Row className="g-0">
-                                                <Col md={4} lg={3}>
-                                                    <Link to={`productdetails/${data._id}`}>
-                                                        <Image src={data?.attachments[0]?.url} alt="" className="w-100 h-100 fit-cover" />
-                                                    </Link>
-                                                </Col>
-                                                <Col md={8} lg={9} className="p-x1">
-                                                    <Row className="g-0 h-100">
-                                                        <Col lg={8}>
+                                    <div className="row">
+                                        {products.map((data, key) => (
 
-                                                            <h4 className="mt-3 text-justify mt-sm-0 fs-0 fs-lg-1">
-                                                                <Link className="text-900" to={`productdetails/${data._id}`}>
+                                            <Col sm={12} md={12} xl={6} lg={6}>
+                                                <Card className="mt-3 overflow-hidden">
+                                                    <Link to={`productdetails/${data._id}`}>
+                                                        <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={data?.attachments[0]?.url} alt="Card image cap" />
+                                                    </Link>
+                                                    <Card.Body
+                                                    >
+                                                        <div className="p-3">
+                                                            <h4 className="mt-3 text-start  mt-sm-0 fs-0 fs-lg-1">
+                                                                <Link
+                                                                    to={`productdetails/${data._id}`}
+                                                                    // style={{ fontSize: '1rem' }}
+                                                                    className="text-dark"
+                                                                >
                                                                     {data?.name}
                                                                 </Link>
                                                             </h4>
-                                                            <p className="fs--1 mt-2 w-50 d-none d-lg-block">
-                                                                {data?.type?.name}
-                                                            </p>
-                                                            <div className="flex-1 d-flex align-items-end fw-semi-bold fs--1">
-                                                                <span className="me-1 text-900">4.0</span>
-                                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
-                                                                <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                                                <span className="ms-2 text-secondary">
-                                                                    (78,259) reviews
-                                                                </span>
-                                                            </div>
+
+                                                        </div>
+                                                        <Row className="g-0 mb-3 align-items-end">
+                                                            <Col className="ps-3">
+                                                                <h4 className="fs-1 text-warning d-flex align-items-center">
+                                                                    <span style={{ fontSize: '1.2rem', color: '#f68f57' }}>£ {data?.variant[0]?.pricing?.price}</span>
+                                                                    <del className="ms-2 fs--1 text-700">£ {data?.variant[0]?.pricing?.compare_at}</del>
+
+                                                                </h4>
+                                                                <p className="mb-0 fs--1 text-800">
+                                                                    92,632 Members Purchased
+                                                                </p>
+
+                                                                <Link to="/GetQuote">
+                                                                    <Button
+                                                                        size="md"
+                                                                        variant="falcon-default"
+                                                                        style={{ background: '#003f6b' }}
+                                                                        className="fs--1 border-0 border-0 text-600 mt-3 text-white white-space-nowrap w-50"
+
+                                                                    >
+                                                                        Get a Quote
+                                                                    </Button>
+                                                                </Link>
+                                                            </Col>
+                                                            <Col xs="auto" className="pe-3">
+                                                                <Link to="/wishlist/product">
+                                                                    <Button
+                                                                        variant="falcon-default"
+                                                                        size="sm"
+                                                                        className="me-2 hover-danger"
+                                                                    >
+                                                                        <Icon icon="flat-color-icons:like" width="20" height="20" />
+                                                                    </Button>
+                                                                </Link>
+                                                                <Link to="/Cart">
+                                                                    <Button
+                                                                        variant="primary"
+                                                                        size="sm"
+                                                                    >
+                                                                        <Icon icon="ic:round-shopping-cart" color="white" width="20" height="20" />
+                                                                    </Button>
+                                                                </Link>
+                                                            </Col>
+                                                        </Row>
+                                                    </Card.Body>
+                                                </Card>
+                                            </Col>
+                                        ))}
+                                    </div>
+                                </> :
+                                <>
+                                    {products.map((data, key) => (
+                                        <>
+                                            <Card className="overflow-hidden mt-3">
+                                                <Card.Body className="p-0">
+                                                    <Row className="g-0">
+                                                        <Col md={4} lg={3}>
+                                                            <Link to={`productdetails/${data._id}`}>
+                                                                <Image src={data?.attachments[0]?.url} alt="" className="w-100 h-100 fit-cover" />
+                                                            </Link>
                                                         </Col>
-                                                        <Col lg={4} className="mt-4 mt-lg-0">
-                                                            <Card>
-                                                                <Card.Body>
+                                                        <Col md={8} lg={9} className="p-x1">
+                                                            <Row className="g-0 h-100">
+                                                                <Col lg={8}>
+
+                                                                    <h4 className="mt-3 text-start  mt-sm-0 fs-0 fs-lg-1">
+                                                                        <Link className="text-900" to={`productdetails/${data._id}`}>
+                                                                            {data?.name}
+                                                                        </Link>
+                                                                    </h4>
+                                                                    <p className="fs--1 mt-2 w-50 d-none d-lg-block">
+                                                                        {data?.type?.name}
+                                                                    </p>
+                                                                    <div className="flex-1 d-flex mb-3 align-items-end fw-semi-bold fs--1">
+                                                                        <span style={{ fontSize: '18px' }} className="me-1 text-900">4.0</span>
+                                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
+                                                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
+                                                                        <span className="ms-2 text-primary">
+                                                                            (78,259) reviews
+                                                                        </span>
+                                                                    </div>
+                                                                </Col>
+                                                                <Col lg={4} className=" mt-lg-0">
+                                                                    {/* <Card>
+                                                                        <Card.Body> */}
 
                                                                     <Flex
                                                                         justifyContent="between"
@@ -427,12 +423,12 @@ function ProductList() {
                                                                                 </Button>
                                                                             </Link>
 
-                                                                            <Link to="/RequestQuote">
+                                                                            <Link to="/GetQuote">
                                                                                 <Button
                                                                                     size="md"
                                                                                     variant="falcon-default"
                                                                                     style={{ background: '#003f6b' }}
-                                                                                    className="fs--1 text-600 text-white white-space-nowrap w-100"
+                                                                                    className="fs--1 border-0 text-600 text-white white-space-nowrap w-100"
 
                                                                                 >
                                                                                     Get a Quote
@@ -440,23 +436,69 @@ function ProductList() {
                                                                             </Link>
                                                                         </Flex>
                                                                     </Flex>
-                                                                </Card.Body>
-                                                            </Card>
+                                                                    {/* </Card.Body>
+                                                                    </Card> */}
+                                                                </Col>
+                                                            </Row>
                                                         </Col>
                                                     </Row>
+
+                                                </Card.Body>
+                                            </Card>
+
+                                        </>
+                                    ))}
+                                    {/* pagination */}
+                                    <Card className="mt-3">
+                                        <Card.Body>
+                                            <Row className="g-3 flex-center justify-content-between">
+                                                <Col xs="auto" className="d-flex align-items-center">
+                                                    <small className="d-none d-lg-block me-2">Show:</small>
+                                                    <Form.Select
+                                                        size="sm"
+                                                        // value={itemsPerPage}
+                                                        // onChange={({ target }) => {
+                                                        //     setItemsPerPage(target.value);
+                                                        //     setCoursePerPage(target.value);
+                                                        // }}
+                                                        style={{ maxWidth: '4.875rem' }}
+                                                    >
+                                                        <option >1</option>
+                                                        <option >2</option>
+                                                        <option >3</option>
+                                                        <option >All</option>
+                                                    </Form.Select>
+                                                </Col>
+                                                <Col xs="auto" className="d-flex">
+                                                    <div>
+                                                        <Button
+                                                            variant="falcon-default"
+                                                            className="me-2"
+                                                        >
+                                                            Preview
+                                                        </Button>
+                                                    </div>
+
+                                                    <div>
+                                                        <Button
+                                                            variant="falcon-default"
+                                                        >
+                                                            Next
+                                                        </Button>
+
+                                                    </div>
                                                 </Col>
                                             </Row>
-
                                         </Card.Body>
                                     </Card>
+                                    {/* pagination */}
                                 </>
-                            ))}
-                        </>
-                    }
-                </Col>
+                            }
+                        </Col>
 
-
-            </Row>
+                    </Row>
+                </Container>
+            </Row >
         </>
     )
 } const FilterItem = ({ data, index, filterList, handleFilter }) => {
@@ -494,6 +536,7 @@ function ProductList() {
 
                                     <Form.Check.Input id={`filter_${i}_key_${index}`} value={x?.value} onChange={(e) => handleFilter(e)}
                                         type="checkbox"
+                                        className="cursor-pointer"
                                     />
                                 </Form.Check>
                             </li>

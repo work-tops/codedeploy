@@ -1,7 +1,9 @@
 import { React, useState } from "react";
 import { Col, Container, Row, Card, Button, Dropdown, Form, Modal } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
-import profile_img from "../Projectimages/7.jpg"
+import profile_img from "../Projectimages/Handyman.jpg"
+import { Link } from "react-router-dom";
+import file from '../Projectimages/BathroomFitting.jpg'
 
 function ProposalDetails() {
     const [show, setShow] = useState(false);
@@ -39,7 +41,7 @@ function ProposalDetails() {
                                                             Many thanks David Soanes, Worthing BN11 4DT England
                                                         </p>
                                                         <p className="text-justify" style={{ fontSize: '14px' }} >
-                                                            <span className="d-block mb-2 fw-semibold">
+                                                            {/* <span className="d-block mb-2 fw-semibold">
                                                                 Mobile : <span className="text-primary">07900 548 590</span>
                                                             </span>
                                                             <span className="d-block mb-2 fw-semibold">
@@ -53,7 +55,7 @@ function ProposalDetails() {
                                                             </span>
                                                             <span className="d-block mb-3 fw-semibold">
                                                                 Web : <span className="text-primary">alwebdezine.com</span>
-                                                            </span>
+                                                            </span> */}
                                                             Please see my cv at this link <a href="#">https://surl.link/q0Lck3 https://surl.link/accessRestricted.html?</a> Decline
                                                             u=34452 password is abcdFor screen sharing:------------------Windows: Please search and open Quick
                                                             Assist App and | will send you the codeApple Mac: | will send you a Zoom link. Please send your
@@ -64,26 +66,29 @@ function ProposalDetails() {
                                                             Mark Bowen mark@supportedlivinggateway.comMr Colin McGregor colin@tranquilico.comMiss
                                                             Tracie Mckenna tracie.mckenna@1stresponse.org.uk
                                                         </p>
+                                                        <h6 className="mt-3 text-uppercase mb-3">Uploaded File</h6>
+                                                        <div className="row bg-pre mt-3">
+                                                            <div className="col-4">
+                                                                <img src={file} width="50px" height="50px" className="pro-pre" />
+                                                            </div>
+                                                            <div className="col-6 text-900 fil-name">File Name</div>
+                                                        </div>
                                                     </Card.Body>
                                                 </Card>
                                             </Col>
                                         </Row>
                                     </Card.Body>
                                 </Card>
-                                <Card>
+                                <Card className="mb-3">
                                     <Card.Header>
-                                        <div className="d-flex justify-content-center btn-group">
-                                            <Button className="bg-transparent text-secondary border-secondary">Send Message</Button>
-                                            <Button className="bg-transparent text-secondary border-secondary">Request NDA</Button>
-                                            <Button className="bg-transparent text-secondary border-secondary">Request Fund</Button>
-                                        </div>
+                                        <h5 className="bg-transparent text-900 border-secondary">Send Message</h5>
                                     </Card.Header>
                                     <Card.Body>
                                         <Form>
                                             <Form.Group className="mb-3">
                                                 <Form.Control
                                                     as="textarea" id="ask_question"
-                                                    placeholder='Click Here to Reply'
+                                                    placeholder='Send Your Message'
                                                     rows={5} />
                                             </Form.Group>
                                             <Form.Check type="checkbox" id="rememberMe" className="mb-0">
@@ -99,7 +104,7 @@ function ProposalDetails() {
                                                 </Button>
                                             </div>
                                         </Form>
-                                        <Card>
+                                        <Card className="">
                                             <Card.Body>
                                                 <Row>
                                                     <Col className="mt-3" lg={3}>
@@ -156,8 +161,8 @@ function ProposalDetails() {
 
                                                     <Dropdown.Menu>
                                                         <Dropdown.Item className="text-success">Accept</Dropdown.Item>
-                                                        <Dropdown.Item className="text-danger">Decline</Dropdown.Item>
-                                                      </Dropdown.Menu>
+                                                        <Dropdown.Item as={Link} to="/proposallist" className="text-danger">Decline</Dropdown.Item>
+                                                    </Dropdown.Menu>
                                                 </Dropdown>
                                                 {/* Accepted */}
                                                 <Button className="border-0 bg-success mt-2 d-block">Accepted</Button>

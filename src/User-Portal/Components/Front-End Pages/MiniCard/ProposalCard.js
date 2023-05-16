@@ -16,7 +16,6 @@ function ProposalCard() {
                             Proposals
                         </Card.Header>
                         <Card.Body>
-                            {/* <h1 className="text-center">Coming Soon...</h1> */}
                             <ProposalsTable />
                         </Card.Body>
                     </Card>

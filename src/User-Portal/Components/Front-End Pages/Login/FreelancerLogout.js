@@ -25,71 +25,56 @@ function FreelancerLogout() {
                             alt=""
                             width="150"
                         />
-                        <Card className="overflow-hidden z-index-1">
-                            <Card.Body className="p-0">
+                        {/* <Card className="">
+                            <Card.Body className="p-0"> */}
                                 <Row className="h-100 g-0">
-                                    <Col style={{ background: '#003f6b' }} lg={5} className="text-white text-center">
-
-                                        <div className="position-relative p-4 pt-md-5 pb-md-7">
-                                            <div className="z-index-1 position-relative light">
-                                                <Link to={'/'}> <img src={logo} width="135px" /></Link>
-                                                {/* <h3 className="mt-5 opacity-75 text-white"> Welcome </h3> */}
-                                            </div>
-
-                                        </div>
-                                        <div className="mt-3 mb-4 mt-md-4 mb-md-5 light">
-                                            <p className="mb-0 mt-4 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">
-                                                Read our{' '}
-                                                <Link
-                                                    className="text-decoration-underline text-white"
-                                                    to="#!"
-                                                >
-                                                    terms
-                                                </Link>{' '}
-                                                and{' '}
-                                                <Link
-                                                    className="text-decoration-underline text-white"
-                                                    to="#!"
-                                                >
-                                                    conditions{' '}
-                                                </Link>
-                                            </p>
-                                        </div>
-                                    </Col>
-
+                                    
                                     {/* Content */}
+                                    <Col lg={12}>
+                                        <Card className='shadow'>
+                                            <Card.Header style={{ background: '#003f6b' }} className="text-center p-2">
+                                                <Link to={'/'}>
+                                                    <img src={logo} width="135px" />
+                                                </Link>
+                                            </Card.Header>
+                                            <Card.Body className="p-4">
+                                                <div className="d-flex justify-content-center mb-1">
+                                                    <img
+                                                        className="d-block mx-auto mt-5 mb-4"
+                                                        src={logoutImg}
+                                                        alt="sent"
+                                                        width={100}
+                                                    />
+                                                </div>
+                                                <h3 className="text-center m-3">See you again!</h3>
+                                                <p style={{ fontSize: '14px' }} className="text-center m-3">
+                                                    Thanks for using <span className="fw-semibold" style={{ color: '#003f6b' }}>MyProject.ai</span>
+                                                    <span className="d-block">
+                                                        You are now successfully signed out.
+                                                    </span>
+                                                </p>
+                                                <div className="d-flex justify-content-center">
+                                                    <Button
+                                                        as={Link}
+                                                        to="/freelancer/true"
+                                                        style={{ background: '#003f6b' }}
+                                                        size="sm"
+                                                        className="border-0 p-2 mb-5 mt-3"
+                                                    >
+                                                        <FontAwesomeIcon
+                                                            icon="chevron-left"
+                                                            className="me-1"
+                                                        />
+                                                        Return to login
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
 
-                                    <Col md={7}>
-                                        <img
-                                            className="d-block mx-auto mt-5 mb-4"
-                                            src={logoutImg}
-                                            alt="sent"
-                                            width={100}
-                                        />
-                                        <h3 className="text-center m-3">See you again!</h3>
-                                        <p style={{ fontSize: '14px' }} className="text-center m-3">
-                                            Thanks for using <span className="fw-semibold" style={{color:'#003f6b'}}>MyProject.ai</span>
-                                            <span className="d-block">
-                                                You are now successfully signed out.
-                                            </span>
-                                        </p>
-                                        <div className="d-flex justify-content-center">
-                                            <Button
-                                                style={{ background: '#003f6b' }}
-                                                size="sm"
-                                                className="border-0 p-2 mb-5 mt-3"
-                                            >
-                                                <FontAwesomeIcon
-                                                    icon="chevron-left"
-                                                    className="me-1"
-                                                />
-                                                Return to login
-                                            </Button>
-                                        </div>
                                     </Col>
                                 </Row>
-                            </Card.Body>
-                        </Card>
+                            {/* </Card.Body>
+                        </Card> */}
                     </Col>
                 </Row>
             </Container>

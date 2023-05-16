@@ -1,6 +1,6 @@
 import { React, useState,useEffect } from "react";
 import { Icon } from "@iconify/react";
-import { Row, Col, Button, Modal, Form, Card, CardGroup, Container } from "react-bootstrap";
+import { Row, Col, Button, Modal, Form, Card, CardGroup, Container, Dropdown } from "react-bootstrap";
 import worktops from '../../Projectimages/worktops-installation.jpg'
 import Menubar from "../../Menubar/Menubar";
 import { Link } from "react-router-dom";
@@ -39,27 +39,49 @@ function SellerList() {
                     <NavbarStandard />
                 </Col>
                 <Col lg={12}>
-                    <Row className="justify-content-around">
+                    <Row className="justify-content-start">
+                        <h4 className="text-uppercase mt-5">Service Provider Lists</h4>
                         {sellersList.map((data,index)=>{
                             return <Col lg={4} >
                         <Card className="mt-4 mb-1">
-                        <div className="d-flex justify-content-end mt-2">
-                            <Icon className="d-block m-2" icon="material-symbols:share-outline" color="black" width="20" height="20" />
+                            <Card.Header className="bg-light">
+                            <div className="d-flex justify-content-end mt-2">
+                            <Dropdown
+                            className="font-sans-serif btn-reveal-trigger"
+                            >
+                                <Dropdown.Toggle
+                                variant="link"
+                                size="sm"
+                                data-boundary="viewport"
+                                >
+                            <Icon className="d-block" icon="material-symbols:share-outline" color="black" width="20" height="20" />
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                <Dropdown.Item><Icon icon="ion:copy-outline" hFlip={true} /> Copy Link</Dropdown.Item>
+                                <Dropdown.Item><Icon icon="ic:baseline-facebook" /> Facebook</Dropdown.Item>
+                                <Dropdown.Item><Icon icon="mdi:twitter" /> Twitter</Dropdown.Item>
+                                <Dropdown.Item><Icon icon="ic:baseline-whatsapp" /> Whatsapp</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                            
+                            
                             <Link to="/wishlist/seller">
-                                <Icon icon="flat-color-icons:like" className="d-block m-2" width="20" height="20" />
+                                <Icon icon="flat-color-icons:like" style={{marginTop:'2px'}} className="d-block" width="20" height="20" />
                                 </Link>
                                 </div>
+                            </Card.Header>
+                        
                             <Link to="/ServiceInformation">
                                 {data.attachments.length > 0 ?
-                                <Card.Img variant='top' width="100%" src={data.attachments[0]?.url} alt="Card image cap" />:
-                                <Card.Img variant='top' width="100%" src={freelancer} alt="Card image cap" />
+                                <Card.Img variant='top' width="100%" height="auto" src={data.attachments[0]?.url} alt="Card image cap" />:
+                                <Card.Img variant='top' width="100%" height="auto" src={freelancer} alt="Card image cap" />
                                 }
                             </Link>
                             <Card.Body>
                                 <Link to="/ServiceInformation"><Card.Title className="text-justify" as='h5'>{data.name}
                                 </Card.Title></Link>
                                 <p className="text-justify">
-                                    <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span>
+                                    <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
                                 </p>
                                 <p className="text-justify" style={{ fontSize: '14px' }}>
                                     <Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" />
@@ -116,13 +138,17 @@ function SellerList() {
                         <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
                     </Form.Group>
                     <Form.Group className="mb-3">
-                        <Form.Check className="ms-2" />
-                        <Form.Check.Label>
-                            I Agree to the terms and conditions.
-                        </Form.Check.Label>
-                    </Form.Group>
+                        <Form.Check type="checkbox" className="mb-0 mt-3">
+                            <Form.Check.Input type="checkbox" />
+                               <Form.Check.Label
+                               className="text-700 d-inline"
+                               >
+                                I Agree to the terms and conditions.
+                                </Form.Check.Label>
+                                </Form.Check>
+                                </Form.Group>
                 </Form>
-                <Button className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
+                <Button as={Link} to="/owner" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
                     SEND
                 </Button>
             </Modal.Body>
@@ -136,7 +162,7 @@ export default SellerList
     // < Row >
     // <Col>
     //     <div className="d-flex justify-content-between">
-    //         <p className="m-3">General Plumbing in <span>CB236DX</span></p>
+    //         <p className="m-3">General Plumbing in <span>CAMBRIDGE</span></p>
     //     </div>
     // </Col>
     //                 </Row >
@@ -158,7 +184,7 @@ export default SellerList
     //                 <Link to="/ServiceInformation">
     //                     <p style={{ fontSize: '18px' }} className="text-center fw-bold">Reliant Plumbing and Heating</p>
     //                 </Link>
-    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span></p>
+    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span></p>
     //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" /><span className="fw-semibold" style={{ color: '#288ce1' }}>(4.5 Reviews)</span></p>
     //                 <p className="text-center" style={{ fontSize: '12px' }}>
     //                     Reliant Plumbing & Heating are a prompt, reliable and
@@ -191,7 +217,7 @@ export default SellerList
     //                 <Link to="/ServiceInformation">
     //                     <p style={{ fontSize: '18px' }} className="text-center fw-bold">Reliant Plumbing and Heating</p>
     //                 </Link>
-    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span></p>
+    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span></p>
     //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" /><span className="fw-semibold" style={{ color: '#288ce1' }}>(4.5 Reviews)</span></p>
     //                 <p className="text-center" style={{ fontSize: '12px' }}>
     //                     Reliant Plumbing & Heating are a prompt, reliable and
@@ -224,7 +250,7 @@ export default SellerList
     //                 <Link to="/ServiceInformation">
     //                     <p style={{ fontSize: '18px' }} className="text-center fw-bold">Reliant Plumbing and Heating</p>
     //                 </Link>
-    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span></p>
+    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span></p>
     //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" /><span className="fw-semibold" style={{ color: '#288ce1' }}>(4.5 Reviews)</span></p>
     //                 <p className="text-center" style={{ fontSize: '12px' }}>
     //                     Reliant Plumbing & Heating are a prompt, reliable and
@@ -257,7 +283,7 @@ export default SellerList
     //                 <Link to="/ServiceInformation">
     //                     <p style={{ fontSize: '18px' }} className="text-center fw-bold">Reliant Plumbing and Heating</p>
     //                 </Link>
-    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span></p>
+    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span></p>
     //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" /><span className="fw-semibold" style={{ color: '#288ce1' }}>(4.5 Reviews)</span></p>
     //                 <p className="text-center" style={{ fontSize: '12px' }}>
     //                     Reliant Plumbing & Heating are a prompt, reliable and
@@ -290,7 +316,7 @@ export default SellerList
     //                 <Link to="/ServiceInformation">
     //                     <p style={{ fontSize: '18px' }} className="text-center fw-bold">Reliant Plumbing and Heating</p>
     //                 </Link>
-    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span></p>
+    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span></p>
     //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:star-rate-rounded" color="#ef950e" width="20" height="20" /><span className="fw-semibold" style={{ color: '#288ce1' }}>(4.5 Reviews)</span></p>
     //                 <p className="text-center" style={{ fontSize: '12px' }}>
     //                     Reliant Plumbing & Heating are a prompt, reliable and
@@ -323,7 +349,7 @@ export default SellerList
     //                 <Link to="/ServiceInformation">
     //                     <p style={{ fontSize: '18px' }} className="text-center fw-bold">Reliant Plumbing and Heating</p>
     //                 </Link>
-    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CB236DX</span></p>
+    //                 <p className="text-center" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span></p>
     //                 
     //                 <p className="text-center" style={{ fontSize: '12px' }}>
     //                     Reliant Plumbing & Heating are a prompt, reliable and

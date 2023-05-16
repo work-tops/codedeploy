@@ -1,6 +1,8 @@
 import React from "react";
 import { Row, Col, Card, Form, Button, Container } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
+import { Link } from "react-router-dom";
+
 function RequestQuote() {
     return (
         <>
@@ -123,7 +125,7 @@ function RequestQuote() {
                                             />
                                         </Form.Group>
                                         <div className="d-flex justify-content-center align-items-center">
-                                            <Button className="m-2 text-white border-0" style={{ background: "#0d406b" }}
+                                            <Button as={Link} to="/owner" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
                                             >Request Quote
                                             </Button>
                                         </div>

@@ -59,7 +59,7 @@ function FreelancerResetPwd() {
                                     {/* Content */}
                                     <Col md={7} className="mt-3 mb-3">
                                         <Form className="m-3">
-                                            <h3 className="mb-3 ">Reset Password</h3>
+                                            <h4 className="mb-3 ">Reset Password</h4>
                                             <Form.Group className="mb-3">
                                                 <Form.Label>New Password</Form.Label>
                                                 <Form.Control
@@ -78,7 +78,7 @@ function FreelancerResetPwd() {
 
                                             <Button
                                                 style={{ background: '#003f6b' }}
-                                                className="w-100 border-0"
+                                                className="w-100 mt-3 border-0"
                                             >
                                                 Set password
                                             </Button>
