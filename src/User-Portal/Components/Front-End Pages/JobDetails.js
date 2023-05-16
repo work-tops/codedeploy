@@ -23,6 +23,7 @@ function JobDetails() {
 
     let { jobid } = useParams();
     const [jobdata, setJobdata] = useState([])
+    const [user, setUser] = useState({})
     const [chatList, setChatList] = useState([])
     const [proposalsList, setProposals] = useState([])
     const [board, setBoard] = useState(false)
@@ -73,6 +74,9 @@ function JobDetails() {
     }
     useEffect(() => {
         getJobsById()
+        var _user = sessionStorage.getItem('user');
+        var _json = JSON.parse(_user);
+        setUser(_json);
     }, [])
 
     // Date length
@@ -99,24 +103,26 @@ function JobDetails() {
                                         <Row>
                                             <Col xl={12}>
                                                 <p style={{ fontSize: '14px' }} className="text-justify">{jobdata.project_description}</p>
-                                                <h6 className="text-uppercase">Skills Required</h6>
+                                                {/* <h6 className="text-uppercase">Skills Required</h6> */}
                                                 <div className='d-flex justify-content-start mt-3 mb-1'>
-                                                    <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>Fabricator</span>
-                                                    <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Templater</span>
+                                                    <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>{jobdata?.category}</span>
+                                                    <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>{jobdata?.sub_category}</span>
                                                 </div>
                                             </Col>
                                         </Row>
                                     </Card.Body>
                                 </Card>
                                 <Card className="m-4">
-                                    <Card.Header className='bg-white  p-3 d-flex justify-content-between text-uppercase'>
-                                        <h6 className="mt-3">
-                                            Clarification Board
-                                        </h6>
-                                        <Button onClick={showboard} style={{ background: "#003f6b" }} className="border-0 text-uppercase">
-                                            ask a question
-                                        </Button>
-                                    </Card.Header>
+                                    {user?.role == 'Freelancer' &&
+                                        <Card.Header className='bg-white  p-3 d-flex justify-content-between text-uppercase'>
+                                            <h6 className="mt-3">
+                                                Clarification Board
+                                            </h6>
+                                            <Button onClick={showboard} style={{ background: "#003f6b" }} className="border-0 text-uppercase">
+                                                ask a question
+                                            </Button>
+                                        </Card.Header>
+                                    }
                                     <Card.Body className="position-relative">
                                         <Row>
                                             <Col xl={12}>
@@ -226,69 +232,72 @@ function JobDetails() {
                                 {/* Customize Details */}
 
                                 {/* Ends In Days  Card*/}
-                                <Card className="m-4 py-2">
-                                    <Card.Body className="bg-white">
-                                        {/* Ends In Days */}
-                                        <div className="d-flex justify-content-around">
-                                            <div>
-                                                <p style={{ color: '#003f6b' }} className=" fw-semibold">Ends In </p>
-                                                <p className="text-success fw-bold">{daysDiff} Days</p>
+                                {user?.role == 'Freelancer' &&
+                                    <Card className="m-4 py-2">
+                                        <Card.Body className="bg-white">
+                                            {/* Ends In Days */}
+                                            <div className="d-flex justify-content-around">
+                                                <div>
+                                                    <p style={{ color: '#003f6b' }} className=" fw-semibold">Ends In </p>
+                                                    <p className="text-success fw-bold">{daysDiff} Days</p>
+                                                </div>
+                                                <div>
+                                                    <p style={{ color: '#003f6b' }} className=" fw-semibold">Client Budget</p>
+                                                    <p className="text-success text-center fw-bold">£ {jobdata?.budget}</p>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <p style={{ color: '#003f6b' }} className=" fw-semibold">Client Budget</p>
-                                                <p className="text-success text-center fw-bold">£ {jobdata?.budget}</p>
+                                            {/* Ends In Days */}
+
+                                            {/*  */}
+
+                                            <Divider />
+                                            <div className="mb-2">
+
+                                                <p
+                                                    style={{ fontSize: '12px' }}
+                                                    className="fw-semibold mt-2 text-center text-uppercase">
+                                                    Project ID : : 1484KHON
+                                                </p>
+                                                <div className="d-flex justify-content-center">
+                                                    <Button
+                                                        className="bg-transparent  text-danger w-50 border-danger"
+                                                        as={Link}
+                                                        to="/wishlist/project"
+                                                    >
+                                                        <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="me-2" color="#003f6b" width="20" height="20" />  Saved
+                                                    </Button>
+                                                </div>
                                             </div>
-                                        </div>
-                                        {/* Ends In Days */}
-
-                                        {/*  */}
-
-                                        <Divider />
-                                        <div className="mb-2">
-
-                                            <p
-                                                style={{ fontSize: '12px' }}
-                                                className="fw-semibold mt-2 text-center text-uppercase">
-                                                Project ID : : 1484KHON
+                                            {/*  */}
+                                            <Divider />
+                                            {/* Profile Details */}
+                                            <div className="mt-2 d-flex justify-content-center">
+                                                <img src={worktops}
+                                                    className="rounded-circle  border border-dark"
+                                                    width="80px"
+                                                    height="75px" />
+                                            </div>
+                                            <p className="text-center mt-2 fw-semibold">
+                                                Email: <span style={{ color: '#003f6b' }} className="fw-semibold">{jobdata.customer_email}</span>
                                             </p>
-                                            <div className="d-flex justify-content-center">
-                                                <Button
-                                                    className="bg-transparent  text-danger w-50 border-danger"
-                                                    as={Link}
-                                                    to="/wishlist/project"
-                                                >
-                                                    <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="me-2" color="#003f6b" width="20" height="20" />  Saved
-                                                </Button>
+                                            <div className="d-flex justify-content-around">
+                                                <p role="button" style={{ color: '#003f6b' }}>Name</p>
+                                                <p role="button" style={{ color: '#003f6b' }}>Profession</p>
+                                                <p role="button" style={{ color: '#003f6b' }}>Like</p>
                                             </div>
-                                        </div>
-                                        {/*  */}
-                                        <Divider />
-                                        {/* Profile Details */}
-                                        <div className="mt-2 d-flex justify-content-center">
-                                            <img src={worktops}
-                                                className="rounded-circle  border border-dark"
-                                                width="80px"
-                                                height="75px" />
-                                        </div>
-                                        <p className="text-center mt-2 fw-semibold">
-                                            Email: <span style={{ color: '#003f6b' }} className="fw-semibold">{jobdata.customer_email}</span>
-                                        </p>
-                                        <div className="d-flex justify-content-around">
-                                            <p role="button" style={{ color: '#003f6b' }}>Name</p>
-                                            <p role="button" style={{ color: '#003f6b' }}>Profession</p>
-                                            <p role="button" style={{ color: '#003f6b' }}>Like</p>
-                                        </div>
-                                        {/* Profile Details */}
-                                    </Card.Body>
-                                    <Card.Footer className="bg-white">
-                                        <Button onClick={() => sendProposal()} className="border-0 w-100 text-uppercase" style={{ color: '#fff', background: '#003f6b' }}>
-                                            Send Proposal
-                                        </Button>
-                                    </Card.Footer>
-                                </Card>
+                                            {/* Profile Details */}
+                                        </Card.Body>
+                                        <Card.Footer className="bg-white">
+                                            <Button onClick={() => sendProposal()} className="border-0 w-100 text-uppercase" style={{ color: '#fff', background: '#003f6b' }}>
+                                                Send Proposal
+                                            </Button>
+                                        </Card.Footer>
+                                    </Card>
+                                }
+
 
                                 {/* Report This Project */}
-                                <Card className="m-4 py-2">
+                                {user?.role == 'Freelancer' && <Card className="m-4 py-2">
                                     <Card.Header as="h6" className="text-uppercase bg-white" >
                                         Report this Project
                                     </Card.Header>
@@ -315,6 +324,7 @@ function JobDetails() {
 
                                     </Card.Body>
                                 </Card>
+                                }
                             </Col>
                         </Row>
                     </Col>
