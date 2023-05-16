@@ -25,8 +25,8 @@ function FreelancerLogout() {
                             alt=""
                             width="150"
                         />
-                        <Card className="overflow-hidden z-index-1">
-                            <Card.Body className="p-0">
+                        {/* <Card className="">
+                            <Card.Body className="p-0"> */}
                                 <Row className="h-100 g-0">
                                     
                                     {/* Content */}
@@ -56,7 +56,7 @@ function FreelancerLogout() {
                                                 <div className="d-flex justify-content-center">
                                                     <Button
                                                         as={Link}
-                                                        to="/owner"
+                                                        to="/freelancer/true"
                                                         style={{ background: '#003f6b' }}
                                                         size="sm"
                                                         className="border-0 p-2 mb-5 mt-3"
@@ -73,8 +73,8 @@ function FreelancerLogout() {
 
                                     </Col>
                                 </Row>
-                            </Card.Body>
-                        </Card>
+                            {/* </Card.Body>
+                        </Card> */}
                     </Col>
                 </Row>
             </Container>

@@ -3,6 +3,7 @@ import { Col, Container, Row, Card, Button, Form, Modal } from "react-bootstrap"
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile from '../Projectimages/Handyman.jpg'
+import { Link } from "react-router-dom";
 
 function OwnerEnquiryDetails() {
     const [show, setShow] = useState(false);
@@ -20,7 +21,7 @@ function OwnerEnquiryDetails() {
                         <Col lg={12}>
                             <Card className="mt-5 mb-3">
                                 <Card.Header className="d-flex justify-content-end bg-light">
-                                    <Button className="bg-danger border-0">Close the Query</Button>
+                                    <Button as={Link} to="/ownerEnquirescard" className="bg-danger border-0">Close the Query</Button>
                                 </Card.Header>
                                 <Card.Body>
                                     <div>

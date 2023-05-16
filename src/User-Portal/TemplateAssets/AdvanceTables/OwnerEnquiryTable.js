@@ -122,7 +122,7 @@ const OwnerEnquiryTable = () => {
                             </Form.Check>
                         </Form.Group>
                         <div className="d-flex justify-content-end mb-3">
-                            <Button as={Link} to="/owner" style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                            <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
                                 Send
                             </Button>
                         </div>

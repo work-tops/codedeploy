@@ -235,7 +235,7 @@ const PostProject = () => {
                 <Row className="gx-2 gy-3">
                   <p className='mt-2 me-2 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that freelancers can find your project</p>
 
-                  <Col lg={6} className=''>
+                  <Col lg={6} md={6} className=''>
                     <Form.Group>
                       <Form.Label className='text-700 text-capitalize'>
                         category <span className="text-danger">*</span>
@@ -252,7 +252,7 @@ const PostProject = () => {
                       </Form.Select>
                     </Form.Group>
                   </Col>
-                  <Col lg={6} className=''>
+                  <Col lg={6} md={6} className=''>
                     <Form.Group>
                       <Form.Label className='text-700 text-capitalize'>
                         sub-category <span className="text-danger">*</span>
@@ -363,7 +363,7 @@ const PostProject = () => {
                     </div>
                   </Col>
                   {/* Upload Samples */}
-                  <Col lg={6} className=''>
+                  <Col lg={6} md={6} className=''>
                     <Form.Group>
                       <Form.Label className='text-700 text-capitalize'>
                         Budget Type <span className="text-danger">*</span>
@@ -381,7 +381,7 @@ const PostProject = () => {
                       </Form.Select>
                     </Form.Group>
                   </Col>
-                  <Col lg={6} className=''>
+                  <Col lg={6} md={6} className=''>
                     <Form.Group>
                       <Form.Label className='text-700 text-capitalize'>
                         Currency <span className="text-danger">*</span>
@@ -416,9 +416,10 @@ const PostProject = () => {
                         <div className="col">
                           {form.budget_type == "No Idea" ? (
                             <>
-                              <label className="label1">Max Budget</label>
-                              <input value={form.max_budget} required name="max_budget" onChange={(e) => { handleChange(e) }} placeholder="£ 0" type="number" />
-                              <br></br>
+                            <Form.Group className='mt-2'>
+                              <Form.Label>Max Budget</Form.Label>
+                              <Form.Control className='d-block' value={form.max_budget} required name="max_budget" onChange={(e) => { handleChange(e) }} placeholder="£ 0" type="number" />
+                            </Form.Group>
                             </>
                           ) : ("")}
                         </div>
@@ -438,7 +439,7 @@ const PostProject = () => {
                       />
                     </Form.Group>
                   </Col>
-                  <Col lg={6} className=''>
+                  <Col lg={6} md={6} className=''>
                     <Form.Group>
                       <Form.Label className='text-700 text-capitalize'>
                         Post Code <span className="text-danger">*</span>
@@ -453,7 +454,7 @@ const PostProject = () => {
                       />
                     </Form.Group>
                   </Col>
-                  <Col lg={6} className=''>
+                  <Col lg={6} md={6} className=''>
                     <Form.Group>
                       <Form.Label className='text-700 text-capitalize'>
                         Starting Date (Optional)<span className="text-danger">*</span>
@@ -508,9 +509,9 @@ const PostProject = () => {
                       </Form.Check>
                     </Form.Group>
                   </Col>
-                  <Col lg={6} className=''>
+                  <Col lg={6} md={6} className=''>
                     <Form.Group>
-                    <Form.Label className='text-700  text-capitalize'>
+                      <Form.Label className='text-700  text-capitalize'>
                         Project Duration Time <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -522,9 +523,9 @@ const PostProject = () => {
                       />
                     </Form.Group>
                   </Col>
-                  <Col lg={6} className=''>
+                  <Col lg={6} md={6} className=''>
                     <Form.Group className='mb-3'>
-                    <Form.Label className='text-700  text-capitalize'>
+                      <Form.Label className='text-700  text-capitalize'>
                         Expiry Date <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control

@@ -129,11 +129,11 @@ function ProductList() {
                 <Container>
                     <Row>
                         <Col className='mb-3' lg={3}>
-                            <Card className="mt-5 course-filter">
+                            <Card className="mt-5">
                                 <SimpleBarReact style={{ height: '100%' }}>
                                     <Card.Header as={Flex} className="flex-between-center pt-x1">
                                         {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
-                                        <div className='justify-content-xl-between d-flex m-2'>
+                                        <div className='justify-content-between d-flex m-2'>
                                             <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
                                                 <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
                                                 <span>Filter</span>
@@ -141,7 +141,7 @@ function ProductList() {
                                             <Button
                                                 variant="outline-secondary"
                                                 size="sm"
-                                                className="ms-2 mt-0 mb-0"
+                                                className=" mt-0 mb-0"
                                                 style={{ fontSize: '12px' }}
                                                 onClick={() => resetFilter()}
                                             >
@@ -163,7 +163,7 @@ function ProductList() {
 
                                         <div className="d-flex flex-wrap mb-2">
                                             {filterList?.map((x, i) => {
-                                                return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon icon="ic:sharp-close" color="white" width="14" height="14" /></span>
+                                                return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon icon="ic:sharp-close" className="cursor-pointer" color="white" width="14" height="14" /></span>
                                             })}
                                         </div>
 
@@ -278,30 +278,24 @@ function ProductList() {
                                     <div className="row">
                                         {products.map((data, key) => (
 
-                                            <Col lg={6} className='mt-3 px-4'>
-                                                <Card className="h-100  overflow-hidden">
+                                            <Col sm={12} md={12} xl={6} lg={6}>
+                                                <Card className="mt-3 overflow-hidden">
+                                                    <Link to={`productdetails/${data._id}`}>
+                                                        <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={data?.attachments[0]?.url} alt="Card image cap" />
+                                                    </Link>
                                                     <Card.Body
-                                                        as={Flex}
-                                                        direction="column"
-                                                        justifyContent="between"
-                                                        className="p-0">
-                                                        <div>
-                                                            <Col lg={12}>
-                                                                <Image src={data?.attachments[0]?.url} alt="" className="w-100 h-100 fit-cover" />
-                                                            </Col>
+                                                    >
+                                                        <div className="p-3">
+                                                            <h4 className="mt-3 text-start  mt-sm-0 fs-0 fs-lg-1">
+                                                                <Link
+                                                                    to={`productdetails/${data._id}`}
+                                                                    // style={{ fontSize: '1rem' }}
+                                                                    className="text-dark"
+                                                                >
+                                                                    {data?.name}
+                                                                </Link>
+                                                            </h4>
 
-                                                            <div className="p-3">
-                                                                <h5 className="fs-0 mb-2">
-                                                                    <Link
-                                                                        to="#"
-                                                                        style={{ fontSize: '1rem' }}
-                                                                        className="text-dark"
-                                                                    >
-                                                                        {data?.name}
-                                                                    </Link>
-                                                                </h5>
-
-                                                            </div>
                                                         </div>
                                                         <Row className="g-0 mb-3 align-items-end">
                                                             <Col className="ps-3">
@@ -319,7 +313,7 @@ function ProductList() {
                                                                         size="md"
                                                                         variant="falcon-default"
                                                                         style={{ background: '#003f6b' }}
-                                                                        className="fs--1 text-600 mt-3 text-white white-space-nowrap w-50"
+                                                                        className="fs--1 border-0 border-0 text-600 mt-3 text-white white-space-nowrap w-50"
 
                                                                     >
                                                                         Get a Quote
@@ -367,7 +361,7 @@ function ProductList() {
                                                             <Row className="g-0 h-100">
                                                                 <Col lg={8}>
 
-                                                                    <h4 className="mt-3 text-justify mt-sm-0 fs-0 fs-lg-1">
+                                                                    <h4 className="mt-3 text-start  mt-sm-0 fs-0 fs-lg-1">
                                                                         <Link className="text-900" to={`productdetails/${data._id}`}>
                                                                             {data?.name}
                                                                         </Link>
@@ -375,75 +369,75 @@ function ProductList() {
                                                                     <p className="fs--1 mt-2 w-50 d-none d-lg-block">
                                                                         {data?.type?.name}
                                                                     </p>
-                                                                    <div className="flex-1 d-flex align-items-end fw-semi-bold fs--1">
-                                                                        <span className="me-1 text-900">4.0</span>
+                                                                    <div className="flex-1 d-flex mb-3 align-items-end fw-semi-bold fs--1">
+                                                                        <span style={{ fontSize: '18px' }} className="me-1 text-900">4.0</span>
                                                                         <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
                                                                         <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
                                                                         <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
                                                                         <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="28" height="28" />
                                                                         <Icon icon="material-symbols:star-rate-rounded" color="gray" width="28" height="28" />
-                                                                        <span className="ms-2 text-secondary">
+                                                                        <span className="ms-2 text-primary">
                                                                             (78,259) reviews
                                                                         </span>
                                                                     </div>
                                                                 </Col>
-                                                                <Col lg={4} className="mt-4 mt-lg-0">
-                                                                    <Card>
-                                                                        <Card.Body>
+                                                                <Col lg={4} className=" mt-lg-0">
+                                                                    {/* <Card>
+                                                                        <Card.Body> */}
 
-                                                                            <Flex
-                                                                                justifyContent="between"
-                                                                                className="h-100 rounded border-lg border-1 flex-lg-column p-lg-3"
-                                                                            >
-                                                                                <div className="mb-lg-4 mt-auto mt-lg-0">
-                                                                                    <h3 className=" text-warning d-flex align-items-center">
-                                                                                        <span style={{ color: '#f68f57' }}>£ {data?.variant[0]?.pricing?.price}</span>
+                                                                    <Flex
+                                                                        justifyContent="between"
+                                                                        className="h-100 rounded border-lg border-1 flex-lg-column p-lg-3"
+                                                                    >
+                                                                        <div className="mb-lg-4 mt-auto mt-lg-0">
+                                                                            <h3 className=" text-warning d-flex align-items-center">
+                                                                                <span style={{ color: '#f68f57' }}>£ {data?.variant[0]?.pricing?.price}</span>
 
-                                                                                        <del className="ms-2 fs--1 text-700">£ {data?.variant[0]?.pricing?.compare_at}</del>
-                                                                                    </h3>
-                                                                                    <p className="mb-0 fs--1 text-800">
-                                                                                        92,632 Members Purchased
-                                                                                    </p>
-                                                                                </div>
-                                                                                <Flex className="mt-3 flex-lg-column gap-2">
-                                                                                    <Link to="/wishlist/product">
-                                                                                        <Button
-                                                                                            size="md"
-                                                                                            variant="falcon-default"
-                                                                                            className="fs--1 mt-3 mb-3 text-600 white-space-nowrap w-100"
+                                                                                <del className="ms-2 fs--1 text-700">£ {data?.variant[0]?.pricing?.compare_at}</del>
+                                                                            </h3>
+                                                                            <p className="mb-0 fs--1 text-800">
+                                                                                92,632 Members Purchased
+                                                                            </p>
+                                                                        </div>
+                                                                        <Flex className="mt-3 flex-lg-column gap-2">
+                                                                            <Link to="/wishlist/product">
+                                                                                <Button
+                                                                                    size="md"
+                                                                                    variant="falcon-default"
+                                                                                    className="fs--1 mt-3 mb-3 text-600 white-space-nowrap w-100"
 
-                                                                                        >
-                                                                                            <Icon icon="flat-color-icons:like" width="20" height="20" style={{ marginTop: '-5px' }} /> Add to Wishlist
-                                                                                        </Button>
-                                                                                    </Link>
+                                                                                >
+                                                                                    <Icon icon="flat-color-icons:like" width="20" height="20" style={{ marginTop: '-5px' }} /> Add to Wishlist
+                                                                                </Button>
+                                                                            </Link>
 
-                                                                                    <Link to="/Cart">
-                                                                                        <Button
-                                                                                            size="md"
-                                                                                            variant="primary"
+                                                                            <Link to="/Cart">
+                                                                                <Button
+                                                                                    size="md"
+                                                                                    variant="primary"
 
-                                                                                            className="fs--1 mb-3  text-600 text-white white-space-nowrap w-100"
+                                                                                    className="fs--1 mb-3  text-600 text-white white-space-nowrap w-100"
 
-                                                                                        >
-                                                                                            Add to Cart
-                                                                                        </Button>
-                                                                                    </Link>
+                                                                                >
+                                                                                    Add to Cart
+                                                                                </Button>
+                                                                            </Link>
 
-                                                                                    <Link to="/GetQuote">
-                                                                                        <Button
-                                                                                            size="md"
-                                                                                            variant="falcon-default"
-                                                                                            style={{ background: '#003f6b' }}
-                                                                                            className="fs--1 text-600 text-white white-space-nowrap w-100"
+                                                                            <Link to="/GetQuote">
+                                                                                <Button
+                                                                                    size="md"
+                                                                                    variant="falcon-default"
+                                                                                    style={{ background: '#003f6b' }}
+                                                                                    className="fs--1 border-0 text-600 text-white white-space-nowrap w-100"
 
-                                                                                        >
-                                                                                            Get a Quote
-                                                                                        </Button>
-                                                                                    </Link>
-                                                                                </Flex>
-                                                                            </Flex>
-                                                                        </Card.Body>
-                                                                    </Card>
+                                                                                >
+                                                                                    Get a Quote
+                                                                                </Button>
+                                                                            </Link>
+                                                                        </Flex>
+                                                                    </Flex>
+                                                                    {/* </Card.Body>
+                                                                    </Card> */}
                                                                 </Col>
                                                             </Row>
                                                         </Col>
@@ -451,11 +445,57 @@ function ProductList() {
 
                                                 </Card.Body>
                                             </Card>
+
                                         </>
                                     ))}
+                                    {/* pagination */}
+                                    <Card className="mt-3">
+                                        <Card.Body>
+                                            <Row className="g-3 flex-center justify-content-between">
+                                                <Col xs="auto" className="d-flex align-items-center">
+                                                    <small className="d-none d-lg-block me-2">Show:</small>
+                                                    <Form.Select
+                                                        size="sm"
+                                                        // value={itemsPerPage}
+                                                        // onChange={({ target }) => {
+                                                        //     setItemsPerPage(target.value);
+                                                        //     setCoursePerPage(target.value);
+                                                        // }}
+                                                        style={{ maxWidth: '4.875rem' }}
+                                                    >
+                                                        <option >1</option>
+                                                        <option >2</option>
+                                                        <option >3</option>
+                                                        <option >All</option>
+                                                    </Form.Select>
+                                                </Col>
+                                                <Col xs="auto" className="d-flex">
+                                                    <div>
+                                                        <Button
+                                                            variant="falcon-default"
+                                                            className="me-2"
+                                                        >
+                                                            Preview
+                                                        </Button>
+                                                    </div>
+
+                                                    <div>
+                                                        <Button
+                                                            variant="falcon-default"
+                                                        >
+                                                            Next
+                                                        </Button>
+
+                                                    </div>
+                                                </Col>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
+                                    {/* pagination */}
                                 </>
                             }
                         </Col>
+
                     </Row>
                 </Container>
             </Row >
@@ -495,6 +535,7 @@ function ProductList() {
 
                                     <Form.Check.Input id={`filter_${i}_key_${index}`} value={x?.value} onChange={(e) => handleFilter(e)}
                                         type="checkbox"
+                                        className="cursor-pointer"
                                     />
                                 </Form.Check>
                             </li>

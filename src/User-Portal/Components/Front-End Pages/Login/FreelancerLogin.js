@@ -112,7 +112,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                               <h3 className="mt-5 opacity-75 text-white"> Welcome </h3>
                             </div>
                             {isToggle == false ? <p className="mt-5 text-white">
-                              have an account?
+                              Already Have an Account ?
                               <br />
                               <a className="btn btn-outline-light mt-2 px-4" onClick={() => { setToggle(true) }}>
                                 Login
@@ -120,7 +120,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                             </p> :
                               <div className="mt-5 text-white">
                                 Don't have an account?
-                                <div className="text-white text-decoration-underline" onClick={() => { setToggle(false) }}>
+                                <div className="text-white cursor-pointer text-decoration-underline" onClick={() => { setToggle(false) }}>
                                   Get started!
                                 </div>
                               </div>
@@ -154,7 +154,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                   className='mb-3'
                                 >
                                   <Form.Label className='text-700'>Last Name</Form.Label>
-                                  <input className='form-control' placeholder="Last Name" value={formData.last_name} name="last_name"  onChange={handleFieldChange} type="text" />
+                                  <input className='form-control' placeholder="Last Name" value={formData.last_name} name="last_name" onChange={handleFieldChange} type="text" />
                                 </Form.Group>
                                 <Form.Group
                                   className='mb-3'

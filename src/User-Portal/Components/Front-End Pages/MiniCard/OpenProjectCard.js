@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Button, Col, Row, Container, InputGroup, Dropdown } from "react-bootstrap";
+import { Card, Button, Col, Form, Row, Container, InputGroup, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getAllData } from "../../../../Services/ProxyService";
 import ProjectOwnerLandingPage from '../ProjectOwnerLandingPage'
@@ -96,6 +96,50 @@ function OpenProjectCard() {
                             </Card.Body>
                         </Card>
                     ))}
+                    {/* pagination */}
+                    <Card className="mt-3 mb-3">
+                        <Card.Body>
+                            <Row className="g-3 flex-center justify-content-between">
+                                <Col xs="auto" className="d-flex align-items-center">
+                                    <small className="d-none d-lg-block me-2">Show:</small>
+                                    <Form.Select
+                                        size="sm"
+                                        // value={itemsPerPage}
+                                        // onChange={({ target }) => {
+                                        //     setItemsPerPage(target.value);
+                                        //     setCoursePerPage(target.value);
+                                        // }}
+                                        style={{ maxWidth: '4.875rem' }}
+                                    >
+                                        <option >1</option>
+                                        <option >2</option>
+                                        <option >3</option>
+                                        <option >All</option>
+                                    </Form.Select>
+                                </Col>
+                                <Col xs="auto" className="d-flex">
+                                    <div>
+                                        <Button
+                                            variant="falcon-default"
+                                            className="me-2"
+                                        >
+                                            Preview
+                                        </Button>
+                                    </div>
+
+                                    <div>
+                                        <Button
+                                            variant="falcon-default"
+                                        >
+                                            Next
+                                        </Button>
+
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Card.Body>
+                    </Card>
+                    {/* pagination */}
                 </Container>
                 {/* </Col > */}
             </Row >

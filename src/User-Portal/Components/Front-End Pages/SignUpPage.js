@@ -87,7 +87,7 @@ function SignUpPage(hasLabel) {
                                         }
                                         {toggleForm == 2 &&
                                             <Form onSubmit={(e) => { formSubmit(e) }}>
-                                         <h4 className="text-capitalize">Project Owner SignUp </h4>
+                                                <h4 className="text-capitalize">Project Owner SignUp </h4>
                                                 <div>
                                                     <Form.Group className="mb-3">
                                                         {hasLabel && <Form.Label className="text-700">First Name</Form.Label>}
@@ -112,7 +112,7 @@ function SignUpPage(hasLabel) {
                                                         />
                                                     </Form.Group>
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">Email address</Form.Label>}
+                                                        {hasLabel && <Form.Label className="text-700">Email Address</Form.Label>}
                                                         <Form.Control
                                                             type="email"
                                                             required
@@ -142,8 +142,8 @@ function SignUpPage(hasLabel) {
                                                             <Form.Check type="checkbox" className="mb-0 mt-3">
                                                                 <Form.Check.Input type="checkbox" />
                                                                 <Form.Check.Label
-                                                                    className="text-900 d-inline"
-                                                                    style={{ fontSize: '14px' }}
+                                                                    className="text-700 d-inline"
+
                                                                 >
                                                                     By Signing up you accept MyProject's Terms of Service.
                                                                     I have read and understood MyProject's Privacy Policy.
@@ -153,24 +153,24 @@ function SignUpPage(hasLabel) {
                                                     </Col>
 
 
-                                                    <div className="d-flex justify-content-between">
-                                                        <Button
-                                                            style={{ background: '#003f6b' }}
-                                                            className="border-0 d-block m-2 text-uppercase"
-                                                            type="submit"
-                                                            id="sign-up"
-                                                        >
-                                                            Sign Up
-                                                        </Button>
-
-                                                        <Link to="/owner"> <Button
+                                                    {/* <div className="d-flex justify-content-between"> */}
+                                                    <Button
+                                                        style={{ background: '#003f6b' }}
+                                                        className="border-0 w-100 d-block m-2 text-uppercase"
+                                                        type="submit"
+                                                        id="sign-up"
+                                                    >
+                                                        Sign Up
+                                                    </Button>
+                                                    {/* <Link to="/owner"> <Button
                                                             style={{ background: '#df2020' }}
                                                             className="border-0 d-block m-2 text-uppercase"
                                                             id="back">
                                                             Back
                                                         </Button>
-                                                        </Link>
-                                                    </div>
+                                                    </Link> */}
+                                                    {/* </div> */}
+                                                    <p className="text-center fw-semibold text-900 mt-3 mb-3">Already Have an Account ? <Link to='/owner'>Login</Link></p>
                                                 </div>
                                             </Form >
                                         }
@@ -270,8 +270,8 @@ function SignUpPage(hasLabel) {
                                                                 Sign Up
                                                             </Button>
                                                         </Link>
-
-                                                        <Button
+                                                        {/* <p className="text-center fw-semibold text-900 mt-3 mb-3">Already Have an Account ? <Link to='/owner'>Login</Link></p> */}
+                                                        {/* <Button
                                                             style={{ background: '#df2020' }}
                                                             className="border-0 d-block m-2 text-uppercase"
                                                             onClick={() => { toggleCard(1) }}
@@ -279,7 +279,7 @@ function SignUpPage(hasLabel) {
                                                             id="back"
                                                         >
                                                             Back
-                                                        </Button>
+                                                        </Button> */}
                                                     </div>
                                                 </div>
                                             </Form>

@@ -39,7 +39,8 @@ function SellerList() {
                     <NavbarStandard />
                 </Col>
                 <Col lg={12}>
-                    <Row className="justify-content-around">
+                    <Row className="justify-content-start">
+                        <h4 className="text-uppercase mt-5">Service Provider Lists</h4>
                         {sellersList.map((data,index)=>{
                             return <Col lg={4} >
                         <Card className="mt-4 mb-1">
@@ -56,10 +57,10 @@ function SellerList() {
                             <Icon className="d-block" icon="material-symbols:share-outline" color="black" width="20" height="20" />
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                <Dropdown.Item>Copy Link</Dropdown.Item>
-                                <Dropdown.Item>Facebook</Dropdown.Item>
-                                <Dropdown.Item>Twitter</Dropdown.Item>
-                                <Dropdown.Item>Whatsapp</Dropdown.Item>
+                                <Dropdown.Item><Icon icon="ion:copy-outline" hFlip={true} /> Copy Link</Dropdown.Item>
+                                <Dropdown.Item><Icon icon="ic:baseline-facebook" /> Facebook</Dropdown.Item>
+                                <Dropdown.Item><Icon icon="mdi:twitter" /> Twitter</Dropdown.Item>
+                                <Dropdown.Item><Icon icon="ic:baseline-whatsapp" /> Whatsapp</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                             
@@ -137,11 +138,15 @@ function SellerList() {
                         <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
                     </Form.Group>
                     <Form.Group className="mb-3">
-                        <Form.Check className="ms-2" />
-                        <Form.Check.Label>
-                            I Agree to the terms and conditions.
-                        </Form.Check.Label>
-                    </Form.Group>
+                        <Form.Check type="checkbox" className="mb-0 mt-3">
+                            <Form.Check.Input type="checkbox" />
+                               <Form.Check.Label
+                               className="text-700 d-inline"
+                               >
+                                I Agree to the terms and conditions.
+                                </Form.Check.Label>
+                                </Form.Check>
+                                </Form.Group>
                 </Form>
                 <Button as={Link} to="/owner" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
                     SEND

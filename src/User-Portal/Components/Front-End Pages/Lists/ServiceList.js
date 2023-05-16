@@ -84,9 +84,8 @@ function ServiceList(layout) {
                         <Row>
                             <Col lg={12} className="mt-5">
                                 <Card className="">
-                                    <Card.Header className="bg-white position-relative">
-                                        <h6 className="mb-0 mt-1 text-uppercase">Services Lists</h6>
-                                    </Card.Header>
+                                <Card.Header as="h4" className='bg-light text-justify  text-uppercase'>Service Lists</Card.Header>
+                                
                                     <Card.Body className="pt-0 pt-md-3">
                                         <Row className="g-3 align-items-center">
                                             <Col xs="auto" className="d-xl-none">

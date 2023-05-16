@@ -37,7 +37,7 @@ function JobDetails() {
         if (_token != null) {
             history.push(`/jobproposal/${jobid}/jobproposal`);
         } else {
-            history.push("/owner");
+            history.push("/freelancer/true");
         }
     }
     const getLevel = (value) => {
@@ -110,8 +110,8 @@ function JobDetails() {
                                 </Card.Body>
                             </Card>
                             <Card className="mt-3 mb-2">
-                                <Card.Header className='bg-white  p-3 d-flex justify-content-between text-uppercase'>
-                                    <h5 className="mt-3">
+                                <Card.Header className='bg-white   d-flex justify-content-between text-uppercase'>
+                                    <h5 className="mt-3 me-1">
                                         Clarification Board
                                     </h5>
                                     <Button onClick={showboard} style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
@@ -131,7 +131,7 @@ function JobDetails() {
                                                                 rows={5} />
                                                         </Form.Group>
                                                         <div className="d-flex justify-content-end mb-3">
-                                                            <Button as={Link} to="/owner" onClick={() => { askaQuestion() }} style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                            <Button as={Link} to="/freelancer/true" onClick={() => { askaQuestion() }} style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
                                                                 Submit
                                                             </Button>
                                                         </div>
@@ -276,9 +276,9 @@ function JobDetails() {
                                         Email: <span style={{ color: '#003f6b' }} className="fw-semibold">{jobdata.customer_email}</span>
                                     </p>
                                     <div className="d-flex mt-3 justify-content-around">
-                                        <p role="button" style={{ color: '#003f6b' }}>Name</p>
-                                        <p role="button" style={{ color: '#003f6b' }}>Profession</p>
-                                        <p role="button" style={{ color: '#003f6b' }}>Like</p>
+                                        <p role="button" style={{ color: '#003f6b',cursor:'default' }}>Name</p>
+                                        <p role="button" style={{ color: '#003f6b',cursor:'default' }}>Profession</p>
+                                        <p role="button" style={{ color: '#003f6b',cursor:'default' }}>Like</p>
                                     </div>
                                     {/* Profile Details */}
                                 </Card.Body>
@@ -309,7 +309,7 @@ function JobDetails() {
                                                 rows={5} />
                                         </Form.Group>
                                         <div className="d-flex justify-content-center">
-                                            <Button style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 w-100 text-uppercase">
+                                            <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 w-100 text-uppercase">
                                                 Submit
                                             </Button>
                                         </div>

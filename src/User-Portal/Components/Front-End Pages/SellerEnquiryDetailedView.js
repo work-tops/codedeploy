@@ -21,7 +21,7 @@ function SellerEnquiryDetails() {
                         <Col lg={12}>
                             <Card className="mt-5 mb-3">
                                 <Card.Header className="d-flex justify-content-end bg-light">
-                                    <Button className="bg-danger border-0">Close the Query</Button>
+                                    <Button as={Link} to="/sellerEnquirescard" className="bg-danger border-0">Close the Query</Button>
                                 </Card.Header>
                                 <Card.Body>
                                     <div>

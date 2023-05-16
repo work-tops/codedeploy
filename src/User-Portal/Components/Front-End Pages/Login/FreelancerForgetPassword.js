@@ -48,12 +48,9 @@ function ForgetPasswordFreelancer() {
                                                     to="#!"
                                                 >
                                                     terms
-                                                </Link>{' '}
-                                                and{' '}
-                                                <Link
-                                                    className="text-decoration-underline text-white"
-                                                    to="#!"
-                                                >
+
+                                                    and{' '}
+
                                                     conditions{' '}
                                                 </Link>
                                             </p>

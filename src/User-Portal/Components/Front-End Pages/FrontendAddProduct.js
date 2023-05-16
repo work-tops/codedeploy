@@ -388,7 +388,7 @@ const FrontendAddProduct = () => {
                                                 <h6 className='mb-3 text-uppercase'>Organization</h6>
                                                 <Form.Group className='mb-3'>
                                                     <Form.Label className="text-700">Seller Email</Form.Label>
-                                                    <Form.Control value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
+                                                    <Form.Control value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} type="email" className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
                                                     <Form.Label className="text-700">Category</Form.Label>

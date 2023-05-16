@@ -50,8 +50,11 @@ function MyProfile() {
                                     <div className="position-absolute top-0 end-0 m-3">
                                         <CardDropdown iconClassName="fs--1" drop="bottom">
                                             <div className="py-2">
+                                                <Dropdown.Item href="#!" className="text-primary">
+                                                    Add New Profile Image
+                                                </Dropdown.Item>
                                                 <Dropdown.Item href="#!" className="text-danger">
-                                                    Logout
+                                                    Remove Profile Image
                                                 </Dropdown.Item>
                                             </div>
                                         </CardDropdown>

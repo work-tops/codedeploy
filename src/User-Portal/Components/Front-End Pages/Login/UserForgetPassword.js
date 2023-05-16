@@ -31,11 +31,12 @@ function UserForgetPassword() {
                                                     placeholder={'Email address'}
                                                     name="email"
                                                     type="email"
+                                                    required
                                                 />
                                             </Form.Group>
 
                                             <Form.Group className="mb-3">
-                                                <Button as={Link} to="/user/confirm-mail" style={{ background: '#003f6b' }} className="w-100 border-0">
+                                                <Button type="submit" as={Link} to="/user/confirm-mail" style={{ background: '#003f6b' }} className="w-100 border-0">
                                                     Send reset link
                                                 </Button>
                                             </Form.Group>

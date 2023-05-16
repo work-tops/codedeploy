@@ -208,7 +208,7 @@ function ListJobs(layout) {
 
                                         <Flex wrap="wrap" className=" mb-2">
                                             {filterList?.map((x, i) => {
-                                                return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon icon="ic:sharp-close" color="white" width="14" height="14" /></span>
+                                                return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon className='cursor-pointer' icon="ic:sharp-close" color="white" width="14" height="14" /></span>
                                             })}
                                         </Flex>
                                         <ul className="list-unstyled">
@@ -231,6 +231,7 @@ function ListJobs(layout) {
 
                                                         <Form.Check.Input id={`job_check_${i}`} value={x?.category} onChange={(e) => categorySearch(e)}
                                                             type={'checkbox'}
+                                                            className='cursor-pointer'
                                                         />
                                                     </Form.Check>
                                                 </li>
@@ -360,7 +361,9 @@ function ListJobs(layout) {
                                                                     <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:folder-rounded" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" /> {data?.category}</p>
                                                                     <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:clock-time-eight" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} />20 to 30 days</p>
                                                                     <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:tag" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} /> Job ID : {data?._id}</p>
-                                                                    <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="flat-color-icons:like" className='me-1' style={{ marginTop: '-5px' }} color="#003f6b" width="20" height="20" hFlip={true} /> Click to Save</p>
+                                                                    <Link to="/wishlist/project">
+                                                                    <p className='text-justiy text-700 cursor-pointer fw-semibold' style={{ fontSize: '14px' }}><Icon icon="flat-color-icons:like" className='me-1' style={{ marginTop: '-5px' }} color="#003f6b" width="20" height="20" hFlip={true} /> Click to Save</p>
+                                                                    </Link>
                                                                     <Link to={`jobdetails/${data._id}`} role="button">
                                                                         <Button className='border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
                                                                             VIEW JOB
@@ -376,21 +379,7 @@ function ListJobs(layout) {
                                     </Card.Body>
                                 </Card>
                             ))}
-                            <div className="" >
-                                <ReactPaginate
-                                    style={{ padding: "5px", margin: "0px", border: "none" }}
-                                    // previousLabel={""}
-                                    // nextLabel={""}
-                                    pageCount={pageCount}
-                                    onPageChange={changePage}
-                                    containerClassName={"pagination"}
-                                    // previousLinkClassName={"previousBttn"}
-                                    // nextLinkClassName={"nextBttn"}
-                                    disabledClassName={"disabled"}
-                                    activeClassName={"active"}
-                                    total={lists.length}
-                                />
-                            </div>
+
                         </Col>
                     </Row>
                     {/* </div> */}
@@ -400,3 +389,16 @@ function ListJobs(layout) {
     )
 }
 export default ListJobs
+{/* <div className="" >
+                                <ReactPaginate
+                                    style={{ padding: "5px", margin: "0px", border: "none" }}
+                                   
+                                    pageCount={pageCount}
+                                    onPageChange={changePage}
+                                    containerClassName={"pagination"}
+                                   
+                                    disabledClassName={"disabled"}
+                                    activeClassName={"active"}
+                                    total={lists.length}
+                                />
+                            </div> */}

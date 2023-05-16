@@ -26,9 +26,9 @@ const NavbarStandard = () => {
   const logOut = () => {
     sessionStorage.clear();
     if (user.role == "Owner") {
-      history.push("/owner");
+      history.push("/user/logout");
     } else {
-      history.push("/freelancer/true");
+      history.push("/freelance/logout");
     }
     // window.location.reload();
   }

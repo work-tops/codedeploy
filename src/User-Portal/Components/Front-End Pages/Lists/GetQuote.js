@@ -237,7 +237,7 @@ function GetQuote() {
                                             />
                                         </Form.Group>
                                         <div className="d-flex justify-content-center align-items-center">
-                                            <Button as={Link} to="/freelancer/true" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
+                                            <Button as={Link} to="/owner" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
                                             >Request Quote
                                             </Button>
                                         </div>
