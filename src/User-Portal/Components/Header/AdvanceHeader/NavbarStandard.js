@@ -219,9 +219,11 @@ const NavbarStandard = () => {
                       </Dropdown.Menu>
                     </Dropdown>
                   </div>
-                  {/* <div className='mt-2'>
-                    <Icon icon="mdi:bell" color="white" width="24" height="24" />
-                  </div> */}
+                  <div className='mt-2'>
+                    <Link to="/notifications">
+                      <Icon icon="mdi:bell" color="white" width="24" height="24" />
+                    </Link>
+                  </div>
                   <div className='mt-2'>
                     <Link to="/Cart">
                       <Icon icon="ic:round-shopping-cart" color="white" width="24" height="24" />
@@ -246,10 +248,8 @@ const NavbarStandard = () => {
                             <span>{user?.role}</span>
                           </Dropdown.Item>
                           <Dropdown.Divider />
-
-                          <Dropdown.Item as={Link} to="/MyProfile">
-                            Profile
-                          </Dropdown.Item>
+                          {id == 3 && <Dropdown.Item as={Link} to="/FreelancerProfile">Profile</Dropdown.Item>}
+                          {id == 2 && <Dropdown.Item as={Link} to="/MyProfile">Profile</Dropdown.Item>}
                           {id == 2 && <Dropdown.Item as={Link} to="/OpenProjectCard">My Projects</Dropdown.Item>}
                           {id == 2 && <Dropdown.Item as={Link} to="/workstreamcard">Workstreams</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/addproductcard">My Products</Dropdown.Item>}

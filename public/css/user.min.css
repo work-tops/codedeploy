@@ -1,6 +1,21 @@
-::placeholder{
+::placeholder {
     font-size: 14px;
 }
-p{
+
+p {
     font-size: 14px;
 }
+
+/* .notification {
+    color: var(--falcon-gray-1000);
+    text-decoration: none;
+    background-color: var(--falcon-notification-bg);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: .8333333333rem;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+} */

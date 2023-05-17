@@ -50,7 +50,7 @@ function GetQuote() {
                                             <Col lg={6}>
                                                 <Form.Group className="mb-3">
                                                     <Form.Label className="fw-semibold text-900">
-                                                        Stone Category
+                                                        Stone Category<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
                                                     <Form.Select>
                                                         <option>Select</option>
@@ -62,7 +62,7 @@ function GetQuote() {
                                             <Col lg={6}>
                                                 <Form.Group className="mb-3">
                                                     <Form.Label className="fw-semibold text-900">
-                                                        Thickness
+                                                        Thickness<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
                                                     <Form.Select>
                                                         <option>Select</option>
@@ -74,7 +74,7 @@ function GetQuote() {
                                             <Col lg={12}>
                                                 <Form.Group className="mb-3">
                                                     <Form.Label className="fw-semibold text-900">
-                                                        Stone Name
+                                                        Stone Name<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
                                                     <Form.Control type="text" />
                                                 </Form.Group>
@@ -138,18 +138,18 @@ function GetQuote() {
                                                             </Flex>
                                                         </div>
                                                     )}
-
+                                                    <small>Minimum 5 and Maximum 10 Files Allowed</small>
                                                 </div>
                                             </Col>
                                             <Col lg={12}>
-                                                
-                                                        <Form.Group className="mb-3">
-                                                            <Form.Label className="fw-semibold text-900">
-                                                                Dimensions
-                                                            </Form.Label>
-                                                            <Form.Control as="textarea" rows={5} />
-                                                        </Form.Group>
-                                                    
+
+                                                <Form.Group className="mb-3">
+                                                    <Form.Label className="fw-semibold text-900">
+                                                        Dimensions<span className="ms-1 text-danger">*</span>
+                                                    </Form.Label>
+                                                    <Form.Control as="textarea" rows={5} />
+                                                </Form.Group>
+
                                             </Col>
                                         </Row>
 
@@ -159,7 +159,7 @@ function GetQuote() {
                                     <Card.Body>
                                         <Form.Group className="mb-3">
                                             <Form.Label className="fw-semibold text-900">
-                                            When will you be ready for template?
+                                                When will you be ready for template?<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             {/*  */}
                                             <Form.Check type="radio" className="mb-0 mt-3">
@@ -168,7 +168,7 @@ function GetQuote() {
                                                     className="d-inline"
                                                     style={{ fontSize: '14px' }}
                                                 >
-                                                   ASAP
+                                                    ASAP
                                                 </Form.Check.Label>
                                             </Form.Check>
                                             <Form.Check type="radio" className="mb-0 mt-3">
@@ -217,7 +217,7 @@ function GetQuote() {
 
                                         <Form.Group className="mb-3">
                                             <Form.Label className="fw-semibold text-900">
-                                                Tell us About You
+                                                Tell us About You<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control type="text"
                                                 className="mb-3"

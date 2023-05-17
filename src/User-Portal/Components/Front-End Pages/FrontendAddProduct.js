@@ -353,31 +353,31 @@ const FrontendAddProduct = () => {
                                 <Row>
                                     <Col lg={7}>
                                         <Card className='mt-3 me-3'>
-                                            <Card.Header className='bg-white'>
+                                            <Card.Header className='bg-light'>
                                                 <div>
-                                                    <h6 className='mt-2 text-uppercase'>Add Products</h6>
-                                                    <Breadcrumb style={{ fontSize: '12px' }}>
+                                                    <h4 className='mt-2 text-uppercase'>Add Products</h4>
+                                                    {/* <Breadcrumb style={{ fontSize: '12px' }}>
                                                         <Breadcrumb.Item>Duplicate</Breadcrumb.Item>
                                                         <Breadcrumb.Item>Preview</Breadcrumb.Item>
-                                                    </Breadcrumb>
+                                                    </Breadcrumb> */}
                                                 </div>
                                             </Card.Header>
                                             <Card.Body>
                                                 <h6 className='mb-3 text-uppercase'>Products Information</h6>
 
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="text-700">Name</Form.Label>
+                                                    <Form.Label className="text-700">Name<span className="ms-1 text-danger">*</span></Form.Label>
                                                     <Form.Control value={form.name} required name="name" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
                                                 </Form.Group>
                                                 <Row className="mb-3 g-3">
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label className="text-700">Description <span className='text-grey'>(Optional)</span></Form.Label>
+                                                        <Form.Label className="text-700">Description </Form.Label>
                                                         <Form.Control value={form.description} required name="description" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Description....' rows={8} />
                                                     </Form.Group>
                                                 </Row>
                                                 <Row className="mb-3 g-3">
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label className="text-700">Return Policy <span className='text-grey'>(Optional)</span></Form.Label>
+                                                        <Form.Label className="text-700">Return Policy </Form.Label>
                                                         <Form.Control value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Policy....' rows={8} />
                                                     </Form.Group>
                                                 </Row>
@@ -387,11 +387,11 @@ const FrontendAddProduct = () => {
                                             <Card.Body>
                                                 <h6 className='mb-3 text-uppercase'>Organization</h6>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label className="text-700">Seller Email</Form.Label>
+                                                    <Form.Label className="text-700">Seller Email<span className="ms-1 text-danger">*</span></Form.Label>
                                                     <Form.Control value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} type="email" className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label className="text-700">Category</Form.Label>
+                                                    <Form.Label className="text-700">Category<span className="ms-1 text-danger">*</span></Form.Label>
                                                     <Form.Select value={form.type?.name} required name="type" onChange={(e) => { handleChange(e) }}>
                                                         <option value="">Select</option>
                                                         {productCategory.map((data, key) => (
@@ -458,7 +458,7 @@ const FrontendAddProduct = () => {
                                                                                     <option>Material</option>
                                                                                     <option>Style</option>
                                                                                 </Form.Select> */}
-                                                                                <Form.Label className="text-700">Colour</Form.Label>
+                                                                                <Form.Label className="text-700">Colour<span className="ms-1 text-danger">*</span></Form.Label>
                                                                             </Form.Group>
                                                                             <Form.Group as={Col} className='mb-3'>
                                                                                 <Form.Control value={variant.color} required name="color" onChange={(e) => { variantChange(e) }} type="text" placeholder='Enter tags' className='w-100' />
@@ -466,7 +466,7 @@ const FrontendAddProduct = () => {
                                                                         </Row>
                                                                         <Row className="mb-3 g-3">
                                                                             <Form.Group as={Col} className='mb-3'>
-                                                                                <Form.Label className="text-700">Size</Form.Label>
+                                                                                <Form.Label className="text-700">Size<span className="ms-1 text-danger">*</span></Form.Label>
                                                                                 {/* <Form.Select className='w-75'>
                                                                                     <option>Size</option>
                                                                                     <option>Colour</option>
@@ -480,7 +480,7 @@ const FrontendAddProduct = () => {
                                                                         </Row>
                                                                         <Row className="mb-3 g-3">
                                                                             <Form.Group as={Col} className='mb-3'>
-                                                                                <Form.Label className="text-700">Finish Type</Form.Label>
+                                                                                <Form.Label className="text-700">Finish Type<span className="ms-1 text-danger">*</span></Form.Label>
                                                                                 {/* <Form.Select className='w-75'>
                                                                                     <option>Size</option>
                                                                                     <option>Colour</option>

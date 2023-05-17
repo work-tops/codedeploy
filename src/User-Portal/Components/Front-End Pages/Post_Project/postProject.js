@@ -304,14 +304,7 @@ const PostProject = () => {
                   <Col lg={12} className='me-2 w-100'>
                     <div >
                       <Form.Label className='text-700 text-capitalize'>
-                        Upload Sample and Other Helpful (Optional)
-                        <OverlayTrigger
-                          overlay={<Tooltip id="coverPphotoTooltip">Add cover photo</Tooltip>}
-                        >
-                          <span className="ms-2 text-primary fs-0">
-                            <FontAwesomeIcon icon="info-circle" />
-                          </span>
-                        </OverlayTrigger>
+                        Upload Sample and Other Helpful
                       </Form.Label>
                       <div {...getRootProps({ className: 'dropzone-area py-6' })}>
                         <input {...getInputProps({ multiple: false })} />
@@ -361,6 +354,7 @@ const PostProject = () => {
                       )}
 
                     </div>
+                    <small>Minimum 5 and Maximum 10 Files Allowed</small>
                   </Col>
                   {/* Upload Samples */}
                   <Col lg={6} md={6} className=''>
@@ -416,10 +410,10 @@ const PostProject = () => {
                         <div className="col">
                           {form.budget_type == "No Idea" ? (
                             <>
-                            <Form.Group className='mt-2'>
-                              <Form.Label>Max Budget</Form.Label>
-                              <Form.Control className='d-block' value={form.max_budget} required name="max_budget" onChange={(e) => { handleChange(e) }} placeholder="£ 0" type="number" />
-                            </Form.Group>
+                              <Form.Group className='mt-2'>
+                                <Form.Label>Max Budget<span className="ms-1 text-danger">*</span></Form.Label>
+                                <Form.Control className='d-block' value={form.max_budget} required name="max_budget" onChange={(e) => { handleChange(e) }} placeholder="£ 0" type="number" />
+                              </Form.Group>
                             </>
                           ) : ("")}
                         </div>
@@ -442,7 +436,7 @@ const PostProject = () => {
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
                       <Form.Label className='text-700 text-capitalize'>
-                        Post Code <span className="text-danger">*</span>
+                        Post Code<span className="ms-1 text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         value={form.postcode}
@@ -457,7 +451,7 @@ const PostProject = () => {
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
                       <Form.Label className='text-700 text-capitalize'>
-                        Starting Date (Optional)<span className="text-danger">*</span>
+                        Starting Date
                       </Form.Label>
                       <Form.Control
                         value={form.startdate}

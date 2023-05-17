@@ -25,7 +25,7 @@ function RequestQuote() {
                                     <Card.Body>
                                         <Form.Group className="mb-3">
                                             <Form.Label className="fw-semibold text-900">
-                                                Describe Your Job
+                                                Describe Your Job<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control as="textarea" placeholder="
                                         Please describe your job in detail and let the trade know when's the best time to contact you" rows={5} />
@@ -36,7 +36,7 @@ function RequestQuote() {
                                     <Card.Body>
                                         <Form.Group className="mb-3">
                                             <Form.Label className="fw-semibold text-900">
-                                                What Service do you need ?
+                                                What Service do you need ?<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control type="text"
                                             />
@@ -47,7 +47,7 @@ function RequestQuote() {
                                     <Card.Body>
                                         <Form.Group className="mb-3">
                                             <Form.Label className="fw-semibold text-900">
-                                                When You Would like the job to start ?
+                                                When You Would like the job to start ?<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             {/*  */}
                                             <Form.Check type="radio"  className="mb-0 mt-3">
@@ -105,7 +105,7 @@ function RequestQuote() {
 
                                         <Form.Group className="mb-3">
                                             <Form.Label className="fw-semibold text-900">
-                                                Tell us About You
+                                                Tell us About You<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control type="text"
                                                 className="mb-3"

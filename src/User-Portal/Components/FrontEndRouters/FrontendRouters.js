@@ -72,6 +72,9 @@ import OwnerEnquiryDetails from "../Front-End Pages/EnquiryDetailedView";
 import SellerEnquiryCard from "../Front-End Pages/MiniCard/POProductEnquiryCard";
 import SellerEnquiryDetails from "../Front-End Pages/SellerEnquiryDetailedView";
 import GetQuote from "../Front-End Pages/Lists/GetQuote";
+import Notifications from "../Front-End Pages/Notifications";
+import Chat from "../Front-End Pages/Chat";
+import FreelancerProfile from "../Front-End Pages/Profile/FreelancerProfile";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -165,6 +168,12 @@ const FrontEndRouters = () => {
             <Route path="/user/confirm-mail"><UserConMail /></Route>
             <Route path="/user/logout"><UserLogout /></Route>
             <Route path="/user/forgetpassword"><UserForgetPassword /></Route>
+            {/* New Pages */}
+
+            {/* New Pages */}
+            <Route path="/notifications"><Notifications /></Route>
+            <Route path="/chat"><Chat /></Route>
+            <Route path="/FreelancerProfile"><FreelancerProfile/></Route>
             {/* New Pages */}
         </Switch>
 

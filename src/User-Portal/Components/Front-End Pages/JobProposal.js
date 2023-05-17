@@ -131,7 +131,7 @@ function JobProposal() {
                                     <Form onSubmit={(e) => { formsubmit(e) }}>
                                         <Form.Group className='mb-3'>
                                             <Form.Label style={{ fontSize: '14px' }} className=" text-700">
-                                                Proposal Amount
+                                                Proposal Amount<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
 
                                             <InputGroup className="mb-3">
@@ -164,7 +164,7 @@ function JobProposal() {
                                         </Card>
                                         <Form.Group className="mb-3">
                                             <Form.Label style={{ fontSize: '14px' }} className=" text-700">
-                                                Completion Time
+                                                Completion Time<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
                                                 required
@@ -177,7 +177,7 @@ function JobProposal() {
                                         </Form.Group>
                                         <Form.Group className="mb-3">
                                             <Form.Label style={{ fontSize: '14px' }} className=" text-700">
-                                                Cover Letter
+                                                Cover Letter<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
                                                 as="textarea"
@@ -190,10 +190,9 @@ function JobProposal() {
                                         </Form.Group>
                                         <div >
                                             <Form.Label className="text-700">
-                                                Upload File (Optional)
+                                                Upload File 
                                             </Form.Label>
-                                            <Card className="mb-3 py-2">
-                                                <Card.Body className="bg-white">
+                                            
                                                     <div {...getRootProps({ className: 'dropzone-area py-6' })}>
                                                         <input {...getInputProps({ multiple: false })} />
                                                         <div className="fs--1">
@@ -247,11 +246,10 @@ function JobProposal() {
                                                             </Flex>
                                                         </div>
                                                     )}
-                                                </Card.Body>
-                                            </Card>
+                                                
                                         </div>
                                         <div className="d-flex justify-content-end">
-                                            <Button className="border-0" style={{ background: '#003f6b',fontSize:'14px' }} type="submit">
+                                            <Button className="border-0 mt-3" style={{ background: '#003f6b',fontSize:'14px' }} type="submit">
                                                 SEND
                                             </Button>
                                         </div>

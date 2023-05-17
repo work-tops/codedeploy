@@ -1,5 +1,5 @@
-import React from "react";
-import { Row, Col, Button, Container, Card, Form } from "react-bootstrap";
+import { React, useState } from "react";
+import { Row, Col, Button, Container, Card, Form, Modal } from "react-bootstrap";
 import worktops from '../../Projectimages/worktops-installation.jpg'
 import { Icon } from "@iconify/react";
 import Divider from "../../../TemplateAssets/common/Divider";
@@ -10,6 +10,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function ServiceInformation() {
+
+    const [show, setShow] = useState(false);
+    const [sellersList, setSellers] = useState([]);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <>
             <Container>
@@ -183,15 +189,6 @@ function ServiceInformation() {
                                         Reviews
                                     </h5>
                                     <div className="d-flex gap-2 justify-content-end">
-                                        <Button
-                                            variant="falcon-default"
-                                            size="sm"
-                                            iconAlign="right"
-                                            icon="filter"
-                                            iconClassName="ms-1 fs--2"
-                                        >
-                                            Filter
-                                        </Button>
                                         <div>
                                             <Form.Select size="sm" defaultValue="">
                                                 <option value="">Sort by</option>
@@ -370,15 +367,15 @@ function ServiceInformation() {
                                         <Row>
                                             <Col md={7} lg={12} className="order-md-1 order-lg-0">
 
-                                                <Link to="/Cart">
-                                                    <Button
-                                                        variant="primary"
-                                                        size="lg"
-                                                        className="mb-3 w-100 fs-0 mt-1"
-                                                    >
-                                                        Add to Cart
-                                                    </Button>
-                                                </Link>
+
+                                                <Button
+                                                    variant="primary"
+                                                    size="lg"
+                                                    onClick={handleShow}
+                                                    className="mb-3 w-100 fs-0 mt-1"
+                                                >
+                                                    Message Me                                                    </Button>
+
                                                 <Link to="/RequestQuote">
                                                     <Button
                                                         style={{ background: '#003f6b' }}
@@ -447,6 +444,55 @@ function ServiceInformation() {
                     </Row>
                 </Row>
             </Container >
+            {/*  */}
+            {/* Message Me - Modal */}
+            < div className='d-flex justify-content-between' >
+                <Modal
+                    show={show}
+                    onHide={() => setShow(false)}
+                    dialogClassName="modal-lg modal-90w"
+
+                    aria-labelledby="example-custom-modal-styling-title"
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title id="example-custom-modal-styling-title">
+                            Contact Reliant Plumbing and Heating</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Form>
+                            <Form.Group className="mb-3">
+                                <Form.Label className="fw-semibold">
+                                    What's the Message About ?
+                                </Form.Label>
+                                <Form.Control type="text" />
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label className="fw-semibold">
+                                    Message
+                                </Form.Label>
+                                <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Check type="checkbox" className="mb-0 mt-3">
+                                    <Form.Check.Input type="checkbox" />
+                                    <Form.Check.Label
+                                        className="text-700 d-inline"
+                                    >
+                                        I Agree to the terms and conditions.
+                                    </Form.Check.Label>
+                                </Form.Check>
+                            </Form.Group>
+                        </Form>
+                        <Button as={Link} to="/owner" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
+                            SEND
+                        </Button>
+                    </Modal.Body>
+                </Modal>
+            </div >
+
+            {/*  */}
+
+
         </>
     )
 }
