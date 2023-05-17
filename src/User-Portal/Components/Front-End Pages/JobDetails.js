@@ -23,6 +23,7 @@ function JobDetails() {
 
     let { jobid } = useParams();
     const [jobdata, setJobdata] = useState([])
+    const [user, setUser] = useState({})
     const [chatList, setChatList] = useState([])
     const [proposalsList, setProposals] = useState([])
     const [board, setBoard] = useState(false)
@@ -73,6 +74,9 @@ function JobDetails() {
     }
     useEffect(() => {
         getJobsById()
+        var _user = sessionStorage.getItem('user');
+        var _json = JSON.parse(_user);
+        setUser(_json);
     }, [])
 
     // Date length
@@ -110,14 +114,17 @@ function JobDetails() {
                                 </Card.Body>
                             </Card>
                             <Card className="mt-3 mb-2">
-                                <Card.Header className='bg-white   d-flex justify-content-between text-uppercase'>
-                                    <h5 className="mt-3 me-1">
-                                        Clarification Board
-                                    </h5>
-                                    <Button onClick={showboard} style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
-                                        ask a question
-                                    </Button>
-                                </Card.Header>
+                                {user?.role == "Freelancer" &&
+                                    <Card.Header className='bg-white   d-flex justify-content-between text-uppercase'>
+                                        <h5 className="mt-3 me-1">
+                                            Clarification Board
+                                        </h5>
+                                        <Button onClick={showboard} style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
+                                            ask a question
+                                        </Button>
+                                    </Card.Header>
+                                }
+
                                 <Card.Body className="position-relative">
                                     <Row>
                                         <Col xl={12}>
@@ -228,7 +235,7 @@ function JobDetails() {
                             {/* Customize Details */}
 
                             {/* Ends In Days  Card*/}
-                            <Card className="mt-3 py-2">
+                            {user?.role == "Freelancer" && <Card className="mt-3 py-2">
                                 <Card.Body className="bg-white">
                                     {/* Ends In Days */}
                                     <div className="d-flex justify-content-around">
@@ -276,9 +283,9 @@ function JobDetails() {
                                         Email: <span style={{ color: '#003f6b' }} className="fw-semibold">{jobdata.customer_email}</span>
                                     </p>
                                     <div className="d-flex mt-3 justify-content-around">
-                                        <p role="button" style={{ color: '#003f6b',cursor:'default' }}>Name</p>
-                                        <p role="button" style={{ color: '#003f6b',cursor:'default' }}>Profession</p>
-                                        <p role="button" style={{ color: '#003f6b',cursor:'default' }}>Like</p>
+                                        <p role="button" style={{ color: '#003f6b', cursor: 'default' }}>Name</p>
+                                        <p role="button" style={{ color: '#003f6b', cursor: 'default' }}>Profession</p>
+                                        <p role="button" style={{ color: '#003f6b', cursor: 'default' }}>Like</p>
                                     </div>
                                     {/* Profile Details */}
                                 </Card.Body>
@@ -288,35 +295,38 @@ function JobDetails() {
                                     </Button>
                                 </Card.Footer>
                             </Card>
+                            }
 
                             {/* Report This Project */}
-                            <Card className="mt-3 mb-3 py-2">
-                                <Card.Header as="h5" className="text-uppercase bg-light" >
-                                    Report this Project
-                                </Card.Header>
-                                <Card.Body>
-                                    <Form>
-                                        <Form.Group className="mb-3">
-                                            <Form.Control
-                                                type="text"
-                                                placeholder="Type Reason"
-                                            />
-                                        </Form.Group>
-                                        <Form.Group className="mb-3">
-                                            <Form.Control
-                                                as="textarea"
-                                                placeholder='Description....'
-                                                rows={5} />
-                                        </Form.Group>
-                                        <div className="d-flex justify-content-center">
-                                            <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 w-100 text-uppercase">
-                                                Submit
-                                            </Button>
-                                        </div>
-                                    </Form>
+                            {user?.role == "Freelancer" &&
+                                <Card className="mt-3 mb-3 py-2">
+                                    <Card.Header as="h5" className="text-uppercase bg-light" >
+                                        Report this Project
+                                    </Card.Header>
+                                    <Card.Body>
+                                        <Form>
+                                            <Form.Group className="mb-3">
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="Type Reason"
+                                                />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3">
+                                                <Form.Control
+                                                    as="textarea"
+                                                    placeholder='Description....'
+                                                    rows={5} />
+                                            </Form.Group>
+                                            <div className="d-flex justify-content-center">
+                                                <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 w-100 text-uppercase">
+                                                    Submit
+                                                </Button>
+                                            </div>
+                                        </Form>
 
-                                </Card.Body>
-                            </Card>
+                                    </Card.Body>
+                                </Card>
+                            }
                         </Col>
                     </Row>
                 </Container>

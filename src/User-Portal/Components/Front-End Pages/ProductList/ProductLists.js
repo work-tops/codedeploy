@@ -510,13 +510,14 @@ function ProductList() {
                 variant="link"
                 onClick={() => setOpen(!open)}
                 aria-controls={`${slugifyText(data?.name)}-collapse`}
-                aria-expanded={index === 0 || index === 1 ? !open : open}
+                // aria-expanded={index === 0 || index === 1 ? !open : open}
                 className="collapse-indicator-plus w-100 fs--2 fw-medium text-start text-600 text-decoration-none py-3 px-0"
             >
                 {data?.name}
             </Button>
             <Collapse
-                in={index === 0 || index === 1 ? !open : open}
+                // in={index === 0 || index === 1 ? !open : open}
+                in={index === 4 ? !open : open}
                 id={`${slugifyText(data?.name)}-collapse`}
             >
                 <ul className="list-unstyled">

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.d63a1c40.css",
-    "main.js": "./static/js/main.95af77d5.js",
+    "main.css": "./static/css/main.709bb648.css",
+    "main.js": "./static/js/main.c32c4a1d.js",
     "static/js/787.7624a62d.chunk.js": "./static/js/787.7624a62d.chunk.js",
     "static/media/scenery-designers-work.jpg": "./static/media/scenery-designers-work.d29429a4f0d438306c81.jpg",
     "static/media/Tilling.jpg": "./static/media/Tilling.6cbdceaf7710699a90f2.jpg",
@@ -15,9 +15,12 @@
     "static/media/remixicon.ttf?t=1590207869815": "./static/media/remixicon.f2616f597cf98f38d234.ttf",
     "static/media/Chimneys.jpg": "./static/media/Chimneys.456676423280b124de03.jpg",
     "static/media/int-design-3.jpg": "./static/media/int-design-3.6fdbefd07bceb71e1f52.jpg",
+    "static/media/trainer.png": "./static/media/trainer.5357fc9ad91fb277812a.png",
+    "static/media/7.jpg": "./static/media/7.1cde5c360c9568f53747.jpg",
     "static/media/bricklaying.jpg": "./static/media/bricklaying.58c1f6aa7be04a5c1540.jpg",
     "static/media/interior-design-cost-in-mumbai.jpg": "./static/media/interior-design-cost-in-mumbai.46f8758f08bd1229045e.jpg",
     "static/media/remixicon.woff?t=1590207869815": "./static/media/remixicon.8d09fa11700ed63cf96e.woff",
+    "static/media/student.png": "./static/media/student.989e0c03246289c99d7c.png",
     "static/media/employee.png": "./static/media/employee.31a47faa9688c4c88fe5.png",
     "static/media/Stonemasonry.png": "./static/media/Stonemasonry.b080a4dd0842ec223534.png",
     "static/media/Pound Currency.jpg": "./static/media/Pound Currency.b2c5704d7276dac4cc2f.jpg",
@@ -31,6 +34,7 @@
     "static/media/Fencing.jpg": "./static/media/Fencing.a52b14a25ba719d82afd.jpg",
     "static/media/ent-1.jpg": "./static/media/ent-1.0632bb9a159826716849.jpg",
     "static/media/Granite.png": "./static/media/Granite.8b684b3575c6347e1ae7.png",
+    "static/media/45.png": "./static/media/45.87131fc549afc8460717.png",
     "static/media/Conservatories.jpg": "./static/media/Conservatories.ddd1ea73781ca94bf574.jpg",
     "static/media/Facias.jpg": "./static/media/Facias.f64fea6c493be65355c7.jpg",
     "static/media/product_image.png": "./static/media/product_image.faca9cc30f07755834bb.png",
@@ -47,10 +51,12 @@
     "static/media/Damp Proofing.jpg": "./static/media/Damp Proofing.fa739b4a02a5a2759187.jpg",
     "static/media/Painting.jpg": "./static/media/Painting.3f57e606c80e777ebcef.jpg",
     "static/media/Plastering.jpg": "./static/media/Plastering.9fa370633ed904b4a142.jpg",
+    "static/media/16.png": "./static/media/16.6b93ccfc17e0a73417f1.png",
     "static/media/Locksmiths.jpg": "./static/media/Locksmiths.5f8aaa2c0634d7da2173.jpg",
     "static/media/Newsfeed.jpg": "./static/media/Newsfeed.b7818b78ac6da47d2b8c.jpg",
     "static/media/MP-logo.png": "./static/media/MP-logo.83483c7bf3ae6bff1418.png",
     "static/media/Freelancer.jpg": "./static/media/Freelancer.9126206ff784c2e07039.jpg",
+    "static/media/master-card.png": "./static/media/master-card.5d62b1cd6196fb605815.png",
     "static/media/shape-1.png": "./static/media/shape-1.cd2c960ddb673e3da039.png",
     "static/media/slick.svg": "./static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "./static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -58,12 +64,12 @@
     "static/media/slick.woff": "./static/media/slick.295183786cd8a1389865.woff",
     "index.html": "./index.html",
     "static/media/cloud-upload.svg": "./static/media/cloud-upload.4358f33e4cb30fb3b9c8865f74335508.svg",
-    "main.d63a1c40.css.map": "./static/css/main.d63a1c40.css.map",
-    "main.95af77d5.js.map": "./static/js/main.95af77d5.js.map",
+    "main.709bb648.css.map": "./static/css/main.709bb648.css.map",
+    "main.c32c4a1d.js.map": "./static/js/main.c32c4a1d.js.map",
     "787.7624a62d.chunk.js.map": "./static/js/787.7624a62d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d63a1c40.css",
-    "static/js/main.95af77d5.js"
+    "static/css/main.709bb648.css",
+    "static/js/main.c32c4a1d.js"
   ]
 }

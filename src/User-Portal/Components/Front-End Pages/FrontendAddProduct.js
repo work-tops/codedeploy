@@ -227,7 +227,7 @@ const FrontendAddProduct = () => {
     const handleChange = (e) => {
         const myData = { ...form };
         if (e.target.name == 'type') {
-            var _pd = productCategory.find(x => x.name == e.target.value);
+            var _pd = productCategory.find(x => x.value == e.target.value);
             var _type = {
                 id: _pd ? _pd.id : 1,
                 name: e.target.value
@@ -329,8 +329,8 @@ const FrontendAddProduct = () => {
     // others
     //  const [productCategory, setproductCategory] = useState([])
     const getProductCategories = async () => {
-        const response = await getAllData('master/product_category');
-        setproductCategory(response.data.master[0].data);
+        const response = await getAllData('master/product_tags');
+        setproductCategory(response.data.master[0].data[0].list);
     }
 
     useEffect(() => {
@@ -394,9 +394,9 @@ const FrontendAddProduct = () => {
                                                     <Form.Label className="text-700">Category<span className="ms-1 text-danger">*</span></Form.Label>
                                                     <Form.Select value={form.type?.name} required name="type" onChange={(e) => { handleChange(e) }}>
                                                         <option value="">Select</option>
-                                                        {productCategory.map((data, key) => (
-                                                            <option key={key} value={data.name}>
-                                                                {data.name}
+                                                        {productCategory?.map((data, key) => (
+                                                            <option key={key} value={data.value}>
+                                                                {data.value}
                                                             </option>
                                                         ))}
                                                     </Form.Select>

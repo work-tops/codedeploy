@@ -388,17 +388,4 @@ function ListJobs(layout) {
         </>
     )
 }
-export default ListJobs
-{/* <div className="" >
-                                <ReactPaginate
-                                    style={{ padding: "5px", margin: "0px", border: "none" }}
-                                   
-                                    pageCount={pageCount}
-                                    onPageChange={changePage}
-                                    containerClassName={"pagination"}
-                                   
-                                    disabledClassName={"disabled"}
-                                    activeClassName={"active"}
-                                    total={lists.length}
-                                />
-                            </div> */}
+export default ListJobs;
