@@ -171,7 +171,7 @@ const FrontEndRouters = () => {
             {/* New Pages */}
 
             {/* New Pages */}
-            <Route path="/notifications"><Notifications /></Route>
+            {/* <Route path="/notifications"><Notifications /></Route> */}
             <Route path="/chat"><Chat /></Route>
             <Route path="/FreelancerProfile"><FreelancerProfile/></Route>
             {/* New Pages */}

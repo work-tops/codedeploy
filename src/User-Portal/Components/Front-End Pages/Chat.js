@@ -33,13 +33,17 @@ function Chat() {
     const handleClose4 = () => setShow4(false);
     const handleShow4 = () => setShow4(true);
 
+    const [show5, setShow5] = useState(false);
+
+    const handleClose5 = () => setShow5(false);
+    const handleShow5 = () => setShow5(true);
     return (
         <>
-            {/* <Row>
+            <Row>
                 <Col lg={12} className="mb-5">
                     <NavbarStandard />
                 </Col>
-            </Row> */}
+            </Row>
             <Container>
                 <Row>
                     <Col lg={12} className="mt-5">
@@ -47,92 +51,97 @@ function Chat() {
                             id="left-tabs-example"
                         >
                             <Card className="card-chat overflow-hidden mb-3">
-                       
-                                <Card.Header className="bg-light" as="h5">
-                                    Chat Lists
+
+                                <Card.Header className="d-flex justify-content-between bg-light">
+                                    <h5>
+                                        Messages
+                                    </h5>
+                                    <Link to="#" onClick={handleShow5} className="font-sans-serif ms-2 ms-sm-3">
+                                        Notification Settings
+                                    </Link>
                                 </Card.Header>
                                 <Card.Body className="d-flex p-0 h-100">
                                     {/* ChatSidebar  */}
                                     <div className="mt-2">
-                                        
-                                            <div class="chat-sidebar">
-                                                <div class="contacts-list " data-simplebar="init"><div class="simplebar-wrapper" style={{ margin: "0px" }}><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style={{ right: "0px", bottom: "0px" }}><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style={{ height: "100%", overflow: "hidden scroll" }}><div class="simplebar-content" style={{ padding: "0px" }}>
-                                                    <div class="nav nav-tabs border-0 flex-column" role="tablist" aria-orientation="vertical">
-                                                        <div class="hover-actions-trigger chat-contact nav-item active" role="tab" id="chat-link-0" data-bs-toggle="tab" data-bs-target="#chat-0" aria-controls="chat-0" aria-selected="true">
-                                                            <div class="d-md-none  d-lg-block">
-                                                                <div class="dropdown dropdown-active-trigger dropdown-chat"><button class="hover-actions btn btn-link btn-sm text-400 dropdown-caret-none dropdown-toggle end-0 fs-0 mt-4 me-1 z-index-1 pb-2 mb-n2" type="button" data-boundary="viewport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-cog fa-w-16" data-fa-transform="shrink-3 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" transform="translate(-256 -256)"></path></g></g></svg></button>
-                                                                    <div class="dropdown-menu dropdown-menu-end border py-2 rounded-2"><a class="dropdown-item" onClick={setShow2}><span>Mute</span> <Icon className="me-2" icon="ion:volume-mute" width="20" height="20" />Muted </a>
-                                                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Archive <span>Archived</span></a><a class="dropdown-item text-danger" onClick={setShow3}>Delete</a>
-                                                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Mark as Unread</a><a class="dropdown-item" onClick={handleShow4}><span>Block</span> <span>Unblock</span></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="d-flex p-3">
-                                                                <div class="avatar avatar-xl status-online">
-                                                                    <img class="rounded-circle" src={profile} alt="" />
-                                                                </div>
-                                                                <div class="flex-1 chat-contact-body ms-2 d-md-none d-lg-block">
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <h6 class="mb-0 chat-contact-title">Peter Leverkus</h6><span class="message-time fs--2">Tue</span>
-                                                                    </div>
-                                                                    <div class="min-w-0">
-                                                                        <div class="chat-contact-content pe-3">Peter Leverkus
-                                                                            sent
-                                                                            6 photos</div>
-                                                                        <div class="position-absolute bottom-0 end-0 hover-hide"></div>
-                                                                    </div>
+
+                                        <div class="chat-sidebar">
+                                            <div class="contacts-list " data-simplebar="init"><div class="simplebar-wrapper" style={{ margin: "0px" }}><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style={{ right: "0px", bottom: "0px" }}><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style={{ height: "100%", overflow: "hidden scroll" }}><div class="simplebar-content" style={{ padding: "0px" }}>
+                                                <div class="nav nav-tabs border-0 flex-column" role="tablist" aria-orientation="vertical">
+                                                    <div class="hover-actions-trigger chat-contact nav-item active" role="tab" id="chat-link-0" data-bs-toggle="tab" data-bs-target="#chat-0" aria-controls="chat-0" aria-selected="true">
+                                                        <div class="d-md-none  d-lg-block">
+                                                            <div class="dropdown dropdown-active-trigger dropdown-chat"><button class="hover-actions btn btn-link btn-sm text-400 dropdown-caret-none dropdown-toggle end-0 fs-0 mt-4 me-1 z-index-1 pb-2 mb-n2" type="button" data-boundary="viewport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-cog fa-w-16" data-fa-transform="shrink-3 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" transform="translate(-256 -256)"></path></g></g></svg></button>
+                                                                <div class="dropdown-menu dropdown-menu-end border py-2 rounded-2"><a class="dropdown-item" onClick={setShow2}><span>Mute</span> <Icon className="me-2" icon="ion:volume-mute" width="20" height="20" />Muted </a>
+                                                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Archive <span>Archived</span></a><a class="dropdown-item text-danger" onClick={setShow3}>Delete</a>
+                                                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Mark as Unread</a><a class="dropdown-item" onClick={handleShow4}><span>Block</span> <span>Unblock</span></a>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="hover-actions-trigger chat-contact nav-item" role="tab" id="chat-link-2" data-bs-toggle="tab" data-bs-target="#chat-2" aria-controls="chat-2" aria-selected="false" tabindex="-1">
-                                                            <div class="d-md-none d-lg-block">
-                                                                <div class="dropdown dropdown-active-trigger dropdown-chat"><button class="hover-actions btn btn-link btn-sm text-400 dropdown-caret-none dropdown-toggle end-0 fs-0 mt-4 me-1 z-index-1 pb-2 mb-n2" type="button" data-boundary="viewport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-cog fa-w-16" data-fa-transform="shrink-3 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" transform="translate(-256 -256)"></path></g></g></svg></button>
-                                                                    <div class="dropdown-menu dropdown-menu-end border py-2 rounded-2"><a class="dropdown-item" onClick={setShow2}> <span>Mute</span> <Icon className="me-2" icon="ion:volume-mute" width="20" height="20" />Muted</a>
-                                                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Archive <span>Archived</span></a><a class="dropdown-item text-danger" onClick={setShow3}>Delete</a>
-                                                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Mark as Unread</a><a class="dropdown-item" onClick={handleShow4}><span>Block</span> <span>Unblock</span></a>
-                                                                    </div>
-                                                                </div>
+                                                        <div class="d-flex p-3">
+                                                            <div class="avatar avatar-xl status-online">
+                                                                <img class="rounded-circle" src={profile} alt="" />
                                                             </div>
-                                                            <div class="d-flex p-3">
-                                                                <div class="avatar status-away avatar-xl">
-                                                                    <img class="rounded-circle" src={profile} alt="" />
+                                                            <div class="flex-1 chat-contact-body ms-2 d-md-none d-lg-block">
+                                                                <div class="d-flex justify-content-between">
+                                                                    <h6 class="mb-0 chat-contact-title">Peter Leverkus</h6><span class="message-time fs--2">Tue</span>
                                                                 </div>
-                                                                <div class="flex-1 chat-contact-body ms-2 d-md-none d-lg-block">
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <h6 class="mb-0 chat-contact-title">Jhon Lee</h6><span class="message-time fs--2">Sun</span>
-                                                                    </div>
-                                                                    <div class="min-w-0">
-                                                                        <div class="chat-contact-content pe-3">You: What are you doing?</div>
-                                                                        <div class="position-absolute bottom-0 end-0 hover-hide"><svg class="svg-inline--fa fa-check fa-w-16 text-success" data-fa-transform="shrink-5 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.6875, 0.6875)  rotate(0 0 0)"><path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" transform="translate(-256 -256)"></path></g></g></svg></div>
-                                                                    </div>
+                                                                <div class="min-w-0">
+                                                                    <div class="chat-contact-content pe-3">Peter Leverkus
+                                                                        sent
+                                                                        6 photos</div>
+                                                                    <div class="position-absolute bottom-0 end-0 hover-hide"></div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="hover-actions-trigger chat-contact nav-item" role="tab" id="chat-link-2" data-bs-toggle="tab" data-bs-target="#chat-2" aria-controls="chat-2" aria-selected="false" tabindex="-1">
-                                                            <div class="d-md-none d-lg-block">
-                                                                <div class="dropdown dropdown-active-trigger dropdown-chat"><button class="hover-actions btn btn-link btn-sm text-400 dropdown-caret-none dropdown-toggle end-0 fs-0 mt-4 me-1 z-index-1 pb-2 mb-n2" type="button" data-boundary="viewport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-cog fa-w-16" data-fa-transform="shrink-3 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" transform="translate(-256 -256)"></path></g></g></svg></button>
-                                                                    <div class="dropdown-menu dropdown-menu-end border py-2 rounded-2"><a class="dropdown-item" onClick={setShow2}> <span>Mute</span> <Icon className="me-2" icon="ion:volume-mute" width="20" height="20" />Muted</a>
-                                                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Archive <span>Archived</span></a><a class="dropdown-item text-danger" onClick={setShow3}>Delete</a>
-                                                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Mark as Unread</a><a class="dropdown-item" onClick={handleShow4}><span>Block</span> <span>Unblock</span></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="d-flex p-3">
-                                                                <div class="avatar status-away avatar-xl">
-                                                                    <img class="rounded-circle" src={profile} alt="" />
-                                                                </div>
-                                                                <div class="flex-1 chat-contact-body ms-2 d-md-none d-lg-block">
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <h6 class="mb-0 chat-contact-title">Emma Watson</h6><span class="message-time fs--2">Sun</span>
-                                                                    </div>
-                                                                    <div class="min-w-0">
-                                                                        <div class="chat-contact-content pe-3">You: Hi</div>
-                                                                        <div class="position-absolute bottom-0 end-0 hover-hide"><svg class="svg-inline--fa fa-check fa-w-16 text-success" data-fa-transform="shrink-5 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.6875, 0.6875)  rotate(0 0 0)"><path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" transform="translate(-256 -256)"></path></g></g></svg></div>
-                                                                    </div>
+                                                    </div>
+                                                    <div class="hover-actions-trigger chat-contact nav-item" role="tab" id="chat-link-2" data-bs-toggle="tab" data-bs-target="#chat-2" aria-controls="chat-2" aria-selected="false" tabindex="-1">
+                                                        <div class="d-md-none d-lg-block">
+                                                            <div class="dropdown dropdown-active-trigger dropdown-chat"><button class="hover-actions btn btn-link btn-sm text-400 dropdown-caret-none dropdown-toggle end-0 fs-0 mt-4 me-1 z-index-1 pb-2 mb-n2" type="button" data-boundary="viewport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-cog fa-w-16" data-fa-transform="shrink-3 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" transform="translate(-256 -256)"></path></g></g></svg></button>
+                                                                <div class="dropdown-menu dropdown-menu-end border py-2 rounded-2"><a class="dropdown-item" onClick={setShow2}> <span>Mute</span> <Icon className="me-2" icon="ion:volume-mute" width="20" height="20" />Muted</a>
+                                                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Archive <span>Archived</span></a><a class="dropdown-item text-danger" onClick={setShow3}>Delete</a>
+                                                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Mark as Unread</a><a class="dropdown-item" onClick={handleShow4}><span>Block</span> <span>Unblock</span></a>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        {/* <div class="hover-actions-trigger chat-contact nav-item unread-message" role="tab" id="chat-link-3" data-bs-toggle="tab" data-bs-target="#chat-3" aria-controls="chat-3" aria-selected="false" tabindex="-1">
+                                                        <div class="d-flex p-3">
+                                                            <div class="avatar status-away avatar-xl">
+                                                                <img class="rounded-circle" src={profile} alt="" />
+                                                            </div>
+                                                            <div class="flex-1 chat-contact-body ms-2 d-md-none d-lg-block">
+                                                                <div class="d-flex justify-content-between">
+                                                                    <h6 class="mb-0 chat-contact-title">Jhon Lee</h6><span class="message-time fs--2">Sun</span>
+                                                                </div>
+                                                                <div class="min-w-0">
+                                                                    <div class="chat-contact-content pe-3">You: What are you doing?</div>
+                                                                    <div class="position-absolute bottom-0 end-0 hover-hide"><svg class="svg-inline--fa fa-check fa-w-16 text-success" data-fa-transform="shrink-5 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.6875, 0.6875)  rotate(0 0 0)"><path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" transform="translate(-256 -256)"></path></g></g></svg></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="hover-actions-trigger chat-contact nav-item" role="tab" id="chat-link-2" data-bs-toggle="tab" data-bs-target="#chat-2" aria-controls="chat-2" aria-selected="false" tabindex="-1">
+                                                        <div class="d-md-none d-lg-block">
+                                                            <div class="dropdown dropdown-active-trigger dropdown-chat"><button class="hover-actions btn btn-link btn-sm text-400 dropdown-caret-none dropdown-toggle end-0 fs-0 mt-4 me-1 z-index-1 pb-2 mb-n2" type="button" data-boundary="viewport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-cog fa-w-16" data-fa-transform="shrink-3 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" transform="translate(-256 -256)"></path></g></g></svg></button>
+                                                                <div class="dropdown-menu dropdown-menu-end border py-2 rounded-2"><a class="dropdown-item" onClick={setShow2}> <span>Mute</span> <Icon className="me-2" icon="ion:volume-mute" width="20" height="20" />Muted</a>
+                                                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Archive <span>Archived</span></a><a class="dropdown-item text-danger" onClick={setShow3}>Delete</a>
+                                                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Mark as Unread</a><a class="dropdown-item" onClick={handleShow4}><span>Block</span> <span>Unblock</span></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex p-3">
+                                                            <div class="avatar status-away avatar-xl">
+                                                                <img class="rounded-circle" src={profile} alt="" />
+                                                            </div>
+                                                            <div class="flex-1 chat-contact-body ms-2 d-md-none d-lg-block">
+                                                                <div class="d-flex justify-content-between">
+                                                                    <h6 class="mb-0 chat-contact-title">Emma Watson</h6><span class="message-time fs--2">Sun</span>
+                                                                </div>
+                                                                <div class="min-w-0">
+                                                                    <div class="chat-contact-content pe-3">You: Hi</div>
+                                                                    <div class="position-absolute bottom-0 end-0 hover-hide"><svg class="svg-inline--fa fa-check fa-w-16 text-success" data-fa-transform="shrink-5 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.6875, 0.6875)  rotate(0 0 0)"><path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" transform="translate(-256 -256)"></path></g></g></svg></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {/* <div class="hover-actions-trigger chat-contact nav-item unread-message" role="tab" id="chat-link-3" data-bs-toggle="tab" data-bs-target="#chat-3" aria-controls="chat-3" aria-selected="false" tabindex="-1">
                                                         <div class="d-md-none d-lg-block">
                                                             <div class="dropdown dropdown-active-trigger dropdown-chat"><button class="hover-actions btn btn-link btn-sm text-400 dropdown-caret-none dropdown-toggle end-0 fs-0 mt-4 me-1 z-index-1 pb-2 mb-n2" type="button" data-boundary="viewport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-cog fa-w-16" data-fa-transform="shrink-3 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" transform="translate(-256 -256)"></path></g></g></svg></button>
                                                                 <div class="dropdown-menu dropdown-menu-end border py-2 rounded-2"><a class="dropdown-item" href="#!">Mute</a>
@@ -324,31 +333,31 @@ function Chat() {
                                                             </div>
                                                         </div>
                                                     </div> */}
-                                                    </div>
-                                                </div></div></div></div><div class="simplebar-placeholder" style={{ width: "auto", height: "739px" }}></div></div><div class="simplebar-track simplebar-horizontal" style={{ visibility: "hidden" }}><div class=" simplebar-visible" style={{ width: "0px", display: "none" }}></div></div><div class="simplebar-track simplebar-vertical" style={{ visibility: "hidden" }}><div class="simplebar-scrollbar simplebar-visible" style={{ height: "25px", transform: "translate3d(0px, 0px, 0px)", display: "block" }}></div></div></div>
-                                                <form class="contacts-search-wrapper">
-                                                    <div class="form-group mb-0 position-relative d-md-none d-lg-block w-100 h-100"><input class="form-control form-control-sm chat-contacts-search border-0 h-100" type="text" placeholder="Search contacts ..." /><svg class="svg-inline--fa fa-search fa-w-16 contacts-search-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></div><button class="btn btn-sm btn-transparent d-none d-md-inline-block d-lg-none"><svg class="svg-inline--fa fa-search fa-w-16 fs--1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></button>
-                                                </form>
-                                                {/* <ChatContactsSearch /> */}
-                                                <Form className="contacts-search-wrapper">
-                                                    <Form.Group className="mb-0 position-relative d-md-none d-lg-block w-100 h-100">
-                                                        <Form.Control
-                                                            className="chat-contacts-search border-0 h-100"
-                                                            placeholder="Search contacts ..."
-                                                            size="sm"
-                                                        />
-                                                        <FontAwesomeIcon icon="search" className="contacts-search-icon" />
-                                                    </Form.Group>
-                                                    <Button
-                                                        variant="transparent"
+                                                </div>
+                                            </div></div></div></div><div class="simplebar-placeholder" style={{ width: "auto", height: "739px" }}></div></div><div class="simplebar-track simplebar-horizontal" style={{ visibility: "hidden" }}><div class=" simplebar-visible" style={{ width: "0px", display: "none" }}></div></div><div class="simplebar-track simplebar-vertical" style={{ visibility: "hidden" }}><div class="simplebar-scrollbar simplebar-visible" style={{ height: "25px", transform: "translate3d(0px, 0px, 0px)", display: "block" }}></div></div></div>
+                                            <form class="contacts-search-wrapper">
+                                                <div class="form-group mb-0 position-relative d-md-none d-lg-block w-100 h-100"><input class="form-control form-control-sm chat-contacts-search border-0 h-100" type="text" placeholder="Search contacts ..." /><svg class="svg-inline--fa fa-search fa-w-16 contacts-search-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></div><button class="btn btn-sm btn-transparent d-none d-md-inline-block d-lg-none"><svg class="svg-inline--fa fa-search fa-w-16 fs--1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></button>
+                                            </form>
+                                            {/* <ChatContactsSearch /> */}
+                                            <Form className="contacts-search-wrapper">
+                                                <Form.Group className="mb-0 position-relative d-md-none d-lg-block w-100 h-100">
+                                                    <Form.Control
+                                                        className="chat-contacts-search border-0 h-100"
+                                                        placeholder="Search contacts ..."
                                                         size="sm"
-                                                        className="d-none d-md-inline-block d-lg-none"
-                                                        type="submit"
-                                                    >
-                                                        <FontAwesomeIcon icon="search" className="fs--1" />
-                                                    </Button>
-                                                </Form>
-                                            </div>
+                                                    />
+                                                    <FontAwesomeIcon icon="search" className="contacts-search-icon" />
+                                                </Form.Group>
+                                                <Button
+                                                    variant="transparent"
+                                                    size="sm"
+                                                    className="d-none d-md-inline-block d-lg-none"
+                                                    type="submit"
+                                                >
+                                                    <FontAwesomeIcon icon="search" className="fs--1" />
+                                                </Button>
+                                            </Form>
+                                        </div>
                                     </div>
                                     {/* <ChatContactsSearch /> */}
 
@@ -967,13 +976,78 @@ function Chat() {
                                         </Modal.Footer>
                                     </Modal>
                                     {/* Unblock Chat */}
-                                
-                            </Card.Body>
-                        </Card>
-                    </Tab.Container>
-                </Col>
-            </Row>
-        </Container >
+
+                                    {/* Notification Settings */}
+                                    <Modal
+                                        show={show5}
+                                        onHide={() => setShow5(false)}
+                                        dialogClassName="modal-lg modal-90w"
+                                        aria-labelledby="example-custom-modal-styling-title"
+                                    >
+                                        <Modal.Header>
+                                            <h4>Notification Settings</h4>
+                                        </Modal.Header>
+                                        <Modal.Body>
+                                            <Form.Check type="radio" className="mb-0 mt-3">
+                                                <Form.Check.Input name="job-start" type="radio" />
+                                                <Form.Check.Label
+                                                    className="d-inline"
+                                                    style={{ fontSize: '14px' }}
+                                                >
+                                                    Get a notification each time there is activity on your page or an important update.
+                                                </Form.Check.Label>
+                                            </Form.Check>
+                                            <Form.Check type="radio" className="mb-0 mt-3">
+                                                <Form.Check.Input name="job-start" type="radio" />
+                                                <Form.Check.Label
+                                                    className="d-inline"
+                                                    style={{ fontSize: '14px' }}
+                                                >
+                                                    Get one notification every 12-24 hours on all activity and updates.
+                                                </Form.Check.Label>
+                                            </Form.Check>
+                                            <Form.Check type="radio" className="mb-0 mt-3">
+                                                <Form.Check.Input name="job-start" type="radio" />
+                                                <Form.Check.Label
+                                                    className="d-inline"
+                                                    style={{ fontSize: '14px' }}
+                                                >
+                                                    Off
+                                                </Form.Check.Label>
+                                            </Form.Check>
+                                            <h5 className="mt-3">Edit your notification settings for:</h5>
+                                            <Form.Check type="checkbox" className="mb-0 mt-3">
+                                                <Form.Check.Label
+                                                    className="d-inline"
+                                                    style={{ fontSize: '14px' }}
+                                                >
+                                                    New Message from the Post Project Page
+                                                </Form.Check.Label>
+                                                <Form.Check.Input type="checkbox" />
+                                            </Form.Check>
+                                            <Form.Check type="checkbox" className="mb-0 mt-3">
+                                                <Form.Check.Label
+                                                    className="d-inline"
+                                                    style={{ fontSize: '14px' }}
+                                                >
+                                                    New Query from the Post Project Page
+                                                </Form.Check.Label>
+                                                <Form.Check.Input type="checkbox" />
+                                            </Form.Check>
+                                        </Modal.Body>
+                                        <Modal.Footer>
+                                            <Button onClick={handleClose5} className="bg-danger border-0">Cancel</Button>
+                                            <Button onClick={handleClose5} className="border-0">Update</Button>
+
+                                        </Modal.Footer>
+                                    </Modal>
+                                    {/* Notification Settings */}
+                                </Card.Body>
+                            </Card>
+                        </Tab.Container>
+                    </Col>
+                </Row>
+            </Container >
         </>
     )
 }

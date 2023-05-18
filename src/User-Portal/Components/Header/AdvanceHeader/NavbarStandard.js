@@ -12,6 +12,7 @@ import {
   Nav,
   Dropdown
 } from 'react-bootstrap';
+import profile from '../../Projectimages/Handyman.jpg'
 const NavbarStandard = () => {
   const {
     config: { isDark }
@@ -219,9 +220,108 @@ const NavbarStandard = () => {
                       </Dropdown.Menu>
                     </Dropdown>
                   </div>
+                  {/*  */}
+                  <div>
+                    <Dropdown navbar={true} as="li">
+                      <Dropdown.Toggle
+                        bsPrefix="toggle"
+                        as={Link}
+                        to="#!"
+                        className="pe-0 ps-2 nav-link"
+                      >
+                        <Icon icon="mdi:bell" color="white" width="24" height="24" />
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu className="dropdown-menu dropdown-caret dropdown-menu-end dropdown-menu-card dropdown-menu-notification dropdown-caret-bg " aria-labelledby="navbarDropdownNotification" data-bs-popper="static">
+                        <div className="card card-notification shadow-none">
+                          <div className="card-header">
+                            <div className="row justify-content-between align-items-center">
+                              <div className="col-auto">
+                                <h6 className="card-header-title mb-0">Notifications</h6>
+                              </div>
+                              <div className="col-auto ps-0 ps-sm-3"><a className="card-link fw-normal" href="#">Mark all as read</a></div>
+                            </div>
+                          </div>
+                          <div className="scrollbar-overlay" style={{ maxHeight: "19rem" }} data-simplebar="init">
+                            <div className="simplebar-wrapper" style={{ margin: "0px" }}>
+                              <div className="simplebar-height-auto-observer-wrapper">
+                                <div className="simplebar-height-auto-observer">
+                                </div>
+                              </div>
+                              {/* New Messages */}
+                              <div className="simplebar-mask">
+                                <div className="simplebar-offset" style={{ right: "0px", bottom: "0px" }}>
+                                  <div className="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style={{ height: "auto", overflow: "hidden scroll" }}><div class="simplebar-content" style={{ padding: '0px' }}>
+                                    <div className="list-group list-group-flush fw-normal fs--1">
+                                      <div className="list-group-title border-bottom">NEW</div>
+                                      <Link to="/chat">
+                                        <div className="list-group-item">
+                                          <a className="notification notification-flush notification-unread" href="#!">
+                                            <div className="notification-avatar">
+                                              <div className="avatar avatar-2xl me-3">
+                                                <img className="rounded-circle" src={profile} alt="" />
+                                              </div>
+                                            </div>
+                                            <div className="notification-body">
+                                              <p className="mb-1"><strong style={{ fontSize: "14px" }}>Emma Watson</strong> replied to your comment : "Hello world"</p>
+                                              <span className="notification-time">Just now</span>
+                                            </div>
+                                          </a>
+                                        </div>
+                                      </Link>
+                                      <Link to="/chat">
+                                        <div className="list-group-item">
+                                          <a className="notification notification-flush notification-unread" href="#!">
+                                            <div className="notification-avatar">
+                                              <div className="avatar avatar-2xl me-3">
+                                                <div className="avatar-name rounded-circle"><span>AB</span></div>
+                                              </div>
+                                            </div>
+                                            <div className="notification-body">
+                                              <p className="mb-1"><strong style={{ fontSize: "14px" }}>Emma Watson</strong> replied to your comment : "Hello world"</p>
+                                              <span className="notification-time">9hr</span>
+                                            </div>
+                                          </a>
+                                        </div>
+                                      </Link>
+                                      {/* Earlier Messages */}
+                                      <div className="list-group-title border-bottom">EARLIER</div>
+                                      <Link to="/chat">
+                                        <div className="list-group-item">
+                                          <a className="notification notification-flush" href="#!">
+                                            <div className="notification-avatar">
+                                              <div className="avatar avatar-2xl me-3">
+                                                <img className="rounded-circle" src={profile} alt="" />
+                                              </div>
+                                            </div>
+                                            <div className="notification-body">
+                                              <p className="mb-1"><strong style={{ fontSize: "14px" }}>Emma Watson</strong> replied to your comment : "Hello world"</p>
+                                              <span className="notification-time">1d</span>
+                                            </div>
+                                          </a>
+                                        </div>
+                                      </Link>
+                                    </div>
+                                  </div></div></div></div><div class="simplebar-placeholder" style={{ width: "auto", height: "513px" }}></div></div><div class="simplebar-track simplebar-horizontal" style={{ visibility: "hidden", }}><div class="simplebar-scrollbar" style={{ width: "0px", display: "none" }}></div></div><div class="simplebar-track simplebar-vertical" style={{ visibility: "visible" }}><div class="simplebar-scrollbar" style={{ height: "180px", display: "block", transform: "translate3d(0px, 59px, 0px)" }}></div></div></div>
+                          <div class="card-footer text-center border-top">
+                            <Link to="/chat">
+                              <a className="card-link d-block">View all</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </div>
+
+                  {/*  */}
+
+
+
+
+
+
                   <div className='mt-2'>
                     <Link to="/notifications">
-                      <Icon icon="mdi:bell" color="white" width="24" height="24" />
+
                     </Link>
                   </div>
                   <div className='mt-2'>
@@ -253,6 +353,8 @@ const NavbarStandard = () => {
                           {id == 2 && <Dropdown.Item as={Link} to="/OpenProjectCard">My Projects</Dropdown.Item>}
                           {id == 2 && <Dropdown.Item as={Link} to="/workstreamcard">Workstreams</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/addproductcard">My Products</Dropdown.Item>}
+                          {id == 2 && <Dropdown.Item as={Link} to="/chat">Messages</Dropdown.Item>}
+                          {id == 3 && <Dropdown.Item as={Link} to="/chat">Messages</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/addservicecard">My Services</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/proposalcard">Proposals</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/sellerEnquirescard">Enquires</Dropdown.Item>}

@@ -156,25 +156,7 @@ function FreelancerProfile() {
                             </Card.Body>
                         </Card>
                         {/* Bussiness Information */}
-                        <div class="card mt-3 mb-3">
-                        <div class="card-header bg-light d-flex justify-content-between">
-                                <h5 class="mb-0">Notifications</h5>
-                            </div>
-                            <Chat />
-                        </div>
-                        {/* <div class="card mt-3 mb-3">
-                            <div class="card-header bg-light d-flex justify-content-between">
-                                <h5 class="mb-0">Chat</h5>
-                            </div>
-                            <div class="card-body fs--1 p-0">
-                                <a class="border-bottom-0 notification rounded-0 border-x-0 border border-300" href="#!">
-                                    <div class="notification-body">
-                                        <p class="mb-1"><strong style={{ fontSize: '16px' }}>Jennifer Kent</strong> Congratulated <strong style={{ fontSize: '16px' }}>Anthony Hopkins</strong></p>
-                                        <span class="notification-time">November 13, 5:00 Am</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div> */}
+                        
                         <div class="card mb-3 mb-lg-0">
                             <div class="card-header bg-light">
                                 <h5 class="mb-0">Photos</h5>
