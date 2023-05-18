@@ -145,14 +145,14 @@ function FreelancerProfile() {
                                         </tr>
                                     </tbody>
                                 </Table>
-                                <div className="position-absolute top-0 end-0 m-3">
+                                {/* <div className="position-absolute top-0 end-0 m-3">
                                     <CardDropdown iconClassName="fs--1" drop="bottom">
                                         <div className="py-2">
                                             <Dropdown.Item href="#!">Edit</Dropdown.Item>
                                             <Dropdown.Item href="#!">Save</Dropdown.Item>
                                         </div>
                                     </CardDropdown>
-                                </div>
+                                </div> */}
                             </Card.Body>
                         </Card>
                         {/* Bussiness Information */}
