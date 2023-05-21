@@ -31,7 +31,7 @@ const data = [
         date: '22 MAR 2023',
         invoice: "#M24AZQ",
         description: <span className="w-50">
-            Invoice #3611731-1 paid to Alhaz Abdul K. for Project do 15... (Approved)
+             paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81",
         status: "Paid"
@@ -40,7 +40,7 @@ const data = [
         date: '22 MAR 2023',
         invoice: "#M24AZQ",
         description: <span className="w-50">
-            Invoice #3611731-1 paid to Alhaz Abdul K. for Project do 15... (Approved)
+             paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81",
         status: "Paid"
@@ -49,7 +49,7 @@ const data = [
         date: '22 MAR 2023',
         invoice: "#M24AZQ",
         description: <span className="w-50">
-            Invoice #3611731-1 paid to Alhaz Abdul K. for Project do 15... (Approved)
+             paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81",
         status: "Paid"
@@ -67,7 +67,7 @@ const InvoiceTable = () => {
     };
 
     return (
-        <Card className="m-3 h-100">
+        <Card className="mb-3 btn-reveal-trigger h-100">
             <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
                 <h5 className="text-capitalize">
                     Invoice

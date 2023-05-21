@@ -358,13 +358,13 @@ const NavbarStandard = () => {
                           {id == 3 && <Dropdown.Item as={Link} to="/addservicecard">My Services</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/proposalcard">Proposals</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/sellerEnquirescard">Enquires</Dropdown.Item>}
-                          <Dropdown.Item as={Link} to="/InvoicedueCard">Invoice Due</Dropdown.Item>
+                          {id == 3 && <Dropdown.Item as={Link} to="/InvoiceFreelancerCard">Invoice</Dropdown.Item>}
+                          {id == 2 && <Dropdown.Item as={Link} to="/InvoicedueCard">Invoice</Dropdown.Item>}
                           {id == 2 && <Dropdown.Item as={Link} to="/ownerEnquirescard">Enquiries</Dropdown.Item>}
-                          <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item>
+                          {/* <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item> */}
                           {/* <Dropdown.Divider /> */}
-                          <Dropdown.Item as={Link} to="/Project-Owner/Settings">
-                            Settings
-                          </Dropdown.Item>
+                          {id == 3 && <Dropdown.Item as={Link} to="/FreelancerEditProfile">Settings</Dropdown.Item>}
+                          
                           <Dropdown.Item onClick={() => { logOut() }}>
                             Logout
                           </Dropdown.Item>

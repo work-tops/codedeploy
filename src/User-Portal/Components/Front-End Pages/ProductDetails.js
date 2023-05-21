@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button, Card, Form, Container } from "react-bootstrap";
+import { Row, Col, Button, Card, Modal,Form, Container } from "react-bootstrap";
 import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Icon } from "@iconify/react";
@@ -18,6 +18,13 @@ function ProductDetails() {
     useEffect(() => {
         getProById()
     }, [])
+
+// 
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+
 
     return (
         <>
@@ -145,10 +152,11 @@ function ProductDetails() {
                                             variant="falcon-default"
                                             size="sm"
                                             iconAlign="right"
+                                            onClick={handleShow}
                                             icon="filter"
                                             iconClassName="ms-1 fs--2"
                                         >
-                                            Filter
+                                            Write Review
                                         </Button>
                                         <div>
                                             <Form.Select size="sm" defaultValue="">
@@ -457,6 +465,39 @@ function ProductDetails() {
                     </Row>
                 </Row>
             </Container >
+            <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        dialogClassName="modal-lg modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <Modal.Header>
+        <h5 class="mb-3">Write your Review</h5>
+        </Modal.Header>
+        <Modal.Body>
+          <div class="col-lg-6 ps-lg-5">
+            <form>
+             
+              <div class="mb-3"><label class="form-label">Rating: </label>
+                <div class="d-block star-rating" data-rater="{&quot;starSize&quot;:32,&quot;step&quot;:0.5}" style={{ width: "160px", height: "32px", backgroundSize: "32px" }} data-rating="1.5" title="5/5"><div class="star-value" style={{ backgroundSize: "32px", width: "30%" }}>
+                </div>
+                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />    
+                </div>
+              </div>
+              <div class="mb-3"><label class="form-label" for="formGroupNameInput">Name:</label><input class="form-control form-control-sm" id="formGroupNameInput" type="text"/></div>
+              <div class="mb-3"><label class="form-label" for="formGroupEmailInput">Email:</label><input class="form-control form-control-sm" id="formGroupEmailInput" type="email"/></div>
+              <div class="mb-3"><label class="form-label" for="formGrouptextareaInput">Review:</label><textarea class="form-control form-control-sm" id="formGrouptextareaInput" rows="3"></textarea></div>
+              </form>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button type="submit" onClick={handleClose}>Submit</Button>
+        </Modal.Footer>
+      </Modal>
         </>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Card, Form, Table, Dropdown, Container } from "react-bootstrap";
+import { Row, Col, Card, Form, Table, Dropdown, Container, Modal, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import student from '../../Projectimages/student.png'
 import chip from '../../Projectimages/chip.png'
@@ -9,6 +9,7 @@ import coverimg from '../../Projectimages/7.jpg'
 import mastercard from '../../Projectimages/master-card.png'
 import PaymentTable from "../../../TemplateAssets/AdvanceTables/PaymentTable";
 import InvoiceTable from "../../../TemplateAssets/AdvanceTables/InvoiceTable";
+import RecentlyPurchased from "../../../TemplateAssets/AdvanceTables/RecentlyPurchased";
 
 function MyProfile() {
     const [user, setUser] = useState({});
@@ -25,43 +26,41 @@ function MyProfile() {
         { title: 'Meeting', start: new Date() }
     ]
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [show1, setShow1] = useState(false);
+
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
 
     return (
+
         <>
             <Container>
                 <Row>
-                    <Col lg={12} className="mb-5">
+                    <Col lg={12} className="mb-4">
                         <NavbarStandard />
                     </Col>
-                    <Col lg={12} className="mt-4">
+                    <Col lg={12} className="">
                         {/* Profile Header */}
-                        <Card size="5xl" style={{ backgroundImage: `url(${coverimg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', objectFit: 'cover' }} className="m-3">
-                            <Card.Body className="d-flex gap-2 flex-wrap flex-between-center">
-                                <div>
-                                    <h5 className="mb-2 text-white">Profile</h5>
-                                    {/* <h6 className="text-primary">Private</h6> */}
-                                    <img
-                                        width="100px"
-                                        src={student}
-                                        alt="student profile image"
-                                    />
-                                </div>
-                                <div>
-                                    <div className="position-absolute top-0 end-0 m-3">
-                                        <CardDropdown iconClassName="fs--1" drop="bottom">
-                                            <div className="py-2">
-                                                <Dropdown.Item href="#!" className="text-primary">
-                                                    Add New Profile Image
-                                                </Dropdown.Item>
-                                                <Dropdown.Item href="#!" className="text-danger">
-                                                    Remove Profile Image
-                                                </Dropdown.Item>
-                                            </div>
-                                        </CardDropdown>
+                        <div className="row ">
+                            <div className="col-12 mt-5">
+                                <div className="card mb-3 btn-reveal-trigger">
+                                    <div className="card-header position-relative min-vh-25 mb-8">
+                                        <div className="cover-image">
+                                            <div className="bg-holder rounded-3 rounded-bottom-0" style={{ backgroundImage: `url(${coverimg})` }}></div>
+                                            <input className="d-none" id="upload-cover-image" type="file" /><label className="cover-image-file-input" for="upload-cover-image"><span className="fas fa-camera me-2"></span><span>Change cover photo</span></label>
+                                        </div>
+                                        <div className="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
+                                            <div className="h-100 w-100 rounded-circle overflow-hidden position-relative"> <img src={student} width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" /><input className="d-none" id="profile-image" type="file" /><label className="mb-0 overlay-icon d-flex flex-center" for="profile-image"><span className="bg-holder overlay overlay-0"></span><span className="z-index-1 text-white dark__text-white text-center fs--1">
+                                                <span className="fas fa-camera"></span><span className="d-block">Update</span></span></label></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </Card.Body>
-                        </Card>
+                            </div>
+                        </div>
                         {/* Profile Header */}
 
 
@@ -71,8 +70,8 @@ function MyProfile() {
                                 <Row className="g-3">
                                     <Col xs={12}>
                                         {/* StudentInfo */}
-                                        <Card className="m-3 font-sans-serif">
-                                            <Card.Header as="h5" className="bg-white text-capitalize">
+                                        <Card className=" btn-reveal-trigger font-sans-serif">
+                                            <Card.Header as="h5" className="bg-light text-capitalize">
                                                 Personal Information
                                             </Card.Header>
                                             <Card.Body className="d-flex gap-3 flex-column flex-sm-row align-items-center">
@@ -97,7 +96,7 @@ function MyProfile() {
                                                             </td>
                                                             <td className="p-1">
                                                                 <Link to="mailto:goodguy@nicemail.com" className="text-600">
-                                                                {user?.email}
+                                                                    {user?.email}
                                                                 </Link>
                                                             </td>
                                                         </tr>
@@ -107,7 +106,7 @@ function MyProfile() {
                                                             </td>
                                                             <td className="p-1">
                                                                 <Link to="tel:+01234567890" className="text-600">
-                                                                {user?.phone}
+                                                                    {user?.phone}
                                                                 </Link>
                                                             </td>
                                                         </tr>
@@ -117,18 +116,31 @@ function MyProfile() {
                                                             </td>
                                                             <td className="p-1">
                                                                 <Link to="1 De La Warr Way, Cambridge, CB23 6DX" className="text-600">
-                                                                {user?.address}
+                                                                    {user?.address}
                                                                 </Link>
 
                                                             </td>
                                                         </tr>
                                                     </tbody>
+
                                                 </Table>
+                                                {/*  */}
+
+                                                {/*  */}
+
                                                 <div className="position-absolute top-0 end-0 m-3">
                                                     <CardDropdown iconClassName="fs--1" drop="bottom">
                                                         <div className="py-2">
-                                                            <Dropdown.Item onClick={() => setIsEdit(true)} href="#!">Edit</Dropdown.Item>
-                                                            <Dropdown.Item onClick={() => setIsEdit(false)} href="#!">Save</Dropdown.Item>
+                                                            <Dropdown.Item
+                                                                // onClick={() => setIsEdit(true)}
+                                                                onClick={handleShow}
+                                                            >Edit Your Profile</Dropdown.Item>
+                                                            <Dropdown.Item
+                                                                // onClick={() => setIsEdit(false)} 
+                                                                onClick={handleShow1}
+                                                            >
+                                                                Change Your Password
+                                                            </Dropdown.Item>
                                                         </div>
                                                     </CardDropdown>
                                                 </div>
@@ -136,12 +148,10 @@ function MyProfile() {
                                         </Card>
                                         {/* StudentInfo */}
                                     </Col>
-                                    {/* <Col xs={12}>
-                                        
-                                    </Col> */}
-                                    <Col md={6}>
+
+                                    <Col lg={4} md={6}>
                                         {/* Payment */}
-                                        <Card className="m-3 h-100">
+                                        <Card className="mb-3 btn-reveal-trigger h-100">
                                             <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
                                                 <h5 className="text-capitalize">
                                                     Payment Methods
@@ -232,89 +242,82 @@ function MyProfile() {
                                         </Card>
                                         {/* Payment */}
                                     </Col>
-                                    <Col md={6}>
+                                    <Col lg={8} md={6}>
                                         <PaymentTable />
                                     </Col>
                                 </Row>
                             </Col>
+                            {/*  */}
+                            <Col xs={12}>
+                                <Card className="mb-3 btn-reveal-trigger h-100">
+                                    <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
+                                        <h5 className="text-capitalize">
+                                            Billing Address
+                                        </h5>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        <Table borderless className="fs--1 fw-medium mb-0">
+                                            <tbody>
+                                                <tr>
+                                                    <td className="p-1" style={{ width: '35%' }}>
+                                                        First Name:
+                                                    </td>
+                                                    <td className="p-1 text-600">{user?.first_name} </td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="p-1" style={{ width: '35%' }}>
+                                                        Last Name :
+                                                    </td>
+                                                    <td className="p-1 text-600">{user?.last_name}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="p-1" style={{ width: '35%' }}>
+                                                        Email:
+                                                    </td>
+                                                    <td className="p-1">
+                                                        <Link to="mailto:goodguy@nicemail.com" className="text-600">
+                                                            {user?.email}
+                                                        </Link>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="p-1" style={{ width: '35%' }}>
+                                                        Mobile No:
+                                                    </td>
+                                                    <td className="p-1">
+                                                        <Link to="tel:+01234567890" className="text-600">
+                                                            {user?.phone}
+                                                        </Link>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="p-1" style={{ width: '35%' }}>
+                                                        Address:
+                                                    </td>
+                                                    <td className="p-1">
+                                                        <Link to="1 De La Warr Way, Cambridge, CB23 6DX" className="text-600">
+                                                            {user?.address}
+                                                        </Link>
 
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </Table>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+
+
+                            {/*  */}
+
+                            {/*  */}
+                            <Col xs={12}>
+                                <RecentlyPurchased />
+                            </Col>
+                            {/*  */}
                             <Col xs={12}>
                                 <InvoiceTable />
-                            </Col>
-                            <Col xs={12}>
-                                <Card className="m-3">
-                                    <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
-                                        <h5 className="text-capitalize">
-                                            Notifications
-                                        </h5>
-                                        <div>
-                                            <div className="position-absolute top-0 end-0 m-3">
-                                                <CardDropdown iconClassName="fs--1" drop="bottom">
-                                                    <div className="py-2">
-                                                        <Dropdown.Item href="#!" className="text-success">
-                                                            Add
-                                                        </Dropdown.Item>
-                                                        <Dropdown.Item href="#!" className="text-danger">
-                                                            Remove
-                                                        </Dropdown.Item>
-                                                    </div>
-                                                </CardDropdown>
-                                            </div>
-                                        </div>
-                                    </Card.Header>
-                                    <Card.Body>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                            <Col xs={12}>
-                                <Card className="m-3">
-                                    <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
-                                        <h5 className="text-capitalize">
-                                            Calender
-                                        </h5>
-                                        <div>
-                                            <div className="position-absolute top-0 end-0 m-3">
-                                                <CardDropdown iconClassName="fs--1" drop="bottom">
-                                                    <div className="py-2">
-                                                        <Dropdown.Item href="#!" className="text-success">
-                                                            Add
-                                                        </Dropdown.Item>
-                                                        <Dropdown.Item href="#!" className="text-danger">
-                                                            Remove
-                                                        </Dropdown.Item>
-                                                    </div>
-                                                </CardDropdown>
-                                            </div>
-                                        </div>
-                                    </Card.Header>
-                                    <Card.Body>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                            <Col xs={12}>
-                                <Card className="m-3">
-                                    <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
-                                        <h5 className="text-capitalize">
-                                            Project
-                                        </h5>
-                                        <div>
-                                            <div className="position-absolute top-0 end-0 m-3">
-                                                <CardDropdown iconClassName="fs--1" drop="bottom">
-                                                    <div className="py-2">
-                                                        <Dropdown.Item href="#!" className="text-success">
-                                                            Add
-                                                        </Dropdown.Item>
-                                                        <Dropdown.Item href="#!" className="text-danger">
-                                                            Remove
-                                                        </Dropdown.Item>
-                                                    </div>
-                                                </CardDropdown>
-                                            </div>
-                                        </div>
-                                    </Card.Header>
-                                    <Card.Body>
-                                    </Card.Body>
-                                </Card>
                             </Col>
 
                         </Row>
@@ -322,10 +325,108 @@ function MyProfile() {
                     </Col>
                 </Row>
             </Container>
+            <Modal
+                show={show}
+                onHide={() => setShow(false)}
+                dialogClassName="modal-lg modal-90w"
+                aria-labelledby="example-custom-modal-styling-title"
+            >
+                <Modal.Header>
+                    <h5>Edit</h5>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Group className="mb-3">
+                            <Form.Label>
+                                First Name:
+                            </Form.Label>
+                            <Form.Control
+                                className="form-control-sm"
+                                type="text"
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>
+                                Last Name:
+                            </Form.Label>
+                            <Form.Control
+                                className="form-control-sm"
+                                type="text"
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>
+                                Email:
+                            </Form.Label>
+                            <Form.Control
+                                className="form-control-sm"
+                                type="email"
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>
+                                Mobile Number
+                            </Form.Label>
+                            <Form.Control
+                                className="form-control-sm"
+                                type="text"
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>
+                                Address:
+                            </Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                rows={1}
+                                className="resize-none form-control-sm"
+                            // type="email"
+                            />
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={handleClose}>Save</Button>
+                </Modal.Footer>
+            </Modal>
+            {/*  */}
+            <Modal
+                show={show1}
+                onHide={() => setShow1(false)}
+                dialogClassName="modal-lg modal-90w"
+                aria-labelledby="example-custom-modal-styling-title"
+            >
+                <Modal.Header>
+                    <h5 className="mb-0">Change Password</h5>
+                </Modal.Header>
+                <Modal.Body>
+                    <form>
+                        <div className="mb-3"><label className="form-label" for="old-password">Old Password<span className="text-danger ms-1">*</span></label><input className="form-control" id="old-password" type="password" /></div>
+                        <div className="mb-3"><label className="form-label" for="new-password">New Password<span className="text-danger ms-1">*</span></label><input className="form-control" id="new-password" type="password" /></div>
+                        <div className="mb-3"><label className="form-label" for="confirm-password">Confirm Password<span className="text-danger ms-1">*</span></label><input className="form-control" id="confirm-password" type="password" /></div>
+
+                    </form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button className="btn btn-primary d-block" type="submit" onClick={handleClose1}>
+                        Update Password
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }
 export default MyProfile
+// < Col xs = { 12} >
+//     <div className="card mb-3">
+//         <div className="card-header">
+
+//         </div>
+//         <div className="card-body bg-light">
+
+//         </div>
+//     </div>
+// </Col >
 // <Row>
 //     <Col lg={2}>
 //         <ProfileMenu />

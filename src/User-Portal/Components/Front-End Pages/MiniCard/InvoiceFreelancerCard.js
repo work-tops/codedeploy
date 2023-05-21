@@ -1,9 +1,9 @@
 
 import React from "react";
-import { Card, Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
-import InvoiceTableCard from "../../../TemplateAssets/AdvanceTables/InvoiceDueTable";
-function InvoicedueCard() {
+import InvoiceFreelancerDueTable from "../../../TemplateAssets/AdvanceTables/InvoiceFreelancerDueTable";
+function InvoiceFreelancerCard() {
     return (
         <>
             <Row>
@@ -12,11 +12,11 @@ function InvoicedueCard() {
                 </Col>
                 <Col lg={12}>
                     <Container>
-                        <InvoiceTableCard />
+                        <InvoiceFreelancerDueTable />
                     </Container>
                 </Col>
             </Row>
         </>
     )
 }
-export default InvoicedueCard
+export default InvoiceFreelancerCard

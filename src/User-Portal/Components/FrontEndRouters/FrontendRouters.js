@@ -51,7 +51,6 @@ import Cart from "../Front-End Pages/Cart/Cart";
 import ContactUs from "../Footer/Contactus";
 import PrivacyPolicy from "../Footer/PrivacyPolicy";
 import TermsOfUse from "../Footer/TermsofUse";
-import ShippingPage from "../Front-End Pages/Cart/ShippingPage";
 import SellerLogin from "../Front-End Pages/Login/FreelancerLogin";
 import PostProject from "../../Components/Front-End Pages/Post_Project/postProject";
 import ProductList from "../Front-End Pages/ProductList/ProductLists";
@@ -75,6 +74,10 @@ import GetQuote from "../Front-End Pages/Lists/GetQuote";
 import Notifications from "../Front-End Pages/Notifications";
 import Chat from "../Front-End Pages/Chat";
 import FreelancerProfile from "../Front-End Pages/Profile/FreelancerProfile";
+import FreelancerEditProfile from "../Front-End Pages/Login/FreelancerEditProfile";
+import InvoiceFreelancerCard from "../Front-End Pages/MiniCard/InvoiceFreelancerCard";
+import WorkStreamDetails from "../Front-End Pages/WorkstreamDetails";
+import Checkout from "../Front-End Pages/Cart/ShippingPage";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -126,7 +129,7 @@ const FrontEndRouters = () => {
             <Route path='/ProjectOwner/Landing'><ProjectOwnerLandingPage /></Route>
             <Route path='/openProjectCard'><OpenProjectCard /></Route>
             <Route path='/workStreamCard'><WorkStreamCard /></Route>
-            <Route path='/InvoicedueCard'><InvoicedueCard /></Route>
+
             <Route path='/POReviewsCard'><POReviewCard /></Route>
             {/* <Route path='/productList'><ProductList /></Route> */}
 
@@ -147,13 +150,12 @@ const FrontEndRouters = () => {
             <Route path="/editProduct"><EditProduct /></Route>
             <Route path="/user/sellerList"><SellerList /></Route>
             <Route path="/ServiceInformation"><ServiceInformation /></Route>
-
             <Route path="/Cart"><Cart /></Route>
             <Route path="/contactus"><ContactUs /></Route>
             <Route path="/privacypolicy"><PrivacyPolicy /></Route>
             <Route path="/contactus"><ContactUs /></Route>
             <Route path="/termsofuse"><TermsOfUse /></Route>
-            <Route path="/shippingpage"><ShippingPage /></Route>
+            <Route path="/checkout"><Checkout /></Route>
             <Route path="/postjob1"><PostJob1 /></Route>
             <Route path="/postjob2"><PostJob2 /></Route>
             {/* New Pages */}
@@ -171,9 +173,14 @@ const FrontEndRouters = () => {
             {/* New Pages */}
 
             {/* New Pages */}
+
             {/* <Route path="/notifications"><Notifications /></Route> */}
             <Route path="/chat"><Chat /></Route>
-            <Route path="/FreelancerProfile"><FreelancerProfile/></Route>
+            <Route path="/FreelancerProfile"><FreelancerProfile /></Route>
+            <Route path="/FreelancerEditProfile"><FreelancerEditProfile /></Route>
+            <Route path='/InvoicedueCard'><InvoicedueCard /></Route>
+            <Route path="/InvoiceFreelancerCard"><InvoiceFreelancerCard /></Route>
+            <Route path="/WorkstreamDetais"><WorkStreamDetails/></Route>
             {/* New Pages */}
         </Switch>
 

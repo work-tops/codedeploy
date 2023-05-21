@@ -9,6 +9,10 @@ const columns = [
         Header: 'Date'
     },
     {
+        accessor: 'invoice',
+        Header: 'Invoice No'
+    },
+    {
         accessor: 'description',
         Header: 'Description'
     },
@@ -21,22 +25,25 @@ const columns = [
 const data = [
     {
         date: '22 MAR 2023',
+        invoice: "#3611731-1",
         description: <span>
-            Invoice #3611731-1 paid to Alhaz Abdul K. for Project do 15... (Approved)
+            paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81"
     },
     {
         date: '22 MAR 2023',
+        invoice: "#3611731-1",
         description: <span>
-            Invoice #3611731-1 paid to Alhaz Abdul K. for Project do 15... (Approved)
+            paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81"
     },
     {
         date: '22 MAR 2023',
+        invoice: "#3611731-1",
         description: <span>
-            Invoice #3611731-1 paid to Alhaz Abdul K. for Project do 15... (Approved)
+            paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81"
     }
@@ -52,7 +59,7 @@ const PaymentTable = () => {
     };
 
     return (
-        <Card className="m-3 h-100">
+        <Card className="mb-3 btn-reveal-trigger h-100">
             <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
                 <h5 className="text-capitalize">
                     transactions
