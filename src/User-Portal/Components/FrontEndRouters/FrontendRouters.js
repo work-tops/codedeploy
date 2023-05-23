@@ -87,7 +87,7 @@ const FrontEndRouters = () => {
             <Route path="/freelancer/:login"><SellerLogin /></Route>
             <Route path="/productlist"><ProductList /></Route>
             <Route path="/productgrid1"><ProductGrid /></Route>
-            <Route path="/joblist"><ListJobs /></Route>
+            <Route path="/projectlist"><ListJobs /></Route>
             <Route path="/jobdetails/:jobid"><JobDetails /></Route>
             <Route path='/jobproposal/:jobid/jobproposal'><JobProposal /></Route>
 

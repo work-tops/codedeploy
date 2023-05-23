@@ -113,7 +113,7 @@ const PostProject = () => {
     const response = await createData("job/new", productdata)
     if (response.status === 201) {
       toast.success('Successfully Product Added')
-      history.push('/joblist');
+      history.push('/projectlist');
       cleardata()
     } else {
       toast.error('Something went wrong')
@@ -537,7 +537,7 @@ const PostProject = () => {
                         type="submit"
                         className='d-block border-0 bg-success'
                       >Post Project</Button>
-                      <Link to="/joblist">
+                      <Link to="/projectlist">
                         <Button className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
                       </Link>
                     </div>

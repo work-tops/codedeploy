@@ -1,21 +1,16 @@
 import { React, useState,useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { Row, Col, Button, Modal, Form, Card, CardGroup, Container, Dropdown } from "react-bootstrap";
-import worktops from '../../Projectimages/worktops-installation.jpg'
-import Menubar from "../../Menubar/Menubar";
+
 import { Link } from "react-router-dom";
 import freelancer from '../../Projectimages/Freelancer.jpg'
-import huwaei from '../../Projectimages/Huawei-Logo.png'
-import company_name from '../../Projectimages/CompanyName.png'
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { getAllData } from "../../../../Services/ProxyService";
 function SellerList() {
 
-    const [show, setShow] = useState(false);
     const [sellersList, setSellers] = useState([]);
-
+    
+    const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const getSellers = async ()=>{

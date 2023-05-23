@@ -19,9 +19,12 @@ import { Icon } from '@iconify/react';
 import ReactPaginate from 'react-paginate';
 import Flex from '../../TemplateAssets/common/Flex';
 import SimpleBarReact from 'simplebar-react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function ListJobs(layout) {
-
+    // 
+    const toastDanger = () => toast.success(<h6 className="text-sucess">Project Added to Wishlist</h6>);
+    // 
     const [jobs, setJobs] = useState([]);
     const [mainList, setMainList] = useState([]);
     const [filterList, setFilterList] = useState([]);
@@ -262,7 +265,7 @@ function ListJobs(layout) {
                                 </Card.Header>
                                 <Card.Body className="pt-0 pt-md-3">
                                     <Row className="g-3 align-items-center">
-                                        <Col xs="auto" className="d-xl-none">
+                                        <Col xs="auto" className="d-lg-none d-xxl-none d-xl-none">
                                             <Button
                                                 className="position-relative p-0"
                                                 size="sm"
@@ -332,7 +335,7 @@ function ListJobs(layout) {
                                 <Card className="overflow-hidden mt-3 mb-3">
                                     <Card.Body className="p-0">
                                         <Row className="g-0">
-                                            <Col md={8} lg={12} className="p-x1">
+                                            <Col md={12} lg={12} className="p-x1">
                                                 <Row className="g-0 h-100">
                                                     <Col lg={8}>
                                                         <div className='d-flex justify-content-start mb-3'>
@@ -344,7 +347,7 @@ function ListJobs(layout) {
                                                         <div key={key}>
                                                             <h5 className='text-primary mb-3'>{data.customer_email}</h5>
                                                             <h6 className='text-900 mb-3'>{data.project_title}</h6>
-                                                            <p className='text-justify' style={{ fontSize: '14px', width: '96%' }}>{data.project_description}</p>
+                                                            <p className='fifty-chars text-justify' style={{ fontSize: '14px', width: '96%' }}>{data.project_description}</p>
                                                         </div>
 
                                                         {/* *8-Col */}
@@ -352,26 +355,45 @@ function ListJobs(layout) {
 
 
                                                     {/* COl-4 */}
-                                                    <Col lg={4} className=" mt-lg-0">
-                                                        <Card className=''>
-                                                            <Card.Body>
-                                                                <div key={key}>
-                                                                    <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />{getLevel(data?.budget)}</p>
-                                                                    <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />{data?.location}</p>
-                                                                    <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:folder-rounded" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" /> {data?.category}</p>
-                                                                    <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:clock-time-eight" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} />20 to 30 days</p>
-                                                                    <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:tag" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} /> Job ID : {data?._id}</p>
-                                                                    <Link to="/wishlist/project">
-                                                                    <p className='text-justiy text-700 cursor-pointer fw-semibold' style={{ fontSize: '14px' }}><Icon icon="flat-color-icons:like" className='me-1' style={{ marginTop: '-5px' }} color="#003f6b" width="20" height="20" hFlip={true} /> Click to Save</p>
-                                                                    </Link>
-                                                                    <Link to={`jobdetails/${data._id}`} role="button">
-                                                                        <Button className='border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
-                                                                            VIEW JOB
-                                                                        </Button>
-                                                                    </Link>
-                                                                </div>
-                                                            </Card.Body>
-                                                        </Card>
+                                                    <Col md={12} lg={4} className=" mt-lg-0">
+                                                        {/* <Card className=''>
+                                                            <Card.Body> */}
+                                                        <div key={key}>
+                                                            <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />{getLevel(data?.budget)}</p>
+                                                            <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />{data?.location}</p>
+                                                            <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:folder-rounded" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" /> {data?.category}</p>
+                                                            <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:clock-time-eight" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} />20 to 30 days</p>
+                                                            <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:tag" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} /> Job ID : {data?._id}</p>
+                                                            {/* <Link to="/wishlist/project"> */}
+                                                            <p onClick={toastDanger} className='text-justiy text-700 cursor-pointer fw-semibold' style={{ fontSize: '14px' }}>
+                                                                <span>
+                                                                    <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />Click to Save
+                                                                </span>
+                                                                <span>
+                                                                    <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
+                                                                    Remove from Wishlist
+                                                                </span>
+                                                            </p>
+                                                            {/* </Link> */}
+                                                            <Link to={`jobdetails/${data._id}`} role="button">
+                                                                <Button className='border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                                    VIEW JOB
+                                                                </Button>
+                                                            </Link>
+                                                            <ToastContainer
+                                                                position="top-right"
+                                                                autoClose={1000}
+                                                                hideProgressBar={false}
+                                                                newestOnTop={false}
+                                                                closeOnClick
+                                                                rtl={false}
+                                                                pauseOnFocusLoss
+                                                                draggable
+                                                                pauseOnHover
+                                                            />
+                                                        </div>
+                                                        {/* </Card.Body>
+                                                        </Card> */}
                                                     </Col>
                                                 </Row>
                                             </Col>
@@ -380,11 +402,126 @@ function ListJobs(layout) {
                                 </Card>
                             ))}
 
+                            <div className="row mt-1 mb-3 g-3">
+                                <article className="col-md-6 col-xxl-4">
+                                    <div className="card h-100 overflow-hidden">
+                                        <div className="bg-light d-flex justify-content-end position-relative card-header">
+                                            <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
+                                            <Icon onClick={toastDanger} icon="icon-park-outline:like" className="cursor-pointer me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
+                                        </div>
+                                        <div className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <div className="p-3">
+                                                    <div className='d-flex justify-content-start mb-3'>
+                                                        <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>Attic</span>
+                                                        <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Worktop</span>
+                                                    </div>
+                                                    <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5>
+                                                    <h6 className="fs-0 mb-2">
+                                                        Bathroom Installation
+                                                    </h6>
+                                                    <p className='one-twenty-chars mb-lg-0 text-justify' style={{ fontSize: '14px' }}>White Attica
+                                                        Supernatural Quartz has a crisp white base featured with an intricate
+                                                        veiny pattern. This quartz slab has a super sleek look in polished finish which
+                                                        is more enhanced by the distinct black veins which have been manufactured to look fit
+                                                        for classy modern settings. The deep dark veins create remarkable designs in your interior
+                                                        spaces. It feels like a dream come true when installed in kitchens, baths, entryways, laundry
+                                                        and mudrooms, as well as a variety of other spaces in both residential and commercial properties.
+                                                        This quartz's design is meant to create a timeless statement. Aside from worktops, these slabs are
+                                                        ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <Button as={Link} to="/jobproposal" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                        VIEW JOB
+                                                    </Button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article className="col-md-6 col-xxl-4">
+                                    <div className="card h-100 overflow-hidden">
+                                        <div className="bg-light d-flex justify-content-end position-relative card-header">
+                                            <Icon onClick={toastDanger} icon="icon-park-outline:like" className="cursor-pointer me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
+                                            <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
+                                        </div>
+                                        <div className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <div className="p-3">
+                                                    <div className='d-flex justify-content-start mb-3'>
+                                                        <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>Attic</span>
+                                                        <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Worktop</span>
+                                                    </div>
+                                                    <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5>
+                                                    <h6 className="fs-0 mb-2">
+                                                        Bathroom Installation
+                                                    </h6>
+                                                    <p className='one-twenty-chars mb-lg-0 text-justify' style={{ fontSize: '14px' }}>White Attica
+                                                        Supernatural Quartz has a crisp white base featured with an intricate
+                                                        veiny pattern. This quartz slab has a super sleek look in polished finish which
+                                                        is more enhanced by the distinct black veins which have been manufactured to look fit
+                                                        for classy modern settings. The deep dark veins create remarkable designs in your interior
+                                                        spaces. It feels like a dream come true when installed in kitchens, baths, entryways, laundry
+                                                        and mudrooms, as well as a variety of other spaces in both residential and commercial properties.
+                                                        This quartz's design is meant to create a timeless statement. Aside from worktops, these slabs are
+                                                        ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
+                                                    </p>
+                                                </div>
+                                                <Button as={Link} to="/jobproposal" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                    VIEW JOB
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            {/* pagination */}
+                            <Card className="mt-3 mb-3">
+                                <Card.Body>
+                                    <Row className="g-3 flex-center justify-content-between">
+                                        <Col xs="auto" className="d-flex align-items-center">
+                                            <small className="d-none d-lg-block me-2">Show:</small>
+                                            <Form.Select
+                                                size="sm"
+                                                style={{ maxWidth: '4.875rem' }}
+                                            >
+                                                <option >1</option>
+                                                <option >2</option>
+                                                <option >3</option>
+                                                <option >All</option>
+                                            </Form.Select>
+                                        </Col>
+                                        <Col xs="auto" className="d-flex">
+                                            <div>
+                                                <Button
+                                                    variant="falcon-default"
+                                                    className="me-2"
+                                                >
+                                                    Preview
+                                                </Button>
+                                            </div>
+
+                                            <div>
+                                                <Button
+                                                    variant="falcon-default"
+                                                >
+                                                    Next
+                                                </Button>
+
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </Card.Body>
+                            </Card>
+                            {/* pagination */}
                         </Col>
                     </Row>
+                    {/*  */}
+
                     {/* </div> */}
-                </Container>
-            </Row>
+                </Container >
+            </Row >
         </>
     )
 }

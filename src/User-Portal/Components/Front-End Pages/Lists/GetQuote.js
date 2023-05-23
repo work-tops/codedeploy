@@ -24,8 +24,7 @@ function GetQuote() {
             );
         }
     });
-    // Upload Files(Optional)
-
+    
     return (
         <>
             <Container>

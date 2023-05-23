@@ -84,8 +84,8 @@ function ServiceList(layout) {
                         <Row>
                             <Col lg={12} className="mt-5">
                                 <Card className="">
-                                <Card.Header as="h4" className='bg-light text-justify  text-uppercase'>Service Lists</Card.Header>
-                                
+                                    <Card.Header as="h4" className='bg-light text-justify  text-uppercase'>Service Lists</Card.Header>
+
                                     <Card.Body className="pt-0 pt-md-3">
                                         <Row className="g-3 align-items-center">
                                             <Col xs="auto" className="d-xl-none">
@@ -159,11 +159,11 @@ function ServiceList(layout) {
                             </p>
                             <Container>
                                 <Row >
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={worktops} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title>
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={worktops} alt="Card image cap" />
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -177,11 +177,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={bathroom_fitting} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={bathroom_fitting} alt="Card image cap" />
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -195,11 +195,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={carpenterwork} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={carpenterwork} alt="Card image cap" />
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -213,11 +213,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={bricklaying} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={bricklaying} alt="Card image cap" />
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -230,11 +230,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={carpetFitting} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={carpetFitting} alt="Card image cap" />
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -248,11 +248,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Chimneys} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Chimneys} alt="Card image cap" />
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -265,11 +265,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Conservatories} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Conservatories} alt="Card image cap" />
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -282,11 +282,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Conversions} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Conversions} alt="Card image cap" />
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -299,11 +299,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Damp_proofing} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Damp_proofing} alt="Card image cap" />
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -316,11 +316,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Demolition_cleaning} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Demolition_cleaning} alt="Card image cap" />
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -333,11 +333,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Driveways} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Driveways} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -350,11 +350,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Electrical} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Electrical} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -367,11 +367,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Extensions} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Extensions} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -384,11 +384,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Facias} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Facias} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -401,11 +401,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Fencing} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Fencing} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -418,11 +418,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Flooring} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Flooring} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -435,11 +435,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={GroundWork} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={GroundWork} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -452,11 +452,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Handyman} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Handyman} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -469,11 +469,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Locksmiths} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Locksmiths} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -486,11 +486,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Painting} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Painting} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -503,11 +503,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Plastering} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Plastering} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -520,11 +520,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Plumbing} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Plumbing} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -537,11 +537,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Restoration} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Restoration} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -554,11 +554,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Roofing} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Roofing} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -571,11 +571,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={LandScaping} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={LandScaping} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -588,11 +588,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Stonemasonary} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Stonemasonary} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"
@@ -605,11 +605,11 @@ function ServiceList(layout) {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                    <Col sm={12} md={12} xl={6} lg={6}>
+                                    <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
-                                            <Card.Img variant='top' style={{ minWidth: '320px', aspectRatio: '1.1', objectFit: 'cover' }} src={Tilling} alt="Card image cap" />
-                                            <Card.Body>
-                                                <Card.Title >
+                                            <Card.Img variant='top' className="img-fluid" style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Tilling} alt="Card image cap" />
+                                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                <Card.Title className="m-3">
                                                     <h5 onClick={handleShow} className="fs-0 mb-2">
                                                         <Link
                                                             to="#"

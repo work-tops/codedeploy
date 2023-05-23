@@ -120,7 +120,7 @@ const NavbarStandard = () => {
 
               <Nav.Link
                 as={Link}
-                to="/joblist"
+                to="/projectlist"
                 className='mt-2'
                 style={{ fontSize: '12px' }}
               >

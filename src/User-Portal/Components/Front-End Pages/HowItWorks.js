@@ -9,7 +9,7 @@ import { Button, Col, Row } from "react-bootstrap";
 import profile from '../Projectimages/Handyman.jpg'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Link } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -27,22 +27,25 @@ function HowItWorks() {
                 <Col lg={12} className="mt-3">
                     <div className="row">
                         <div className="col-lg-7">
-                            <div className="mt-8 ms-5 text-start">
-                                <h3 className="text-dark fw-light">
-                                    <span className="typed-start fw-bold" >
-                                        A KBB Certified Platform Chosen By
-                                        Professionals Who Love Doing What They Do
-                                    </span></h3>
-                                <p className="text-dark">
-                                    Every project is precious for the right professional
-                                </p>
+                            <div className="mt-8 text-center">
+                                <div class="col-md-11 col-lg-11 col-xl-11 pb-7 pb-xl-9 ">
+                                    <h3 className="text-dark fw-light">
+                                        <span className="typed-start fw-bold" >
+                                            A KBB Certified Platform Chosen By
+                                            Professionals Who Love Doing What They Do
+                                        </span>
+                                    </h3>
+                                    <p className="text-dark">
+                                        Every project is precious for the right professional
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-5">
                             <img src={worktops} className="w-100" />
                         </div>
                     </div>
-                    <section className="py-3 bg-light shadow-sm">
+                    <div className="py-3 bg-light shadow-sm">
                         <div class="container">
                             <div class="d-flex justify-content-center mb-5">
                                 <ul class=" nav nav-tabs " role="tablist">
@@ -65,10 +68,10 @@ function HowItWorks() {
                                     <div class="tab-pane active show" id="tab-1" role="tabpanel">
                                         <div class="row">
                                             <div class="col-lg-12 details order-2 order-lg-1">
-                                                <h3 className="text-center">
+                                                <h2 className="text-center">
                                                     Committed to Connecting You With the Most Relevant and
                                                     Skilled Professionals
-                                                </h3>
+                                                </h2>
                                                 <p className="text-center">
                                                     Here at MyProject.Al, all projects are welcome as we believe no job is too complicated or irrelevant in the right hands. We give you a
                                                     user-friendly experience as you navigate our pages. Al does its best job to search for the most relevant professionals for your project.
@@ -76,14 +79,11 @@ function HowItWorks() {
                                                     All you need to do is give the best description about your requirement.
                                                 </p>
                                                 <div className="d-flex justify-content-center">
-                                                    <Button style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
+                                                    <Button as={Link} to="/owner" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 text-center order-1 order-lg-2">
-                                                <img src="assets/img/specials-1.jpg" alt="" class="img-fluid" />
-                                            </div>
                                         </div>
-                                        <section>
+                                        <div style={{ marginBottom: '3rem' }} className="mb-5 ">
                                             <div className="container">
                                                 <div className="row flex-center">
                                                     <div className="col-md col-lg-5 col-xl-4 ps-lg-6">
@@ -94,7 +94,7 @@ function HowItWorks() {
                                                             Use various filters to narrow your search based on your requirement; Skill, Location, Price Range, Project Type and many
                                                             more.
                                                         </p>
-                                                        <Button style={{ background: '#003f6b', border: '0px' }}>Discover Best Professionals</Button>
+                                                        <Button as={Link} to="/projectlist" style={{ background: '#003f6b', border: '0px' }}>Discover Best Professionals</Button>
                                                     </div>
                                                 </div>
                                                 <div className="row flex-center mt-7">
@@ -106,14 +106,14 @@ function HowItWorks() {
                                                             appropriate professionals. If something you are searching for is not in option
                                                             you can type “Others"in the search box and add your requirement.
                                                         </p>
-                                                        <Button style={{ background: '#003f6b', border: '0px' }}>Upload My Project</Button>
+                                                        <Button as={Link} to="/postproject" style={{ background: '#003f6b', border: '0px' }}>Upload My Project</Button>
                                                     </div>
                                                 </div>
 
                                             </div>
-                                        </section>
-                                        <section className="bg-light text-center">
-                                            {/* <div className="container"> */}
+                                        </div>
+                                        <div style={{ marginBottom: '3rem' }} className="mb-5  bg-light text-center">
+
                                             <div className="row">
                                                 <div className="col">
                                                     <h1 className="fs-2 fs-sm-4 fs-md-5">You Can Do a Lot</h1>
@@ -155,8 +155,8 @@ function HowItWorks() {
                                                 </div>
                                             </div>
                                             {/* </div> */}
-                                        </section>
-                                        <section className="text-center">
+                                        </div>
+                                        <div style={{ marginBottom: '3rem' }} className="mb-5  text-center">
                                             <h5 className="mb-3 text-700 text-uppercase">Testimonials</h5>
                                             <div className="col">
                                                 <h1 className="fs-2 mb-3 fs-sm-4 fs-md-5">Choose Best Reviewed Professionals</h1>
@@ -189,8 +189,8 @@ function HowItWorks() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section>
-                                        <section className="bg-light text-center">
+                                        </div>
+                                        <div style={{ marginBottom: '3rem' }} className=" bg-light text-center">
                                             <div className="container">
                                                 <div className="row">
                                                     <div className="col">
@@ -233,7 +233,7 @@ function HowItWorks() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section>
+                                        </div>
                                     </div>
                                     <div class="tab-pane" id="tab-2" role="tabpanel">
                                         <div class="row">
@@ -243,18 +243,18 @@ function HowItWorks() {
                                                     You are just one sign up away from taking the Game-Changing Decision of your Lifetime!
                                                 </p>
                                                 <div className="d-flex justify-content-center">
-                                                    <Button style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
+                                                    <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h1 className="mt-5 fw-bold text-center">HOW IT WORKS</h1>
+                                        <h1 className="mt-5 fw-bold mb-3 text-center">HOW IT WORKS</h1>
                                         <div className="col-lg-12">
                                             <img src={Hiw_mindmap} className="w-100" />
                                         </div>
-                                        <section className="bg-light text-center">
+                                        <div style={{ marginBottom: '3rem' }} className="bg-light text-center">
                                             {/* <div className="container"> */}
                                             <div className="row">
-                                                <div className="col">
+                                                <div className="col mt-5">
                                                     <h1 className="fs-2 fs-sm-4 fs-md-5">You Can Do a Lot</h1>
                                                 </div>
                                             </div>
@@ -336,15 +336,15 @@ function HowItWorks() {
 
                                             </div>
                                             {/* </div> */}
-                                        </section>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section >
+                    </div >
                 </Col>
             </Row>
-            {/* <section className="light bg-dark">
+            {/*<div style={{marginBottom:'3rem'}} className="mb-5 " className="light bg-dark">
                 <div className="bg-holder overlay" style={{ backgroundImage: `url(${worktops})`, backgroundPosition: 'center top' }}></div>
                 
                 <div className="container">
@@ -354,10 +354,10 @@ function HowItWorks() {
                         </div>
                         </div>
                 </div>
-            </section> */}
+           </div> */}
 
 
-            {/* <section className="bg-dark pt-8 pb-4 light">
+            {/*<div style={{marginBottom:'3rem'}} className="mb-5 " className="bg-dark pt-8 pb-4 light">
                 <div className="container">
                     <div className="position-absolute btn-back-to-top bg-dark"><a className="text-600" href="#banner" data-bs-offset-top="0">
                         <span className="fas fa-chevron-up" data-fa-transform="rotate-45"></span></a></div>
@@ -420,8 +420,8 @@ function HowItWorks() {
                         </div>
                     </div>
                 </div>
-            </section>
-            <section className="py-0 bg-dark light">
+           </div>
+           <div style={{marginBottom:'3rem'}} className="mb-5 " className="py-0 bg-dark light">
                 <div>
                     <div className="container py-3">
                         <div className="row justify-content-between fs--1">
@@ -434,7 +434,7 @@ function HowItWorks() {
                         </div>
                     </div>
                 </div>
-            </section> */}
+           </div> */}
         </>
     )
 }
