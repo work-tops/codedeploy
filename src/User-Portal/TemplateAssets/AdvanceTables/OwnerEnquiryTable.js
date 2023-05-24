@@ -16,6 +16,10 @@ const OwnerEnquiryTable = () => {
 
     const columns = [
         {
+            accessor: 'id',
+            Header: 'Enquiry ID'
+        },
+        {
             accessor: 'name',
             Header: 'Name'
         },
@@ -43,6 +47,7 @@ const OwnerEnquiryTable = () => {
     ];
     const data = [
         {
+            id:'625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             serviceName: 'Kitchen Worktops',
@@ -55,6 +60,7 @@ const OwnerEnquiryTable = () => {
             </CardDropdown>
         },
         {
+            id:'625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             serviceName: 'Kitchen Worktops',
@@ -67,6 +73,7 @@ const OwnerEnquiryTable = () => {
             </CardDropdown>
         },
         {
+            id:'625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             serviceName: 'Kitchen Worktops',
@@ -79,6 +86,7 @@ const OwnerEnquiryTable = () => {
             </CardDropdown>
         },
         {
+            id:'625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             serviceName: 'Kitchen Worktops',
@@ -131,7 +139,7 @@ const OwnerEnquiryTable = () => {
 
 
                 <Row className="flex-between-center mb-3">
-                    <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
+                    <Col xs={12} md={8} lg={7} sm="12" className="mt-3  pe-0">
                         <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
                             {
                                 Object.keys(selectedRowIds).length > 0 ?
@@ -146,7 +154,7 @@ const OwnerEnquiryTable = () => {
                                 <AdvanceTableSearchBox table />
                             </Col>
                         </Row> */}
-                    <Col xs={8} sm="auto" className="ms-auto text-end ps-0">
+                    <Col xs={12} md={4} lg={5} sm="12" className="mt-3 ms-auto text-end ps-0">
                         {Object.keys(selectedRowIds).length > 0 ? (
                             <div className="d-flex">
                                 <Form.Select size="sm" aria-label="Bulk actions">

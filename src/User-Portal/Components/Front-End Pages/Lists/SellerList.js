@@ -1,7 +1,8 @@
 import { React, useState,useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { Row, Col, Button, Modal, Form, Card, CardGroup, Container, Dropdown } from "react-bootstrap";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 import freelancer from '../../Projectimages/Freelancer.jpg'
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
@@ -24,7 +25,8 @@ function SellerList() {
     useEffect(()=>{
         getSellers()
     },[])
-
+// 
+const toastDanger = () => toast.success(<h6 className="text-sucess">Service Provider Added to Wishlist</h6>);
     return (
        
        <>
@@ -34,11 +36,11 @@ function SellerList() {
                     <NavbarStandard />
                 </Col>
                 <Col lg={12}>
-                    <Row className="justify-content-start">
+                    <Row className="">
                         <h4 className="text-uppercase mt-5">Service Provider Lists</h4>
                         {sellersList.map((data,index)=>{
-                            return <Col lg={4} >
-                        <Card className="mt-4 mb-1">
+                            return <Col  sm={12} md={6} xl={4} lg={4} >
+                        <Card className="mt-3 mb-1">
                             <Card.Header className="bg-light">
                             <div className="d-flex justify-content-end mt-2">
                             <Dropdown
@@ -60,21 +62,21 @@ function SellerList() {
                             </Dropdown>
                             
                             
-                            <Link to="/wishlist/seller">
-                                <Icon icon="flat-color-icons:like" style={{marginTop:'2px'}} className="d-block" width="20" height="20" />
-                                </Link>
+                                <Icon onClick={toastDanger} icon="flat-color-icons:like" style={{marginTop:'2px'}} className="cursor-pointer d-block" width="20" height="20" />
                                 </div>
                             </Card.Header>
-                        
                             <Link to="/ServiceInformation">
                                 {data.attachments.length > 0 ?
-                                <Card.Img variant='top' width="100%" height="auto" src={data.attachments[0]?.url} alt="Card image cap" />:
-                                <Card.Img variant='top' width="100%" height="auto" src={freelancer} alt="Card image cap" />
+                                <Card.Img variant='top' className="img-fluid cursor-pointer" style={{ aspectRatio: '1.1', objectFit: 'cover',border:'1px solid #000' }} src={data.attachments[0]?.url} alt="Card image cap" />:
+                                <Card.Img variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={freelancer} alt="Card image cap" />
                                 }
                             </Link>
-                            <Card.Body>
-                                <Link to="/ServiceInformation"><Card.Title className="text-justify" as='h5'>{data.name}
-                                </Card.Title></Link>
+                            <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="m-3 card-body p-0 d-flex flex-column justify-content-between">
+                                <Link to="/ServiceInformation">
+                                    <Card.Title className="text-justify" as='h5'>
+                                    {data.name}
+                                </Card.Title>
+                                </Link>
                                 <p className="text-justify">
                                     <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
                                 </p>
@@ -87,17 +89,28 @@ function SellerList() {
                                 Cambridge company that offers a variety of Plumbing 
                                 solutions and services.
                                 </Card.Text>
-                                <div className="d-flex justify-content-between">
+                                <div className="d-flex gap-2 justify-content-between">
                                     <Link to="/RequestQuote">
-                                        <Button className=" text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
+                                        <Button className="text-white border-0" style={{ background: "#0d406b" }}>Request a Quote</Button>
                                     </Link>
-                     <Button onClick={handleShow} className=" bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
-                     </div>
+                                    <Button onClick={handleShow} className=" bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>Message Me</Button>
+                                    </div>
                         </Card.Body>
                         </Card>
                         </Col>
                         })}
-                        
+                        <ToastContainer
+                        position="top-right"
+                        autoClose={2000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        className="m-3"
+                    />
                         </Row>
                     </Col>
                         

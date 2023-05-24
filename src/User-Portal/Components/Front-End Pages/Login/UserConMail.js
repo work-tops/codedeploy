@@ -42,7 +42,7 @@ function UserConMail() {
                                         <div className="d-flex justify-content-center">
                                             <Button
                                                 as={Link}
-                                                to="/owner"
+                                                to="/projectowner"
                                                 style={{ background: '#003f6b' }}
                                                 size="sm"
                                                 className="border-0 p-2 mb-3 mt-3"

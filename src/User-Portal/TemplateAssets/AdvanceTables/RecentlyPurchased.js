@@ -119,7 +119,7 @@ const RecentlyPurchased = () => {
     };
 
     return (
-        <Card className="mb-3 btn-reveal-trigger h-100">
+        <Card className="btn-reveal-trigger h-100">
             <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
                 <h5 className="text-capitalize">
                     Recently Purchased

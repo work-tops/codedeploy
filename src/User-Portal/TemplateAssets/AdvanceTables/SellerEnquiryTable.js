@@ -16,6 +16,10 @@ const SellerEnquiryTable = () => {
 
     const columns = [
         {
+            accessor: 'id',
+            Header: 'Enquiry ID'
+        },
+        {
             accessor: 'name',
             Header: 'Name'
         },
@@ -43,6 +47,7 @@ const SellerEnquiryTable = () => {
     ];
     const data = [
         {
+            id:'625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             productName: 'Quartz',
@@ -55,6 +60,7 @@ const SellerEnquiryTable = () => {
             </CardDropdown>
         },
         {
+            id:'625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             productName: 'Quartz',
@@ -67,6 +73,7 @@ const SellerEnquiryTable = () => {
             </CardDropdown>
         },
         {
+            id:'625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             productName: 'Quartz',
@@ -79,6 +86,7 @@ const SellerEnquiryTable = () => {
             </CardDropdown>
         },
         {
+            id:'625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             productName: 'Quartz',
@@ -122,7 +130,7 @@ const SellerEnquiryTable = () => {
                             </Form.Check>
                         </Form.Group>
                         <div className="d-flex justify-content-end mb-3">
-                            <Button  style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                            <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
                                 Send
                             </Button>
                         </div>
@@ -131,7 +139,7 @@ const SellerEnquiryTable = () => {
 
 
                 <Row className="flex-between-center mb-3">
-                    <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
+                    <Col xs={12} md={8} lg={7} sm="12" className="mt-3  pe-0">
                         <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
                             {
                                 Object.keys(selectedRowIds).length > 0 ?
@@ -146,7 +154,7 @@ const SellerEnquiryTable = () => {
                                 <AdvanceTableSearchBox table />
                             </Col>
                         </Row> */}
-                    <Col xs={8} sm="auto" className="ms-auto text-end ps-0">
+                    <Col xs={12} md={4} lg={5} sm="12" className="mt-3 ms-auto text-end ps-0">
                         {Object.keys(selectedRowIds).length > 0 ? (
                             <div className="d-flex">
                                 <Form.Select size="sm" aria-label="Bulk actions">

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import classNames from 'classnames';
+import classNames from 'classNames';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import Flex from '../Flex';
@@ -26,13 +26,9 @@ export const AdvanceTableFooter = ({
   const [isAllVisible, setIsAllVisible] = useState(false);
   return (
     <div
-    className="d-flex justify-content-between align-items-center"
-      // className={classNames(
-      //   className,
-      //   'align-items-center justify-content-between'
-      // )}
+      className='d-flex align-items-center justify-content-between'
     >
-      <div className="fs--1 d-flex align-items-center">
+      <div  className="d-flex justify-content-between align-items-center fs--1">
         {rowInfo && (
           <p className="mb-0">
             <span className="d-none d-sm-inline-block me-2">
@@ -66,7 +62,7 @@ export const AdvanceTableFooter = ({
             <p className="mb-0 mx-2">Rows per page:</p>
             <Form.Select
               size="sm"
-              className="me-4 w-auto"
+              className="w-auto"
               onChange={e => setPageSize(Number(e.target.value))}
               defaultValue={pageSize}
             >
@@ -80,23 +76,21 @@ export const AdvanceTableFooter = ({
         )}
       </div>
       {navButtons && (
-        <div className='d-block'>
+        <div className='d-flex'>
           <Button
             size="sm"
-            className='w-100 px-4 ms-2 mb-2'
             variant={canPreviousPage ? 'primary' : 'light'}
             onClick={() => previousPage()}
-            // className={classNames({ disabled: !canPreviousPage })}
+            className={classNames({ disabled: !canPreviousPage })}
           >
             Previous
           </Button>
           <Button
             size="sm"
-            className='w-100 px-4 ms-2'
             variant={canNextPage ? 'primary' : 'light'}
-            // className={classNames('px-4 ms-2', {
-            //   disabled: !canNextPage
-            // })}
+            className={classNames('px-4 ms-2', {
+              disabled: !canNextPage
+            })}
             onClick={() => nextPage()}
           >
             Next

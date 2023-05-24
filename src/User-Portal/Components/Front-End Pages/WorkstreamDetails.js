@@ -34,7 +34,7 @@ function WorkStreamDetails() {
                                             </Card.Header>
                                             <Card.Body>
 
-                                                <Card style={{ background:'#f3f3f3' }}>
+                                                <Card className="mb-3" style={{ background:'#f3f3f3' }}>
                                                     <Card.Body>
                                                         <Row>
                                                             <Col className="" lg={3}>
@@ -55,6 +55,27 @@ function WorkStreamDetails() {
                                                         </Row>
                                                     </Card.Body>
                                                 </Card>
+                                                <Card className="mb-3" style={{ background: '#f3f3f3' }}>
+                                            <Card.Body>
+                                                <Row>
+                                                    <Col className="" lg={9}>
+                                                        <p style={{ fontSize: '14px' }} className="text-justify mb-0">
+                                                            How are you? Sir / Madam Please send admin access details to website,
+                                                            Bitrix and email host.Also Price £200.00
+                                                        </p>
+                                                        {/* <Button
+                                                                    onClick={handleShow}
+                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
+                                                                    className="btn mb-3 text-uppercase border-0">
+                                                                    Reply
+                                                                </Button> */}
+                                                    </Col>
+                                                    <Col className="" lg={3}>
+                                                        <img src={file} height="60px" width="60px" className="m-3 rounded-circle" />
+                                                    </Col>
+                                                </Row>
+                                            </Card.Body>
+                                        </Card>
                                                 <Form className="mt-3">
                                                     <Form.Group className="mb-3">
                                                         <Form.Control

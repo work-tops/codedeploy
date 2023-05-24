@@ -201,25 +201,13 @@ const PostProject = () => {
                   <Col xl={12}> */}
                 <ul>
                   <li style={{ fontSize: '14px', width: '100%' }}>
-                    Describe your project in as much detail as you can comfortably reveal
-                    - it will increase the quality
-                    of proposals you receive and shorten
-                    the selection process.
+                    The customers who have described their requirements with better clarity while uploading the project have always connected with the right professionals and received better proposals, and hence completed their projects on time.
+
                   </li>
                   <li style={{ fontSize: '14px', width: '100%' }}>
-                    Upload as much relevant
-                    information (pictures,
-                    documents, specifications, links, etc)
-                    as possible to get a realistic quote.
+                    To make it even better, we recommend that you upload as much relevant information (pictures, documents, specifications, etc) as possible to give clarity.
                   </li>
-                  <li style={{ fontSize: '14px', width: '100%' }}>
-                    Match the experience level to your requirements
-                    - remember,you're looking for the best you can
-                    afford, not the cheapest you can get.
-                  </li>
-                  <li style={{ fontSize: '14px', width: '100%' }}>
-                    For more helpful tips, see our guide Post a project
-                  </li>
+
                 </ul>
                 {/* </Col>
                 </Row> */}
@@ -237,7 +225,7 @@ const PostProject = () => {
 
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-capitalize'>
+                      <Form.Label className='text-700 text-uppercase'>
                         category <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Select value={form.category}
@@ -245,7 +233,7 @@ const PostProject = () => {
                         name="category"
                         onChange={(e) => { handleChange(e) }}
                       >
-                        <option value="">Select </option>
+                        <option value="">Select</option>
                         {cate.map((data) => (
                           <option value={data.category}>{data.category}</option>
                         ))}
@@ -254,7 +242,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-capitalize'>
+                      <Form.Label className='text-700 text-uppercase'>
                         sub-category <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Select
@@ -272,7 +260,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={12} className='me-2 '>
                     <Form.Group controlId="courseTitle">
-                      <Form.Label className='text-700 text-capitalize'>
+                      <Form.Label className='text-700 text-uppercase'>
                         project title <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -288,7 +276,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={12} className='me-2'>
                     <Form.Group className="mb-3">
-                      <Form.Label className='text-700 text-capitalize'>Project Description <span className="text-danger">*</span> </Form.Label>
+                      <Form.Label className='text-700 text-uppercase'>Project Description <span className="text-danger">*</span> </Form.Label>
                       <Form.Control
                         as="textarea"
                         value={form.project_description}
@@ -297,13 +285,13 @@ const PostProject = () => {
                         onChange={(e) => { handleChange(e) }}
                         placeholder="Need a Fabricator who's Specialize in this field"
                         rows={8} />
-                      <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive,Projects with good descriptions are more popular with our freelancers</p>
+                      <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our freelancers</p>
                     </Form.Group>
                   </Col>
                   {/* Upload Samples */}
-                  <Col lg={12} className='me-2 w-100'>
+                  <Col lg={12} className='me-2 mb-2 w-100'>
                     <div >
-                      <Form.Label className='text-700 text-capitalize'>
+                      <Form.Label className='text-700 text-uppercase'>
                         Upload Sample and Other Helpful
                       </Form.Label>
                       <div {...getRootProps({ className: 'dropzone-area py-6' })}>
@@ -354,12 +342,13 @@ const PostProject = () => {
                       )}
 
                     </div>
-                    <small>Minimum 5 and Maximum 10 Files Allowed</small>
+                    <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
+                    <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
                   </Col>
                   {/* Upload Samples */}
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-capitalize'>
+                      <Form.Label className='text-700 text-uppercase'>
                         Budget Type <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Select
@@ -369,7 +358,7 @@ const PostProject = () => {
                         onChange={(e) => { handleChange(e) }}
                       >
                         <option value="">Select</option>
-                        <option value="Fixed Price">Fixed Price   :</option>
+                        <option value="Fixed Price">Fixed Price   </option>
                         <option value="No Idea">No Idea</option>
                         <option value="No Range">No Range</option>
                       </Form.Select>
@@ -377,7 +366,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-capitalize'>
+                      <Form.Label className='text-700 text-uppercase'>
                         Currency <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Select
@@ -394,7 +383,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-capitalize'>
+                      <Form.Label className='text-700 text-uppercase'>
                         Budget <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -422,7 +411,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={12} className=''>
                     <Form.Group className="mb-3">
-                      <Form.Label className='text-700 text-capitalize'>Project Location <span className="text-danger">*</span> </Form.Label>
+                      <Form.Label className='text-700 text-uppercase'>Project Location <span className="text-danger">*</span> </Form.Label>
                       <Form.Control
                         value={form.location}
                         required
@@ -435,7 +424,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-capitalize'>
+                      <Form.Label className='text-700 text-uppercase'>
                         Post Code<span className="ms-1 text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -450,7 +439,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-capitalize'>
+                      <Form.Label className='text-700 text-uppercase'>
                         Starting Date
                       </Form.Label>
                       <Form.Control
@@ -465,7 +454,7 @@ const PostProject = () => {
                   </Col>
                   <Col md="12">
                     <Form.Group className='mb-3 mt-2'>
-                      <Form.Label className='text-700 d-block text-capitalize'>
+                      <Form.Label className='text-700 d-block text-uppercase'>
                         Project Visibility <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Check
@@ -505,7 +494,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700  text-capitalize'>
+                      <Form.Label className='text-700  text-uppercase'>
                         Project Duration Time <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -519,7 +508,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group className='mb-3'>
-                      <Form.Label className='text-700  text-capitalize'>
+                      <Form.Label className='text-700  text-uppercase'>
                         Expiry Date <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -535,17 +524,19 @@ const PostProject = () => {
                     <div className='d-flex justify-content-start'>
                       <Button
                         type="submit"
-                        className='d-block border-0 bg-success'
+                         className='d-block border-0 bg-success'
                       >Post Project</Button>
                       <Link to="/projectlist">
                         <Button className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
                       </Link>
+                      
                     </div>
                   </Col>
                 </Row>
               </Card.Body>
             </Card >
             {/* Post A Project */}
+
             {/* </Col> */}
           </Container>
         </Row>

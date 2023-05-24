@@ -77,13 +77,16 @@ import FreelancerProfile from "../Front-End Pages/Profile/FreelancerProfile";
 import FreelancerEditProfile from "../Front-End Pages/Login/FreelancerEditProfile";
 import InvoiceFreelancerCard from "../Front-End Pages/MiniCard/InvoiceFreelancerCard";
 import WorkStreamDetails from "../Front-End Pages/WorkstreamDetails";
-import Checkout from "../Front-End Pages/Cart/ShippingPage";
+import Checkout from "../Front-End Pages/Cart/Checkout";
+import Editpostproject from "../Front-End Pages/Post_Project/Editpostproject";
+import EditProposal from "../Front-End Pages/EditProposal";
+import InvoiceCheckout from "../Front-End Pages/Cart/InvoiceCheckout";
 const FrontEndRouters = () => {
     return (
         <Switch>
             {/* proper order routes */}
-            <Route path='/owner'><UserLogin /></Route>
-            <Route path='/signup'><SignUpPage /></Route>
+            <Route path='/projectowner'><UserLogin /></Route>
+            <Route path='/project-owner-register'><SignUpPage /></Route>
             <Route path="/freelancer/:login"><SellerLogin /></Route>
             <Route path="/productlist"><ProductList /></Route>
             <Route path="/productgrid1"><ProductGrid /></Route>
@@ -116,9 +119,9 @@ const FrontEndRouters = () => {
             <Route path='/addservicecard'><AddServiceCard /></Route>
             <Route path='/proposalcard'><ProposalCard /></Route>
             {/* Enquries */}
-            <Route path='/ownerEnquirescard'><ProductEnquiresCard /></Route>
+            <Route path='/Enquirescard'><ProductEnquiresCard /></Route>
             <Route path="/ownerEnquireDetails"><OwnerEnquiryDetails /></Route>
-            <Route path='/sellerEnquirescard'><SellerEnquiryCard /></Route>
+            {/* <Route path='/sellerEnquirescard'><SellerEnquiryCard /></Route> */}
             <Route path="/sellerEnquireDetails"><SellerEnquiryDetails /></Route>
             {/* Enquries */}
             {/* Quote */}
@@ -181,6 +184,9 @@ const FrontEndRouters = () => {
             <Route path='/InvoicedueCard'><InvoicedueCard /></Route>
             <Route path="/InvoiceFreelancerCard"><InvoiceFreelancerCard /></Route>
             <Route path="/WorkstreamDetais"><WorkStreamDetails/></Route>
+            <Route path="/EditPostProject"><Editpostproject/></Route>
+            <Route path="/EditProposal"><EditProposal/></Route>
+            <Route path="/InvoiceCheckout"><InvoiceCheckout/></Route>
             {/* New Pages */}
         </Switch>
 

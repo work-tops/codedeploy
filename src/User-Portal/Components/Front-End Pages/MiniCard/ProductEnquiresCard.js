@@ -5,6 +5,7 @@ import SellerLandingPage from "../SellerLandingPage";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import OwnerEnquiryTable from "../../../TemplateAssets/AdvanceTables/OwnerEnquiryTable";
 import { Link } from "react-router-dom";
+import SellerEnquiryTable from "../../../TemplateAssets/AdvanceTables/SellerEnquiryTable";
 function ProductEnquiresCard() {
     return (
         <>
@@ -15,43 +16,38 @@ function ProductEnquiresCard() {
                 <Container>
                     <Row className="mt-5">
                         <Col lg={12}>
-                            <Card >
+                            <Card className="mb-3" >
                                 <Card.Header className="bg-light d-flex justify-content-between">
                                     <h5>Enquiries</h5>
-                                    <div id="orders-actions">
-                                        <Button
-                                            variant="falcon-default"
-                                            size="sm"
-                                            icon="plus"
-                                            transform="shrink-3"
-                                        >
-                                            <span className="d-none d-sm-inline-block ms-1">New</span>
-                                        </Button>
-                                        <Button
-                                            variant="falcon-default"
-                                            size="sm"
-                                            icon="filter"
-                                            transform="shrink-3"
-                                            className="mx-2"
-                                        >
-                                            <span className="d-none d-sm-inline-block ms-1">Filter</span>
-                                        </Button>
-                                        <Button
-                                            variant="falcon-default"
-                                            size="sm"
-                                            icon="external-link-alt"
-                                            transform="shrink-3"
-                                        >
-                                            <span className="d-none d-sm-inline-block ms-1">Export</span>
-                                        </Button>
-                                    </div>
+                                    
                                 </Card.Header>
                                 <Card.Body>
-                                    <div className="btn-group">
-                                        <Button as={Link} to="/sellerEnquirescard" className="bg-secondary border-light">Product Enquiriy</Button>
-                                        <Button as={Link} to="/ownerEnquirescard" className="bg-secondary border-light">Service Enquriy</Button>
+                                    <div class="d-flex justify-content-start">
+                                        <ul class=" nav nav-tabs " role="tablist">
+                                            <div className="d-flex flex-row">
+                                                <div className="">
+                                                    <li class="nav-item" role="presentation">
+                                                        <a style={{ color: "#003f6b", fontSize: "18px" }} class="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">Product Enquiry</a>
+                                                    </li>
+                                                </div>
+                                                <div className="">
+                                                    <li class="nav-item" role="presentation">
+                                                        <a style={{ color: "#003f6b", fontSize: "18px" }} class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">Freelancer Enquiry</a>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </ul>
                                     </div>
-                                    <OwnerEnquiryTable />
+                                    <div class="col-lg-12 mt-lg-0">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tab-1" role="tabpanel">
+                                                <OwnerEnquiryTable />
+                                            </div>
+                                            <div class="tab-pane active" id="tab-2" role="tabpanel">
+                                                <SellerEnquiryTable/>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </Card.Body>
                             </Card>
                         </Col>

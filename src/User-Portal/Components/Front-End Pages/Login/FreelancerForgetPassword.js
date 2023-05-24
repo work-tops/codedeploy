@@ -41,7 +41,7 @@ function ForgetPasswordFreelancer() {
 
 
 
-                                            <p className="mb-0 mt-4 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">
+                                            {/* <p className="mb-0 mt-4 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">
                                                 Read our{' '}
                                                 <Link
                                                     className="text-decoration-underline text-white"
@@ -53,7 +53,7 @@ function ForgetPasswordFreelancer() {
 
                                                     conditions{' '}
                                                 </Link>
-                                            </p>
+                                            </p> */}
                                         </div>
                                     </Col>
                                     <Col

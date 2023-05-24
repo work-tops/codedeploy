@@ -10,16 +10,28 @@ function ProposalCard() {
                 <Col lg={12} className="mb-5">
                     <NavbarStandard />
                 </Col>
-                <Col lg={12}>
-                    <Card className="m-5">
-                        <Card.Header as="h5" className="bg-light text-uppercase">
-                            Proposals
+                <div className="container mt-5">
+                    <Card className="mb-3">
+                        <Card.Header className="text-uppercase bg-light"> 
+                            <h5>Proposals</h5>
                         </Card.Header>
                         <Card.Body>
                             <ProposalsTable />
                         </Card.Body>
                     </Card>
-                </Col>
+                </div>
+                {/* <Col lg={12}>
+                    <Card className="mb-3 container">
+
+                        <FrontEndAllProducts />
+
+                        <Card.Header as="h5" className="bg-light text-uppercase">
+                            Proposals
+                        </Card.Header>
+                        <Card.Body>
+                        </Card.Body>
+                    </Card>
+                </Col> */}
             </Row>
         </>
     )

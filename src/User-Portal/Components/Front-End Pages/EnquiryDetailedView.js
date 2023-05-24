@@ -4,7 +4,7 @@ import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile from '../Projectimages/Handyman.jpg'
 import { Link } from "react-router-dom";
-
+import file from '../Projectimages/BathroomFitting.jpg'
 function OwnerEnquiryDetails() {
     const [show, setShow] = useState(false);
 
@@ -21,7 +21,7 @@ function OwnerEnquiryDetails() {
                         <Col lg={12}>
                             <Card className="mt-5 mb-3">
                                 <Card.Header className="d-flex justify-content-end bg-light">
-                                    <Button as={Link} to="/ownerEnquirescard" className="bg-danger border-0">Close the Query</Button>
+                                    <Button as={Link} to="/Enquirescard" className="bg-danger border-0">Close the Query</Button>
                                 </Card.Header>
                                 <Card.Body>
                                     <div>
@@ -84,11 +84,12 @@ function OwnerEnquiryDetails() {
                                             <Form.Label className="text-900">
                                                 Description
                                             </Form.Label>
-                                            <Form.Control
-                                                as="textarea" id="ask_question"
-                                                value={"Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit,Lorem ipsum dolor sit amet, consectetur adipiscing elit,Lorem ipsum dolor sit amet, consectetur adipiscing elit,,Lorem ipsum dolor sit amet, consectetur adipiscing elit,"}
-                                                placeholder='Type Your Message Here'
-                                                rows={4} />
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum
+                                                dolor sit amet, consectetur adipiscing elit,Lorem ipsum dolor sit amet,
+                                                consectetur adipiscing elit,Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit,,Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                            </p>
                                         </Form.Group>
 
                                     </Form>
@@ -127,25 +128,44 @@ function OwnerEnquiryDetails() {
                                     </Row>
 
 
-                                    <h6 style={{ fontSize: '16px' }} className="mb-3">
-                                        Conversations
-                                    </h6>
-                                    <Card className="mb-3">
+                                    <Card className="mb-3" style={{ background: '#f3f3f3' }}>
                                         <Card.Body>
                                             <Row>
-                                                <Col className="mt-3" lg={3}>
+                                                <Col className="" lg={3}>
                                                     <img src={profile} height="60px" width="60px" className="m-3 rounded-circle" />
                                                 </Col>
-                                                <Col className="mt-3" lg={8}>
-                                                    <p style={{ fontSize: '14px' }} className="">
-                                                        Hi I'm Peter I've like to clarify some doubts here...
+                                                <Col className="" lg={9}>
+                                                    <p style={{ fontSize: '14px' }} className="text-justify mb-0">
+                                                        How are you? Sir / Madam Please send admin access details to website,
+                                                        Bitrix and email host.Also Price £200.00
                                                     </p>
-                                                    <Button
-                                                        onClick={handleShow}
-                                                        style={{ background: '#003f6b', fontSize: '14px' }}
-                                                        className="btn mb-3 text-uppercase border-0">
-                                                        Reply
-                                                    </Button>
+                                                    {/* <Button
+                                                                    onClick={handleShow}
+                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
+                                                                    className="btn mb-3 text-uppercase border-0">
+                                                                    Reply
+                                                                </Button> */}
+                                                </Col>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
+                                    <Card className="mb-3" style={{ background: '#f3f3f3' }}>
+                                        <Card.Body>
+                                            <Row>
+                                                <Col className="" lg={9}>
+                                                    <p style={{ fontSize: '14px' }} className="text-justify mb-0">
+                                                        How are you? Sir / Madam Please send admin access details to website,
+                                                        Bitrix and email host.Also Price £200.00
+                                                    </p>
+                                                    {/* <Button
+                                                                    onClick={handleShow}
+                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
+                                                                    className="btn mb-3 text-uppercase border-0">
+                                                                    Reply
+                                                                </Button> */}
+                                                </Col>
+                                                <Col className="" lg={3}>
+                                                    <img src={file} height="60px" width="60px" className="m-3 rounded-circle" />
                                                 </Col>
                                             </Row>
                                         </Card.Body>

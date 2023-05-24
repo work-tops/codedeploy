@@ -38,7 +38,7 @@ function SignUpPage(hasLabel) {
             toast.success('Successfully Registered')
             setForm({});
             // clearForm();
-            history.push('/owner');
+            history.push('/projectowner');
         } else {
             toast.error('Something went wrong')
         }
@@ -90,7 +90,7 @@ function SignUpPage(hasLabel) {
                                                 <h4 className="text-capitalize">Project Owner SignUp </h4>
                                                 <div>
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">First Name</Form.Label>}
+                                                        {hasLabel && <Form.Label className="text-700">First Name<span className="text-danger">*</span></Form.Label>}
                                                         <Form.Control
                                                             type="text"
                                                             required name="first_name"
@@ -101,7 +101,7 @@ function SignUpPage(hasLabel) {
                                                         />
                                                     </Form.Group>
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">Last Name</Form.Label>}
+                                                        {hasLabel && <Form.Label className="text-700">Last Name<span className="text-danger">*</span></Form.Label>}
                                                         <Form.Control
                                                             type="text"
                                                             required name="last_name"
@@ -112,7 +112,7 @@ function SignUpPage(hasLabel) {
                                                         />
                                                     </Form.Group>
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">Email Address</Form.Label>}
+                                                        {hasLabel && <Form.Label className="text-700">Email Address<span className="text-danger">*</span></Form.Label>}
                                                         <Form.Control
                                                             type="email"
                                                             required
@@ -125,7 +125,7 @@ function SignUpPage(hasLabel) {
                                                     </Form.Group>
 
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">Password</Form.Label>}
+                                                        {hasLabel && <Form.Label className="text-700">Password<span className="text-danger">*</span></Form.Label>}
                                                         <Form.Control
                                                             type="password"
                                                             required
@@ -162,15 +162,9 @@ function SignUpPage(hasLabel) {
                                                     >
                                                         Sign Up
                                                     </Button>
-                                                    {/* <Link to="/owner"> <Button
-                                                            style={{ background: '#df2020' }}
-                                                            className="border-0 d-block m-2 text-uppercase"
-                                                            id="back">
-                                                            Back
-                                                        </Button>
-                                                    </Link> */}
-                                                    {/* </div> */}
-                                                    <p className="text-center fw-semibold text-900 mt-3 mb-3">Already Have an Account ? <Link to='/owner'>Login</Link></p>
+                                                    <p className="text-center fw-semibold text-900 mt-3 mb-3">Already Have an Account ? <Link to='/projectowner'>Login</Link></p>
+                                                    {/* Social Buttons*/}
+                                                    <SocialAuthButtons/>
                                                 </div>
                                             </Form >
                                         }
@@ -180,7 +174,7 @@ function SignUpPage(hasLabel) {
                                                 <h6 className="text-justify text-uppercase">Freelancer Sign Up :</h6>
                                                 <div>
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">First Name</Form.Label>}
+                                                        {hasLabel && <Form.Label className="text-700">First Name<span className="text-danger">*</span></Form.Label>}
                                                         <Form.Control
                                                             type="text"
                                                             autoComplete="off"
@@ -192,7 +186,7 @@ function SignUpPage(hasLabel) {
                                                         />
                                                     </Form.Group>
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">Last Name</Form.Label>}
+                                                        {hasLabel && <Form.Label className="text-700">Last Name<span className="text-danger">*</span></Form.Label>}
                                                         <Form.Control
                                                             autoComplete="off"
                                                             required
@@ -204,7 +198,7 @@ function SignUpPage(hasLabel) {
                                                         />
                                                     </Form.Group>
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">Email address</Form.Label>}
+                                                        {hasLabel && <Form.Label className="text-700">Email address<span className="text-danger">*</span></Form.Label>}
                                                         <Form.Control
                                                             autoComplete="off"
                                                             required
@@ -217,7 +211,7 @@ function SignUpPage(hasLabel) {
                                                         />
                                                     </Form.Group>
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">Phone Number</Form.Label>}
+                                                        {hasLabel && <Form.Label className="text-700">Phone Number<span className="text-danger">*</span></Form.Label>}
                                                         <Form.Control
                                                             autoComplete="off"
                                                             required
@@ -229,7 +223,7 @@ function SignUpPage(hasLabel) {
                                                         />
                                                     </Form.Group>
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">ID Verification</Form.Label>}
+                                                        {hasLabel && <Form.Label className="text-700">ID Verification<span className="text-danger">*</span></Form.Label>}
                                                         <Form.Select>
                                                             <option value="Driving License">Driving License</option>
                                                             <option value="Passport">Passport</option>

@@ -24,7 +24,7 @@ function GetQuote() {
             );
         }
     });
-    
+
     return (
         <>
             <Container>
@@ -48,39 +48,31 @@ function GetQuote() {
                                         <Row>
                                             <Col lg={6}>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="fw-semibold text-900">
+                                                    <Form.Label className="fw-semibold text-uppercase text-900">
                                                         Stone Category<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
-                                                    <Form.Select>
-                                                        <option>Select</option>
-                                                        <option>Quartz</option>
-                                                        <option>Marble</option>
-                                                    </Form.Select>
+                                                    <p className="text-capitalize text-900">Marble</p>
                                                 </Form.Group>
                                             </Col>
                                             <Col lg={6}>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="fw-semibold text-900">
+                                                    <Form.Label className="fw-semibold text-uppercase text-900">
                                                         Thickness<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
-                                                    <Form.Select>
-                                                        <option>Select</option>
-                                                        <option>20mm</option>
-                                                        <option>30mm</option>
-                                                    </Form.Select>
+                                                    <p className="text-capitalize text-900">20mm</p>
                                                 </Form.Group>
                                             </Col>
                                             <Col lg={12}>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="fw-semibold text-900">
+                                                    <Form.Label className="fw-semibold text-uppercase text-900">
                                                         Stone Name<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
-                                                    <Form.Control type="text" />
+                                                    <p className="text-capitalize text-900">Calacatta Light Quartz</p>
                                                 </Form.Group>
                                             </Col>
                                             <Col lg={12}>
                                                 <div className="mb-3" >
-                                                    <Form.Label className="fw-semibold text-900">
+                                                    <Form.Label className="fw-semibold text-uppercase text-900">
                                                         Attach Kitchen Plan
                                                     </Form.Label>
 
@@ -137,13 +129,14 @@ function GetQuote() {
                                                             </Flex>
                                                         </div>
                                                     )}
-                                                    <small>Minimum 5 and Maximum 10 Files Allowed</small>
+                                                    <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
+                                                    <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
                                                 </div>
                                             </Col>
                                             <Col lg={12}>
 
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="fw-semibold text-900">
+                                                    <Form.Label className="fw-semibold text-uppercase text-900">
                                                         Dimensions<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
                                                     <Form.Control as="textarea" rows={5} />
@@ -157,7 +150,7 @@ function GetQuote() {
                                 <Card className="mb-3">
                                     <Card.Body>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-900">
+                                            <Form.Label className="fw-semibold text-uppercase text-900">
                                                 When will you be ready for template?<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             {/*  */}
@@ -207,15 +200,19 @@ function GetQuote() {
                                                 </Form.Check.Label>
                                             </Form.Check>
                                             {/*  */}
-
                                         </Form.Group>
+                                        <div className="d-flex justify-content-center align-items-center">
+                                            <Button as={Link} to="/projectowner" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
+                                            >Request Quote
+                                            </Button>
+                                        </div>
                                     </Card.Body>
                                 </Card>
-                                <Card className="mb-3">
+                                {/* <Card className="mb-3">
                                     <Card.Body>
 
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-900">
+                                            <Form.Label className="fw-semibold text-uppercase text-900">
                                                 Tell us About You<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control type="text"
@@ -235,13 +232,9 @@ function GetQuote() {
                                                 placeholder="Postcode (of your project)"
                                             />
                                         </Form.Group>
-                                        <div className="d-flex justify-content-center align-items-center">
-                                            <Button as={Link} to="/owner" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
-                                            >Request Quote
-                                            </Button>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
+                                        </Card.Body>
+                                    </Card> */}
+
                                 <p className="text-center" style={{ fontSize: '14px' }}>We will create a Myproject account for you (unless already created). Read our terms of use and privacy notice.</p>
                             </Form>
                         </Row>

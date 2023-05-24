@@ -36,7 +36,7 @@ function FreelancerResetPwd() {
                                             </div>
 
                                         </div>
-                                        <div className="mt-3 mb-4 mt-md-4 mb-md-5 light">
+                                        {/* <div className="mt-3 mb-4 mt-md-4 mb-md-5 light">
                                             <p className="mb-0 mt-4 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">
                                                 Read our{' '}
                                                 <Link
@@ -53,7 +53,7 @@ function FreelancerResetPwd() {
                                                     conditions{' '}
                                                 </Link>
                                             </p>
-                                        </div>
+                                        </div> */}
                                     </Col>
                                     
                                     {/* Content */}

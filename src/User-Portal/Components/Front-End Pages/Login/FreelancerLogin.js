@@ -5,6 +5,7 @@ import shape1 from '../../../TemplateAssets/assets/illustrations/shape-1.png';
 import { Card, Button, Col, Form, Row, Container } from 'react-bootstrap';
 import toast, { Toaster } from 'react-hot-toast';
 import { createData, getAllData } from '../../../../Services/ProxyService';
+import SocialAuthButtons from '../../../TemplateAssets/authentication/SocialAuthButtons';
 
 const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
 
@@ -112,8 +113,10 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                               <h3 className="mt-5 opacity-75 text-white"> Welcome </h3>
                             </div>
                             {isToggle == false ? <p className="mt-5 text-white">
-                              Already Have an Account ?
-                              <br />
+                              <p className='mb-2'>
+                                Already Have an Account ?
+                              </p>
+
                               <a className="btn btn-outline-light mt-2 px-4" onClick={() => { setToggle(true) }}>
                                 Login
                               </a>
@@ -129,14 +132,14 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                           <div className="mt-3 mb-4 mt-md-4 mb-md-5 light">
                             {leftSideContent}
 
-                            {footer && (
+                            {/* {footer && (
                               <p className="mb-0 mt-4 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">
                                 Read our{' '}
                                 <Link className="text-decoration-underline text-white" to="#!">
                                   terms and conditions
                                 </Link>
                               </p>
-                            )}
+                            )} */}
                           </div>
                         </Col>
                         <Col
@@ -147,25 +150,25 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                               <h4>Freelancer Registration</h4>
                               <Form onSubmit={handleSubmit}>
                                 <Form.Group className='mb-3'>
-                                  <Form.Label className='text-700'>First Name</Form.Label>
+                                  <Form.Label className='text-700'>First Name<span className="text-danger">*</span></Form.Label>
                                   <input className='form-control' placeholder="First Name" value={formData.first_name} name="first_name" onChange={handleFieldChange} type="text" />
                                 </Form.Group>
                                 <Form.Group
                                   className='mb-3'
                                 >
-                                  <Form.Label className='text-700'>Last Name</Form.Label>
+                                  <Form.Label className='text-700'>Last Name<span className="text-danger">*</span></Form.Label>
                                   <input className='form-control' placeholder="Last Name" value={formData.last_name} name="last_name" onChange={handleFieldChange} type="text" />
                                 </Form.Group>
                                 <Form.Group
                                   className='mb-3'
                                 >
-                                  <Form.Label className='text-700'>Email address</Form.Label>
+                                  <Form.Label className='text-700'>Email address<span className="text-danger">*</span></Form.Label>
                                   <input className='form-control' placeholder={'Email Address'} value={formData.email} name="email" onChange={handleFieldChange} type="email" />
                                 </Form.Group>
                                 <Form.Group
                                   className='mb-3'
                                 >
-                                  <Form.Label className='text-700'>Password</Form.Label>
+                                  <Form.Label className='text-700'>Password<span className="text-danger">*</span></Form.Label>
                                   <input className='form-control' placeholder={'Password'} value={formData.password} name="password" onChange={handleFieldChange} type="password" />
                                 </Form.Group>
                                 <Form.Group
@@ -173,6 +176,21 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                 >
                                   <Form.Label className='text-700'>Phone</Form.Label>
                                   <input className='form-control' placeholder={'Phone'} value={formData.phone} name="phone" onChange={handleFieldChange} type="number" />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                 <Form.Label className="text-700">ID Verification<span className="text-danger">*</span></Form.Label>
+                                  <Form.Select>
+                                    <option value="Driving License">Driving License</option>
+                                    <option value="Passport">Passport</option>
+                                    <option value="Bio Metric">Bio Metric</option>
+                                  </Form.Select>
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                  <Button
+                                    className="d-block upd-fil"
+                                  >
+                                    Upload File
+                                  </Button>
                                 </Form.Group>
                                 <Row className="justify-content-between align-items-center">
                                   <Col xs="auto">
@@ -187,16 +205,19 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                 <Button type="submit" style={{ background: '#003f6b' }} className="mt-3 w-100 border-0" disabled={!formData.email || !formData.password}>
                                   Register
                                 </Button>
+                                <div className='mt-3'>
+                                <SocialAuthButtons/>
+                                </div>
                               </Form>
                             </div> : <div className="p-4 p-md-5 flex-grow-1">
                               <h4>Freelancer Login</h4>
                               <Form onSubmit={handleSubmit}>
                                 <Form.Group className='mb-3'>
-                                  <Form.Label className='text-700'>Email address</Form.Label>
+                                  <Form.Label className='text-700'>Email address<span className="text-danger">*</span></Form.Label>
                                   <input className='form-control' placeholder={'Email address'} value={formData.email} name="email" onChange={handleFieldChange} type="email" />
                                 </Form.Group>
                                 <Form.Group className='mb-3'>
-                                  <Form.Label className='text-700'>Password</Form.Label>
+                                  <Form.Label className='text-700'>Password<span className="text-danger">*</span></Form.Label>
                                   <input className='form-control' placeholder={'Password'} value={formData.password} name="password" onChange={handleFieldChange} type="password" />
                                 </Form.Group>
                                 <Row className="justify-content-between align-items-center">

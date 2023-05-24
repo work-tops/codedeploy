@@ -28,7 +28,7 @@ function AddServiceCard() {
                             </Card.Body>
                         </Card>
                     ) : ( */}
-                        <div className="m-5">
+                        <div className="container">
                             <AllServices />
                         </div>
                     {/* )} */}

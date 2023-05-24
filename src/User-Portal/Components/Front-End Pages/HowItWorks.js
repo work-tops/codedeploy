@@ -27,17 +27,19 @@ function HowItWorks() {
                 <Col lg={12} className="mt-3">
                     <div className="row">
                         <div className="col-lg-7">
-                            <div className="mt-8 text-center">
+                            <div className="text-center">
                                 <div class="col-md-11 col-lg-11 col-xl-11 pb-7 pb-xl-9 ">
                                     <h3 className="text-dark fw-light">
-                                        <span className="typed-start fw-bold" >
-                                            A KBB Certified Platform Chosen By
-                                            Professionals Who Love Doing What They Do
-                                        </span>
+                                        <div style={{ position: 'relative', top: '5rem' }}>
+                                            <span className="typed-start fw-bold" >
+                                                A KBB Certified Platform Chosen By
+                                                Professionals Who Love Doing What They Do
+                                            </span>
+                                            <p className="mt-3 mb-3 text-dark">
+                                                Every project is precious for the right professional
+                                            </p>
+                                        </div>
                                     </h3>
-                                    <p className="text-dark">
-                                        Every project is precious for the right professional
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +81,7 @@ function HowItWorks() {
                                                     All you need to do is give the best description about your requirement.
                                                 </p>
                                                 <div className="d-flex justify-content-center">
-                                                    <Button as={Link} to="/owner" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
+                                                    <Button className="mb-5" as={Link} to="/projectowner" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
                                                 </div>
                                             </div>
                                         </div>

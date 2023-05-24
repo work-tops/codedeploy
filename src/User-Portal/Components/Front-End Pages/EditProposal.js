@@ -22,80 +22,7 @@ import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
 import Flex from '../../TemplateAssets/common/Flex';
 import CardDropdown from '../../TemplateAssets/common/CardDropdown';
 
-function JobProposal() {
-    const jobdatas = sessionStorage.getItem("jobdata")
-    const jobdetails = JSON.parse(jobdatas)
-    console.log(jobdetails)
-    const [form, setform] = useState([])
-    const [serviceFee, setServiceFee] = useState(20)
-    const [amountUReceive, setAmountUReceive] = useState(20)
-    const [user, setUser] = useState({});
-    const history = useHistory();
-    console.log(form)
-
-    const handleChange = (e) => {
-        const myData = { ...form };
-        myData[e.target.name] = e.target.value;
-        if (e.target.name == 'proposal_amount') {
-            var _amount = serviceFee + parseInt(e.target.value)
-            setAmountUReceive(_amount);
-        }
-        setform(myData);
-    }
-
-    const AddJobproposal = async () => {
-        const jobproposal = {
-            job: jobdetails,
-            jobId: jobdetails._id,
-            proposal_amount: form.proposal_amount,
-            commission: serviceFee,
-            amount: amountUReceive,
-            completed_duration: form.completed_duration,
-            cover_letter: form.cover_letter,
-            attachments: [],
-            created_by: user._id,
-            is_approved: false
-        }
-        const response = await createData("proposal/new", jobproposal)
-        if (response.status === 201) {
-            toast.success('Successfully Jobproposal Added')
-            history.push(`/jobdetails/${jobdetails?._id}`);
-        } else {
-            toast.error('Something went wrong')
-        }
-        console.log(response)
-    }
-
-    const formsubmit = (e) => {
-        e.preventDefault();
-        // uploadFile();
-        AddJobproposal();
-    }
-    const cleardata = () => {
-        setform({
-            proposal_amount: "",
-            commission: "",
-            amount: "",
-            completed_duration: "",
-            cover_letter: "",
-        });
-    }
-
-    // Level comparing 
-    let lavel = ""
-    if (jobdetails.budget < 1000) {
-        lavel = "Low"
-    } else if (jobdetails.budget > 1000 || jobdetails.budget < 3000) {
-        lavel = "Medium"
-    } else if (jobdetails.budget > 3001) {
-        lavel = "High"
-    }
-    useEffect(() => {
-        var _user = sessionStorage.getItem('user');
-        var _json = JSON.parse(_user);
-        setUser(_json);
-    }, [])
-
+function EditProposal() {
 
     // Upload Files(Optional)
     const [cover, setCover] = useState();
@@ -125,11 +52,11 @@ function JobProposal() {
                         <Col lg={8}>
                             <Card className="mb-3">
                                 <Card.Header as="h4" className="bg-light text-uppercase">
-                                    Project Proposal
+                                    Edit Your Proposal
                                 </Card.Header>
                                 <Card.Body>
                                     {/* <h6 >Proposal Amount</h6> */}
-                                    <Form onSubmit={(e) => { formsubmit(e) }}>
+                                    <Form>
                                         <Form.Group className='mb-3'>
                                             <Form.Label style={{ fontSize: '14px' }} className=" text-700">
                                                 Proposal Amount<span className="ms-1 text-danger">*</span>
@@ -139,8 +66,9 @@ function JobProposal() {
                                                 <Form.Control
                                                     required
                                                     name="proposal_amount"
-                                                    value={form.proposal_amount}
-                                                    onChange={(e) => { handleChange(e) }}
+                                                    // value={form.proposal_amount}
+                                                    // onChange={(e) => { handleChange(e) }}
+                                                    value="200"
                                                     type="number"
                                                     placeholder="Enter Your Proposal Amount"
                                                 />
@@ -154,11 +82,11 @@ function JobProposal() {
                                             <Card.Body>
 
                                                 <div className="d-flex justify-content-between">
-                                                    <p className="fw-bold">(<span className="text-success">£</span>) - {serviceFee}</p>
+                                                    <p className="fw-bold">(<span className="text-success">£</span>) - 20</p>
                                                     <p style={{ fontSize: '12px' }} className="me-2">"myproject.ai" Service Fee<i className="ms-2 text-success fa-solid fa-circle-info "></i></p>
                                                 </div>
                                                 <div className="d-flex justify-content-between">
-                                                    <p className=" fw-bold">(<span className="text-success">£</span>) - {amountUReceive}</p>
+                                                    <p className=" fw-bold">(<span className="text-success">£</span>) - 220</p>
                                                     <p style={{ fontSize: '12px' }} className="me-2">"Amount You'll Receive after" Service Fee education <i className="ms-2 text-success fa-solid fa-circle-info"></i></p>
                                                 </div>
                                             </Card.Body>
@@ -170,8 +98,9 @@ function JobProposal() {
                                             <Form.Control
                                                 required
                                                 name="completed_duration"
-                                                value={form.completed_duration}
-                                                onChange={(e) => { handleChange(e) }}
+                                                value="2 Years"
+                                                // value={form.completed_duration}
+                                                // onChange={(e) => { handleChange(e) }}
                                                 type="text"
                                                 className=""
                                                 placeholder="Add completion time" />
@@ -184,8 +113,14 @@ function JobProposal() {
                                                 as="textarea"
                                                 required
                                                 name="cover_letter"
-                                                value={form.cover_letter}
-                                                onChange={(e) => { handleChange(e) }}
+                                                value="
+                                                How are you? Sir / Madam Please send admin access details to website, Bitrix and email host.Also Price £200.00 your Whatsapp numberWill start nowPromise SIX star service.Please see 210 five star reviews of many gigs that we have done in our profile Deposit £200 Many thanks David Soanes, Worthing BN11 4DT England
+
+Please see my cv at this link https://surl.link/q0Lck3 https://surl.link/accessRestricted.html? Decline u=34452 password is abcdFor screen sharing:------------------Windows: Please search and open Quick Assist App and | will send you the codeApple Mac: | will send you a Zoom link. Please send your €MAl AAAESS. ~-mmmemmroem oo
+TEAM
+Our team of five experts consists of graphic artists, Office 365, IT Support, Wordpress and online marketing consultantsREFEREESReferees for email migration ( Please contact by email only )Mr Mark Bowen mark@supportedlivinggateway.comMr Colin McGregor colin@tranquilico.comMiss Tracie Mckenna tracie.mckenna@1stresponse.org.uk
+                                                "
+                                                // onChange={(e) => { handleChange(e) }}
                                                 placeholder="Cover Letter"
                                                 rows={6} />
                                         </Form.Group>
@@ -247,8 +182,6 @@ function JobProposal() {
                                                     </Flex>
                                                 </div>
                                             )}
-                                            <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
-                                            <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
 
                                         </div>
                                         <div className="d-flex justify-content-end">
@@ -264,11 +197,10 @@ function JobProposal() {
                             {/*  Customize Details  */}
                             <Card className="mb-3">
                                 <Card.Header className="py-2 text-center  bg-light">
-                                    <h4 className="mb-0">{jobdetails?.project_title}</h4>
+                                    <h4 className="mb-0">WHITE ATTICA SUPER NATURAL QUARTZ</h4>
                                 </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
-
                                         <li>
                                             <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
                                                 <Icon icon="tabler:currency-pound"
@@ -277,7 +209,7 @@ function JobProposal() {
                                                     color="#003f6b"
                                                     width="20"
                                                     height="20" />
-                                                {lavel}</p>
+                                                Low </p>
                                         </li>
                                         <li>
                                             <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
@@ -287,7 +219,7 @@ function JobProposal() {
                                                     color="#003f6b"
                                                     width="20"
                                                     height="20" />
-                                                {jobdetails?.location}
+                                                Chennai
                                             </p>
                                         </li>
                                         <li>
@@ -299,7 +231,7 @@ function JobProposal() {
                                                     style={{ marginTop: '-1px' }}
                                                     className="me-1"
                                                 />
-                                                {jobdetails?.category}
+                                                Attic
                                             </p>
                                         </li>
                                         <li>
@@ -311,7 +243,7 @@ function JobProposal() {
                                                     style={{ marginTop: '-1px' }}
                                                     className="me-1"
                                                 />
-                                                Duration: {jobdetails?.project_duration}</p>
+                                                Duration: 2 Years</p>
                                         </li>
                                     </ul>
                                 </Card.Body>
@@ -327,4 +259,4 @@ function JobProposal() {
         </>
     )
 }
-export default JobProposal
+export default EditProposal

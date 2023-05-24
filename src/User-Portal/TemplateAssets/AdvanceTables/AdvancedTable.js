@@ -383,7 +383,7 @@ const AdvancedTable = () => {
     const data = product.map(product => ({
         productId: product._id,
         image: <img src={product.attachments[0].url} width="40px" height="35px" />,
-        name: product.name,
+        name: <p className="text-uppercase">{product.name}</p>,
         email: product.seller_email,
         price: `£${product.variant[0].pricing.price}`,
         quantity: `${product.variant[0].inventory.quantity} Pcs`,
@@ -391,11 +391,11 @@ const AdvancedTable = () => {
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
+                {/* <Dropdown.Item>Enable</Dropdown.Item> */}
                 <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+                {/* <Dropdown.Item>Reassign</Dropdown.Item> */}
+                <Dropdown.Item className='text-danger'>Disable</Dropdown.Item>
+                {/* <Dropdown.Item className='text-danger'>Delete</Dropdown.Item> */}
             </div>
         </CardDropdown>,
     }));
@@ -404,8 +404,8 @@ const AdvancedTable = () => {
 
     function BulAction({ selectedRowIds }) {
         return (
-            <Row className="flex-between-center mb-3">
-                <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
+            <Row className=" mb-3">
+                <Col xs={12} md={8} lg={7} sm="12" className="mt-3  pe-0">
                     <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
@@ -415,7 +415,7 @@ const AdvancedTable = () => {
                         }
                     </h5>
                 </Col>
-                <Col xs={8} sm="auto" className="ms-auto text-end ps-0">
+                <Col xs={12} md={4} lg={5} sm="12" className="mt-3 ms-auto text-end ps-0">
                     {Object.keys(selectedRowIds).length > 0 ? (
                         <div className="d-flex">
                             <Form.Select size="sm" aria-label="Bulk actions">

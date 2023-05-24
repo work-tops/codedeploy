@@ -10,6 +10,7 @@ import mastercard from '../../Projectimages/master-card.png'
 import PaymentTable from "../../../TemplateAssets/AdvanceTables/PaymentTable";
 import InvoiceTable from "../../../TemplateAssets/AdvanceTables/InvoiceTable";
 import RecentlyPurchased from "../../../TemplateAssets/AdvanceTables/RecentlyPurchased";
+import InvoiceTableCard from "../../../TemplateAssets/AdvanceTables/InvoiceDueTable";
 
 function MyProfile() {
     const [user, setUser] = useState({});
@@ -34,6 +35,7 @@ function MyProfile() {
 
     const handleClose1 = () => setShow1(false);
     const handleShow1 = () => setShow1(true);
+
 
     return (
 
@@ -176,7 +178,7 @@ function MyProfile() {
                                             </Card.Header>
                                             <Card.Body>
                                                 <Row className="g-3 h-100">
-                                                    <Col sm={6} lg={12}>
+                                                    <Col sm={6} md={12} lg={12}>
                                                         <Card className="position-relative rounded-4">
                                                             <Card.Body className="p-3 pt-5 pt-xxl-4">
                                                                 <img
@@ -201,7 +203,7 @@ function MyProfile() {
                                                             </Card.Body>
                                                         </Card>
                                                     </Col>
-                                                    <Col sm={4} lg={12}>
+                                                    <Col sm={12}  lg={12}>
                                                         <Table borderless className="fw-medium font-sans-serif fs--1 mb-2">
                                                             <tbody>
                                                                 <tr>
@@ -242,7 +244,7 @@ function MyProfile() {
                                         </Card>
                                         {/* Payment */}
                                     </Col>
-                                    <Col lg={8} md={6}>
+                                    <Col  lg={8} md={6}>
                                         <PaymentTable />
                                     </Col>
                                 </Row>
@@ -316,10 +318,9 @@ function MyProfile() {
                                 <RecentlyPurchased />
                             </Col>
                             {/*  */}
-                            <Col xs={12}>
-                                <InvoiceTable />
+                            <Col xs={12} className="mb-4">
+                                <InvoiceTableCard />
                             </Col>
-
                         </Row>
                         {/* Content */}
                     </Col>

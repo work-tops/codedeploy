@@ -24,7 +24,7 @@ function RequestQuote() {
                                 <Card className="mb-3">
                                     <Card.Body>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-900">
+                                            <Form.Label className="fw-semibold text-uppercase text-900">
                                                 Describe Your Job<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control as="textarea" placeholder="
@@ -35,7 +35,7 @@ function RequestQuote() {
                                 <Card className="mb-3">
                                     <Card.Body>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-900">
+                                            <Form.Label className="fw-semibold text-uppercase text-900">
                                                 What Service do you need ?<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control type="text"
@@ -46,7 +46,7 @@ function RequestQuote() {
                                 <Card className="mb-3">
                                     <Card.Body>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-900">
+                                            <Form.Label className="fw-semibold text-uppercase text-900">
                                                 When You Would like the job to start ?<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             {/*  */}
@@ -96,15 +96,19 @@ function RequestQuote() {
                                                 </Form.Check.Label>
                                             </Form.Check>
                                             {/*  */}
-
+                                            <div className="d-flex justify-content-center align-items-center">
+                                            <Button as={Link} to="/projectowner" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
+                                            >Request Quote
+                                            </Button>
+                                        </div>
                                         </Form.Group>
                                     </Card.Body>
                                 </Card>
-                                <Card className="mb-3">
+                                {/* <Card className="mb-3">
                                     <Card.Body>
 
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-900">
+                                            <Form.Label className="fw-semibold text-uppercase text-900">
                                                 Tell us About You<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control type="text"
@@ -124,13 +128,9 @@ function RequestQuote() {
                                                 placeholder="Postcode (of your project)"
                                             />
                                         </Form.Group>
-                                        <div className="d-flex justify-content-center align-items-center">
-                                            <Button as={Link} to="/owner" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
-                                            >Request Quote
-                                            </Button>
-                                        </div>
+                                       
                                     </Card.Body>
-                                </Card>
+                                </Card> */}
                                 <p className="text-center" style={{fontSize:'14px'}}>We will create a Myproject account for you (unless already created). Read our terms of use and privacy notice.</p>
                             </Form>
                         </Row>

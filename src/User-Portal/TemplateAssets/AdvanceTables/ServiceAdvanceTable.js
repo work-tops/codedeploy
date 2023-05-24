@@ -32,7 +32,7 @@ const columns = [
         accessor: 'priceType',
         Header: 'PriceType'
     },
-    
+
     {
         accessor: 'price',
         Header: 'Price'
@@ -47,7 +47,7 @@ const columns = [
     }
 ];
 
-const ServiceAdvancedTable = () => { 
+const ServiceAdvancedTable = () => {
 
     const [service, setService] = useState([])
 
@@ -55,16 +55,20 @@ const ServiceAdvancedTable = () => {
         var _user = sessionStorage.getItem('user');
         var _json = JSON.parse(_user);
         const response = await getAllData('services/all');
-        var _data = response.data.services.filter(x=> x.created_by == _json._id)
+        var _data = response.data.services.filter(x => x.created_by == _json._id)
         setService(_data);
         sessionStorage.setItem("servicelength", _data.length)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         Serviceslist()
     }, [])
 
     const columns = [
+        {
+            accessor: 'serviceid',
+            Header: 'Service Id'
+        },
         {
             accessor: 'name',
             Header: 'Name'
@@ -85,7 +89,7 @@ const ServiceAdvancedTable = () => {
             accessor: 'priceType',
             Header: 'PriceType'
         },
-    
+
         {
             accessor: 'price',
             Header: 'Price'
@@ -99,28 +103,29 @@ const ServiceAdvancedTable = () => {
             Header: 'Action'
         }
     ];
-        const data = service.map(_service => ({
+    const data = service.map(_service => ({
+        serviceid:'625355',
         name: _service.title,
         priceType: _service.price_type,
         email: _service.email,
         price: _service.price,
-        status:_service.status == "Active"?<span className="badge bg-success p-2">{_service.status}</span> : <span className="badge p-2 bg-warning">{_service.status}</span>,
-        // action: <CardDropdown>
-        //         <div className="py-2">
-        //             <Dropdown.Item>Edit</Dropdown.Item>
-        //             <Dropdown.Item>Enable</Dropdown.Item>
-        //             <Dropdown.Item>View in Store</Dropdown.Item>
-        //             <Dropdown.Item>Deny</Dropdown.Item>
-        //             <Dropdown.Item>Disable</Dropdown.Item>
-        //             <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-        //         </div>
-        //     </CardDropdown>
-      }));
-    
+        status: _service.status == "Active" ? <span className="badge bg-success p-2">{_service.status}</span> : <span className="badge p-2 bg-warning">{_service.status}</span>,
+        action: <CardDropdown>
+            <div className="py-2">
+                <Dropdown.Item>Edit</Dropdown.Item>
+                <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
+                <Dropdown.Item>Deny</Dropdown.Item>
+                <Dropdown.Item>Disable</Dropdown.Item>
+                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+            </div>
+        </CardDropdown>
+    }));
+
     function BulAction({ selectedRowIds }) {
         return (
             <Row className="flex-between-center mb-3">
-                <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
+                <Col xs={12} md={8} lg={7} sm="12" className="mt-3  pe-0">
                     <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
@@ -130,12 +135,12 @@ const ServiceAdvancedTable = () => {
                         }
                     </h5>
                 </Col>
-                        {/* <Row className="flex-end-center mt-2 mb-3">
+                {/* <Row className="flex-end-center mt-2 mb-3">
                             <Col xs="auto">
                                 <AdvanceTableSearchBox table />
                             </Col>
                         </Row> */}
-                <Col xs={8} sm="auto" className="ms-auto text-end ps-0">
+                <Col xs={12} md={4} lg={5} sm="12" className="mt-3 ms-auto text-end ps-0">
                     {Object.keys(selectedRowIds).length > 0 ? (
                         <div className="d-flex">
                             <Form.Select size="sm" aria-label="Bulk actions">

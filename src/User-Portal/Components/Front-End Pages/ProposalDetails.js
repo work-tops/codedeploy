@@ -27,7 +27,9 @@ function ProposalDetails() {
                                     <Card.Body>
                                         <Row>
                                             <Col lg={3}>
-                                                <img src={profile_img} className="mb-3 rounded-circle" width="100px" height="100px" />
+                                                <Link to="/profile_publicview">
+                                                    <img src={profile_img} className="mb-3 rounded-circle" width="100px" height="100px" />
+                                                </Link>
                                             </Col>
                                             <Col lg={9}>
                                                 <Card style={{ border: '1px solid #003f6b' }}>
@@ -104,25 +106,46 @@ function ProposalDetails() {
                                                 </Button>
                                             </div>
                                         </Form>
-                                        <Card className="">
+                                        <Card className="mb-3" style={{ background: '#f3f3f3' }}>
                                             <Card.Body>
                                                 <Row>
-                                                    <Col className="mt-3" lg={3}>
-                                                        <img src={profile_img} height="60px" width="60px" className="m-3 rounded-circle" />
+                                                    <Col className="" lg={3}>
+                                                        <Link to="/profile_publicview">
+                                                            <img src={profile_img} height="60px" width="60px" className="m-3 rounded-circle" />
+                                                        </Link>
                                                     </Col>
-                                                    <Col className="mt-3" lg={8}>
-                                                        <p style={{ fontSize: '14px' }} className="">
-                                                            How are you? Sir / Madam Please send admin access details to website, Bitrix and email host.Also Price £200.00
-                                                            your Whatsapp numberWill start nowPromise SIX star service.Please see 210 five star reviews of
-                                                            many gigs that we have done in our profile Deposit £200
-                                                            Many thanks David Soanes, Worthing BN11 4DT England
+                                                    <Col className="" lg={9}>
+                                                        <p style={{ fontSize: '14px' }} className="text-justify mb-0">
+                                                            How are you? Sir / Madam Please send admin access details to website,
+                                                            Bitrix and email host.Also Price £200.00
                                                         </p>
-                                                        <Button
-                                                            onClick={handleShow}
-                                                            style={{ background: '#003f6b', fontSize: '14px' }}
-                                                            className="btn mb-3 text-uppercase border-0">
-                                                            Reply
-                                                        </Button>
+                                                        {/* <Button
+                                                                    onClick={handleShow}
+                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
+                                                                    className="btn mb-3 text-uppercase border-0">
+                                                                    Reply
+                                                                </Button> */}
+                                                    </Col>
+                                                </Row>
+                                            </Card.Body>
+                                        </Card>
+                                        <Card className="mb-3" style={{ background: '#f3f3f3' }}>
+                                            <Card.Body>
+                                                <Row>
+                                                    <Col className="" lg={9}>
+                                                        <p style={{ fontSize: '14px' }} className="text-justify mb-0">
+                                                            How are you? Sir / Madam Please send admin access details to website,
+                                                            Bitrix and email host.Also Price £200.00
+                                                        </p>
+                                                        {/* <Button
+                                                                    onClick={handleShow}
+                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
+                                                                    className="btn mb-3 text-uppercase border-0">
+                                                                    Reply
+                                                                </Button> */}
+                                                    </Col>
+                                                    <Col className="" lg={3}>
+                                                        <img src={file} height="60px" width="60px" className="m-3 rounded-circle" />
                                                     </Col>
                                                 </Row>
                                             </Card.Body>
@@ -135,7 +158,9 @@ function ProposalDetails() {
                                     <Card.Body>
                                         <div className="d-flex justify-content-start">
                                             <div>
-                                                <img src={profile_img} className="mb-3 me-4 rounded-circle" width="100px" height="100px" />
+                                                <Link to="/profile_publicview">
+                                                    <img src={profile_img} className="mb-3 me-4 rounded-circle" width="100px" height="100px" />
+                                                </Link>
                                             </div>
                                             <div>
                                                 <p className="fw-bold text-uppercase mt-3 text-900">Soanes IT</p>
@@ -165,7 +190,9 @@ function ProposalDetails() {
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                                 {/* Accepted */}
-                                                <Button className="border-0 bg-success mt-2 d-block">Accepted</Button>
+                                                <p className="badge bg-success mt-2 p-2">Accepted</p>
+                                                {/* Edit Your Proposal */}
+                                                <Button as={Link} to="/editproposal" className="d-block btn bg-secondary border-0">Edit Your Proposal</Button>
                                             </Card.Body>
                                         </Card>
                                     </Card.Body>

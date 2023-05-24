@@ -4,7 +4,7 @@ import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile from '../Projectimages/Handyman.jpg'
 import { Link } from "react-router-dom";
-
+import file from '../Projectimages/BathroomFitting.jpg'
 function SellerEnquiryDetails() {
     const [show, setShow] = useState(false);
 
@@ -21,7 +21,7 @@ function SellerEnquiryDetails() {
                         <Col lg={12}>
                             <Card className="mt-5 mb-3">
                                 <Card.Header className="d-flex justify-content-end bg-light">
-                                    <Button as={Link} to="/sellerEnquirescard" className="bg-danger border-0">Close the Query</Button>
+                                    <Button as={Link} to="/Enquirescard" className="bg-danger border-0">Close the Query</Button>
                                 </Card.Header>
                                 <Card.Body>
                                     <div>
@@ -86,9 +86,7 @@ function SellerEnquiryDetails() {
                                                     <Form.Label className="text-900">
                                                         Stone Category
                                                     </Form.Label>
-                                                    <Form.Select>
-                                                        <option>Quartz</option>
-                                                    </Form.Select>
+                                                    <p className="text-900">Quartz</p>
                                                 </Form.Group>
                                             </Col>
                                             <Col lg={6}>
@@ -96,34 +94,24 @@ function SellerEnquiryDetails() {
                                                     <Form.Label className="text-900">
                                                         Thickness
                                                     </Form.Label>
-                                                    <Form.Select>
-                                                        <option>20mm</option>
-                                                    </Form.Select>
+                                                    <p className="text-900">20mm</p>
                                                 </Form.Group>
                                             </Col>
-                                            <Form.Group className="mb-3">
-                                                <Form.Label className="text-900">
-                                                    Stone Category
-                                                </Form.Label>
-                                                <Form.Control
-                                                    type="text"
-                                                    value={"Calacatta Oro Quartz"}
-                                                />
 
-                                            </Form.Group>
                                             <Form.Group className="mb-3">
                                                 <Form.Label className="text-900">
                                                     Dimensions
                                                 </Form.Label>
-                                                <Form.Control
-                                                    as="textarea" id="ask_question"
-                                                    value={"Length-3200mm , Width-1650mm"}
-                                                    rows={2} />
+                                                <p className="text-900">Length-3200mm , Width-1650mm</p>
+
                                             </Form.Group>
                                             <Form.Group className="mb-3">
                                                 <Form.Label className="text-900">
                                                     Attach Kitchen Plan
                                                 </Form.Label>
+                                                <div className="col-4">
+                                                    <img src={file} width="50px" height="50px" className="pro-pre" />
+                                                </div>
                                             </Form.Group>
                                         </Row>
 
@@ -162,25 +150,44 @@ function SellerEnquiryDetails() {
                                         </Col>
                                     </Row>
 
-                                    <h6 style={{ fontSize: '16px' }} className="mb-3">
-                                        Conversations
-                                    </h6>
-                                    <Card className="mb-3">
+                                    <Card className="mb-3" style={{ background: '#f3f3f3' }}>
                                         <Card.Body>
                                             <Row>
-                                                <Col className="mt-3" lg={3}>
+                                                <Col className="" lg={3}>
                                                     <img src={profile} height="60px" width="60px" className="m-3 rounded-circle" />
                                                 </Col>
-                                                <Col className="mt-3" lg={8}>
-                                                    <p style={{ fontSize: '14px' }} className="">
-                                                        Hi I'm Peter I've like to clarify some doubts here...
+                                                <Col className="" lg={9}>
+                                                    <p style={{ fontSize: '14px' }} className="text-justify mb-0">
+                                                        How are you? Sir / Madam Please send admin access details to website,
+                                                        Bitrix and email host.Also Price £200.00
                                                     </p>
-                                                    <Button
-                                                        onClick={handleShow}
-                                                        style={{ background: '#003f6b', fontSize: '14px' }}
-                                                        className="btn mb-3 text-uppercase border-0">
-                                                        Reply
-                                                    </Button>
+                                                    {/* <Button
+                                                                    onClick={handleShow}
+                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
+                                                                    className="btn mb-3 text-uppercase border-0">
+                                                                    Reply
+                                                                </Button> */}
+                                                </Col>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
+                                    <Card className="mb-3" style={{ background: '#f3f3f3' }}>
+                                        <Card.Body>
+                                            <Row>
+                                                <Col className="" lg={9}>
+                                                    <p style={{ fontSize: '14px' }} className="text-justify mb-0">
+                                                        How are you? Sir / Madam Please send admin access details to website,
+                                                        Bitrix and email host.Also Price £200.00
+                                                    </p>
+                                                    {/* <Button
+                                                                    onClick={handleShow}
+                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
+                                                                    className="btn mb-3 text-uppercase border-0">
+                                                                    Reply
+                                                                </Button> */}
+                                                </Col>
+                                                <Col className="" lg={3}>
+                                                    <img src={file} height="60px" width="60px" className="m-3 rounded-circle" />
                                                 </Col>
                                             </Row>
                                         </Card.Body>

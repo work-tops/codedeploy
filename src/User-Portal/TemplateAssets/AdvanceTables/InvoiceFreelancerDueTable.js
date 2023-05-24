@@ -192,7 +192,9 @@ const InvoiceFreelancerDueTable = () => {
                     <h5>
                         New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
                     </h5>
-
+                    <Button className="bg-danger border-0" onClick={handleClose}>
+                        Close
+                    </Button>
                 </Modal.Header>
                 <Modal.Body>
                     <Card className="mb-3" style={{ background: '#F3F3F3' }}>
@@ -294,7 +296,7 @@ const InvoiceFreelancerDueTable = () => {
                                             type="text" />
                                     </Col>
                                     <Col className="mt-2 ms-2" md={3} lg={3}>
-                                        
+
                                     </Col>
                                 </Row>
                                 <Form.Group className="mb-2">
@@ -331,6 +333,9 @@ const InvoiceFreelancerDueTable = () => {
                     <h5>
                         New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
                     </h5>
+                    <Button className="bg-danger border-0" onClick={handleClose1}>
+                        Close
+                    </Button>
                 </Modal.Header>
                 <Modal.Body>
                     <Card style={{ background: '#F3F3F3' }}>
@@ -425,9 +430,12 @@ const InvoiceFreelancerDueTable = () => {
                 aria-labelledby="example-custom-modal-styling-title"
             >
                 <Modal.Header className="">
-                    <h5>
+                <h5>
                         New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
                     </h5>
+                    <Button className="bg-danger border-0" onClick={handleClose2}>
+                        Close
+                    </Button>
                 </Modal.Header>
                 <Modal.Body>
                     <Card style={{ background: '#F3F3F3' }}>

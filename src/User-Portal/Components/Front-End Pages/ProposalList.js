@@ -48,20 +48,22 @@ function ProposalList() {
                                 <h5 className='text-capitalize'>
                                     Budget : £ 3000
                                 </h5>
+                                <Link to="/jobdetails/:jobid">
                                 <Button className='border-0 bg-success'>
                                     View Project
                                 </Button>
+                                </Link>
                             </div>
-                            <Form.Label>Sort By :</Form.Label>
+                            {/* <Form.Label>Sort By :</Form.Label>
                             <Form.Select className='w-50'>
                                 <option>Location</option>
                                 <option>Rating</option>
-                            </Form.Select>
+                            </Form.Select> */}
                         </Card.Body>
                     </Card>
                     <Card>
                         <Card.Body>
-                            <ProposalListsTable/>
+                            <ProposalListsTable />
                         </Card.Body>
                     </Card>
                 </Col >
@@ -89,7 +91,9 @@ function ProposalList() {
                                     <Card.Body>
                                         <Row>
                                             <Col lg={3}>
-                                                <img src={profile_img} className="mb-3 rounded-circle" width="100px" height="100px" />
+                                                <Link to="/profile_publicview">
+                                                    <img src={profile_img} className="mb-3 rounded-circle" width="100px" height="100px" />
+                                                </Link>
                                                 <p className="fw-bold ms-2 text-uppercase  text-900">Soanes IT</p>
                                             </Col>
                                             <Col lg={9}>

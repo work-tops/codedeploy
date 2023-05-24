@@ -12,7 +12,7 @@ function SellerLandingPage() {
                 <Col lg={12} className="mb-5">
                     <NavbarStandard />
                 </Col>
-                <Col lg={12} className="mb-5">
+                <Col lg={12} className="mb-3">
                     <PostPg />
                 </Col>
             </Row>

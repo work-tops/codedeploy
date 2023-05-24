@@ -7,12 +7,12 @@ import currency from "../Images/Pound Currency.jpg"
 import { Link, useParams, useHistory } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
 import ProjectOwnerHeader from "../Header/ProjectOwnerHeader";
-import { Button, Col, Row, Card, Modal, Form, Container } from "react-bootstrap";
+import { Button, Col, Row, Card, Modal, Form, Container, Dropdown } from "react-bootstrap";
 import worktops from '../../Components/Projectimages/Handyman.jpg'
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { Icon } from "@iconify/react";
 import { Divider } from "@mui/material";
-
+import CardDropdown from "../../TemplateAssets/common/CardDropdown";
 
 function JobDetails() {
     const [show, setShow] = useState(false);
@@ -177,6 +177,7 @@ function JobDetails() {
                             <Card className="mt-5">
                                 <Card.Header className="py-2 text-center  bg-light">
                                     <h5 className="mb-0">{jobdata.project_title}</h5>
+                                    
                                 </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
@@ -226,10 +227,14 @@ function JobDetails() {
                                     </ul>
                                 </Card.Body>
                                 <Card.Footer className="bg-light">
+                                    <div className="d-flex justify-content-between">
                                     <Link to="/proposallist">
-                                        <p className="fw-semibold text-center" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
+                                        <p  className="fw-semibold text-center" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
                                     </Link>
-
+                                    <Button as={Link} to="/EditPostProject">
+                                        Edit
+                                    </Button>
+                                    </div>
                                 </Card.Footer>
                             </Card>
                             {/* Customize Details */}

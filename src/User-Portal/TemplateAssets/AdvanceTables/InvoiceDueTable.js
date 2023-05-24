@@ -6,6 +6,9 @@ import { Row, Modal, Col, Card, Dropdown, Button, Form } from "react-bootstrap";
 import CardDropdown from "../common/CardDropdown";
 import { Icon } from "@iconify/react";
 import { Divider } from "@mui/material";
+import { Link } from "react-router-dom";
+
+
 const InvoiceTableCard = () => {
 
     const [show, setShow] = useState(false);
@@ -19,6 +22,10 @@ const InvoiceTableCard = () => {
     const handleShow1 = () => setShow1(true);
 
     const columns = [
+        {
+            accessor: 'id',
+            Header: 'Invoice Id'
+        },
         {
             accessor: 'itemName',
             Header: 'Item Name'
@@ -46,6 +53,7 @@ const InvoiceTableCard = () => {
     ];
     const data = [
         {
+            id: '625355',
             itemName: 'CALACATTA LIGHT QUARTZ',
             date: '18/05/2023',
             description: 'Ricky Antony , 2392 Main Avenue , New Jersy 02149',
@@ -57,6 +65,7 @@ const InvoiceTableCard = () => {
             </CardDropdown>,
         },
         {
+            id: '625355',
             itemName: 'CALACATTA LIGHT QUARTZ',
             date: '18/05/2023',
             description: 'Ricky Antony , 2392 Main Avenue , New Jersy 02149',
@@ -68,6 +77,7 @@ const InvoiceTableCard = () => {
             </CardDropdown>,
         },
         {
+            id: '625355',
             itemName: 'CALACATTA LIGHT QUARTZ',
             date: '18/05/2023',
             description: 'Ricky Antony , 2392 Main Avenue , New Jersy 02149',
@@ -173,11 +183,11 @@ const InvoiceTableCard = () => {
             >
                 <Modal.Header className="">
                     <h5>
-                        New Invoice:
+                        New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
                     </h5>
-                    <h5 className="text-danger mt-2">
-                        Project Id : #123456
-                    </h5>
+                    <Button className="bg-danger border-0" onClick={handleClose}>
+                        Close
+                    </Button>
                 </Modal.Header>
                 <Modal.Body>
                     <Card style={{ background: '#F3F3F3' }}>
@@ -254,7 +264,7 @@ const InvoiceTableCard = () => {
                             </td>
                         </tr>
                         <div className="mt-3 d-flex justify-content-end">
-                            <Button className="bg-success border-0">Pay Now</Button>
+                            <Button as={Link} to="/InvoiceCheckout" className="bg-success border-0">Pay Now</Button>
                             <Button onClick={handleShow1} className="bg-danger ms-2 border-0">Cancel</Button>
                         </div>
                     </div>
@@ -271,11 +281,11 @@ const InvoiceTableCard = () => {
             >
                 <Modal.Header className="">
                     <h5>
-                        New Invoice:
+                        New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
                     </h5>
-                    <h5 className="text-danger mt-2">
-                        Project Id : #123456
-                    </h5>
+                    <Button className="bg-danger border-0" onClick={handleClose1}>
+                        Close
+                    </Button>
                 </Modal.Header>
                 <Modal.Body>
                     <Card style={{ background: '#F3F3F3' }}>

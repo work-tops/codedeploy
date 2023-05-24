@@ -4,6 +4,7 @@ import trainer from '../../Projectimages/trainer.png'
 import { Row, Col, Card, Button } from "react-bootstrap";
 import { Icon } from "@iconify/react";
 import ProductGrid from "../ProductList/ProductGrid";
+import { Link } from "react-router-dom";
 // import { IconButton } from "../../../TemplateAssets/common/IconButton";
 function PublicProfile() {
     return (
@@ -30,8 +31,8 @@ function PublicProfile() {
                                                 </p>
                                             </Col>
                                             <Col className="mt-4 mt-md-5 mt-lg-4 order-md-1 order-lg-0">
-                                                <Button style={{ color: '#003f6b', border: '1px solid #003f6b' }} className="d-block bg-transparent mb-3 w-100"><Icon icon="tabler:message-circle-2-filled" className="me-1" color="#003f6b" width="24" height="24" />Message</Button>
-                                                <Button style={{ color: '#003f6b', border: '1px solid #003f6b' }} className="d-block bg-transparent mb-3 w-100"><Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="me-1" width="24" height="24" />Follow</Button>
+                                                <Button as={Link} to="/wishlist/seller" style={{ color: '#003f6b', border: '1px solid #003f6b' }} className="d-block bg-transparent mb-3 w-100"><Icon icon="tabler:message-circle-2-filled" className="me-1" color="#003f6b" width="24" height="24" />Message</Button>
+                                                <Button as={Link} to="/chat" style={{ color: '#003f6b', border: '1px solid #003f6b' }} className="d-block bg-transparent mb-3 w-100"><Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="me-1" width="24" height="24" />Follow</Button>
                                             </Col>
                                             <Col className="mt-4 mt-md-5 mt-lg-4">
                                                 <Row className="text-center">

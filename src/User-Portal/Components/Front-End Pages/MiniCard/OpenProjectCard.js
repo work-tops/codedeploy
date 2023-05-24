@@ -49,21 +49,23 @@ function OpenProjectCard() {
                             </Card.Header>
                             <Card.Body>
                                 <Row>
-                                    <Col lg={8}>
-                                        <p style={{ fontSize: '14px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: "nowrap", }} className="text-justify">{data?.project_description}</p>
+                                    <Col md={8} lg={8}>
+                                        <p style={{ fontSize: '14px' }} className="fifty-chars text-justify">{data?.project_description}</p>
+                                        {/* <div className="d-flex justify-content-center mb-3"> */}
+                                        {/* </div> */}
+                                        <p style={{ color: '#003f6b', fontSize: '16px' }} className=" fw-bold">Client Budget<span className="ms-2 text-success text-center fw-bold">£ 200</span></p>
                                     </Col>
-                                    <Col lg={4}>
-                                        <div className="d-flex justify-content-center mb-3">
-                                            <p style={{ color: '#003f6b' }} className=" fw-semibold">Client Budget<span className="ms-2 text-success text-center fw-bold">£ 200</span></p>
-                                        </div>
-                                        <InputGroup className="d-flex justify-content-center mb-3">
+                                    <Col md={4} lg={4}>
+
+                                        <InputGroup className="d-flex  justify-content-center mb-3">
                                             <Button as={Link} to={`jobdetails/${data._id}`} className="text-uppercase  border-0" style={{ background: '#003f6b', fontSize: '14px' }}>View</Button>
                                             {/* <Button className="bg-transparent text-dark border-dark"> */}
                                             <Dropdown>
                                                 <Dropdown.Toggle style={{ background: '#003f6b', border: "none" }}>
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu>
-                                                    <Dropdown.Item as={Link} to="/proposallist">View Proposals</Dropdown.Item>
+                                                    <Dropdown.Item as={Link} className="text-success" to="/proposallist">View Proposals</Dropdown.Item>
+                                                    <Dropdown.Item as={Link} className="text-primary" to="/EditPostProject">Edit</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                             {/* </Button> */}
@@ -104,11 +106,7 @@ function OpenProjectCard() {
                                     <small className="d-none d-lg-block me-2">Show:</small>
                                     <Form.Select
                                         size="sm"
-                                        // value={itemsPerPage}
-                                        // onChange={({ target }) => {
-                                        //     setItemsPerPage(target.value);
-                                        //     setCoursePerPage(target.value);
-                                        // }}
+                                       
                                         style={{ maxWidth: '4.875rem' }}
                                     >
                                         <option >1</option>

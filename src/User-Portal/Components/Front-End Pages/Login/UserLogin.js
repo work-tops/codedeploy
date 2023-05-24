@@ -91,7 +91,7 @@ const UserLogin = ({  }) => {
                     <>
                       <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                          <Form.Label className='text-700'>Email address</Form.Label>
+                          <Form.Label className='text-700'>Email address<span className="text-danger">*</span></Form.Label>
                           <Form.Control
                             placeholder={'Email address'}
                             value={formData.email}
@@ -102,7 +102,7 @@ const UserLogin = ({  }) => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                          <Form.Label className='text-700'>Password</Form.Label>
+                          <Form.Label className='text-700'>Password<span className="text-danger">*</span></Form.Label>
                           <Form.Control
                             placeholder={'Password'}
                             value={formData.password}
@@ -153,7 +153,7 @@ const UserLogin = ({  }) => {
                           </Button>
                         </Form.Group>
                       </Form>
-                      <p className="text-center fw-semibold text-900 mt-3 mb-3">Don't Have an Account ? <Link to='/signup'>Create Account</Link></p>
+                      <p className="text-center fw-semibold text-900 mt-3 mb-3">Don't Have an Account ? <Link to='/project-owner-register'>Create Account</Link></p>
                       <Toaster />
                     </>
                   </Card.Body>
