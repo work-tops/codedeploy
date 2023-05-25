@@ -14,6 +14,19 @@ import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard';
 
 
 const FrontendAddService = () => {
+    // Cancel Modal
+    const [showModal1, setShowModal1] = useState(false);
+
+    const handleClose1 = () => {
+        setShowModal1(false);
+    };
+
+    const handleCancel = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal1(false);
+    };
+
 
     // Static data
 
@@ -177,132 +190,126 @@ const FrontendAddService = () => {
                 </Col>
                 <Col lg={12} className='mt-5'>
                     <Form onSubmit={(e) => { formsubmit(e) }}>
-                        
-                                <div className='d-flex justify-content-end'>
 
-                                    <div className='me-4'>
-                                        <Form.Group>
-                                            <Form.Group as={Col} className='mb-3'>
-                                                <Form.Label className="text-700">Status</Form.Label>
-                                                <Form.Select value={form.status} required name="status" onChange={(e) => { handleChange(e) }}>
-                                                    <option value="">Select</option>
-                                                    <option value="Draft">Draft</option>
-                                                    <option value="Active">Active</option>
-                                                </Form.Select>
+                        <div className='d-flex justify-content-end'>
+
+                            <div className='me-4'>
+                                <Form.Group>
+                                    <Form.Group as={Col} className='mb-3'>
+                                        <Form.Label className="text-uppercase text-700">Status<span className="text-danger">*</span></Form.Label>
+                                        <Form.Select value={form.status} required name="status" onChange={(e) => { handleChange(e) }}>
+                                            <option value="">Select</option>
+                                            <option value="Draft">Draft</option>
+                                            <option value="Active">Active</option>
+                                        </Form.Select>
+                                    </Form.Group>
+                                </Form.Group>
+                            </div>
+                        </div>
+                        <Container>
+                            <Row>
+                                <Col lg={7}>
+                                    <Card className='mt-3 me-3'>
+                                        <Card.Header className='bg-light'>
+                                            <div>
+                                                <h5 className='mt-2 text-uppercase'>Add Services</h5>
+                                            </div>
+                                        </Card.Header>
+                                        <Card.Body>
+                                            <h5 className='mb-2 text-uppercase'>Services Information</h5>
+
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase text-700">Services Title<span className="text-danger">*</span></Form.Label>
+                                                <Form.Control value={form.title} required name="title" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
                                             </Form.Group>
-                                        </Form.Group>
-                                    </div>
-                                </div>
-                                <Container>
-                                    <Row>
-                                        <Col lg={7}>
-                                            <Card className='mt-3 me-3'>
-                                                <Card.Header>
-                                                    <div>
-                                                        <h6 className='mt-2 text-uppercase'>Add Services</h6>
-                                                        <Breadcrumb style={{ fontSize: '12px' }}>
-                                                            <Breadcrumb.Item>Duplicate</Breadcrumb.Item>
-                                                            <Breadcrumb.Item>Preview</Breadcrumb.Item>
-                                                        </Breadcrumb>
-                                                    </div>
-                                                </Card.Header>
-                                                <Card.Body>
-                                                    <h6 className='mb-2 text-uppercase'>Services Information</h6>
-
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label className="text-700">Services Title</Form.Label>
-                                                        <Form.Control value={form.title} required name="title" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
-                                                    </Form.Group>
-                                                    <Row className='g-3 mb-3'>
-                                                        <Form.Group as={Col} className='mb-3'>
-                                                            <Form.Label className="text-700">Services Category</Form.Label>
-                                                            <Form.Select value={form.category} required name="category" onChange={(e) => { handleChange(e) }}>
-                                                                <option value="">Select Option</option>
-                                                                {cate?.map((data) => (
-                                                                    <option value={data.value}>{data.value}</option>
-                                                                ))}
-                                                            </Form.Select>
-                                                        </Form.Group>
-                                                        <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label className="text-700">Services Email</Form.Label>
-                                                            <Form.Select value={form.email} required name="email" onChange={(e) => { handleChange(e) }}>
-                                                                <option value="">Select Option</option>
-                                                                {selemail.map((data) => (
-                                                                    <option value={data.email}>{data.email}</option>
-                                                                ))}
-                                                            </Form.Select>
-                                                        </Form.Group>
-                                                    </Row>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label className="text-700">Description <span className='text-grey'>(Optional)</span></Form.Label>
-                                                        <Form.Control value={form.description} required name="description" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Description....' rows={8} />
-                                                    </Form.Group>
-                                                    <Row className='g-3 mb-3'>
-                                                        <Form.Group as={Col} className='mb-3'>
-                                                            <Form.Label className="text-700">Services Location</Form.Label>
-                                                            <Multiselect options={servitag[1]?.list} displayValue="value" className='border border-dark rounded' />
-                                                        </Form.Group>
-                                                        <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label className="text-700">Services Range
-                                                            </Form.Label>
-                                                            <Multiselect options={servitag[2]?.list} displayValue="value" className='border border-dark rounded' />
-                                                        </Form.Group>
-                                                    </Row>
-                                                    <Row className='mb-3'>
-                                                        <Col>
-                                                            <Form.Check type="checkbox" className="mb-0">
-                                                                <Form.Check.Input
+                                            <Row className='g-3 mb-3'>
+                                                <Form.Group as={Col} className='mb-3'>
+                                                    <Form.Label className="text-uppercase text-700">Services Category<span className="text-danger">*</span></Form.Label>
+                                                    <Form.Select value={form.category} required name="category" onChange={(e) => { handleChange(e) }}>
+                                                        <option value="">Select Option</option>
+                                                        {cate?.map((data) => (
+                                                            <option value={data.value}>{data.value}</option>
+                                                        ))}
+                                                    </Form.Select>
+                                                </Form.Group>
+                                                <Form.Group as={Col} className='ms-2 mb-3'>
+                                                    <Form.Label className="text-uppercase text-700">Services Email<span className="text-danger">*</span></Form.Label>
+                                                    <Form.Select value={form.email} required name="email" onChange={(e) => { handleChange(e) }}>
+                                                        <option value="">Select Option</option>
+                                                        {selemail.map((data) => (
+                                                            <option value={data.email}>{data.email}</option>
+                                                        ))}
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Row>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase text-700">Description <span className='text-grey'>(Optional)</span></Form.Label>
+                                                <Form.Control value={form.description} required name="description" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Description....' rows={8} />
+                                            </Form.Group>
+                                            <Row className='g-3 mb-3'>
+                                                <Form.Group as={Col} className='mb-3'>
+                                                    <Form.Label className="text-uppercase text-700">Services Location<span className="text-danger">*</span></Form.Label>
+                                                    <Multiselect options={servitag[1]?.list} displayValue="value" className='border border-dark rounded' />
+                                                </Form.Group>
+                                                <Form.Group as={Col} className='ms-2 mb-3'>
+                                                    <Form.Label className="text-uppercase text-700">Services Range
+                                                        <span className="text-danger">*</span></Form.Label>
+                                                    <Multiselect options={servitag[2]?.list} displayValue="value" className='border border-dark rounded' />
+                                                </Form.Group>
+                                            </Row>
+                                            <Row className='mb-3'>
+                                                <Col>
+                                                    <Form.Check type="checkbox" label="Shipping Requires" className="mb-0">
+                                                        {/* <Form.Check.Input
                                                                     type="checkbox"
-                                                                /> Shipping Requires
-                                                            </Form.Check>
-                                                        </Col>
-                                                        <Col>
-                                                            <Form.Check type="checkbox" className="mb-0">
-                                                                <Form.Check.Input
-                                                                    type="checkbox"
-                                                                /> Charge Taxes on this product
-                                                            </Form.Check>
-                                                        </Col>
+                                                                />  */}
+                                                    </Form.Check>
+                                                </Col>
+                                                <Col>
+                                                    <Form.Check type="checkbox" label="Charge Taxes on this product" className="mb-0">
 
-                                                    </Row>
-                                                    <Row className='g-3 mb-3'>
-                                                        <Form.Group as={Col} className='mb-3'>
-                                                            <Form.Label className="text-700">Price Type</Form.Label>
-                                                            <Form.Select value={form.price_type} required name="price_type" onChange={(e) => { handleChange(e) }}>
-                                                                <option value="">Select Option</option>
-                                                                <option value="Per Hour Cost">Per Hour Cost</option>
-                                                                <option value="Fixed Price">Fixed Price</option>
-                                                            </Form.Select>
-                                                        </Form.Group>
-                                                        <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label className="text-700">Price</Form.Label>
-                                                            <Form.Control value={form.price} required name="price" onChange={(e) => { handleChange(e) }} type="text" />
-                                                        </Form.Group>
-                                                    </Row>
-                                                    <Row className='g-3 mb-3'>
-                                                        <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label className="text-700">Offer Price </Form.Label>
-                                                            <Form.Control value={form.offer_price} required name="offer_price" onChange={(e) => { handleChange(e) }} type="text" />
-                                                        </Form.Group>
-                                                        <Form.Group as={Col} className='ms-2 mb-3'>
-                                                            <Form.Label className="text-700">Display Price</Form.Label>
-                                                            <Form.Control value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} type="text" />
-                                                        </Form.Group>
-                                                    </Row>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label className="text-700">Terms & Conditions</Form.Label>
-                                                        <Form.Control value={form.terms_and_condition} required name="terms_and_condition" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='' rows={8} />
-                                                    </Form.Group>
+                                                    </Form.Check>
+                                                </Col>
 
-                                                </Card.Body>
-                                            </Card>
-                                        </Col>
-                                        <Col lg={5}>
-                                            <Card className='mt-3 me-3'>
-                                                <Card.Body>
-                                                    <h6 className='mb-2 text-uppercase'>Media</h6>
-                                                    {/* <Flex justifyContent={between}> */}
-                                                    {/* <div className='d-flex justify-content-between'>
+                                            </Row>
+                                            <Row className='g-3 mb-3'>
+                                                <Form.Group as={Col} className='mb-3'>
+                                                    <Form.Label className="text-uppercase text-700">Price Type<span className="text-danger">*</span></Form.Label>
+                                                    <Form.Select value={form.price_type} required name="price_type" onChange={(e) => { handleChange(e) }}>
+                                                        <option value="">Select Option</option>
+                                                        <option value="Per Hour Cost">Per Hour Cost</option>
+                                                        <option value="Fixed Price">Fixed Price</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                                <Form.Group as={Col} className='ms-2 mb-3'>
+                                                    <Form.Label className="text-uppercase text-700">Price<span className="text-danger">*</span></Form.Label>
+                                                    <Form.Control value={form.price} required name="price" onChange={(e) => { handleChange(e) }} type="text" />
+                                                </Form.Group>
+                                            </Row>
+                                            <Row className='g-3 mb-3'>
+                                                <Form.Group as={Col} className='ms-2 mb-3'>
+                                                    <Form.Label className="text-uppercase text-700">Offer Price <span className="text-danger">*</span></Form.Label>
+                                                    <Form.Control value={form.offer_price} required name="offer_price" onChange={(e) => { handleChange(e) }} type="text" />
+                                                </Form.Group>
+                                                <Form.Group as={Col} className='ms-2 mb-3'>
+                                                    <Form.Label className="text-uppercase text-700">Display Price<span className="text-danger">*</span></Form.Label>
+                                                    <Form.Control value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} type="text" />
+                                                </Form.Group>
+                                            </Row>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase text-700">Terms & Conditions<span className="text-danger">*</span></Form.Label>
+                                                <Form.Control value={form.terms_and_condition} required name="terms_and_condition" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='' rows={8} />
+                                            </Form.Group>
+
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                                <Col lg={5}>
+                                    <Card className='mt-3 me-3'>
+                                        <Card.Body>
+                                            <h5 className='mb-2 text-uppercase'>Media</h5>
+                                            {/* <Flex justifyContent={between}> */}
+                                            {/* <div className='d-flex justify-content-between'>
                                                     <Button variant="primary" onClick={handleShow}>
                                                         Add Media from URL
                                                     </Button>
@@ -318,79 +325,99 @@ const FrontendAddService = () => {
                                                     </Modal>
 
                                                 </div> */}
-                                                    {/* </Flex> */}
-                                                    <div className='mt-3 border-secondary w-100'>
-                                                        <small className='d-block text-align-center w-100'>
-                                                            Drag and Drop
-                                                            Your Files Here
+                                            {/* </Flex> */}
+                                            <div className='mt-3 border-secondary w-100'>
+                                                <small className='d-block text-align-center w-100'>
+                                                    Drag and Drop
+                                                    Your Files Here
 
-                                                        </small>
-                                                        <div className='d-flex justify-content-between'>
-                                                            {/* <Button type='button' className='mt-3 btn text-light btn-outline-secondary'>Browse Files</Button> */}
-                                                            {/* <Button type='button' className='mt-3 ms-5  btn text-light btn-outline-success'>Upload Images</Button> */}
-                                                            <label htmlFor="select-basic" >
-                                                                <Button className='mt-3 btn text-light btn-outline-secondary' onClick={() => document.getElementById('select-basic').click()}>Browse Files</Button>
-                                                                <input
-                                                                    name="attachments"
-                                                                    // multiple
-                                                                    onChange={handleFileInput}
-                                                                    required
-                                                                    type="file"
-                                                                    id="select-basic"
-                                                                    accept="image/*"
-                                                                    style={{ display: "none" }}
-                                                                />
-                                                            </label>
+                                                </small>
+                                                <div className='d-flex justify-content-between'>
+                                                    {/* <Button type='button' className='mt-3 btn text-light btn-outline-secondary'>Browse Files</Button> */}
+                                                    {/* <Button type='button' className='mt-3 ms-5  btn text-light btn-outline-success'>Upload Images</Button> */}
+                                                    <label htmlFor="select-basic" >
+                                                        <Button className='mt-3 btn text-light btn-outline-secondary' onClick={() => document.getElementById('select-basic').click()}>Browse Files</Button>
+                                                        <input
+                                                            name="attachments"
+                                                            // multiple
+                                                            onChange={handleFileInput}
+                                                            required
+                                                            type="file"
+                                                            id="select-basic"
+                                                            accept="image/*"
+                                                            style={{ display: "none" }}
+                                                        />
+                                                    </label>
 
-                                                        </div>
-                                                        {actualFiles.length == 0 || actualFiles.length == undefined ? (
-                                                            ""
-                                                        ) : (<>
-                                                            <img src={actualFiles} alt="product-img" className="attached-img_1 mt-3" /><br />
-                                                            <button type="button" onClick={removeImage} className="btn btn-danger ms-2 mt-3">Remove</button>
-                                                        </>)}
+                                                </div>
+                                                {actualFiles.length == 0 || actualFiles.length == undefined ? (
+                                                    ""
+                                                ) : (<>
+                                                    <img src={actualFiles} alt="product-img" className="attached-img_1 mt-3" /><br />
+                                                    <button type="button" onClick={removeImage} className="btn btn-danger ms-2 mt-3">Remove</button>
+                                                </>)}
 
-                                                    </div>
-                                                </Card.Body>
-                                            </Card>
-                                            <Card className='mt-3 me-3'>
-                                                <Card.Body>
-                                                    <h6 className='mb-2 text-uppercase'>Services Handle and Metafields</h6>
-                                                    <Form.Group className='mb-4'>
-                                                        <Form.Label className="text-700">
-                                                            Services handle
-                                                        </Form.Label>
-                                                        <Form.Control value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
-                                                    </Form.Group>
-                                                    <h6 className='mb-2 text-uppercase'>Services Metafields</h6>
-                                                    <Form.Group className='mb-3'>
-                                                        <Form.Label className="text-700">
-                                                            Title Tag Meta Field
-                                                        </Form.Label>
-                                                        <Form.Control value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
-                                                    </Form.Group>
-                                                    <Form.Group className='mb-3'>
-                                                        <Form.Label className="text-700">
-                                                            Description Tag Meta Field
-                                                        </Form.Label>
-                                                        <Form.Control value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
-                                                    </Form.Group>
-                                                </Card.Body>
-                                            </Card>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col lg={7}>
-                                            {/* <Link to='/addservicecard'> */}
-                                            <Button type='submit' className='mt-3  btn text-light bg-success border-0'>Add Services</Button>
-                                            {/* </Link> */}
+                                            </div>
+                                        </Card.Body>
+                                    </Card>
+                                    <Card className='mt-3 me-3'>
+                                        <Card.Body>
+                                            <h5 className='mb-2 text-uppercase'>Services Handle and Metafields</h5>
+                                            <Form.Group className='mb-4'>
+                                                <Form.Label className="text-uppercase text-700">
+                                                    Services handle
+                                                    <span className="text-danger">*</span></Form.Label>
+                                                <Form.Control value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                            </Form.Group>
+                                            <h5 className='mb-2 text-uppercase'>Services Metafields</h5>
+                                            <Form.Group className='mb-3'>
+                                                <Form.Label className="text-uppercase text-700">
+                                                    Title Tag Meta Field
+                                                    <span className="text-danger">*</span></Form.Label>
+                                                <Form.Control value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                            </Form.Group>
+                                            <Form.Group className='mb-3'>
+                                                <Form.Label className="text-uppercase text-700">
+                                                    Description Tag Meta Field
+                                                    <span className="text-danger">*</span></Form.Label>
+                                                <Form.Control value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                            </Form.Group>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col lg={7} className='mb-3'>
+                                    {/* <Link to='/addservicecard'> */}
+                                    <Button type='submit' className='mt-3  btn text-light bg-success border-0'>Add Services</Button>
+                                    {/* </Link> */}
+
+
+                                    <Button onClick={() => setShowModal1(true)} className='mt-3  btn text-light border-0 ms-5 bg-danger '>Cancel</Button>
+
+                                    {/*  */}
+                                    <Modal show={showModal1} onHide={handleClose1}>
+                                        <Modal.Header closeButton>
+                                            <Modal.Title>Warning</Modal.Title>
+                                        </Modal.Header>
+                                        <Modal.Body>
+                                            <p className='text-capitalize'>
+                                                Are you sure you want to cancel without adding service ?
+                                            </p>
+                                        </Modal.Body>
+                                        <Modal.Footer>
+
                                             <Link to="/addservicecard">
-                                                <Button className='mt-3  btn text-light border-0 ms-5 bg-danger '>Cancel</Button>
+                                                <Button variant="danger" onClick={handleClose1}>
+                                                    Cancel
+                                                </Button>
                                             </Link>
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            
+                                        </Modal.Footer>
+                                    </Modal>
+                                </Col>
+                            </Row>
+                        </Container>
+
                     </Form>
                 </Col>
                 <Toaster />

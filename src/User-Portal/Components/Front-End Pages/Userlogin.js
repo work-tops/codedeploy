@@ -1,55 +1,43 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
-import { FaStar } from 'react-icons/fa';
+import { Button, Modal } from 'react-bootstrap';
 
-const AreYouSure = () => {
-  const [reviewText, setReviewText] = useState('');
-  const [rating, setRating] = useState(0);
+const CancelProjectModal = () => {
+  const [showModal, setShowModal] = useState(false);
 
-  const handleReviewChange = (event) => {
-    setReviewText(event.target.value);
+  const handleClose = () => {
+    setShowModal(false);
   };
 
-  const handleStarClick = (selectedRating) => {
-    setRating(selectedRating);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Process the review submission
-    console.log('Review submitted:', reviewText);
-    console.log('Rating:', rating);
-    setReviewText('');
-    setRating(0);
+  const handleCancel = () => {
+    // Perform cancel action here
+    console.log('Cancel project');
+    setShowModal(false);
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group controlId="reviewText">
-        <Form.Label>Write your review</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={3}
-          value={reviewText}
-          onChange={handleReviewChange}
-          required
-        />
-      </Form.Group>
-      <Form.Group controlId="rating">
-        <Form.Label>Rating</Form.Label>
-        <div className="star-rating">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <FaStar
-              key={star}
-              className={star <= rating ? 'star selected' : 'star'}
-              onClick={() => handleStarClick(star)}
-            />
-          ))}
-        </div>
-      </Form.Group>
-      <Button type="submit">Submit</Button>
-    </Form>
+    <>
+      <Button variant="danger" onClick={() => setShowModal(true)}>
+        Cancel Project
+      </Button>
+
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Warning</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Are you sure you want to cancel without posting the project?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="danger" onClick={handleCancel}>
+            Cancel Project
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 };
 
-export default AreYouSure;
+export default CancelProjectModal;

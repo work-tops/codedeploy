@@ -10,6 +10,12 @@ function ProposalDetails() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+   // Cancel Modal
+   const [showModal2, setShowModal2] = useState(false);
+
+   const handleClose2 = () => {
+       setShowModal2(false);
+   };
     return (
         <>
             <Container>
@@ -186,7 +192,7 @@ function ProposalDetails() {
 
                                                     <Dropdown.Menu>
                                                         <Dropdown.Item className="text-success">Accept</Dropdown.Item>
-                                                        <Dropdown.Item as={Link} to="/proposallist" className="text-danger">Decline</Dropdown.Item>
+                                                        <Dropdown.Item onClick={() => setShowModal2(true)} className="text-danger">Decline</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                                 {/* Accepted */}
@@ -240,6 +246,22 @@ function ProposalDetails() {
                 </Modal.Body>
             </Modal >
             {/* Modal Content */}
+            <Modal show={showModal2} onHide={handleClose2}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Warning</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <p className="text-capitalize">
+                                Are you sure you want to decline this proposal?
+                            </p>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button as={Link} to="/proposallist" variant="danger" onClick={handleClose2}>
+                                Decline
+                            </Button>
+
+                        </Modal.Footer>
+                    </Modal>
         </>
     )
 }

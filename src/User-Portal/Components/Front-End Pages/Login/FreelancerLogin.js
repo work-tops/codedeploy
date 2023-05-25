@@ -176,9 +176,12 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                 >
                                   <Form.Label className='text-700'>Phone</Form.Label>
                                   <input className='form-control' placeholder={'Phone'} value={formData.phone} name="phone" onChange={handleFieldChange} type="number" />
+                                  <Form.Control.Feedback type='invalid'>
+                                    Please Enter Your Phone Number
+                                  </Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group className="mb-3">
-                                 <Form.Label className="text-700">ID Verification<span className="text-danger">*</span></Form.Label>
+                                  <Form.Label className="text-700">ID Verification<span className="text-danger">*</span></Form.Label>
                                   <Form.Select>
                                     <option value="Driving License">Driving License</option>
                                     <option value="Passport">Passport</option>
@@ -206,7 +209,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                   Register
                                 </Button>
                                 <div className='mt-3'>
-                                <SocialAuthButtons/>
+                                  <SocialAuthButtons />
                                 </div>
                               </Form>
                             </div> : <div className="p-4 p-md-5 flex-grow-1">

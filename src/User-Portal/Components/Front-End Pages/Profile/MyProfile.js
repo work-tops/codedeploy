@@ -35,7 +35,19 @@ function MyProfile() {
 
     const handleClose1 = () => setShow1(false);
     const handleShow1 = () => setShow1(true);
+   
+    // Cancel Modal
+    const [showModal2, setShowModal2] = useState(false);
 
+    const handleClose2 = () => {
+        setShowModal2(false);
+    };
+
+    const handleCancel = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal2(false);
+    };
 
     return (
 
@@ -168,10 +180,28 @@ function MyProfile() {
                                                                 <Dropdown.Item href="#!" className="text-secondary">
                                                                     Mark as Default
                                                                 </Dropdown.Item>
-                                                                <Dropdown.Item href="#!" className="text-danger">
+                                                                <Dropdown.Item onClick={() => setShowModal2(true)} className="text-danger">
                                                                     Remove
                                                                 </Dropdown.Item>
                                                             </div>
+                                                            {/*  */}
+                                                            <Modal show={showModal2} onHide={handleClose2}>
+                                                                <Modal.Header closeButton>
+                                                                    <Modal.Title>Warning</Modal.Title>
+                                                                </Modal.Header>
+                                                                <Modal.Body>
+                                                                    <p className="text-capitalize">
+                                                                        Are you sure you want to remove this payment details?
+                                                                    </p>
+                                                                </Modal.Body>
+                                                                <Modal.Footer>
+                                                                    <Button variant="danger" onClick={handleClose2}>
+                                                                        Remove
+                                                                    </Button>
+
+                                                                </Modal.Footer>
+                                                            </Modal>
+                                                            {/*  */}
                                                         </CardDropdown>
                                                     </div>
                                                 </div>
@@ -203,7 +233,7 @@ function MyProfile() {
                                                             </Card.Body>
                                                         </Card>
                                                     </Col>
-                                                    <Col sm={12}  lg={12}>
+                                                    <Col sm={12} lg={12}>
                                                         <Table borderless className="fw-medium font-sans-serif fs--1 mb-2">
                                                             <tbody>
                                                                 <tr>
@@ -244,7 +274,7 @@ function MyProfile() {
                                         </Card>
                                         {/* Payment */}
                                     </Col>
-                                    <Col  lg={8} md={6}>
+                                    <Col lg={8} md={6}>
                                         <PaymentTable />
                                     </Col>
                                 </Row>

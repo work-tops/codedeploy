@@ -1,21 +1,22 @@
 import { React, useState } from "react";
-import { Row, Col, Button, Card, Form, Container } from "react-bootstrap";
+import { Row, Col, Button, Card, Modal, Container } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import product_image from '../../Images/semiprecious.png'
 
 function Cart() {
- const [showModal, setShowModal] = useState(false);
+    // Cancel Modal
+    const [showModal, setShowModal] = useState(false);
 
-    const handleModalToggle = () => {
-        setShowModal(!showModal);
+    const handleClose = () => {
+        setShowModal(false);
     };
 
-    const handleConfirm = () => {
-        // Perform the action after confirmation
-        console.log("Action confirmed!");
-        handleModalToggle(); // Close the modal after confirmation
+    const handleCancel = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal(false);
     };
     return (
         <>
@@ -59,22 +60,23 @@ function Cart() {
                                                 <h5 className="fs-0"><a className="text-900" >MALACHITE SEMI PRECIOUS
                                                 </a></h5>
                                                 <div>
-                                                    <div className="fs--2 fs-md--1"><a role="button" onClick={handleModalToggle} className="text-danger" >Remove</a></div>
-                                                    <div>
-                                                    <button onClick={handleModalToggle}>Open Modal</button>
-                                                        {showModal && (
-                                                            <div className="modal">
-                                                                <div className="modal-content">
-                                                                    <h2>Are You Sure?</h2>
-                                                                    <p>This action cannot be undone.</p>
-                                                                    <div className="modal-buttons">
-                                                                        <button onClick={handleConfirm}>Confirm</button>
-                                                                        <button onClick={handleModalToggle}>Cancel</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        )}
-                                                    </div>
+                                                    <div className="fs--2 fs-md--1"><a role="button" onClick={() => setShowModal(true)} className="text-danger" >Remove</a></div>
+                                                    <Modal show={showModal} onHide={handleClose}>
+                                                        <Modal.Header closeButton>
+                                                            <Modal.Title>Warning</Modal.Title>
+                                                        </Modal.Header>
+                                                        <Modal.Body>
+                                                            <p className="text-capitalize">
+                                                                Are you sure you want to remove this product from your cart?
+                                                            </p>
+                                                        </Modal.Body>
+                                                        <Modal.Footer>
+                                                            <Button variant="danger" onClick={handleClose}>
+                                                                Remove
+                                                            </Button>
+
+                                                        </Modal.Footer>
+                                                    </Modal>
                                                 </div>
                                             </div>
                                         </div>

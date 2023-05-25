@@ -8,7 +8,7 @@ import {
     Card,
     Dropdown,
     Image,
-    Container
+    Container, Modal
 } from 'react-bootstrap';
 import { Link, useHistory } from "react-router-dom";
 import { Icon } from "@iconify/react";
@@ -31,6 +31,22 @@ function Editpostproject() {
             );
         }
     });
+
+    // 
+
+    const [showModal, setShowModal] = useState(false);
+
+    const handleClose = () => {
+        setShowModal(false);
+    };
+
+    const handleCancel = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal(false);
+    };
+
+
     return (
         <>
             <Form>
@@ -378,9 +394,9 @@ function Editpostproject() {
                                                 type="submit"
                                                 className='d-block border-0 bg-success'
                                             >Post Project</Button>
-                                            <Link to="/projectlist">
-                                                <Button className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
-                                            </Link>
+                                            {/* <Link to="/projectlist"> */}
+                                                <Button onClick={() => setShowModal(true)} className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
+                                            {/* </Link> */}
                                         </div>
                                         <h5 className="text-center text-danger fw-bold">Your Project has been expired....Please Post New Project!!!</h5>
                                     </Col>
@@ -388,7 +404,20 @@ function Editpostproject() {
                             </Card.Body>
                         </Card >
                         {/* Post A Project */}
-
+                        <Modal show={showModal} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Warning</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                Are you sure you want to Exit?
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button as={Link} to="/projectlist" variant="danger" onClick={handleClose}>
+                                    Exit
+                                </Button>
+                               
+                            </Modal.Footer>
+                        </Modal>
                         {/* </Col> */}
                     </Container>
                 </Row>

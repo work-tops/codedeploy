@@ -21,6 +21,20 @@ const InvoiceTableCard = () => {
     const handleClose1 = () => setShow1(false);
     const handleShow1 = () => setShow1(true);
 
+    // Cancel Modal
+    const [showModal2, setShowModal2] = useState(false);
+
+    const handleClose2 = () => {
+        setShowModal2(false);
+    };
+
+    const handleCancel = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal2(false);
+    };
+
+
     const columns = [
         {
             accessor: 'id',
@@ -265,7 +279,25 @@ const InvoiceTableCard = () => {
                         </tr>
                         <div className="mt-3 d-flex justify-content-end">
                             <Button as={Link} to="/InvoiceCheckout" className="bg-success border-0">Pay Now</Button>
-                            <Button onClick={handleShow1} className="bg-danger ms-2 border-0">Cancel</Button>
+                            <Button  onClick={() => setShowModal2(true)} className="bg-danger ms-2 border-0">Cancel</Button>
+                            {/*  */}
+                            <Modal show={showModal2} onHide={handleClose2}>
+                                <Modal.Header closeButton>
+                                    <Modal.Title>Warning</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                    <p className="text-capitalize">
+                                        Are you sure you want to cancel this Invoice?
+                                    </p>
+                                </Modal.Body>
+                                <Modal.Footer>
+                                    <Button variant="danger" onClick={handleShow1}>
+                                        Cancel
+                                    </Button>
+
+                                </Modal.Footer>
+                            </Modal>
+                            {/*  */}
                         </div>
                     </div>
                 </Modal.Footer>

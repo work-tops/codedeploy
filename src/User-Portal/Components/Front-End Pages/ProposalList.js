@@ -15,7 +15,12 @@ function ProposalList() {
     const handleShow = () => setShow(true);
     const handleClose1 = () => setShow1(false);
     const handleShow1 = () => setShow1(true);
+    // Cancel Modal
+    const [showModal2, setShowModal2] = useState(false);
 
+    const handleClose2 = () => {
+        setShowModal2(false);
+    };
     return (
         <Container>
             <Row>
@@ -49,9 +54,9 @@ function ProposalList() {
                                     Budget : £ 3000
                                 </h5>
                                 <Link to="/jobdetails/:jobid">
-                                <Button className='border-0 bg-success'>
-                                    View Project
-                                </Button>
+                                    <Button className='border-0 bg-success'>
+                                        View Project
+                                    </Button>
                                 </Link>
                             </div>
                             {/* <Form.Label>Sort By :</Form.Label>
@@ -162,8 +167,9 @@ function ProposalList() {
 
                                                 <Dropdown.Menu>
                                                     <Dropdown.Item as={Link} to="/proposaldetails" className="text-success">Accept</Dropdown.Item>
-                                                    <Dropdown.Item className="text-danger">Decline</Dropdown.Item>
+                                                    {/* <Dropdown.Item as={Link} to="/proposallist"  className="text-danger">Decline</Dropdown.Item> */}
                                                 </Dropdown.Menu>
+                                                
                                             </Dropdown>
                                             <p role='button' onClick={handleShow1} className='mt-1 ms-3'>Report this Profile</p>
                                         </div>
@@ -259,7 +265,7 @@ function ProposalList() {
                     </Form>
                 </Modal.Body>
             </Modal>
-            {/*  */}
+
         </Container >
 
 

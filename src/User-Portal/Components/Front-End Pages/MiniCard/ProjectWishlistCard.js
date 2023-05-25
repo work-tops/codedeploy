@@ -1,11 +1,25 @@
-import React from "react";
-import { Card, Container, Col, Row, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Container, Col, Row, Button, Modal } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Icon } from "@iconify/react";
 import product_image from '../../Images/Granite.png'
 import { Link } from "react-router-dom";
 
 function ProjectWishListCard() {
+
+    // Cancel Modal
+    const [showModal, setShowModal] = useState(false);
+
+    const handleClose = () => {
+        setShowModal(false);
+    };
+
+    const handleCancel = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal(false);
+    };
+
     return (
         <>
             <Row>
@@ -52,19 +66,16 @@ function ProjectWishListCard() {
                                                         <div className="mt-3 d-flex flex-lg-column gap-2">
                                                             <Button
                                                                 as={Link}
-                                                                to="#"
+                                                                to="/jobproposal/:jobid/jobproposal"
                                                                 style={{ color: '#003f6b', border: '1px solid #003f6b' }}
                                                                 role="button"
                                                                 className="fw-semibold bg-transparent text-uppercase mt-3">Send proposal
                                                             </Button>
                                                         </div>
-                                                        <><Icon className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
+                                                        <><Icon onClick={() => setShowModal(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
                                                     </div>
                                                 </div>
-                                                {/* <div className="mb-lg-4 mt-auto mt-lg-0">
-                                                        <h4 className="mb-1 lh-1 fs-2 text-warning d-flex align-items-end">£69.50<del className="ms-1 fs--1 text-500 mb-1">£139.90</del></h4>
-                                                        <p className="mb-0 fs--2 text-800">92,632 Learners Enrolled</p>
-                                                    </div> */}
+
                                             </div>
                                         </div>
                                     </div>
@@ -74,10 +85,7 @@ function ProjectWishListCard() {
                         <Card className="mb-3">
                             <Card.Body>
                                 <div className="row g-0">
-                                    {/* <div className="col-md-4 col-lg-3">
-                                        <div className="hoverbox h-md-100"><a className="text-decoration-none" data-gallery="attachment-bg"><img className="h-100 w-100 fit-cover" src={product_image} alt="" /></a>
-                                        </div>
-                                    </div> */}
+
                                     <div className="col-md-12 col-lg-12 p-x1">
                                         <div className="row g-0 h-100">
                                             <div className="col-lg-8 col-xxl-9 d-flex flex-column pe-x1">
@@ -108,13 +116,13 @@ function ProjectWishListCard() {
                                                         <div className="mt-3 d-flex flex-lg-column gap-2">
                                                             <Button
                                                                 as={Link}
-                                                                to="#"
+                                                                to="/jobproposal/:jobid/jobproposal"
                                                                 style={{ color: '#003f6b', border: '1px solid #003f6b' }}
                                                                 role="button"
                                                                 className="fw-semibold bg-transparent text-uppercase mt-3">Send proposal
                                                             </Button>
                                                         </div>
-                                                        <><Icon className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
+                                                        <><Icon onClick={() => setShowModal(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
                                                     </div>
                                                 </div>
                                                 {/* <div className="mb-lg-4 mt-auto mt-lg-0">
@@ -125,6 +133,23 @@ function ProjectWishListCard() {
                                         </div>
                                     </div>
                                 </div>
+                                {/*  */}
+                                <Modal show={showModal} onHide={handleClose}>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>Warning</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <p className="text-capitalize">
+                                            Are you sure you want to remove this project from your wishlist?
+                                        </p>
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Button variant="danger" onClick={handleClose}>
+                                            Remove
+                                        </Button>
+
+                                    </Modal.Footer>
+                                </Modal>
                             </Card.Body>
                         </Card>
                     </Col>

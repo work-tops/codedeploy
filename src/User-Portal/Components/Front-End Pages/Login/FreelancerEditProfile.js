@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import coverimg from '../../Projectimages/7.jpg'
-import { Button, Container, Dropdown, Form } from "react-bootstrap";
+import { Button, Container, Dropdown, Form, Modal } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import profile from '../../Projectimages/Handyman.jpg'
 import { Link } from "react-router-dom";
@@ -8,6 +8,27 @@ import CardDropdown from "../../../TemplateAssets/common/CardDropdown";
 import { Icon } from "@iconify/react";
 
 function FreelancerEditProfile() {
+
+    // Cancel Modal
+    const [showModal1, setShowModal1] = useState(false);
+
+    const handleClose1 = () => {
+        setShowModal1(false);
+    };
+   // Cancel Modal
+   const [showModal2,setShowModal2]= useState(false);
+
+   const handleClose2= () => {
+       setShowModal2(false);
+   };
+// Cancel Modal
+const [showModal3,setShowModal3]= useState(false);
+
+const handleClose3= () => {
+    setShowModal3(false);
+};
+
+
     return (
         <>
 
@@ -108,7 +129,7 @@ function FreelancerEditProfile() {
                         <div className="card mb-3">
                             <div className="card-header d-flex justify-content-between">
                                 <h5 className="mb-0">Experiences</h5>
-                                <><Icon icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" color="#df2020" /></>
+                                <><Icon onClick={() => setShowModal2(true)} icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" color="#df2020" /></>
                             </div>
                             <div className="card-body bg-light"><a className="mb-4 d-block d-flex align-items-center collapsed" href="#experience-form1" data-bs-toggle="collapse" aria-expanded="false" aria-controls="experience-form1"><span className="circle-dashed">
                                 <span className="fas fa-plus"></span></span><span className="ms-3">Add new experience</span></a>
@@ -175,7 +196,61 @@ function FreelancerEditProfile() {
                                 <div class="row align-items-center">
                                     <div class="col d-flex justify-content-between">
                                         <h5 class="mb-0" id="followers">Followers <span class="d-none d-sm-inline-block">(4)</span></h5>
-                                        <button className="btn btn-falcon-danger d-block">Remove Followers</button>
+                                        <button onClick={() => setShowModal1(true)} className="btn btn-falcon-danger d-block">Remove Followers</button>
+                                        {/*  */}
+                                        <Modal show={showModal1} onHide={handleClose1}>
+                                            <Modal.Header closeButton>
+                                                <Modal.Title>Warning</Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <p className="text-capitalize">
+                                                    Are you sure you want to remove (4) followers?
+                                                </p>
+                                            </Modal.Body>
+                                            <Modal.Footer>
+                                                <Button variant="danger" onClick={handleClose1}>
+                                                    Remove
+                                                </Button>
+
+                                            </Modal.Footer>
+                                        </Modal>
+                                        {/*  */}
+                                        {/* Modal-2 */}
+                                        <Modal show={showModal2} onHide={handleClose2}>
+                                            <Modal.Header closeButton>
+                                                <Modal.Title>Warning</Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <p className="text-capitalize">
+                                                    Are you sure you want to delete selected experience ?
+                                                </p>
+                                            </Modal.Body>
+                                            <Modal.Footer>
+                                                <Button variant="danger" onClick={handleClose2}>
+                                                    Delete
+                                                </Button>
+
+                                            </Modal.Footer>
+                                        </Modal>
+                                        {/*  */}
+                                        {/* Modal-2 */}
+                                        <Modal show={showModal3} onHide={handleClose3}>
+                                            <Modal.Header closeButton>
+                                                <Modal.Title>Warning</Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <p className="text-capitalize">
+                                                    Are you sure you want to remove selected photos ?
+                                                </p>
+                                            </Modal.Body>
+                                            <Modal.Footer>
+                                                <Button variant="danger" onClick={handleClose3}>
+                                                    Remove
+                                                </Button>
+
+                                            </Modal.Footer>
+                                        </Modal>
+                                        {/*  */}
                                     </div>
                                     {/* Search */}
                                 </div>
@@ -244,7 +319,7 @@ function FreelancerEditProfile() {
                                     <Dropdown.Item className="text-success d-block">
                                         Add
                                     </Dropdown.Item>
-                                    <Dropdown.Item className="text-danger d-block">
+                                    <Dropdown.Item onClick={() => setShowModal3(true)} className="text-danger d-block">
                                         Remove
                                     </Dropdown.Item>
                                 </CardDropdown>

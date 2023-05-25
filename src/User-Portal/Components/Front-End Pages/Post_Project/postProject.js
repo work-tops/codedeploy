@@ -8,7 +8,7 @@ import {
   Dropdown,
   Image,
   OverlayTrigger,
-  Tooltip,
+  Modal,
   Container
 } from 'react-bootstrap';
 import { Link, useHistory } from "react-router-dom";
@@ -177,6 +177,21 @@ const PostProject = () => {
     Jobslist()
     selleremails()
   }, [])
+
+  // Cancel Modal
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
+  const handleCancel = () => {
+    // Perform cancel action here
+    console.log('Cancel project');
+    setShowModal(false);
+  };
+
+
 
   return (
     <>
@@ -524,19 +539,34 @@ const PostProject = () => {
                     <div className='d-flex justify-content-start'>
                       <Button
                         type="submit"
-                         className='d-block border-0 bg-success'
+                        className='d-block border-0 bg-success'
                       >Post Project</Button>
-                      <Link to="/projectlist">
-                        <Button className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
-                      </Link>
-                      
+                     
+                        <Button onClick={() => setShowModal(true)} className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
+                     
+
                     </div>
                   </Col>
                 </Row>
               </Card.Body>
             </Card >
             {/* Post A Project */}
-
+            <Modal show={showModal} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>Warning</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                Are you sure you want to cancel without posting the project?
+              </Modal.Body>
+              <Modal.Footer>
+                
+                 <Link to="/projectlist">
+                <Button variant="danger" onClick={handleClose}>
+                  Cancel 
+                </Button>
+                 </Link>
+              </Modal.Footer>
+            </Modal>
             {/* </Col> */}
           </Container>
         </Row>

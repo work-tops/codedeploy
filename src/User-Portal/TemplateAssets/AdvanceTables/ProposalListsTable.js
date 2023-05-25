@@ -16,6 +16,12 @@ const ProposalListsTable = () => {
     const handleShow = () => setShow(true);
     const handleClose1 = () => setShow1(false);
     const handleShow1 = () => setShow1(true);
+    // Cancel Modal
+    const [showModal2, setShowModal2] = useState(false);
+
+    const handleClose2 = () => {
+        setShowModal2(false);
+    };
 
     const columns = [
         {
@@ -78,7 +84,7 @@ const ProposalListsTable = () => {
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-success">Accept</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
-                <Dropdown.Item as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
+                <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
         {
@@ -97,7 +103,7 @@ const ProposalListsTable = () => {
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-success">Accept</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
-                <Dropdown.Item as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
+                <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
         {
@@ -116,7 +122,7 @@ const ProposalListsTable = () => {
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-success">Accept</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
-                <Dropdown.Item as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
+                <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
         {
@@ -130,20 +136,38 @@ const ProposalListsTable = () => {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
             duration: '2 Months',
             budget: '2300',
-            status: <span className="badge bg-secondary">On Hold</span>,
+            status: <span className="badge bg-danger">Declined</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-success">Accept</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
-                <Dropdown.Item as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
+                <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
     ]
+    {/*  */ }
 
+    {/*  */ }
     function BulAction({ selectedRowIds }) {
         return (
             <>
                 <div>
+                    <Modal show={showModal2} onHide={handleClose2}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Warning</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <p className="text-capitalize">
+                                Are you sure you want to decline this proposal?
+                            </p>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="danger" onClick={handleClose2}>
+                                Decline
+                            </Button>
+
+                        </Modal.Footer>
+                    </Modal>
                     <Modal
                         show={show}
                         onHide={() => setShow(false)}

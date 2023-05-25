@@ -14,6 +14,18 @@ const OwnerEnquiryTable = () => {
     const handleShow = () => setShow(true);
 
 
+    // Cancel Modal
+    const [showModal1, setShowModal1] = useState(false);
+
+    const handleClose1 = () => {
+        setShowModal1(false);
+    };
+
+    const handleCancel = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal1(false);
+    };
     const columns = [
         {
             accessor: 'id',
@@ -47,7 +59,7 @@ const OwnerEnquiryTable = () => {
     ];
     const data = [
         {
-            id:'625355',
+            id: '625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             serviceName: 'Kitchen Worktops',
@@ -56,11 +68,11 @@ const OwnerEnquiryTable = () => {
             action: <CardDropdown>
                 <Dropdown.Item as={Link} to="/ownerEnquireDetails" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
-                <Dropdown.Item as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
+                <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
         {
-            id:'625355',
+            id: '625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             serviceName: 'Kitchen Worktops',
@@ -69,11 +81,11 @@ const OwnerEnquiryTable = () => {
             action: <CardDropdown>
                 <Dropdown.Item as={Link} to="/ownerEnquireDetails" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
-                <Dropdown.Item as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
+                <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
         {
-            id:'625355',
+            id: '625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             serviceName: 'Kitchen Worktops',
@@ -82,11 +94,11 @@ const OwnerEnquiryTable = () => {
             action: <CardDropdown>
                 <Dropdown.Item as={Link} to="/ownerEnquireDetails" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
-                <Dropdown.Item as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
+                <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
         {
-            id:'625355',
+            id: '625355',
             name: 'Peter Leverkus',
             date: '10 May 2023',
             serviceName: 'Kitchen Worktops',
@@ -95,7 +107,7 @@ const OwnerEnquiryTable = () => {
             action: <CardDropdown>
                 <Dropdown.Item as={Link} to="/ownerEnquireDetails" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
-                <Dropdown.Item as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
+                <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
     ]
@@ -137,6 +149,24 @@ const OwnerEnquiryTable = () => {
                     </Modal.Body>
                 </Modal>
 
+                {/*  */}
+                <Modal show={showModal1} onHide={handleClose1}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Warning</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p className="text-capitalize">
+                            Are you sure you want to decline this enquiry?
+                        </p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="danger" onClick={handleClose1}>
+                            Decline
+                        </Button>
+
+                    </Modal.Footer>
+                </Modal>
+                {/*  */}
 
                 <Row className="flex-between-center mb-3">
                     <Col xs={12} md={8} lg={7} sm="12" className="mt-3  pe-0">

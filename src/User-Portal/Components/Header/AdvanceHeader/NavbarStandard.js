@@ -214,7 +214,7 @@ const NavbarStandard = () => {
                             <Dropdown.Item href="#!">Project</Dropdown.Item>
                           </Link>
                           <Link to="/wishlist/seller">
-                            <Dropdown.Item href="#!">Seller</Dropdown.Item>
+                            <Dropdown.Item href="#!">Freelancer</Dropdown.Item>
                           </Link>
                         </div>
                       </Dropdown.Menu>
@@ -315,15 +315,13 @@ const NavbarStandard = () => {
                   {/*  */}
 
 
-
-
-
-
                   <div className='mt-2'>
                     <Link to="/notifications">
 
                     </Link>
                   </div>
+
+                  
                   <div className='mt-2'>
                     <Link to="/Cart">
                       <Icon icon="ic:round-shopping-cart" color="white" width="24" height="24" />

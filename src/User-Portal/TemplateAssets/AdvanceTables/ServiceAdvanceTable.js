@@ -113,11 +113,9 @@ const ServiceAdvancedTable = () => {
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+               
+                <Dropdown.Item className="text-danger">Disable</Dropdown.Item>
+              
             </div>
         </CardDropdown>
     }));

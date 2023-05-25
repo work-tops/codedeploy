@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
-import { Row, Button, Col, Form } from "react-bootstrap";
+import { Row, Button, Col, Form, Modal } from "react-bootstrap";
 import { Icon } from "@iconify/react";
 import { getAllData } from "../../../Services/ProxyService";
 import { Link } from "react-router-dom";
@@ -25,6 +25,7 @@ const AdvancedTable = () => {
     useEffect(() => {
         getProposals();
     }, [])
+
 
     const columns = [
         {
@@ -119,6 +120,9 @@ const AdvancedTable = () => {
                         </div>
                     )}
                 </Col>
+                {/*  */}
+                
+                {/*  */}
             </Row>
         );
     };

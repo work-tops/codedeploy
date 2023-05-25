@@ -25,6 +25,16 @@ const InvoiceFreelancerDueTable = () => {
     const handleClose2 = () => setShow2(false);
     const handleShow2 = () => setShow2(true);
 
+
+    // Cancel Modal
+    const [showModal3, setShowModal3] = useState(false);
+
+    const handleClose3 = () => {
+        setShowModal3(false);
+    };
+
+    
+
     const columns = [
         {
             accessor: 'itemName',
@@ -419,7 +429,24 @@ const InvoiceFreelancerDueTable = () => {
                 </Modal.Footer>
             </Modal>
             {/*  */}
+            {/*  */}
+            <Modal show={showModal3} onHide={handleClose3}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Warning</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p className="text-capitalize">
+                        Are you sure you want to cancel this Invoice?
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="danger" onClick={handleShow1}>
+                        Cancel
+                    </Button>
 
+                </Modal.Footer>
+            </Modal>
+            {/*  */}
             {/* Modal-3 */}
 
             <Modal
@@ -430,7 +457,7 @@ const InvoiceFreelancerDueTable = () => {
                 aria-labelledby="example-custom-modal-styling-title"
             >
                 <Modal.Header className="">
-                <h5>
+                    <h5>
                         New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
                     </h5>
                     <Button className="bg-danger border-0" onClick={handleClose2}>
@@ -514,7 +541,7 @@ const InvoiceFreelancerDueTable = () => {
                         </tr>
                         <div className="mt-3 d-flex justify-content-end">
                             <Button onClick={handleShow} className="bg-primary border-0">Edit</Button>
-                            <Button onClick={handleShow1} className="bg-danger ms-2 border-0">Cancel</Button>
+                            <Button onClick={setShowModal3} className="bg-danger ms-2 border-0">Cancel</Button>
                         </div>
                     </div>
                 </Modal.Footer>

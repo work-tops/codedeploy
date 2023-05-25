@@ -52,7 +52,7 @@ function HomePage() {
                         <h1 className="fs-2 mt-5 fs-sm-4 mb-3 fs-md-5">Most Popular Categories</h1>
                         <Swiper
                             slidesPerView={3}
-                            spaceBetween={30}
+                            spaceBetween={10}
                             pagination={{
                                 clickable: true,
                             }}
@@ -75,6 +75,10 @@ function HomePage() {
                                 }
                             }}
                         >
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                <h5 className="text-light m-2">Granite</h5>
+                                <p className="text-light m-2">Hello World</p>
+                            </SwiperSlide>
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <h5 className="text-light m-2">Granite</h5>
                                 <p className="text-light m-2">Hello World</p>

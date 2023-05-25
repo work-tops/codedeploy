@@ -1,10 +1,24 @@
-import React from "react";
-import { Card, Form, Col, Row, Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Form, Col, Row, Container, Modal, Button } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import profile from '../../Projectimages/Handyman.jpg'
 import { Icon } from "@iconify/react";
 
 function WishListSellerCard() {
+
+    // Cancel Modal
+    const [showModal, setShowModal] = useState(false);
+
+    const handleClose = () => {
+        setShowModal(false);
+    };
+
+    const handleCancel = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal(false);
+    };
+
     return (
         <>
             <Row>
@@ -20,7 +34,7 @@ function WishListSellerCard() {
                                 <div class="row align-items-center">
                                     <div class="col d-flex justify-content-between">
                                         <h5 class="mb-0" id="followers">Followers <span class="d-none d-sm-inline-block">(4)</span></h5>
-                                        <><Icon className="d-block hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
+                                        <><Icon onClick={() => setShowModal(true)} className="d-block hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
                                     </div>
                                     {/* Search */}
                                 </div>
@@ -58,7 +72,7 @@ function WishListSellerCard() {
                                             </div>
                                             <Form.Check.Label className="mb-0 text-700">
                                                 <input className="form-check-input me-1" type="checkbox" />
-                                               Sophie Turner
+                                                Sophie Turner
                                             </Form.Check.Label>
                                             <p class="fs--2 mb-1"><a class="text-700" >Roofer</a></p>
                                         </div>
@@ -70,7 +84,7 @@ function WishListSellerCard() {
                                             </div>
                                             <Form.Check.Label className="mb-0 text-700">
                                                 <input className="form-check-input me-1" type="checkbox" />
-                                               Peter Dinklage
+                                                Peter Dinklage
                                             </Form.Check.Label>
 
                                             <p class="fs--2 mb-1"><a class="text-700" >Worktop Installer</a></p>
@@ -81,6 +95,25 @@ function WishListSellerCard() {
                             </div>
                         </div>
                         {/* Followers */}
+
+                        {/*  */}
+                        <Modal show={showModal} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Warning</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <p className="text-capitalize">
+                                    Are you sure you want to remove (4) Freelancers from your wishlist?
+                                </p>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="danger" onClick={handleClose}>
+                                    Remove
+                                </Button>
+
+                            </Modal.Footer>
+                        </Modal>
+                        {/*  */}
                     </Col>
                 </Container>
             </Row>

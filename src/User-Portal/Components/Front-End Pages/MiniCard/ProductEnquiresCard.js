@@ -1,12 +1,20 @@
 
-import React from "react";
-import { Card, Button, Col, Row, Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Button, Col, Row, Container, Tab, Nav } from "react-bootstrap";
 import SellerLandingPage from "../SellerLandingPage";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import OwnerEnquiryTable from "../../../TemplateAssets/AdvanceTables/OwnerEnquiryTable";
 import { Link } from "react-router-dom";
 import SellerEnquiryTable from "../../../TemplateAssets/AdvanceTables/SellerEnquiryTable";
 function ProductEnquiresCard() {
+
+    const [activeTab, setActiveTab] = useState('tab1');
+
+    const handleTabSelect = (tab) => {
+        setActiveTab(tab);
+    };
+
+
     return (
         <>
             <Row>
@@ -19,35 +27,27 @@ function ProductEnquiresCard() {
                             <Card className="mb-3" >
                                 <Card.Header className="bg-light d-flex justify-content-between">
                                     <h5>Enquiries</h5>
-                                    
                                 </Card.Header>
                                 <Card.Body>
-                                    <div class="d-flex justify-content-start">
-                                        <ul class=" nav nav-tabs " role="tablist">
-                                            <div className="d-flex flex-row">
-                                                <div className="">
-                                                    <li class="nav-item" role="presentation">
-                                                        <a style={{ color: "#003f6b", fontSize: "18px" }} class="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">Product Enquiry</a>
-                                                    </li>
-                                                </div>
-                                                <div className="">
-                                                    <li class="nav-item" role="presentation">
-                                                        <a style={{ color: "#003f6b", fontSize: "18px" }} class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">Freelancer Enquiry</a>
-                                                    </li>
-                                                </div>
-                                            </div>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-12 mt-lg-0">
-                                        <div class="tab-content">
-                                            <div class="tab-pane active" id="tab-1" role="tabpanel">
+                                    <Tab.Container activeKey={activeTab} onSelect={handleTabSelect}>
+                                        <Nav variant="tabs" style={{color:'#003f6b'}}>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="tab1">Product Enquiry</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="tab2">Service Enquiry</Nav.Link>
+                                            </Nav.Item>
+                                        </Nav>
+                                        <Tab.Content>
+                                            <Tab.Pane eventKey="tab1">
                                                 <OwnerEnquiryTable />
-                                            </div>
-                                            <div class="tab-pane active" id="tab-2" role="tabpanel">
-                                                <SellerEnquiryTable/>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </Tab.Pane>
+                                            <Tab.Pane eventKey="tab2">
+                                                <SellerEnquiryTable />
+                                            </Tab.Pane>
+                                        </Tab.Content>
+                                    </Tab.Container>
+                                    
                                 </Card.Body>
                             </Card>
                         </Col>

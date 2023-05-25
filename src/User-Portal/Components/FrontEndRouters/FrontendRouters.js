@@ -190,7 +190,6 @@ const FrontEndRouters = () => {
             <Route path="/EditPostProject"><Editpostproject/></Route>
             <Route path="/EditProposal"><EditProposal/></Route>
             <Route path="/InvoiceCheckout"><InvoiceCheckout/></Route>
-            <Route path="/Modal"><AreYouSureModal/></Route>
             {/* New Pages */}
         </Switch>
 
