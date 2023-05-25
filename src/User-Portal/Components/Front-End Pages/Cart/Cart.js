@@ -1,14 +1,22 @@
-import React from "react";
+import { React, useState } from "react";
 import { Row, Col, Button, Card, Form, Container } from "react-bootstrap";
-import Header from '../../Header/Header'
-import Footer from '../../Footer/Footer'
-import Menubar from "../../Menubar/Menubar";
-import { Icon } from "@iconify/react";
-import { Divider } from "@mui/material";
+
 import { Link } from "react-router-dom";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import product_image from '../../Images/semiprecious.png'
+
 function Cart() {
+ const [showModal, setShowModal] = useState(false);
+
+    const handleModalToggle = () => {
+        setShowModal(!showModal);
+    };
+
+    const handleConfirm = () => {
+        // Perform the action after confirmation
+        console.log("Action confirmed!");
+        handleModalToggle(); // Close the modal after confirmation
+    };
     return (
         <>
             <Row>
@@ -30,9 +38,8 @@ function Cart() {
                                                 Continue Shopping
                                             </a>
                                         </Link>
-                                        
                                         <Button as={Link} to="/checkout" className="btn btn-sm btn-primary" >Checkout</Button></div>
-                                        
+
                                 </div>
                             </div>
                             <div className="card-body p-0">
@@ -51,7 +58,24 @@ function Cart() {
                                             <div className="flex-1">
                                                 <h5 className="fs-0"><a className="text-900" >MALACHITE SEMI PRECIOUS
                                                 </a></h5>
-                                                <div className="fs--2 fs-md--1"><a role="button" className="text-danger" >Remove</a></div>
+                                                <div>
+                                                    <div className="fs--2 fs-md--1"><a role="button" onClick={handleModalToggle} className="text-danger" >Remove</a></div>
+                                                    <div>
+                                                    <button onClick={handleModalToggle}>Open Modal</button>
+                                                        {showModal && (
+                                                            <div className="modal">
+                                                                <div className="modal-content">
+                                                                    <h2>Are You Sure?</h2>
+                                                                    <p>This action cannot be undone.</p>
+                                                                    <div className="modal-buttons">
+                                                                        <button onClick={handleConfirm}>Confirm</button>
+                                                                        <button onClick={handleModalToggle}>Cancel</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

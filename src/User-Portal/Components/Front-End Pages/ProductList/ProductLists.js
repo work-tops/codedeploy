@@ -253,11 +253,13 @@ function ProductList() {
                                         {products.map((data, key) => (
                                             <article className="col-md-6 col-lg-6 col-xl-4">
                                                 <div className="card h-100 overflow-hidden">
-                                                    <div style={{maxWidth:'100%',height:'100%'}} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                    <div style={{ maxWidth: '100%', height: '100%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                                         <div>
                                                             <div>
                                                                 <Link to={`productdetails/${data._id}`}>
-                                                                    <Card.Img style={{ aspectRatio: '1/1' }} variant='top' src={data?.attachments[0]?.url} alt="Card image cap" />
+                                                                    <div className="image-container aspect-ratio-1-1-1">
+                                                                        <Image src={data?.attachments[0]?.url} fluid />
+                                                                    </div>
                                                                 </Link>
                                                             </div>
                                                             <div className="p-3">

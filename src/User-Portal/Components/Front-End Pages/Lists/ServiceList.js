@@ -520,6 +520,7 @@ function ServiceList(layout) {
                                     </Col>
                                     <Col sm={12} md={6} xl={4} lg={4}>
                                         <Card className="mb-3">
+                                        
                                             <Card.Img variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Roofing} alt="Card image cap" />
                                             <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                                 <Card.Title className="m-3">

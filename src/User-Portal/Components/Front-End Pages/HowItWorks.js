@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-
+import { Icon } from "@iconify/react";
 // import required modules
 import { Navigation } from "swiper";
 
@@ -124,8 +124,9 @@ function HowItWorks() {
                                             <div className="row mt-6">
                                                 <div className="col-lg-4">
                                                     <div className="card card-span h-100">
-                                                        <div className="card-span-img">
-                                                            <span className="fab fa-sass fs-4 text-info"></span></div>
+                                                        <div style={{ background: '#93e7fe' }} className="card-span-img">
+                                                            <Icon icon="teenyicons:discount-outline" color="#003f6b" width="42" height="42" />
+                                                        </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Check Ongoing Offers</h5>
                                                             <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
@@ -135,8 +136,9 @@ function HowItWorks() {
                                                 </div>
                                                 <div className="col-lg-4 mt-6 mt-lg-0">
                                                     <div className="card card-span h-100">
-                                                        <div className="card-span-img">
-                                                            <span className="fab fa-node-js fs-5 text-success"></span></div>
+                                                        <div style={{ background: '#ff9a7a' }} className="card-span-img">
+                                                            <Icon icon="icons8:buy" color="#003f6b" width="42" height="42" />
+                                                        </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Buy Materials Directly</h5>
                                                             <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
@@ -146,8 +148,9 @@ function HowItWorks() {
                                                 </div>
                                                 <div className="col-lg-4 mt-6 mt-lg-0">
                                                     <div className="card card-span h-100">
-                                                        <div className="card-span-img">
-                                                            <span className="fab fa-gulp fs-6 text-danger"></span></div>
+                                                        <div style={{ background: '#fcc77a' }} className="card-span-img">
+                                                            <Icon icon="mdi:search-web" color="#003f6b" width="42" height="42" />
+                                                        </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Browse the Services</h5>
                                                             <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
@@ -202,8 +205,9 @@ function HowItWorks() {
                                                 <div className="row mt-6">
                                                     <div className="col-lg-4">
                                                         <div className="card card-span h-100">
-                                                            <div className="card-span-img">
-                                                                <span className="fab fa-sass fs-4 text-info"></span></div>
+                                                            <div style={{ background: '#93e7fe' }} className="card-span-img">
+                                                                <Icon icon="ri:secure-payment-fill" color="#003f6b" width="42" height="42" />
+                                                            </div>
                                                             <div className="card-body pt-6 pb-4">
                                                                 <h5 className="mb-2">Process Payment Securely</h5>
                                                                 <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
@@ -213,8 +217,9 @@ function HowItWorks() {
                                                     </div>
                                                     <div className="col-lg-4 mt-6 mt-lg-0">
                                                         <div className="card card-span h-100">
-                                                            <div className="card-span-img">
-                                                                <span className="fab fa-node-js fs-5 text-success"></span></div>
+                                                            <div style={{ background: '#ff9a7a' }} className="card-span-img">
+                                                                <Icon icon="iconoir:three-stars" color="#003f6b" width="42" height="42" />
+                                                            </div>
                                                             <div className="card-body pt-6 pb-4">
                                                                 <h5 className="mb-2">Rate Your Professional</h5>
                                                                 <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
@@ -224,8 +229,9 @@ function HowItWorks() {
                                                     </div>
                                                     <div className="col-lg-4 mt-6 mt-lg-0">
                                                         <div className="card card-span h-100">
-                                                            <div className="card-span-img">
-                                                                <span className="fab fa-gulp fs-6 text-danger"></span></div>
+                                                            <div style={{ background: '#fcc77a' }} className="card-span-img">
+                                                                <Icon icon="cil:chat-bubble" color="#003f6b" width="42" height="42" />
+                                                            </div>
                                                             <div className="card-body pt-6 pb-4">
                                                                 <h5 className="mb-2">Follow Up on Chat</h5>
                                                                 <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
@@ -263,8 +269,9 @@ function HowItWorks() {
                                             <div className="row mt-6">
                                                 <div className="col-lg-4">
                                                     <div className="card card-span h-100">
-                                                        <div className="card-span-img">
-                                                            <span className="fab fa-sass fs-4 text-info"></span></div>
+                                                        <div style={{ background: '#93e7fe' }} className="card-span-img">
+                                                            <Icon icon="mdi:user-check" color="#003f6b" width="42" height="42" />
+                                                        </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Stand Out With a Strong Profile</h5>
                                                             <p>
@@ -279,8 +286,9 @@ function HowItWorks() {
                                                 </div>
                                                 <div className="col-lg-4 mt-6 mt-lg-0">
                                                     <div className="card card-span h-100">
-                                                        <div className="card-span-img">
-                                                            <span className="fab fa-node-js fs-5 text-success"></span></div>
+                                                        <div style={{ background: "#ff9a7a" }} className="card-span-img">
+                                                            <Icon icon="dashicons:images-alt2" color="#003f6b" width="42" height="42" />
+                                                        </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Upload Images to Promote Your Business</h5>
                                                             <p>
@@ -293,8 +301,9 @@ function HowItWorks() {
                                                 </div>
                                                 <div className="col-lg-4 mt-6 mt-lg-0">
                                                     <div className="card card-span h-100">
-                                                        <div className="card-span-img">
-                                                            <span className="fab fa-gulp fs-6 text-danger"></span></div>
+                                                        <div style={{background:"#fcc77a"}} className="card-span-img">
+                                                            <Icon icon="mdi:account-star" color="#003f6b" width="42" height="42" />
+                                                        </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Facility to Review Your Clients</h5>
                                                             <p>
@@ -307,8 +316,9 @@ function HowItWorks() {
 
                                                 <div className="col-lg-4 mt-6 mt-lg-6">
                                                     <div className="card card-span h-100">
-                                                        <div className="card-span-img">
-                                                            <span className="fab fa-gulp fs-6 text-danger"></span></div>
+                                                        <div style={{ background: '#93e7fe' }} className="card-span-img">
+                                                            <Icon icon="mdi:payment-clock" color="#003f6b" width="42" height="42" />
+                                                        </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">On-Time Payments</h5>
                                                             <p>
@@ -320,8 +330,9 @@ function HowItWorks() {
                                                 </div>
                                                 <div className="col-lg-4 mt-6 mt-lg-6">
                                                     <div className="card card-span h-100">
-                                                        <div className="card-span-img">
-                                                            <span className="fab fa-gulp fs-6 text-danger"></span></div>
+                                                        <div style={{background:"#ff9a7a"}} className="card-span-img">
+                                                        <Icon icon="mdi:card-account-details-star-outline" color="#003f6b" width="42" height="42" />
+                                                        </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2"> Your Review Display page</h5>
                                                             <p>

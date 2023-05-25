@@ -7,6 +7,9 @@ import { Link, useParams } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
 import worktops from '../Projectimages/7.jpg'
 import { Divider } from "@mui/material";
+import { FaStar } from 'react-icons/fa';
+
+
 function ProductDetails() {
     let { proid } = useParams();
     const [prodata, setProdata] = useState([])
@@ -24,6 +27,43 @@ const [show, setShow] = useState(false);
 
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
+
+// Review
+const [name, setName] = useState('');
+const [email, setEmail] = useState('');
+const [reviewText, setReviewText] = useState('');
+const [rating, setRating] = useState(0);
+
+const handleNameChange = (event) => {
+  setName(event.target.value);
+};
+
+const handleEmailChange = (event) => {
+  setEmail(event.target.value);
+};
+
+const handleReviewChange = (event) => {
+  setReviewText(event.target.value);
+};
+
+const handleStarClick = (selectedRating) => {
+  setRating(selectedRating);
+};
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  // Process the review submission
+  console.log('Name:', name);
+  console.log('Email:', email);
+  console.log('Review:', reviewText);
+  console.log('Rating:', rating);
+  setName('');
+  setEmail('');
+  setReviewText('');
+  setRating(0);
+};
+// Review
+
 
 
     return (
@@ -475,28 +515,56 @@ const handleShow = () => setShow(true);
         <h5 class="mb-3">Write your Review</h5>
         </Modal.Header>
         <Modal.Body>
-          <div class="col-lg-6 ps-lg-5">
-            <form>
-             
-              <div class="mb-3"><label class="form-label">Rating: </label>
-                <div class="d-block star-rating" data-rater="{&quot;starSize&quot;:32,&quot;step&quot;:0.5}" style={{ width: "160px", height: "32px", backgroundSize: "32px" }} data-rating="1.5" title="5/5"><div class="star-value" style={{ backgroundSize: "32px", width: "30%" }}>
-                </div>
-                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />    
-                </div>
-              </div>
-              <div class="mb-3"><label class="form-label" for="formGroupNameInput">Name:</label><input class="form-control form-control-sm" id="formGroupNameInput" type="text"/></div>
-              <div class="mb-3"><label class="form-label" for="formGroupEmailInput">Email:</label><input class="form-control form-control-sm" id="formGroupEmailInput" type="email"/></div>
-              <div class="mb-3"><label class="form-label" for="formGrouptextareaInput">Review:</label><textarea class="form-control form-control-sm" id="formGrouptextareaInput" rows="3"></textarea></div>
-              </form>
-          </div>
+
+    <Form onSubmit={handleSubmit}>
+    <Form.Group className="mb-3" controlId="rating">
+        <Form.Label>Rating</Form.Label>
+        <div className="star-rating">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <FaStar
+              key={star}
+              className={star <= rating ? 'star selected' : 'star'}
+              onClick={() => handleStarClick(star)}
+            />
+          ))}
+        </div>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="name">
+        <Form.Label>Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+          onChange={handleNameChange}
+          required
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="email">
+        <Form.Label>Email</Form.Label>
+        <Form.Control
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={handleEmailChange}
+          required
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="reviewText">
+        <Form.Label>Write your review</Form.Label>
+        <Form.Control
+          as="textarea"
+          rows={3}
+          value={reviewText}
+          onChange={handleReviewChange}
+          required
+        />
+      </Form.Group>
+      
+      <div className="d-flex justify-content-end mt-3">
+      <Button type="submit" onClick={handleClose}>Submit</Button>
+      </div>
+    </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button type="submit" onClick={handleClose}>Submit</Button>
-        </Modal.Footer>
       </Modal>
         </>
     )
