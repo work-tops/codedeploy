@@ -82,7 +82,7 @@ const ProposalListsTable = () => {
             status: <span className="badge bg-success">Accepted</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/proposalDetails" className="text-success">Accept</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
@@ -101,7 +101,7 @@ const ProposalListsTable = () => {
             status: <span className="badge bg-danger">Declined</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/proposalDetails" className="text-success">Accept</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
@@ -120,7 +120,7 @@ const ProposalListsTable = () => {
             status: <span className="badge bg-warning">Pending</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/proposalDetails" className="text-success">Accept</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
@@ -139,7 +139,7 @@ const ProposalListsTable = () => {
             status: <span className="badge bg-danger">Declined</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/proposalDetails" className="text-success">Accept</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
