@@ -191,7 +191,7 @@ function ProposalDetails() {
                                                     </Dropdown.Toggle>
 
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item className="text-success">Accept</Dropdown.Item>
+                                                        <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
                                                         <Dropdown.Item onClick={() => setShowModal2(true)} className="text-danger">Decline</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>

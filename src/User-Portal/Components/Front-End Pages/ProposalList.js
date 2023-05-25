@@ -166,7 +166,7 @@ function ProposalList() {
                                                 </Dropdown.Toggle>
 
                                                 <Dropdown.Menu>
-                                                    <Dropdown.Item as={Link} to="/proposaldetails" className="text-success">Accept</Dropdown.Item>
+                                                    <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
                                                     {/* <Dropdown.Item as={Link} to="/proposallist"  className="text-danger">Decline</Dropdown.Item> */}
                                                 </Dropdown.Menu>
                                                 
