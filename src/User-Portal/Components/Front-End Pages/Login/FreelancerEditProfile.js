@@ -15,18 +15,18 @@ function FreelancerEditProfile() {
     const handleClose1 = () => {
         setShowModal1(false);
     };
-   // Cancel Modal
-   const [showModal2,setShowModal2]= useState(false);
+    // Cancel Modal
+    const [showModal2, setShowModal2] = useState(false);
 
-   const handleClose2= () => {
-       setShowModal2(false);
-   };
-// Cancel Modal
-const [showModal3,setShowModal3]= useState(false);
+    const handleClose2 = () => {
+        setShowModal2(false);
+    };
+    // Cancel Modal
+    const [showModal3, setShowModal3] = useState(false);
 
-const handleClose3= () => {
-    setShowModal3(false);
-};
+    const handleClose3 = () => {
+        setShowModal3(false);
+    };
 
 
     return (
@@ -199,7 +199,7 @@ const handleClose3= () => {
                                         <button onClick={() => setShowModal1(true)} className="btn btn-falcon-danger d-block">Remove Followers</button>
                                         {/*  */}
                                         <Modal show={showModal1} onHide={handleClose1}>
-                                            <Modal.Header closeButton>
+                                            <Modal.Header >
                                                 <Modal.Title>Warning</Modal.Title>
                                             </Modal.Header>
                                             <Modal.Body>
@@ -208,6 +208,9 @@ const handleClose3= () => {
                                                 </p>
                                             </Modal.Body>
                                             <Modal.Footer>
+                                                <Button variant="secondary" onClick={handleClose1}>
+                                                    Cancel
+                                                </Button>
                                                 <Button variant="danger" onClick={handleClose1}>
                                                     Remove
                                                 </Button>
@@ -217,7 +220,7 @@ const handleClose3= () => {
                                         {/*  */}
                                         {/* Modal-2 */}
                                         <Modal show={showModal2} onHide={handleClose2}>
-                                            <Modal.Header closeButton>
+                                            <Modal.Header >
                                                 <Modal.Title>Warning</Modal.Title>
                                             </Modal.Header>
                                             <Modal.Body>
@@ -226,6 +229,9 @@ const handleClose3= () => {
                                                 </p>
                                             </Modal.Body>
                                             <Modal.Footer>
+                                                <Button variant="secondary" onClick={handleClose2}>
+                                                    Cancel
+                                                </Button>
                                                 <Button variant="danger" onClick={handleClose2}>
                                                     Delete
                                                 </Button>
@@ -235,7 +241,7 @@ const handleClose3= () => {
                                         {/*  */}
                                         {/* Modal-2 */}
                                         <Modal show={showModal3} onHide={handleClose3}>
-                                            <Modal.Header closeButton>
+                                            <Modal.Header >
                                                 <Modal.Title>Warning</Modal.Title>
                                             </Modal.Header>
                                             <Modal.Body>
@@ -244,6 +250,9 @@ const handleClose3= () => {
                                                 </p>
                                             </Modal.Body>
                                             <Modal.Footer>
+                                                <Button variant="secondary" onClick={handleClose3}>
+                                                    Cancel
+                                                </Button>
                                                 <Button variant="danger" onClick={handleClose3}>
                                                     Remove
                                                 </Button>

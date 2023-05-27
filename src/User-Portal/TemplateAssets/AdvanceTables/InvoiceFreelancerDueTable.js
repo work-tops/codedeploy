@@ -33,7 +33,7 @@ const InvoiceFreelancerDueTable = () => {
         setShowModal3(false);
     };
 
-    
+
 
     const columns = [
         {
@@ -440,8 +440,11 @@ const InvoiceFreelancerDueTable = () => {
                     </p>
                 </Modal.Body>
                 <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose3}>
+                        No
+                    </Button>
                     <Button variant="danger" onClick={handleShow1}>
-                        Cancel
+                        Yes
                     </Button>
 
                 </Modal.Footer>

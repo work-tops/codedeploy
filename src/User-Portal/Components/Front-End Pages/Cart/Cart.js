@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Row, Col, Button, Card, Modal, Container } from "react-bootstrap";
+import { Row, Col, Button, Card, Modal, Container, Form } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
@@ -39,13 +39,17 @@ function Cart() {
                                                 Continue Shopping
                                             </a>
                                         </Link>
-                                        <Button as={Link} to="/checkout" className="btn btn-sm btn-primary" >Checkout</Button></div>
+                                        <Button onClick={() => setShowModal(true)} className="btn btn-sm btn-danger" >Remove</Button></div>
+                                        {/* <div className="fs--2 fs-md--1"><a role="button"  className="text-danger" >Remove</a></div> */}
 
                                 </div>
                             </div>
                             <div className="card-body p-0">
                                 <div className="row gx-card mx-0 bg-200 text-900 fs--1 fw-semi-bold">
-                                    <div className="col-9 col-md-8 py-2">Product Name</div>
+                                    <div className="col-2 col-md-2 py-2">
+                                        <Form.Check type="checkbox" />
+                                    </div>
+                                    <div className="col-7 col-md-6 py-2">Product Name</div>
                                     <div className="col-3 col-md-4">
                                         <div className="row">
                                             <div className="col-md-8 py-2 d-none d-md-block text-center">Quantity</div>
@@ -54,23 +58,29 @@ function Cart() {
                                     </div>
                                 </div>
                                 <div className="row gx-card mx-0 align-items-center border-bottom border-200">
-                                    <div className="col-8 py-3">
+                                    <div className="col-2 py-3">
+                                        <Form.Check type="checkbox" />
+                                    </div>
+                                    <div className="col-6 py-3">
                                         <div className="d-flex align-items-center"><a ><img className="img-fluid rounded-1 me-3 d-none d-md-block" src={product_image} alt="" width="60" /></a>
                                             <div className="flex-1">
                                                 <h5 className="fs-0"><a className="text-900" >MALACHITE SEMI PRECIOUS
-                                                </a></h5>
+                                                </a>
+                                                </h5>
                                                 <div>
-                                                    <div className="fs--2 fs-md--1"><a role="button" onClick={() => setShowModal(true)} className="text-danger" >Remove</a></div>
                                                     <Modal show={showModal} onHide={handleClose}>
-                                                        <Modal.Header closeButton>
+                                                        <Modal.Header>
                                                             <Modal.Title>Warning</Modal.Title>
                                                         </Modal.Header>
                                                         <Modal.Body>
                                                             <p className="text-capitalize">
-                                                                Are you sure you want to remove this product from your cart?
+                                                                Are you sure you want to remove (1) product from your cart?
                                                             </p>
                                                         </Modal.Body>
                                                         <Modal.Footer>
+                                                            <Button variant="secondary" onClick={handleClose}>
+                                                                Cancel
+                                                            </Button>
                                                             <Button variant="danger" onClick={handleClose}>
                                                                 Remove
                                                             </Button>

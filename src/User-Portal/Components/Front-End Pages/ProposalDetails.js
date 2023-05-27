@@ -10,12 +10,12 @@ function ProposalDetails() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-   // Cancel Modal
-   const [showModal2, setShowModal2] = useState(false);
+    // Cancel Modal
+    const [showModal2, setShowModal2] = useState(false);
 
-   const handleClose2 = () => {
-       setShowModal2(false);
-   };
+    const handleClose2 = () => {
+        setShowModal2(false);
+    };
     return (
         <>
             <Container>
@@ -247,21 +247,24 @@ function ProposalDetails() {
             </Modal >
             {/* Modal Content */}
             <Modal show={showModal2} onHide={handleClose2}>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Warning</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <p className="text-capitalize">
-                                Are you sure you want to decline this proposal?
-                            </p>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button as={Link} to="/proposallist" variant="danger" onClick={handleClose2}>
-                                Decline
-                            </Button>
+                <Modal.Header >
+                    <Modal.Title>Warning</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p className="text-capitalize">
+                        Are you sure you want to decline this proposal?
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose2}>
+                        Cancel
+                    </Button>
+                    <Button as={Link} to="/proposallist" variant="danger" onClick={handleClose2}>
+                        Decline
+                    </Button>
 
-                        </Modal.Footer>
-                    </Modal>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }

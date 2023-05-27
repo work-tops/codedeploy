@@ -397,7 +397,7 @@ const FrontendAddService = () => {
 
                                     {/*  */}
                                     <Modal show={showModal1} onHide={handleClose1}>
-                                        <Modal.Header closeButton>
+                                        <Modal.Header >
                                             <Modal.Title>Warning</Modal.Title>
                                         </Modal.Header>
                                         <Modal.Body>
@@ -406,10 +406,12 @@ const FrontendAddService = () => {
                                             </p>
                                         </Modal.Body>
                                         <Modal.Footer>
-
+                                            <Button className='me-2' variant="secondary" onClick={handleClose1}>
+                                                No
+                                            </Button>
                                             <Link to="/addservicecard">
                                                 <Button variant="danger" onClick={handleClose1}>
-                                                    Cancel
+                                                    Yes
                                                 </Button>
                                             </Link>
                                         </Modal.Footer>

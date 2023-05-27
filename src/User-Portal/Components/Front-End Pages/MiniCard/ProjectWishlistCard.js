@@ -135,7 +135,7 @@ function ProjectWishListCard() {
                                 </div>
                                 {/*  */}
                                 <Modal show={showModal} onHide={handleClose}>
-                                    <Modal.Header closeButton>
+                                    <Modal.Header >
                                         <Modal.Title>Warning</Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
@@ -144,6 +144,9 @@ function ProjectWishListCard() {
                                         </p>
                                     </Modal.Body>
                                     <Modal.Footer>
+                                        <Button variant="secondary" onClick={handleClose}>
+                                            Cancel
+                                        </Button>
                                         <Button variant="danger" onClick={handleClose}>
                                             Remove
                                         </Button>

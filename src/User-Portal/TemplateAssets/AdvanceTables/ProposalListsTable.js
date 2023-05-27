@@ -162,6 +162,9 @@ const ProposalListsTable = () => {
                             </p>
                         </Modal.Body>
                         <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose2}>
+                                Cancel
+                            </Button>
                             <Button variant="danger" onClick={handleClose2}>
                                 Decline
                             </Button>

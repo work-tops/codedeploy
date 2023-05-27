@@ -163,15 +163,18 @@ const SellerEnquiryTable = () => {
 
                     {/*  */}
                     <Modal show={showModal1} onHide={handleClose1}>
-                        <Modal.Header closeButton>
+                        <Modal.Header >
                             <Modal.Title>Warning</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                             <p className="text-capitalize">
-                                Are you sure you want to decline this enquiry?
+                                Are you sure you want to decline (1) enquiries?
                             </p>
                         </Modal.Body>
                         <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose1}>
+                                Cancel
+                            </Button>
                             <Button variant="danger" onClick={handleClose1}>
                                 Decline
                             </Button>

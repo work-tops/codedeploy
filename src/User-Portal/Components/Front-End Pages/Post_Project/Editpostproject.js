@@ -395,7 +395,7 @@ function Editpostproject() {
                                                 className='d-block border-0 bg-success'
                                             >Post Project</Button>
                                             {/* <Link to="/projectlist"> */}
-                                                <Button onClick={() => setShowModal(true)} className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
+                                            <Button onClick={() => setShowModal(true)} className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
                                             {/* </Link> */}
                                         </div>
                                         <h5 className="text-center text-danger fw-bold">Your Project has been expired....Please Post New Project!!!</h5>
@@ -405,17 +405,20 @@ function Editpostproject() {
                         </Card >
                         {/* Post A Project */}
                         <Modal show={showModal} onHide={handleClose}>
-                            <Modal.Header closeButton>
+                            <Modal.Header >
                                 <Modal.Title>Warning</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                                 Are you sure you want to Exit?
                             </Modal.Body>
                             <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Cancel
+                                </Button>
                                 <Button as={Link} to="/projectlist" variant="danger" onClick={handleClose}>
                                     Exit
                                 </Button>
-                               
+
                             </Modal.Footer>
                         </Modal>
                         {/* </Col> */}

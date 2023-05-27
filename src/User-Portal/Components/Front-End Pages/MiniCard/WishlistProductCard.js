@@ -135,7 +135,7 @@ function WishListProductCard() {
                                     </div>
                                 </div>
                                 <Modal show={showModal} onHide={handleClose}>
-                                    <Modal.Header closeButton>
+                                    <Modal.Header >
                                         <Modal.Title>Warning</Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
@@ -144,6 +144,9 @@ function WishListProductCard() {
                                         </p>
                                     </Modal.Body>
                                     <Modal.Footer>
+                                        <Button variant="secondary" onClick={handleClose}>
+                                            Cancel
+                                        </Button>
                                         <Button variant="danger" onClick={handleClose}>
                                             Remove
                                         </Button>
@@ -152,17 +155,17 @@ function WishListProductCard() {
                                 </Modal>
                                 {/*  */}
                                 <ToastContainer
-                                        position="top-right"
-                                        autoClose={1000}
-                                        hideProgressBar={false}
-                                        newestOnTop={false}
-                                        closeOnClick
-                                        rtl={false}
-                                        pauseOnFocusLoss
-                                        draggable
-                                        pauseOnHover
-                                        className="m-3"
-                                    />
+                                    position="top-right"
+                                    autoClose={1000}
+                                    hideProgressBar={false}
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    rtl={false}
+                                    pauseOnFocusLoss
+                                    draggable
+                                    pauseOnHover
+                                    className="m-3"
+                                />
                             </Card.Body>
                         </Card>
                     </Col>

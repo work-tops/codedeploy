@@ -562,7 +562,7 @@ const FrontendAddProduct = () => {
                                                                                     <Form.Label className="text-700 text-uppercase">
                                                                                         
                                                                                     </Form.Label> */}
-                                                                                     <Form.Check
+                                                                                    <Form.Check
                                                                                         type="checkbox"
                                                                                         checked={variant.charge_taxes} name="charge_taxes" onChange={handlechange1}
                                                                                         id="inventoryCheckbox"
@@ -793,7 +793,7 @@ const FrontendAddProduct = () => {
 
                                             {/*  */}
                                             <Modal show={showModal1} onHide={handleClose1}>
-                                                <Modal.Header closeButton>
+                                                <Modal.Header >
                                                     <Modal.Title>Warning</Modal.Title>
                                                 </Modal.Header>
                                                 <Modal.Body>
@@ -802,10 +802,12 @@ const FrontendAddProduct = () => {
                                                     </p>
                                                 </Modal.Body>
                                                 <Modal.Footer>
-
+                                                    <Button className='me-2' variant="secondary" onClick={handleClose1}>
+                                                        No
+                                                    </Button>
                                                     <Link to="/addproductcard">
                                                         <Button variant="danger" onClick={handleClose1}>
-                                                            Cancel
+                                                            Yes
                                                         </Button>
                                                     </Link>
                                                 </Modal.Footer>

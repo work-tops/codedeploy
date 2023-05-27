@@ -552,17 +552,21 @@ const PostProject = () => {
             </Card >
             {/* Post A Project */}
             <Modal show={showModal} onHide={handleClose}>
-              <Modal.Header closeButton>
+              <Modal.Header >
                 <Modal.Title>Warning</Modal.Title>
               </Modal.Header>
               <Modal.Body>
+                <p className='text-capitalize'>
                 Are you sure you want to cancel without posting the project?
+                </p>
               </Modal.Body>
               <Modal.Footer>
-                
+              <Button variant="secondary" onClick={handleClose}>
+                  No
+                </Button>
                  <Link to="/projectlist">
                 <Button variant="danger" onClick={handleClose}>
-                  Cancel 
+                  Yes 
                 </Button>
                  </Link>
               </Modal.Footer>

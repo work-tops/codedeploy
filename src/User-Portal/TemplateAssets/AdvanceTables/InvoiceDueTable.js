@@ -279,7 +279,7 @@ const InvoiceTableCard = () => {
                         </tr>
                         <div className="mt-3 d-flex justify-content-end">
                             <Button as={Link} to="/InvoiceCheckout" className="bg-success border-0">Pay Now</Button>
-                            <Button  onClick={() => setShowModal2(true)} className="bg-danger ms-2 border-0">Cancel</Button>
+                            <Button onClick={() => setShowModal2(true)} className="bg-danger ms-2 border-0">Cancel</Button>
                             {/*  */}
                             <Modal show={showModal2} onHide={handleClose2}>
                                 <Modal.Header closeButton>
@@ -291,8 +291,11 @@ const InvoiceTableCard = () => {
                                     </p>
                                 </Modal.Body>
                                 <Modal.Footer>
+                                    <Button variant="secondary" onClick={handleClose2}>
+                                        No
+                                    </Button>
                                     <Button variant="danger" onClick={handleShow1}>
-                                        Cancel
+                                        Yes
                                     </Button>
 
                                 </Modal.Footer>

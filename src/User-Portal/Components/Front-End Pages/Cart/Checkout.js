@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Col, Navbar, Row, Container, Nav, NavDropdown } from "react-bootstrap";
-import paypal from '../../Projectimages/paypal.png'
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Link } from "react-router-dom";
 import payment_methods from '../../Projectimages/payment_methods.png'
+import paypal from '../../Projectimages/paypal.png'
 import sheild from '../../Projectimages/shield.png'
 function Checkout() {
     return (

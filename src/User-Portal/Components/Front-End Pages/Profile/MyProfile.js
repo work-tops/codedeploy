@@ -11,7 +11,8 @@ import PaymentTable from "../../../TemplateAssets/AdvanceTables/PaymentTable";
 import InvoiceTable from "../../../TemplateAssets/AdvanceTables/InvoiceTable";
 import RecentlyPurchased from "../../../TemplateAssets/AdvanceTables/RecentlyPurchased";
 import InvoiceTableCard from "../../../TemplateAssets/AdvanceTables/InvoiceDueTable";
-
+import payment_methods from '../../Projectimages/payment_methods.png'
+import paypal from '../../Projectimages/paypal.png'
 function MyProfile() {
     const [user, setUser] = useState({});
     const [isEdit, setIsEdit] = useState(false);
@@ -35,20 +36,25 @@ function MyProfile() {
 
     const handleClose1 = () => setShow1(false);
     const handleShow1 = () => setShow1(true);
-   
+
     // Cancel Modal
     const [showModal2, setShowModal2] = useState(false);
 
     const handleClose2 = () => {
         setShowModal2(false);
     };
+    // Cancel Modal
+    const [showModal3, setShowModal3] = useState(false);
 
-    const handleCancel = () => {
-        // Perform cancel action here
-        console.log('Cancel project');
-        setShowModal2(false);
+    const handleClose3 = () => {
+        setShowModal3(false);
     };
 
+    const handleCancel3 = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal3(false);
+    };
     return (
 
         <>
@@ -174,7 +180,7 @@ function MyProfile() {
                                                     <div className="position-absolute top-0 end-0 m-3">
                                                         <CardDropdown iconClassName="fs--1" drop="bottom">
                                                             <div className="py-2">
-                                                                <Dropdown.Item href="#!" className="text-success">
+                                                                <Dropdown.Item onClick={() => setShowModal3(true)} href="#!" className="text-success">
                                                                     Add
                                                                 </Dropdown.Item>
                                                                 <Dropdown.Item href="#!" className="text-secondary">
@@ -184,9 +190,67 @@ function MyProfile() {
                                                                     Remove
                                                                 </Dropdown.Item>
                                                             </div>
+                                                            {/* Modal */}
+                                                            <div>
+                                                                <Modal show={showModal3} onHide={handleClose3}>
+                                                                    <Modal.Header>
+                                                                        <Modal.Title>
+                                                                            <h5 className="mb-0">Payment Method</h5>
+                                                                        </Modal.Title>
+                                                                    </Modal.Header>
+                                                                    <Modal.Body>
+                                                                        <form>
+                                                                            <div className="form-check mb-0"><input className="form-check-input" type="radio" value="" id="credit-card" name="payment-method" /><label className="form-check-label mb-2 fs-1" for="credit-card">Credit Card</label></div>
+                                                                            <div className="row gx-0 ps-2 mb-4">
+                                                                                <div className="col-sm-8 px-3">
+                                                                                    <div className="mb-3"><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0" for="inputNumber">Card Number</label><input className="form-control" id="inputNumber" type="text" placeholder="•••• •••• •••• ••••" /></div>
+                                                                                    <div className="d-flex gap-2 align-items-center">
+                                                                                        <div className=""><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0">Exp Date</label><input className="form-control" type="text" placeholder="mm/yyyy" /></div>
+                                                                                        <div className=""><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0">CVV<a className="d-inline-block" href="#" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Card verification value" data-bs-original-title="Card verification value">
+                                                                                            <span className="fa fa-question-circle ms-2"></span></a></label><input className="form-control" type="text" placeholder="123" maxlength="3" pattern="[0-9]{3}" /></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className="col-4 ps-3 text-center pt-2 d-none d-sm-block">
+                                                                                    <div className="rounded-1 p-2 mt-3 bg-100">
+                                                                                        <div className="text-uppercase fs--2 fw-bold">We Accept</div><img src={payment_methods} alt="" width="120" />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            {/*  */}
+                                                                            <div className="form-check mb-0"><input className="form-check-input" type="radio" value="" id="credit-card" name="payment-method" /><label className="form-check-label mb-2 fs-1" for="credit-card">Debit Card</label></div>
+                                                                            <div className="row gx-0 ps-2 mb-4">
+                                                                                <div className="col-sm-8 px-3">
+                                                                                    <div className="mb-3"><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0" for="inputNumber">Card Number</label><input className="form-control" id="inputNumber" type="text" placeholder="•••• •••• •••• ••••" /></div>
+                                                                                    <div className="d-flex gap-2 align-items-center">
+                                                                                        <div className=""><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0">Exp Date</label><input className="form-control" type="text" placeholder="mm/yyyy" /></div>
+                                                                                        <div className=""><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0">CVV<a className="d-inline-block" href="#" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Card verification value" data-bs-original-title="Card verification value">
+                                                                                            <span className="fa fa-question-circle ms-2"></span></a></label><input className="form-control" type="text" placeholder="123" maxlength="3" pattern="[0-9]{3}" /></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                {/* <div className="col-4 ps-3 text-center pt-2 d-none d-sm-block">
+                                                                                            <div className="rounded-1 p-2 mt-3 bg-100">
+                                                                                                <div className="text-uppercase fs--2 fw-bold">We Accept</div><img src={payment_methods} alt="" width="120" />
+                                                                                            </div>
+                                                                                        </div> */}
+                                                                            </div>
+                                                                            {/*  */}
+                                                                            <div className="form-check d-flex align-items-center"><input className="form-check-input" type="radio" value="" id="paypal" name="payment-method" /><label className="form-check-label mb-0 ms-2" for="paypal"><img src={paypal} height="20" alt="" /></label></div>
+                                                                           </form>
+                                                                    </Modal.Body>
+                                                                    <Modal.Footer>
+                                                                        <Button variant="primary" onClick={handleClose3}>
+                                                                            Save
+                                                                        </Button>
+                                                                        <Button variant="primary" onClick={handleClose3}>
+                                                                            Save & Pay
+                                                                        </Button>
+
+                                                                    </Modal.Footer>
+                                                                </Modal>
+                                                            </div>
                                                             {/*  */}
                                                             <Modal show={showModal2} onHide={handleClose2}>
-                                                                <Modal.Header closeButton>
+                                                                <Modal.Header >
                                                                     <Modal.Title>Warning</Modal.Title>
                                                                 </Modal.Header>
                                                                 <Modal.Body>
@@ -195,6 +259,9 @@ function MyProfile() {
                                                                     </p>
                                                                 </Modal.Body>
                                                                 <Modal.Footer>
+                                                                    <Button variant="secondary" onClick={handleClose2}>
+                                                                        Cancel
+                                                                    </Button>
                                                                     <Button variant="danger" onClick={handleClose2}>
                                                                         Remove
                                                                     </Button>

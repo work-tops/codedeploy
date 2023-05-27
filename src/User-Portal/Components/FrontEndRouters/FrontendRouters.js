@@ -81,9 +81,10 @@ import Checkout from "../Front-End Pages/Cart/Checkout";
 import Editpostproject from "../Front-End Pages/Post_Project/Editpostproject";
 import EditProposal from "../Front-End Pages/EditProposal";
 import InvoiceCheckout from "../Front-End Pages/Cart/InvoiceCheckout";
-import AreYouSureModal from "../Front-End Pages/Userlogin";
 import Modal from "../Front-End Pages/Userlogin";
 import ModalComponent from "../Front-End Pages/Userlogin";
+import ValidationForm from "../Front-End Pages/Login/UserLogin";
+import ImageSlider from "../Front-End Pages/Login/UserLogin";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -190,6 +191,7 @@ const FrontEndRouters = () => {
             <Route path="/EditPostProject"><Editpostproject/></Route>
             <Route path="/EditProposal"><EditProposal/></Route>
             <Route path="/InvoiceCheckout"><InvoiceCheckout/></Route>
+            <Route path="/Modal"><ImageSlider/></Route>
             {/* New Pages */}
         </Switch>
 
