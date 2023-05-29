@@ -2,6 +2,7 @@ import React from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import { Row, Button, Col, Form, Card } from "react-bootstrap";
+import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
 // import CardDropdown from '../utilities/CardDropdown'
 const columns = [
     {
@@ -86,16 +87,15 @@ const PaymentTable = () => {
                         }}
                     />
 
-                    {/* <div>
-                <AdvanceTableFooter
-                className="mt-3"
-                rowCount={data.length}
-                table
-                rowInfo
-                navButtons
-                rowsPerPageSelection
-                />
-            </div > */}
+                    <div className="mt-3">
+                        <AdvanceTableFooter
+                            rowCount={data.length}
+                            table
+                            rowInfo
+                            navButtons
+                            rowsPerPageSelection
+                        />
+                    </div>
                 </AdvanceTableWrapper>
             </Card.Body>
         </Card>

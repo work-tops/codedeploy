@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import team3 from './../../../TemplateAssets/Images/employee.png'
 import { Link, useHistory } from 'react-router-dom';
-import { Container, Navbar, Button, Form } from 'react-bootstrap';
+import { Container, Navbar, Button, Badge } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import { topNavbarBreakpoint } from '../../../../config';
 import AppContext from '../../../TemplateAssets/context/Context';
@@ -203,18 +203,36 @@ const NavbarStandard = () => {
                         className="pe-0 ps-2 nav-link"
                       >
                         <Icon icon="flat-color-icons:like" width="24" height="24" />
+                        <Badge pill variant="danger" className="ml-1">
+                          3
+                        </Badge>
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
                         <div className="bg-white rounded-2 py-2 dark__bg-1000">
                           <Link to="/wishlist/product">
-                            <Dropdown.Item href="#!">Product</Dropdown.Item>
+                            <Dropdown.Item href="#!">
+                              Product
+                              <Badge pill variant="danger" className="ml-1 ms-1">
+                                1
+                              </Badge>
+                            </Dropdown.Item>
                           </Link>
                           <Link to="/wishlist/project">
-                            <Dropdown.Item href="#!">Project</Dropdown.Item>
+                            <Dropdown.Item href="#!">
+                              Project
+                              <Badge pill variant="danger" className="ml-1 ms-1">
+                                1
+                              </Badge>
+                            </Dropdown.Item>
                           </Link>
                           <Link to="/wishlist/seller">
-                            <Dropdown.Item href="#!">Freelancer</Dropdown.Item>
+                            <Dropdown.Item href="#!">
+                              Freelancer
+                              <Badge pill variant="danger" className="ml-1 ms-1">
+                                1
+                              </Badge>
+                            </Dropdown.Item>
                           </Link>
                         </div>
                       </Dropdown.Menu>
@@ -230,6 +248,9 @@ const NavbarStandard = () => {
                         className="pe-0 ps-2 nav-link"
                       >
                         <Icon icon="mdi:bell" color="white" width="24" height="24" />
+                        <Badge pill variant="danger" className="ml-1">
+                          3
+                        </Badge>
                       </Dropdown.Toggle>
                       <Dropdown.Menu className="dropdown-menu dropdown-caret dropdown-menu-end dropdown-menu-card dropdown-menu-notification dropdown-caret-bg " aria-labelledby="navbarDropdownNotification" data-bs-popper="static">
                         <div className="card card-notification shadow-none">
@@ -321,10 +342,13 @@ const NavbarStandard = () => {
                     </Link>
                   </div>
 
-                  
+
                   <div className='mt-2'>
                     <Link to="/Cart">
                       <Icon icon="ic:round-shopping-cart" color="white" width="24" height="24" />
+                      <Badge pill variant="danger" className="ml-1">
+                        3
+                      </Badge>
                     </Link>
                   </div>
 

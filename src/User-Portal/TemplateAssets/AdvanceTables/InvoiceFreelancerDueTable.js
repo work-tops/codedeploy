@@ -178,13 +178,13 @@ const InvoiceFreelancerDueTable = () => {
                             }}
                         />
                         <div className="mt-3">
-                            {/* <AdvanceTableFooter
+                            <AdvanceTableFooter
                     rowCount={data.length}
                     table
                     rowInfo
                     navButtons
                     rowsPerPageSelection
-                /> */}
+                />
                         </div>
                     </AdvanceTableWrapper>
                 </Card.Body>

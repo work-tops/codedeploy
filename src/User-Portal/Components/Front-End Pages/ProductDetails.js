@@ -8,7 +8,8 @@ import { getAllData } from "../../../Services/ProxyService";
 import worktops from '../Projectimages/7.jpg'
 import { Divider } from "@mui/material";
 import { FaStar } from 'react-icons/fa';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 function ProductDetails() {
     let { proid } = useParams();
@@ -64,16 +65,20 @@ const handleSubmit = (event) => {
 };
 // Review
 
-
+// 
+const toastDark = () => toast.success(<h6 className="text-sucess">Your Product is Successfully Added to Cart</h6>);
+    const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+// 
 
     return (
         <>
-            <Container>
-                <Row className="g-lg-3">
+            
+                <Row >
                     <Col lg={12} className="mb-5">
                         <NavbarStandard />
                     </Col>
-                    <Col lg={12} className="mt-4 mb-3">
+                    
+                    <Col lg={12} className="mt-4 container mb-3">
                         <Card className="overflow-hidden light">
                             <Card.Body className="bg-dark">
                                 <Row>
@@ -114,24 +119,29 @@ const handleSubmit = (event) => {
                                                 </li>
                                             </Link>
                                             
-                                            <Link to="/wishlist/product" className="text-300">
-                                                <li role="button">
+                                            {/* <Link to="/wishlist/product" className="text-300"> */}
+                                                <li role="button" onClick={toastDanger}>
                                                     <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="text-white me-1" width="20" height="20" />
                                                     Mark as Favourite
                                                 </li>
-                                            </Link>
-
+                                            {/* </Link> */}
+                                            {/* Wishlist Toast */}
+                                            <Link to="/productdetails/:proid">
                                             <li role="button" className="text-primary">
                                                 Next
                                             </li>
+                                            </Link>
                                         </ul>
                                     </Col>
                                 </Row>
                             </Card.Body>
                         </Card>
                     </Col>
+                       
+                    
                     <Row >
-                        <Col sm={12} lg={8} xl={8} md={12}>
+                        <Col className="container" sm={12} lg={8} xl={8} md={12}>
+                           
                             {/* Product Images */}
                             <Card className="mb-3">
                                 <Card.Header as="h5" className="bg-light">
@@ -183,8 +193,8 @@ const handleSubmit = (event) => {
                             </Card>
                             {/* Disclaimer */}
                             <Card className="mb-3">
-                                <Card.Header className="d-flex justify-content-between text-capitalize bg-light">
-                                    <h5>
+                                <Card.Header className=" text-capitalize bg-light">
+                                    <h5 >
                                         Reviews
                                     </h5>
                                     <div className="d-flex gap-2 justify-content-end">
@@ -364,14 +374,16 @@ const handleSubmit = (event) => {
 
                                 </Card.Footer>
                             </Card>
+                            
                             {/*  */}
                         </Col>
-                        <Col lg={4}>
-                            <div className="course-details-sticky-sidebar mb-lg-8 mt-xl-n10 pe-xl-4 pe-xxl-7">
+                        <Col className="container" lg={4}>
+                            
+                            <div className=" course-details-sticky-sidebar mb-lg-8 mt-xl-n10 pe-xl-4 pe-xxl-7">
                                 {/* Plan Your Carrer */}
                                 <Card className="mt-5 mb-3">
                                     <Card.Header as="h5" className="bg-light text-capitalize">
-                                        Get  Quote Now
+                                        
                                     </Card.Header>
                                     <Card.Body>
                                         <Row>
@@ -387,15 +399,29 @@ const handleSubmit = (event) => {
                                                     Sale ends in 13h : 25m : 54s
                                                 </p> */}
 
-                                                <Link to="/Cart">
+                                                
                                                     <Button
+                                                    onClick={toastDark}
                                                         variant="primary"
                                                         size="lg"
                                                         className="mb-3 w-100 fs-0 mt-1"
                                                     >
                                                         Add to Cart
                                                     </Button>
-                                                </Link>
+                                               
+                                                {/* Cart Toast */}
+                                                <ToastContainer
+                                                position="bottom-right"
+                                                autoClose={1000}
+                                                hideProgressBar={false}
+                                                newestOnTop={false}
+                                                closeOnClick
+                                                rtl={false}
+                                                pauseOnFocusLoss
+                                                draggable
+                                                pauseOnHover
+                                            />
+                                                {/*  */}
                                                 <Link to="/GetQuote">
                                                     <Button
                                                         style={{ background: '#003f6b' }}
@@ -405,9 +431,9 @@ const handleSubmit = (event) => {
                                                         Get Quote
                                                     </Button>
                                                 </Link>
-                                                <p className="text-700 fw-medium fs--1 mt-3 mb-0">
+                                                {/* <p className="text-700 fw-medium fs--1 mt-3 mb-0">
                                                     14 day Refund Policy
-                                                </p>
+                                                </p> */}
                                             </Col>
                                             <Col md={5} lg={12}>
                                                 <hr className="border-top border-dashed d-md-none d-lg-block" />
@@ -501,10 +527,11 @@ const handleSubmit = (event) => {
                                 </Card>
                                 {/*  */}
                             </div>
+                                
                         </Col>
                     </Row>
                 </Row>
-            </Container >
+           {/* Review */}
             <Modal
         show={show}
         onHide={() => setShow(false)}
@@ -566,6 +593,7 @@ const handleSubmit = (event) => {
     </Form>
         </Modal.Body>
       </Modal>
+      {/* Review */}
         </>
     )
 }

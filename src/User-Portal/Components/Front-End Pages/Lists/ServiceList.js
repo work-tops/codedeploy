@@ -88,7 +88,7 @@ function ServiceList(layout) {
 
                                     <Card.Body className="pt-0 pt-md-3">
                                         <Row className="g-3 mt-1 align-items-center">
-                                            <Col xs="auto" className="d-xl-none">
+                                            <Col xs="auto" className="d-none">
                                                 <Button
                                                     className="position-relative p-0"
                                                     size="sm"

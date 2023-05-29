@@ -461,52 +461,53 @@ function ProductList() {
 
                                         </>
                                     ))}
-                                    {/* pagination */}
-                                    <Card className="mt-3">
-                                        <Card.Body>
-                                            <Row className="g-3 flex-center justify-content-between">
-                                                <Col xs="auto" className="d-flex align-items-center">
-                                                    <small className="d-none d-lg-block me-2">Show:</small>
-                                                    <Form.Select
-                                                        size="sm"
-                                                        // value={itemsPerPage}
-                                                        // onChange={({ target }) => {
-                                                        //     setItemsPerPage(target.value);
-                                                        //     setCoursePerPage(target.value);
-                                                        // }}
-                                                        style={{ maxWidth: '4.875rem' }}
-                                                    >
-                                                        <option >1</option>
-                                                        <option >2</option>
-                                                        <option >3</option>
-                                                        <option >All</option>
-                                                    </Form.Select>
-                                                </Col>
-                                                <Col xs="auto" className="d-flex">
-                                                    <div>
-                                                        <Button
-                                                            variant="falcon-default"
-                                                            className="me-2"
-                                                        >
-                                                            Preview
-                                                        </Button>
-                                                    </div>
 
-                                                    <div>
-                                                        <Button
-                                                            variant="falcon-default"
-                                                        >
-                                                            Next
-                                                        </Button>
-
-                                                    </div>
-                                                </Col>
-                                            </Row>
-                                        </Card.Body>
-                                    </Card>
-                                    {/* pagination */}
                                 </>
                             }
+                            {/* pagination */}
+                            <Card className="mt-3">
+                                <Card.Body>
+                                    <Row className="g-3 flex-center justify-content-between">
+                                        <Col xs="auto" className="d-flex align-items-center">
+                                            <small className="d-none d-lg-block me-2">Show:</small>
+                                            <Form.Select
+                                                size="sm"
+                                                // value={itemsPerPage}
+                                                // onChange={({ target }) => {
+                                                //     setItemsPerPage(target.value);
+                                                //     setCoursePerPage(target.value);
+                                                // }}
+                                                style={{ maxWidth: '4.875rem' }}
+                                            >
+                                                <option >1</option>
+                                                <option >2</option>
+                                                <option >3</option>
+                                                <option >All</option>
+                                            </Form.Select>
+                                        </Col>
+                                        <Col xs="auto" className="d-flex">
+                                            <div>
+                                                <Button
+                                                    variant="falcon-default"
+                                                    className="me-2"
+                                                >
+                                                    Preview
+                                                </Button>
+                                            </div>
+
+                                            <div>
+                                                <Button
+                                                    variant="falcon-default"
+                                                >
+                                                    Next
+                                                </Button>
+
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </Card.Body>
+                            </Card>
+                            {/* pagination */}
                         </Col>
 
                     </Row>

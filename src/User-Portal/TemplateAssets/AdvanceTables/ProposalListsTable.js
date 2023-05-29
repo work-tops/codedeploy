@@ -189,7 +189,9 @@ const ProposalListsTable = () => {
                                         <Card.Body>
                                             <Row>
                                                 <Col lg={3}>
+                                                    <Link to="/profile_publicview">
                                                     <img src={profile} className="mb-3 rounded-circle" width="100px" height="100px" />
+                                                    </Link>
                                                     <p className="fw-bold ms-2 text-uppercase  text-900">Soanes IT</p>
                                                 </Col>
                                                 <Col lg={9}>
@@ -249,7 +251,7 @@ const ProposalListsTable = () => {
                                                 <p>Proposal ID</p>
                                                 <p className='text-warning'>243623456</p>
                                             </div>
-                                            <p role='button' className='fw-semibold text-900'><Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className='me-2' width="20" height="20" />Mark as Favourite</p>
+                                            {/* <p role='button' className='fw-semibold text-900'><Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className='me-2' width="20" height="20" />Mark as Favourite</p> */}
                                             <div className='mt-3 d-flex justify-content-between'>
                                                 <Dropdown>
                                                     <Dropdown.Toggle style={{ background: '#003f6b', fontSize: '14px' }} id="dropdown-basic">
@@ -258,7 +260,7 @@ const ProposalListsTable = () => {
 
                                                     <Dropdown.Menu>
                                                         <Dropdown.Item as={Link} to="/proposaldetails" className="text-success">Accept</Dropdown.Item>
-                                                        <Dropdown.Item className="text-danger">Decline</Dropdown.Item>
+                                                        {/* <Dropdown.Item  className="text-danger">Decline</Dropdown.Item> */}
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                                 <p role='button' onClick={handleShow1} className='mt-1 ms-3'>Report this Profile</p>
@@ -348,7 +350,7 @@ const ProposalListsTable = () => {
                                     />
                                 </Form.Group>
                                 <div className='d-flex justify-content-end'>
-                                    <Button as={Link} to="/owner" onClick={handleClose1} style={{ background: '#003f6b' }}>Submit</Button>
+                                    <Button as={Link} to="/projectowner" onClick={handleClose1} style={{ background: '#003f6b' }}>Submit</Button>
                                 </div>
                             </Form>
                         </Modal.Body>

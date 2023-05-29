@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
-import { Row, Button, Col, Form } from "react-bootstrap";
+import { Row, Button, Col, Form, Modal } from "react-bootstrap";
 import product_image from "../Images/product_image.png"
 import CardDropdown from "../common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { getAllData } from "../../../Services/ProxyService";
 const columns = [
     {
@@ -318,7 +319,7 @@ const data = [
     }
 ];
 
-const AdvancedTable = () => { 
+const AdvancedTable = () => {
 
     const [product, setproducts] = useState([]);
     console.log(product.length)
@@ -327,7 +328,7 @@ const AdvancedTable = () => {
         var _user = sessionStorage.getItem('user');
         var _json = JSON.parse(_user);
         const response = await getAllData('products');
-        var _data = response.data.products.filter(x=> x.created_by == _json._id)
+        var _data = response.data.products.filter(x => x.created_by == _json._id)
         setproducts(_data);
         sessionStorage.setItem("productlength", _data.length)
     }
@@ -336,7 +337,18 @@ const AdvancedTable = () => {
         Productlist()
     }, [])
 
+    // Cancel Modal
+    const [showModal1, setShowModal1] = useState(false);
 
+    const handleClose1 = () => {
+        setShowModal1(false);
+    };
+
+    const handleCancel = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal1(false);
+    };
     const columns = [
         {
             accessor: 'productId',
@@ -390,12 +402,32 @@ const AdvancedTable = () => {
         status: <span className="badge bg-success p-2">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/user/addproduct" >Edit</Dropdown.Item>
                 {/* <Dropdown.Item>Enable</Dropdown.Item> */}
                 <Dropdown.Item>View in Store</Dropdown.Item>
                 {/* <Dropdown.Item>Reassign</Dropdown.Item> */}
-                <Dropdown.Item className='text-danger'>Disable</Dropdown.Item>
-                {/* <Dropdown.Item className='text-danger'>Delete</Dropdown.Item> */}
+                <Dropdown.Item onClick={() => setShowModal1(true)} className='text-danger'>Disable</Dropdown.Item>
+                {/*  */}
+                <Modal show={showModal1} onHide={handleClose1}>
+                    <Modal.Header >
+                        <Modal.Title>Warning</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p className="text-capitalize">
+                            Are you sure you want to Disable (1) products?
+                        </p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose1}>
+                            Cancel
+                        </Button>
+                        <Button variant="danger" onClick={handleClose1}>
+                            Decline
+                        </Button>
+
+                    </Modal.Footer>
+                </Modal>
+                {/*  */}
             </div>
         </CardDropdown>,
     }));

@@ -191,11 +191,11 @@ const FrontendAddService = () => {
                 <Col lg={12} className='mt-5'>
                     <Form onSubmit={(e) => { formsubmit(e) }}>
 
-                        <div className='d-flex justify-content-end'>
+                        <Container>
+                            <div className='d-flex justify-content-end'>
 
-                            <div className='me-4'>
                                 <Form.Group>
-                                    <Form.Group as={Col} className='mb-3'>
+                                    <Form.Group className='mb-3'>
                                         <Form.Label className="text-uppercase text-700">Status<span className="text-danger">*</span></Form.Label>
                                         <Form.Select value={form.status} required name="status" onChange={(e) => { handleChange(e) }}>
                                             <option value="">Select</option>
@@ -205,11 +205,9 @@ const FrontendAddService = () => {
                                     </Form.Group>
                                 </Form.Group>
                             </div>
-                        </div>
-                        <Container>
                             <Row>
                                 <Col lg={7}>
-                                    <Card className='mt-3 me-3'>
+                                    <Card className='mt-3'>
                                         <Card.Header className='bg-light'>
                                             <div>
                                                 <h5 className='mt-2 text-uppercase'>Add Services</h5>
@@ -223,24 +221,28 @@ const FrontendAddService = () => {
                                                 <Form.Control value={form.title} required name="title" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
                                             </Form.Group>
                                             <Row className='g-3 mb-3'>
-                                                <Form.Group as={Col} className='mb-3'>
-                                                    <Form.Label className="text-uppercase text-700">Services Category<span className="text-danger">*</span></Form.Label>
-                                                    <Form.Select value={form.category} required name="category" onChange={(e) => { handleChange(e) }}>
-                                                        <option value="">Select Option</option>
-                                                        {cate?.map((data) => (
-                                                            <option value={data.value}>{data.value}</option>
-                                                        ))}
-                                                    </Form.Select>
-                                                </Form.Group>
-                                                <Form.Group as={Col} className='ms-2 mb-3'>
-                                                    <Form.Label className="text-uppercase text-700">Services Email<span className="text-danger">*</span></Form.Label>
-                                                    <Form.Select value={form.email} required name="email" onChange={(e) => { handleChange(e) }}>
-                                                        <option value="">Select Option</option>
-                                                        {selemail.map((data) => (
-                                                            <option value={data.email}>{data.email}</option>
-                                                        ))}
-                                                    </Form.Select>
-                                                </Form.Group>
+                                                <Col sm={12} md={6} lg={6} xl={6}>
+                                                    <Form.Group className='mb-3'>
+                                                        <Form.Label className="text-uppercase text-700">Services Category<span className="text-danger">*</span></Form.Label>
+                                                        <Form.Select value={form.category} required name="category" onChange={(e) => { handleChange(e) }}>
+                                                            <option value="">Select Option</option>
+                                                            {cate?.map((data) => (
+                                                                <option value={data.value}>{data.value}</option>
+                                                            ))}
+                                                        </Form.Select>
+                                                    </Form.Group>
+                                                </Col>
+                                                <Col sm={12} md={6} lg={6} xl={6}>
+                                                    <Form.Group className='mb-3'>
+                                                        <Form.Label className="text-uppercase text-700">Services Email<span className="text-danger">*</span></Form.Label>
+                                                        <Form.Select value={form.email} required name="email" onChange={(e) => { handleChange(e) }}>
+                                                            <option value="">Select Option</option>
+                                                            {selemail.map((data) => (
+                                                                <option value={data.email}>{data.email}</option>
+                                                            ))}
+                                                        </Form.Select>
+                                                    </Form.Group>
+                                                </Col>
                                             </Row>
                                             <Form.Group className="mb-3">
                                                 <Form.Label className="text-uppercase text-700">Description <span className='text-grey'>(Optional)</span></Form.Label>
@@ -249,12 +251,12 @@ const FrontendAddService = () => {
                                             <Row className='g-3 mb-3'>
                                                 <Form.Group as={Col} className='mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Services Location<span className="text-danger">*</span></Form.Label>
-                                                    <Multiselect options={servitag[1]?.list} displayValue="value" className='border border-dark rounded' />
+                                                    <Multiselect options={servitag[1]?.list} displayValue="value" className='form-control ' />
                                                 </Form.Group>
-                                                <Form.Group as={Col} className='ms-2 mb-3'>
+                                                <Form.Group as={Col} className=' mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Services Range
                                                         <span className="text-danger">*</span></Form.Label>
-                                                    <Multiselect options={servitag[2]?.list} displayValue="value" className='border border-dark rounded' />
+                                                    <Multiselect options={servitag[2]?.list} displayValue="value" className='form-control' />
                                                 </Form.Group>
                                             </Row>
                                             <Row className='mb-3'>
@@ -281,17 +283,17 @@ const FrontendAddService = () => {
                                                         <option value="Fixed Price">Fixed Price</option>
                                                     </Form.Select>
                                                 </Form.Group>
-                                                <Form.Group as={Col} className='ms-2 mb-3'>
+                                                <Form.Group as={Col} className=' mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Price<span className="text-danger">*</span></Form.Label>
                                                     <Form.Control value={form.price} required name="price" onChange={(e) => { handleChange(e) }} type="text" />
                                                 </Form.Group>
                                             </Row>
                                             <Row className='g-3 mb-3'>
-                                                <Form.Group as={Col} className='ms-2 mb-3'>
+                                                <Form.Group as={Col} className=' mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Offer Price <span className="text-danger">*</span></Form.Label>
                                                     <Form.Control value={form.offer_price} required name="offer_price" onChange={(e) => { handleChange(e) }} type="text" />
                                                 </Form.Group>
-                                                <Form.Group as={Col} className='ms-2 mb-3'>
+                                                <Form.Group as={Col} className=' mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Display Price<span className="text-danger">*</span></Form.Label>
                                                     <Form.Control value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} type="text" />
                                                 </Form.Group>
@@ -305,7 +307,7 @@ const FrontendAddService = () => {
                                     </Card>
                                 </Col>
                                 <Col lg={5}>
-                                    <Card className='mt-3 me-3'>
+                                    <Card className='mt-3'>
                                         <Card.Body>
                                             <h5 className='mb-2 text-uppercase'>Media</h5>
                                             {/* <Flex justifyContent={between}> */}
@@ -354,13 +356,14 @@ const FrontendAddService = () => {
                                                     ""
                                                 ) : (<>
                                                     <img src={actualFiles} alt="product-img" className="attached-img_1 mt-3" /><br />
-                                                    <button type="button" onClick={removeImage} className="btn btn-danger ms-2 mt-3">Remove</button>
+                                                    <button type="button" onClick={removeImage} className="btn btn-danger  mt-3">Remove</button>
                                                 </>)}
-
+                                                <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
+                                                <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
                                             </div>
                                         </Card.Body>
                                     </Card>
-                                    <Card className='mt-3 me-3'>
+                                    <Card className='mt-3'>
                                         <Card.Body>
                                             <h5 className='mb-2 text-uppercase'>Services Handle and Metafields</h5>
                                             <Form.Group className='mb-4'>

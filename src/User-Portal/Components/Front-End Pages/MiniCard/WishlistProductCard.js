@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Button, Col, Row, Container, Modal } from "react-bootstrap";
+import { Card, Button, Col, Row, Container, Modal,Form } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import product_image from '../../Projectimages/7.jpg'
 import { Icon } from "@iconify/react";
@@ -33,6 +33,9 @@ function WishListProductCard() {
                     <Col lg={12} className="mt-4">
                         <h5 className="mb-3">My Wishlist</h5>
                         <Card className="mb-3">
+                            <Card.Header className="d-flex justify-content-end">
+                                <><Icon onClick={() => setShowModal(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
+                            </Card.Header>
                             <Card.Body>
                                 <div className="row g-0">
                                     <div className="col-md-4 col-lg-3">
@@ -68,9 +71,9 @@ function WishListProductCard() {
                                             </div>
                                             <div className="col-lg-4 col-xxl-3 mt-4 mt-lg-0">
                                                 <div className="h-100 rounded border-lg border-1 d-flex flex-lg-column justify-content-between p-lg-3">
-                                                    <div className="d-flex justify-content-end">
+                                                    {/* <div className="d-flex justify-content-end">
                                                         <Icon onClick={() => setShowModal(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" />
-                                                    </div>
+                                                    </div> */}
                                                     <div className="mb-lg-4 mt-auto mt-lg-0">
                                                         <h4 className="mb-1 lh-1 fs-2 text-warning d-flex align-items-end">£69.50<del className="ms-1 fs--1 text-500 mb-1">£139.90</del></h4>
                                                         <p className="mb-0 fs--2 text-800">92,632 Learners Enrolled</p>
@@ -86,6 +89,9 @@ function WishListProductCard() {
                             </Card.Body>
                         </Card>
                         <Card className="mb-3">
+                            <Card.Header className="d-flex justify-content-end">
+                                <><Icon onClick={() => setShowModal(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
+                            </Card.Header>
                             <Card.Body>
                                 <div className="row g-0">
                                     <div className="col-md-4 col-lg-3">
@@ -118,9 +124,9 @@ function WishListProductCard() {
                                             </div>
                                             <div className="col-lg-4 col-xxl-3 mt-4 mt-lg-0">
                                                 <div className="h-100 rounded border-lg border-1 d-flex flex-lg-column justify-content-between p-lg-3">
-                                                    <div className="d-flex justify-content-end">
+                                                    {/* <div className="d-flex justify-content-end">
                                                         <Icon onClick={() => setShowModal(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" />
-                                                    </div>
+                                                    </div> */}
 
                                                     <div className="mb-lg-4 mt-auto mt-lg-0">
                                                         <h4 className="mb-1 lh-1 fs-2 text-warning d-flex align-items-end">£69.50<del className="ms-1 fs--1 text-500 mb-1">£139.90</del></h4>
@@ -168,6 +174,50 @@ function WishListProductCard() {
                                 />
                             </Card.Body>
                         </Card>
+                        {/* pagination */}
+                        <Card className="mt-3 mb-3">
+                                <Card.Body>
+                                    <Row className="g-3 flex-center justify-content-between">
+                                        <Col xs="auto" className="d-flex align-items-center">
+                                            <small className="d-none d-lg-block me-2">Show:</small>
+                                            <Form.Select
+                                                size="sm"
+                                                // value={itemsPerPage}
+                                                // onChange={({ target }) => {
+                                                //     setItemsPerPage(target.value);
+                                                //     setCoursePerPage(target.value);
+                                                // }}
+                                                style={{ maxWidth: '4.875rem' }}
+                                            >
+                                                <option >1</option>
+                                                <option >2</option>
+                                                <option >3</option>
+                                                <option >All</option>
+                                            </Form.Select>
+                                        </Col>
+                                        <Col xs="auto" className="d-flex">
+                                            <div>
+                                                <Button
+                                                    variant="falcon-default"
+                                                    className="me-2"
+                                                >
+                                                    Preview
+                                                </Button>
+                                            </div>
+
+                                            <div>
+                                                <Button
+                                                    variant="falcon-default"
+                                                >
+                                                    Next
+                                                </Button>
+
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </Card.Body>
+                            </Card>
+                            {/* pagination */}
                     </Col>
                 </Container>
             </Row>

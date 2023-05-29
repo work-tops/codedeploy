@@ -1,6 +1,7 @@
 import React from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
+import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
 import { Row, Button, Col, Form, Card } from "react-bootstrap";
 // import CardDropdown from '../utilities/CardDropdown'
 const columns = [
@@ -31,7 +32,7 @@ const data = [
         date: '22 MAR 2023',
         invoice: "#M24AZQ",
         description: <span className="w-50">
-             paid to Alhaz Abdul K. for Project do 15... (Approved)
+            paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81",
         status: "Paid"
@@ -40,7 +41,7 @@ const data = [
         date: '22 MAR 2023',
         invoice: "#M24AZQ",
         description: <span className="w-50">
-             paid to Alhaz Abdul K. for Project do 15... (Approved)
+            paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81",
         status: "Paid"
@@ -49,7 +50,7 @@ const data = [
         date: '22 MAR 2023',
         invoice: "#M24AZQ",
         description: <span className="w-50">
-             paid to Alhaz Abdul K. for Project do 15... (Approved)
+            paid to Alhaz Abdul K. for Project do 15... (Approved)
         </span>,
         amount: "£ 281.81",
         status: "Paid"
@@ -94,16 +95,15 @@ const InvoiceTable = () => {
                         }}
                     />
 
-                    {/* <div>
-                <AdvanceTableFooter
-                className="mt-3"
-                rowCount={data.length}
-                table
-                rowInfo
-                navButtons
-                rowsPerPageSelection
-                />
-            </div > */}
+                    <div className="mt-3">
+                        <AdvanceTableFooter
+                            rowCount={data.length}
+                            table
+                            rowInfo
+                            navButtons
+                            rowsPerPageSelection
+                        />
+                    </div>
                 </AdvanceTableWrapper>
             </Card.Body>
         </Card>

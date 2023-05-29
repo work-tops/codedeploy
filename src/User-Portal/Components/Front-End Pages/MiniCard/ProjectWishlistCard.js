@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Container, Col, Row, Button, Modal } from "react-bootstrap";
+import { Card, Container, Col, Row, Button, Modal,Form } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Icon } from "@iconify/react";
 import product_image from '../../Images/Granite.png'
@@ -30,6 +30,9 @@ function ProjectWishListCard() {
                     <Col lg={12} className="mt-4">
                         <h5 className="mb-3">My Wishlist</h5>
                         <Card className="mb-3">
+                            <Card.Header className="d-flex justify-content-end">
+                                <><Icon onClick={() => setShowModal(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
+                            </Card.Header>
                             <Card.Body>
                                 <div className="row g-0">
                                     {/* <div className="col-md-4 col-lg-3">
@@ -72,7 +75,7 @@ function ProjectWishListCard() {
                                                                 className="fw-semibold bg-transparent text-uppercase mt-3">Send proposal
                                                             </Button>
                                                         </div>
-                                                        <><Icon onClick={() => setShowModal(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
+
                                                     </div>
                                                 </div>
 
@@ -83,6 +86,9 @@ function ProjectWishListCard() {
                             </Card.Body>
                         </Card>
                         <Card className="mb-3">
+                            <Card.Header className="d-flex justify-content-end">
+                                <><Icon onClick={() => setShowModal(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
+                            </Card.Header>
                             <Card.Body>
                                 <div className="row g-0">
 
@@ -122,7 +128,6 @@ function ProjectWishListCard() {
                                                                 className="fw-semibold bg-transparent text-uppercase mt-3">Send proposal
                                                             </Button>
                                                         </div>
-                                                        <><Icon onClick={() => setShowModal(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" role="button" /></>
                                                     </div>
                                                 </div>
                                                 {/* <div className="mb-lg-4 mt-auto mt-lg-0">
@@ -155,6 +160,50 @@ function ProjectWishListCard() {
                                 </Modal>
                             </Card.Body>
                         </Card>
+                        {/* pagination */}
+                        <Card className="mt-3 mb-3">
+                                <Card.Body>
+                                    <Row className="g-3 flex-center justify-content-between">
+                                        <Col xs="auto" className="d-flex align-items-center">
+                                            <small className="d-none d-lg-block me-2">Show:</small>
+                                            <Form.Select
+                                                size="sm"
+                                                // value={itemsPerPage}
+                                                // onChange={({ target }) => {
+                                                //     setItemsPerPage(target.value);
+                                                //     setCoursePerPage(target.value);
+                                                // }}
+                                                style={{ maxWidth: '4.875rem' }}
+                                            >
+                                                <option >1</option>
+                                                <option >2</option>
+                                                <option >3</option>
+                                                <option >All</option>
+                                            </Form.Select>
+                                        </Col>
+                                        <Col xs="auto" className="d-flex">
+                                            <div>
+                                                <Button
+                                                    variant="falcon-default"
+                                                    className="me-2"
+                                                >
+                                                    Preview
+                                                </Button>
+                                            </div>
+
+                                            <div>
+                                                <Button
+                                                    variant="falcon-default"
+                                                >
+                                                    Next
+                                                </Button>
+
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </Card.Body>
+                            </Card>
+                            {/* pagination */}
                     </Col>
                 </Container>
             </Row>

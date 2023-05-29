@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
-import { Row, Button, Col, Form } from "react-bootstrap";
+import { Row, Button, Col, Form, Modal } from "react-bootstrap";
 import IconButton from "../common/IconButton";
 import AdvanceTableSearchBox from "../common/advance-table/AdvanceTableSearchBox";
 import product_image from "../Images/product_image.png"
 import CardDropdown from "../common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import { getAllData } from "../../../Services/ProxyService";
-
+import { Link } from "react-router-dom";
 
 const columns = [
     {
@@ -64,6 +64,20 @@ const ServiceAdvancedTable = () => {
         Serviceslist()
     }, [])
 
+    // Cancel Modal
+    const [showModal1, setShowModal1] = useState(false);
+
+    const handleClose1 = () => {
+        setShowModal1(false);
+    };
+
+    const handleCancel = () => {
+        // Perform cancel action here
+        console.log('Cancel project');
+        setShowModal1(false);
+    };
+
+
     const columns = [
         {
             accessor: 'serviceid',
@@ -104,7 +118,7 @@ const ServiceAdvancedTable = () => {
         }
     ];
     const data = service.map(_service => ({
-        serviceid:'625355',
+        serviceid: '625355',
         name: _service.title,
         priceType: _service.price_type,
         email: _service.email,
@@ -112,10 +126,31 @@ const ServiceAdvancedTable = () => {
         status: _service.status == "Active" ? <span className="badge bg-success p-2">{_service.status}</span> : <span className="badge p-2 bg-warning">{_service.status}</span>,
         action: <CardDropdown>
             <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-               
-                <Dropdown.Item className="text-danger">Disable</Dropdown.Item>
-              
+                <Dropdown.Item as={Link} to="/user/addservices">Edit</Dropdown.Item>
+
+                <Dropdown.Item onClick={() => setShowModal1(true)} className='text-danger'>Disable</Dropdown.Item>
+                {/*  */}
+                <Modal show={showModal1} onHide={handleClose1}>
+                    <Modal.Header >
+                        <Modal.Title>Warning</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p className="text-capitalize">
+                            Are you sure you want to Disable (1) services?
+                        </p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose1}>
+                            Cancel
+                        </Button>
+                        <Button variant="danger" onClick={handleClose1}>
+                            Decline
+                        </Button>
+
+                    </Modal.Footer>
+                </Modal>
+                {/*  */}
+
             </div>
         </CardDropdown>
     }));

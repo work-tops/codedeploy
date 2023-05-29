@@ -130,7 +130,9 @@ function HowItWorks() {
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Check Ongoing Offers</h5>
                                                             <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
-                                                            <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Current Offers</p>
+                                                            <Link to="/productlist">
+                                                                <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Current Offers</p>
+                                                            </Link>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -142,7 +144,9 @@ function HowItWorks() {
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Buy Materials Directly</h5>
                                                             <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
-                                                            <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Current Offers</p>
+                                                            <Link to="/productlist">
+                                                                <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Current Offers</p>
+                                                            </Link>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -154,7 +158,9 @@ function HowItWorks() {
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Browse the Services</h5>
                                                             <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
-                                                            <p style={{ fontSize: '16px', color: '#003f6b' }} className="fw-semibold text-center">Check Current Offers</p>
+                                                            <Link to="/servicelist">
+                                                            <p style={{ fontSize: '16px', color: '#003f6b' }} className="fw-semibold text-center">Explore the Services</p>
+                                                            </Link>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -301,7 +307,7 @@ function HowItWorks() {
                                                 </div>
                                                 <div className="col-lg-4 mt-6 mt-lg-0">
                                                     <div className="card card-span h-100">
-                                                        <div style={{background:"#fcc77a"}} className="card-span-img">
+                                                        <div style={{ background: "#fcc77a" }} className="card-span-img">
                                                             <Icon icon="mdi:account-star" color="#003f6b" width="42" height="42" />
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
@@ -330,8 +336,8 @@ function HowItWorks() {
                                                 </div>
                                                 <div className="col-lg-4 mt-6 mt-lg-6">
                                                     <div className="card card-span h-100">
-                                                        <div style={{background:"#ff9a7a"}} className="card-span-img">
-                                                        <Icon icon="mdi:card-account-details-star-outline" color="#003f6b" width="42" height="42" />
+                                                        <div style={{ background: "#ff9a7a" }} className="card-span-img">
+                                                            <Icon icon="mdi:card-account-details-star-outline" color="#003f6b" width="42" height="42" />
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2"> Your Review Display page</h5>
