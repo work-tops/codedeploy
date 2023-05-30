@@ -253,11 +253,11 @@ const FrontendAddService = () => {
                                                     <Form.Label className="text-uppercase text-700">Services Location<span className="text-danger">*</span></Form.Label>
                                                     <Multiselect options={servitag[1]?.list} displayValue="value" className='form-control ' />
                                                 </Form.Group>
-                                                <Form.Group as={Col} className=' mb-3'>
+                                                {/* <Form.Group as={Col} className=' mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Services Range
                                                         <span className="text-danger">*</span></Form.Label>
                                                     <Multiselect options={servitag[2]?.list} displayValue="value" className='form-control' />
-                                                </Form.Group>
+                                                </Form.Group> */}
                                             </Row>
                                             <Row className='mb-3'>
                                                 <Col>

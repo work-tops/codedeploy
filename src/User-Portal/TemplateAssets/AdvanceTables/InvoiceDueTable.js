@@ -7,8 +7,9 @@ import CardDropdown from "../common/CardDropdown";
 import { Icon } from "@iconify/react";
 import { Divider } from "@mui/material";
 import { Link } from "react-router-dom";
-
-
+import InvoiceTable from "./InvoiceTable";
+import file from '../../Components/Projectimages/BathroomFitting.jpg'
+import RaiseInvoiceTable from "./OwnerInvoice";
 const InvoiceTableCard = () => {
 
     const [show, setShow] = useState(false);
@@ -21,18 +22,12 @@ const InvoiceTableCard = () => {
     const handleClose1 = () => setShow1(false);
     const handleShow1 = () => setShow1(true);
 
-    // Cancel Modal
-    const [showModal2, setShowModal2] = useState(false);
+    const [show2, setShow2] = useState(false);
 
-    const handleClose2 = () => {
-        setShowModal2(false);
-    };
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
 
-    const handleCancel = () => {
-        // Perform cancel action here
-        console.log('Cancel project');
-        setShowModal2(false);
-    };
+
 
 
     const columns = [
@@ -74,7 +69,7 @@ const InvoiceTableCard = () => {
             amount: "£ 100",
             status: <span className="badge bg-success">Paid</span>,
             action: <CardDropdown>
-                <Dropdown.Item onClick={handleShow}>View</Dropdown.Item>
+                <Dropdown.Item onClick={handleShow2}>View</Dropdown.Item>
                 <Dropdown.Item>Download</Dropdown.Item>
             </CardDropdown>,
         },
@@ -86,7 +81,7 @@ const InvoiceTableCard = () => {
             amount: "£ 100",
             status: <span className="badge bg-warning">New</span>,
             action: <CardDropdown>
-                <Dropdown.Item onClick={handleShow}>View</Dropdown.Item>
+                <Dropdown.Item onClick={handleShow2}>View</Dropdown.Item>
                 <Dropdown.Item>Download</Dropdown.Item>
             </CardDropdown>,
         },
@@ -146,13 +141,7 @@ const InvoiceTableCard = () => {
                     <h5 className="text-capitalize">
                         Invoice
                     </h5>
-                    <Button
-                        variant="falcon-default"
-                        size="sm"
-                        transform="shrink-3"
-                    >
-                        <Icon icon="uil:external-link-alt" width="18" height="18" /><span className="d-none d-sm-inline-block ms-1">Export</span>
-                    </Button>
+                    
                 </Card.Header>
                 <Card.Body>
                     <AdvanceTableWrapper
@@ -187,125 +176,116 @@ const InvoiceTableCard = () => {
                 </Card.Body>
             </Card>
 
-            {/* Modal */}
+            {/* View Modal */}
+
             <Modal
-                show={show}
-                onHide={() => setShow(false)}
+                show={show2}
+                onHide={() => setShow2(false)}
                 // backdrop="static"
                 dialogClassName="modal-lg modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
-                <Modal.Header className="">
+                <Modal.Header closeButton className="">
                     <h5>
-                        New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
+                        Invoice :<span style={{ fontSize: '14px' }} className="ms-2 text-danger">Project Id : #123456</span>
                     </h5>
-                    <Button className="bg-danger border-0" onClick={handleClose}>
-                        Close
-                    </Button>
+
                 </Modal.Header>
                 <Modal.Body>
-                    <Card style={{ background: '#F3F3F3' }}>
-                        <Card.Body>
-                            <div className="row">
-                                <div className="col-lg-5">
-                                    <label className="form-label  fw-semibold text-900">Item</label>
-                                    <p className="text-dark fw-semibold">
-                                        CALACATTA LIGHT QUARTZ
-                                    </p>
-                                    <p style={{ width: '90%' }} className="text-justify mb-2">
-                                        t is a long established fact that a reader will be distracted by the readable
-                                        content of a page when looking at its layout.
-                                    </p>
+                    <RaiseInvoiceTable />
+                    <div className="row">
+                        <div className="col-lg-8 col-sm-12">
+                            <Form.Group className="mt-3">
+                                <Form.Label className="text-900">Message on Invoice</Form.Label>
+                                <p className="w-75 text-justify text-900">
+                                    It is a long estabcol-sm-12lished fact that a reader will be distracted
+                                    by the readable content of a page when looking at its layout.
+                                </p>
+                            </Form.Group>
+                            <Form.Group className="mt-3">
+                                <Form.Label className="text-900">Message on Statement</Form.Label>
+                                <p className="w-75 text-justify text-900">
+                                    It is a long established fact that a reader will be distracted
+                                    by the readable content of a page when looking at its layout.
+                                </p>
+                            </Form.Group>
+                            <Form.Group className="mt-3 mb-3">
+                                <Form.Label className="text-900">Attachments</Form.Label>
+                                <div className="row bg-pre mt-3">
+                                    <div className="col ">
+                                        <img src={file} width="50px" height="50px" className="pro-pre" />
+                                    </div>
                                 </div>
+                            </Form.Group>
 
-                                <div className="col-lg-4">
+                        </div>
+                        <div className="col-lg-4 col-sm-12">
+                            <tr>
+                                <td>
+                                    <h6 className="mt-3 fw-bold text-900 me-3">Sub Total:</h6>
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 text-900 me-3">£ 200</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">Discount (20%):</h6>
 
-                                    <label className="form-label  fw-semibold text-900">Billing period</label>
-                                    <p className="d-flex  flex-row gap-2">
-                                        <p className="text-dark fw-semibold">18/05/2023</p>
-                                        {/* <input className="form-control" type="date" /> */}
-                                        <p className="text-dark fw-semibold">-</p>
-                                        {/* <input className="form-control" type="date" /> */}
-                                        <p className="text-dark fw-semibold">29/05/2023</p>
-                                    </p>
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 text-900 me-3">£ 40</h6>
 
-                                </div>
-                                <div className="col-lg-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">Shipping (20%):</h6>
 
-                                    <label className="form-label fw-semibold text-900">Quantity</label>
-                                    <p className="text-dark ms-lg-4 fw-semibold">
-                                        2
-                                    </p>
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 text-900 me-3">£ 40</h6>
+                                    <Divider />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">Total:</h6>
 
-                                </div>
-                                <div className="col-lg-1">
-                                    <label className="form-label fw-semibold text-900">Amount</label>
-                                    <p className="text-dark ms-lg-3 fw-semibold">
-                                        £100
-                                    </p>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                </Modal.Body>
-                <Modal.Footer>
-                    <div>
-                        <tr>
-                            <td>
-                                <h6 className="mt-3 text-900 me-3">Invoice Total :</h6>
-                            </td>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">£ 200</h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">Tax : <span className="fw-semibold ms-3 mt-2">20 %</span></h6>
-                            </td>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">£ 40</h6>
-                                <Divider />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5 className="fw-semibold mt-3 text-900 me-3">Grand Total:</h5>
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">£ 280</h6>
 
-                            </td>
-                            <td>
-                                <h5 className="fw-semibold mt-3 text-900 me-3">£ 240</h5>
-                                <Divider />
-                            </td>
-                        </tr>
-                        <div className="mt-3 d-flex justify-content-end">
-                            <Button as={Link} to="/InvoiceCheckout" className="bg-success border-0">Pay Now</Button>
-                            <Button onClick={() => setShowModal2(true)} className="bg-danger ms-2 border-0">Cancel</Button>
-                            {/*  */}
-                            <Modal show={showModal2} onHide={handleClose2}>
-                                <Modal.Header closeButton>
-                                    <Modal.Title>Warning</Modal.Title>
-                                </Modal.Header>
-                                <Modal.Body>
-                                    <p className="text-capitalize">
-                                        Are you sure you want to cancel this Invoice?
-                                    </p>
-                                </Modal.Body>
-                                <Modal.Footer>
-                                    <Button variant="secondary" onClick={handleClose2}>
-                                        No
-                                    </Button>
-                                    <Button variant="danger" onClick={handleShow1}>
-                                        Yes
-                                    </Button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">Deposit:</h6>
 
-                                </Modal.Footer>
-                            </Modal>
-                            {/*  */}
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">£ 280</h6>
+                                    <Divider />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">Balance Due:</h6>
+
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">£ 280</h6>
+
+                                </td>
+                            </tr>
                         </div>
                     </div>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button as={Link} to="/InvoiceCheckout" className="btn btn-success">Pay Now</Button>
                 </Modal.Footer>
             </Modal>
-            {/* Modal */}
+            {/* View Modal */}
             {/* Modal */}
             <Modal
                 show={show1}
@@ -323,49 +303,7 @@ const InvoiceTableCard = () => {
                     </Button>
                 </Modal.Header>
                 <Modal.Body>
-                    <Card style={{ background: '#F3F3F3' }}>
-                        <Card.Body>
-                            <div className="row">
-                                <div className="col-lg-5">
-                                    <label className="form-label  fw-semibold text-900">Item</label>
-                                    <p className="text-dark fw-semibold">
-                                        CALACATTA LIGHT QUARTZ
-                                    </p>
-                                    <p style={{ width: '90%' }} className="text-justify mb-2">
-                                        t is a long established fact that a reader will be distracted by the readable
-                                        content of a page when looking at its layout.
-                                    </p>
-                                </div>
-
-                                <div className="col-lg-4">
-
-                                    <label className="form-label  fw-semibold text-900">Billing period</label>
-                                    <p className="d-flex  flex-row gap-2">
-                                        <p className="text-dark fw-semibold">18/05/2023</p>
-                                        {/* <input className="form-control" type="date" /> */}
-                                        <p className="text-dark fw-semibold">-</p>
-                                        {/* <input className="form-control" type="date" /> */}
-                                        <p className="text-dark fw-semibold">29/05/2023</p>
-                                    </p>
-
-                                </div>
-                                <div className="col-lg-2">
-
-                                    <label className="form-label fw-semibold text-900">Quantity</label>
-                                    <p className="text-dark ms-lg-4 fw-semibold">
-                                        2
-                                    </p>
-
-                                </div>
-                                <div className="col-lg-1">
-                                    <label className="form-label fw-semibold text-900">Amount</label>
-                                    <p className="text-dark ms-lg-3 fw-semibold">
-                                        £100
-                                    </p>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
+                    <RaiseInvoiceTable/>
                 </Modal.Body>
                 <Modal.Footer>
                     <div>

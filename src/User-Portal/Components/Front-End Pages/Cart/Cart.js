@@ -40,7 +40,7 @@ function Cart() {
                                             </a>
                                         </Link>
                                         <Button onClick={() => setShowModal(true)} className="btn btn-sm btn-danger" >Remove</Button></div>
-                                        {/* <div className="fs--2 fs-md--1"><a role="button"  className="text-danger" >Remove</a></div> */}
+                                    {/* <div className="fs--2 fs-md--1"><a role="button"  className="text-danger" >Remove</a></div> */}
 
                                 </div>
                             </div>
@@ -62,34 +62,39 @@ function Cart() {
                                         <Form.Check type="checkbox" />
                                     </div>
                                     <div className="col-6 py-3">
-                                        <div className="d-flex align-items-center"><a ><img className="img-fluid rounded-1 me-3 d-none d-md-block" src={product_image} alt="" width="60" /></a>
-                                            <div className="flex-1">
-                                                <h5 className="fs-0"><a className="text-900" >MALACHITE SEMI PRECIOUS
-                                                </a>
-                                                </h5>
-                                                <div>
-                                                    <Modal show={showModal} onHide={handleClose}>
-                                                        <Modal.Header>
-                                                            <Modal.Title>Warning</Modal.Title>
-                                                        </Modal.Header>
-                                                        <Modal.Body>
-                                                            <p className="text-capitalize">
-                                                                Are you sure you want to remove (1) product from your cart?
-                                                            </p>
-                                                        </Modal.Body>
-                                                        <Modal.Footer>
-                                                            <Button variant="secondary" onClick={handleClose}>
-                                                                Cancel
-                                                            </Button>
-                                                            <Button variant="danger" onClick={handleClose}>
-                                                                Remove
-                                                            </Button>
+                                        <Link
+                                            to={`productdetails/${"data._id"}`}
+                                            className="text-dark"
+                                        >
+                                            <div className="d-flex align-items-center"><a ><img className="img-fluid rounded-1 me-3 d-none d-md-block" src={product_image} alt="" width="60" /></a>
+                                                <div className="flex-1">
+                                                    <h5 className="fs-0"><a className="text-900" >MALACHITE SEMI PRECIOUS
+                                                    </a>
+                                                    </h5>
+                                                    <div>
+                                                        <Modal show={showModal} onHide={handleClose}>
+                                                            <Modal.Header>
+                                                                <Modal.Title>Warning</Modal.Title>
+                                                            </Modal.Header>
+                                                            <Modal.Body>
+                                                                <p className="text-capitalize">
+                                                                    Are you sure you want to remove (1) product from your cart?
+                                                                </p>
+                                                            </Modal.Body>
+                                                            <Modal.Footer>
+                                                                <Button variant="secondary" onClick={handleClose}>
+                                                                    Cancel
+                                                                </Button>
+                                                                <Button variant="danger" onClick={handleClose}>
+                                                                    Remove
+                                                                </Button>
 
-                                                        </Modal.Footer>
-                                                    </Modal>
+                                                            </Modal.Footer>
+                                                        </Modal>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </div>
                                     <div className="col-4 py-3">
                                         <div className="row align-items-center">

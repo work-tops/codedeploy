@@ -21,7 +21,7 @@ function OwnerEnquiryDetails() {
                         <Col lg={12}>
                             <Card className="mt-5 mb-3">
                                 <Card.Header className="d-flex justify-content-end bg-light">
-                                    <Button as={Link} to="/Enquirescard" className="bg-danger border-0">Close the Query</Button>
+                                    <Button as={Link} to="/Enquirescard" className="bg-danger text-uppercase border-0">Close the Enquiry </Button>
                                 </Card.Header>
                                 <Card.Body>
                                     <div>
@@ -48,7 +48,7 @@ function OwnerEnquiryDetails() {
                                 <Card.Body>
                                     <Row>
                                         <Col md={6} lg={3}>
-                                            <h5 className="mb-3 fs-0">Customer Details</h5>
+                                            <h5 className="mb-3 fs-0 text-uppercase">Customer Details</h5>
                                             <div className="d-flex">
                                                 <img
                                                     src={profile}
@@ -63,15 +63,15 @@ function OwnerEnquiryDetails() {
                                             </div>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3 fs-0">Title</h5>
+                                            <h5 className="mb-3 fs-0 text-uppercase">Title</h5>
                                             <h6 className="mb-0">Kitchen Worktops</h6>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3 text-capitalize fs-0">Requirements</h5>
+                                            <h5 className="mb-3 text-uppercase fs-0">Requirements</h5>
                                             <h6 className="mb-2">Within 2 weeks</h6>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3 text-capitalize fs-0">Postcode</h5>
+                                            <h5 className="mb-3 text-uppercase fs-0">Postcode</h5>
                                             <h6 className="mb-2">CB236DX</h6>
                                         </Col>
                                     </Row>
@@ -81,9 +81,8 @@ function OwnerEnquiryDetails() {
                                 <Card.Body>
                                     <Form>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="text-900">
-                                                Description
-                                            </Form.Label>
+                                            <h5 className="mb-3 text-uppercase fs-0">Description</h5>
+
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum
                                                 dolor sit amet, consectetur adipiscing elit,Lorem ipsum dolor sit amet,
@@ -96,12 +95,13 @@ function OwnerEnquiryDetails() {
                                 </Card.Body>
                             </Card>
                             <Card className="mt-3 mb-2">
-                                <div className='bg-white  p-3 d-flex justify-content-between text-capitalize'>
-                                    <h6 style={{ fontSize: '16px' }} className="mt-3">
-                                        Message
-                                    </h6>
+                                <div className='bg-white  p-3 d-flex justify-content-between text-uppercase'>
+                                    <h5 className="mb-3 text-uppercase fs-0">Message</h5>
                                     <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
-                                        Reply the Query
+                                        Create Estimate
+                                    </Button>
+                                    <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
+                                        Reply the Enquiry
                                     </Button>
                                 </div>
                                 <Card.Body className="position-relative">

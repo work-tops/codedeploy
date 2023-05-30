@@ -28,7 +28,16 @@ function OpenProjectCard() {
                 </Col>
                 {/* <Col lg={12}> */}
                 <Container>
-                    <h4 className="mb-3 text-uppercase">Open Projects</h4>
+                    <div className="d-flex justify-content-between">
+                        <h4 className="mb-3 text-uppercase">Projects</h4>
+                        <div>
+                            <Form.Select>
+                                <option>All</option>
+                                <option>Open</option>
+                                <option>Expired</option>
+                            </Form.Select>
+                        </div>
+                    </div>
                     <Card className="mb-3 d-none">
                         <Card.Body>
                             <div className="mt-4 d-flex justify-content-center">
@@ -66,35 +75,14 @@ function OpenProjectCard() {
                                                 <Dropdown.Menu>
                                                     <Dropdown.Item as={Link} className="text-success" to="/proposallist">View Proposals</Dropdown.Item>
                                                     <Dropdown.Item as={Link} className="text-primary" to="/EditPostProject">Edit</Dropdown.Item>
+                                                    <Dropdown.Item as={Link} className="text-warning" to="/EditPostProject">Repost</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                             {/* </Button> */}
                                         </InputGroup>
                                     </Col>
                                 </Row>
-                                {/* <table border="1px solid black" className="user-project-details-table">
-                                    <tr>
-                                        <td className="bg-white tab-clm">
-                                            <p className="abt-user">{data?.project_description}
-                                            </p>
-                                        </td>
-                                        <td className="bg-white tab-clm">
-                                            <div className="btn-group">
-                                                
-                                                    <button type="button" className="btn user-prj-view">View</button>
-                                                </Link>
-                                                <button type="button" className="btn user-prj-dd dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <span className="visually-hidden">Toggle Dropdown</span>
-                                                </button>
-                                                <ul className="dropdown-menu">
-                                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table> */}
+
                             </Card.Body>
                         </Card>
                     ))}
@@ -106,7 +94,7 @@ function OpenProjectCard() {
                                     <small className="d-none d-lg-block me-2">Show:</small>
                                     <Form.Select
                                         size="sm"
-                                       
+
                                         style={{ maxWidth: '4.875rem' }}
                                     >
                                         <option >1</option>

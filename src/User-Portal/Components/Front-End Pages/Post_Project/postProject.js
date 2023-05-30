@@ -375,7 +375,7 @@ const PostProject = () => {
                         <option value="">Select</option>
                         <option value="Fixed Price">Fixed Price   </option>
                         <option value="No Idea">No Idea</option>
-                        <option value="No Range">No Range</option>
+                        <option value="Range">Range</option>
                       </Form.Select>
                     </Form.Group>
                   </Col>

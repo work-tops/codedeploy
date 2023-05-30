@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import freelancer from '../../Projectimages/Freelancer.jpg'
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { getAllData } from "../../../../Services/ProxyService";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 function SellerList() {
 
     const [sellersList, setSellers] = useState([]);
@@ -36,8 +39,42 @@ const toastDanger = () => toast.success(<h6 className="text-sucess">Service Prov
                     <NavbarStandard />
                 </Col>
                 <Col lg={12}>
+                <Card className="mt-5">
+                                <Card.Header className="bg-light position-relative">
+                                    <h4 className="text-uppercase  mb-0 mt-1">Service Provider Lists</h4>
+                                </Card.Header>
+                                <Card.Body className="pt-0 mt-3 pt-md-3">
+                                    <Row className="g-3 align-items-center">
+                                        <Col xs="auto" className="d-xl-none">
+                                            <Button
+                                                className="position-relative p-0"
+                                                size="sm"
+                                                variant="link"
+                                            >
+                                                <FontAwesomeIcon icon="filter" className="fs-0 text-700" />
+                                            </Button>
+                                        </Col>
+                                        <Col lg={6}>
+                                            <Form className="position-relative">
+                                                <Form.Control
+                                                    type="search"
+                                                    placeholder="Search..."
+                                                    // onChange={(e) => mainSearch(e)}
+                                                    size="sm"
+                                                    aria-label="Search"
+                                                    className="rounded search-input ps-4"
+                                                />
+                                                <FontAwesomeIcon
+                                                    icon="search"
+                                                    className="fs--1  text-400 position-absolute text-400 start-0 top-50 translate-middle-y ms-2"
+                                                />
+                                            </Form>
+                                        </Col>
+                                        
+                                    </Row>
+                                </Card.Body>
+                            </Card>
                     <Row className="">
-                        <h4 className="text-uppercase mt-5">Service Provider Lists</h4>
                         {sellersList.map((data,index)=>{
                             return <Col  sm={12} md={6} xl={4} lg={4} >
                         <Card className="mt-3 mb-1">

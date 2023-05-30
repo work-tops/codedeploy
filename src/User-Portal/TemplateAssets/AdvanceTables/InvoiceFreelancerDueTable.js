@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
-import { Row, Modal, Col, Card, Dropdown, Button, Form } from "react-bootstrap";
+import { Row, Modal, Col, Card, Dropdown, Button, Form,Image } from "react-bootstrap";
 import CardDropdown from "../common/CardDropdown";
 import { Icon } from "@iconify/react";
 import { Divider } from "@mui/material";
-
-
+import InvoiceTable from "./InvoiceTable";
+import file from '../../Components/Projectimages/BathroomFitting.jpg'
+import { useDropzone } from 'react-dropzone';
+import { getSize } from '../helpers/utils';
+import cloudUpload from '../assets/cloud-upload.svg';
 const InvoiceFreelancerDueTable = () => {
 
     const [show, setShow] = useState(false);
@@ -32,6 +35,21 @@ const InvoiceFreelancerDueTable = () => {
     const handleClose3 = () => {
         setShowModal3(false);
     };
+
+    const [cover, setCover] = useState();
+
+    const { getRootProps, getInputProps } = useDropzone({
+        accept: 'image/*',
+        onDrop: acceptedFiles => {
+            setCover(
+                Object.assign(acceptedFiles[0], {
+                    preview: URL.createObjectURL(acceptedFiles[0])
+                })
+            );
+        }
+    });
+
+    // 
 
 
 
@@ -140,21 +158,8 @@ const InvoiceFreelancerDueTable = () => {
                         Invoice
                     </h5>
                     <div className="d-flex justify-content-end">
-                        <Button
-                            // variant="falcon-default"
-                            size="sm"
-                            className="me-2"
-                            transform="shrink-3"
-                        >
-                            <span onClick={handleShow} className="d-none d-sm-inline-block ms-1">Raise Invoice</span>
-                        </Button>
-                        <Button
-                            variant="falcon-default"
-                            size="sm"
-                            transform="shrink-3"
-                        >
-                            <Icon icon="uil:external-link-alt" width="18" height="18" /><span className="d-none d-sm-inline-block ms-1">Export</span>
-                        </Button>
+                       
+
                     </div>
                 </Card.Header>
                 <Card.Body>
@@ -179,18 +184,18 @@ const InvoiceFreelancerDueTable = () => {
                         />
                         <div className="mt-3">
                             <AdvanceTableFooter
-                    rowCount={data.length}
-                    table
-                    rowInfo
-                    navButtons
-                    rowsPerPageSelection
-                />
+                                rowCount={data.length}
+                                table
+                                rowInfo
+                                navButtons
+                                rowsPerPageSelection
+                            />
                         </div>
                     </AdvanceTableWrapper>
                 </Card.Body>
             </Card>
 
-            {/* Modal */}
+            {/* Add Modal */}
             <Modal
                 show={show}
                 onHide={() => setShow(false)}
@@ -198,259 +203,149 @@ const InvoiceFreelancerDueTable = () => {
                 dialogClassName="modal-lg modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
-                <Modal.Header className="">
-                    <h5>
-                        New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
-                    </h5>
-                    <Button className="bg-danger border-0" onClick={handleClose}>
-                        Close
-                    </Button>
-                </Modal.Header>
-                <Modal.Body>
-                    <Card className="mb-3" style={{ background: '#F3F3F3' }}>
-                        <Card.Body>
-                            <div className="row gap-2">
-                                <div className="col-lg-3">
-                                    <label className="form-label text-900">Item</label>
-                                    <p className="fw-semibold text-900">
-                                        <input value="CALACATTA LIGHT QUARTZ" className="mb-1 form-control form-contol-sm" />
-                                        <label>Description</label>
-                                        <textarea rows={1} className="form-control form-contol-sm">
-                                            t is a long established fact that a reader will be distracted by the readable
-                                            content of a page when looking at its layout.
-                                        </textarea>
-                                    </p>
-                                </div>
-
-                                <div className="col-lg-5">
-                                    <label className="form-label text-900">Billing period</label>
-                                    <p className="d-flex flex-row gap-2">
-                                        <input className="form-control" type="date" />
-                                        <p className="">-</p>
-                                        <input className="form-control" type="date" />
-                                    </p>
-                                </div>
-                                <div className="col-lg-1">
-                                    <label className="form-label text-900">Quantity</label>
-                                    <p className="fw-semibold text-900">
-                                        <input type="number" value="2" className="mb-3  form-control form-contol-sm" />
-                                    </p>
-                                </div>
-                                <div className="col-lg-2">
-                                    <label className="form-label text-900">Amount</label>
-                                    <p>
-                                        <input className="form-control w-100 form-contol-sm" type="text" value="£100" />
-                                    </p>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                    <Card className="mb-3" style={{ background: '#F3F3F3' }}>
-                        <Card.Body>
-                            <div className="row gap-2">
-                                <div className="col-lg-3">
-                                    <label className="form-label text-900">Item</label>
-                                    <p className="fw-semibold text-900">
-                                        <input className="mb-1 form-control form-contol-sm" />
-                                        <label>Description</label>
-                                        <textarea rows={1} className="form-control form-contol-sm">
-
-                                        </textarea>
-                                    </p>
-                                </div>
-
-                                <div className="col-lg-5">
-                                    <label className="form-label text-900">Billing period</label>
-                                    <p className="d-flex flex-row gap-2">
-                                        <input className="form-control" type="date" />
-                                        <p className="">-</p>
-                                        <input className="form-control" type="date" />
-                                    </p>
-                                </div>
-                                <div className="col-lg-1">
-                                    <label className="form-label text-900">Quantity</label>
-                                    <p className="fw-semibold text-900">
-                                        <input type="number" className="mb-3  form-control form-contol-sm" />
-                                    </p>
-                                </div>
-                                <div className="col-lg-2">
-                                    <label className="form-label text-900">Amount</label>
-                                    <p>
-                                        <input className="form-control w-100 form-contol-sm" type="text" />
-                                    </p>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                    <Button className="bg-transparent" style={{ border: '1px solid #003f6b', color: '#003f6b' }}><Icon className="me-2" icon="ic:sharp-plus" width="20" height="20" />Add New Item</Button>
-
-                </Modal.Body>
-                <Modal.Footer>
-                    <div>
-                        <Form>
-                            <Form.Group className="mb-2">
-                                <Form.Label>Invoice Total :</Form.Label>
-                                <Form.Control
-                                    value="£ 200"
-                                    type="text" />
-                            </Form.Group>
-                            <Form.Group className="mb-2">
-                                <Row className="mb-2">
-                                    <Col md={3} lg={3}>
-                                        <Form.Label className="mt-2">Tax % :</Form.Label>
-                                    </Col>
-                                    <Col md={3} lg={3}>
-                                        <Form.Control
-                                            className=""
-                                            value="20"
-                                            type="text" />
-                                    </Col>
-                                    <Col className="mt-2 ms-2" md={3} lg={3}>
-
-                                    </Col>
-                                </Row>
-                                <Form.Group className="mb-2">
-                                    <Form.Control
-                                        value="£ 40"
-                                        type="text" />
-                                </Form.Group>
-                            </Form.Group>
-                            <Form.Group className="mb-2">
-                                <Form.Label as="h5" className="fw-semibold">Grand Total:</Form.Label>
-                                <Form.Control
-                                    value="£ 240"
-                                    type="text" />
-                            </Form.Group>
-                        </Form>
-                        <div className="mt-3 d-flex justify-content-end">
-                            <Button onClick={handleClose} className="bg-primary border-0">Send</Button>
-                        </div>
-                    </div>
-                </Modal.Footer>
-            </Modal>
-            {/* Modal */}
-
-
-            {/* Modal */}
-            <Modal
-                show={show1}
-                onHide={() => setShow1(false)}
-                // backdrop="static"
-                dialogClassName="modal-lg modal-90w"
-                aria-labelledby="example-custom-modal-styling-title"
-            >
-                <Modal.Header className="">
-                    <h5>
-                        New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
-                    </h5>
-                    <Button className="bg-danger border-0" onClick={handleClose1}>
-                        Close
-                    </Button>
-                </Modal.Header>
-                <Modal.Body>
-                    <Card style={{ background: '#F3F3F3' }}>
-                        <Card.Body>
-                            <div className="row">
-                                <div className="col-lg-5">
-                                    <label className="form-label  fw-semibold text-900">Item</label>
-                                    <p className="text-dark fw-semibold">
-                                        CALACATTA LIGHT QUARTZ
-                                    </p>
-                                    <p style={{ width: '90%' }} className="text-justify mb-2">
-                                        t is a long established fact that a reader will be distracted by the readable
-                                        content of a page when looking at its layout.
-                                    </p>
-                                </div>
-
-                                <div className="col-lg-4">
-
-                                    <label className="form-label  fw-semibold text-900">Billing period</label>
-                                    <p className="d-flex  flex-row gap-2">
-                                        <p className="text-dark fw-semibold">18/05/2023</p>
-                                        {/* <input className="form-control" type="date" /> */}
-                                        <p className="text-dark fw-semibold">-</p>
-                                        {/* <input className="form-control" type="date" /> */}
-                                        <p className="text-dark fw-semibold">29/05/2023</p>
-                                    </p>
-
-                                </div>
-                                <div className="col-lg-2">
-
-                                    <label className="form-label fw-semibold text-900">Quantity</label>
-                                    <p className="text-dark ms-lg-4 fw-semibold">
-                                        2
-                                    </p>
-
-                                </div>
-                                <div className="col-lg-1">
-                                    <label className="form-label fw-semibold text-900">Amount</label>
-                                    <p className="text-dark ms-lg-3 fw-semibold">
-                                        £100
-                                    </p>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                </Modal.Body>
-                <Modal.Footer>
-                    <div>
-                        <tr>
-                            <td>
-                                <h6 className="mt-3 text-900 me-3">Invoice Total:</h6>
-                            </td>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">£ 200</h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">Tax:</h6>
-
-                            </td>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">£ 40</h6>
-                                <Divider />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5 className="fw-semibold mt-3 text-900 me-3">Grand Total:</h5>
-
-                            </td>
-                            <td>
-                                <h5 className="fw-semibold mt-3 text-900 me-3">£ 240</h5>
-                                <Divider />
-                            </td>
-                        </tr>
-                        <div className="mt-3 d-flex justify-content-end">
-                            <span style={{ fontSize: '14px' }} onClick={handleClose} className="badge p-2 bg-danger ms-2 border-0">Cancelled</span>
-                        </div>
-                    </div>
-                </Modal.Footer>
-            </Modal>
-            {/*  */}
-            {/*  */}
-            <Modal show={showModal3} onHide={handleClose3}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Warning</Modal.Title>
+                    <h5>
+                        Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
+                    </h5>
+
                 </Modal.Header>
                 <Modal.Body>
-                    <p className="text-capitalize">
-                        Are you sure you want to cancel this Invoice?
-                    </p>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="text-900 text-uppercase">
+                            Service Date
+                            <span className="text-danger">*</span></Form.Label>
+                        <input type="date" className="form-control form-control-sm" />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="text-900 text-uppercase">
+                            Product/Service
+                            <span className="text-danger">*</span></Form.Label>
+                        <input className="form-control form-control-sm" />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="text-900 text-uppercase">
+                            Description
+                            <span className="text-danger">*</span></Form.Label>
+                        <textarea rows={3} className="form-control resize-none">
+
+                        </textarea>
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="text-900 text-uppercase">
+                            Quantity
+                            <span className="text-danger">*</span></Form.Label>
+                        <input type="number" className="form-control form-control-sm" />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="text-900 text-uppercase">
+                            Rate
+                            <span className="text-danger">*</span></Form.Label>
+                        <input className="form-control form-control-sm" />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="text-900 text-uppercase">
+                            Amount
+                            <span className="text-danger">*</span></Form.Label>
+                        <input className="form-control form-control-sm" />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="text-900 text-uppercase">
+                            VAT
+                            <span className="text-danger">*</span></Form.Label>
+                        <input className="form-control form-control-sm" />
+                    </Form.Group>
+                    <Form.Group className="mt-3">
+                        <Form.Label className="text-900 text-uppercase">Message on Invoice</Form.Label>
+                        <textarea className="form-control w-100" rows={3}>
+
+                        </textarea>
+                    </Form.Group>
+                    <Form.Group className="mt-3">
+                        <Form.Label className="text-900 text-uppercase">Message on Statement</Form.Label>
+                        <textarea className="form-control w-100" rows={3}>
+
+                        </textarea>
+                    </Form.Group>
+                    <Form.Group className="mt-3 mb-3">
+                        <Form.Label className="text-900 text-uppercase">Attachments</Form.Label>
+                        <div >
+                            <div {...getRootProps({ className: 'dropzone-area py-6' })}>
+                                <input {...getInputProps({ multiple: false })} />
+                                <div className="fs--1">
+                                    <img src={cloudUpload} alt="" width={20} className="me-2" />
+                                    <span className="d-none d-lg-inline">
+                                        Drag your image here
+                                        <br />
+                                        or,{' '}
+                                    </span>
+                                    <Button variant="link" size="sm" className="p-0 fs--1">
+                                        Browse
+                                    </Button>
+                                </div>
+                            </div>
+                            {cover && (
+                                <div className="mt-3">
+                                    <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
+                                        <Image
+                                            rounded
+                                            width={40}
+                                            height={40}
+                                            src={cover.preview}
+                                            alt={cover.path}
+                                        />
+                                        <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
+
+                                            <h6 className="text-truncate">{cover.path}</h6>
+                                            <div className="d-flex align-items-center position-relative">
+                                                <p className="mb-0 fs--1 text-400 line-height-1">
+                                                    <strong>{getSize(cover.size)}</strong>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <CardDropdown>
+                                            <div className="py-2">
+                                                <Dropdown.Item
+                                                    className="text-danger"
+                                                    onClick={() => setCover()}
+                                                >
+                                                    Remove
+                                                </Dropdown.Item>
+                                            </div>
+                                        </CardDropdown>
+                                    </div>
+                                </div>
+                            )}
+
+                        </div>
+                        <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
+                        <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
+
+                    </Form.Group>
+                    <Form.Group className="mt-3 mb-3">
+                        <Form.Label className="text-900 text-uppercase">Discounts (%)</Form.Label>
+                        <input type="text" className="form-control form-control-sm" />
+                    </Form.Group>
+                    <Form.Group className="mt-3 mb-3">
+                        <Form.Label className="text-900 text-uppercase">Shipping Tax (%)</Form.Label>
+                        <input type="text" className="form-control form-control-sm" />
+                    </Form.Group>
+                    <Form.Group className="mt-3 mb-3">
+                        <Form.Label className="text-900 text-uppercase">Deposit</Form.Label>
+                        <input type="text" className="form-control form-control-sm" />
+                    </Form.Group>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose3}>
-                        No
-                    </Button>
-                    <Button variant="danger" onClick={handleShow1}>
-                        Yes
-                    </Button>
-
+                    <Button onClick={handleClose}>Add</Button>
+                    <Button onClick={handleClose}>Save & Add Another</Button>
+                    
                 </Modal.Footer>
             </Modal>
-            {/*  */}
-            {/* Modal-3 */}
+            {/* Add Modal */}
+
+
+
+
+            {/* View Modal */}
 
             <Modal
                 show={show2}
@@ -459,97 +354,107 @@ const InvoiceFreelancerDueTable = () => {
                 dialogClassName="modal-lg modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
-                <Modal.Header className="">
+                <Modal.Header closeButton className="">
                     <h5>
-                        New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
+                        Invoice :<span style={{ fontSize: '14px' }} className="ms-2 text-danger">Project Id : #123456</span>
                     </h5>
-                    <Button className="bg-danger border-0" onClick={handleClose2}>
-                        Close
-                    </Button>
+
                 </Modal.Header>
                 <Modal.Body>
-                    <Card style={{ background: '#F3F3F3' }}>
-                        <Card.Body>
-                            <div className="row">
-                                <div className="col-lg-5">
-                                    <label className="form-label  fw-semibold text-900">Item</label>
-                                    <p className="text-dark fw-semibold">
-                                        CALACATTA LIGHT QUARTZ
-                                    </p>
-                                    <p style={{ width: '90%' }} className="text-justify mb-2">
-                                        t is a long established fact that a reader will be distracted by the readable
-                                        content of a page when looking at its layout.
-                                    </p>
+                    <InvoiceTable />
+                    <div className="row">
+                        <div className="col-lg-8 col-sm-12">
+                            <Form.Group className="mt-3">
+                                <Form.Label className="text-900">Message on Invoice</Form.Label>
+                                <p className="w-75 text-justify text-900">
+                                    It is a long estabcol-sm-12lished fact that a reader will be distracted
+                                    by the readable content of a page when looking at its layout.
+                                </p>
+                            </Form.Group>
+                            <Form.Group className="mt-3">
+                                <Form.Label className="text-900">Message on Statement</Form.Label>
+                                <p className="w-75 text-justify text-900">
+                                    It is a long established fact that a reader will be distracted
+                                    by the readable content of a page when looking at its layout.
+                                </p>
+                            </Form.Group>
+                            <Form.Group className="mt-3 mb-3">
+                                <Form.Label className="text-900">Attachments</Form.Label>
+                                <div className="row bg-pre mt-3">
+                                    <div className="col ">
+                                        <img src={file} width="50px" height="50px" className="pro-pre" />
+                                    </div>
                                 </div>
+                            </Form.Group>
 
-                                <div className="col-lg-4">
+                        </div>
+                        <div className="col-lg-4 col-sm-12">
+                            <tr>
+                                <td>
+                                    <h6 className="mt-3 fw-bold text-900 me-3">Sub Total:</h6>
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 text-900 me-3">£ 200</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">Discount (20%):</h6>
 
-                                    <label className="form-label  fw-semibold text-900">Billing period</label>
-                                    <p className="d-flex  flex-row gap-2">
-                                        <p className="text-dark fw-semibold">18/05/2023</p>
-                                        {/* <input className="form-control" type="date" /> */}
-                                        <p className="text-dark fw-semibold">-</p>
-                                        {/* <input className="form-control" type="date" /> */}
-                                        <p className="text-dark fw-semibold">29/05/2023</p>
-                                    </p>
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 text-900 me-3">£ 40</h6>
 
-                                </div>
-                                <div className="col-lg-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">Shipping (20%):</h6>
 
-                                    <label className="form-label fw-semibold text-900">Quantity</label>
-                                    <p className="text-dark ms-lg-4 fw-semibold">
-                                        2
-                                    </p>
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 text-900 me-3">£ 40</h6>
+                                    <Divider />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">Total:</h6>
 
-                                </div>
-                                <div className="col-lg-1">
-                                    <label className="form-label fw-semibold text-900">Amount</label>
-                                    <p className="text-dark ms-lg-3 fw-semibold">
-                                        £100
-                                    </p>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                </Modal.Body>
-                <Modal.Footer>
-                    <div>
-                        <tr>
-                            <td>
-                                <h6 className="mt-3 text-900 me-3">Invoice Total:</h6>
-                            </td>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">£ 200</h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">Tax:</h6>
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">£ 280</h6>
 
-                            </td>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">£ 40</h6>
-                                <Divider />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5 className="fw-semibold mt-3 text-900 me-3">Grand Total:</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">Deposit:</h6>
 
-                            </td>
-                            <td>
-                                <h5 className="fw-semibold mt-3 text-900 me-3">£ 240</h5>
-                                <Divider />
-                            </td>
-                        </tr>
-                        <div className="mt-3 d-flex justify-content-end">
-                            <Button onClick={handleShow} className="bg-primary border-0">Edit</Button>
-                            <Button onClick={setShowModal3} className="bg-danger ms-2 border-0">Cancel</Button>
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">£ 280</h6>
+                                    <Divider />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">Balance Due:</h6>
+
+                                </td>
+                                <td>
+                                    <h6 className=" mt-3 fw-bold text-900 me-3">£ 280</h6>
+
+                                </td>
+                            </tr>
                         </div>
                     </div>
+                </Modal.Body>
+                <Modal.Footer>
+
                 </Modal.Footer>
             </Modal>
-            {/* Modal */}
+            {/* View Modal */}
         </>
     )
 }

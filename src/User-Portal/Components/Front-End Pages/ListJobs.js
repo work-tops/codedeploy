@@ -345,8 +345,8 @@ function ListJobs(layout) {
                                                         </div>
 
                                                         <div key={key}>
-                                                            <h5 className='text-primary mb-3'>{data.customer_email}</h5>
-                                                            <h6 className='text-900 mb-3'>{data.project_title}</h6>
+                                                            {/* <h5 className='text-primary mb-3'>{data.customer_email}</h5> */}
+                                                            <h5 className='text-900 mb-3 text-uppercase '>{data.project_title}</h5>
                                                             <p className='fifty-chars text-justify' style={{ fontSize: '14px', width: '96%' }}>{data.project_description}</p>
                                                         </div>
 
@@ -416,10 +416,10 @@ function ListJobs(layout) {
                                                         <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>Attic</span>
                                                         <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Worktop</span>
                                                     </div>
-                                                    <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5>
-                                                    <h6 className="fs-0 mb-2">
+                                                    {/* <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5> */}
+                                                    <h5 className=" text-uppercase text-900 mb-3">
                                                         Bathroom Installation
-                                                    </h6>
+                                                    </h5>
                                                     <p className='one-twenty-chars mb-lg-0 text-justify' style={{ fontSize: '14px' }}>White Attica
                                                         Supernatural Quartz has a crisp white base featured with an intricate
                                                         veiny pattern. This quartz slab has a super sleek look in polished finish which
@@ -453,10 +453,10 @@ function ListJobs(layout) {
                                                         <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>Attic</span>
                                                         <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Worktop</span>
                                                     </div>
-                                                    <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5>
-                                                    <h6 className="fs-0 mb-2">
+                                                    {/* <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5> */}
+                                                    <h5 className=" text-uppercase text-900 mb-3">
                                                         Bathroom Installation
-                                                    </h6>
+                                                    </h5>
                                                     <p className='one-twenty-chars mb-lg-0 text-justify' style={{ fontSize: '14px' }}>White Attica
                                                         Supernatural Quartz has a crisp white base featured with an intricate
                                                         veiny pattern. This quartz slab has a super sleek look in polished finish which

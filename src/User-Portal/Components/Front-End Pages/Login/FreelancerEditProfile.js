@@ -27,7 +27,12 @@ function FreelancerEditProfile() {
     const handleClose3 = () => {
         setShowModal3(false);
     };
+    // Cancel Modal
+    const [showModal4, setShowModal4] = useState(false);
 
+    const handleClose4 = () => {
+        setShowModal4(false);
+    };
 
     return (
         <>
@@ -157,7 +162,7 @@ function FreelancerEditProfile() {
                                                 type="checkbox"
                                                 name="remember"
                                             />
-                                            <Form.Check.Label className="mb-0 text-700">
+                                            <Form.Check.Label className="mb-0 text-primary">
                                                 <h6 class="fs-0 mb-0">Fabricator<span data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Verified" data-bs-original-title="Verified"></span></h6>
                                                 <p class="mb-1"> <a >Freelancer</a></p>
                                                 <p class="text-1000 mb-0">4 Years</p>
@@ -174,7 +179,7 @@ function FreelancerEditProfile() {
                                                 type="checkbox"
                                                 name="remember"
                                             />
-                                            <Form.Check.Label className="mb-0 text-700">
+                                            <Form.Check.Label className="mb-0 text-primary">
                                                 <h6 className="fs-0 mb-0">Kitchen Designer
                                                     <span data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Verified" data-bs-original-title="Verified">
                                                     </span></h6>
@@ -192,132 +197,232 @@ function FreelancerEditProfile() {
                         {/*  */}
                         {/* Followers */}
                         <div class="card mb-3 mt-3">
-                            <div class="card-header bg-light">
-                                <div class="row align-items-center">
-                                    <div class="col d-flex justify-content-between">
-                                        <h5 class="mb-0" id="followers">Followers <span class="d-none d-sm-inline-block">(4)</span></h5>
-                                        <button onClick={() => setShowModal1(true)} className="btn btn-falcon-danger d-block">Remove Followers</button>
-                                        {/*  */}
-                                        <Modal show={showModal1} onHide={handleClose1}>
-                                            <Modal.Header >
-                                                <Modal.Title>Warning</Modal.Title>
-                                            </Modal.Header>
-                                            <Modal.Body>
-                                                <p className="text-capitalize">
-                                                    Are you sure you want to remove (4) followers?
-                                                </p>
-                                            </Modal.Body>
-                                            <Modal.Footer>
-                                                <Button variant="secondary" onClick={handleClose1}>
-                                                    Cancel
-                                                </Button>
-                                                <Button variant="danger" onClick={handleClose1}>
-                                                    Remove
-                                                </Button>
-
-                                            </Modal.Footer>
-                                        </Modal>
-                                        {/*  */}
-                                        {/* Modal-2 */}
-                                        <Modal show={showModal2} onHide={handleClose2}>
-                                            <Modal.Header >
-                                                <Modal.Title>Warning</Modal.Title>
-                                            </Modal.Header>
-                                            <Modal.Body>
-                                                <p className="text-capitalize">
-                                                    Are you sure you want to delete selected experience ?
-                                                </p>
-                                            </Modal.Body>
-                                            <Modal.Footer>
-                                                <Button variant="secondary" onClick={handleClose2}>
-                                                    Cancel
-                                                </Button>
-                                                <Button variant="danger" onClick={handleClose2}>
-                                                    Delete
-                                                </Button>
-
-                                            </Modal.Footer>
-                                        </Modal>
-                                        {/*  */}
-                                        {/* Modal-2 */}
-                                        <Modal show={showModal3} onHide={handleClose3}>
-                                            <Modal.Header >
-                                                <Modal.Title>Warning</Modal.Title>
-                                            </Modal.Header>
-                                            <Modal.Body>
-                                                <p className="text-capitalize">
-                                                    Are you sure you want to remove selected photos ?
-                                                </p>
-                                            </Modal.Body>
-                                            <Modal.Footer>
-                                                <Button variant="secondary" onClick={handleClose3}>
-                                                    Cancel
-                                                </Button>
-                                                <Button variant="danger" onClick={handleClose3}>
-                                                    Remove
-                                                </Button>
-
-                                            </Modal.Footer>
-                                        </Modal>
-                                        {/*  */}
+                            <div className="card-header bg-light">
+                                <div className="row g-3 align-items-center">
+                                <div className="col-4">
+                                        <h5 className="mb-0" id="followers"><input className="form-check-input me-2" type="checkbox" />Followers <span className="d-none d-sm-inline-block">(12)</span></h5>
                                     </div>
-                                    {/* Search */}
+
+                                    <div className="col-6 ">
+                                        <form>
+                                            <div className="row  g-0">
+                                                <div className="col"><input className="form-control form-control-sm" type="text" placeholder="Search..." /></div>
+                                                <div className="col d-md-block d-none"><select className="form-select form-select-sm ms-2" aria-label=".form-select-sm example">
+                                                    <option selected="selected">All followers</option>
+                                                    <option>Fabricator</option>
+                                                    <option>Plumber</option>
+                                                    <option>Roofer</option>
+                                                    <option>Bricklaying</option>
+                                                </select>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div className="col-2 d-flex justify-content-lg-end">
+                                        {/* <Icon icon="ph:note-pencil" className="cursor-pointer" width="24" height="24" /> */}
+                                        <Icon onClick={() => setShowModal1(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" />
+                                    </div>
+
                                 </div>
                             </div>
                             <div class="card-body bg-light px-1 py-0">
                                 <div class="row g-0 text-center fs--1">
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <div>
-                                                <img width="75px" height="70px" className="rounded-circle mb-3" src={profile} alt="" />
-                                            </div>
-                                            <Form.Check.Label className="mb-0 text-700">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
                                                 <input className="form-check-input me-1" type="checkbox" />
-                                                Emilia Clarke
-                                            </Form.Check.Label>
-
-                                            <p class="fs--2 mb-1"><a class="text-700" >Kitchen Designer</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
-                                        <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <div>
-                                                <img width="75px" height="70px" className="rounded-circle mb-3" src={profile} alt="" />
-                                            </div>
-                                            <Form.Check.Label className="mb-0 text-700">
-                                                <input className="form-check-input me-1" type="checkbox" />
-                                                Kit Harington
+                                                Sophie Turner
                                             </Form.Check.Label>
                                             <p class="fs--2 mb-1"><a class="text-700" >Plumber</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
                                         </div>
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <div>
-                                                <img width="75px" height="70px" className="rounded-circle mb-3" src={profile} alt="" />
-                                            </div>
-                                            <Form.Check.Label className="mb-0 text-700">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
                                                 <input className="form-check-input me-1" type="checkbox" />
                                                 Sophie Turner
                                             </Form.Check.Label>
                                             <p class="fs--2 mb-1"><a class="text-700" >Roofer</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
                                         </div>
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <div>
-                                                <img width="75px" height="70px" className="rounded-circle mb-3" src={profile} alt="" />
-                                            </div>
-                                            <Form.Check.Label className="mb-0 text-700">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
                                                 <input className="form-check-input me-1" type="checkbox" />
-                                                Peter Dinklage
+                                                Sophie Turner
                                             </Form.Check.Label>
-                                            <p class="fs--2 mb-1"><a class="text-700" >Worktop Installer</a></p>
+                                            <p class="fs--2 mb-1"><a class="text-700" >Fabricator</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
                                         </div>
                                     </div>
+                                    <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                        <div class="bg-white dark__bg-1100 p-3 h-100">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
+                                                <input className="form-check-input me-1" type="checkbox" />
+                                                Sophie Turner
+                                            </Form.Check.Label>
+                                            <p class="fs--2 mb-1"><a class="text-700" >Bricklaying</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
 
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                        <div class="bg-white dark__bg-1100 p-3 h-100">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
+                                                <input className="form-check-input me-1" type="checkbox" />
+                                                Sophie Turner
+                                            </Form.Check.Label>
+                                            <p class="fs--2 mb-1"><a class="text-700" >Roofer</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                        <div class="bg-white dark__bg-1100 p-3 h-100">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
+                                                <input className="form-check-input me-1" type="checkbox" />
+                                                Sophie Turner
+                                            </Form.Check.Label>
+                                            <p class="fs--2 mb-1"><a class="text-700" >Roofer</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                        <div class="bg-white dark__bg-1100 p-3 h-100">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
+                                                <input className="form-check-input me-1" type="checkbox" />
+                                                Sophie Turner
+                                            </Form.Check.Label>
+                                            <p class="fs--2 mb-1"><a class="text-700" >Roofer</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                        <div class="bg-white dark__bg-1100 p-3 h-100">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
+                                                <input className="form-check-input me-1" type="checkbox" />
+                                                Sophie Turner
+                                            </Form.Check.Label>
+                                            <p class="fs--2 mb-1"><a class="text-700" >Roofer</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                        <div class="bg-white dark__bg-1100 p-3 h-100">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
+                                                <input className="form-check-input me-1" type="checkbox" />
+                                                Sophie Turner
+                                            </Form.Check.Label>
+                                            <p class="fs--2 mb-1"><a class="text-700" >Roofer</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                        <div class="bg-white dark__bg-1100 p-3 h-100">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
+                                                <input className="form-check-input me-1" type="checkbox" />
+                                                Sophie Turner
+                                            </Form.Check.Label>
+                                            <p class="fs--2 mb-1"><a class="text-700" >Roofer</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                        <div class="bg-white dark__bg-1100 p-3 h-100">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
+                                                <input className="form-check-input me-1" type="checkbox" />
+                                                Sophie Turner
+                                            </Form.Check.Label>
+                                            <p class="fs--2 mb-1"><a class="text-700" >Roofer</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                        <div class="bg-white dark__bg-1100 p-3 h-100">
+                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                                <div className="circle-container">
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                </div>
+                                            </Link>
+                                            <Form.Check.Label className="mb-0 text-primary">
+                                                <input className="form-check-input me-1" type="checkbox" />
+                                                Sophie Turner
+                                            </Form.Check.Label>
+                                            <p class="fs--2 mb-1"><a class="text-700" >Roofer</a></p>
+                                            <><Icon onClick={() => setShowModal4(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" /></>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                           
                         </div>
                         {/* Followers */}
                         {/*  */}
@@ -366,6 +471,91 @@ function FreelancerEditProfile() {
                     </div>
                 </div>
             </Container >
+            {/*  */}
+            {/*  */}
+            <Modal show={showModal1} onHide={handleClose1}>
+                <Modal.Header >
+                    <Modal.Title>Warning</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p className="text-capitalize">
+                        Are you sure you want to remove (4) followers?
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose1}>
+                        Cancel
+                    </Button>
+                    <Button variant="danger" onClick={handleClose1}>
+                        Remove
+                    </Button>
+
+                </Modal.Footer>
+            </Modal>
+            {/*  */}
+            {/* Modal-2 */}
+            <Modal show={showModal2} onHide={handleClose2}>
+                <Modal.Header >
+                    <Modal.Title>Warning</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p className="text-capitalize">
+                        Are you sure you want to delete selected experience ?
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose2}>
+                        Cancel
+                    </Button>
+                    <Button variant="danger" onClick={handleClose2}>
+                        Delete
+                    </Button>
+
+                </Modal.Footer>
+            </Modal>
+            {/*  */}
+            {/* Modal-2 */}
+            <Modal show={showModal3} onHide={handleClose3}>
+                <Modal.Header >
+                    <Modal.Title>Warning</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p className="text-capitalize">
+                        Are you sure you want to remove selected photos ?
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose3}>
+                        Cancel
+                    </Button>
+                    <Button variant="danger" onClick={handleClose3}>
+                        Remove
+                    </Button>
+
+                </Modal.Footer>
+            </Modal>
+            {/*  */}
+            {/* Modal-4 */}
+            <Modal show={showModal4} onHide={handleClose4}>
+                <Modal.Header >
+                    <Modal.Title>Warning</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p className="text-capitalize">
+                        Are you sure you want to remove this follower from your followers list?
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose4}>
+                        Cancel
+                    </Button>
+                    <Button variant="danger" onClick={handleClose4}>
+                        Remove
+                    </Button>
+
+                </Modal.Footer>
+            </Modal>
+            {/*  */}
         </>
     )
 }

@@ -30,7 +30,7 @@ function ProductEnquiresCard() {
                                 </Card.Header>
                                 <Card.Body>
                                     <Tab.Container activeKey={activeTab} onSelect={handleTabSelect}>
-                                        <Nav variant="tabs" style={{color:'#003f6b'}}>
+                                        <Nav variant="tabs" style={{ color: '#003f6b' }}>
                                             <Nav.Item>
                                                 <Nav.Link eventKey="tab1">Product Enquiry</Nav.Link>
                                             </Nav.Item>
@@ -40,14 +40,14 @@ function ProductEnquiresCard() {
                                         </Nav>
                                         <Tab.Content>
                                             <Tab.Pane eventKey="tab1">
-                                                <OwnerEnquiryTable />
+                                                <SellerEnquiryTable />
                                             </Tab.Pane>
                                             <Tab.Pane eventKey="tab2">
-                                                <SellerEnquiryTable />
+                                                <OwnerEnquiryTable />
                                             </Tab.Pane>
                                         </Tab.Content>
                                     </Tab.Container>
-                                    
+
                                 </Card.Body>
                             </Card>
                         </Col>

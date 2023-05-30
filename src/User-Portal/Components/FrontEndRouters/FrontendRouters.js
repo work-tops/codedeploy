@@ -71,7 +71,6 @@ import OwnerEnquiryDetails from "../Front-End Pages/EnquiryDetailedView";
 import SellerEnquiryCard from "../Front-End Pages/MiniCard/POProductEnquiryCard";
 import SellerEnquiryDetails from "../Front-End Pages/SellerEnquiryDetailedView";
 import GetQuote from "../Front-End Pages/Lists/GetQuote";
-import Notifications from "../Front-End Pages/Notifications";
 import Chat from "../Front-End Pages/Chat";
 import FreelancerProfile from "../Front-End Pages/Profile/FreelancerProfile";
 import FreelancerEditProfile from "../Front-End Pages/Login/FreelancerEditProfile";
@@ -81,10 +80,8 @@ import Checkout from "../Front-End Pages/Cart/Checkout";
 import Editpostproject from "../Front-End Pages/Post_Project/Editpostproject";
 import EditProposal from "../Front-End Pages/EditProposal";
 import InvoiceCheckout from "../Front-End Pages/Cart/InvoiceCheckout";
-import Modal from "../Front-End Pages/Userlogin";
-import ModalComponent from "../Front-End Pages/Userlogin";
-import ValidationForm from "../Front-End Pages/Login/UserLogin";
 import ImageSlider from "../Front-End Pages/Login/UserLogin";
+
 const FrontEndRouters = () => {
     return (
         <Switch>

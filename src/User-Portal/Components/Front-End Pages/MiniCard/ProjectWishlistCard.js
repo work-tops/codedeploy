@@ -48,9 +48,9 @@ function ProjectWishListCard() {
                                                     <span className="badge rounded-pill badge-soft-success">
                                                         <span>Rack</span></span>
                                                 </div>
-                                                <h5 className="fs-0 mb-2 text-primary">
+                                                {/* <h5 className="fs-0 mb-2 text-primary">
                                                     Project Owner Name
-                                                </h5>
+                                                </h5> */}
                                                 <h4 className="mt-3 text-900 mt-sm-0 fs-0 fs-lg-1">
                                                     MIDDAY OUTDOOR QUARTZ
                                                 </h4>
@@ -73,6 +73,13 @@ function ProjectWishListCard() {
                                                                 style={{ color: '#003f6b', border: '1px solid #003f6b' }}
                                                                 role="button"
                                                                 className="fw-semibold bg-transparent text-uppercase mt-3">Send proposal
+                                                            </Button>
+                                                            <Button
+                                                                as={Link}
+                                                                to="/jobdetails/:jobid"
+                                                                style={{ color: '#003f6b', border: '1px solid #003f6b' }}
+                                                                role="button"
+                                                                className="fw-semibold bg-transparent text-uppercase mt-3">View
                                                             </Button>
                                                         </div>
 
@@ -101,12 +108,12 @@ function ProjectWishListCard() {
                                                     <span className="badge rounded-pill badge-soft-success">
                                                         <span>Rack</span></span>
                                                 </div>
-                                                <h5 className="fs-0 mb-2 text-primary">
+                                                {/* <h5 className="fs-0 mb-2 text-primary">
                                                     Project Owner Name
-                                                </h5>
-                                                <h4 className="mt-3 text-900 mt-sm-0 fs-0 fs-lg-1">
+                                                </h5> */}
+                                                <h5 className="mt-3 text-900 mt-sm-0 fs-0 fs-lg-1">
                                                     MIDDAY OUTDOOR QUARTZ
-                                                </h4>
+                                                </h5>
                                                 <div className="fw-semi-bold fs--1">
                                                     <div className="d-inline-block ">
                                                         <p className="text-justify">Midday Outdoor Quartz is a concrete finish, white slab that is adorned with minute black dots.
@@ -127,6 +134,13 @@ function ProjectWishListCard() {
                                                                 role="button"
                                                                 className="fw-semibold bg-transparent text-uppercase mt-3">Send proposal
                                                             </Button>
+                                                            <Button
+                                                                as={Link}
+                                                                to="/jobdetails/:jobid"
+                                                                style={{ color: '#003f6b', border: '1px solid #003f6b' }}
+                                                                role="button"
+                                                                className="fw-semibold bg-transparent text-uppercase mt-3">View
+                                                            </Button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -138,6 +152,8 @@ function ProjectWishListCard() {
                                         </div>
                                     </div>
                                 </div>
+                                
+                                
                                 {/*  */}
                                 <Modal show={showModal} onHide={handleClose}>
                                     <Modal.Header >
@@ -158,6 +174,10 @@ function ProjectWishListCard() {
 
                                     </Modal.Footer>
                                 </Modal>
+                                {/*  */}
+
+
+
                             </Card.Body>
                         </Card>
                         {/* pagination */}

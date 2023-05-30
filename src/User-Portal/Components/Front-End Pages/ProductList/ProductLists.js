@@ -239,6 +239,13 @@ function ProductList() {
                                                                     <Icon className="cursor-pointer" icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
                                                                 </div>
                                                             </div>
+                                                            <div>
+                                                                <Form.Select>
+                                                                    <option>All</option>
+                                                                    <option>Offers</option>
+                                                                    
+                                                                </Form.Select>
+                                                            </div>
                                                         </div>
                                                     </Row>
                                                 </Col>
@@ -274,7 +281,6 @@ function ProductList() {
                                                                 <h4 className="text-uppercase fs-0 mb-2">
                                                                     <Link
                                                                         to={`productdetails/${data._id}`}
-                                                                        // style={{ fontSize: '1rem' }}
                                                                         className="text-dark"
                                                                     >
                                                                         {data?.name}

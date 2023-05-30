@@ -137,7 +137,7 @@ function GetQuote() {
 
                                                 <Form.Group className="mb-3">
                                                     <Form.Label className="fw-semibold text-uppercase text-900">
-                                                        Dimensions<span className="ms-1 text-danger">*</span>
+                                                    More Informations<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
                                                     <Form.Control as="textarea" rows={5} />
                                                 </Form.Group>

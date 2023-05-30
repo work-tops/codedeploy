@@ -1,5 +1,4 @@
 import { React, useState } from "react"
-import { useDropzone } from 'react-dropzone';
 import {
     Col,
     Form,
@@ -13,6 +12,7 @@ import {
 import { Link, useHistory } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard'
+import { useDropzone } from 'react-dropzone';
 import { getSize } from '../../../TemplateAssets/helpers/utils';
 import cloudUpload from '../../../TemplateAssets/assets/cloud-upload.svg';
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
@@ -223,7 +223,7 @@ function Editpostproject() {
                                                 {/* <option value="">Select</option> */}
                                                 <option value="Fixed Price">Fixed Price   </option>
                                                 <option value="No Idea">No Idea</option>
-                                                <option value="No Range">No Range</option>
+                                                <option value="Range"> Range</option>
                                             </Form.Select>
                                         </Form.Group>
                                     </Col>

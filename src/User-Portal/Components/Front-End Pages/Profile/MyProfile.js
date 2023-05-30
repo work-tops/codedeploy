@@ -154,12 +154,12 @@ function MyProfile() {
                                                             <Dropdown.Item
                                                                 // onClick={() => setIsEdit(true)}
                                                                 onClick={handleShow}
-                                                            >Edit Your Profile</Dropdown.Item>
+                                                            >Edit Profile</Dropdown.Item>
                                                             <Dropdown.Item
                                                                 // onClick={() => setIsEdit(false)} 
                                                                 onClick={handleShow1}
                                                             >
-                                                                Change Your Password
+                                                                Change Password
                                                             </Dropdown.Item>
                                                         </div>
                                                     </CardDropdown>
@@ -234,16 +234,16 @@ function MyProfile() {
                                                                                         </div> */}
                                                                             </div>
                                                                             {/*  */}
-                                                                            <div className="form-check d-flex align-items-center"><input className="form-check-input" type="radio" value="" id="paypal" name="payment-method" /><label className="form-check-label mb-0 ms-2" for="paypal"><img src={paypal} height="20" alt="" /></label></div>
+                                                                            {/* <div className="form-check d-flex align-items-center"><input className="form-check-input" type="radio" value="" id="paypal" name="payment-method" /><label className="form-check-label mb-0 ms-2" for="paypal"><img src={paypal} height="20" alt="" /></label></div> */}
                                                                            </form>
                                                                     </Modal.Body>
                                                                     <Modal.Footer>
                                                                         <Button variant="primary" onClick={handleClose3}>
                                                                             Save
                                                                         </Button>
-                                                                        <Button variant="primary" onClick={handleClose3}>
+                                                                        {/* <Button variant="primary" onClick={handleClose3}>
                                                                             Save & Pay
-                                                                        </Button>
+                                                                        </Button> */}
 
                                                                     </Modal.Footer>
                                                                 </Modal>

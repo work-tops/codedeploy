@@ -21,16 +21,16 @@ function SellerEnquiryDetails() {
                         <Col lg={12}>
                             <Card className="mt-5 mb-3">
                                 <Card.Header className="d-flex justify-content-end bg-light">
-                                    <Button as={Link} to="/Enquirescard" className="bg-danger border-0">Close the Query</Button>
+                                    <Button as={Link} to="/Enquirescard" className="bg-danger  text-uppercase border-0">Close the Enquiry </Button>
                                 </Card.Header>
                                 <Card.Body>
                                     <div>
                                         <h5>
                                             "Enquiry Details: #2737"
                                         </h5>
-                                        <p className="mt-3 text-900" style={{ fontSize: '14px' }}>May 01 2023, 5:33 PM</p>
+                                        <p className="mt-3 text-900 text-capitalize" style={{ fontSize: '14px' }}>May 01 2023, 5:33 PM</p>
                                         <div>
-                                            <h5 className="me-2 d-inline">Status: </h5>
+                                            <h5 className="me-2 text-capitalize d-inline">Status: </h5>
                                             <span className="bg-success badge  rounded-pill">
                                                 {' '}
                                                 Completed
@@ -48,7 +48,7 @@ function SellerEnquiryDetails() {
                                 <Card.Body>
                                     <Row>
                                         <Col md={6} lg={3}>
-                                            <h5 className="mb-3 fs-0">Customer Details</h5>
+                                            <h5 className="mb-3 fs-0 text-uppercase">Customer Details</h5>
                                             <div className="d-flex">
                                                 <img
                                                     src={profile}
@@ -63,15 +63,15 @@ function SellerEnquiryDetails() {
                                             </div>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3 fs-0">Product Name</h5>
+                                            <h5 className="mb-3 fs-0 text-uppercase">Product Name</h5>
                                             <h6 className="mb-0">Quartz</h6>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3 text-capitalize fs-0">Requirements</h5>
+                                            <h5 className="mb-3  text-uppercase fs-0">Requirements</h5>
                                             <h6 className="mb-2">Within 2 weeks</h6>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3 text-capitalize fs-0">Postcode</h5>
+                                            <h5 className="mb-3  text-uppercase fs-0">Postcode</h5>
                                             <h6 className="mb-2">CB236DX</h6>
                                         </Col>
                                     </Row>
@@ -83,30 +83,30 @@ function SellerEnquiryDetails() {
                                         <Row>
                                             <Col lg={6}>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="text-900">
+                                                    <Form.Label className="text-900 text-uppercase">
                                                         Stone Category
                                                     </Form.Label>
-                                                    <p className="text-900">Quartz</p>
+                                                    <p className="text-900 text-uppercase">Quartz</p>
                                                 </Form.Group>
                                             </Col>
                                             <Col lg={6}>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="text-900">
+                                                    <Form.Label className="text-900 text-uppercase">
                                                         Thickness
                                                     </Form.Label>
-                                                    <p className="text-900">20mm</p>
+                                                    <p className="text-900 text-uppercase">20mm</p>
                                                 </Form.Group>
                                             </Col>
 
                                             <Form.Group className="mb-3">
-                                                <Form.Label className="text-900">
-                                                    Dimensions
+                                                <Form.Label className="text-900 text-uppercase">
+                                                    More Informations
                                                 </Form.Label>
-                                                <p className="text-900">Length-3200mm , Width-1650mm</p>
+                                                <p className="text-900 text-uppercase">Length-3200mm , Width-1650mm</p>
 
                                             </Form.Group>
                                             <Form.Group className="mb-3">
-                                                <Form.Label className="text-900">
+                                                <Form.Label className="text-900 text-uppercase">
                                                     Attach Kitchen Plan
                                                 </Form.Label>
                                                 <div className="col-4">
@@ -119,12 +119,12 @@ function SellerEnquiryDetails() {
                                 </Card.Body>
                             </Card>
                             <Card className="mt-3 mb-2">
-                                <div className='bg-white  p-3 d-flex justify-content-between text-capitalize'>
-                                    <h6 style={{ fontSize: '16px' }} className="mt-3">
+                                <div className='bg-white  p-3 d-flex justify-content-between  text-uppercase'>
+                                    <h6 style={{ fontSize: '16px' }} className="text-uppercase mt-3">
                                         Message
                                     </h6>
                                     <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
-                                        Reply the Query
+                                        Reply the Enquiry 
                                     </Button>
                                 </div>
                                 <Card.Body className="position-relative">
@@ -216,7 +216,7 @@ function SellerEnquiryDetails() {
                                     <Form.Group className="mb-3">
                                         <Form.Check type="checkbox" id="rememberMe" className="mb-0">
                                             <Form.Check.Input type="checkbox" />
-                                            <Form.Check.Label style={{ fontSize: '12px' }} className="mb-0 text-900">
+                                            <Form.Check.Label style={{ fontSize: '12px' }} className="mb-0 text-900 text-uppercase">
                                                 Proceed
                                             </Form.Check.Label>
                                         </Form.Check>

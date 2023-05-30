@@ -19,18 +19,18 @@ function FreelancerProfile() {
                     <div className="card-header position-relative min-vh-25 mb-7">
                         <div className="bg-holder rounded-3 rounded-bottom-0" style={{ backgroundImage: `url(${coverimg})` }}></div>
 
-                        <div className="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
+                        <div className="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail  rounded-circle">
                             <div className="h-100 w-100 rounded-circle overflow-hidden position-relative"> <img src={profile} width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" />
-                                
+
                             </div>
                         </div>
                     </div>
                     <div className="card-body">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h4 class="mb-1"> Peter Leverkus</h4>
-                                <h6 class="fs-0 text-primary fw-normal">petergms@gmail.com</h6>
-                                <p class="text-900">+012-345-67890</p>
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <h4 className="mb-1"> Peter Leverkus</h4>
+                                <h6 className="fs-0 text-primary fw-normal">petergms@gmail.com</h6>
+                                <p className="text-900">+012-345-67890</p>
                                 <Button as={Link} to="/FreelancerEditProfile">Edit Your Profile</Button>
                             </div>
 
@@ -53,10 +53,10 @@ function FreelancerProfile() {
                                 </div>
                             </div>
                             <div className="card-footer bg-light p-0 border-top">
-                                <button class="btn btn-link d-block w-100 btn-intro-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#profile-intro" aria-expanded="false" aria-controls="profile-intro">Show <span class="less">less
-                                    {/* <svg class="svg-inline--fa fa-chevron-up fa-w-14 ms-2 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg> */}
-                                </span><span class="full">full
-                                        {/* <svg class="svg-inline--fa fa-chevron-down fa-w-14 ms-2 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg> */}
+                                <button className="btn btn-link d-block w-100 btn-intro-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#profile-intro" aria-expanded="false" aria-controls="profile-intro">Show <span className="less">less
+                                    {/* <svg className="svg-inline--fa fa-chevron-up fa-w-14 ms-2 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg> */}
+                                </span><span className="full">full
+                                        {/* <svg className="svg-inline--fa fa-chevron-down fa-w-14 ms-2 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg> */}
                                     </span></button></div>
                         </div>
                         {/* Bussiness Information */}
@@ -135,72 +135,60 @@ function FreelancerProfile() {
                                                 <Link to="Myself Only" className="text-600">
                                                     Myself Only
                                                 </Link>
-                                                {/* <Form.Select className="w-25" style={{height:'30px',fontSize:'12px'}}>
-                                                                <option>Myself Only</option>
-                                                                <option>2-5</option>
-                                                                <option>5-10</option>
-                                                                <option>10+</option>
-                                                            </Form.Select> */}
+
                                             </td>
                                         </tr>
                                     </tbody>
                                 </Table>
-                                {/* <div className="position-absolute top-0 end-0 m-3">
-                                    <CardDropdown iconClassName="fs--1" drop="bottom">
-                                        <div className="py-2">
-                                            <Dropdown.Item href="#!">Edit</Dropdown.Item>
-                                            <Dropdown.Item href="#!">Save</Dropdown.Item>
-                                        </div>
-                                    </CardDropdown>
-                                </div> */}
+
                             </Card.Body>
                         </Card>
                         {/* Bussiness Information */}
 
-                        <div class="card mb-3 ">
-                            <div class="card-header bg-light">
-                                <h5 class="mb-0">Photos</h5>
+                        <div className="card mb-3 ">
+                            <div className="card-header bg-light">
+                                <h5 className="mb-0">Photos</h5>
                             </div>
-                            <div class="card-body overflow-hidden">
-                                <div class="row g-0">
-                                    <div class="col-6 p-1"><a class="glightbox" href={coverimg} data-gallery="gallery1" data-glightbox="data-glightbox"><img class="img-fluid rounded" src={coverimg} alt="..." /></a></div>
-                                    <div class="col-6 p-1"><a class="glightbox" href={coverimg} data-gallery="gallery1" data-glightbox="data-glightbox"><img class="img-fluid rounded" src={coverimg} alt="..." /></a></div>
-                                    <div class="col-4 p-1"><a class="glightbox" href={coverimg} data-gallery="gallery1" data-glightbox="data-glightbox"><img class="img-fluid rounded" src={coverimg} alt="..." /></a></div>
-                                    <div class="col-4 p-1"><a class="glightbox" href={coverimg} data-gallery="gallery1" data-glightbox="data-glightbox"><img class="img-fluid rounded" src={coverimg} alt="..." /></a></div>
-                                    <div class="col-4 p-1"><a class="glightbox" href={coverimg} data-gallery="gallery1" data-glightbox="data-glightbox"><img class="img-fluid rounded" src={coverimg} alt="..." /></a></div>
+                            <div className="card-body overflow-hidden">
+                                <div className="row g-0">
+                                    <div className="col-6 p-1"><a className="glightbox" href={coverimg} data-gallery="gallery1" data-glightbox="data-glightbox"><img className="img-fluid rounded" src={coverimg} alt="..." /></a></div>
+                                    <div className="col-6 p-1"><a className="glightbox" href={coverimg} data-gallery="gallery1" data-glightbox="data-glightbox"><img className="img-fluid rounded" src={coverimg} alt="..." /></a></div>
+                                    <div className="col-4 p-1"><a className="glightbox" href={coverimg} data-gallery="gallery1" data-glightbox="data-glightbox"><img className="img-fluid rounded" src={coverimg} alt="..." /></a></div>
+                                    <div className="col-4 p-1"><a className="glightbox" href={coverimg} data-gallery="gallery1" data-glightbox="data-glightbox"><img className="img-fluid rounded" src={coverimg} alt="..." /></a></div>
+                                    <div className="col-4 p-1"><a className="glightbox" href={coverimg} data-gallery="gallery1" data-glightbox="data-glightbox"><img className="img-fluid rounded" src={coverimg} alt="..." /></a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 ps-lg-2">
-                        <div class="sticky-sidebar">
-                            <div class="card mb-3">
-                                <div class="card-header bg-light">
-                                    <h5 class="mb-0">Experience</h5>
+                    <div className="col-lg-4 ps-lg-2">
+                        <div className="sticky-sidebar">
+                            <div className="card mb-3">
+                                <div className="card-header bg-light">
+                                    <h5 className="mb-0">Experience</h5>
                                 </div>
-                                <div class="card-body fs--1">
-                                    <div class="d-flex">
-                                        <div class="flex-1 position-relative ps-3">
-                                            <h6 class="fs-0 mb-0">Fabricator<span data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Verified" data-bs-original-title="Verified">
-                                                {/* <svg class="svg-inline--fa fa-check-circle fa-w-16 text-primary" data-fa-transform="shrink-4 down-2" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.625em" }}><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.75, 0.75)  rotate(0 0 0)"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" transform="translate(-256 -256)"></path></g></g></svg> */}
+                                <div className="card-body fs--1">
+                                    <div className="d-flex">
+                                        <div className="flex-1 position-relative ps-3">
+                                            <h6 className="fs-0 mb-0">Fabricator<span data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Verified" data-bs-original-title="Verified">
+                                                {/* <svg className="svg-inline--fa fa-check-circle fa-w-16 text-primary" data-fa-transform="shrink-4 down-2" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.625em" }}><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.75, 0.75)  rotate(0 0 0)"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" transform="translate(-256 -256)"></path></g></g></svg> */}
                                             </span></h6>
-                                            <p class="mb-1"> <a href="#!">Freelancer</a></p>
-                                            <p class="text-1000 mb-0">4 Years</p>
-                                            <p class="text-1000 mb-0">Cambridge, UK</p>
-                                            <div class="border-bottom border-dashed my-3"></div>
+                                            <p className="mb-1"> <a href="#!">Freelancer</a></p>
+                                            <p className="text-1000 mb-0">4 Years</p>
+                                            <p className="text-1000 mb-0">Cambridge, UK</p>
+                                            <div className="border-bottom border-dashed my-3"></div>
                                         </div>
                                     </div>
-                                    <div class="d-flex">
-                                        <div class="flex-1 position-relative ps-3">
-                                            <h6 class="fs-0 mb-0">Kitchen Designer
+                                    <div className="d-flex">
+                                        <div className="flex-1 position-relative ps-3">
+                                            <h6 className="fs-0 mb-0">Kitchen Designer
                                                 <span data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Verified" data-bs-original-title="Verified">
-                                                    {/* <svg class="svg-inline--fa fa-check-circle fa-w-16 text-primary" data-fa-transform="shrink-4 down-2" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.625em" }}><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.75, 0.75)  rotate(0 0 0)"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" transform="translate(-256 -256)"></path></g></g></svg> */}
-                                                    {/* <small class="fa fa-check-circle text-primary" data-fa-transform="shrink-4 down-2"></small>< */}
+                                                    {/* <svg className="svg-inline--fa fa-check-circle fa-w-16 text-primary" data-fa-transform="shrink-4 down-2" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.625em" }}><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.75, 0.75)  rotate(0 0 0)"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" transform="translate(-256 -256)"></path></g></g></svg> */}
+                                                    {/* <small className="fa fa-check-circle text-primary" data-fa-transform="shrink-4 down-2"></small>< */}
                                                 </span></h6>
-                                            <p class="mb-1"> <a href="#!">Worktops</a></p>
-                                            <p class="text-1000 mb-0">4 Years</p>
-                                            <p class="text-1000 mb-0">Cambridge, UK</p>
-                                            <div class="border-bottom border-dashed my-3"></div>
+                                            <p className="mb-1"> <a href="#!">Worktops</a></p>
+                                            <p className="text-1000 mb-0">4 Years</p>
+                                            <p className="text-1000 mb-0">Cambridge, UK</p>
+                                            <div className="border-bottom border-dashed my-3"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -212,54 +200,96 @@ function FreelancerProfile() {
                 {/* Next Row-2 */}
 
                 {/* Followers */}
-                <div class="col-lg-12 card mb-3 mt-3">
-                    <div class="card-header bg-light">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h5 class="mb-0" id="followers">Followers <span class="d-none d-sm-inline-block">(4)</span></h5>
+                <div className="card mb-3">
+                    <div className="card-header bg-light">
+                        <div className="row align-items-center">
+                            <div className="col">
+                                <h5 className="mb-0" id="followers">Followers <span className="d-none d-sm-inline-block">(233)</span></h5>
                             </div>
-                            {/* Search */}
+                            <div className="col">
+                                <form>
+                                    <div className="row g-0">
+                                        <div className="col"><input className="form-control form-control-sm" type="text" placeholder="Search..." /></div>
+                                        <div className="col d-md-block d-none"><select className="form-select form-select-sm ms-2" aria-label=".form-select-sm example">
+                                            <option selected="selected">All followers</option>
+                                            <option>Fabricator</option>
+                                            <option>Plumber</option>
+                                            <option>Roofer</option>
+                                            <option>Bricklaying</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body bg-light px-1 py-0">
-                        <div class="row g-0 text-center fs--1">
-                            <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
-                                <div class="bg-white dark__bg-1100 p-3 h-100">
-                                    <div>
-                                        <img width="75px" height="70px" className="mb-3 rounded-circle" src={profile} alt="" />
-                                    </div>
-                                    <h6 class="mb-1"><a >Emilia Clarke</a></h6>
-                                    <p class="fs--2 mb-1"><a class="text-700" href="#!">Kitchen Designer</a></p>
+                    <div className="card-body bg-light px-1 py-0">
+                        <div className="row g-0 text-center fs--1">
+                            <div className="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                <div className="bg-white dark__bg-1100 p-3 h-100">
+                                    <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                        <div className="circle-container">
+                                            <img src={profile} alt="Image" className="circle-image" />
+                                        </div>
+                                    </Link>
+                                    <h6 className="mb-1">
+                                        <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <a>Emilia Clarke</a>
+                                        </Link>
+                                    </h6>
+                                    <p className="fs--2 mb-1"><a className="text-700" href="#!">Technext limited</a></p>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
-                                <div class="bg-white dark__bg-1100 p-3 h-100">
-                                    <div>
-                                        <img width="75px" height="70px" className="mb-3 rounded-circle" src={profile} alt="" />
-                                    </div>
-                                    <h6 class="mb-1"><a >Kit Harington</a></h6>
-                                    <p class="fs--2 mb-1"><a class="text-700" href="#!">Plumber</a></p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
-                                <div class="bg-white dark__bg-1100 p-3 h-100">
-                                    <div>
-                                        <img width="75px" height="70px" className="mb-3 rounded-circle" src={profile} alt="" />
-                                    </div>
-                                    <h6 class="mb-1"><a >Sophie Turner</a></h6>
-                                    <p class="fs--2 mb-1"><a class="text-700" href="#!">Roofer</a></p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
-                                <div class="bg-white dark__bg-1100 p-3 h-100">
-                                    <div>
-                                        <img width="75px" height="70px" className="mb-3 rounded-circle" src={profile} alt="" />
-                                    </div>
-                                    <h6 class="mb-1"><a >Peter Dinklage</a></h6>
-                                    <p class="fs--2 mb-1"><a class="text-700" href="#!">Worktop Installer</a></p>
-                                </div>
-                            </div>
+                            <div className="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                <div className="bg-white dark__bg-1100 p-3 h-100">
 
+                                    <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                        <div className="circle-container">
+                                            <img src={profile} alt="Image" className="circle-image" />
+                                        </div>
+                                    </Link>
+                                    <h6 className="mb-1">
+                                        <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <a >Kit Harington</a>
+                                        </Link>
+                                    </h6>
+                                    <p className="fs--2 mb-1">
+                                        {/* <Link to="/profile_publicview" className="d-flex justify-content-center"> */}
+                                        <a className="text-700" href="#!">Harvard Korea Society</a>
+                                        {/* </Link> */}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                <div className="bg-white dark__bg-1100 p-3 h-100">
+                                    <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                        <div className="circle-container">
+                                            <img src={profile} alt="Image" className="circle-image" />
+                                        </div>
+                                    </Link>
+                                    <h6 className="mb-1">
+                                        <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <a >Sophie Turner</a>
+                                        </Link>
+                                    </h6>
+                                    <p className="fs--2 mb-1"><a className="text-700" href="#!">Graduate Student Council</a></p>
+                                </div>
+                            </div>
+                            <div className="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
+                                <div className="bg-white dark__bg-1100 p-3 h-100">
+                                    <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                        <div className="circle-container">
+                                            <img src={profile} alt="Image" className="circle-image" />
+                                        </div>
+                                    </Link>
+                                    <h6 className="mb-1">
+                                        <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <a >Peter</a>
+                                        </Link>
+                                    </h6>
+                                    <p className="fs--2 mb-1"><a className="text-700" href="#!">Art Club, MIT</a></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
