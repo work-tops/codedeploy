@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
-import { Row, Modal, Col, Card, Dropdown, Button, Form,Image } from "react-bootstrap";
+import { Row, Modal, Col, Card, Dropdown, Button, Form, Table } from "react-bootstrap";
 import CardDropdown from "../common/CardDropdown";
 import { Icon } from "@iconify/react";
 import { Divider } from "@mui/material";
@@ -50,7 +50,66 @@ const InvoiceFreelancerDueTable = () => {
     });
 
     // 
+    const [invoiceItems, setInvoiceItems] = useState([]);
+    const [subTotal, setSubTotal] = useState(0);
+    const [discount, setDiscount] = useState(0);
+    const [tax, setTax] = useState(0);
+    const [shippingTax, setShippingTax] = useState(0);
+    const [deposit, setDeposit] = useState(0);
+    const [editIndex, setEditIndex] = useState(null);
 
+    const handleAddItem = () => {
+        setInvoiceItems([...invoiceItems, {}]);
+    };
+
+    const handleDeleteItem = (index) => {
+        const updatedItems = [...invoiceItems];
+        updatedItems.splice(index, 1);
+        setInvoiceItems(updatedItems);
+    };
+
+    const handleEditItem = (index) => {
+        setEditIndex(index);
+    };
+
+    const handleSaveItem = (index) => {
+        setEditIndex(null);
+    };
+
+    const handleChange = (event, index, field) => {
+        const updatedItems = [...invoiceItems];
+        updatedItems[index][field] = event.target.value;
+        setInvoiceItems(updatedItems);
+    };
+
+    const calculateSubTotal = () => {
+        let total = 0;
+        invoiceItems.forEach((item) => {
+            const amount = parseFloat(item.amount) || 0;
+            total += amount;
+        });
+        return total.toFixed(2);
+    };
+
+    const calculateTotal = () => {
+        const subTotal = parseFloat(calculateSubTotal()) || 0;
+        const discountAmount = (subTotal * parseFloat(discount)) / 100;
+        const taxAmount = (subTotal * parseFloat(tax)) / 100;
+        const total =
+            subTotal + parseFloat(shippingTax) + parseFloat(deposit) - discountAmount + taxAmount;
+        return total.toFixed(2);
+    };
+
+    const calculateBalanceDue = () => {
+        const total = parseFloat(calculateTotal()) || 0;
+        return (total - parseFloat(deposit)).toFixed(2);
+    };
+
+    const handleSave = () => {
+        // Save the entered data
+        const savedData = [...invoiceItems];
+        setInvoiceItems(savedData);
+    };
 
 
     const columns = [
@@ -158,7 +217,7 @@ const InvoiceFreelancerDueTable = () => {
                         Invoice
                     </h5>
                     <div className="d-flex justify-content-end">
-                       
+
 
                     </div>
                 </Card.Header>
@@ -196,11 +255,12 @@ const InvoiceFreelancerDueTable = () => {
             </Card>
 
             {/* Add Modal */}
+            {/* Edit Modal */}
             <Modal
                 show={show}
                 onHide={() => setShow(false)}
                 // backdrop="static"
-                dialogClassName="modal-lg modal-90w"
+                dialogClassName="modal-xl modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
                 <Modal.Header closeButton>
@@ -210,136 +270,189 @@ const InvoiceFreelancerDueTable = () => {
 
                 </Modal.Header>
                 <Modal.Body>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Service Date
-                            <span className="text-danger">*</span></Form.Label>
-                        <input type="date" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Product/Service
-                            <span className="text-danger">*</span></Form.Label>
-                        <input className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Description
-                            <span className="text-danger">*</span></Form.Label>
-                        <textarea rows={3} className="form-control resize-none">
 
-                        </textarea>
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Quantity
-                            <span className="text-danger">*</span></Form.Label>
-                        <input type="number" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Rate
-                            <span className="text-danger">*</span></Form.Label>
-                        <input className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Amount
-                            <span className="text-danger">*</span></Form.Label>
-                        <input className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            VAT
-                            <span className="text-danger">*</span></Form.Label>
-                        <input className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mt-3">
-                        <Form.Label className="text-900 text-uppercase">Message on Invoice</Form.Label>
-                        <textarea className="form-control w-100" rows={3}>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>Service Date</th>
+                                <th>Product/Service</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Rate</th>
+                                <th>Amount</th>
+                                <th>VAT</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {invoiceItems.map((item, index) => (
+                                <tr key={index}>
+                                    <td>
+                                        {editIndex === index ? (
+                                            <Form.Control
+                                                type="text"
+                                                value={item.serviceDate || ''}
+                                                onChange={(e) => handleChange(e, index, 'serviceDate')}
+                                            />
+                                        ) : (
+                                            item.serviceDate
+                                        )}
+                                    </td>
+                                    <td>
+                                        {editIndex === index ? (
+                                            <Form.Control
+                                                type="text"
+                                                value={item.product || ''}
+                                                onChange={(e) => handleChange(e, index, 'product')}
+                                            />
+                                        ) : (
+                                            item.product
+                                        )}
+                                    </td>
+                                    <td>
+                                        {editIndex === index ? (
+                                            <Form.Control
+                                                type="text"
+                                                value={item.description || ''}
+                                                onChange={(e) => handleChange(e, index, 'description')}
+                                            />
+                                        ) : (
+                                            item.description
+                                        )}
+                                    </td>
+                                    <td>
+                                        {editIndex === index ? (
+                                            <Form.Control
+                                                type="text"
+                                                value={item.quantity || ''}
+                                                onChange={(e) => handleChange(e, index, 'quantity')}
+                                            />
+                                        ) : (
+                                            item.quantity
+                                        )}
+                                    </td>
+                                    <td>
+                                        {editIndex === index ? (
+                                            <Form.Control
+                                                type="text"
+                                                value={item.rate || ''}
+                                                onChange={(e) => handleChange(e, index, 'rate')}
+                                            />
+                                        ) : (
+                                            item.rate
+                                        )}
+                                    </td>
+                                    <td>
+                                        {editIndex === index ? (
+                                            <Form.Control
+                                                type="text"
+                                                value={item.amount || ''}
+                                                onChange={(e) => handleChange(e, index, 'amount')}
+                                            />
+                                        ) : (
+                                            item.amount
+                                        )}
+                                    </td>
+                                    <td>
+                                        {editIndex === index ? (
+                                            <Form.Control
+                                                type="text"
+                                                value={item.vat || ''}
+                                                onChange={(e) => handleChange(e, index, 'vat')}
+                                            />
+                                        ) : (
+                                            item.vat
+                                        )}
+                                    </td>
+                                    <td>
+                                        {editIndex === index ? (
+                                            <Button variant="success" className="m-1" onClick={() => handleSaveItem(index)}>
+                                                Save
+                                            </Button>
+                                        ) : (
+                                            <Button variant="primary" className="m-1" onClick={() => handleEditItem(index)}>
+                                                Edit
+                                            </Button>
+                                        )}
+                                        <Button variant="danger" className="m-1" onClick={() => handleDeleteItem(index)}>
+                                            Delete
+                                        </Button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colSpan="6"></td>
+                                <td>Sub Total:</td>
+                                <td>{calculateSubTotal()}</td>
+                            </tr>
+                            <tr>
+                                <td colSpan="6"></td>
+                                <td>Discount %:</td>
+                                <td>
+                                    <Form.Control
+                                        type="text"
+                                        value={discount}
+                                        onChange={(e) => setDiscount(e.target.value)}
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan="6"></td>
+                                <td>Tax:</td>
+                                <td>
+                                    <Form.Control type="text" value={tax} onChange={(e) => setTax(e.target.value)} />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan="6"></td>
+                                <td>Shipping Tax:</td>
+                                <td>
+                                    <Form.Control
+                                        type="text"
+                                        value={shippingTax}
+                                        onChange={(e) => setShippingTax(e.target.value)}
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan="6"></td>
+                                <td>Deposit:</td>
+                                <td>
+                                    <Form.Control
+                                        type="text"
+                                        value={deposit}
+                                        onChange={(e) => setDeposit(e.target.value)}
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan="6"></td>
+                                <td>Total:</td>
+                                <td>{calculateTotal()}</td>
+                            </tr>
+                            <tr>
+                                <td colSpan="6"></td>
+                                <td>Balance Due:</td>
+                                <td>{calculateBalanceDue()}</td>
+                            </tr>
+                        </tfoot>
+                    </Table>
 
-                        </textarea>
-                    </Form.Group>
-                    <Form.Group className="mt-3">
-                        <Form.Label className="text-900 text-uppercase">Message on Statement</Form.Label>
-                        <textarea className="form-control w-100" rows={3}>
 
-                        </textarea>
-                    </Form.Group>
-                    <Form.Group className="mt-3 mb-3">
-                        <Form.Label className="text-900 text-uppercase">Attachments</Form.Label>
-                        <div >
-                            <div {...getRootProps({ className: 'dropzone-area py-6' })}>
-                                <input {...getInputProps({ multiple: false })} />
-                                <div className="fs--1">
-                                    <img src={cloudUpload} alt="" width={20} className="me-2" />
-                                    <span className="d-none d-lg-inline">
-                                        Drag your image here
-                                        <br />
-                                        or,{' '}
-                                    </span>
-                                    <Button variant="link" size="sm" className="p-0 fs--1">
-                                        Browse
-                                    </Button>
-                                </div>
-                            </div>
-                            {cover && (
-                                <div className="mt-3">
-                                    <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
-                                        <Image
-                                            rounded
-                                            width={40}
-                                            height={40}
-                                            src={cover.preview}
-                                            alt={cover.path}
-                                        />
-                                        <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
-
-                                            <h6 className="text-truncate">{cover.path}</h6>
-                                            <div className="d-flex align-items-center position-relative">
-                                                <p className="mb-0 fs--1 text-400 line-height-1">
-                                                    <strong>{getSize(cover.size)}</strong>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <CardDropdown>
-                                            <div className="py-2">
-                                                <Dropdown.Item
-                                                    className="text-danger"
-                                                    onClick={() => setCover()}
-                                                >
-                                                    Remove
-                                                </Dropdown.Item>
-                                            </div>
-                                        </CardDropdown>
-                                    </div>
-                                </div>
-                            )}
-
-                        </div>
-                        <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
-                        <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
-
-                    </Form.Group>
-                    <Form.Group className="mt-3 mb-3">
-                        <Form.Label className="text-900 text-uppercase">Discounts (%)</Form.Label>
-                        <input type="text" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mt-3 mb-3">
-                        <Form.Label className="text-900 text-uppercase">Shipping Tax (%)</Form.Label>
-                        <input type="text" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mt-3 mb-3">
-                        <Form.Label className="text-900 text-uppercase">Deposit</Form.Label>
-                        <input type="text" className="form-control form-control-sm" />
-                    </Form.Group>
+                    {/* <Button variant="success" onClick={handleSave}>
+                            Save
+                        </Button> */}
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={handleClose}>Add</Button>
-                    <Button onClick={handleClose}>Save & Add Another</Button>
-                    
+                    <Button variant="primary" onClick={handleAddItem}>
+                        Add Item
+                    </Button>
+
                 </Modal.Footer>
             </Modal>
+            {/* Edit Modal */}
             {/* Add Modal */}
 
 
@@ -361,7 +474,45 @@ const InvoiceFreelancerDueTable = () => {
 
                 </Modal.Header>
                 <Modal.Body>
-                    <InvoiceTable />
+                    {/* <InvoiceTable /> */}
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>Service Date</th>
+                                <th>Product/Service</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Rate</th>
+                                <th>Amount</th>
+                                <th>VAT</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {invoiceItems.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.serviceDate}</td>
+                                    <td>{item.product}</td>
+                                    <td>{item.description}</td>
+                                    <td>{item.quantity}</td>
+                                    <td>{item.rate}</td>
+                                    <td>{item.amount}</td>
+                                    <td>{item.vat}</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-link p-0" type="button" onClick={handleShow} data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                                                <span class="text-500 fas fa-edit"></span>
+                                            </button>
+                                            <button class="btn btn-link p-0 ms-2" type="button" onClick={setShowModal3} data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><span class="text-500 fas fa-trash-alt"></span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </Table>
+
+                    {/*  */}
                     <div className="row">
                         <div className="col-lg-8 col-sm-12">
                             <Form.Group className="mt-3">
@@ -451,10 +602,32 @@ const InvoiceFreelancerDueTable = () => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-
+                    <Button onClick={handleShow}>Add</Button>
                 </Modal.Footer>
             </Modal>
             {/* View Modal */}
+
+             {/*Warning Modal  */}
+             <Modal show={showModal3} onHide={handleClose3}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Warning</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p className="text-capitalize">
+                        Are you sure you want to cancel this Invoice?
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose3}>
+                        No
+                    </Button>
+                    <Button variant="danger" onClick={handleShow1}>
+                        Yes
+                    </Button>
+
+                </Modal.Footer>
+            </Modal>
+            {/*  */}
         </>
     )
 }

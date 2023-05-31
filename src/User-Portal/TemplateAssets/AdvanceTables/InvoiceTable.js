@@ -4,7 +4,7 @@ import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
 import CardDropdown from "../common/CardDropdown"
 import { Icon } from "@iconify/react";
-import { Row, Button, Col, Form, Card, Modal } from "react-bootstrap";
+import { Row, Button, Col, Form, Table, Modal } from "react-bootstrap";
 // import CardDropdown from '../utilities/CardDropdown'
 import { Divider } from "@mui/material";
 import file from '../../Components/Projectimages/BathroomFitting.jpg'
@@ -27,70 +27,114 @@ const InvoiceTable = () => {
     const handleClose3 = () => {
         setShowModal3(false);
     };
+    const [invoiceItems, setInvoiceItems] = useState([]);
+    const [subTotal, setSubTotal] = useState(0);
+    const [discount, setDiscount] = useState(0);
+    const [tax, setTax] = useState(0);
+    const [shippingTax, setShippingTax] = useState(0);
+    const [deposit, setDeposit] = useState(0);
+    const [savedData, setSavedData] = useState([]);
+
+    const handleAddItem = () => {
+        setInvoiceItems([...invoiceItems, {}]);
+    };
+
+    const handleDeleteItem = (index) => {
+        const updatedItems = invoiceItems.filter((item, i) => i !== index);
+        setInvoiceItems(updatedItems);
+    };
+
+    const handleChange = (event, index, field) => {
+        const updatedItems = [...invoiceItems];
+        updatedItems[index][field] = event.target.value;
+        setInvoiceItems(updatedItems);
+    };
+
+    const handleSave = () => {
+        setSavedData(invoiceItems);
+        setInvoiceItems([]);
+    };
+
+    const calculateSubTotal = () => {
+        let total = 0;
+        invoiceItems.forEach((item) => {
+            const amount = parseFloat(item.amount) || 0;
+            total += amount;
+        });
+        return total.toFixed(2);
+    };
+
+    const calculateTotal = () => {
+        const subTotal = parseFloat(calculateSubTotal()) || 0;
+        const discountAmount = (subTotal * parseFloat(discount)) / 100;
+        const taxAmount = (subTotal * parseFloat(tax)) / 100;
+        const total =
+            subTotal + parseFloat(shippingTax) + parseFloat(deposit) - discountAmount + taxAmount;
+        return total.toFixed(2);
+    };
+
+    const calculateBalanceDue = () => {
+        const total = parseFloat(calculateTotal()) || 0;
+        return (total - parseFloat(deposit)).toFixed(2);
+    };
 
 
-    const columns = [
-        {
-            accessor: 'date',
-            Header: 'Service Date'
-        },
-        {
-            accessor: 'prse',
-            Header: 'Product/Service'
-        },
-        {
-            accessor: 'description',
-            Header: 'Description'
-        },
-        {
-            accessor: 'quantity',
-            Header: 'Quantity'
-        },
-        {
-            accessor: 'rate',
-            Header: 'Rate'
-        },
-        {
-            accessor: 'amount',
-            Header: 'Amount'
-        },
-        {
-            accessor: 'vat',
-            Header: 'VAT'
-        },
-        {
-            accessor: 'action',
-            Header: 'Action'
-        }
-    ];
+    // const columns = [
+    //     {
+    //         accessor: 'date',
+    //         Header: 'Service Date'
+    //     },
+    //     {
+    //         accessor: 'prse',
+    //         Header: 'Product/Service'
+    //     },
+    //     {
+    //         accessor: 'description',
+    //         Header: 'Description'
+    //     },
+    //     {
+    //         accessor: 'quantity',
+    //         Header: 'Quantity'
+    //     },
+    //     {
+    //         accessor: 'rate',
+    //         Header: 'Rate'
+    //     },
+    //     {
+    //         accessor: 'amount',
+    //         Header: 'Amount'
+    //     },
+    //     {
+    //         accessor: 'vat',
+    //         Header: 'VAT'
+    //     },
+    //     {
+    //         accessor: 'action',
+    //         Header: 'Action'
+    //     }
+    // ];
 
 
-    const data = [
-        {
-            date: '22 MAR 2023',
-            invoice: "#M24AZQ",
-            description: <span className="w-50">
-                paid to Alhaz Abdul K. for Project do 15... (Approved)
-            </span>,
-            amount: "£ 200",
-            action:
-                <div>
-                    <button class="btn btn-link p-0" type="button" onClick={handleShow} data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
-                        <span class="text-500 fas fa-edit"></span>
-                    </button>
-                    <button class="btn btn-link p-0 ms-2" type="button" onClick={setShowModal3} data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><span class="text-500 fas fa-trash-alt"></span>
-                    </button>
-                </div>,
-            rate: '£100',
-            vat: '20%',
-            quantity: '2',
-            prse: "Calacatta Light Quartz"
-        },
+    // const data = [
+    //     {
+    //         date: '22 MAR 2023',
+    //         invoice: "#M24AZQ",
+    //         description: <span className="w-50">
+    //             paid to Alhaz Abdul K. for Project do 15... (Approved)
+    //         </span>,
+    //         amount: "£ 200",
+    //         action:
+    //             ,
+    //         rate: '£100',
+    //         vat: '20%',
+    //         quantity: '2',
+    //         prse: "Calacatta Light Quartz"
+    //     },
 
 
 
-    ];
-
+    // ];
+    // 
 
 
     function BulAction({ selectedRowIds }) {
@@ -103,31 +147,53 @@ const InvoiceTable = () => {
     };
 
     return (
-        <AdvanceTableWrapper
-            columns={columns}
-            data={data}
-            sortable
-            pagination
-            perPage={5}
-            selection
-            selectionColumnWidth={30}
-        >
-            <BulAction table />
-            <AdvanceTable
-                table
-                headerClassName="bg-200 text-900 text-nowrap align-middle"
-                rowClassName="align-middle white-space-nowrap"
-                tableProps={{
-                    striped: true,
-                    className: 'fs--1 mb-0 overflow-hidden'
-                }}
-            />
+        <>
+            {/*  */}
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Service Date</th>
+                        <th>Product/Service</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Rate</th>
+                        <th>Amount</th>
+                        <th>VAT</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {savedData.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.serviceDate}</td>
+                            <td>{item.product}</td>
+                            <td>{item.description}</td>
+                            <td>{item.quantity}</td>
+                            <td>{item.rate}</td>
+                            <td>{item.amount}</td>
+                            <td>{item.vat}</td>
+                            <td>
+                                <div>
+                                    <button class="btn btn-link p-0" type="button" onClick={handleShow} data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                                        <span class="text-500 fas fa-edit"></span>
+                                    </button>
+                                    <button class="btn btn-link p-0 ms-2" type="button" onClick={setShowModal3} data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><span class="text-500 fas fa-trash-alt"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+
+            {/*  */}
+
             {/* Edit Modal */}
             <Modal
                 show={show}
                 onHide={() => setShow(false)}
                 // backdrop="static"
-                dialogClassName="modal-lg modal-90w"
+                dialogClassName="modal-xl modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
                 <Modal.Header closeButton>
@@ -137,95 +203,158 @@ const InvoiceTable = () => {
 
                 </Modal.Header>
                 <Modal.Body>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Service Date
-                            <span className="text-danger">*</span></Form.Label>
-                        <input type="date" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Product/Service
-                            <span className="text-danger">*</span></Form.Label>
-                        <input value="Calacatta Light Quartz" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Description
-                            <span className="text-danger">*</span></Form.Label>
-                        <textarea rows={3} className="form-control resize-none">
-                            paid to Alhaz Abdul K. for Project do 15... (Approved)
-                        </textarea>
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Quantity
-                            <span className="text-danger">*</span></Form.Label>
-                        <input value="2" type="number" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Rate
-                            <span className="text-danger">*</span></Form.Label>
-                        <input value="£100" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            Amount
-                            <span className="text-danger">*</span></Form.Label>
-                        <input value="£200" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label className="text-900 text-uppercase">
-                            VAT
-                            <span className="text-danger">*</span></Form.Label>
-                        <input value="20%" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mt-3">
-                        <Form.Label className="text-900 text-uppercase">Message on Invoice</Form.Label>
-                        <textarea className="form-control w-100" rows={3}>
-                            It is a long established fact that a reader will be distracted
-                            by the readable content of a page when looking at its layout.
-                        </textarea>
-                    </Form.Group>
-                    <Form.Group className="mt-3">
-                        <Form.Label className="text-900 text-uppercase">Message on Statement</Form.Label>
-                        <textarea className="form-control w-100" rows={3}>
-                            It is a long established fact that a reader will be distracted
-                            by the readable content of a page when looking at its layout.
-                        </textarea>
-                    </Form.Group>
-                    <Form.Group className="mt-3 mb-3">
-                        <Form.Label className="text-900 text-uppercase">Attachments</Form.Label>
-                        <div className="row bg-pre mt-3">
-                            <div className="col-4">
-                                <img src={file} width="50px" height="50px" className="pro-pre" />
-                            </div>
-                            <div className="col-8">
-                                <p role="button" className="text-success">
-                                    Add
-                                </p>
-                                <p role="button" className="text-danger">
-                                    Remove
-                                </p>
-                            </div>
-                        </div>
-                    </Form.Group>
-                    <Form.Group className="mt-3 mb-3">
-                        <Form.Label className="text-900 text-uppercase">Discounts (%)</Form.Label>
-                        <input value="20" type="text" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mt-3 mb-3">
-                        <Form.Label className="text-900 text-uppercase">Shipping Tax (%)</Form.Label>
-                        <input value="20" type="text" className="form-control form-control-sm" />
-                    </Form.Group>
-                    <Form.Group className="mt-3 mb-3">
-                        <Form.Label className="text-900 text-uppercase">Deposit</Form.Label>
-                        <input value="£280" type="text" className="form-control form-control-sm" />
-                    </Form.Group>
+                    <div>
+                        <Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>Service Date</th>
+                                    <th>Product/Service</th>
+                                    <th>Description</th>
+                                    <th>Quantity</th>
+                                    <th>Rate</th>
+                                    <th>Amount</th>
+                                    <th>VAT</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {invoiceItems.map((item, index) => (
+                                    <tr key={index}>
+                                        <td>
+                                            <Form.Control
+                                                type="text"
+                                                value={item.serviceDate || ''}
+                                                onChange={(e) => handleChange(e, index, 'serviceDate')}
+                                            />
+                                        </td>
+                                        <td>
+                                            <Form.Control
+                                                type="text"
+                                                value={item.product || ''}
+                                                onChange={(e) => handleChange(e, index, 'product')}
+                                            />
+                                        </td>
+                                        <td>
+                                            <Form.Control
+                                                type="text"
+                                                value={item.description || ''}
+                                                onChange={(e) => handleChange(e, index, 'description')}
+                                            />
+                                        </td>
+                                        <td>
+                                            <Form.Control
+                                                type="text"
+                                                value={item.quantity || ''}
+                                                onChange={(e) => handleChange(e, index, 'quantity')}
+                                            />
+                                        </td>
+                                        <td>
+                                            <Form.Control
+                                                type="text"
+                                                value={item.rate || ''}
+                                                onChange={(e) => handleChange(e, index, 'rate')}
+                                            />
+                                        </td>
+                                        <td>
+                                            <Form.Control
+                                                type="text"
+                                                value={item.amount || ''}
+                                                onChange={(e) => handleChange(e, index, 'amount')}
+                                            />
+                                        </td>
+                                        <td>
+                                            <Form.Control
+                                                type="text"
+                                                value={item.vat || ''}
+                                                onChange={(e) => handleChange(e, index, 'vat')}
+                                            />
+                                        </td>
+                                        <td>
+                                            <Button variant="danger" onClick={() => handleDeleteItem(index)}>
+                                                Delete
+                                            </Button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colSpan="5"></td>
+                                    <td>Sub Total:</td>
+                                    <td>{calculateSubTotal()}</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="5"></td>
+                                    <td>Discount %:</td>
+                                    <td>
+                                        <Form.Control
+                                            type="text"
+                                            value={discount}
+                                            onChange={(e) => setDiscount(e.target.value)}
+                                        />
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="5"></td>
+                                    <td>Tax:</td>
+                                    <td>
+                                        <Form.Control
+                                            type="text"
+                                            value={tax}
+                                            onChange={(e) => setTax(e.target.value)}
+                                        />
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="5"></td>
+                                    <td>Shipping Tax:</td>
+                                    <td>
+                                        <Form.Control
+                                            type="text"
+                                            value={shippingTax}
+                                            onChange={(e) => setShippingTax(e.target.value)}
+                                        />
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="5"></td>
+                                    <td>Deposit:</td>
+                                    <td>
+                                        <Form.Control
+                                            type="text"
+                                            value={deposit}
+                                            onChange={(e) => setDeposit(e.target.value)}
+                                        />
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="5"></td>
+                                    <td>Total:</td>
+                                    <td>{calculateTotal()}</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="5"></td>
+                                    <td>Balance Due:</td>
+                                    <td>{calculateBalanceDue()}</td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </Table>
+                    </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={handleClose}>Save Changes</Button>
+                    <Button variant="primary" onClick={handleAddItem}>
+                        Add Item
+                    </Button>
+                    <Button variant="success" onClick={handleSave}>
+                        Save
+                    </Button>
                 </Modal.Footer>
             </Modal>
             {/* Edit Modal */}
@@ -267,9 +396,9 @@ const InvoiceTable = () => {
                     <h5>
                         New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
                     </h5>
-                    </Modal.Header>
+                </Modal.Header>
                 <Modal.Body>
-                    <InvoiceTable/>
+                    <InvoiceTable />
                 </Modal.Body>
                 <Modal.Footer>
                     <div>
@@ -308,7 +437,8 @@ const InvoiceTable = () => {
                 </Modal.Footer>
             </Modal>
             {/*  */}
-        </AdvanceTableWrapper>
+            {/* </AdvanceTableWrapper> */}
+        </>
     )
 }
 export default InvoiceTable

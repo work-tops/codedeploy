@@ -374,8 +374,8 @@ const PostProject = () => {
                       >
                         <option value="">Select</option>
                         <option value="Fixed Price">Fixed Price   </option>
-                        <option value="No Idea">No Idea</option>
                         <option value="Range">Range</option>
+                        <option value="No Idea">No Idea</option>
                       </Form.Select>
                     </Form.Group>
                   </Col>
@@ -541,9 +541,9 @@ const PostProject = () => {
                         type="submit"
                         className='d-block border-0 bg-success'
                       >Post Project</Button>
-                     
-                        <Button onClick={() => setShowModal(true)} className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
-                     
+
+                      <Button onClick={() => setShowModal(true)} className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
+
 
                     </div>
                   </Col>
@@ -557,18 +557,18 @@ const PostProject = () => {
               </Modal.Header>
               <Modal.Body>
                 <p className='text-capitalize'>
-                Are you sure you want to cancel without posting the project?
+                  Are you sure you want to cancel without posting the project?
                 </p>
               </Modal.Body>
               <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
+                <Button variant="secondary" onClick={handleClose}>
                   No
                 </Button>
-                 <Link to="/projectlist">
-                <Button variant="danger" onClick={handleClose}>
-                  Yes 
-                </Button>
-                 </Link>
+                <Link to="/projectlist">
+                  <Button variant="danger" onClick={handleClose}>
+                    Yes
+                  </Button>
+                </Link>
               </Modal.Footer>
             </Modal>
             {/* </Col> */}

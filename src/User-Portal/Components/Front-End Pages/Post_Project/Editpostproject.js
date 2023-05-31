@@ -222,8 +222,8 @@ function Editpostproject() {
                                             >
                                                 {/* <option value="">Select</option> */}
                                                 <option value="Fixed Price">Fixed Price   </option>
-                                                <option value="No Idea">No Idea</option>
                                                 <option value="Range"> Range</option>
+                                                <option value="No Idea">No Idea</option>
                                             </Form.Select>
                                         </Form.Group>
                                     </Col>
