@@ -86,9 +86,9 @@ function MyProfile() {
 
                         {/* Content */}
                         <Row className="g-3 mb-3">
-                            <Col xxl={6}>
+                            <Col xxl={12}>
                                 <Row className="g-3">
-                                    <Col xs={12}>
+                                    <Col xs={12} lg={12} xxl={12} md={12} xl={12}>
                                         {/* StudentInfo */}
                                         <Card className=" btn-reveal-trigger font-sans-serif">
                                             <Card.Header as="h5" className="bg-light text-capitalize">
@@ -169,7 +169,7 @@ function MyProfile() {
                                         {/* StudentInfo */}
                                     </Col>
 
-                                    <Col lg={4} md={6}>
+                                    <Col lg={4} md={5}>
                                         {/* Payment */}
                                         <Card className="mb-3 btn-reveal-trigger h-100">
                                             <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
@@ -341,7 +341,7 @@ function MyProfile() {
                                         </Card>
                                         {/* Payment */}
                                     </Col>
-                                    <Col lg={8} md={6}>
+                                    <Col lg={8} md={7}>
                                         <PaymentTable />
                                     </Col>
                                 </Row>
