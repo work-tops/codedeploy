@@ -21,6 +21,7 @@ import Flex from '../../TemplateAssets/common/Flex';
 import SimpleBarReact from 'simplebar-react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from '../Footer/Footer';
 function ListJobs(layout) {
     // 
     const toastDanger = () => toast.success(<h6 className="text-sucess">Project Added to Wishlist</h6>);
@@ -432,7 +433,7 @@ function ListJobs(layout) {
                                                     </p>
                                                 </div>
                                                 <div>
-                                                    <Button as={Link} to="/jobproposal" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                    <Button as={Link} to="/jobdetails/:jobid" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
                                                         VIEW JOB
                                                     </Button>
                                                 </div>
@@ -468,7 +469,7 @@ function ListJobs(layout) {
                                                         ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
                                                     </p>
                                                 </div>
-                                                <Button as={Link} to="/jobproposal" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                <Button as={Link} to="/jobdetails/:jobid" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
                                                     VIEW JOB
                                                 </Button>
                                             </div>
@@ -501,9 +502,11 @@ function ListJobs(layout) {
                         </Col>
                     </Row>
                     {/*  */}
-
                     {/* </div> */}
                 </Container >
+                <Col>
+                    <Footer />
+                </Col>
             </Row >
         </>
     )

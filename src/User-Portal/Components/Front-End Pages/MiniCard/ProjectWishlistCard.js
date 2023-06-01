@@ -432,7 +432,7 @@ function ListJobs(layout) {
                                                     </p>
                                                 </div>
                                                 <div>
-                                                    <Button as={Link} to="/jobproposal" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                    <Button as={Link} to="/jobdetails/:jobid" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
                                                         VIEW JOB
                                                     </Button>
                                                 </div>
@@ -468,7 +468,7 @@ function ListJobs(layout) {
                                                         ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
                                                     </p>
                                                 </div>
-                                                <Button as={Link} to="/jobproposal" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                <Button as={Link} to="/jobdetails/:jobid" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
                                                     VIEW JOB
                                                 </Button>
                                             </div>

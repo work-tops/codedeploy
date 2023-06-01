@@ -21,6 +21,7 @@ import { getSize } from '../../TemplateAssets/helpers/utils';
 import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
 import Flex from '../../TemplateAssets/common/Flex';
 import CardDropdown from '../../TemplateAssets/common/CardDropdown';
+import Footer from "../Footer/Footer";
 
 function JobProposal() {
     const jobdatas = sessionStorage.getItem("jobdata")
@@ -323,6 +324,9 @@ function JobProposal() {
                     {/* </Col> */}
                 </Container>
                 <Toaster />
+                <Col>
+                    <Footer />
+                </Col>
             </Row>
         </>
     )

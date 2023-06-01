@@ -7,6 +7,7 @@ import { Link, useHistory } from "react-router-dom";
 import { createData } from "../../../Services/ProxyService";
 import toast from 'react-hot-toast';
 import SocialAuthButtons from "../../TemplateAssets/authentication/SocialAuthButtons";
+import Footer from "../Footer/Footer";
 
 
 function SignUpPage(hasLabel) {
@@ -164,7 +165,7 @@ function SignUpPage(hasLabel) {
                                                     </Button>
                                                     <p className="text-center fw-semibold text-900 mt-3 mb-3">Already Have an Account ? <Link to='/projectowner'>Login</Link></p>
                                                     {/* Social Buttons*/}
-                                                    <SocialAuthButtons/>
+                                                    <SocialAuthButtons />
                                                 </div>
                                             </Form >
                                         }
@@ -283,6 +284,9 @@ function SignUpPage(hasLabel) {
                             </Container>
                         </Col>
                     </Row>
+                </Col>
+                <Col>
+                    <Footer />
                 </Col>
             </Row>
 

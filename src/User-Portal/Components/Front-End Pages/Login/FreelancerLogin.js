@@ -6,7 +6,8 @@ import { Card, Button, Col, Form, Row, Container } from 'react-bootstrap';
 import toast, { Toaster } from 'react-hot-toast';
 import { createData, getAllData } from '../../../../Services/ProxyService';
 import SocialAuthButtons from '../../../TemplateAssets/authentication/SocialAuthButtons';
-
+import Footer from '../../Footer/Footer';
+import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard';
 const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
 
   // State
@@ -84,11 +85,11 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
     <>
       <Container>
         <Row>
-          <Col lg={12}>
-            {/* <NavbarStandard /> */}
+          <Col lg={12} className='mb-5'>
+            <NavbarStandard />
           </Col>
           <Col lg={12}>
-            <div>
+            <div className='mt-4'>
               <Row className="g-0 min-vh-100 flex-center">
                 <Col lg={8} xxl={7} className="py-3 position-relative">
                   <img
@@ -256,6 +257,9 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
           <Toaster />
         </Row>
       </Container >
+      <Col>
+        <Footer />
+      </Col>
     </>
   );
 };

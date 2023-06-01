@@ -177,7 +177,7 @@ function JobDetails() {
                             <Card className="mt-5">
                                 <Card.Header className="py-2 text-center  bg-light">
                                     <h5 className="mb-0">{jobdata.project_title}</h5>
-                                    
+
                                 </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
@@ -228,12 +228,12 @@ function JobDetails() {
                                 </Card.Body>
                                 <Card.Footer className="bg-light">
                                     <div className="d-flex justify-content-between">
-                                    <Link to="/proposallist">
-                                        <p  className="fw-semibold text-center" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
-                                    </Link>
-                                    <Button as={Link} to="/EditPostProject">
-                                        Edit
-                                    </Button>
+                                        <Link to="/proposallist">
+                                            <p className="fw-semibold text-center" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
+                                        </Link>
+                                        <Button as={Link} to="/EditPostProject">
+                                            Edit
+                                        </Button>
                                     </div>
                                 </Card.Footer>
                             </Card>
@@ -335,7 +335,9 @@ function JobDetails() {
                         </Col>
                     </Row>
                 </Container>
-                {/* </Col> */}
+                <Col className="mt-3">
+                    <Footer />
+                </Col>
             </Row>
             {/* Modal Content */}
             <Modal

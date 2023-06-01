@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import { Icon } from "@iconify/react";
 // import required modules
 import { Navigation } from "swiper";
+import Footer from "../Footer/Footer";
 
 function HowItWorks() {
     return (
@@ -159,7 +160,7 @@ function HowItWorks() {
                                                             <h5 className="mb-2">Browse the Services</h5>
                                                             <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
                                                             <Link to="/servicelist">
-                                                            <p style={{ fontSize: '16px', color: '#003f6b' }} className="fw-semibold text-center">Explore the Services</p>
+                                                                <p style={{ fontSize: '16px', color: '#003f6b' }} className="fw-semibold text-center">Explore the Services</p>
                                                             </Link>
                                                         </div>
                                                     </div>
@@ -362,98 +363,11 @@ function HowItWorks() {
                         </div>
                     </div >
                 </Col>
+                <Col>
+                    <Footer />
+                </Col>
             </Row>
-            {/*<div style={{marginBottom:'3rem'}} className="mb-5 " className="light bg-dark">
-                <div className="bg-holder overlay" style={{ backgroundImage: `url(${worktops})`, backgroundPosition: 'center top' }}></div>
-                
-                <div className="container">
-                    <div className="row justify-content-center text-center">
-                    <div className="col-lg-8">
-                            <p className="fs-3 fs-sm-4 text-white">Join our community of 20,000+ developers and content creators on their mission to build better sites and apps.</p><button className="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">Start your webapp</button>
-                        </div>
-                        </div>
-                </div>
-           </div> */}
 
-
-            {/*<div style={{marginBottom:'3rem'}} className="mb-5 " className="bg-dark pt-8 pb-4 light">
-                <div className="container">
-                    <div className="position-absolute btn-back-to-top bg-dark"><a className="text-600" href="#banner" data-bs-offset-top="0">
-                        <span className="fas fa-chevron-up" data-fa-transform="rotate-45"></span></a></div>
-                        <div className="row">
-                        <div className="col-lg-4">
-                            <h5 className="text-uppercase text-white opacity-85 mb-3">Our Mission</h5>
-                            <p className="text-600">Falcon enables front end developers to build custom streamlined user interfaces in a matter of hours, while it gives backend developers all the UI elements they need to develop their web app.And it's rich design can be easily integrated with backends whether your app is based on ruby on rails, laravel, express or any other server side system.</p>
-                            <div className="icon-group mt-4"><a className="icon-item bg-white text-facebook" href="#!">
-                                <span className="fab fa-medium-m"></span></a></div>
-                        </div>
-                        <div className="col ps-lg-6 ps-xl-8">
-                            <div className="row mt-5 mt-lg-0">
-                            <div className="col-6 col-md-3">
-                                    <h5 className="text-uppercase text-white opacity-85 mb-3">Company</h5>
-                                    <ul className="list-unstyled">
-                                        <li className="mb-1"><a className="link-600" href="#!">About</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Contact</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Careers</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Blog</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Terms</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Privacy</a></li>
-                                        <li><a className="link-600" href="#!">Imprint</a></li>
-                                    </ul>
-                                </div>
-                                <div className="col-6 col-md-3">
-                                    <h5 className="text-uppercase text-white opacity-85 mb-3">Product</h5>
-                                    <ul className="list-unstyled">
-                                        <li className="mb-1"><a className="link-600" href="#!">Features</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Roadmap</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Changelog</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Pricing</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Docs</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">System Status</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Agencies</a></li>
-                                        <li className="mb-1"><a className="link-600" href="#!">Enterprise</a></li>
-                                    </ul>
-                                </div>
-                                <div className="col mt-5 mt-md-0">
-                                    <h5 className="text-uppercase text-white opacity-85 mb-3">From the Blog</h5>
-                                    <ul className="list-unstyled">
-                                        <li>
-                                            <h5 className="fs-0 mb-0"><a className="link-600" href="#!"> Interactive graphs and charts</a></h5>
-                                            <p className="text-600 opacity-50">Jan 15 • 8min read </p>
-                                        </li>
-                                        <li>
-                                            <h5 className="fs-0 mb-0"><a className="link-600" href="#!"> Lifetime free updates</a></h5>
-                                            <p className="text-600 opacity-50">Jan 5 • 3min read ★</p>
-                                        </li>
-                                        <li>
-                                            <h5 className="fs-0 mb-0"><a className="link-600" href="#!"> Merry Christmas From us</a></h5>
-                                            <p className="text-600 opacity-50">Dec 25 • 2min read</p>
-                                        </li>
-                                        <li>
-                                            <h5 className="fs-0 mb-0"><a className="link-600" href="#!"> The New Falcon Theme</a></h5>
-                                            <p className="text-600 opacity-50">Dec 23 • 10min read </p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-           </div>
-           <div style={{marginBottom:'3rem'}} className="mb-5 " className="py-0 bg-dark light">
-                <div>
-                    <div className="container py-3">
-                        <div className="row justify-content-between fs--1">
-                            <div className="col-12 col-sm-auto text-center">
-                                <p className="mb-0 text-600 opacity-85">Thank you for creating with Falcon <span className="d-none d-sm-inline-block">| </span> 2022 © <a className="text-white opacity-85" href="https://themewagon.com">Themewagon</a></p>
-                            </div>
-                            <div className="col-12 col-sm-auto text-center">
-                                <p className="mb-0 text-600 opacity-85">v3.14.0</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-           </div> */}
         </>
     )
 }

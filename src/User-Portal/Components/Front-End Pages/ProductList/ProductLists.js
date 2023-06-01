@@ -22,6 +22,7 @@ import { getAllData } from "../../../../Services/ProxyService";
 import SimpleBarReact from 'simplebar-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { slugifyText } from "../../../TemplateAssets/helpers/utils";
+import Footer from "../../Footer/Footer";
 
 function ProductList() {
 
@@ -499,6 +500,9 @@ function ProductList() {
 
                     </Row>
                 </Container >
+                <Col>
+                    <Footer />
+                </Col>
             </Row >
         </>
     )

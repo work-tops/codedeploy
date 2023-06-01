@@ -6,8 +6,9 @@ import { Button, Col, Form, Row, Card, Container } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { createData, getAllData } from "../../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
+import Footer from "../../Footer/Footer";
 
-const UserLogin = ({  }) => {
+const UserLogin = ({ }) => {
   // State
   const [formData, setFormData] = useState({
     email: '',
@@ -81,7 +82,7 @@ const UserLogin = ({  }) => {
                 <Card>
                   <Card.Header style={{ background: '#003f6b' }} className="text-center p-2">
                     <Link to={'/'}>
-                    <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="135px" />
+                      <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="135px" />
                     </Link>
                   </Card.Header>
                   <Card.Body className="p-4">
@@ -162,6 +163,9 @@ const UserLogin = ({  }) => {
             </Row>
           </Container>
         </Col >
+        <Col>
+          <Footer />
+        </Col>
       </Row >
     </>
   );
