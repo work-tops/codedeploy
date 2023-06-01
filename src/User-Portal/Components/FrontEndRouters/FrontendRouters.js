@@ -81,6 +81,12 @@ import Editpostproject from "../Front-End Pages/Post_Project/Editpostproject";
 import EditProposal from "../Front-End Pages/EditProposal";
 import InvoiceCheckout from "../Front-End Pages/Cart/InvoiceCheckout";
 import ImageSlider from "../Front-End Pages/Login/UserLogin";
+import RefundPolicy from "../Footer/RefundPolicy";
+import ShippingPolicy from "../Footer/ShippingPolicy";
+import MSPPolicy from "../Footer/MspPolicy";
+import Carrer from "../Footer/Carrer";
+import FAQ from "../Footer/FAQ";
+import About from "../Footer/Aboutus";
 
 const FrontEndRouters = () => {
     return (
@@ -158,7 +164,13 @@ const FrontEndRouters = () => {
             <Route path="/contactus"><ContactUs /></Route>
             <Route path="/privacypolicy"><PrivacyPolicy /></Route>
             <Route path="/contactus"><ContactUs /></Route>
+            <Route path="/refundpolicy"><RefundPolicy/></Route>
+            <Route path="/shippingpolicy"><ShippingPolicy/></Route>
+            <Route path="/msppolicy"><MSPPolicy/></Route>
             <Route path="/termsofuse"><TermsOfUse /></Route>
+            <Route path="/carrer"><Carrer/></Route>
+            <Route path="/faq"><FAQ/></Route>
+            <Route path="/aboutus"><About/></Route>
             <Route path="/checkout"><Checkout /></Route>
             <Route path="/postjob1"><PostJob1 /></Route>
             <Route path="/postjob2"><PostJob2 /></Route>

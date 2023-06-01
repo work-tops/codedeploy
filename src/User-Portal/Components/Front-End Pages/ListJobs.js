@@ -366,7 +366,7 @@ function ListJobs(layout) {
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:tag" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} /> Job ID : {data?._id}</p>
                                                             {/* <Link to="/wishlist/project"> */}
                                                             <p onClick={toastDanger} className='text-justiy text-700 cursor-pointer fw-semibold' style={{ fontSize: '14px' }}>
-                                                                <span>
+                                                                <span className='me-2'>
                                                                     <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />Click to Save
                                                                 </span>
                                                                 <span>
@@ -477,43 +477,26 @@ function ListJobs(layout) {
                                 </article>
                             </div>
                             {/* pagination */}
-                            <Card className="mt-3 mb-3">
-                                <Card.Body>
-                                    <Row className="g-3 flex-center justify-content-between">
-                                        <Col xs="auto" className="d-flex align-items-center">
-                                            <small className="d-none d-lg-block me-2">Show:</small>
-                                            <Form.Select
-                                                size="sm"
-                                                style={{ maxWidth: '4.875rem' }}
-                                            >
-                                                <option >1</option>
-                                                <option >2</option>
-                                                <option >3</option>
-                                                <option >All</option>
-                                            </Form.Select>
-                                        </Col>
-                                        <Col xs="auto" className="d-flex">
-                                            <div>
-                                                <Button
-                                                    variant="falcon-default"
-                                                    className="me-2"
-                                                >
-                                                    Preview
-                                                </Button>
-                                            </div>
-
-                                            <div>
-                                                <Button
-                                                    variant="falcon-default"
-                                                >
-                                                    Next
-                                                </Button>
-
-                                            </div>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
+                            <div className="card mb-3 mt-3">
+                                <div className="card-body">
+                                    <div className="row g-3 flex-center justify-content-md-between">
+                                        <div className="col-auto">
+                                            <form className="row gx-2">
+                                                <div className="col-auto"><small>Show:</small></div>
+                                                <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Show courses">
+                                                    <option selected="selected" value="9">9</option>
+                                                    <option value="20">20</option>
+                                                    <option value="50">50</option>
+                                                </select></div>
+                                            </form>
+                                        </div>
+                                        <div className="col-auto"> <button className="btn btn-falcon-default btn-sm me-2" type="button" disabled="disabled" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Prev" data-bs-original-title="Prev">
+                                            <span className="fas fa-chevron-left"></span></button><a className="btn btn-sm btn-falcon-default text-primary me-2" href="#!">1</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">2</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">3</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">
+                                                <span className="fas fa-ellipsis-h"></span></a><a className="btn btn-sm btn-falcon-default me-2" href="#!">303</a><button className="btn btn-falcon-default btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Next" data-bs-original-title="Next">
+                                                <span className="fas fa-chevron-right">  </span></button></div>
+                                    </div>
+                                </div>
+                            </div>
                             {/* pagination */}
                         </Col>
                     </Row>

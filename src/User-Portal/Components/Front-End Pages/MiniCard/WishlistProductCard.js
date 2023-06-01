@@ -267,7 +267,7 @@ function WishListProductCard() {
                                                     <div style={{ maxWidth: '100%', height: '100%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                                         <div>
                                                             <div>
-                                                                <Link to={`productdetails/${data._id}`}>
+                                                                <Link to="/productdetails/data._id">
                                                                     <div className="image-container aspect-ratio-1-1-1">
                                                                         <Image src={data?.attachments[0]?.url} fluid />
                                                                     </div>
@@ -284,7 +284,7 @@ function WishListProductCard() {
                                                                 </div>
                                                                 <h4 className="text-uppercase fs-0 mb-2">
                                                                     <Link
-                                                                        to={`productdetails/${data._id}`}
+                                                                        to="/productdetails/data._id"
                                                                         className="text-dark"
                                                                     >
                                                                         {data?.name}
@@ -362,7 +362,7 @@ function WishListProductCard() {
                                                 <Card.Body className="p-0">
                                                     <Row className="g-0">
                                                         <Col md={4} lg={3}>
-                                                            <Link to={`productdetails/${data._id}`}>
+                                                            <Link to="/productdetails/data._id">
                                                                 <Image src={data?.attachments[0]?.url} alt="" className="w-100 h-100 fit-cover" />
                                                             </Link>
                                                         </Col>
@@ -378,7 +378,7 @@ function WishListProductCard() {
                                                                         </span>
                                                                     </div>
                                                                     <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
-                                                                        <Link className="text-900" to={`productdetails/${data._id}`}>
+                                                                        <Link className="text-900" to="/productdetails/data._id">
                                                                             {data?.name}
                                                                         </Link>
                                                                     </h4>
@@ -475,48 +475,26 @@ function WishListProductCard() {
                                 </>
                             }
                             {/* pagination */}
-                            <Card className="mt-3">
-                                <Card.Body>
-                                    <Row className="g-3 flex-center justify-content-between">
-                                        <Col xs="auto" className="d-flex align-items-center">
-                                            <small className="d-none d-lg-block me-2">Show:</small>
-                                            <Form.Select
-                                                size="sm"
-                                                // value={itemsPerPage}
-                                                // onChange={({ target }) => {
-                                                //     setItemsPerPage(target.value);
-                                                //     setCoursePerPage(target.value);
-                                                // }}
-                                                style={{ maxWidth: '4.875rem' }}
-                                            >
-                                                <option >1</option>
-                                                <option >2</option>
-                                                <option >3</option>
-                                                <option >All</option>
-                                            </Form.Select>
-                                        </Col>
-                                        <Col xs="auto" className="d-flex">
-                                            <div>
-                                                <Button
-                                                    variant="falcon-default"
-                                                    className="me-2"
-                                                >
-                                                    Preview
-                                                </Button>
-                                            </div>
-
-                                            <div>
-                                                <Button
-                                                    variant="falcon-default"
-                                                >
-                                                    Next
-                                                </Button>
-
-                                            </div>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
+                            <div className="card mt-3">
+                                <div className="card-body">
+                                    <div className="row g-3 flex-center justify-content-md-between">
+                                        <div className="col-auto">
+                                            <form className="row gx-2">
+                                                <div className="col-auto"><small>Show:</small></div>
+                                                <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Show courses">
+                                                    <option selected="selected" value="9">9</option>
+                                                    <option value="20">20</option>
+                                                    <option value="50">50</option>
+                                                </select></div>
+                                            </form>
+                                        </div>
+                                        <div className="col-auto"> <button className="btn btn-falcon-default btn-sm me-2" type="button" disabled="disabled" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Prev" data-bs-original-title="Prev">
+                                            <span className="fas fa-chevron-left"></span></button><a className="btn btn-sm btn-falcon-default text-primary me-2" href="#!">1</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">2</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">3</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">
+                                                <span className="fas fa-ellipsis-h"></span></a><a className="btn btn-sm btn-falcon-default me-2" href="#!">303</a><button className="btn btn-falcon-default btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Next" data-bs-original-title="Next">
+                                                <span className="fas fa-chevron-right">  </span></button></div>
+                                    </div>
+                                </div>
+                            </div>
                             {/* pagination */}
                         </Col>
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 
 import interior_design_1 from "../Images/int-design-3.jpg"
 import interior_design_2 from "../Images/int-design-3.jpg"
@@ -21,13 +21,18 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
 import CountUp from 'react-countup';
+import Footer from "../Footer/Footer";
 function HomePage() {
     useEffect(() => {
         AOS.init({ duration: 1000 }); // Initialize AOS with desired duration
     }, []);
 
-    // 
-
+    // const progressCircle = useRef(null);
+    // const progressContent = useRef(null);
+    // const onAutoplayTimeLeft = (s, time, progress) => {
+    //   progressCircle.current.style.setProperty('--progress', 1 - progress);
+    //   progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    // };
 
     return (
 
@@ -71,88 +76,93 @@ function HomePage() {
                         <Swiper
                             slidesPerView={3}
                             spaceBetween={10}
-                            pagination={{
-                                clickable: true,
-                            }}
+                            // centeredSlides={true}
                             autoplay={{
                                 delay: 2500,
                                 disableOnInteraction: false,
                             }}
-                            modules={[Pagination, Autoplay]}
-                            className="mySwiper  mb-5"
-                            breakpoints={{
-                                // when window width is >= 640px
-                                320: {
-                                    width: 320,
-                                    slidesPerView: 1,
-                                },
-                                // when window width is >= 768px
-                                768: {
-                                    width: 768,
-                                    slidesPerView: 2,
-                                }
+                            pagination={{
+                                clickable: true,
                             }}
+                            // navigation={true}
+                            modules={[Autoplay, Pagination]}
+                            // onAutoplayTimeLeft={onAutoplayTimeLeft}
+                            className="mySwiper mb-5"
                         >
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                <h5 className="text-light m-2">Granite</h5>
-                                <p className="text-light m-2">Hello World</p>
+                                <Link to="/productlist">
+                                    <h5 className="text-light m-2">Granite</h5>
+                                    <p className="text-light m-2">Hello World</p>
+                                </Link>
                             </SwiperSlide>
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                <h5 className="text-light m-2">Granite</h5>
-                                <p className="text-light m-2">Hello World</p>
+                                <Link to="/productlist">
+                                    <h5 className="text-light m-2">Granite</h5>
+                                    <p className="text-light m-2">Hello World</p>
+                                </Link>
                             </SwiperSlide>
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                <h5 className="text-light m-2">Granite</h5>
-                                <p className="text-light m-2">Hello World</p>
+                                <Link to="/productlist">
+                                    <h5 className="text-light m-2">Granite</h5>
+                                    <p className="text-light m-2">Hello World</p>
+                                </Link>
                             </SwiperSlide>
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                <h5 className="text-light m-2">Granite</h5>
-                                <p className="text-light m-2">Hello World</p>
+                                <Link to="/productlist">
+                                    <h5 className="text-light m-2">Granite</h5>
+                                    <p className="text-light m-2">Hello World</p>
+                                </Link>
+                            </SwiperSlide>
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                <Link to="/productlist">
+                                    <h5 className="text-light m-2">Granite</h5>
+                                    <p className="text-light m-2">Hello World</p>
+                                </Link>
+                            </SwiperSlide>
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                <Link to="/productlist">
+                                    <h5 className="text-light m-2">Granite</h5>
+                                    <p className="text-light m-2">Hello World</p>
+                                </Link>
                             </SwiperSlide>
 
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                <h5 className="text-light m-2">Granite</h5>
-                                <p className="text-light m-2">Hello World</p>
-                            </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                <h5 className="text-light m-2">Granite</h5>
-                                <p className="text-light m-2">Hello World</p>
-                            </SwiperSlide>
+
 
                         </Swiper>
                         {/* Section-2 */}
+
                         <div data-aos="fade-down" className="row mb-5">
                             <h6 className="text-700 text-start text-uppercase">what we do</h6>
                             <h1 className="fs-2 text-start fs-sm-4 fs-md-5">Our Service</h1>
                             <div className=" col-lg-4 col-md-4 mt-2 mt-lg-0">
-                                <Link to="/productlist" className="text-900">
-                                    <div style={{ borderRadius: '50px 2px' }} className="hover-bg-mai card card-span h-100">
-                                        <div className=" card-body pt-4 pb-3">
-                                            <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Check Ongoing Offers</p>
-                                            <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
-                                        </div>
+                                {/* <Link to="/productlist" className="text-900"> */}
+                                <div style={{ borderRadius: '50px 2px' }} className=" card card-span h-100">
+                                    <div className=" card-body pt-4 pb-3">
+                                        <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Check Ongoing Offers</p>
+                                        <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
                                     </div>
-                                </Link>
+                                </div>
+                                {/* </Link> */}
                             </div>
                             <div className=" col-lg-4 col-md-4 mt-3 mt-lg-0">
-                                <Link to="/productlist" className="text-900">
-                                    <div style={{ borderRadius: '50px 2px' }} className="hover-bg-mai card card-span h-100">
-                                        <div className=" card-body pt-4 pb-3">
-                                            <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Buy Materials Directly</p>
-                                            <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
-                                        </div>
+                                {/* <Link to="/productlist" className="text-900"> */}
+                                <div style={{ borderRadius: '50px 2px' }} className=" card card-span h-100">
+                                    <div className=" card-body pt-4 pb-3">
+                                        <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Buy Materials Directly</p>
+                                        <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
                                     </div>
-                                </Link>
+                                </div>
+                                {/* </Link> */}
                             </div>
                             <div className=" col-lg-4 col-md-4 mt-3 mt-lg-0">
-                                <Link to="/servicelist" className="text-900">
-                                    <div style={{ borderRadius: '50px 2px' }} className="hover-bg-mai card card-span h-100">
-                                        <div className=" card-body pt-4 pb-3 ">
-                                            <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Browse the Services</p>
-                                            <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
-                                        </div>
+                                {/* <Link to="/servicelist" className="text-900"> */}
+                                <div style={{ borderRadius: '50px 2px' }} className=" card card-span h-100">
+                                    <div className=" card-body pt-4 pb-3 ">
+                                        <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Browse the Services</p>
+                                        <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
                                     </div>
-                                </Link>
+                                </div>
+                                {/* </Link> */}
                             </div>
                         </div>
                         {/* Section-3 */}
@@ -240,7 +250,7 @@ function HomePage() {
                             </div>
                         </div>
                         {/* Section-6 */}
-                        <div data-aos="fade-up" className="text-center">
+                        {/* <div data-aos="fade-up" className="text-center">
 
                             <h5 className="mb-3 text-700 text-uppercase">Latest News</h5>
                             <div className="col">
@@ -262,9 +272,12 @@ function HomePage() {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </Col>
                 </Container>
+                <Col>
+                    <Footer />
+                </Col>
             </Row >
         </>
     )
