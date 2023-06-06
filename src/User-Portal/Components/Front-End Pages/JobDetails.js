@@ -175,14 +175,14 @@ function JobDetails() {
                         <Col lg={4}>
                             {/*  Customize Details  */}
                             <Card className="mt-5">
-                                <Card.Header className="py-2 text-center  bg-light">
-                                    <h5 className="mb-0">{jobdata.project_title}</h5>
+                                <Card.Header className="py-2 d-flex justify-content-between gap-1 bg-light">
+                                    <h5 className="mb-0 text-uppercase">{jobdata.project_title}</h5>
 
                                 </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
 
-                                        <li>
+                                        {/* <li>
                                             <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
                                                 <Icon icon="tabler:currency-pound"
                                                     className='me-1'
@@ -191,7 +191,7 @@ function JobDetails() {
                                                     width="20"
                                                     height="20" />
                                                 {getLevel(jobdata?.budget)} Level</p>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
                                                 <Icon icon="material-symbols:location-on"
@@ -231,9 +231,10 @@ function JobDetails() {
                                         <Link to="/proposallist">
                                             <p className="fw-semibold text-center" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
                                         </Link>
-                                        <Button as={Link} to="/EditPostProject">
+                                        <Button className="border-0 text-uppercase" style={{ color: '#fff', background: '#003f6b' }} as={Link} to="/EditPostProject">
                                             Edit
                                         </Button>
+                                        {/* <Icon icon="ph:note-pencil" className="cursor-pointer" width="24" height="24" /> */}
                                     </div>
                                 </Card.Footer>
                             </Card>
@@ -287,18 +288,23 @@ function JobDetails() {
                                     <p className="text-center d-none mt-2 fw-semibold">
                                         Email: <span style={{ color: '#003f6b' }} className="fw-semibold">{jobdata.customer_email}</span>
                                     </p>
-                                    <div className="d-flex mt-3 justify-content-around">
+                                    <div className="d-flex mt-3 justify-content-center gap-5">
                                         <p role="button" style={{ color: '#003f6b', cursor: 'default' }}>Name</p>
                                         <p role="button" style={{ color: '#003f6b', cursor: 'default' }}>Profession</p>
-                                        <p role="button" style={{ color: '#003f6b', cursor: 'default' }}>Like</p>
+                                        <p>
+                                            <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
+                                            <Icon icon="icon-park-solid:like" style={{ marginTop: '-5px' }} color="#df2020" width="20" height="20" />
+                                        </p>
                                     </div>
                                     {/* Profile Details */}
+                                    <div className="d-flex justify-content-center">
+                                        <Button onClick={() => sendProposal()} className="border-0 mt-3 text-uppercase" style={{ color: '#fff', fontSize: '14px', background: '#003f6b' }}>
+                                            Send Proposal
+                                        </Button>
+                                    </div>
                                 </Card.Body>
-                                <Card.Footer className="bg-light">
-                                    <Button onClick={() => sendProposal()} className="border-0 w-100 text-uppercase" style={{ color: '#fff', fontSize: '14px', background: '#003f6b' }}>
-                                        Send Proposal
-                                    </Button>
-                                </Card.Footer>
+                                {/* <Card.Footer className="bg-light">
+                                </Card.Footer> */}
                             </Card>
                             }
 

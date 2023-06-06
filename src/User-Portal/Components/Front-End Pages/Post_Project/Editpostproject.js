@@ -7,7 +7,7 @@ import {
     Card,
     Dropdown,
     Image,
-    Container, Modal
+    Container, Modal, ListGroup
 } from 'react-bootstrap';
 import { Link, useHistory } from "react-router-dom";
 import { Icon } from "@iconify/react";
@@ -16,6 +16,7 @@ import { useDropzone } from 'react-dropzone';
 import { getSize } from '../../../TemplateAssets/helpers/utils';
 import cloudUpload from '../../../TemplateAssets/assets/cloud-upload.svg';
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
+import file from '../../Projectimages/BathroomFitting.jpg'
 
 function Editpostproject() {
 
@@ -45,6 +46,43 @@ function Editpostproject() {
         console.log('Cancel project');
         setShowModal(false);
     };
+
+    // 
+    const counties = [
+        'Bedfordshire',
+        'Berkshire',
+        'Bristol',
+        'Buckinghamshire',
+    ];
+
+    // 
+    const [show1, setShow1] = useState(false);
+
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
+
+    // 
+
+
+
+    const [inputValue, setInputValue] = useState('');
+    const [filteredCounties, setFilteredCounties] = useState([]);
+
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        setInputValue(value);
+
+        const filtered = counties.filter((county) =>
+            county.toLowerCase().includes(value.toLowerCase())
+        );
+        setFilteredCounties(filtered);
+    };
+
+    const handleCountySelect = (county) => {
+        setInputValue(county);
+        setFilteredCounties([]);
+    };
+    //
 
 
     return (
@@ -78,7 +116,11 @@ function Editpostproject() {
 
                         {/* Post A Project */}
                         <Card className="mb-3 mt-3">
-                            <Card.Header as="h4" className='bg-light text-uppercase text-justify '>Edit Your Project</Card.Header>
+                            <Card.Header className='bg-light text-uppercase text-justify '>
+                                <h4 className="mb-3">Edit Your Project</h4>
+                                <span className="d-block" style={{fontSize:'12px'}}>Project Created On :<span className="ms-2 fw-semibold text-primary">01/01/2023</span> </span>
+                                <span className="" style={{fontSize:'12px'}}>Last Update On :<span className="ms-2 fw-semibold text-success">10/01/2023</span> </span>
+                                </Card.Header>
                             <Card.Body className="bg-white">
                                 <Row className="gx-2 gy-3">
                                     <p className='mt-2 me-2 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that freelancers can find your project</p>
@@ -88,15 +130,7 @@ function Editpostproject() {
                                             <Form.Label className='text-700 text-uppercase'>
                                                 category <span className="text-danger">*</span>
                                             </Form.Label>
-                                            <Form.Select
-                                                // value={form.category}
-                                                required
-                                                name="category"
-                                            // onChange={(e) => { handleChange(e) }}
-                                            >
-                                                {/* <option value="">Select</option> */}
-                                                <option value="">Attic</option>
-                                            </Form.Select>
+                                            <p className="text-900 text-capitalize">Attic</p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
@@ -104,15 +138,7 @@ function Editpostproject() {
                                             <Form.Label className='text-700 text-uppercase'>
                                                 sub-category <span className="text-danger">*</span>
                                             </Form.Label>
-                                            <Form.Select
-                                                required
-                                                // value={form.sub_category}
-                                                name="sub_category"
-                                            // onChange={(e) => { handleChange(e) }}
-                                            >
-                                                {/* <option value="">Select</option> */}
-                                                <option value="">Worktop</option>
-                                            </Form.Select>
+                                            <p className="text-900 text-capitalize">Worktop</p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={12} className='me-2 '>
@@ -129,6 +155,7 @@ function Editpostproject() {
                                                 id="usr-prj-tit"
                                                 placeholder="e.g I Want to Make a New Kitchen"
                                             />
+                                            <p className="text-900 text-uppercase">WHITE ATTICA SUPERNATURAL QUARTZ</p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={12} className='me-2'>
@@ -148,7 +175,15 @@ function Editpostproject() {
                                                 // onChange={(e) => { handleChange(e) }}
                                                 placeholder="Need a Fabricator who's Specialize in this field"
                                                 rows={8} />
-                                            <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our freelancers</p>
+                                            <p className="text-900">White Attica Supernatural Quartz has a crisp white base featured with an
+                                                intricate veiny pattern. This quartz slab has a super sleek look in polished
+                                                finish which
+                                                is more enhanced by the distinct black veins which have been manufactured to look fit for classy modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true
+                                                when installed in kitchens, baths, entryways, laundry and mudrooms, as well as a variety of other spaces in
+                                                both residential and commercial properties. This quartz's design is meant to create a timeless statement. Aside from worktops, these slabs are ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
+                                            </p>
+                                            <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our freelancers
+                                            </p>
                                         </Form.Group>
                                     </Col>
                                     {/* Upload Samples */}
@@ -208,6 +243,8 @@ function Editpostproject() {
                                         <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
                                         <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
                                     </Col>
+
+
                                     {/* Upload Samples */}
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
@@ -220,11 +257,12 @@ function Editpostproject() {
                                                 name="budget_type"
                                             // onChange={(e) => { handleChange(e) }}
                                             >
-                                                {/* <option value="">Select</option> */}
-                                                <option value="Fixed Price">Fixed Price   </option>
+                                                <option value="">Select</option>
+                                                <option value="Fixed Price">Fixed Price</option>
                                                 <option value="Range"> Range</option>
                                                 <option value="No Idea">No Idea</option>
                                             </Form.Select>
+                                            <p className="text-900">Fixed Price</p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
@@ -242,6 +280,7 @@ function Editpostproject() {
                                                 <option value="£ GBP">£ GBP :</option>
                                                 <option value="£ EUR">£ EUR</option>
                                             </Form.Select>
+                                            <p className="text-900">£ GBP </p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} className=''>
@@ -259,6 +298,7 @@ function Editpostproject() {
                                                 placeholder="£ 0"
                                                 type="number"
                                             />
+                                            <p className="text-900">200 </p>
                                             {/* <div className='row'>
                                                 <div className="col">
                                                     {form.budget_type == "No Idea" ? (
@@ -276,15 +316,34 @@ function Editpostproject() {
                                     <Col lg={12} className=''>
                                         <Form.Group className="mb-3">
                                             <Form.Label className='text-700 text-uppercase'>Project Location <span className="text-danger">*</span> </Form.Label>
-                                            <Form.Control
-                                                // value={form.location}
-                                                value="Chennai"
+                                            {/* <Form.Control
+                                                value={form.location}
                                                 required
                                                 name="location"
-                                                // onChange={(e) => { handleChange(e) }}
-                                                id="aipro-barcode-1"
-                                                placeholder="Geo Locations" type='text'
+                                                onChange={(e) => { handleChange(e) }}
+                                            /> */}
+
+                                            <Form.Control
+                                                type="text"
+                                                placeholder="Search for UK county..."
+                                                value={inputValue}
+                                                onChange={handleInputChange}
                                             />
+                                            {filteredCounties.length > 0 && (
+                                                <ListGroup className="mt-1">
+                                                    {filteredCounties.map((county) => (
+                                                        <ListGroup.Item
+                                                            key={county}
+                                                            action
+                                                            onClick={() => handleCountySelect(county)}
+                                                        >
+                                                            {county}
+                                                        </ListGroup.Item>
+                                                    ))}
+                                                </ListGroup>
+                                            )}
+
+                                            <p className="text-900">Buckinghamshire </p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
@@ -300,6 +359,7 @@ function Editpostproject() {
                                                 // onChange={(e) => { handleChange(e) }}
                                                 type='text'
                                             />
+                                            <p className="text-900">CD23BX</p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
@@ -367,6 +427,7 @@ function Editpostproject() {
                                                 // value={form.project_duration}
                                                 value="2 Years"
                                                 required
+                                                disabled
                                                 name="project_duration"
                                                 // onChange={(e) => { handleChange(e) }}
                                                 type='text'
@@ -391,7 +452,8 @@ function Editpostproject() {
                                     <Col lg={12} className=''>
                                         <div className='d-flex justify-content-start'>
                                             <Button
-                                                type="submit"
+                                                onClick={handleShow1}
+                                               
                                                 className='d-block border-0 bg-success'
                                             >Post Project</Button>
                                             {/* <Link to="/projectlist"> */}
@@ -403,6 +465,10 @@ function Editpostproject() {
                                 </Row>
                             </Card.Body>
                         </Card >
+
+
+
+
                         {/* Post A Project */}
                         <Modal show={showModal} onHide={handleClose}>
                             <Modal.Header >
@@ -422,6 +488,181 @@ function Editpostproject() {
                             </Modal.Footer>
                         </Modal>
                         {/* </Col> */}
+
+                        {/* ---------------- */}
+                        <Modal size="lg" show={show1} onHide={handleClose1}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Project Summary</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                {/*  */}
+                                <Row className="gx-2 gy-3">
+                                    <Col lg={6} md={6} className=''>
+                                        <Form.Group>
+                                            <Form.Label className='text-700 text-uppercase'>
+                                                category <span className="text-danger">*</span>
+                                            </Form.Label>
+                                            <p className="text-900 text-capitalize">Attic</p>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col lg={6} md={6} className=''>
+                                        <Form.Group>
+                                            <Form.Label className='text-700 text-uppercase'>
+                                                sub-category <span className="text-danger">*</span>
+                                            </Form.Label>
+                                            <p className="text-900 text-capitalize">Worktop</p>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col lg={12} className='me-2 '>
+                                        <Form.Group controlId="courseTitle">
+                                            <Form.Label className='text-700 text-uppercase'>
+                                                project title <span className="text-danger">*</span>
+                                            </Form.Label>
+                                            <p className="text-900 text-uppercase">WHITE ATTICA SUPERNATURAL QUARTZ</p>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col lg={12} className='me-2'>
+                                        <Form.Group className="mb-3">
+                                            <Form.Label className='text-700 text-uppercase'>Project Description <span className="text-danger">*</span> </Form.Label>
+                                            <p className="text-900 text-justify">White Attica Supernatural Quartz has a crisp white base featured with an
+                                                intricate veiny pattern. This quartz slab has a super sleek look in polished
+                                                finish which
+                                                is more enhanced by the distinct black veins which have been manufactured to look fit for classy modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true
+                                                when installed in kitchens, baths, entryways, laundry and mudrooms, as well as a variety of other spaces in
+                                                both residential and commercial properties. This quartz's design is meant to create a timeless statement. Aside from worktops, these slabs are ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
+                                            </p>
+                                        </Form.Group>
+                                    </Col>
+                                    {/* Upload Samples */}
+
+                                    <Form.Label className='text-700 text-uppercase'>
+                                        Upload Sample and Other Helpful
+                                    </Form.Label>
+                                    <div className="col-6">
+                                        <img src={file} width="50px" height="50px" className="pro-pre" />
+                                        <span className="text-900 ms-3 fil-name">File Name (540 KB)</span>
+                                    </div>
+                                    <div className="col-6">
+                                        <img src={file} width="50px" height="50px" className="pro-pre" />
+                                        <span className="text-900 ms-3 fil-name">File Name (540 KB)</span>
+                                    </div>
+                                    {/* Upload Samples */}
+                                    <Col lg={6} md={6} className=''>
+                                        <Form.Group>
+                                            <Form.Label className='text-700 text-uppercase'>
+                                                Budget Type <span className="text-danger">*</span>
+                                            </Form.Label>
+                                            <p className="text-900">Fixed Price</p>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col lg={6} md={6} className=''>
+                                        <Form.Group>
+                                            <Form.Label className='text-700 text-uppercase'>
+                                                Currency <span className="text-danger">*</span>
+                                            </Form.Label>
+                                            <p className="text-900">£ GBP </p>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col lg={6} className=''>
+                                        <Form.Group>
+                                            <Form.Label className='text-700 text-uppercase'>
+                                                Budget <span className="text-danger">*</span>
+                                            </Form.Label>
+                                            <p className="text-900">£ 200 </p>
+
+                                        </Form.Group>
+                                    </Col>
+                                    <Col lg={12} className=''>
+                                        <Form.Group className="mb-3">
+                                            <Form.Label className='text-700 text-uppercase'>Project Location <span className="text-danger">*</span> </Form.Label>
+                                            <p className="text-900">Buckinghamshire </p>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col lg={6} md={6} className=''>
+                                        <Form.Group>
+                                            <Form.Label className='text-700 text-uppercase'>
+                                                Post Code<span className="ms-1 text-danger">*</span>
+                                            </Form.Label>
+                                            <p className="text-900">CD23BX </p>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col lg={6} md={6} className=''>
+                                        <Form.Group>
+                                            <Form.Label className='text-700 text-uppercase'>
+                                                Starting Date
+                                            </Form.Label>
+                                            <p className="text-900">01/01/2023 </p>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col md="12">
+                                        <Form.Group className='mb-3 mt-2'>
+                                            <Form.Label className='text-700 d-block text-uppercase'>
+                                                Project Visibility <span className="text-danger">*</span>
+                                            </Form.Label>
+                                            <Form.Check
+                                                type='radio'
+                                                id="radio-btn"
+                                                // onChange={(e) => { handleChange(e) }}
+                                                name="visibility"
+                                                value="public"
+                                                className='d-inline-block'
+                                            >
+                                                <Form.Check.Input name="visibility" type="radio" />
+                                                <Form.Check.Label
+                                                    style={{ fontSize: '14px' }}
+                                                >
+                                                    <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
+                                                </Form.Check.Label>
+                                            </Form.Check>
+                                        </Form.Group>
+                                        {/* <Form.Group className=''>
+                      <Form.Check
+                        type='radio'
+                        id="radio-btn"
+                        onChange={(e) => { handleChange(e) }}
+                        name="visibility"
+                        value="private"
+                        className='d-inline-block'
+                      >
+                        <Form.Check.Input name="visibility" type="radio" />
+                        <Form.Check.Label
+                          style={{ fontSize: '14px' }}
+                        >
+                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only freelancers that you specifically invite can view the
+                            <p className="opt-span">project post and send proposal)</p></span></span>
+                        </Form.Check.Label>
+                      </Form.Check>
+                    </Form.Group> */}
+                                    </Col>
+
+                                    <Col lg={6} md={6} className=''>
+                                        <Form.Group className='mb-3'>
+                                            <Form.Label className='text-700  text-uppercase'>
+                                                Expiry Date <span className="text-danger">*</span>
+                                            </Form.Label>
+                                            <p className="text-900">01/01/2023 </p>
+                                        </Form.Group>
+                                    </Col>
+
+                                </Row>
+
+
+                                {/*  */}
+                            </Modal.Body>
+                            <Modal.Footer>
+
+                                <Button
+                                    onClick={handleClose1}
+                                    type="submit"
+                                    className='d-block border-0 bg-success'
+                                >Post Project
+                                </Button>
+
+                            </Modal.Footer>
+                        </Modal>
+                        {/* ---------------- */}
+
+
                     </Container>
                 </Row>
             </Form >

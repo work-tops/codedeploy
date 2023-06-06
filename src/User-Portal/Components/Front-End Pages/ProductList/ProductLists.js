@@ -126,6 +126,17 @@ function ProductList() {
 
     const toastDark = () => toast.success(<h6 className="text-sucess">Your Product is Successfully Added to Cart</h6>);
     const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+
+    // 
+    const [showAll, setShowAll] = useState(false);
+
+    const handleToggle = () => {
+        setShowAll(!showAll);
+    };
+
+
+
+
     return (
         <>
             <Row>
@@ -136,9 +147,21 @@ function ProductList() {
                     <Row>
                         <Col className='mb-3' lg={3}>
                             <Card className="mt-5">
+                                <Card.Body>
+                                    {/* <Form.Label className="d-inline-block">{showAll ? ' Offers' : ' All Products'}</Form.Label> */}
+                                    {/* <Form.Check
+                                        type="switch"
+                                        id="toggleSwitch"
+                                        checked={showAll}
+                                        onChange={handleToggle}
+                                    /> */}
+                                    {/* <Form.Check type="checkbox" label="All Products" className="mb-0"/> */}
+                                    <Form.Check type="checkbox" label="Offers" className="mb-0"/>
+                                </Card.Body>
+                            </Card>
+                            <Card className="mt-3">
                                 <SimpleBarReact style={{ height: '100%' }}>
                                     <Card.Header as={Flex} className="flex-between-center pt-x1">
-                                        {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
                                         <div className='justify-content-between d-flex m-2'>
                                             <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
                                                 <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
@@ -155,15 +178,7 @@ function ProductList() {
                                                 Reset
                                             </Button>
                                         </div>
-                                        {/* </Flex> */}
-                                        {/* {isOffcanvas && (
-                        <Button
-                            onClick={() => setShow(false)}
-                            className="btn-close text-reset"
-                            size="sm"
-                            variant="link"
-                        ></Button>
-                    )} */}
+
                                     </Card.Header>
                                     <Card.Body className="py-0 mt-2">
 
@@ -226,15 +241,14 @@ function ProductList() {
                                                 <Col xs="auto" className="p-0">
                                                     <Row className="g-2 align-items-center">
                                                         <div className="d-flex align-items-center">
-                                                            <small className="fw-semi-bold me-2 d-lg-block lh-1">Sort By:</small>
+                                                            <small style={{fontSize:'16px'}} className="fw-semi-bold me-2 d-lg-block lh-1">Sort By:</small>
                                                             <div>
-                                                                <Form.Select>
-                                                                    <option>All</option>
-                                                                    <option>Offers</option>
-
+                                                                <Form.Select style={{fontSize:'14px'}}>
+                                                                    <option style={{fontSize:'14px'}}>Recent Products</option>
+                                                                    <option style={{fontSize:'14px'}}>Old Products</option>
                                                                 </Form.Select>
                                                             </div>
-                                                            <small className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
+                                                            <small style={{fontSize:'16px'}} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
                                                             <div className="d-flex">
                                                                 <div onClick={() => { setIsList(false) }}
                                                                     className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
@@ -449,7 +463,6 @@ function ProductList() {
                                                                             </Link>
                                                                         </Flex>
                                                                     </Flex>
-
                                                                 </Col>
                                                             </Row>
                                                         </Col>

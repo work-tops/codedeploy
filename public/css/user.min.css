@@ -320,3 +320,32 @@ star-rating {
 }
 
 /*  */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+}
+
+.scroll-to-top.invisible {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*  */
+.course-filter {
+  height: 100% !important
+}
+
+@media (min-width:1200px) {
+  .course-filter {
+    height: calc(100vh - 4.3125rem) !important;
+    position: sticky !important;
+    top: 4.3125rem !important
+  }
+}

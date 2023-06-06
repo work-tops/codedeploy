@@ -251,7 +251,7 @@ const FrontendAddService = () => {
                                             <Row className='g-3 mb-3'>
                                                 <Form.Group as={Col} className='mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Services Location<span className="text-danger">*</span></Form.Label>
-                                                    <Multiselect options={servitag[1]?.list} displayValue="value" className='form-control ' />
+                                                    <Multiselect options={servitag[1]?.list} displayValue="value" className='form-control' />
                                                 </Form.Group>
                                                 {/* <Form.Group as={Col} className=' mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Services Range
@@ -261,16 +261,14 @@ const FrontendAddService = () => {
                                             </Row>
                                             <Row className='mb-3'>
                                                 <Col>
-                                                    <Form.Check type="checkbox" label="Shipping Requires" className="mb-0">
-                                                        {/* <Form.Check.Input
-                                                                    type="checkbox"
-                                                                />  */}
-                                                    </Form.Check>
+                                                    <Form.Check type="checkbox" label="Shipping Requires" className="mb-0"/>
+                                                       
+                                                 
                                                 </Col>
                                                 <Col>
-                                                    <Form.Check type="checkbox" label="Charge Taxes on this product" className="mb-0">
+                                                    <Form.Check type="checkbox" label="Charge Taxes on this product" className="mb-0"/>
 
-                                                    </Form.Check>
+                                                 
                                                 </Col>
 
                                             </Row>

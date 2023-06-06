@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react';
-import ProjectListFilter from "./Filters/ProjectListFilter";
+import MultiSelect from 'multiselect-react-dropdown';
 import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getAllData } from "../../../Services/ProxyService";
@@ -14,6 +14,9 @@ import {
     Tooltip,
 
 } from 'react-bootstrap';
+import { Typeahead } from 'react-bootstrap-typeahead';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
+import { faHandPointUp } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import ReactPaginate from 'react-paginate';
@@ -146,11 +149,54 @@ function ListJobs(layout) {
     const changePage = ({ selected }) => {
         setPageNumber(selected);
     }
+    // 
+    const [isVisible, setIsVisible] = useState(false);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            setIsVisible(scrollTop > 0);
+        };
 
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+    // 
+    const [minValue, setMinValue] = useState(0);
+    const [maxValue, setMaxValue] = useState(10000);
 
+    const handleRangeChange = (event) => {
+        const { name, value } = event.target;
 
+        if (name === 'min') {
+            setMinValue(value);
+        } else if (name === 'max') {
+            setMaxValue(value);
+        }
+    };
+    // 
+    const [selectedCounties, setSelectedCounties] = useState([]);
+
+    const handleCountySelect = (selectedList) => {
+        setSelectedCounties(selectedList);
+    };
+
+    const countyOptions = [
+        { key: 'Bedfordshire', value: 'Bedfordshire' },
+        { key: 'Berkshire', value: 'Berkshire' },
+        { key: 'Bristol', value: 'Bristol' },
+        { key: 'Buckinghamshire', value: 'Buckinghamshire' },
+        { key: 'Cambridgeshire', value: 'Cambridgeshire' },
+        { key: 'Cheshire', value: 'Cheshire' },
+    ];
+    // 
 
 
 
@@ -175,7 +221,7 @@ function ListJobs(layout) {
                     <NavbarStandard />
                 </Col>
                 <Container>
-                    {/* <div className='d-flex justify-content-around'> */}
+                   
                     <Row>
                         <Col className='' lg={3}>
                             <Card className="mt-5">
@@ -198,15 +244,7 @@ function ListJobs(layout) {
                                                 Reset
                                             </Button>
                                         </div>
-                                        {/* </Flex> */}
-                                        {/* {isOffcanvas && (
-                        <Button
-                            onClick={() => setShow(false)}
-                            className="btn-close text-reset"
-                            size="sm"
-                            variant="link"
-                        ></Button>
-                    )} */}
+                         
                                     </Card.Header>
                                     <Card.Body className="py-0 mt-2">
 
@@ -241,17 +279,48 @@ function ListJobs(layout) {
                                                 </li>
                                             })}
                                         </ul>
-                                        <Form>
-                                            <Form.Group className='mb-3'>
-                                                <Form.Label className='text-600' style={{ fontWeight: '500', fontSize: '.6944444444rem' }}>Search By Geo Locations</Form.Label>
-                                                <Form.Control placeholder='Geo Locations' onChange={(e) => locationSearch(e)} type='search' />
-                                            </Form.Group>
-                                        </Form>
+                                        {/*  */}
+                                        <div>
+                                            <Form.Label style={{ fontWeight: '500', fontSize: '.6944444444rem' }} className='text-700'>Search County</Form.Label>
+                                            <MultiSelect
+                                                options={countyOptions}
+                                                selectedValues={selectedCounties}
+                                                onSelect={handleCountySelect}
+                                                onRemove={handleCountySelect}
+                                                displayValue="key"
+                                                className='form-control'
+                                            />
+                                        </div>
+                                        {/*  */}
                                         <Form>
                                             <Form.Group className='mb-3'>
                                                 <Form.Label className='text-600' style={{ fontWeight: '500', fontSize: '.6944444444rem' }}>Range</Form.Label>
-                                                <p className='fw-semibold' style={{ fontSize: '14px' }}>£ 0-10,000</p>
-                                                <Form.Range min={0} max={10000} onChange={(e) => priceSearch(e)} />
+                                                {/* <p className='fw-semibold' style={{ fontSize: '14px' }}>£ 0-10,000</p>
+                                                <Form.Range min={0} max={10000} onChange={(e) => priceSearch(e)} /> */}
+                                                <Form>
+                                                    <Form.Group controlId="rangeFilter">
+                                                        <div className="d-flex justify-content-between">
+                                                            <Form.Text>{`Min: ${minValue}`}</Form.Text>
+                                                            <Form.Text>{`Max: ${maxValue}`}</Form.Text>
+                                                        </div>
+                                                        <Form.Range
+                                                            type="range"
+                                                            name="min"
+                                                            value={minValue}
+                                                            onChange={handleRangeChange}
+                                                            min={0}
+                                                            max={10000}
+                                                        />
+                                                        <Form.Range
+                                                            type="range"
+                                                            name="max"
+                                                            value={maxValue}
+                                                            onChange={handleRangeChange}
+                                                            min={0}
+                                                            max={10000}
+                                                        />
+                                                    </Form.Group>
+                                                </Form>
                                             </Form.Group>
                                         </Form>
                                     </Card.Body>
@@ -342,7 +411,7 @@ function ListJobs(layout) {
                                                         <div className='d-flex justify-content-start mb-3'>
                                                             <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>{data?.category}</span>
                                                             <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>{data?.sub_category}</span>
-                                                            {/* <span className='badge m-1 rounded-pill p-2' style={{ background: '#fde6d8', color: '#9d5228' }}>Kitchen Worktops with Island</span> */}
+
                                                         </div>
 
                                                         <div key={key}>
@@ -357,12 +426,10 @@ function ListJobs(layout) {
 
                                                     {/* COl-4 */}
                                                     <Col md={12} lg={4} className=" mt-lg-0">
-                                                        {/* <Card className=''>
-                                                            <Card.Body> */}
                                                         <div key={key}>
-                                                            <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />{getLevel(data?.budget)}</p>
+                                                            {/* <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />{getLevel(data?.budget)}</p> */}
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />{data?.location}</p>
-                                                            <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:folder-rounded" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" /> {data?.category}</p>
+                                                            {/* <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:folder-rounded" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" /> {data?.category}</p> */}
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:clock-time-eight" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} />20 to 30 days</p>
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:tag" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} /> Job ID : {data?._id}</p>
                                                             {/* <Link to="/wishlist/project"> */}
@@ -476,6 +543,25 @@ function ListJobs(layout) {
                                         </div>
                                     </div>
                                 </article>
+                                {/*  */}
+                                <Button
+                                    variant="primary"
+                                    className={`scroll-to-top ${isVisible ? 'visible' : 'invisible'}`}
+                                    onClick={scrollToTop}
+                                    style={{
+                                        position: 'fixed',
+                                        bottom: '20px',
+                                        right: '20px',
+                                        borderRadius: '50%',
+                                        width: '40px',
+                                        height: '40px',
+                                        // opacity: '0.7',
+                                        transition: 'opacity 0.3s'
+                                    }}
+                                >
+                                    <FontAwesomeIcon icon={faHandPointUp} />
+                                </Button>
+                                {/*  */}
                             </div>
                             {/* pagination */}
                             <div className="card mb-3 mt-3">

@@ -203,9 +203,9 @@ const NavbarStandard = () => {
                         className="pe-0 ps-2 nav-link"
                       >
                         <Icon icon="flat-color-icons:like" width="24" height="24" />
-                        <Badge pill variant="danger" className="ml-1">
+                        {/* <Badge pill variant="danger" className="ml-1">
                           3
-                        </Badge>
+                        </Badge> */}
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
@@ -228,7 +228,7 @@ const NavbarStandard = () => {
                           </Link>
                           <Link to="/wishlist/seller">
                             <Dropdown.Item href="#!">
-                              Freelancer
+                              Followers
                               <Badge pill variant="danger" className="ml-1 ms-1">
                                 1
                               </Badge>
