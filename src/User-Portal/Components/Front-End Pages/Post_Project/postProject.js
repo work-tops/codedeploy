@@ -14,11 +14,11 @@ import {
 import { Link, useHistory } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard'
-import { getSize } from '../../../TemplateAssets/helpers/utils';
-import cloudUpload from '../../../TemplateAssets/assets/cloud-upload.svg';
-import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDropzone } from 'react-dropzone';
+import cloudUpload from '../../../TemplateAssets/assets/cloud-upload.svg';
+import { getSize } from '../../../TemplateAssets/helpers/utils';
+import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 import { createData, getAllData } from "../../../../Services/ProxyService";
 import toast from 'react-hot-toast';
 import { uploadImage } from "../../../../Services/ImageService";
@@ -421,7 +421,7 @@ const PostProject = () => {
                         onChange={(e) => { handleChange(e) }}
                       >
                         <option value="">Select</option>
-                        <option value="£ GBP">£ GBP :</option>
+                        <option value="£ GBP">£ GBP </option>
                         <option value="£ EUR">£ EUR</option>
                       </Form.Select>
                     </Form.Group>

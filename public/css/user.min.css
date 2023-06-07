@@ -349,3 +349,17 @@ star-rating {
     top: 4.3125rem !important
   }
 }
+/*  */
+.line-item-table {
+  border-collapse: collapse;
+}
+
+.line-item-table th,
+.line-item-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.line-item-table th {
+  background-color: #f2f2f2;
+}

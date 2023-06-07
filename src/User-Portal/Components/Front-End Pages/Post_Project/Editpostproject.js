@@ -277,7 +277,7 @@ function Editpostproject() {
                                             // onChange={(e) => { handleChange(e) }}
                                             >
                                                 {/* <option value="">Select</option> */}
-                                                <option value="£ GBP">£ GBP :</option>
+                                                <option value="£ GBP">£ GBP </option>
                                                 <option value="£ EUR">£ EUR</option>
                                             </Form.Select>
                                             <p className="text-900">£ GBP </p>

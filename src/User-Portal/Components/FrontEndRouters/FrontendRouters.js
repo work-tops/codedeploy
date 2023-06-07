@@ -87,6 +87,7 @@ import MSPPolicy from "../Footer/MspPolicy";
 import Carrer from "../Footer/Carrer";
 import FAQ from "../Footer/FAQ";
 import About from "../Footer/Aboutus";
+import NewEstimate from "../Front-End Pages/Profile/NewEstimate";
 
 const FrontEndRouters = () => {
     return (
@@ -164,13 +165,13 @@ const FrontEndRouters = () => {
             <Route path="/contactus"><ContactUs /></Route>
             <Route path="/privacypolicy"><PrivacyPolicy /></Route>
             <Route path="/contactus"><ContactUs /></Route>
-            <Route path="/refundpolicy"><RefundPolicy/></Route>
-            <Route path="/shippingpolicy"><ShippingPolicy/></Route>
-            <Route path="/msppolicy"><MSPPolicy/></Route>
+            <Route path="/refundpolicy"><RefundPolicy /></Route>
+            <Route path="/shippingpolicy"><ShippingPolicy /></Route>
+            <Route path="/msppolicy"><MSPPolicy /></Route>
             <Route path="/termsofuse"><TermsOfUse /></Route>
-            <Route path="/carrer"><Carrer/></Route>
-            <Route path="/faq"><FAQ/></Route>
-            <Route path="/aboutus"><About/></Route>
+            <Route path="/carrer"><Carrer /></Route>
+            <Route path="/faq"><FAQ /></Route>
+            <Route path="/aboutus"><About /></Route>
             <Route path="/checkout"><Checkout /></Route>
             <Route path="/postjob1"><PostJob1 /></Route>
             <Route path="/postjob2"><PostJob2 /></Route>
@@ -196,11 +197,11 @@ const FrontEndRouters = () => {
             <Route path="/FreelancerEditProfile"><FreelancerEditProfile /></Route>
             <Route path='/InvoicedueCard'><InvoicedueCard /></Route>
             <Route path="/InvoiceFreelancerCard"><InvoiceFreelancerCard /></Route>
-            <Route path="/WorkstreamDetais"><WorkStreamDetails/></Route>
-            <Route path="/EditPostProject"><Editpostproject/></Route>
-            <Route path="/EditProposal"><EditProposal/></Route>
-            <Route path="/InvoiceCheckout"><InvoiceCheckout/></Route>
-            <Route path="/Modal"><ImageSlider/></Route>
+            <Route path="/WorkstreamDetais"><WorkStreamDetails /></Route>
+            <Route path="/EditPostProject"><Editpostproject /></Route>
+            <Route path="/EditProposal"><EditProposal /></Route>
+            <Route path="/InvoiceCheckout"><InvoiceCheckout /></Route>
+            <Route path="/NewEstimate"><NewEstimate /></Route>
             {/* New Pages */}
         </Switch>
 
