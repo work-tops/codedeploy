@@ -12,7 +12,7 @@ import Footer from "../../Footer/Footer";
 import Flex from "../../../TemplateAssets/common/Flex";
 import SimpleBarReact from "simplebar-react";
 import MultiSelect from 'multiselect-react-dropdown';
-function SellerList() {
+function AllSellerList() {
 
     const [sellersList, setSellers] = useState([]);
 
@@ -256,18 +256,18 @@ function SellerList() {
                                             <Col md={8} lg={9} className="p-x1">
                                                 <Row className="g-0 h-100">
                                                     <Col lg={8}>
-                                                        <h4 className="mt-3 mb-2 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
+                                                        <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
                                                             <Link className="text-900" to="/ServiceInformation">
                                                                 {data.name}
                                                             </Link>
                                                         </h4>
-                                                        <p className="text-justify mb-2 text-primary">
+                                                        <p className="text-justify text-primary">
                                                             Roofer
                                                         </p>
-                                                        <p className="text-justify mb-2">
+                                                        <p className="text-justify">
                                                             <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
                                                         </p>
-                                                        <div className="fw-semi-bold fs--1 mb-2">
+                                                        <div className="fw-semi-bold fs--1">
                                                             <span className="me-1 text-900 me-2">4.5</span>
                                                             <div className="d-inline-block ">
                                                                 <span className="fa fa-star text-warning"></span>
@@ -278,9 +278,9 @@ function SellerList() {
                                                             </div>
                                                             <span className="ms-2 text-secondary">(78,259 reviews)</span>
                                                         </div>
-                                                        <div className="ms-0 mt-2 me-5 mb-2">
+                                                        <div className="ms-0 mt-3 me-5 mb-0">
 
-                                                            <p className="text-justify mb-2 w-100" style={{ fontSize: '14px' }}>
+                                                            <p className="text-justify w-100" style={{ fontSize: '14px' }}>
                                                                 Reliant Plumbing & Heating are a prompt, reliable and affordable
                                                                 Cambridge company that offers a variety of Plumbing
                                                                 solutions and services.
@@ -642,4 +642,4 @@ function SellerList() {
         </>
     )
 }
-export default SellerList
+export default AllSellerList

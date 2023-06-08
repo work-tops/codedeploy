@@ -123,9 +123,14 @@ function SellerEnquiryDetails() {
                                     <h6 style={{ fontSize: '16px' }} className="text-uppercase mt-3">
                                         Message
                                     </h6>
-                                    <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
-                                        Reply the Enquiry 
-                                    </Button>
+                                    <div>
+                                        <Button as={Link} to="/NewEstimate" style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
+                                            Create Estimate
+                                        </Button>
+                                        <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
+                                            Reply the Enquiry
+                                        </Button>
+                                    </div>
                                 </div>
                                 <Card.Body className="position-relative">
                                     <Row>

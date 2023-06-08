@@ -128,6 +128,7 @@ function WishListProductCard() {
     const toastDanger = () => toast.error(<h6 className="">Product Removed from Wishlist</h6>);
     return (
         <>
+        
             <Row>
                 <Col lg={12} className='mb-5'>
                     <NavbarStandard />

@@ -97,12 +97,14 @@ function OwnerEnquiryDetails() {
                             <Card className="mt-3 mb-2">
                                 <div className='bg-white  p-3 d-flex justify-content-between text-uppercase'>
                                     <h5 className="mb-3 text-uppercase fs-0">Message</h5>
-                                    <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
+                                    <div>
+                                    <Button as={Link} to="/NewEstimate" style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
                                         Create Estimate
                                     </Button>
                                     <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
                                         Reply the Enquiry
                                     </Button>
+                                    </div>
                                 </div>
                                 <Card.Body className="position-relative">
                                     <Row>

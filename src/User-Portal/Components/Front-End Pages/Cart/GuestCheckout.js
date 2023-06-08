@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import payment_methods from '../../Projectimages/payment_methods.png'
 import paypal from '../../Projectimages/paypal.png'
 import sheild from '../../Projectimages/shield.png'
-function Checkout() {
+function GuestCheckout() {
 
     const [show, setShow] = useState(false);
 
@@ -47,10 +47,7 @@ function Checkout() {
                                                     <th className="ps-0">Subtotal</th>
                                                     <th className="pe-0 text-end">£3355</th>
                                                 </tr>
-                                                {/* <tr className="border-bottom">
-                                                    <th className="ps-0">Coupon: <span className="text-success">40SITEWIDE</span></th>
-                                                    <th className="pe-0 text-end">-£55</th>
-                                                </tr> */}
+
                                                 <tr className="border-bottom">
                                                     <th className="ps-0">Shipping</th>
                                                     <th className="pe-0 text-end">£20</th>
@@ -72,122 +69,91 @@ function Checkout() {
                                     <div className="card-header bg-light">
                                         <div className="row flex-between-center">
                                             <div className="col-sm-auto">
-                                                <h5 className="mb-2 mb-sm-0">Your Shipping Address</h5>
+                                                <h5 className="mb-2 mb-sm-0">Shipping Address</h5>
                                             </div>
-                                            <div className="col-sm-auto">
-                                                <a onClick={handleShow} className="btn btn-falcon-default btn-sm" href="#!">
-                                                    <span className="fas fa-plus me-2" data-fa-transform="shrink-2"></span>Add New Address </a></div>
                                         </div>
                                         {/*  */}
-                                        {/* Edit Modal */}
-                                        <Modal
-                                            show={show}
-                                            onHide={() => setShow(false)}
-                                            dialogClassName="modal-lg modal-90w"
-                                            aria-labelledby="example-custom-modal-styling-title"
-                                        >
-                                            <Modal.Header>
-                                                <h5 className="text-900"> Address</h5>
-                                            </Modal.Header>
-                                            <Modal.Body>
-                                                <Form>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">
-                                                            Email<span className="text-danger">*</span>
-                                                        </Form.Label>
-                                                        <Form.Control
-                                                            type="email"
-                                                            placeholder="Email Address"
-                                                        />
-                                                    </Form.Group>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">
-                                                            Phone<span className="text-danger">*</span>
-                                                        </Form.Label>
-                                                        <Form.Control
-                                                            type="text"
-                                                            placeholder="Phone Number"
-                                                        />
-                                                    </Form.Group>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">
-                                                            Shipping Address line 1<span className="text-danger">*</span>
-                                                        </Form.Label>
-                                                        <Form.Control
-                                                            as="textarea"
-                                                            size="sm"
-                                                            className="resize-none"
-                                                            placeholder="Address Line 1"
-                                                        />
-                                                    </Form.Group>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">
-                                                            Shipping Address line 2<span className="text-danger">*</span>
-                                                        </Form.Label>
-                                                        <Form.Control
-                                                            as="textarea"
-                                                            className="resize-none"
-                                                            size="sm"
-                                                            placeholder="Address Line 2"
-                                                        />
-                                                    </Form.Group>
-                                                    <div className="form-check"><input className="form-check-input" id="flexCheckChecked" type="checkbox" value="" /><label className="form-check-label" for="flexCheckChecked">Billing Address Should Be Same</label></div>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">
-                                                            Billing Address line 1<span className="text-danger">*</span>
-                                                        </Form.Label>
-                                                        <Form.Control
-                                                            as="textarea"
-                                                            size="sm"
-                                                            disabled
-                                                            className="resize-none"
-                                                            placeholder="Address Line 1"
-                                                        />
-                                                    </Form.Group>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">
-                                                            Billing Address line 2<span className="text-danger">*</span>
-                                                        </Form.Label>
-                                                        <Form.Control
-                                                            as="textarea"
-                                                            className="resize-none"
-                                                            disabled
-                                                            size="sm"
-                                                            placeholder="Address Line 2"
-                                                        />
-                                                    </Form.Group>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">
-                                                            PostCode<span className="text-danger">*</span>
-                                                        </Form.Label>
-                                                        <Form.Control
-                                                            type="text"
-                                                            placeholder="CB1 0SL"
-                                                        />
-                                                    </Form.Group>
-                                                </Form>
-                                            </Modal.Body>
-                                            <Modal.Footer>
-                                                <div className="d-flex justify-content-end gap-2">
-                                                    <Button className="btn bg-success border-0">Save</Button>
-                                                    <Button onClick={handleClose} className="btn bg-danger border-0">Cancel</Button>
-                                                </div>
-                                            </Modal.Footer>
-                                        </Modal>
+                                        
                                         {/* Edit Modal */}
                                         {/*  */}
                                     </div>
                                     <div className="card-body">
-                                        <div className="row">
-                                            <div className="col-md-6 mb-3 mb-md-0">
-                                                <div className="form-check mb-0 custom-radio radio-select"><input className="form-check-input" id="address-1" type="radio" name="clientName" /><label className="form-check-label mb-0 fw-bold d-block" for="address-1">Antony Hopkins<span className="radio-select-content"><span><span>2392 Main Avenue</span>,<span>Pensaukee,London</span> <span>CB1 0SL</span><span className="d-block mb-0 pt-2">+(856) 929-229</span></span></span></label><a onClick={handleShow} className="fs--1" href="#!">Edit</a></div>
-                                            </div>
-                                            <div className="col-md-6">
-                                                <div className="position-relative">
-                                                    <div className="form-check mb-0 custom-radio radio-select"><input className="form-check-input" id="address-2" type="radio" name="clientName" /><label className="form-check-label mb-0 fw-bold d-block" for="address-2">Robert Bruce<span className="radio-select-content"><span><span>2392 Main Avenue</span>,<span>Pensaukee,London</span> <span>CB1 0SL</span><span className="d-block mb-0 pt-2">+(901) 637-734</span></span></span></label><a onClick={handleShow} className="fs--1" href="#!">Edit</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <Form>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase">
+                                                    Email<span className="text-danger">*</span>
+                                                </Form.Label>
+                                                <Form.Control
+                                                    type="email"
+                                                    placeholder="Email Address"
+                                                />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase">
+                                                    Phone<span className="text-danger">*</span>
+                                                </Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="Phone Number"
+                                                />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase">
+                                                    Shipping Address line 1<span className="text-danger">*</span>
+                                                </Form.Label>
+                                                <Form.Control
+                                                    as="textarea"
+                                                    size="sm"
+                                                    className="resize-none"
+                                                    placeholder="Address Line 1"
+                                                />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase">
+                                                    Shipping Address line 2<span className="text-danger">*</span>
+                                                </Form.Label>
+                                                <Form.Control
+                                                    as="textarea"
+                                                    className="resize-none"
+                                                    size="sm"
+                                                    placeholder="Address Line 2"
+                                                />
+                                            </Form.Group>
+                                            <div className="form-check"><input className="form-check-input" id="flexCheckChecked" type="checkbox" value="" /><label className="form-check-label" for="flexCheckChecked">Billing Address Should Be Same</label></div>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase">
+                                                    Billing Address line 1<span className="text-danger">*</span>
+                                                </Form.Label>
+                                                <Form.Control
+                                                    as="textarea"
+                                                    size="sm"
+                                                    disabled
+                                                    className="resize-none"
+                                                    placeholder="Address Line 1"
+                                                />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase">
+                                                    Billing Address line 2<span className="text-danger">*</span>
+                                                </Form.Label>
+                                                <Form.Control
+                                                    as="textarea"
+                                                    className="resize-none"
+                                                    disabled
+                                                    size="sm"
+                                                    placeholder="Address Line 2"
+                                                />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase">
+                                                    PostCode<span className="text-danger">*</span>
+                                                </Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="CB1 0SL"
+                                                />
+                                            </Form.Group>
+                                        </Form>
                                     </div>
                                 </div>
                                 <div className="card mb-3">
@@ -231,8 +197,10 @@ function Checkout() {
                                                 <div className="row">
                                                     <div className="col-md-5 col-xl-12 col-xxl-5 ps-lg-4 ps-xl-2 ps-xxl-5 text-center text-md-start text-xl-center text-xxl-start">
                                                         <div className="border-bottom border-dashed d-block d-md-none d-xl-block d-xxl-none my-4"></div>
-                                                        <div className="fs-2 fw-semi-bold">All Total: <span className="text-primary">£3320</span></div><button className="btn btn-success mt-3 px-5" type="submit">Confirm &amp; Pay</button>
-                                                        <p className="fs--1 mt-3 mb-0">By clicking <strong style={{ fontSize: "14px" }}>Confirm &amp; Pay </strong>button you agree to the <a href="#!">Terms &amp; Conditions</a></p>
+                                                        <div className="fs-2 fw-semi-bold">All Total: <span className="text-primary">£3320</span></div><button className="btn btn-success mt-3 mb-3 px-5" type="submit">Confirm &amp; Pay</button>
+                                                        {/* <p className="fs--1 mt-3 mb-0">By clicking <strong style={{ fontSize: "14px" }}>Confirm &amp; Pay </strong>button you agree to the 
+                                                        <a href="#!">Terms &amp; Conditions</a>
+                                                        </p> */}
                                                     </div>
                                                 </div>
                                             </div>
@@ -247,4 +215,4 @@ function Checkout() {
         </>
     )
 }
-export default Checkout
+export default GuestCheckout

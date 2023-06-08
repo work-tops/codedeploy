@@ -132,7 +132,7 @@ function JobProposal() {
                                     {/* <h6 >Proposal Amount</h6> */}
                                     <Form onSubmit={(e) => { formsubmit(e) }}>
                                         <Form.Group className='mb-3'>
-                                            <Form.Label style={{ fontSize: '14px' }} className=" text-700">
+                                            <Form.Label style={{ fontSize: '14px' }} className="text-700 text-uppercase">
                                                 Proposal Amount<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
 
@@ -165,7 +165,7 @@ function JobProposal() {
                                             </Card.Body>
                                         </Card>
                                         <Form.Group className="mb-3">
-                                            <Form.Label style={{ fontSize: '14px' }} className=" text-700">
+                                            <Form.Label style={{ fontSize: '14px' }} className="text-700 text-uppercase">
                                                 Completion Time<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
@@ -178,7 +178,7 @@ function JobProposal() {
                                                 placeholder="Add completion time" />
                                         </Form.Group>
                                         <Form.Group className="mb-3">
-                                            <Form.Label style={{ fontSize: '14px' }} className=" text-700">
+                                            <Form.Label style={{ fontSize: '14px' }} className="text-700 text-uppercase">
                                                 Cover Letter<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
@@ -191,7 +191,7 @@ function JobProposal() {
                                                 rows={6} />
                                         </Form.Group>
                                         <div >
-                                            <Form.Label className="text-700">
+                                            <Form.Label className="text-700 text-uppercase">
                                                 Upload File
                                             </Form.Label>
 
@@ -265,12 +265,12 @@ function JobProposal() {
                             {/*  Customize Details  */}
                             <Card className="mb-3">
                                 <Card.Header className="py-2 text-center  bg-light">
-                                    <h4 className="mb-0">{jobdetails?.project_title}</h4>
+                                    <h4 className="text-uppercase mb-0">{jobdetails?.project_title}</h4>
                                 </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
 
-                                        <li>
+                                        {/* <li>
                                             <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
                                                 <Icon icon="tabler:currency-pound"
                                                     className='me-1'
@@ -279,7 +279,7 @@ function JobProposal() {
                                                     width="20"
                                                     height="20" />
                                                 {lavel}</p>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
                                                 <Icon icon="material-symbols:location-on"

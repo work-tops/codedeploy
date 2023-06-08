@@ -27,12 +27,6 @@ function HomePage() {
         AOS.init({ duration: 1000 }); // Initialize AOS with desired duration
     }, []);
 
-    // const progressCircle = useRef(null);
-    // const progressContent = useRef(null);
-    // const onAutoplayTimeLeft = (s, time, progress) => {
-    //   progressCircle.current.style.setProperty('--progress', 1 - progress);
-    //   progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    // };
 
     return (
 
@@ -45,34 +39,25 @@ function HomePage() {
                     <Col lg={12} className="mt-3">
                         <div className="mt-5 mb-5">
                             {/* Section-1 */}
-                            {/* <motion.div
-                                initial={{ opacity: 0, y: 50 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1.5 }}
-                            > */}
+
                             <div data-aos="fade-right" className="row  d-flex justify-content-lg-between justify-content-xl-between align-items-center">
                                 <div className="col-md col-lg-5 order-md-2">
                                     <img className="img-fluid  px-md-0 text-end" style={{ borderRadius: '50px 2px' }} src={interior_design_1} alt="" />
                                 </div>
                                 <div className="col-md mt-3  col-lg-7 col-xl-4">
-                                    <h6 className="text-700 text-uppercase">Mordern Interior</h6>
-                                    <h1 className="fs-2 fs-sm-4 fs-md-5">Create Your Interior Design</h1>
+                                    <h6 className="text-700 text-uppercase">BUILD AWESOME PROPERTIES</h6>
+                                    <h1 className="fs-2 text-capitalize fs-sm-4 fs-md-5">Your Abode of Interior and Exterior Experts
+                                    </h1>
                                     <p className="" style={{ fontSize: '16px' }}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod
-
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                        minim
-
-                                        veniam, quis nostrud exercitation.
+                                        We connect you with the most experienced and certified construction professionals who have been creating properties that mesmerise the millions.
                                     </p>
-                                    <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Contact</Button>
+                                    <Button as={Link} to="/Allsellerlist" style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Discover Experts</Button>
                                 </div>
                             </div>
                             {/* </motion.div> */}
                         </div>
                         {/* Special Section */}
-                        <h1 className="fs-2 mt-5 fs-sm-4 mb-3 fs-md-5">Most Popular Categories</h1>
+                        <h1 className="fs-2 mt-5 fs-sm-4 mb-3 fs-md-5">Frequently Bought Materials</h1>
                         <Swiper
                             slidesPerView={3}
                             spaceBetween={10}
@@ -91,65 +76,71 @@ function HomePage() {
                         >
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Granite</h5>
-                                    <p className="text-light m-2">Hello World</p>
+                                    <h5 className="text-light m-2">Marble Slabs</h5>
+                                    {/* <p className="text-light m-2">Hello World</p> */}
                                 </Link>
                             </SwiperSlide>
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Granite</h5>
-                                    <p className="text-light m-2">Hello World</p>
+                                    <h5 className="text-light m-2">Quartz Slabs</h5>
+                                    {/* <p className="text-light m-2">Hello World</p> */}
                                 </Link>
                             </SwiperSlide>
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Granite</h5>
-                                    <p className="text-light m-2">Hello World</p>
+                                    <h5 className="text-light m-2">Sinks</h5>
+                                    {/* <p className="text-light m-2">Hello World</p> */}
                                 </Link>
                             </SwiperSlide>
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Granite</h5>
-                                    <p className="text-light m-2">Hello World</p>
+                                    <h5 className="text-light m-2">Quartzite Slabs</h5>
+                                    {/* <p className="text-light m-2">Hello World</p> */}
                                 </Link>
                             </SwiperSlide>
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Granite</h5>
-                                    <p className="text-light m-2">Hello World</p>
+                                    <h5 className="text-light m-2">Granite Slabs</h5>
+                                    {/* <p className="text-light m-2">Hello World</p> */}
                                 </Link>
                             </SwiperSlide>
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Granite</h5>
-                                    <p className="text-light m-2">Hello World</p>
+                                    <h5 className="text-light m-2">Taps</h5>
+                                    {/* <p className="text-light m-2">Hello World</p> */}
                                 </Link>
                             </SwiperSlide>
 
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                <Link to="/productlist">
+                                    <h5 className="text-light m-2">Tiles</h5>
+                                    {/* <p className="text-light m-2">Hello World</p> */}
+                                </Link>
+                            </SwiperSlide>
 
 
                         </Swiper>
                         {/* Section-2 */}
 
                         <div data-aos="fade-down" className="row mb-5">
-                            <h6 className="text-700 text-start text-uppercase">what we do</h6>
-                            <h1 className="fs-2 text-start fs-sm-4 fs-md-5">Our Service</h1>
+                            <h6 className="text-700 text-start text-uppercase">CHECK OUT</h6>
+                            <h1 className="fs-2 text-start fs-sm-4 fs-md-5">Popularly Enquired Projects</h1>
                             <div className=" col-lg-4 col-md-4 mt-2 mt-lg-0">
-                                {/* <Link to="/productlist" className="text-900"> */}
+
                                 <div style={{ borderRadius: '50px 2px' }} className=" card card-span h-100">
                                     <div className=" card-body pt-4 pb-3">
-                                        <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Check Ongoing Offers</p>
-                                        <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
+                                        <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Kitchen Worktops</p>
+                                        <p>Long lasting, easy maintenance, durable countertops</p>
                                     </div>
                                 </div>
-                                {/* </Link> */}
+
                             </div>
                             <div className=" col-lg-4 col-md-4 mt-3 mt-lg-0">
                                 {/* <Link to="/productlist" className="text-900"> */}
                                 <div style={{ borderRadius: '50px 2px' }} className=" card card-span h-100">
                                     <div className=" card-body pt-4 pb-3">
-                                        <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Buy Materials Directly</p>
-                                        <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
+                                        <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Bathroom Interiors</p>
+                                        <p>Highly moisture-resistant wall claddings and vanity tops</p>
                                     </div>
                                 </div>
                                 {/* </Link> */}
@@ -158,8 +149,9 @@ function HomePage() {
                                 {/* <Link to="/servicelist" className="text-900"> */}
                                 <div style={{ borderRadius: '50px 2px' }} className=" card card-span h-100">
                                     <div className=" card-body pt-4 pb-3 ">
-                                        <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Browse the Services</p>
-                                        <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
+                                        <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Reception Desks</p>
+                                        <p>Trendy and classy stone surfaces
+                                        </p>
                                     </div>
                                 </div>
                                 {/* </Link> */}
@@ -171,14 +163,13 @@ function HomePage() {
                                 <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={interior_design_2} alt="" />
                             </div>
                             <div className="col-md mt-3  col-lg-7 col-xl-4">
-                                <h6 className="text-700 text-start text-uppercase">About us</h6>
-                                <h1 className="fs-2 fs-sm-4 fs-md-5">Interiors Expert</h1>
+                                <h6 className="text-700 text-start text-uppercase">DON'T MISS</h6>
+                                <h1 className="fs-2 fs-sm-4 fs-md-5">Tempting Discounts</h1>
                                 <p style={{ fontSize: '16px' }}>
-                                    Select the categories and subcategories relevantly so we can recommend
-                                    appropriate professionals. If something you are searching for is not in option
-                                    you can type “Others"in the search box and add your requirement.
+                                    We keep you updated about unmissable offers from numerous sellers and
+                                    traders so that you can grab the best deal from the comfort of your home.
                                 </p>
-                                <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Learn</Button>
+                                <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button>
                             </div>
                         </div>
                         {/* Section-4 */}
@@ -186,11 +177,34 @@ function HomePage() {
 
                             <div className="row  mb-5 d-flex justify-content-lg-between justify-content-xl-between align-items-center">
                                 <div className="col-md col-lg-5">
-                                    <h1 style={{ fontSize: '199px', fontWeight: '700', backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent', backgroundImage: `url(${wood})` }} >20</h1>
-                                    <h1 className="fs-2 fs-sm-4 fs-md-5">Years of Successful Working</h1>
+                                    <h6 className="text-700 text-start text-uppercase">SUCCESSFUL TRADE EXPERTS</h6>
+                                    <h1 className="fs-2 fs-sm-4 fs-md-5">Choose to become Limitless</h1>
+                                    <p style={{ fontSize: '16px' }}>
+                                        Do not limit yourself to your local regions. Join our network and connect with millions of customers,
+                                        nationwide, who are looking for a variety of services. You are unstoppable, give chance to the bigger
+                                        self within you.
+                                    </p>
+                                    <Button as={Link} to="/freelancer/false" style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Register Your Trade</Button>
                                 </div>
                                 <div className="col-md  col-lg-5">
                                     <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={interior_design_2} alt="" />
+                                </div>
+                            </div>
+                            {/* Section-5 */}
+
+                            <div data-aos="fade-left" className="row  mb-5 d-flex justify-content-lg-between justify-content-xl-between align-items-center">
+                                <div className="col-md  col-lg-5 ">
+                                    <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={interior_design_2} alt="" />
+                                </div>
+                                <div className="col-md mt-3  col-lg-7 col-xl-4">
+                                    <h6 className="text-700 text-start text-uppercase">UNIQUE IN THE INDUSTRY</h6>
+                                    <h1 className="fs-2 fs-sm-4 fs-md-5">2 Way Review Facility</h1>
+                                    <p style={{ fontSize: '16px' }}>
+                                        Here at MAI, the project owners as well as the traders get fair opportunities to review one another.
+                                        This is one of the most-unique advantages of using our platform. This increases the quality of service
+                                        being provided as well as puts an insight on the compatibility with the project owner.
+                                    </p>
+                                    {/* <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button> */}
                                 </div>
                             </div>
                             <div style={{ backgroundImage: `url(${interior_design_2})` }} data-aos="fade-down" className="row mb-5">
@@ -218,9 +232,9 @@ function HomePage() {
                         </div>
                         {/* Section-5 */}
                         <div data-aos="fade-right" className="mb-5 text-center">
-                            <h5 className="mb-3 text-700 text-uppercase">Testimonials</h5>
+                            <h5 className="mb-3 text-700 text-uppercase">STORIES</h5>
                             <div className="col">
-                                <h1 className="fs-2 mb-4 fs-sm-4 fs-md-5">Client says about us</h1>
+                                <h1 className="fs-2 mb-4 fs-sm-4 fs-md-5">See What Our Users Felt</h1>
                             </div>
                             <div className="row">
                                 <div className="col-lg-12 col-xl-12">

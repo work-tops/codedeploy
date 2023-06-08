@@ -68,9 +68,10 @@ const UserLogin = ({ }) => {
   };
   return (
     <>
-
-
       <Row className="min-vh-100 bg-100">
+      <Col lg={12} className="mb-5">
+        <NavbarStandard/>
+      </Col>
         <Col xs={6} className="d-none d-lg-block position-relative">
           <div style={{ backgroundImage: `url(${worktops})` }} className="bg-holder">
           </div>

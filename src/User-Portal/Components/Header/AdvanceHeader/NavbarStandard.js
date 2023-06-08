@@ -145,19 +145,19 @@ const NavbarStandard = () => {
                         to="#!"
                       >
                         <Nav.Link
-                          className='mt-2'
+                          className='mt-2 text-uppercase'
                           style={{ fontSize: '12px' }}>
-                          LOGIN
+                          Project Owner
                         </Nav.Link>
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
                         <div className="bg-white rounded-2 py-2 dark__bg-1000">
                           <Link to="/projectowner">
-                            <Dropdown.Item href="#!">Project Owner</Dropdown.Item>
+                            <Dropdown.Item href="#!">Login</Dropdown.Item>
                           </Link>
-                          <Link to="/freelancer/true">
-                            <Dropdown.Item href="#!">Freelancer</Dropdown.Item>
+                          <Link to="/project-owner-register">
+                            <Dropdown.Item href="#!">Register</Dropdown.Item>
                           </Link>
                         </div>
                       </Dropdown.Menu>
@@ -171,19 +171,19 @@ const NavbarStandard = () => {
                         to="#!"
                       >
                         <Nav.Link
-                          className='mt-2'
+                          className='mt-2 text-uppercase'
                           style={{ fontSize: '12px' }}>
-                          REGISTER
+                          Freelancer
                         </Nav.Link>
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
                         <div className="bg-white rounded-2 py-2 dark__bg-1000">
-                          <Link to="/project-owner-register">
-                            <Dropdown.Item href="#!">Project Owner</Dropdown.Item>
+                          <Link to="/freelancer/true">
+                            <Dropdown.Item href="#!">Login</Dropdown.Item>
                           </Link>
                           <Link to="/freelancer/false">
-                            <Dropdown.Item href="#!">Freelancer</Dropdown.Item>
+                            <Dropdown.Item href="#!">Register</Dropdown.Item>
                           </Link>
                         </div>
                       </Dropdown.Menu>
@@ -192,52 +192,64 @@ const NavbarStandard = () => {
                 </>
               }
 
-              {id != 1 &&
-                <>
-                  <div>
-                    <Dropdown navbar={true} as="li">
-                      <Dropdown.Toggle
-                        bsPrefix="toggle"
-                        as={Link}
-                        to="#!"
-                        className="pe-0 ps-2 nav-link"
-                      >
-                        <Icon icon="flat-color-icons:like" width="24" height="24" />
-                        {/* <Badge pill variant="danger" className="ml-1">
+              {/* All View Icons (Wishlist & Cart) */}
+              <div className='me-2'>
+                <Dropdown navbar={true} as="li">
+                  <Dropdown.Toggle
+                    bsPrefix="toggle"
+                    as={Link}
+                    to="#!"
+                    className="pe-0 ps-2 nav-link"
+                  >
+                    <Icon icon="flat-color-icons:like" width="24" height="24" />
+                    {/* <Badge pill variant="danger" className="ml-1">
                           3
                         </Badge> */}
-                      </Dropdown.Toggle>
+                  </Dropdown.Toggle>
 
-                      <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
-                        <div className="bg-white rounded-2 py-2 dark__bg-1000">
-                          <Link to="/wishlist/product">
-                            <Dropdown.Item href="#!">
-                              Product
-                              <Badge pill variant="danger" className="ml-1 ms-1">
+                  <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
+                    <div className="bg-white rounded-2 py-2 dark__bg-1000">
+                      <Link to="/wishlist/product">
+                        <Dropdown.Item href="#!">
+                          Product
+                          {/* <Badge pill variant="danger" className="ml-1 ms-1">
                                 1
-                              </Badge>
-                            </Dropdown.Item>
-                          </Link>
-                          <Link to="/wishlist/project">
-                            <Dropdown.Item href="#!">
-                              Project
-                              <Badge pill variant="danger" className="ml-1 ms-1">
+                              </Badge> */}
+                        </Dropdown.Item>
+                      </Link>
+                      <Link to="/wishlist/project">
+                        <Dropdown.Item href="#!">
+                          Project
+                          {/* <Badge pill variant="danger" className="ml-1 ms-1">
                                 1
-                              </Badge>
-                            </Dropdown.Item>
-                          </Link>
-                          <Link to="/wishlist/seller">
-                            <Dropdown.Item href="#!">
-                              Followers
-                              <Badge pill variant="danger" className="ml-1 ms-1">
+                              </Badge> */}
+                        </Dropdown.Item>
+                      </Link>
+                      <Link to="/wishlist/seller">
+                        <Dropdown.Item href="#!">
+                          Followers
+                          {/* <Badge pill variant="danger" className="ml-1 ms-1">
                                 1
-                              </Badge>
-                            </Dropdown.Item>
-                          </Link>
-                        </div>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </div>
+                              </Badge> */}
+                        </Dropdown.Item>
+                      </Link>
+                    </div>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+              {/* Cart */}
+              <div style={{marginTop:'10px'}}>
+                <Link to="/Cart">
+                  <Icon icon="ic:round-shopping-cart" color="white" width="24" height="24" />
+                  {/* <Badge pill variant="danger" className="ml-1">
+                        3
+                      </Badge> */}
+                </Link>
+              </div>
+
+              {/*  */}
+              {id != 1 &&
+                <>
                   {/*  */}
                   <div>
                     <Dropdown navbar={true} as="li">
@@ -248,9 +260,9 @@ const NavbarStandard = () => {
                         className="pe-0 ps-2 nav-link"
                       >
                         <Icon icon="mdi:bell" color="white" width="24" height="24" />
-                        <Badge pill variant="danger" className="ml-1">
+                        {/* <Badge pill variant="danger" className="ml-1">
                           3
-                        </Badge>
+                        </Badge> */}
                       </Dropdown.Toggle>
                       <Dropdown.Menu className="dropdown-menu dropdown-caret dropdown-menu-end dropdown-menu-card dropdown-menu-notification dropdown-caret-bg " aria-labelledby="navbarDropdownNotification" data-bs-popper="static">
                         <div className="card card-notification shadow-none">
@@ -336,21 +348,6 @@ const NavbarStandard = () => {
                   {/*  */}
 
 
-                  <div className='mt-2'>
-                    <Link to="/notifications">
-
-                    </Link>
-                  </div>
-
-
-                  <div className='mt-2'>
-                    <Link to="/Cart">
-                      <Icon icon="ic:round-shopping-cart" color="white" width="24" height="24" />
-                      <Badge pill variant="danger" className="ml-1">
-                        3
-                      </Badge>
-                    </Link>
-                  </div>
 
                   <div>
                     <Dropdown navbar={true} as="li">
@@ -384,7 +381,7 @@ const NavbarStandard = () => {
                           {/* <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item> */}
                           {/* <Dropdown.Divider /> */}
                           {id == 3 && <Dropdown.Item as={Link} to="/FreelancerEditProfile">Settings</Dropdown.Item>}
-
+                          <Dropdown.Item as={Link} to="/Estimates">Estimates</Dropdown.Item>
                           <Dropdown.Item as={Link} to="/Enquirescard">Enquiries</Dropdown.Item>
                           <Dropdown.Item onClick={() => { logOut() }}>
                             Logout

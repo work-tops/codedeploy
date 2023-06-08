@@ -111,14 +111,14 @@ function ServiceInformation() {
 
                                         <Link to="/user/sellerlist" className="text-300">
                                             <li role="button" className="text-primary">
-                                                Back
+                                                Previous
                                             </li>
                                         </Link>
 
-                                        {/* <Link to="/wishlist/seller" className="text-300"> */}
+                                        {/* <Link to="/wishlist/product" className="text-300"> */}
                                         <li role="button" onClick={toastDanger}>
                                             <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="text-white me-1" width="20" height="20" />
-                                            Mark as Favourite
+                                            <span className="me-2">Add to Wishlist</span><span>Remove From Wishlist</span>
                                         </li>
                                         {/* </Link> */}
                                         <li role="button" className="text-primary">
@@ -530,8 +530,8 @@ function ServiceInformation() {
                                                     size="sm"
                                                     style={{ color: '#003f6b' }}
                                                 >
-                                                    <Icon icon="ant-design:global-outlined" className="me-1" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" />
-                                                    Website
+                                                   <Icon className="me-1" icon="ion:copy" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" hFlip={true} />
+                                                    Copy Link
                                                 </Button>
                                             </li>
                                             <li>
@@ -559,9 +559,9 @@ function ServiceInformation() {
                                                     className="text-800 border-0 bg-transparent fw-semi-bold font-base"
                                                     size="sm"
                                                     style={{ color: '#003f6b' }}
-                                                >
-                                                    <Icon className="me-1" style={{ marginTop: '-4px' }} icon="mdi:instagram" color="#003f6b" width="20" height="20" />
-                                                    Instagram
+                                                > 
+                                                    <Icon className="me-1" icon="ri:whatsapp-fill" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" />
+                                                    Whatsapp
                                                 </Button>
                                             </li>
                                         </ul>
@@ -575,7 +575,7 @@ function ServiceInformation() {
                     {/*  */}
                 </Row>
                 <Col>
-                <Footer/>
+                    <Footer />
                 </Col>
             </Row>
 

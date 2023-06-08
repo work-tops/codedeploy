@@ -8,6 +8,7 @@ import { createData } from "../../../Services/ProxyService";
 import toast from 'react-hot-toast';
 import SocialAuthButtons from "../../TemplateAssets/authentication/SocialAuthButtons";
 import Footer from "../Footer/Footer";
+import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 
 
 function SignUpPage(hasLabel) {
@@ -61,6 +62,9 @@ function SignUpPage(hasLabel) {
     return (
         <>
             <Row className=" min-vh-100 bg-100">
+                <Col lg={12} className="mb-6">
+                    <NavbarStandard />
+                </Col>
                 <Col xs={6} className="d-none d-lg-block position-relative">
                     <div className="bg-holder" style={{ backgroundImage: `url(${worktops})` }}>
                     </div>
@@ -285,7 +289,7 @@ function SignUpPage(hasLabel) {
                         </Col>
                     </Row>
                 </Col>
-                <Col>
+                <Col lg={12} >
                     <Footer />
                 </Col>
             </Row>

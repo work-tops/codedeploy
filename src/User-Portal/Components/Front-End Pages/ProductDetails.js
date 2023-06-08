@@ -114,16 +114,16 @@ function ProductDetails() {
                                     <hr className="text-secondary text-opacity-50" />
                                     <ul className="list-unstyled d-flex flex-wrap gap-3 fs--1 fw-semi-bold text-300 mt-3 mb-0">
 
-                                        <Link to="/productlist" className="text-300">
+                                        {/* <Link to="/productlist" className="text-300"> */}
                                             <li role="button" className="text-primary">
-                                                Back
+                                                Previous
                                             </li>
-                                        </Link>
+                                        {/* </Link> */}
 
                                         {/* <Link to="/wishlist/product" className="text-300"> */}
                                         <li role="button" onClick={toastDanger}>
                                             <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="text-white me-1" width="20" height="20" />
-                                            Mark as Favourite
+                                            <span className="me-2">Add to Wishlist</span><span>Remove From Wishlist</span>
                                         </li>
                                         {/* </Link> */}
                                         {/* Wishlist Toast */}
@@ -479,7 +479,7 @@ function ProductDetails() {
                                         </Col>
                                     </Row>
                                     <hr className="border-top border-dashed" />
-                                    <h6 className="fw-bold">Share with friends</h6>
+                                    <h6 className="fw-bold">Share </h6>
                                     <div className="d-flex justify-content-start mt-4 mt-xxl-0">
                                         <ul className="list-unstyled mb-0 d-flex flex-wrap flex-xxl-column gap-3 justify-content-start">
                                             <li>
@@ -488,8 +488,8 @@ function ProductDetails() {
                                                     size="sm"
                                                     style={{ color: '#003f6b' }}
                                                 >
-                                                    <Icon icon="ant-design:global-outlined" className="me-1" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" />
-                                                    Website
+                                                    <Icon className="me-1" icon="ion:copy" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" hFlip={true} />
+                                                    Copy Link
                                                 </Button>
                                             </li>
                                             <li>
@@ -518,8 +518,8 @@ function ProductDetails() {
                                                     size="sm"
                                                     style={{ color: '#003f6b' }}
                                                 >
-                                                    <Icon className="me-1" style={{ marginTop: '-4px' }} icon="mdi:instagram" color="#003f6b" width="20" height="20" />
-                                                    Instagram
+                                                    <Icon className="me-1" icon="ri:whatsapp-fill" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" />
+                                                    Whatsapp
                                                 </Button>
                                             </li>
                                         </ul>

@@ -119,8 +119,9 @@ function Cart() {
                             </div>
                             <div className="card-footer bg-light d-flex justify-content-end">
                                 <form className="me-3">
-                                    {/* <div className="input-group input-group-sm"><input className="form-control" type="text" placeholder="Promocode" /><button className="btn btn-outline-secondary border-300 btn-sm shadow-none" type="submit">Apply</button></div> */}
-                                </form><Button as={Link} to="/checkout" className="btn btn-sm btn-primary" >Checkout</Button>
+                                <Button as={Link} to="/checkout" className="btn btn-sm btn-primary me-2" >Checkout</Button>
+                                <Button as={Link} to="/GuestCheckout" className="btn btn-sm btn-primary" >Guest Checkout</Button>
+                                </form>
                             </div>
                         </div>
                     </Col>

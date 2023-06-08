@@ -103,12 +103,8 @@ function JobDetails() {
                                 <Card.Body className="position-relative">
                                     <Row>
                                         <Col xl={12}>
+                                            <h5 className="mb-3 text-uppercase">{jobdata.project_title}</h5>
                                             <p style={{ fontSize: '14px' }} className="text-justify">{jobdata.project_description}</p>
-                                            <h6 className="text-uppercase">Skills Required</h6>
-                                            <div className='d-flex justify-content-start mt-3 mb-1'>
-                                                <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>Fabricator</span>
-                                                <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Templater</span>
-                                            </div>
                                         </Col>
                                     </Row>
                                 </Card.Body>
@@ -174,11 +170,7 @@ function JobDetails() {
                         </Col>
                         <Col lg={4}>
                             {/*  Customize Details  */}
-                            <Card className="mt-5">
-                                <Card.Header className="py-2 d-flex justify-content-between gap-1 bg-light">
-                                    <h5 className="mb-0 text-uppercase">{jobdata.project_title}</h5>
-
-                                </Card.Header>
+                            <Card className="mt-5 overflow-hidden">
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
 
@@ -231,10 +223,12 @@ function JobDetails() {
                                         <Link to="/proposallist">
                                             <p className="fw-semibold text-center" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
                                         </Link>
-                                        <Button className="border-0 text-uppercase" style={{ color: '#fff', background: '#003f6b' }} as={Link} to="/EditPostProject">
+                                        <Button className="border-0 text-uppercase me-2" style={{ color: '#fff', background: '#003f6b',fontSize:'14px' }} as={Link} to="/EditPostProject">
                                             Edit
                                         </Button>
-                                        {/* <Icon icon="ph:note-pencil" className="cursor-pointer" width="24" height="24" /> */}
+                                        <Button onClick={() => sendProposal()} className="border-0  text-uppercase" style={{ color: '#fff', fontSize: '14px', background: '#003f6b' }}>
+                                            Send Proposal
+                                        </Button>
                                     </div>
                                 </Card.Footer>
                             </Card>
@@ -268,11 +262,18 @@ function JobDetails() {
                                         </p>
                                         <div className="d-flex justify-content-center">
                                             <Button
-                                                className="bg-transparent  text-danger w-50 border-danger"
+                                                variant="falcon-default"
+                                                className=""
                                                 as={Link}
                                                 to="/wishlist/project"
                                             >
-                                                <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="me-2" color="#003f6b" width="20" height="20" />  Saved
+                                                <span className="me-2">
+                                                    <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
+                                                    Add to Wishlist
+                                                </span>
+                                                <span className="">
+                                                    <Icon icon="icon-park-solid:like" style={{ marginTop: '-5px' }} color="#df2020" width="20" height="20" /> Remove from Wishlist
+                                                </span>
                                             </Button>
                                         </div>
                                     </div>
@@ -296,12 +297,8 @@ function JobDetails() {
                                             <Icon icon="icon-park-solid:like" style={{ marginTop: '-5px' }} color="#df2020" width="20" height="20" />
                                         </p>
                                     </div>
-                                    {/* Profile Details */}
-                                    <div className="d-flex justify-content-center">
-                                        <Button onClick={() => sendProposal()} className="border-0 mt-3 text-uppercase" style={{ color: '#fff', fontSize: '14px', background: '#003f6b' }}>
-                                            Send Proposal
-                                        </Button>
-                                    </div>
+
+
                                 </Card.Body>
                                 {/* <Card.Footer className="bg-light">
                                 </Card.Footer> */}
@@ -310,7 +307,7 @@ function JobDetails() {
 
                             {/* Report This Project */}
                             {user?.role == "Freelancer" &&
-                                <Card className="mt-3 mb-3 py-2">
+                                <Card className="mt-3 mb-3">
                                     <Card.Header as="h5" className="text-uppercase bg-light" >
                                         Report this Project
                                     </Card.Header>

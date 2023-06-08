@@ -7,11 +7,10 @@ import { Icon } from "@iconify/react";
 import { useDropzone } from 'react-dropzone';
 import cloudUpload from '../../../TemplateAssets/assets/cloud-upload.svg';
 import { getSize } from '../../../TemplateAssets/helpers/utils';
-import { Link } from "react-router-dom";
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
+import { Link } from "react-router-dom";
 
-function NewEstimate() {
-
+function EditEstimate() {
     const [cover, setCover] = useState();
 
     const { getRootProps, getInputProps } = useDropzone({
@@ -24,16 +23,27 @@ function NewEstimate() {
             );
         }
     });
-    // 
-    const [show1, setShow1] = useState(false);
 
-    const handleClose1 = () => setShow1(false);
-    const handleShow1 = () => setShow1(true);
 
-    // 
     const [showModal, setShowModal] = useState(false);
+    const [newVatName, setNewVatName] = useState('');
+    const [newVatRate, setNewVatRate] = useState('');
+
+
+    const handleAddVat = () => {
+        setShowModal(true);
+    };
 
     const handleModalClose = () => {
+        setShowModal(false);
+    };
+
+
+    const handleSaveNewVat = () => {
+        if (newVatName && newVatRate) {
+            const newVatOption = `${newVatName} (${newVatRate}%)`;
+            vatOptions.push(newVatOption);
+        }
         setShowModal(false);
     };
 
@@ -45,6 +55,15 @@ function NewEstimate() {
     const handleVatChange = (selected) => {
         setSelectedVat(selected);
     };
+
+
+    // 
+    const [show1, setShow1] = useState(false);
+
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
+
+    // 
 
     return (
         <>
@@ -65,15 +84,15 @@ function NewEstimate() {
                                             <Form.Label className="text-uppercase">Customer Name<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 type="text"
+                                                value={"Peter Leverkus"}
                                                 disabled
-                                                placeholder="Name of the Customer Who Raised the Enquiry"
                                             />
                                         </Form.Group>
                                         <Form.Group className="mb-3" as={Col} lg={6}>
                                             <Form.Label className="text-uppercase">Trader<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 disabled
-                                                placeholder="Name of the Trader Who Viewing this Enquiry"
+                                                value={"Daniel"}
                                                 type="text" />
                                         </Form.Group>
                                     </Row>
@@ -82,7 +101,7 @@ function NewEstimate() {
                                             <Form.Label className="text-uppercase">Enquiry Number<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 disabled
-                                                placeholder="Eg : #2737"
+                                                value={"#2737"}
                                                 type="text" />
                                         </Form.Group>
 
@@ -91,7 +110,7 @@ function NewEstimate() {
                                             <Form.Control
                                                 type="text"
                                                 disabled
-                                                placeholder="MAI/EST/2737"
+                                                value={"MAI/EST/2737"}
                                             />
                                         </Form.Group>
                                     </Row>
@@ -119,7 +138,7 @@ function NewEstimate() {
                                             <Form.Control
                                                 type="text"
                                                 disabled
-                                                placeholder="Eg : Quartz"
+                                                value="Quartz"
                                             />
                                         </Form.Group>
 
@@ -128,7 +147,7 @@ function NewEstimate() {
                                             <Form.Control
                                                 type="text"
                                                 disabled
-                                                placeholder="Eg : Kitchen Worktops"
+                                                value="Kitchen Worktops"
                                             />
                                         </Form.Group>
 
@@ -137,7 +156,7 @@ function NewEstimate() {
                                             <Form.Control
                                                 type="text"
                                                 disabled
-                                                placeholder="Eg : 20 MM"
+                                                value="20 MM"
 
                                             />
                                         </Form.Group>
@@ -147,7 +166,8 @@ function NewEstimate() {
                                         <Form.Control
                                             as="textarea"
                                             rows={3}
-
+                                            value="Lorem Ipsum is simply dummy text of the printing and typesetting
+                                             industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
                                         />
                                     </Form.Group>
                                     {/*  */}
@@ -169,38 +189,27 @@ function NewEstimate() {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea style={{ width: '300px' }} className="form-control resize-none" rows="3"></textarea></td>
-                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className="form-control  resize-none" /></td>
-                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
-                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
+                                            <td>
+                                                <textarea style={{ width: '300px' }} className="form-control resize-none" rows="3">
+                                                    CALACATTA LIGHT QUARTZ
+                                                    Dimensions 20 MM - 30 MM
+                                                </textarea>
+                                            </td>
+                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} value={"2"} className="form-control  resize-none" /></td>
+                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} value={"307.21"} className=" form-control  resize-none" /></td>
+                                            <td style={{ width: '8%' }}><input type="number" style={{ width: '100px' }} value={"20"} className=" form-control  resize-none" /></td>
                                             <td style={{ width: '0%' }}>
                                                 <Typeahead
                                                     id="vatTypeahead"
                                                     style={{ width: '200px' }}
                                                     options={vatOptions}
                                                     selected={selectedVat}
+                                                    placeholder=" Select VAT"
                                                     onChange={handleVatChange}
                                                 />
                                             </td>
-                                            <td style={{ width: '0%' }}>0.00</td>
+                                            <td style={{ width: '8%', fontWeight: 'bold' }}>£ 614.42</td>
                                             <td style={{ width: '0%' }}><Icon className="cursor-pointer hover-danger" icon="ic:baseline-delete" width="24" height="24" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td style={{ width: '0%' }}><textarea style={{ width: '300px' }} className="form-control resize-none" rows="3"></textarea></td>
-                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
-                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
-                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
-                                            <td>
-                                                <Typeahead
-                                                    id="vatTypeahead"
-                                                    style={{ width: '200px' }}
-                                                    options={vatOptions}
-                                                    selected={selectedVat}
-                                                    onChange={handleVatChange}
-                                                />
-                                            </td>
-                                            <td style={{ width: '0%' }}>0.00</td>
-                                            <td style={{ width: '0%' }}><Icon className="hover-danger cursor-pointer" icon="ic:baseline-delete" width="24" height="24" /></td>
                                         </tr>
 
                                     </tbody>
@@ -209,7 +218,7 @@ function NewEstimate() {
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <Button className="btn-success me-2">Add New Item</Button>
-                                        <Button >Add VAT</Button>
+                                        <Button onClick={handleAddVat}>Add VAT</Button>
 
                                         <Modal show={showModal} onHide={handleModalClose}>
                                             <Modal.Header closeButton>
@@ -235,7 +244,7 @@ function NewEstimate() {
                                                 <Button variant="secondary" onClick={handleModalClose}>
                                                     Cancel
                                                 </Button>
-                                                <Button variant="primary" onClick={handleModalClose}>
+                                                <Button variant="primary" onClick={handleSaveNewVat}>
                                                     Save
                                                 </Button>
                                             </Modal.Footer>
@@ -275,7 +284,7 @@ function NewEstimate() {
                                                         <h6>Sub Total</h6>
                                                     </div>
                                                     <div className="col-8 text-end">
-                                                        <h6>0.00</h6>
+                                                        <h6>£ 614.42</h6>
                                                     </div>
                                                 </div>
                                                 <div className="row mb-3">
@@ -288,7 +297,7 @@ function NewEstimate() {
                                                                 <h6 className="mb-2">
                                                                     Shipping charges
                                                                 </h6>
-                                                                <input style={{ width: '100px' }} className="form-control" />
+                                                                <input style={{ width: '100px' }} value={"20"} className="form-control" />
                                                             </div>
                                                         </div>
                                                         <p role="button" className="text-primary">Apply VAT on Shipping Charge</p>
@@ -302,22 +311,20 @@ function NewEstimate() {
                                                         />
                                                     </div>
                                                     <div className="col-8 text-end">
-                                                        <h6 >0.00</h6>
+                                                        <h6 >£ 100.00</h6>
                                                     </div>
                                                 </div>
                                                 <div className="row">
                                                     <div className="col-5 mb-3">
                                                         <div className="col-12">
-                                                            <input style={{ width: '150px' }} placeholder="Price Match" className="form-control" />
-                                                            {/* <div className="row mb-3">
-                                                            </div> */}
-                                                            {/* <input value="Price Match" style={{ width: '150px' }} className="form-control" /> */}
+                                                            <input style={{ width: '150px' }} value={"Price Match"} placeholder="Price Match" className="form-control" />
+
 
                                                         </div>
                                                     </div>
 
                                                     <div className="col-7 text-end">
-                                                        <h6 >0.00</h6>
+                                                        <h6 >£ 614.42</h6>
                                                     </div>
                                                 </div>
                                                 <div className="row mb-3">
@@ -325,7 +332,7 @@ function NewEstimate() {
                                                         <h5>Total{''}(£)</h5>
                                                     </div>
                                                     <div className="col-4 text-end">
-                                                        <h6 className="fw-bold">0.00</h6>
+                                                        <h6 className="fw-bold">£ 714.42</h6>
                                                     </div>
                                                 </div>
                                                 <div className="row mb-3">
@@ -425,7 +432,7 @@ function NewEstimate() {
                                         {/* Upload Samples */}
                                     </div>
                                 </div>
-                                <Button as={Link} to="/Estimates" className="btn-secondary me-2" type="submit">Save as Draft</Button>
+                                <Button as={Link} to="/Estimates" className="btn-primary me-2" type="submit">Save</Button>
                                 <Button as={Link} to="/Estimates" className="btn-success me-2" type="submit">Save & Send</Button>
                                 <Button variant="danger" onClick={handleShow1}>
                                     Discard
@@ -435,33 +442,30 @@ function NewEstimate() {
                         </Card>
                     </Col>
                 </div>
-
-                {/*  */}
-                <div>
-
-
-                    <Modal show={show1} onHide={handleClose1}>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Warning</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            Are you sure you want to discard this page?
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="secondary" onClick={handleClose1}>
-                                No
-                            </Button>
-                            <Button as={Link} to="/Estimates" variant="danger">
-                                Yes
-                            </Button>
-                        </Modal.Footer>
-                    </Modal>
-                </div>
-                {/*  */}
-
-
             </Row >
+            {/*  */}
+            {/*  */}
+            <div>
+                <Modal show={show1} onHide={handleClose1}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Warning</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        Are you sure you want to discard this page?
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose1}>
+                            No
+                        </Button>
+                        <Button as={Link} to="/Estimates" variant="danger">
+                            Yes
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+            {/*  */}
+            {/*  */}
         </>
     )
 }
-export default NewEstimate
+export default EditEstimate

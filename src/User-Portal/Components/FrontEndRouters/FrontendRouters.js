@@ -88,6 +88,10 @@ import Carrer from "../Footer/Carrer";
 import FAQ from "../Footer/FAQ";
 import About from "../Footer/Aboutus";
 import NewEstimate from "../Front-End Pages/Profile/NewEstimate";
+import AllSellerList from "../Front-End Pages/Lists/AllServiceProviderList";
+import Estimate from "../Front-End Pages/Estimate";
+import EditEstimate from "../Front-End Pages/Profile/EditEstimate";
+import GuestCheckout from "../Front-End Pages/Cart/GuestCheckout";
 
 const FrontEndRouters = () => {
     return (
@@ -202,6 +206,10 @@ const FrontEndRouters = () => {
             <Route path="/EditProposal"><EditProposal /></Route>
             <Route path="/InvoiceCheckout"><InvoiceCheckout /></Route>
             <Route path="/NewEstimate"><NewEstimate /></Route>
+            <Route path="/EditEstimate"><EditEstimate /></Route>
+            <Route path="/Allsellerlist"><AllSellerList/></Route>
+            <Route path="/Estimates"><Estimate/></Route>
+            <Route path="/GuestCheckout"><GuestCheckout/></Route>
             {/* New Pages */}
         </Switch>
 
