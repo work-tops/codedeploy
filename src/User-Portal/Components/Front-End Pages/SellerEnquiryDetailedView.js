@@ -1,13 +1,14 @@
-import { useState, React } from "react";
+import { useState, React,useRef } from "react";
 import { Col, Container, Row, Card, Button, Form, Modal } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile from '../Projectimages/Handyman.jpg'
 import { Link } from "react-router-dom";
+import { Editor } from "@tinymce/tinymce-react";
 import file from '../Projectimages/BathroomFitting.jpg'
 function SellerEnquiryDetails() {
     const [show, setShow] = useState(false);
-
+    const editorRef = useRef(null);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
@@ -119,18 +120,16 @@ function SellerEnquiryDetails() {
                                 </Card.Body>
                             </Card>
                             <Card className="mt-3 mb-2">
-                                <div className='bg-white  p-3 d-flex justify-content-between  text-uppercase'>
-                                    <h6 style={{ fontSize: '16px' }} className="text-uppercase mt-3">
-                                        Message
-                                    </h6>
-                                    <div>
-                                        <Button as={Link} to="/NewEstimate" style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
-                                            Create Estimate
-                                        </Button>
-                                        <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
-                                            Reply the Enquiry
-                                        </Button>
-                                    </div>
+                                <div className='bg-light mb-3 p-3 d-flex justify-content-between text-uppercase'>
+                                    <h5 className=" text-uppercase fs-0">Message</h5>
+                                </div>
+                                <div className="d-flex justify-content-end align-items-end">
+                                    <Button as={Link} to="/NewEstimate" style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
+                                        Create Estimate
+                                    </Button>
+                                    <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
+                                        Reply the Enquiry
+                                    </Button>
                                 </div>
                                 <Card.Body className="position-relative">
                                     <Row>
@@ -139,12 +138,34 @@ function SellerEnquiryDetails() {
                                             <>
                                                 <Form>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Control
+                                                        {/* <Form.Control
                                                             as="textarea" id="ask_question"
                                                             placeholder='Type Your Message Here'
-                                                            rows={5} />
+                                                            rows={5} /> */}
+                                                        <Editor
+                                                            onInit={(evt, editor) => editorRef.current = editor}
+                                                            initialValue=""
+                                                            init={{
+                                                                height: 200,
+
+                                                                menubar: false,
+                                                                plugins: [
+                                                                    'advlist autolink lists link image charmap print preview anchor',
+                                                                    'searchreplace visualblocks code fullscreen', 'image code',
+                                                                    'insertdatetime media table paste code help wordcount'
+                                                                ],
+                                                                toolbar: 'undo redo | formatselect | ' +
+                                                                    'bold italic  | alignleft aligncenter ' +
+                                                                    'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                                    'removeformat | image code',
+                                                                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                            }}
+                                                        />
                                                     </Form.Group>
-                                                    <div className="d-flex justify-content-end mb-3">
+                                                    <div className="d-flex gap-2 justify-content-end mb-3">
+                                                        <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                            Attachments
+                                                        </Button>
                                                         <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
                                                             Send
                                                         </Button>
@@ -154,6 +175,7 @@ function SellerEnquiryDetails() {
 
                                         </Col>
                                     </Row>
+
 
                                     <Card className="mb-3" style={{ background: '#f3f3f3' }}>
                                         <Card.Body>

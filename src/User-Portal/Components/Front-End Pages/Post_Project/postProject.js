@@ -266,7 +266,7 @@ const PostProject = () => {
               <Card.Header as="h4" className='bg-light text-uppercase text-justify '>Post A Project</Card.Header>
               <Card.Body className="bg-white">
                 <Row className="gx-2 gy-3">
-                  <p className='mt-2 me-2 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that freelancers can find your project</p>
+                  <p className='mt-2 me-2 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that traders can find your project</p>
 
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
@@ -330,7 +330,7 @@ const PostProject = () => {
                         onChange={(e) => { handleChange(e) }}
                         placeholder="Need a Fabricator who's Specialize in this field"
                         rows={8} />
-                      <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our freelancers</p>
+                      <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our Traders</p>
                     </Form.Group>
                   </Col>
                   {/* Upload Samples */}
@@ -538,7 +538,7 @@ const PostProject = () => {
                         <Form.Check.Label
                           style={{ fontSize: '14px' }}
                         >
-                          <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
+                          <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All Traders can view the project post and send proposals)</span></span>
                         </Form.Check.Label>
                       </Form.Check>
                     </Form.Group>
@@ -555,7 +555,7 @@ const PostProject = () => {
                         <Form.Check.Label
                           style={{ fontSize: '14px' }}
                         >
-                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only freelancers that you specifically invite can view the
+                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only Traders that you specifically invite can view the
                             <p className="opt-span">project post and send proposal)</p></span></span>
                         </Form.Check.Label>
                       </Form.Check>
@@ -590,6 +590,9 @@ const PostProject = () => {
                       />
                     </Form.Group>
                   </Col>
+                  <Form.Group className=''>
+                  <Form.Check label="I Agree the Terms and conditions"/>
+                  </Form.Group>
                   <Col lg={12} className=''>
                     <div className='d-flex justify-content-start'>
                       <Button
@@ -750,7 +753,7 @@ const PostProject = () => {
                         <Form.Check.Label
                           style={{ fontSize: '14px' }}
                         >
-                          <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
+                          <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All Traders can view the project post and send proposals)</span></span>
                         </Form.Check.Label>
                       </Form.Check>
                     </Form.Group>
@@ -767,7 +770,7 @@ const PostProject = () => {
                         <Form.Check.Label
                           style={{ fontSize: '14px' }}
                         >
-                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only freelancers that you specifically invite can view the
+                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only Traders that you specifically invite can view the
                             <p className="opt-span">project post and send proposal)</p></span></span>
                         </Form.Check.Label>
                       </Form.Check>

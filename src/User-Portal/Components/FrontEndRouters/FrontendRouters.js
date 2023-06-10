@@ -92,6 +92,7 @@ import AllSellerList from "../Front-End Pages/Lists/AllServiceProviderList";
 import Estimate from "../Front-End Pages/Estimate";
 import EditEstimate from "../Front-End Pages/Profile/EditEstimate";
 import GuestCheckout from "../Front-End Pages/Cart/GuestCheckout";
+import OwnerEstimate from "../Front-End Pages/OwnerEstimate";
 
 const FrontEndRouters = () => {
     return (
@@ -136,6 +137,7 @@ const FrontEndRouters = () => {
             {/* <Route path='/sellerEnquirescard'><SellerEnquiryCard /></Route> */}
             <Route path="/sellerEnquireDetails"><SellerEnquiryDetails /></Route>
             {/* Enquries */}
+
             {/* Quote */}
             <Route path="/RequestQuote"><RequestQuote /></Route>
             <Route path="/GetQuote"><GetQuote /></Route>
@@ -210,6 +212,7 @@ const FrontEndRouters = () => {
             <Route path="/Allsellerlist"><AllSellerList/></Route>
             <Route path="/Estimates"><Estimate/></Route>
             <Route path="/GuestCheckout"><GuestCheckout/></Route>
+            <Route path="/project-owner-estimate"><OwnerEstimate/></Route>
             {/* New Pages */}
         </Switch>
 

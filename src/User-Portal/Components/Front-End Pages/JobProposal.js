@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useCallback } from "react";
 import { Icon } from "@iconify/react";
 import toast, { Toaster } from 'react-hot-toast';
 import { createData } from "../../../Services/ProxyService";
@@ -98,20 +98,27 @@ function JobProposal() {
     }, [])
 
 
-    // Upload Files(Optional)
-    const [cover, setCover] = useState();
+    // Upload Img
+    const [covers, setCovers] = useState([]);
 
-    const { getRootProps, getInputProps } = useDropzone({
-        accept: 'image/*',
-        onDrop: acceptedFiles => {
-            setCover(
-                Object.assign(acceptedFiles[0], {
-                    preview: URL.createObjectURL(acceptedFiles[0])
-                })
-            );
-        }
-    });
-    // Upload Files(Optional)
+    const onDrop = useCallback((acceptedFiles) => {
+        // Map the acceptedFiles to add the preview property
+        const updatedCovers = acceptedFiles.map((file) => Object.assign(file, {
+            preview: URL.createObjectURL(file)
+        }));
+
+        setCovers((prevCovers) => [...prevCovers, ...updatedCovers]);
+    }, []);
+
+    const removeCover = (cover) => {
+        setCovers((prevCovers) => prevCovers.filter((c) => c !== cover));
+    };
+
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
+    // Upload Img
+
+
 
     return (
         <>
@@ -191,65 +198,65 @@ function JobProposal() {
                                                 rows={6} />
                                         </Form.Group>
                                         <div >
-                                            <Form.Label className="text-700 text-uppercase">
-                                                Upload File
-                                            </Form.Label>
+                                            {/* Upload Samples */}
+                                            <Col lg={12} className='me-2 mb-2 w-100'>
+                                                <Form.Label className="text-700 text-uppercase">
+                                                    Upload File
+                                                </Form.Label>
+                                                <div {...getRootProps({ className: 'dropzone-area py-6' })}>
+                                                    <input {...getInputProps()} multiple />
+                                                    <div className="fs--1">
+                                                        <img src={cloudUpload} alt="" width={20} className="me-2" />
+                                                        <span className="d-none d-lg-inline">
+                                                            Drag your images here
+                                                            <br />
+                                                            or,{' '}
+                                                        </span>
+                                                        <Button variant="link" size="sm" className="p-0 fs--1">
+                                                            Browse
+                                                        </Button>
+                                                    </div>
+                                                </div>
 
-                                            <div {...getRootProps({ className: 'dropzone-area py-6' })}>
-                                                <input {...getInputProps({ multiple: false })} />
-                                                <div className="fs--1">
-                                                    <img src={cloudUpload} alt="" width={20} className="me-2" />
-                                                    <span className="d-none d-lg-inline">
-                                                        Drag your image here
-                                                        <br />
-                                                        or,{' '}
-                                                    </span>
-                                                    <Button variant="link" size="sm" className="p-0 fs--1">
-                                                        Browse
-                                                    </Button>
-                                                </div>
-                                            </div>
-                                            {cover && (
-                                                <div className="mt-3">
-                                                    <Flex
-                                                        alignItems="center"
-                                                        className="btn-reveal-trigger"
-                                                        key={cover.path}
-                                                    >
-                                                        <Image
-                                                            rounded
-                                                            width={40}
-                                                            height={40}
-                                                            src={cover.preview}
-                                                            alt={cover.path}
-                                                        />
-                                                        <Flex
-                                                            justifyContent="between"
-                                                            direction="column"
-                                                            className="mx-2 flex-1 text-truncate"
-                                                        >
-                                                            <h6 className="text-truncate">{cover.path}</h6>
-                                                            <Flex className="position-relative" alignItems="center">
-                                                                <p className="mb-0 fs--1 text-400 line-height-1">
-                                                                    <strong>{getSize(cover.size)}</strong>
-                                                                </p>
-                                                            </Flex>
-                                                        </Flex>
-                                                        <CardDropdown>
-                                                            <div className="py-2">
-                                                                <Dropdown.Item
-                                                                    className="text-danger"
-                                                                    onClick={() => setCover()}
-                                                                >
-                                                                    Remove
-                                                                </Dropdown.Item>
+                                                {covers.length > 0 &&
+                                                    <div className="mt-3">
+                                                        {covers.map((cover) => (
+                                                            <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
+                                                                <Image
+                                                                    rounded
+                                                                    width={40}
+                                                                    height={40}
+                                                                    src={cover.preview}
+                                                                    alt={cover.path}
+                                                                />
+                                                                <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
+                                                                    <h6 className="text-truncate">{cover.path}</h6>
+                                                                    <div className="d-flex align-items-center position-relative">
+                                                                        <p className="mb-0 fs--1 text-400 line-height-1">
+                                                                            <strong>{getSize(cover.size)}</strong>
+                                                                        </p>
+                                                                    </div>
+                                                                    <h6 className="mt-2 text-primary">01/05/2023</h6>
+                                                                </div>
+                                                                <CardDropdown>
+                                                                    <div className="py-2">
+                                                                        <Dropdown.Item
+                                                                            className="text-danger"
+                                                                            onClick={() => removeCover(cover)}
+                                                                        >
+                                                                            Remove
+                                                                        </Dropdown.Item>
+                                                                    </div>
+                                                                </CardDropdown>
                                                             </div>
-                                                        </CardDropdown>
-                                                    </Flex>
-                                                </div>
-                                            )}
-                                            <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
-                                            <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
+                                                        ))}
+                                                    </div>
+                                                }
+
+                                                <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
+                                                <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
+                                            </Col>
+                                            {/* Upload Samples */}
 
                                         </div>
                                         <div className="d-flex justify-content-end">

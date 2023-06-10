@@ -6,6 +6,7 @@ import ProjectOwnerLandingPage from '../ProjectOwnerLandingPage'
 import { Icon } from "@iconify/react";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 
+
 function OpenProjectCard() {
 
     const [jobs, setJobs] = useState([])
@@ -34,6 +35,9 @@ function OpenProjectCard() {
                             <Form.Select>
                                 <option>All</option>
                                 <option>Open</option>
+                                {/* <Link to="/workstreamcard"> */}
+                                <option>In Progress</option>
+                                {/* </Link> */}
                                 <option>Expired</option>
                             </Form.Select>
                         </div>

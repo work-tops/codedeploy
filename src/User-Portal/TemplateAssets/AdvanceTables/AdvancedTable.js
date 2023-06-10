@@ -7,7 +7,9 @@ import product_image from "../Images/product_image.png"
 import CardDropdown from "../common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 import { getAllData } from "../../../Services/ProxyService";
+
 const columns = [
     {
         accessor: 'productId',
@@ -59,7 +61,7 @@ const data = [
         email: 'anna@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -78,7 +80,7 @@ const data = [
         email: 'homer@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge p-2 bg-warning">Approval Pending</span>,
+        status: <span className="badge bg-warning">Approval Pending</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -97,7 +99,7 @@ const data = [
         email: 'oscar@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge p-2 bg-secondary">Disabled</span>,
+        status: <span className="badge bg-secondary">Disabled</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -116,7 +118,7 @@ const data = [
         email: 'emily@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -135,7 +137,7 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -153,7 +155,7 @@ const data = [
         email: 'emily@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -172,7 +174,7 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -190,7 +192,7 @@ const data = [
         email: 'emily@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -209,7 +211,7 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -227,7 +229,7 @@ const data = [
         email: 'emily@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -246,7 +248,7 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -265,7 +267,7 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -285,7 +287,7 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -305,7 +307,7 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -399,7 +401,7 @@ const AdvancedTable = () => {
         email: product.seller_email,
         price: `£${product.variant[0].pricing.price}`,
         quantity: `${product.variant[0].inventory.quantity} Pcs`,
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item as={Link} to="/user/addproduct" >Edit</Dropdown.Item>

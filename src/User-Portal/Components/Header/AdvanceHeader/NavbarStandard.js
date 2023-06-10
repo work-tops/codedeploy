@@ -147,16 +147,16 @@ const NavbarStandard = () => {
                         <Nav.Link
                           className='mt-2 text-uppercase'
                           style={{ fontSize: '12px' }}>
-                          Project Owner
+                          Trader
                         </Nav.Link>
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
                         <div className="bg-white rounded-2 py-2 dark__bg-1000">
-                          <Link to="/projectowner">
+                          <Link to="/freelancer/true">
                             <Dropdown.Item href="#!">Login</Dropdown.Item>
                           </Link>
-                          <Link to="/project-owner-register">
+                          <Link to="/freelancer/false">
                             <Dropdown.Item href="#!">Register</Dropdown.Item>
                           </Link>
                         </div>
@@ -173,22 +173,23 @@ const NavbarStandard = () => {
                         <Nav.Link
                           className='mt-2 text-uppercase'
                           style={{ fontSize: '12px' }}>
-                          Freelancer
+                          Project Owner
                         </Nav.Link>
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
                         <div className="bg-white rounded-2 py-2 dark__bg-1000">
-                          <Link to="/freelancer/true">
+                          <Link to="/projectowner">
                             <Dropdown.Item href="#!">Login</Dropdown.Item>
                           </Link>
-                          <Link to="/freelancer/false">
+                          <Link to="/project-owner-register">
                             <Dropdown.Item href="#!">Register</Dropdown.Item>
                           </Link>
                         </div>
                       </Dropdown.Menu>
                     </Dropdown>
                   </div>
+
                 </>
               }
 
@@ -238,7 +239,7 @@ const NavbarStandard = () => {
                 </Dropdown>
               </div>
               {/* Cart */}
-              <div style={{marginTop:'10px'}}>
+              <div style={{ marginTop: '10px' }}>
                 <Link to="/Cart">
                   <Icon icon="ic:round-shopping-cart" color="white" width="24" height="24" />
                   {/* <Badge pill variant="danger" className="ml-1">
@@ -378,10 +379,11 @@ const NavbarStandard = () => {
                           {id == 3 && <Dropdown.Item as={Link} to="/proposalcard">Proposals</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/InvoiceFreelancerCard">Invoice</Dropdown.Item>}
                           {id == 2 && <Dropdown.Item as={Link} to="/InvoicedueCard">Invoice</Dropdown.Item>}
+                          {id == 3 && <Dropdown.Item as={Link} to="/Estimates">Estimates</Dropdown.Item>}
+                          {id == 2 && <Dropdown.Item as={Link} to="/project-owner-estimate">Estimates</Dropdown.Item>}
                           {/* <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item> */}
                           {/* <Dropdown.Divider /> */}
                           {id == 3 && <Dropdown.Item as={Link} to="/FreelancerEditProfile">Settings</Dropdown.Item>}
-                          <Dropdown.Item as={Link} to="/Estimates">Estimates</Dropdown.Item>
                           <Dropdown.Item as={Link} to="/Enquirescard">Enquiries</Dropdown.Item>
                           <Dropdown.Item onClick={() => { logOut() }}>
                             Logout

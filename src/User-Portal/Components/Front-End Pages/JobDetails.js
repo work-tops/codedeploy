@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Menubar from "../Menubar/Menubar";
 import JobDetailsPost from "../Post/JobDetailsPost";
 import Footer from "../Footer/Footer";
+import { Editor } from '@tinymce/tinymce-react';
 import newsfeed from "../Images/Newsfeed.jpg"
 import currency from "../Images/Pound Currency.jpg"
 import { Link, useParams, useHistory } from "react-router-dom";
@@ -87,6 +88,9 @@ function JobDetails() {
     const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
     console.log(daysDiff);
 
+    // 
+    const editorRef = useRef(null);
+
     return (
         <>
 
@@ -109,17 +113,17 @@ function JobDetails() {
                                     </Row>
                                 </Card.Body>
                             </Card>
-                            <Card className="mt-3 mb-2">
-                                {user?.role == "Freelancer" &&
-                                    <Card.Header className='bg-white   d-flex justify-content-between text-uppercase'>
-                                        <h5 className="mt-3 me-1">
-                                            Clarification Board
-                                        </h5>
-                                        <Button onClick={showboard} style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
-                                            ask a question
-                                        </Button>
-                                    </Card.Header>
-                                }
+
+                            {user?.role == "Freelancer" && <Card className="mt-3 mb-2">
+                                <Card.Header className='bg-white d-flex justify-content-between text-uppercase'>
+                                    <h5 className="mt-3 me-1">
+                                        Clarification Board
+                                    </h5>
+                                    <Button onClick={showboard} style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
+                                        ask a question
+                                    </Button>
+                                </Card.Header>
+
 
                                 <Card.Body className="position-relative">
                                     <Row>
@@ -128,14 +132,35 @@ function JobDetails() {
                                                 <>
                                                     <Form>
                                                         <Form.Group className="mb-3">
-                                                            <Form.Control
+                                                            {/* <Form.Control
                                                                 as="textarea" id="ask_question"
                                                                 placeholder='Type Your Message Here'
-                                                                rows={5} />
+                                                                rows={5} /> */}
+                                                            <Editor
+                                                                onInit={(evt, editor) => editorRef.current = editor}
+                                                                initialValue=""
+                                                                init={{
+                                                                    height: 200,
+                                                                    menubar: false,
+                                                                    // plugins: [
+                                                                    //     'advlist autolink lists link image charmap print preview anchor',
+                                                                    //     'searchreplace visualblocks code fullscreen',
+                                                                    //     'insertdatetime media table paste code help wordcount'
+                                                                    // ],
+                                                                    toolbar: 'undo redo | formatselect | ' +
+                                                                        'bold italic  | alignleft aligncenter ' +
+                                                                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                                        'removeformat ',
+                                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                                }}
+                                                            />
                                                         </Form.Group>
-                                                        <div className="d-flex justify-content-end mb-3">
-                                                            <Button as={Link} to="/freelancer/true" onClick={() => { askaQuestion() }} style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
-                                                                Submit
+                                                        <div className="d-flex gap-2 justify-content-end mb-3">
+                                                            <Button id="FileUpload1" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                                Attachments
+                                                            </Button>
+                                                            <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                                Send
                                                             </Button>
                                                         </div>
                                                     </Form>
@@ -167,6 +192,7 @@ function JobDetails() {
 
                                 </Card.Body>
                             </Card>
+                            }
                         </Col>
                         <Col lg={4}>
                             {/*  Customize Details  */}
@@ -223,7 +249,7 @@ function JobDetails() {
                                         <Link to="/proposallist">
                                             <p className="fw-semibold text-center" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
                                         </Link>
-                                        <Button className="border-0 text-uppercase me-2" style={{ color: '#fff', background: '#003f6b',fontSize:'14px' }} as={Link} to="/EditPostProject">
+                                        <Button className="border-0 text-uppercase me-2" style={{ color: '#fff', background: '#003f6b', fontSize: '14px' }} as={Link} to="/EditPostProject">
                                             Edit
                                         </Button>
                                         <Button onClick={() => sendProposal()} className="border-0  text-uppercase" style={{ color: '#fff', fontSize: '14px', background: '#003f6b' }}>

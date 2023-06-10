@@ -32,10 +32,14 @@ function Footer() {
                                     </li>
                                     <li>
                                         <Link to="/aboutus">
-                                        <a href="#">About us</a>
+                                            <a href="#">About us</a>
                                         </Link>
-                                        </li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Contact us</a></li>
+                                    </li>
+                                    <li>
+                                        <Link to="/contactus">
+                                            <a href="#">Contact us</a>
+                                        </Link>
+                                    </li>
                                     <li>
                                         <Link to="/carrer">
                                             <a >Carrer</a>

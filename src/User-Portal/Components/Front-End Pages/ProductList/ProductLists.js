@@ -156,7 +156,7 @@ function ProductList() {
                                         onChange={handleToggle}
                                     /> */}
                                     {/* <Form.Check type="checkbox" label="All Products" className="mb-0"/> */}
-                                    <Form.Check type="checkbox" label="Offers" className="mb-0"/>
+                                    <Form.Check type="checkbox" label="Offers" className="mb-0" />
                                 </Card.Body>
                             </Card>
                             <Card className="mt-3">
@@ -241,14 +241,14 @@ function ProductList() {
                                                 <Col xs="auto" className="p-0">
                                                     <Row className="g-2 align-items-center">
                                                         <div className="d-flex align-items-center">
-                                                            <small style={{fontSize:'16px'}} className="fw-semi-bold me-2 d-lg-block lh-1">Sort By:</small>
+                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold me-2 d-lg-block lh-1">Sort By:</small>
                                                             <div>
-                                                                <Form.Select style={{fontSize:'14px'}}>
-                                                                    <option style={{fontSize:'14px'}}>Recent Products</option>
-                                                                    <option style={{fontSize:'14px'}}>Old Products</option>
+                                                                <Form.Select style={{ fontSize: '14px' }}>
+                                                                    <option style={{ fontSize: '14px' }}>Recent Products</option>
+                                                                    <option style={{ fontSize: '14px' }}>Old Products</option>
                                                                 </Form.Select>
                                                             </div>
-                                                            <small style={{fontSize:'16px'}} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
+                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
                                                             <div className="d-flex">
                                                                 <div onClick={() => { setIsList(false) }}
                                                                     className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
@@ -432,10 +432,11 @@ function ProductList() {
                                                                             <Button
                                                                                 size="md"
                                                                                 variant="falcon-default"
-                                                                                className="fs--1 mt-3 mb-3 text-600 white-space-nowrap w-100"
+                                                                                className="fs--1 mb-3 mt-4 text-600 white-space-nowrap w-100"
                                                                                 onClick={toastDanger}
                                                                             >
-                                                                                <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" /><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" /> Add to Wishlist
+                                                                                <span className="me-1"><Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />Add to Wishlist </span>
+                                                                                <span className="d-block"><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />Remove from Wishlist</span>
                                                                             </Button>
                                                                             {/* </Link> */}
 

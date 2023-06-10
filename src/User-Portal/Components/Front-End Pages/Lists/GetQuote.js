@@ -1,4 +1,4 @@
-import { useState, React } from "react";
+import { useState, React, useCallback } from "react";
 import { Row, Col, Card, Form, Button, Container, Image, Dropdown } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Link } from "react-router-dom";
@@ -11,19 +11,26 @@ import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 
 function GetQuote() {
 
-    // Upload Files(Optional)
-    const [cover, setCover] = useState();
+    // Upload Img
+    const [covers, setCovers] = useState([]);
 
-    const { getRootProps, getInputProps } = useDropzone({
-        accept: 'image/*',
-        onDrop: acceptedFiles => {
-            setCover(
-                Object.assign(acceptedFiles[0], {
-                    preview: URL.createObjectURL(acceptedFiles[0])
-                })
-            );
-        }
-    });
+    const onDrop = useCallback((acceptedFiles) => {
+        // Map the acceptedFiles to add the preview property
+        const updatedCovers = acceptedFiles.map((file) => Object.assign(file, {
+            preview: URL.createObjectURL(file)
+        }));
+
+        setCovers((prevCovers) => [...prevCovers, ...updatedCovers]);
+    }, []);
+
+    const removeCover = (cover) => {
+        setCovers((prevCovers) => prevCovers.filter((c) => c !== cover));
+    };
+
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
+    // Upload Img
+
 
     return (
         <>
@@ -75,13 +82,12 @@ function GetQuote() {
                                                     <Form.Label className="fw-semibold text-uppercase text-900">
                                                         Attach Kitchen Plan
                                                     </Form.Label>
-
                                                     <div {...getRootProps({ className: 'dropzone-area py-6' })}>
-                                                        <input {...getInputProps({ multiple: false })} />
+                                                        <input {...getInputProps()} multiple />
                                                         <div className="fs--1">
                                                             <img src={cloudUpload} alt="" width={20} className="me-2" />
                                                             <span className="d-none d-lg-inline">
-                                                                Drag your image here
+                                                                Drag your images here
                                                                 <br />
                                                                 or,{' '}
                                                             </span>
@@ -90,45 +96,42 @@ function GetQuote() {
                                                             </Button>
                                                         </div>
                                                     </div>
-                                                    {cover && (
+
+                                                    {covers.length > 0 &&
                                                         <div className="mt-3">
-                                                            <Flex
-                                                                alignItems="center"
-                                                                className="btn-reveal-trigger"
-                                                                key={cover.path}
-                                                            >
-                                                                <Image
-                                                                    rounded
-                                                                    width={40}
-                                                                    height={40}
-                                                                    src={cover.preview}
-                                                                    alt={cover.path}
-                                                                />
-                                                                <Flex
-                                                                    justifyContent="between"
-                                                                    direction="column"
-                                                                    className="mx-2 flex-1 text-truncate"
-                                                                >
-                                                                    <h6 className="text-truncate">{cover.path}</h6>
-                                                                    <Flex className="position-relative" alignItems="center">
-                                                                        <p className="mb-0 fs--1 text-400 line-height-1">
-                                                                            <strong>{getSize(cover.size)}</strong>
-                                                                        </p>
-                                                                    </Flex>
-                                                                </Flex>
-                                                                <CardDropdown>
-                                                                    <div className="py-2">
-                                                                        <Dropdown.Item
-                                                                            className="text-danger"
-                                                                            onClick={() => setCover()}
-                                                                        >
-                                                                            Remove
-                                                                        </Dropdown.Item>
+                                                            {covers.map((cover) => (
+                                                                <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
+                                                                    <Image
+                                                                        rounded
+                                                                        width={40}
+                                                                        height={40}
+                                                                        src={cover.preview}
+                                                                        alt={cover.path}
+                                                                    />
+                                                                    <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
+                                                                        <h6 className="text-truncate">{cover.path}</h6>
+                                                                        <div className="d-flex align-items-center position-relative">
+                                                                            <p className="mb-0 fs--1 text-400 line-height-1">
+                                                                                <strong>{getSize(cover.size)}</strong>
+                                                                            </p>
+                                                                        </div>
+                                                                        <h6 className="mt-2 text-primary">01/05/2023</h6>
                                                                     </div>
-                                                                </CardDropdown>
-                                                            </Flex>
+                                                                    <CardDropdown>
+                                                                        <div className="py-2">
+                                                                            <Dropdown.Item
+                                                                                className="text-danger"
+                                                                                onClick={() => removeCover(cover)}
+                                                                            >
+                                                                                Remove
+                                                                            </Dropdown.Item>
+                                                                        </div>
+                                                                    </CardDropdown>
+                                                                </div>
+                                                            ))}
                                                         </div>
-                                                    )}
+                                                    }
+
                                                     <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
                                                     <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
                                                 </div>
@@ -137,7 +140,7 @@ function GetQuote() {
 
                                                 <Form.Group className="mb-3">
                                                     <Form.Label className="fw-semibold text-uppercase text-900">
-                                                    More Informations<span className="ms-1 text-danger">*</span>
+                                                        More Informations<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
                                                     <Form.Control as="textarea" rows={5} />
                                                 </Form.Group>

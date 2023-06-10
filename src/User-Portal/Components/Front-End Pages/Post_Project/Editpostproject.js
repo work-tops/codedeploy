@@ -1,4 +1,4 @@
-import { React, useState } from "react"
+import { React, useState, useCallback } from "react"
 import {
     Col,
     Form,
@@ -20,20 +20,25 @@ import file from '../../Projectimages/BathroomFitting.jpg'
 
 function Editpostproject() {
 
-    const [cover, setCover] = useState();
+    // Upload Img
+    const [covers, setCovers] = useState([]);
 
-    const { getRootProps, getInputProps } = useDropzone({
-        accept: 'image/*',
-        onDrop: acceptedFiles => {
-            setCover(
-                Object.assign(acceptedFiles[0], {
-                    preview: URL.createObjectURL(acceptedFiles[0])
-                })
-            );
-        }
-    });
+    const onDrop = useCallback((acceptedFiles) => {
+        // Map the acceptedFiles to add the preview property
+        const updatedCovers = acceptedFiles.map((file) => Object.assign(file, {
+            preview: URL.createObjectURL(file)
+        }));
 
-    // 
+        setCovers((prevCovers) => [...prevCovers, ...updatedCovers]);
+    }, []);
+
+    const removeCover = (cover) => {
+        setCovers((prevCovers) => prevCovers.filter((c) => c !== cover));
+    };
+
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
+    // Upload Img
 
     const [showModal, setShowModal] = useState(false);
 
@@ -63,6 +68,13 @@ function Editpostproject() {
 
     // 
 
+    // 
+    const [show2, setShow2] = useState(false);
+
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
+
+    // 
 
 
     const [inputValue, setInputValue] = useState('');
@@ -117,13 +129,20 @@ function Editpostproject() {
                         {/* Post A Project */}
                         <Card className="mb-3 mt-3">
                             <Card.Header className='bg-light text-uppercase text-justify '>
-                                <h4 className="mb-3">Edit Your Project</h4>
-                                <span className="d-block" style={{fontSize:'12px'}}>Project Created On :<span className="ms-2 fw-semibold text-primary">01/01/2023</span> </span>
-                                <span className="" style={{fontSize:'12px'}}>Last Update On :<span className="ms-2 fw-semibold text-success">10/01/2023</span> </span>
-                                </Card.Header>
+                                <div className="row">
+                                    <div className="col-lg-8">
+                                        <h4 className="mb-3">Edit Your Project</h4>
+                                        <span className="d-block" style={{ fontSize: '12px' }}>Project Created On :<span className="ms-2 fw-semibold text-primary">01/01/01/05/2023</span> </span>
+                                        <span className="" style={{ fontSize: '12px' }}>Last Update On :<span className="ms-2 fw-semibold text-success">10/01/01/05/2023</span> </span>
+                                    </div>
+                                    <div className="col-lg-4 mt-3 d-flex justify-content-lg-end align-items-lg-end">
+                                        <button className="btn btn-primary mb-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Comment History</button>
+                                    </div>
+                                </div>
+                            </Card.Header>
                             <Card.Body className="bg-white">
                                 <Row className="gx-2 gy-3">
-                                    <p className='mt-2 me-2 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that freelancers can find your project</p>
+                                    <p className='mt-2 me-2 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that traders can find your project</p>
 
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
@@ -167,7 +186,7 @@ function Editpostproject() {
                                                 value="White Attica Supernatural Quartz has a crisp white base featured with an
                                                  intricate veiny pattern. This quartz slab has a super sleek look in polished 
                                                  finish which 
-                                                 is more enhanced by the distinct black veins which have been manufactured to look fit for classy modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true 
+                                                 is more enhanced by the distinct black veins which have been manufactured to look fit for classNamey modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true 
                                                 when installed in kitchens, baths, entryways, laundry and mudrooms, as well as a variety of other spaces in 
                                                 both residential and commercial properties. This quartz's design is meant to create a timeless statement. Aside from worktops, these slabs are ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished"
                                                 required
@@ -178,36 +197,37 @@ function Editpostproject() {
                                             <p className="text-900">White Attica Supernatural Quartz has a crisp white base featured with an
                                                 intricate veiny pattern. This quartz slab has a super sleek look in polished
                                                 finish which
-                                                is more enhanced by the distinct black veins which have been manufactured to look fit for classy modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true
+                                                is more enhanced by the distinct black veins which have been manufactured to look fit for classNamey modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true
                                                 when installed in kitchens, baths, entryways, laundry and mudrooms, as well as a variety of other spaces in
                                                 both residential and commercial properties. This quartz's design is meant to create a timeless statement. Aside from worktops, these slabs are ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
                                             </p>
-                                            <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our freelancers
+                                            <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our Traders
                                             </p>
                                         </Form.Group>
                                     </Col>
+                                    <Form.Label className='text-700 text-uppercase'>
+                                        Upload Sample and Other Helpful
+                                    </Form.Label>
                                     {/* Upload Samples */}
                                     <Col lg={12} className='me-2 mb-2 w-100'>
-                                        <div >
-                                            <Form.Label className='text-700 text-uppercase'>
-                                                Upload Sample and Other Helpful
-                                            </Form.Label>
-                                            <div {...getRootProps({ className: 'dropzone-area py-6' })}>
-                                                <input {...getInputProps({ multiple: false })} />
-                                                <div className="fs--1">
-                                                    <img src={cloudUpload} alt="" width={20} className="me-2" />
-                                                    <span className="d-none d-lg-inline">
-                                                        Drag your image here
-                                                        <br />
-                                                        or,{' '}
-                                                    </span>
-                                                    <Button variant="link" size="sm" className="p-0 fs--1">
-                                                        Browse
-                                                    </Button>
-                                                </div>
+                                        <div {...getRootProps({ className: 'dropzone-area py-6' })}>
+                                            <input {...getInputProps()} multiple />
+                                            <div className="fs--1">
+                                                <img src={cloudUpload} alt="" width={20} className="me-2" />
+                                                <span className="d-none d-lg-inline">
+                                                    Drag your images here
+                                                    <br />
+                                                    or,{' '}
+                                                </span>
+                                                <Button variant="link" size="sm" className="p-0 fs--1">
+                                                    Browse
+                                                </Button>
                                             </div>
-                                            {cover && (
-                                                <div className="mt-3">
+                                        </div>
+
+                                        {covers.length > 0 &&
+                                            <div className="mt-3">
+                                                {covers.map((cover) => (
                                                     <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
                                                         <Image
                                                             rounded
@@ -217,34 +237,32 @@ function Editpostproject() {
                                                             alt={cover.path}
                                                         />
                                                         <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
-
                                                             <h6 className="text-truncate">{cover.path}</h6>
                                                             <div className="d-flex align-items-center position-relative">
                                                                 <p className="mb-0 fs--1 text-400 line-height-1">
                                                                     <strong>{getSize(cover.size)}</strong>
                                                                 </p>
                                                             </div>
+                                                            <h6 className="mt-2 text-primary">01/05/2023</h6>
                                                         </div>
                                                         <CardDropdown>
                                                             <div className="py-2">
                                                                 <Dropdown.Item
                                                                     className="text-danger"
-                                                                    onClick={() => setCover()}
+                                                                    onClick={() => removeCover(cover)}
                                                                 >
                                                                     Remove
                                                                 </Dropdown.Item>
                                                             </div>
                                                         </CardDropdown>
                                                     </div>
-                                                </div>
-                                            )}
+                                                ))}
+                                            </div>
+                                        }
 
-                                        </div>
                                         <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
                                         <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
                                     </Col>
-
-
                                     {/* Upload Samples */}
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
@@ -369,7 +387,7 @@ function Editpostproject() {
                                             </Form.Label>
                                             <Form.Control
                                                 // value={form.startdate}
-                                                // value="01/01/2021"
+                                                // value="01/01/01/05/2023"
                                                 required
                                                 name="startdate"
                                                 // onChange={(e) => { handleChange(e) }}
@@ -395,7 +413,7 @@ function Editpostproject() {
                                                 <Form.Check.Label
                                                     style={{ fontSize: '14px' }}
                                                 >
-                                                    <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
+                                                    <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All Traders can view the project post and send proposals)</span></span>
                                                 </Form.Check.Label>
                                             </Form.Check>
                                         </Form.Group>
@@ -412,7 +430,7 @@ function Editpostproject() {
                                                 <Form.Check.Label
                                                     style={{ fontSize: '14px' }}
                                                 >
-                                                    <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only freelancers that you specifically invite can view the
+                                                    <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only Traders that you specifically invite can view the
                                                         <p className="opt-span">project post and send proposal)</p></span></span>
                                                 </Form.Check.Label>
                                             </Form.Check>
@@ -440,20 +458,20 @@ function Editpostproject() {
                                                 Expiry Date <span className="text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
-                                                // value={form.expire_date}
-                                                // value="01/01/2023"
                                                 required
                                                 name="expire_date"
-                                                // onChange={(e) => { handleChange(e) }}
                                                 type='date'
                                             />
                                         </Form.Group>
                                     </Col>
+                                    <Form.Group className=''>
+                                        <Form.Check label="I Agree the Terms and conditions" />
+                                    </Form.Group>
                                     <Col lg={12} className=''>
                                         <div className='d-flex justify-content-start'>
                                             <Button
                                                 onClick={handleShow1}
-                                               
+
                                                 className='d-block border-0 bg-success'
                                             >Post Project</Button>
                                             {/* <Link to="/projectlist"> */}
@@ -527,7 +545,7 @@ function Editpostproject() {
                                             <p className="text-900 text-justify">White Attica Supernatural Quartz has a crisp white base featured with an
                                                 intricate veiny pattern. This quartz slab has a super sleek look in polished
                                                 finish which
-                                                is more enhanced by the distinct black veins which have been manufactured to look fit for classy modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true
+                                                is more enhanced by the distinct black veins which have been manufactured to look fit for classNamey modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true
                                                 when installed in kitchens, baths, entryways, laundry and mudrooms, as well as a variety of other spaces in
                                                 both residential and commercial properties. This quartz's design is meant to create a timeless statement. Aside from worktops, these slabs are ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
                                             </p>
@@ -591,7 +609,7 @@ function Editpostproject() {
                                             <Form.Label className='text-700 text-uppercase'>
                                                 Starting Date
                                             </Form.Label>
-                                            <p className="text-900">01/01/2023 </p>
+                                            <p className="text-900">01/01/01/05/2023 </p>
                                         </Form.Group>
                                     </Col>
                                     <Col md="12">
@@ -611,7 +629,7 @@ function Editpostproject() {
                                                 <Form.Check.Label
                                                     style={{ fontSize: '14px' }}
                                                 >
-                                                    <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All freelancers can view the project post and send proposals)</span></span>
+                                                    <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All Traders can view the project post and send proposals)</span></span>
                                                 </Form.Check.Label>
                                             </Form.Check>
                                         </Form.Group>
@@ -628,7 +646,7 @@ function Editpostproject() {
                         <Form.Check.Label
                           style={{ fontSize: '14px' }}
                         >
-                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only freelancers that you specifically invite can view the
+                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only Traders that you specifically invite can view the
                             <p className="opt-span">project post and send proposal)</p></span></span>
                         </Form.Check.Label>
                       </Form.Check>
@@ -640,7 +658,7 @@ function Editpostproject() {
                                             <Form.Label className='text-700  text-uppercase'>
                                                 Expiry Date <span className="text-danger">*</span>
                                             </Form.Label>
-                                            <p className="text-900">01/01/2023 </p>
+                                            <p className="text-900">01/01/01/05/2023 </p>
                                         </Form.Group>
                                     </Col>
 
@@ -662,7 +680,98 @@ function Editpostproject() {
                         </Modal>
                         {/* ---------------- */}
 
+                        <div className="offcanvas offcanvas-end" id="offcanvasRight" tabindex="-1" aria-labelledby="offcanvasRightLabel">
+                            <div className="bg-light offcanvas-header">
+                                <h5 id="offcanvasRightLabel">Comment History</h5><button className="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div className="offcanvas-body">
+                                <div>
+                                    {/*  */}
+                                    <div className="timeline-vertical">
+                                        <div className="timeline-item timeline-item-start">
+                                            <div title="Current Update" className="timeline-icon icon-item icon-item-lg text-primary border-300">
+                                                <Icon icon="material-symbols:update" color="#2dca6c" width="24" height="24" />
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-lg-6 timeline-item-time">
+                                                    <div>
+                                                        <p className="fs--1 mb-0 fw-semi-bold">01/05/2023<span className="ms-2">2.19 PM</span></p>
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-6">
+                                                    <div className="timeline-item-content">
+                                                        <div className="timeline-item-card">
+                                                            <h5 className="mb-2">Project Owner Name</h5>
+                                                            <p className="fs--1 mb-0">Project Updated in MAI <span className="fw-semibold">Amount Changed from £ 6,157.32 to £ 6,606.96</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="timeline-item timeline-item-end">
+                                            <div title="Previous Update" className="timeline-icon icon-item icon-item-lg text-primary border-300">
+                                                <Icon icon="material-symbols:update" color="#ffa800" width="24" height="24" />  </div>
+                                            <div className="row">
+                                                <div className="col-lg-6 timeline-item-time">
+                                                    <div>
+                                                        <p className="fs--1 mb-0 fw-semi-bold">01/05/2023<span className="ms-2">2.19 PM</span></p>
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-6">
+                                                    <div className="timeline-item-content">
+                                                        <div className="timeline-item-card">
+                                                            <h5 className="mb-2">Project Owner Name</h5>
+                                                            <p className="fs--1 mb-0"><p className="fs--1 mb-0">Project Updated in MAI <span className="fw-semibold">Amount Changed from £ 6,157.32 to £ 6,606.96</span></p> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="timeline-item timeline-item-end">
+                                            <div title="Previous Update" className="timeline-icon icon-item icon-item-lg text-primary border-300">
+                                                <Icon icon="material-symbols:update" color="#ffa800" width="24" height="24" />  </div>
+                                            <div className="row">
+                                                <div className="col-lg-6 timeline-item-time">
+                                                    <div>
+                                                        <p className="fs--1 mb-0 fw-semi-bold">01/05/2023<span className="ms-2">2.19 PM</span></p>
 
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-6">
+                                                    <div className="timeline-item-content">
+                                                        <div className="timeline-item-card">
+                                                            <h5 className="mb-2">Project Owner Name</h5>
+                                                            <p className="fs--1 mb-0"><p className="fs--1 mb-0">Project Updated in MAI <span className="fw-semibold">Amount Changed from £ 6,157.32 to £ 6,606.96</span></p> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="timeline-item timeline-item-end">
+                                            <div title="Previous Update" className="timeline-icon icon-item icon-item-lg text-primary border-300">
+                                                <Icon icon="material-symbols:update" color="#ffa800" width="24" height="24" />  </div>
+                                            <div className="row">
+                                                <div className="col-lg-6 timeline-item-time">
+                                                    <div>
+                                                        <p className="fs--1 mb-0 fw-semi-bold">01/05/2023<span className="ms-2">2.19 PM</span></p>
+
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-6">
+                                                    <div className="timeline-item-content">
+                                                        <div className="timeline-item-card">
+                                                            <h5 className="mb-2">Project Owner Name</h5>
+                                                            <p className="fs--1 mb-0"><p className="fs--1 mb-0">Project Updated in MAI <span className="fw-semibold">Amount Changed from £ 6,157.32 to £ 6,606.96</span></p> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </Container>
                 </Row>
             </Form >

@@ -363,3 +363,18 @@ star-rating {
 .line-item-table th {
   background-color: #f2f2f2;
 }
+/*  */
+.offcanvas.hiding, .offcanvas.show, .offcanvas.showing {
+  width: 100%;
+}
+.tox-statusbar__text-container{
+  display: none !important;
+}
+/* .tox-notification   */
+.tox-notification .tox-notification--in .tox-notification--warning {
+  display: none;
+}
+
+.dropzone-area{
+  height: 50% !important ;
+}

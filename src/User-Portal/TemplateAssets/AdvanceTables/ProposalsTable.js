@@ -56,7 +56,7 @@ const AdvancedTable = () => {
         proposalID: x?._id,
         projectTitle: x?.job?.project_title,
         price: x?.amount,
-        status: <span className={`badge ${x.is_approved ? 'bg-success' : 'bg-danger'} p-2`}>{x.is_approved == true ? `Accepted` : `Pending`}</span>,
+        status: <span className={`badge ${x.is_approved ? 'bg-success' : 'bg-danger'}`}>{x.is_approved == true ? `Accepted` : `Pending`}</span>,
         action: <p className="mt-2" role="button">
             <Link to={'/proposalDetails'}>
                 View
@@ -67,63 +67,10 @@ const AdvancedTable = () => {
 
 
 
-    function BulAction({ selectedRowIds }) {
+    function BulAction({  }) {
         return (
-            <Row className="flex-between-center mb-3">
-                <Col xs={12} md={8} lg={7} sm="12" className="mt-3  pe-0">
-                    <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
-                        {
-                            Object.keys(selectedRowIds).length > 0 ?
-                                'You have selected ' + Object.keys(selectedRowIds).length + ' Proposals'
-                                :
-                                ''
-                        }
-                    </h5>
-                </Col>
-                <Col xs={12} md={4} lg={5} sm="12" className="mt-3 ms-auto text-end ps-0">
-                    {Object.keys(selectedRowIds).length > 0 ? (
-                        <div className="d-flex">
-                            <Form.Select size="sm" aria-label="Bulk actions">
-                                <option>Bulk Actions</option>
-                                <option value="refund">Refund</option>
-                                <option value="delete">Delete</option>
-                                <option value="archive">Archive</option>
-                            </Form.Select>
-                            <Button
-                                type="button"
-                                variant="falcon-default"
-                                size="sm"
-                                className="ms-2"
-                            >
-                                Apply
-                            </Button>
-                        </div>
-                    ) : (
-                        <div id="orders-actions">
-                            {/* <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="plus"
-                                transform="shrink-3"
-                                className='me-2'
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">New</span>
-                            </IconButton> */}
-                            {/* <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="external-link-alt"
-                                transform="shrink-3"
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">Export</span>
-                            </IconButton> */}
-                        </div>
-                    )}
-                </Col>
-                {/*  */}
-                
-                {/*  */}
-            </Row>
+           <>
+           </>
         );
     };
 
@@ -134,7 +81,7 @@ const AdvancedTable = () => {
             sortable
             pagination
             // perPage={5}
-            selection
+            // selection
             selectionColumnWidth={30}
         >
             <BulAction table />

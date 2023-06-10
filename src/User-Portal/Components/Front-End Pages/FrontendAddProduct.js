@@ -1,9 +1,9 @@
-import { useState, React, useEffect } from 'react';
+import { useState, React, useEffect, useCallback } from 'react';
 import { Col, Row, Card, Container, Button, Breadcrumb, Modal } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import { InputGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { Dropdown, DropdownButton, Image } from 'react-bootstrap';
 import Menubar from '../Menubar/Menubar';
 import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard'
 // import SellerPortalHeader from '../Header/SellerPortalHeader'
@@ -12,6 +12,10 @@ import Footer from '../Footer/Footer';
 import { uploadImage } from "../../../Services/ImageService";
 import { createData, getAllData } from "../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
+import { useDropzone } from 'react-dropzone';
+import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
+import { getSize } from '../../TemplateAssets/helpers/utils';
+import CardDropdown from '../../TemplateAssets/common/CardDropdown';
 
 const FrontendAddProduct = () => {
 
@@ -351,6 +355,26 @@ const FrontendAddProduct = () => {
         setShowModal1(false);
     };
 
+    // Upload Img
+    const [covers, setCovers] = useState([]);
+
+    const onDrop = useCallback((acceptedFiles) => {
+        // Map the acceptedFiles to add the preview property
+        const updatedCovers = acceptedFiles.map((file) => Object.assign(file, {
+            preview: URL.createObjectURL(file)
+        }));
+
+        setCovers((prevCovers) => [...prevCovers, ...updatedCovers]);
+    }, []);
+
+    const removeCover = (cover) => {
+        setCovers((prevCovers) => prevCovers.filter((c) => c !== cover));
+    };
+
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
+    // Upload Img
+
 
     return (
         <>
@@ -401,7 +425,7 @@ const FrontendAddProduct = () => {
                                     <Card.Body>
                                         <h5 className='mb-3 text-uppercase'>Organization</h5>
                                         <Form.Group className='mb-3'>
-                                            <Form.Label className="text-700 text-uppercase">Seller Email<span className="ms-1 text-danger">*</span></Form.Label>
+                                            <Form.Label className="text-700 text-uppercase">Trader Email<span className="ms-1 text-danger">*</span></Form.Label>
                                             <Form.Control value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} type="email" className='w-100' />
                                         </Form.Group>
                                         <Form.Group className='mb-3'>
@@ -527,7 +551,7 @@ const FrontendAddProduct = () => {
                                                                             id="input-group-dropdown-2"
                                                                             align="end"
                                                                         >
-                                                                            <Dropdown.Item href="#">lb</Dropdown.Item>
+                                                                            {/* <Dropdown.Item href="#">lb</Dropdown.Item> */}
                                                                         </DropdownButton>
                                                                     </InputGroup>
                                                                 </Form.Group>
@@ -628,25 +652,10 @@ const FrontendAddProduct = () => {
                                     <Card.Body>
                                         {/* <Flex justifyContent={between}> */}
                                         <h5 className='mb-3 text-uppercase'>Media</h5>
-                                        {/* <div className='d-flex justify-content-between'>
-                                                    <Button variant="primary" onClick={handleShow}>
-                                                    Add Media from URL
-                                                    </Button>
-                                                    
-                                                    <Modal show={show} onHide={handleClose}>
-                                                    <Modal.Header closeButton>
-                                                    <Modal.Title>Enter or Paste the URL</Modal.Title>
-                                                    </Modal.Header>
-                                                        <Modal.Body>
-                                                            <Form.Control type='text' className='w-100 mb-3' />
-                                                            <Button className='btn btn-outline-success text-light'>Submit</Button>
-                                                            </Modal.Body>
-                                                            </Modal>
-                                                            
-                                                        </div> */}
+
                                         {/* </Flex> */}
                                         <div className='mt-3 border-secondary w-100'>
-                                            <small className='d-block text-align-center'>
+                                            {/* <small className='d-block text-align-center'>
                                                 Drag and Drop
                                                 Your Files Here
                                             </small>
@@ -678,9 +687,63 @@ const FrontendAddProduct = () => {
                                                     </div>
 
                                                 </>
-                                            ))}
-                                            <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
-                                            <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
+                                            ))} */}
+                                            {/* Upload Samples */}
+                                            <Col lg={12} className='me-2 mb-2 w-100'>
+                                                <div {...getRootProps({ className: 'dropzone-area py-6' })}>
+                                                    <input {...getInputProps()} multiple />
+                                                    <div className="fs--1">
+                                                        <img src={cloudUpload} alt="" width={20} className="me-2" />
+                                                        <span className="d-none d-lg-inline">
+                                                            Drag your images here
+                                                            <br />
+                                                            or,{' '}
+                                                        </span>
+                                                        <Button variant="link" size="sm" className="p-0 fs--1">
+                                                            Browse
+                                                        </Button>
+                                                    </div>
+                                                </div>
+
+                                                {covers.length > 0 &&
+                                                    <div className="mt-3">
+                                                        {covers.map((cover) => (
+                                                            <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
+                                                                <Image
+                                                                    rounded
+                                                                    width={40}
+                                                                    height={40}
+                                                                    src={cover.preview}
+                                                                    alt={cover.path}
+                                                                />
+                                                                <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
+                                                                    <h6 className="text-truncate">{cover.path}</h6>
+                                                                    <div className="d-flex align-items-center position-relative">
+                                                                        <p className="mb-0 fs--1 text-400 line-height-1">
+                                                                            <strong>{getSize(cover.size)}</strong>
+                                                                        </p>
+                                                                    </div>
+                                                                    <h6 className="mt-2 text-primary">01/05/2023</h6>
+                                                                </div>
+                                                                <CardDropdown>
+                                                                    <div className="py-2">
+                                                                        <Dropdown.Item
+                                                                            className="text-danger"
+                                                                            onClick={() => removeCover(cover)}
+                                                                        >
+                                                                            Remove
+                                                                        </Dropdown.Item>
+                                                                    </div>
+                                                                </CardDropdown>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                }
+
+                                                <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
+                                                <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
+                                            </Col>
+                                            {/* Upload Samples */}
                                         </div>
                                     </Card.Body>
                                 </Card>

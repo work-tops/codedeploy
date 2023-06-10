@@ -1,10 +1,11 @@
 import React from "react";
-import AdvancedJobTable from "../../TemplateAssets/AdvanceTables/AdvancedJobTable";
-function Estimate(){
-    return(
+import EstimateTable from "../../TemplateAssets/AdvanceTables/EstimateTable";
+function Estimate() {
+
+    return (
         <>
-        
-        <AdvancedJobTable/>
+            
+            <EstimateTable/>
         </>
     )
 }

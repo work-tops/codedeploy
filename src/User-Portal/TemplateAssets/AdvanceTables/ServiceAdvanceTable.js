@@ -3,9 +3,10 @@ import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
 import { Row, Button, Col, Form, Modal } from "react-bootstrap";
+import product_image from "../../Components/Projectimages/BathroomFitting.jpg"
 import IconButton from "../common/IconButton";
 import AdvanceTableSearchBox from "../common/advance-table/AdvanceTableSearchBox";
-import product_image from "../Images/product_image.png"
+// import product_image from "../Images/product_image.png"
 import CardDropdown from "../common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import { getAllData } from "../../../Services/ProxyService";
@@ -16,6 +17,7 @@ const columns = [
         accessor: 'name',
         Header: 'Name'
     },
+
     {
         accessor: 'email',
         Header: 'Seller',
@@ -88,8 +90,12 @@ const ServiceAdvancedTable = () => {
             Header: 'Name'
         },
         {
+            accessor: 'image',
+            Header: 'Service Image'
+        },
+        {
             accessor: 'email',
-            Header: 'Seller',
+            Header: 'Trader Email',
             Cell: rowData => {
                 const { email } = rowData.row.original
                 return (
@@ -119,11 +125,12 @@ const ServiceAdvancedTable = () => {
     ];
     const data = service.map(_service => ({
         serviceid: '625355',
+        image: <img src={product_image} width="40px" height="35px" />,
         name: _service.title,
         priceType: _service.price_type,
         email: _service.email,
         price: _service.price,
-        status: _service.status == "Active" ? <span className="badge bg-success p-2">{_service.status}</span> : <span className="badge p-2 bg-warning">{_service.status}</span>,
+        status: _service.status == "Active" ? <span className="badge bg-success ">{_service.status}</span> : <span className="badge bg-warning">{_service.status}</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item as={Link} to="/user/addservices">Edit</Dropdown.Item>

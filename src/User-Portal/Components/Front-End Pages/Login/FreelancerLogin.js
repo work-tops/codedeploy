@@ -8,6 +8,8 @@ import { createData, getAllData } from '../../../../Services/ProxyService';
 import SocialAuthButtons from '../../../TemplateAssets/authentication/SocialAuthButtons';
 import Footer from '../../Footer/Footer';
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard';
+import { Divider } from '@mui/material';
+
 const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
 
   // State
@@ -148,7 +150,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                         >
                           {isToggle == false ?
                             <div className="p-4 p-md-5 flex-grow-1">
-                              <h4>Freelancer Registration</h4>
+                              <h4>Trader Registration</h4>
                               <Form onSubmit={handleSubmit}>
                                 <Form.Group className='mb-3'>
                                   <Form.Label className='text-700'>First Name<span className="text-danger">*</span></Form.Label>
@@ -210,11 +212,12 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                   Register
                                 </Button>
                                 <div className='mt-3'>
+                                <Divider>Or Register With</Divider>
                                   <SocialAuthButtons />
                                 </div>
                               </Form>
                             </div> : <div className="p-4 p-md-5 flex-grow-1">
-                              <h4>Freelancer Login</h4>
+                              <h4>Trader Login</h4>
                               <Form onSubmit={handleSubmit}>
                                 <Form.Group className='mb-3'>
                                   <Form.Label className='text-700'>Email address<span className="text-danger">*</span></Form.Label>
@@ -242,7 +245,10 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                 <Button type="submit" style={{ background: '#003f6b' }} className="mt-3 w-100 border-0" disabled={!formData.email || !formData.password}>
                                   Login
                                 </Button>
-
+                                <div className='mt-3'>
+                                  <Divider>Or Login With</Divider>
+                                  <SocialAuthButtons />
+                                </div>
                               </Form>
                             </div>
                           }

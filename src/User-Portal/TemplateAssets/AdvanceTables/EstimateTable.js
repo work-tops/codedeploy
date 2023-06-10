@@ -131,7 +131,7 @@ const data = [
     }
 ];
 
-const AdvancedJobTable = () => {
+const EstimateTable = () => {
     function BulAction({ selectedRowIds }) {
         return (
             <Row className="flex-between-center mb-3">
@@ -191,4 +191,4 @@ const AdvancedJobTable = () => {
         </>
     )
 }
-export default AdvancedJobTable
+export default EstimateTable

@@ -7,6 +7,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { createData, getAllData } from "../../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
 import Footer from "../../Footer/Footer";
+import SocialAuthButtons from "../../../TemplateAssets/authentication/SocialAuthButtons";
+import { Divider } from '@mui/material';
 
 const UserLogin = ({ }) => {
   // State
@@ -156,6 +158,8 @@ const UserLogin = ({ }) => {
                         </Form.Group>
                       </Form>
                       <p className="text-center fw-semibold text-900 mt-3 mb-3">Don't Have an Account ? <Link to='/project-owner-register'>Create Account</Link></p>
+                      <Divider>Or Login With</Divider>
+                      <SocialAuthButtons/>
                       <Toaster />
                     </>
                   </Card.Body>

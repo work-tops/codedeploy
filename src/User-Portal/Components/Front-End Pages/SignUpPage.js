@@ -8,6 +8,7 @@ import { createData } from "../../../Services/ProxyService";
 import toast from 'react-hot-toast';
 import SocialAuthButtons from "../../TemplateAssets/authentication/SocialAuthButtons";
 import Footer from "../Footer/Footer";
+import { Divider } from '@mui/material';
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 
 
@@ -169,6 +170,7 @@ function SignUpPage(hasLabel) {
                                                     </Button>
                                                     <p className="text-center fw-semibold text-900 mt-3 mb-3">Already Have an Account ? <Link to='/projectowner'>Login</Link></p>
                                                     {/* Social Buttons*/}
+                                                    <Divider>Or Register With</Divider>
                                                     <SocialAuthButtons />
                                                 </div>
                                             </Form >

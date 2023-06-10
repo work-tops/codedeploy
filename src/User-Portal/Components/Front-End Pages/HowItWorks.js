@@ -60,7 +60,7 @@ function HowItWorks() {
                                         </div>
                                         <div className="">
                                             <li class="nav-item" role="presentation">
-                                                <a style={{ color: "#003f6b", fontSize: "18px" }} class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">Freelancer</a>
+                                                <a style={{ color: "#003f6b", fontSize: "18px" }} class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">Trader</a>
                                             </li>
                                         </div>
                                     </div>

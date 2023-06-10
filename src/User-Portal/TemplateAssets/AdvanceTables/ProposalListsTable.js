@@ -179,8 +179,7 @@ const ProposalListsTable = () => {
 
                         aria-labelledby="example-custom-modal-styling-title"
                     >
-                        <Modal.Header className='bg-light'>
-                            <Button onClick={handleClose} className='bg-danger border-0'>Close</Button>
+                        <Modal.Header className='bg-light' closeButton>
                         </Modal.Header>
                         <Modal.Body>
                             <Row>

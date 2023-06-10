@@ -106,7 +106,7 @@ function HomePage() {
                             </SwiperSlide>
                             <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Taps</h5>
+                                    <h5 className="text-light m-2">Semi-Precious</h5>
                                     {/* <p className="text-light m-2">Hello World</p> */}
                                 </Link>
                             </SwiperSlide>
