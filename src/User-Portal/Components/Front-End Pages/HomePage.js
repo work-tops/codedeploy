@@ -216,28 +216,7 @@ function HomePage() {
                                     {/* <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button> */}
                                 </div>
                             </div>
-                            <div style={{ backgroundImage: `url(${Granite})` }} data-aos="fade-down" className="row mb-5">
-                                <div className="col-12 text-center mt-3 mb-3">
-                                    <div style={{ fontSize: '25px' }} className="row text-white fw-bold">
-                                        <div className="col-lg-6 col-md-6 col-sm-12">
-                                            <h2 className="text-white">Projects</h2>
-                                            <CountUp end={980} duration={5} separator="," />
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-12">
-                                            <h2 className="text-white">Happy Clients</h2>
-                                            <CountUp end={520} duration={5} separator="," />
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-12">
-                                            <h2 className="text-white">Winners</h2>
-                                            <CountUp end={330} duration={5} separator="," />
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-12">
-                                            <h2 className="text-white">Recommendations</h2>
-                                            <CountUp end={120} duration={5} separator="," />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {/*  */}
                         </div>
                         {/* Section-5 */}
                         <div data-aos="fade-right" className="mb-5 text-center">
@@ -245,7 +224,7 @@ function HomePage() {
                             <div className="col">
                                 <h1 className="fs-2 mb-4 fs-sm-4 fs-md-5">See What Our Users Felt</h1>
                             </div>
-                            {/* <div className="row">
+                            <div className="row">
                                 <div className="col-lg-12 col-xl-12">
                                     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                                         <SwiperSlide>
@@ -270,102 +249,8 @@ function HomePage() {
                                         </SwiperSlide>
                                     </Swiper>
                                 </div>
-                            </div> */}
-                            <section id="testimonials" class="testimonials">
-                                <div class="container aos-init aos-animate" data-aos="fade-up">
-                                    <div class="section-title">
-                                        <h2>Testimonials</h2>
-                                        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
-                                    </div>
+                            </div>
 
-                                    <div class="testimonials-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                                        <div class="swiper-wrapper" id="swiper-wrapper-46f25b73fc81e0910" aria-live="off" style={{ transform: "translate3d(-2272px, 0px, 0px)", transitionDuration: "0ms" }}><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
-                                            <div class="testimonial-wrap">
-                                                <div class="testimonial-item">
-                                                    <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
-                                                    <h3>Jena Karlis</h3>
-                                                    <h4>Store Owner</h4>
-                                                    <p>
-                                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
-                                                <div class="testimonial-wrap">
-                                                    <div class="testimonial-item">
-                                                        <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="" />
-                                                        <h3>Matt Brandon</h3>
-                                                        <h4>Freelancer</h4>
-                                                        <p>
-                                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                                            Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
-                                                <div class="testimonial-wrap">
-                                                    <div class="testimonial-item">
-                                                        <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="" />
-                                                        <h3>John Larson</h3>
-                                                        <h4>Entrepreneur</h4>
-                                                        <p>
-                                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                                            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat esse veniam culpa fore nisi cillum quid.
-                                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
-                                                <div class="testimonial-wrap">
-                                                    <div class="testimonial-item">
-                                                        <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
-                                                        <h3>Saul Goodman</h3>
-                                                        <h4>Ceo &amp; Founder</h4>
-                                                        <p>
-                                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                                            Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
-                                                <div class="testimonial-wrap">
-                                                    <div class="testimonial-item">
-                                                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
-                                                        <h3>Sara Wilsson</h3>
-                                                        <h4>Designer</h4>
-                                                        <p>
-                                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                                            Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
-                                                <div class="testimonial-wrap">
-                                                    <div class="testimonial-item">
-                                                        <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
-                                                        <h3>Jena Karlis</h3>
-                                                        <h4>Store Owner</h4>
-                                                        <p>
-                                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                                            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div></div>
-                                        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
-                                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-
-                                </div>
-                            </section>
                         </div>
                     </Col>
                 </Container>
