@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import homepage from '../Projectimages/HomeFrame.png'
+import { Icon } from "@iconify/react";
 import temptingDiscounts from '../Projectimages/TemptingDiscounts.jpg'
 import Limstone from '../Projectimages/Limstone.jpg'
 import Quartzite from '../Projectimages/Quartzite.jpg'
@@ -49,7 +50,7 @@ function HomePage() {
                         <div className="mt-5 mb-5">
                             {/* Section-1 */}
 
-                            <div data-aos="fade-right" className="row  d-flex justify-content-lg-between justify-content-xl-between align-items-center">
+                            <div data-aos="fade-right" className="row  d-flex justify-content-lg-around justify-content-xl-around align-items-center">
                                 <div className="col-md col-lg-5 order-md-2">
                                     <img className="img-fluid  px-md-0 text-end" style={{ borderRadius: '50px 2px' }} src={homepage} alt="" />
                                 </div>
@@ -83,46 +84,76 @@ function HomePage() {
                             // onAutoplayTimeLeft={onAutoplayTimeLeft}
                             className="mySwiper mb-5"
                         >
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Granite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Granite</h5>
+                                    <Card className="img-fluid" style={{ backgroundImage: `url(${Granite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                        <Card.Body>
+                                            <h5 className="text-light m-2">Granite</h5>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Link to="/productlist">
+                                    <Card className="img-fluid" style={{ backgroundImage: `url(${Limstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                        <Card.Body>
+                                            <h5 className="text-light m-2">Limstone</h5>
+                                        </Card.Body>
+                                    </Card>
 
                                 </Link>
                             </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Limstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Limstone</h5>
+                                    <Card className="img-fluid" style={{ backgroundImage: `url(${Quartzite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                        <Card.Body>
+                                            <h5 className="text-light m-2">Quartzite</h5>
+                                        </Card.Body>
+
+                                    </Card>
 
                                 </Link>
                             </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Quartzite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Quartzite</h5>
+                                    <Card className="img-fluid" style={{ backgroundImage: `url(${Sandstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                        <Card.Body>
+                                            <h5 className="text-light m-2">Sandstone</h5>
+                                        </Card.Body>
+
+                                    </Card>
 
                                 </Link>
                             </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Sandstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Sandstone</h5>
+                                    <Card className="img-fluid" style={{ backgroundImage: `url(${slate})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                        <Card.Body>
+                                            <h5 className="text-light m-2">Slate</h5>
+                                        </Card.Body>
+
+                                    </Card>
 
                                 </Link>
                             </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${slate})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide >
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Slate</h5>
+                                    <Card className="img-fluid" style={{ backgroundImage: `url(${Tiles})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                        <Card.Body>
+                                            <h5 className="text-light m-2">Tiles</h5>
+                                        </Card.Body>
+                                    </Card>
 
                                 </Link>
                             </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Tiles})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                <Link to="/productlist">
-                                    <h5 className="text-light m-2">Tiles</h5>
 
-                                </Link>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Travertine})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide >
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Travertine</h5>
+                                    <Card className="img-fluid" style={{ backgroundImage: `url(${Travertine})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                        <Card.Body>
+                                            <h5 className="text-light m-2">Travertine</h5>
+                                        </Card.Body>
+                                    </Card>
 
                                 </Link>
                             </SwiperSlide>
@@ -167,7 +198,7 @@ function HomePage() {
                             </div>
                         </div>
                         {/* Section-3 */}
-                        <div data-aos="fade-left" className="row  mb-5 d-flex justify-content-lg-between justify-content-xl-between align-items-center">
+                        <div data-aos="fade-left" className="row  mb-5 d-flex justify-content-lg-around justify-content-xl-around align-items-center">
                             <div className="col-md  col-lg-5 ">
                                 <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={temptingDiscounts} alt="" />
                             </div>
@@ -184,7 +215,7 @@ function HomePage() {
                         {/* Section-4 */}
                         <div data-aos="fade-right" >
 
-                            <div className="row  mb-5 d-flex justify-content-lg-between justify-content-xl-between align-items-center">
+                            <div className="row  mb-5 d-flex justify-content-lg-around justify-content-xl-around align-items-center">
                                 <div className="col-md mb-3 col-lg-5 order-md-2">
                                     <img className="img-fluid  px-md-0 text-end" style={{ borderRadius: '50px 2px' }} src={bussinessman} alt="" />
                                 </div>
@@ -201,7 +232,7 @@ function HomePage() {
                             </div>
                             {/* Section-5 */}
 
-                            <div data-aos="fade-left" className="row  mb-5 d-flex justify-content-lg-between justify-content-xl-between align-items-center">
+                            <div data-aos="fade-left" className="row  mb-5 d-flex justify-content-lg-around justify-content-xl-around align-items-center">
                                 <div className="col-md  col-lg-5 ">
                                     <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={twoWay} alt="" />
                                 </div>
@@ -213,7 +244,7 @@ function HomePage() {
                                         This is one of the most-unique advantages of using our platform. This increases the quality of service
                                         being provided as well as puts an insight on the compatibility with the project owner.
                                     </p>
-                                    {/* <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button> */}
+                                    <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button>
                                 </div>
                             </div>
                             {/*  */}
@@ -226,28 +257,105 @@ function HomePage() {
                             </div>
                             <div className="row">
                                 <div className="col-lg-12 col-xl-12">
-                                    <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                                        <SwiperSlide>
-                                            <img src={profile} width="100px" height="100px" className="mb-3 rounded-circle" />
-                                            <h4>Peter Lverkus<span className="ms-2 text-700" style={{ fontSize: "14px" }}>/CEO at Google Inc.</span></h4>
-                                            <div className="d-flex justify-content-center">
-                                                <p style={{ width: '50%' }}>
-                                                    It is a long established fact that a reader will be distracted by the readable content
-                                                    of a page when looking at its layout.
-                                                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
+                                    <div class="carousel slide theme-slider text-center" id="controlStyledExample" data-ride="carousel">
+                                        {/* <div class="carousel-indicators">
+                                            <button class="active" type="button" data-bs-target="#controlStyledExample" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#controlStyledExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#controlStyledExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        </div> */}
+                                        <div className=" ">
+                                            <div class="carousel-inner rounded">
+                                                <div class="carousel-item active">
+                                                    <Card>
+                                                        <Card.Body>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="avatar avatar-4xl">
+                                                                        <div class="avatar-name rounded-circle"><span>MB</span></div>
+                                                                    </div>
+                                                                    <h5>Matt Brandon</h5>
+                                                                    <h6>Great experience all round</h6>
+                                                                    <div className="mb-1">
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                    </div>
+                                                                    <p className="mb-0 text-center">
+                                                                        Great experience all round. They were on the phone the same day to confirm the details of the order and explain the differences in the variants that I hadn't realised.
+                                                                        As soon as the details were firmed up, they arranged for a specialist courier to collect the consignment and had it delivered with a couple of days.
+                                                                    </p>
+                                                                    <span className="text-primary" style={{ fontSize: '14px' }}>01 May 2023</span>
+                                                                </div>
+                                                            </div>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <Card>
+                                                        <Card.Body>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="avatar avatar-4xl">
+                                                                        <div class="avatar-name rounded-circle"><span>MB</span></div>
+                                                                    </div>
+                                                                    <h5>Matt Brandon</h5>
+                                                                    <h6>Great experience all round</h6>
+                                                                    <div className="mb-1">
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                    </div>
+                                                                    <p className="mb-0 text-center">
+                                                                        Great experience all round. They were on the phone the same day to confirm the details of the order and explain the differences in the variants that I hadn't realised.
+                                                                        As soon as the details were firmed up, they arranged for a specialist courier to collect the consignment and had it delivered with a couple of days.
+                                                                    </p>
+                                                                    <span className="text-primary" style={{ fontSize: '14px' }}>01 May 2023</span>
+                                                                </div>
+                                                            </div>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <Card>
+                                                        <Card.Body>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="avatar avatar-4xl">
+                                                                        <div class="avatar-name rounded-circle"><span>MB</span></div>
+                                                                    </div>
+                                                                    <h5>Matt Brandon</h5>
+                                                                    <h6>Great experience all round</h6>
+                                                                    <div className="mb-1">
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                    </div>
+                                                                    <p className="mb-0 text-center">
+                                                                        Great experience all round. They were on the phone the same day to confirm the details of the order and explain the differences in the variants that I hadn't realised.
+                                                                        As soon as the details were firmed up, they arranged for a specialist courier to collect the consignment and had it delivered with a couple of days.
+                                                                    </p>
+                                                                    <span className="text-primary" style={{ fontSize: '14px' }}>01 May 2023</span>
+                                                                </div>
+                                                            </div>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#controlStyledExample" data-bs-slide="prev">
+                                                    <span class="fas fa-angle-left"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </button><button class="carousel-control-next" type="button" data-bs-target="#controlStyledExample" data-bs-slide="next">
+                                                    <span class="fas fa-angle-right"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </button>
                                             </div>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img src={profile} width="100px" height="100px" className="mb-3 rounded-circle" />
-                                            <h4>Saravanan<span className="ms-2 text-700" style={{ fontSize: "14px" }}>/CEO at Google Inc.</span></h4>
-                                            <div className="d-flex justify-content-center">
-                                                <p style={{ width: '50%' }}>
-                                                    It is a long established fact that a reader will be distracted by the readable content
-                                                    of a page when looking at its layout.
-                                                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
-                                            </div>
-                                        </SwiperSlide>
-                                    </Swiper>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 

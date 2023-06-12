@@ -456,9 +456,6 @@ const FrontendAddProduct = () => {
                                                 <p><span className='fw-semibold'>Quantity : </span>{data?.quantity}</p>
                                                 <p><span className='fw-semibold'>Inventory : </span>{data?.inventory?.sku}</p>
                                                 <p><span className='fw-semibold'>Price : </span>£ {data?.pricing?.price}</p>
-
-
-
                                             </Card.Body>
                                         </Card>
                                     ))}

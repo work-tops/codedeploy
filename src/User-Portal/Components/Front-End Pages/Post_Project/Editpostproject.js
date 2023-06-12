@@ -1,4 +1,4 @@
-import { React, useState, useCallback } from "react"
+import { React, useState, useCallback, useRef } from "react"
 import {
     Col,
     Form,
@@ -11,6 +11,7 @@ import {
 } from 'react-bootstrap';
 import { Link, useHistory } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import { Editor } from '@tinymce/tinymce-react';
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard'
 import { useDropzone } from 'react-dropzone';
 import { getSize } from '../../../TemplateAssets/helpers/utils';
@@ -39,6 +40,9 @@ function Editpostproject() {
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
     // Upload Img
+
+    // 
+    const editorRef = useRef(null);
 
     const [showModal, setShowModal] = useState(false);
 
@@ -180,7 +184,7 @@ function Editpostproject() {
                                     <Col lg={12} className='me-2'>
                                         <Form.Group className="mb-3">
                                             <Form.Label className='text-700 text-uppercase'>Project Description <span className="text-danger">*</span> </Form.Label>
-                                            <Form.Control
+                                            {/* <Form.Control
                                                 as="textarea"
                                                 // value={form.project_description}
                                                 value="White Attica Supernatural Quartz has a crisp white base featured with an
@@ -193,7 +197,30 @@ function Editpostproject() {
                                                 name="project_description"
                                                 // onChange={(e) => { handleChange(e) }}
                                                 placeholder="Need a Fabricator who's Specialize in this field"
-                                                rows={8} />
+                                                rows={8} /> */}
+                                            <Editor
+                                                onInit={(evt, editor) => editorRef.current = editor}
+                                                initialValue="White Attica Supernatural Quartz has a crisp white base featured with an
+                                                intricate veiny pattern. This quartz slab has a super sleek look in polished 
+                                                finish which 
+                                                is more enhanced by the distinct black veins which have been manufactured to look fit for classNamey modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true 
+                                               when installed in kitchens, baths, entryways, laundry and mudrooms, as well as a variety of other spaces in 
+                                               both residential and commercial properties. This quartz's design is meant to create a timeless statement. Aside from worktops, these slabs are ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished"
+                                                init={{
+                                                    height: 200,
+                                                    menubar: false,
+                                                    // plugins: [
+                                                    //     'advlist autolink lists link image charmap print preview anchor',
+                                                    //     'searchreplace visualblocks code fullscreen',
+                                                    //     'insertdatetime media table paste code help wordcount'
+                                                    // ],
+                                                    toolbar: 'undo redo | formatselect | ' +
+                                                        'bold italic  | alignleft aligncenter ' +
+                                                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                        'removeformat ',
+                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                }}
+                                            />
                                             <p className="text-900">White Attica Supernatural Quartz has a crisp white base featured with an
                                                 intricate veiny pattern. This quartz slab has a super sleek look in polished
                                                 finish which
@@ -208,65 +235,69 @@ function Editpostproject() {
                                     <Form.Label className='text-700 text-uppercase'>
                                         Upload Sample and Other Helpful
                                     </Form.Label>
-                                    {/* Upload Samples */}
-                                    <Col lg={12} className='me-2 mb-2 w-100'>
-                                        <div {...getRootProps({ className: 'dropzone-area py-6' })}>
-                                            <input {...getInputProps()} multiple />
-                                            <div className="fs--1">
-                                                <img src={cloudUpload} alt="" width={20} className="me-2" />
-                                                <span className="d-none d-lg-inline">
-                                                    Drag your images here
-                                                    <br />
-                                                    or,{' '}
-                                                </span>
-                                                <Button variant="link" size="sm" className="p-0 fs--1">
-                                                    Browse
-                                                </Button>
-                                            </div>
-                                        </div>
-
-                                        {covers.length > 0 &&
-                                            <div className="mt-3">
-                                                {covers.map((cover) => (
-                                                    <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
-                                                        <Image
-                                                            rounded
-                                                            width={40}
-                                                            height={40}
-                                                            src={cover.preview}
-                                                            alt={cover.path}
-                                                        />
-                                                        <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
-                                                            <h6 className="text-truncate">{cover.path}</h6>
-                                                            <div className="d-flex align-items-center position-relative">
-                                                                <p className="mb-0 fs--1 text-400 line-height-1">
-                                                                    <strong>{getSize(cover.size)}</strong>
-                                                                </p>
-                                                            </div>
-                                                            <h6 className="mt-2 text-primary">01/05/2023</h6>
-                                                        </div>
-                                                        <CardDropdown>
-                                                            <div className="py-2">
-                                                                <Dropdown.Item
-                                                                    className="text-danger"
-                                                                    onClick={() => removeCover(cover)}
-                                                                >
-                                                                    Remove
-                                                                </Dropdown.Item>
-                                                            </div>
-                                                        </CardDropdown>
+                                    <Card>
+                                        <Card.Body>
+                                            {/* Upload Samples */}
+                                            <Col lg={12} className='me-2 mb-2 w-100'>
+                                                <div {...getRootProps({ className: 'dropzone-area py-6' })}>
+                                                    <input {...getInputProps()} multiple />
+                                                    <div className="fs--1">
+                                                        <img src={cloudUpload} alt="" width={20} className="me-2" />
+                                                        <span className="d-none d-lg-inline">
+                                                            Drag your images here
+                                                            <br />
+                                                            or,{' '}
+                                                        </span>
+                                                        <Button variant="link" size="sm" className="p-0 fs--1">
+                                                            Browse
+                                                        </Button>
                                                     </div>
-                                                ))}
-                                            </div>
-                                        }
+                                                </div>
 
-                                        <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
-                                        <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
-                                    </Col>
+                                                {covers.length > 0 &&
+                                                    <div className="mt-3">
+                                                        {covers.map((cover) => (
+                                                            <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
+                                                                <Image
+                                                                    rounded
+                                                                    width={40}
+                                                                    height={40}
+                                                                    src={cover.preview}
+                                                                    alt={cover.path}
+                                                                />
+                                                                <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
+                                                                    <h6 className="text-truncate">{cover.path}</h6>
+                                                                    <div className="d-flex align-items-center position-relative">
+                                                                        <p className="mb-0 fs--1 text-400 line-height-1">
+                                                                            <strong>{getSize(cover.size)}</strong>
+                                                                        </p>
+                                                                    </div>
+                                                                    <h6 className="mt-2 text-primary">01/05/2023</h6>
+                                                                </div>
+                                                                <CardDropdown>
+                                                                    <div className="py-2">
+                                                                        <Dropdown.Item
+                                                                            className="text-danger"
+                                                                            onClick={() => removeCover(cover)}
+                                                                        >
+                                                                            Remove
+                                                                        </Dropdown.Item>
+                                                                    </div>
+                                                                </CardDropdown>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                }
+
+                                                <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
+                                                <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
+                                            </Col>
+                                        </Card.Body>
+                                    </Card>
                                     {/* Upload Samples */}
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 mt-3 text-uppercase'>
                                                 Budget Type <span className="text-danger">*</span>
                                             </Form.Label>
                                             <Form.Select
@@ -285,7 +316,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 mt-3 text-uppercase'>
                                                 Currency <span className="text-danger">*</span>
                                             </Form.Label>
                                             <Form.Select

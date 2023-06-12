@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect, useCallback,useRef } from 'react';
 import {
   Col,
   Form,
@@ -12,6 +12,7 @@ import {
   ListGroup
 } from 'react-bootstrap';
 import { Link, useHistory } from "react-router-dom";
+import { Editor } from '@tinymce/tinymce-react';
 import { Icon } from "@iconify/react";
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,19 +28,29 @@ import file from '../../Projectimages/BathroomFitting.jpg'
 
 const PostProject = () => {
 
-  const [cover, setCover] = useState();
+  // Upload Img
+  const [covers, setCovers] = useState([]);
 
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: 'image/*',
-    onDrop: acceptedFiles => {
-      setCover(
-        Object.assign(acceptedFiles[0], {
-          preview: URL.createObjectURL(acceptedFiles[0])
-        })
-      );
-    }
-  });
+  const onDrop = useCallback((acceptedFiles) => {
+    // Map the acceptedFiles to add the preview property
+    const updatedCovers = acceptedFiles.map((file) => Object.assign(file, {
+      preview: URL.createObjectURL(file)
+    }));
 
+    setCovers((prevCovers) => [...prevCovers, ...updatedCovers]);
+  }, []);
+
+  const removeCover = (cover) => {
+    setCovers((prevCovers) => prevCovers.filter((c) => c !== cover));
+  };
+
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
+  // Upload Img
+
+ // 
+    const editorRef = useRef(null);
+    
   const history = useHistory();
 
   const [selectedFile, setSelectedFile] = useState([]);
@@ -322,74 +333,95 @@ const PostProject = () => {
                   <Col lg={12} className='me-2'>
                     <Form.Group className="mb-3">
                       <Form.Label className='text-700 text-uppercase'>Project Description <span className="text-danger">*</span> </Form.Label>
-                      <Form.Control
+                      {/* <Form.Control
                         as="textarea"
                         value={form.project_description}
                         required
                         name="project_description"
                         onChange={(e) => { handleChange(e) }}
                         placeholder="Need a Fabricator who's Specialize in this field"
-                        rows={8} />
+                        rows={8} /> */}
+                      <Editor
+                        onInit={(evt, editor) => editorRef.current = editor}
+                        initialValue=""
+                        init={{
+                          height: 200,
+                          menubar: false,
+                          // plugins: [
+                          //     'advlist autolink lists link image charmap print preview anchor',
+                          //     'searchreplace visualblocks code fullscreen',
+                          //     'insertdatetime media table paste code help wordcount'
+                          // ],
+                          toolbar: 'undo redo | formatselect | ' +
+                            'bold italic  | alignleft aligncenter ' +
+                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                            'removeformat ',
+                          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                        }}
+                      />
                       <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our Traders</p>
                     </Form.Group>
                   </Col>
                   {/* Upload Samples */}
-                  <Col lg={12} className='me-2 mb-2 w-100'>
-                    <div >
-                      <Form.Label className='text-700 text-uppercase'>
-                        Upload Sample and Other Helpful
-                      </Form.Label>
-                      <div {...getRootProps({ className: 'dropzone-area py-6' })}>
-                        <input {...getInputProps({ multiple: false })} />
-                        <div className="fs--1">
-                          <img src={cloudUpload} alt="" width={20} className="me-2" />
-                          <span className="d-none d-lg-inline">
-                            Drag your image here
-                            <br />
-                            or,{' '}
-                          </span>
-                          <Button variant="link" size="sm" className="p-0 fs--1">
-                            Browse
-                          </Button>
-                        </div>
-                      </div>
-                      {cover && (
-                        <div className="mt-3">
-                          <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
-                            <Image
-                              rounded
-                              width={40}
-                              height={40}
-                              src={cover.preview}
-                              alt={cover.path}
-                            />
-                            <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
+                  <Card>
+                    <Card.Body>
 
-                              <h6 className="text-truncate">{cover.path}</h6>
-                              <div className="d-flex align-items-center position-relative">
-                                <p className="mb-0 fs--1 text-400 line-height-1">
-                                  <strong>{getSize(cover.size)}</strong>
-                                </p>
-                              </div>
-                            </div>
-                            <CardDropdown>
-                              <div className="py-2">
-                                <Dropdown.Item
-                                  className="text-danger"
-                                  onClick={() => setCover()}
-                                >
-                                  Remove
-                                </Dropdown.Item>
-                              </div>
-                            </CardDropdown>
+                      <Col lg={12} className='me-2 mb-2 w-100'>
+                        <div {...getRootProps({ className: 'dropzone-area py-6' })}>
+                          <input {...getInputProps()} multiple />
+                          <div className="fs--1">
+                            <img src={cloudUpload} alt="" width={20} className="me-2" />
+                            <span className="d-none d-lg-inline">
+                              Drag your images here
+                              <br />
+                              or,{' '}
+                            </span>
+                            <Button variant="link" size="sm" className="p-0 fs--1">
+                              Browse
+                            </Button>
                           </div>
                         </div>
-                      )}
 
-                    </div>
-                    <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
-                    <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
-                  </Col>
+                        {covers.length > 0 &&
+                          <div className="mt-3">
+                            {covers.map((cover) => (
+                              <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
+                                <Image
+                                  rounded
+                                  width={40}
+                                  height={40}
+                                  src={cover.preview}
+                                  alt={cover.path}
+                                />
+                                <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
+                                  <h6 className="text-truncate">{cover.path}</h6>
+                                  <div className="d-flex align-items-center position-relative">
+                                    <p className="mb-0 fs--1 text-400 line-height-1">
+                                      <strong>{getSize(cover.size)}</strong>
+                                    </p>
+                                  </div>
+                                  <h6 className="mt-2 text-primary">01/05/2023</h6>
+                                </div>
+                                <CardDropdown>
+                                  <div className="py-2">
+                                    <Dropdown.Item
+                                      className="text-danger"
+                                      onClick={() => removeCover(cover)}
+                                    >
+                                      Remove
+                                    </Dropdown.Item>
+                                  </div>
+                                </CardDropdown>
+                              </div>
+                            ))}
+                          </div>
+                        }
+
+                        <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
+                        <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
+                      </Col>
+                    </Card.Body>
+                  </Card>
                   {/* Upload Samples */}
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
@@ -591,13 +623,13 @@ const PostProject = () => {
                     </Form.Group>
                   </Col>
                   <Form.Group className=''>
-                  <Form.Check label="I Agree the Terms and conditions"/>
+                    <Form.Check label="I Agree the Terms and conditions" />
                   </Form.Group>
                   <Col lg={12} className=''>
                     <div className='d-flex justify-content-start'>
                       <Button
                         onClick={handleShow1}
-                       
+
                         className='d-block border-0 bg-success'
                       >Post Project</Button>
 
@@ -792,14 +824,14 @@ const PostProject = () => {
                 {/*  */}
               </Modal.Body>
               <Modal.Footer>
-                
-                    <Button
-                      onClick={handleClose1}
-                      type="submit"
-                      className='d-block border-0 bg-success'
-                    >Post Project
-                    </Button>
-                 
+
+                <Button
+                  onClick={handleClose1}
+                  type="submit"
+                  className='d-block border-0 bg-success'
+                >Post Project
+                </Button>
+
               </Modal.Footer>
             </Modal>
             {/* ---------------- */}
