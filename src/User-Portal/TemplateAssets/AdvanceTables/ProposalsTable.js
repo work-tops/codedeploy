@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
-import { Row, Button, Col, Form, Modal } from "react-bootstrap";
+import { Row, Card, Col, Form, Modal } from "react-bootstrap";
 import { Icon } from "@iconify/react";
 import { getAllData } from "../../../Services/ProxyService";
 import { Link } from "react-router-dom";
@@ -67,43 +67,67 @@ const AdvancedTable = () => {
 
 
 
-    function BulAction({  }) {
+    function BulAction({ }) {
         return (
-           <>
-           </>
+            <>
+                <Row className="flex-between-center mb-3">
+                </Row>
+            </>
         );
     };
 
     return (
-        <AdvanceTableWrapper
-            columns={columns}
-            data={data}
-            sortable
-            pagination
-            // perPage={5}
-            // selection
-            selectionColumnWidth={30}
-        >
-            <BulAction table />
-            <AdvanceTable
-                table
-                headerClassName="bg-200 text-900 text-nowrap align-middle"
-                rowClassName="align-middle white-space-nowrap"
-                tableProps={{
-                    striped: true,
-                    className: 'fs--1 mb-0 overflow-hidden'
-                }}
-            />
-            <div className="mt-3">
-                <AdvanceTableFooter
-                    rowCount={data.length}
-                    table
-                    rowInfo
-                    navButtons
-                    rowsPerPageSelection
-                />
-            </div>
-        </AdvanceTableWrapper>
+        <>
+            <Card className="mb-3">
+                <Card.Header className=" text-uppercase bg-light">
+                    <div className="row">
+                        <div className="col-lg-10 col-sm-12 col-md-8">
+                            <h5>My Proposals</h5>
+                        </div>
+                        <div className="col-lg-2 col-sm-12 col-md-4">
+                            <Form.Label>Sort By</Form.Label>
+                            <Form.Select>
+                                <option>All</option>
+                                <option>Accepeted</option>
+                                <option>Pending</option>
+                                <option>Declined</option>
+                            </Form.Select>
+                        </div>
+                    </div>
+                </Card.Header>
+                <Card.Body>
+                    <AdvanceTableWrapper
+                        columns={columns}
+                        data={data}
+                        sortable
+                        pagination
+                        // perPage={5}
+                        // selection
+                        selectionColumnWidth={30}
+                    >
+                        <BulAction table />
+                        <AdvanceTable
+                            table
+                            headerClassName="bg-200 text-900 text-nowrap align-middle"
+                            rowClassName="align-middle white-space-nowrap"
+                            tableProps={{
+                                striped: true,
+                                className: 'fs--1 mb-0 overflow-hidden'
+                            }}
+                        />
+                        <div className="mt-3">
+                            <AdvanceTableFooter
+                                rowCount={data.length}
+                                table
+                                rowInfo
+                                navButtons
+                                rowsPerPageSelection
+                            />
+                        </div>
+                    </AdvanceTableWrapper>
+                </Card.Body>
+            </Card>
+        </>
     )
 }
 export default AdvancedTable

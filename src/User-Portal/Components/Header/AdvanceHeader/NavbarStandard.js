@@ -376,7 +376,7 @@ const NavbarStandard = () => {
                           {id == 2 && <Dropdown.Item as={Link} to="/chat">Messages</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/chat">Messages</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/addservicecard">My Services</Dropdown.Item>}
-                          {id == 3 && <Dropdown.Item as={Link} to="/proposalcard">Proposals</Dropdown.Item>}
+                          {id == 3 && <Dropdown.Item as={Link} to="/proposalcard">My Proposals</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/InvoiceFreelancerCard">Invoice</Dropdown.Item>}
                           {id == 2 && <Dropdown.Item as={Link} to="/InvoicedueCard">Invoice</Dropdown.Item>}
                           {id == 3 && <Dropdown.Item as={Link} to="/Estimates">Estimates</Dropdown.Item>}
