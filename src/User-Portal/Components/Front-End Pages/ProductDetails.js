@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Row, Col, Button, Card, Modal, Form, Container } from "react-bootstrap";
 import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +11,7 @@ import { FaStar } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Footer from "../Footer/Footer";
+import { Editor } from "@tinymce/tinymce-react";
 
 function ProductDetails() {
     let { proid } = useParams();
@@ -69,6 +70,7 @@ function ProductDetails() {
     // 
     const toastDark = () => toast.success(<h6 className="text-sucess">Your Product is Successfully Added to Cart</h6>);
     const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+    const editorRef = useRef(null);
     // 
 
     return (
@@ -115,9 +117,9 @@ function ProductDetails() {
                                     <ul className="list-unstyled d-flex flex-wrap gap-3 fs--1 fw-semi-bold text-300 mt-3 mb-0">
 
                                         {/* <Link to="/productlist" className="text-300"> */}
-                                            <li role="button" className="text-primary">
-                                                Previous
-                                            </li>
+                                        <li role="button" className="text-primary">
+                                            Previous
+                                        </li>
                                         {/* </Link> */}
 
                                         {/* <Link to="/wishlist/product" className="text-300"> */}
@@ -582,12 +584,32 @@ function ProductDetails() {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="reviewText">
                             <Form.Label>Write your review</Form.Label>
-                            <Form.Control
+                            {/* <Form.Control
                                 as="textarea"
                                 rows={3}
                                 value={reviewText}
                                 onChange={handleReviewChange}
                                 required
+                            /> */}
+                            <Editor
+                                onInit={(evt, editor) => editorRef.current = editor}
+                                initialValue=""
+
+                                init={{
+
+                                    height: 200,
+                                    menubar: false,
+                                    // plugins: [
+                                    //     'advlist autolink lists link image charmap print preview anchor',
+                                    //     'searchreplace visualblocks code fullscreen',
+                                    //     'insertdatetime media table paste code help wordcount'
+                                    // ],
+                                    toolbar: 'undo redo | formatselect | ' +
+                                        'bold italic  | alignleft aligncenter ' +
+                                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                                        'removeformat ',
+                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                }}
                             />
                         </Form.Group>
 

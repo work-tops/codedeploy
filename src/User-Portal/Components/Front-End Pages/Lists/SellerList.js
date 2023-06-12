@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { Row, Col, Button, Modal, Form, Card, Image, Container, Dropdown } from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,12 +12,12 @@ import Footer from "../../Footer/Footer";
 import Flex from "../../../TemplateAssets/common/Flex";
 import SimpleBarReact from "simplebar-react";
 import MultiSelect from 'multiselect-react-dropdown';
-
+import { Editor } from "@tinymce/tinymce-react";
 
 function SellerList() {
 
     const [sellersList, setSellers] = useState([]);
-
+    const editorRef = useRef(null);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -219,7 +219,7 @@ function SellerList() {
                                                     <Row className="g-2 align-items-center">
                                                         <div className="d-flex align-items-center">
 
-                                                            <small className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
+                                                        <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
                                                             <div className="d-flex">
                                                                 <div onClick={() => { setIsList(false) }}
                                                                     className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
@@ -620,7 +620,27 @@ function SellerList() {
                                 <Form.Label className="fw-semibold">
                                     Message
                                 </Form.Label>
-                                <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
+                                {/* <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} /> */}
+                                <Editor
+                                    onInit={(evt, editor) => editorRef.current = editor}
+                                    initialValue=""
+
+                                    init={{
+
+                                        height: 200,
+                                        menubar: false,
+                                        // plugins: [
+                                        //     'advlist autolink lists link image charmap print preview anchor',
+                                        //     'searchreplace visualblocks code fullscreen',
+                                        //     'insertdatetime media table paste code help wordcount'
+                                        // ],
+                                        toolbar: 'undo redo | formatselect | ' +
+                                            'bold italic  | alignleft aligncenter ' +
+                                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                                            'removeformat ',
+                                        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                    }}
+                                />
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Check type="checkbox" className="mb-0 mt-3">

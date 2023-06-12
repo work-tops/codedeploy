@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Row, Col, Card, Form, Button, Container } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Link } from "react-router-dom";
+import { Editor } from "@tinymce/tinymce-react";
 
 function RequestQuote() {
+    
+    const editorRef = useRef(null);
+
     return (
         <>
             <Container>
@@ -16,7 +20,7 @@ function RequestQuote() {
                             <h4 className="fw-bolder">Request a Quote</h4>
                         </div>
                         <div className="d-flex justify-content-center align-items-center m-3">
-                            <p className="text-center" style={{fontSize:'14px'}}>Give us the details of your project and we'll send it to specialist trades for you.</p>
+                            <p className="text-center" style={{ fontSize: '14px' }}>Give us the details of your project and we'll send it to specialist trades for you.</p>
                         </div>
                         <Row className="">
 
@@ -27,8 +31,28 @@ function RequestQuote() {
                                             <Form.Label className="fw-semibold text-uppercase text-900">
                                                 Describe Your Job<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
-                                            <Form.Control as="textarea" placeholder="
-                                        Please describe your job in detail and let the trade know when's the best time to contact you" rows={5} />
+                                            {/* <Form.Control as="textarea" placeholder="
+                                        Please describe your job in detail and let the trade know when's the best time to contact you" rows={5} /> */}
+                                            <Editor
+                                                onInit={(evt, editor) => editorRef.current = editor}
+                                                initialValue=""
+
+                                                init={{
+
+                                                    height: 200,
+                                                    menubar: false,
+                                                    // plugins: [
+                                                    //     'advlist autolink lists link image charmap print preview anchor',
+                                                    //     'searchreplace visualblocks code fullscreen',
+                                                    //     'insertdatetime media table paste code help wordcount'
+                                                    // ],
+                                                    toolbar: 'undo redo | formatselect | ' +
+                                                        'bold italic  | alignleft aligncenter ' +
+                                                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                        'removeformat ',
+                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                }}
+                                            />
                                         </Form.Group>
                                     </Card.Body>
                                 </Card>
@@ -50,7 +74,7 @@ function RequestQuote() {
                                                 When You Would like the job to start ?<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             {/*  */}
-                                            <Form.Check type="radio"  className="mb-0 mt-3">
+                                            <Form.Check type="radio" className="mb-0 mt-3">
                                                 <Form.Check.Input name="job-start" type="radio" />
                                                 <Form.Check.Label
                                                     className="d-inline"
@@ -59,7 +83,7 @@ function RequestQuote() {
                                                     I'm flexible on the start date
                                                 </Form.Check.Label>
                                             </Form.Check>
-                                            <Form.Check type="radio"  className="mb-0 mt-3">
+                                            <Form.Check type="radio" className="mb-0 mt-3">
                                                 <Form.Check.Input name="job-start" type="radio" />
                                                 <Form.Check.Label
                                                     className=" d-inline"
@@ -68,7 +92,7 @@ function RequestQuote() {
                                                     It's urgent (within 48 hours)
                                                 </Form.Check.Label>
                                             </Form.Check>
-                                            <Form.Check type="radio"  className="mb-0 mt-3">
+                                            <Form.Check type="radio" className="mb-0 mt-3">
                                                 <Form.Check.Input name="job-start" type="radio" />
                                                 <Form.Check.Label
                                                     className=" d-inline"
@@ -77,7 +101,7 @@ function RequestQuote() {
                                                     Within 2 weeks
                                                 </Form.Check.Label>
                                             </Form.Check>
-                                            <Form.Check type="radio"  className="mb-0 mt-3">
+                                            <Form.Check type="radio" className="mb-0 mt-3">
                                                 <Form.Check.Input name="job-start" type="radio" />
                                                 <Form.Check.Label
                                                     className="d-inline"
@@ -86,7 +110,7 @@ function RequestQuote() {
                                                     Within 1 month
                                                 </Form.Check.Label>
                                             </Form.Check>
-                                            <Form.Check type="radio"  className="mb-0 mt-3">
+                                            <Form.Check type="radio" className="mb-0 mt-3">
                                                 <Form.Check.Input name="job-start" type="radio" />
                                                 <Form.Check.Label
                                                     className=" d-inline"
@@ -97,10 +121,10 @@ function RequestQuote() {
                                             </Form.Check>
                                             {/*  */}
                                             <div className="d-flex justify-content-center align-items-center">
-                                            <Button as={Link} to="/projectowner" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
-                                            >Request Quote
-                                            </Button>
-                                        </div>
+                                                <Button as={Link} to="/projectowner" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
+                                                >Request Quote
+                                                </Button>
+                                            </div>
                                         </Form.Group>
                                     </Card.Body>
                                 </Card>
@@ -131,7 +155,7 @@ function RequestQuote() {
                                        
                                     </Card.Body>
                                 </Card> */}
-                                <p className="text-center" style={{fontSize:'14px'}}>We will create a Myproject account for you (unless already created). Read our terms of use and privacy notice.</p>
+                                <p className="text-center" style={{ fontSize: '14px' }}>We will create a Myproject account for you (unless already created). Read our terms of use and privacy notice.</p>
                             </Form>
                         </Row>
                     </Col>

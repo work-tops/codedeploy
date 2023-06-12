@@ -1,6 +1,7 @@
-import { useState, React, useCallback } from "react";
+import { useState, React, useCallback,useRef } from "react";
 import { Row, Col, Card, Form, Button, Container, Image, Dropdown } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
+import { Editor } from "@tinymce/tinymce-react";
 import { Link } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import { getSize } from '../../../TemplateAssets/helpers/utils';
@@ -31,6 +32,8 @@ function GetQuote() {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
     // Upload Img
 
+    // 
+    const editorRef = useRef(null);
 
     return (
         <>
@@ -142,7 +145,27 @@ function GetQuote() {
                                                     <Form.Label className="fw-semibold text-uppercase text-900">
                                                         More Informations<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
-                                                    <Form.Control as="textarea" rows={5} />
+                                                    {/* <Form.Control as="textarea" rows={5} /> */}
+                                                    <Editor
+                                                        onInit={(evt, editor) => editorRef.current = editor}
+                                                        initialValue=""
+
+                                                        init={{
+
+                                                            height: 200,
+                                                            menubar: false,
+                                                            // plugins: [
+                                                            //     'advlist autolink lists link image charmap print preview anchor',
+                                                            //     'searchreplace visualblocks code fullscreen',
+                                                            //     'insertdatetime media table paste code help wordcount'
+                                                            // ],
+                                                            toolbar: 'undo redo | formatselect | ' +
+                                                                'bold italic  | alignleft aligncenter ' +
+                                                                'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                                'removeformat ',
+                                                            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                        }}
+                                                    />
                                                 </Form.Group>
 
                                             </Col>

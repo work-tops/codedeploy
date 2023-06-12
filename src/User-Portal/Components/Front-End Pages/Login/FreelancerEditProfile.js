@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import coverimg from '../../Projectimages/7.jpg'
 import { Button, Container, Dropdown, Form, Modal } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
@@ -6,8 +6,12 @@ import profile from '../../Projectimages/Handyman.jpg'
 import { Link } from "react-router-dom";
 import CardDropdown from "../../../TemplateAssets/common/CardDropdown";
 import { Icon } from "@iconify/react";
+import { Editor } from "@tinymce/tinymce-react";
 
 function FreelancerEditProfile() {
+
+    // 
+    const editorRef = useRef(null);
 
     // Cancel Modal
     const [showModal1, setShowModal1] = useState(false);
@@ -104,9 +108,30 @@ function FreelancerEditProfile() {
                                         <div className="col-9 col-sm-7 mb-3"> <input className="form-control form-control-sm" value="+012-345-67890" type="text" /></div>
                                         <div className="col-3 text-lg-end"><label className="form-label me-2" for="edu-form3" >Bussiness Address:	 </label></div>
                                         <div className="col-9 col-sm-7 mb-3">
-                                            <textarea className="form-control" id="intro" name="intro" cols="30" rows="5" >
+                                            <Editor
+                                                onInit={(evt, editor) => editorRef.current = editor}
+                                                initialValue=""
+
+                                                init={{
+
+                                                    height: 200,
+                                                    menubar: false,
+                                                    // plugins: [
+                                                    //     'advlist autolink lists link image charmap print preview anchor',
+                                                    //     'searchreplace visualblocks code fullscreen',
+                                                    //     'insertdatetime media table paste code help wordcount'
+                                                    // ],
+                                                    toolbar: 'undo redo | formatselect | ' +
+                                                        'bold italic  | alignleft aligncenter ' +
+                                                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                        'removeformat ',
+                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                }}
+                                            />
+                                            {/* <textarea className="form-control" id="intro" name="intro" cols="30" rows="5" >
                                                 1 De La Warr Way, Cambridge, CB23 6DX
-                                            </textarea></div>
+                                            </textarea> */}
+                                        </div>
                                         <div className="col-3 text-lg-end"><label className="form-label me-2" for="edu-to" >You Operate as: </label></div>
                                         <div className="col-9 col-sm-7 mb-3">
                                             <select className="form-control form-control-sm">
@@ -199,7 +224,7 @@ function FreelancerEditProfile() {
                         <div class="card mb-3 mt-3">
                             <div className="card-header bg-light">
                                 <div className="row g-3 align-items-center">
-                                <div className="col-4">
+                                    <div className="col-4">
                                         <h5 className="mb-0" id="followers"><input className="form-check-input me-2" type="checkbox" />Followers <span className="d-none d-sm-inline-block">(12)</span></h5>
                                     </div>
 
@@ -232,7 +257,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -248,7 +273,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -264,7 +289,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -280,7 +305,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -296,7 +321,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -312,7 +337,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -328,7 +353,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -344,7 +369,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -360,7 +385,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -376,7 +401,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -392,7 +417,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -408,7 +433,7 @@ function FreelancerEditProfile() {
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
                                             <Link to="/profile_publicview" className="d-flex justify-content-center">
                                                 <div className="circle-container">
-                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center"/>
+                                                    <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
                                             </Link>
                                             <Form.Check.Label className="mb-0 text-primary">
@@ -422,7 +447,7 @@ function FreelancerEditProfile() {
                                     </div>
                                 </div>
                             </div>
-                           
+
                         </div>
                         {/* Followers */}
                         {/*  */}

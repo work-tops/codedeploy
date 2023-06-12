@@ -1,7 +1,7 @@
 import React from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
-import { Row, Dropdown, Col, Form, Card } from "react-bootstrap";
+import { Row, Dropdown, Col, Form, Card, Button } from "react-bootstrap";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
 import NavbarStandard from "../../Components/Header/AdvanceHeader/NavbarStandard";
 import CardDropdown from '../common/CardDropdown'
@@ -153,6 +153,9 @@ const EstimateTable = () => {
                 <h5 className="text-capitalize">
                     Estimate
                 </h5>
+                <Button as={Link} to="/NewEstimate" className="text-uppercase border-0" style={{background:'#003f6b'}}>
+                    Create Estimate
+                </Button>
             </Card.Header>
             <Card.Body>
                 <AdvanceTableWrapper

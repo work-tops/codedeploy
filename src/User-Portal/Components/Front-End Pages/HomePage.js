@@ -271,10 +271,9 @@ function HomePage() {
                                                             <div>
                                                                 <div>
                                                                     <div class="avatar avatar-4xl">
-                                                                        <div class="avatar-name rounded-circle"><span>MB</span></div>
+                                                                        <div class="avatar-name rounded-circle"><span>NR</span></div>
                                                                     </div>
-                                                                    <h5>Matt Brandon</h5>
-                                                                    <h6>Great experience all round</h6>
+                                                                    <h5>Nate Rees</h5>
                                                                     <div className="mb-1">
                                                                         <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
                                                                         <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
@@ -285,6 +284,31 @@ function HomePage() {
                                                                     <p className="mb-0 text-center">
                                                                         Great experience all round. They were on the phone the same day to confirm the details of the order and explain the differences in the variants that I hadn't realised.
                                                                         As soon as the details were firmed up, they arranged for a specialist courier to collect the consignment and had it delivered with a couple of days.
+                                                                    </p>
+                                                                    <span className="text-primary" style={{ fontSize: '14px' }}>May 01, 2023</span>
+                                                                </div>
+                                                            </div>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <Card>
+                                                        <Card.Body>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="avatar avatar-4xl">
+                                                                        <div class="avatar-name rounded-circle"><span>BH</span></div>
+                                                                    </div>
+                                                                    <h5>Bhuvanesh</h5>
+                                                                    <div className="mb-1">
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                    </div>
+                                                                    <p className="mb-0 text-center">
+                                                                        Peter was very professional on the phone. Met our expectations from day 1 right from us choosing our top till we got them installed. Communicated and kept us upto date.
                                                                     </p>
                                                                     <span className="text-primary" style={{ fontSize: '14px' }}>01 May 2023</span>
                                                                 </div>
@@ -298,10 +322,9 @@ function HomePage() {
                                                             <div>
                                                                 <div>
                                                                     <div class="avatar avatar-4xl">
-                                                                        <div class="avatar-name rounded-circle"><span>MB</span></div>
+                                                                        <div class="avatar-name rounded-circle"><span>FR</span></div>
                                                                     </div>
-                                                                    <h5>Matt Brandon</h5>
-                                                                    <h6>Great experience all round</h6>
+                                                                    <h5>Fran</h5>
                                                                     <div className="mb-1">
                                                                         <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
                                                                         <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
@@ -310,35 +333,9 @@ function HomePage() {
                                                                         <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
                                                                     </div>
                                                                     <p className="mb-0 text-center">
-                                                                        Great experience all round. They were on the phone the same day to confirm the details of the order and explain the differences in the variants that I hadn't realised.
-                                                                        As soon as the details were firmed up, they arranged for a specialist courier to collect the consignment and had it delivered with a couple of days.
-                                                                    </p>
-                                                                    <span className="text-primary" style={{ fontSize: '14px' }}>01 May 2023</span>
-                                                                </div>
-                                                            </div>
-                                                        </Card.Body>
-                                                    </Card>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <Card>
-                                                        <Card.Body>
-                                                            <div>
-                                                                <div>
-                                                                    <div class="avatar avatar-4xl">
-                                                                        <div class="avatar-name rounded-circle"><span>MB</span></div>
-                                                                    </div>
-                                                                    <h5>Matt Brandon</h5>
-                                                                    <h6>Great experience all round</h6>
-                                                                    <div className="mb-1">
-                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
-                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
-                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
-                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
-                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
-                                                                    </div>
-                                                                    <p className="mb-0 text-center">
-                                                                        Great experience all round. They were on the phone the same day to confirm the details of the order and explain the differences in the variants that I hadn't realised.
-                                                                        As soon as the details were firmed up, they arranged for a specialist courier to collect the consignment and had it delivered with a couple of days.
+                                                                        After a last minute let down from another provider Peter and his team provided
+                                                                        an absolutely amazing service - we have a stunning new worktop that’s nicer than the original and was also cheaper! Communication was good and the installers
+                                                                        did a very efficient and very beautiful job. Couldn’t recommend more highly!
                                                                     </p>
                                                                     <span className="text-primary" style={{ fontSize: '14px' }}>01 May 2023</span>
                                                                 </div>

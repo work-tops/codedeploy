@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { Row, Col, Card, Form, Button, Modal, Table, Image, Dropdown } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -9,22 +9,30 @@ import cloudUpload from '../../../TemplateAssets/assets/cloud-upload.svg';
 import { getSize } from '../../../TemplateAssets/helpers/utils';
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 import { Link } from "react-router-dom";
-
+import { Editor } from "@tinymce/tinymce-react";
 function EditEstimate() {
-    const [cover, setCover] = useState();
 
-    const { getRootProps, getInputProps } = useDropzone({
-        accept: 'image/*',
-        onDrop: acceptedFiles => {
-            setCover(
-                Object.assign(acceptedFiles[0], {
-                    preview: URL.createObjectURL(acceptedFiles[0])
-                })
-            );
-        }
-    });
+    // Upload Img
+    const [covers, setCovers] = useState([]);
+
+    const onDrop = useCallback((acceptedFiles) => {
+        // Map the acceptedFiles to add the preview property
+        const updatedCovers = acceptedFiles.map((file) => Object.assign(file, {
+            preview: URL.createObjectURL(file)
+        }));
+
+        setCovers((prevCovers) => [...prevCovers, ...updatedCovers]);
+    }, []);
+
+    const removeCover = (cover) => {
+        setCovers((prevCovers) => prevCovers.filter((c) => c !== cover));
+    };
 
 
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
+    // Upload Img
+
+    const editorRef = useRef(null);
     const [showModal, setShowModal] = useState(false);
     const [newVatName, setNewVatName] = useState('');
     const [newVatRate, setNewVatRate] = useState('');
@@ -163,11 +171,32 @@ function EditEstimate() {
                                     </Row>
                                     <Form.Group className="mb-3" as={Col} lg={6}>
                                         <Form.Label className="text-uppercase">Description<span className="text-danger">*</span></Form.Label>
-                                        <Form.Control
+                                        {/* <Form.Control
                                             as="textarea"
                                             rows={3}
                                             value="Lorem Ipsum is simply dummy text of the printing and typesetting
                                              industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                                        /> */}
+                                        <Editor
+                                            onInit={(evt, editor) => editorRef.current = editor}
+                                            initialValue="Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+
+                                            init={{
+
+                                                height: 200,
+                                                menubar: false,
+                                                // plugins: [
+                                                //     'advlist autolink lists link image charmap print preview anchor',
+                                                //     'searchreplace visualblocks code fullscreen',
+                                                //     'insertdatetime media table paste code help wordcount'
+                                                // ],
+                                                toolbar: 'undo redo | formatselect | ' +
+                                                    'bold italic  | alignleft aligncenter ' +
+                                                    'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                    'removeformat ',
+                                                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                            }}
                                         />
                                     </Form.Group>
                                     {/*  */}
@@ -211,7 +240,23 @@ function EditEstimate() {
                                             <td style={{ width: '8%', fontWeight: 'bold' }}>£ 614.42</td>
                                             <td style={{ width: '0%' }}><Icon className="cursor-pointer hover-danger" icon="ic:baseline-delete" width="24" height="24" /></td>
                                         </tr>
-
+                                        <tr>
+                                            <td><textarea style={{ width: '300px' }} className="form-control resize-none" rows="3"></textarea></td>
+                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className="form-control  resize-none" /></td>
+                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
+                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
+                                            <td style={{ width: '0%' }}>
+                                                <Typeahead
+                                                    id="vatTypeahead"
+                                                    style={{ width: '200px' }}
+                                                    options={vatOptions}
+                                                    selected={selectedVat}
+                                                    onChange={handleVatChange}
+                                                />
+                                            </td>
+                                            <td style={{ width: '0%' }}>0.00</td>
+                                            <td style={{ width: '0%' }}><Icon className="cursor-pointer hover-danger" icon="ic:baseline-delete" width="24" height="24" /></td>
+                                        </tr>
                                     </tbody>
                                 </Table>
                                 {/*  */}
@@ -314,6 +359,14 @@ function EditEstimate() {
                                                         <h6 >£ 100.00</h6>
                                                     </div>
                                                 </div>
+                                                <div className="row mb-3">
+                                                    <div className="col-4">
+                                                        <h6>Reduced Rate[5%]</h6>
+                                                    </div>
+                                                    <div className="col-8 text-end">
+                                                        <h6> 5</h6>
+                                                    </div>
+                                                </div>
                                                 <div className="row">
                                                     <div className="col-5 mb-3">
                                                         <div className="col-12">
@@ -374,26 +427,24 @@ function EditEstimate() {
                                     <div className="col-lg-6">
                                         {/* Upload Samples */}
                                         <Col lg={12} className='me-2 mb-2 w-100'>
-                                            <div >
-                                                <Form.Label className='text-700 text-uppercase'>
-                                                    attachments
-                                                </Form.Label>
-                                                <div {...getRootProps({ className: 'dropzone-area py-6' })}>
-                                                    <input {...getInputProps({ multiple: false })} />
-                                                    <div className="fs--1">
-                                                        <img src={cloudUpload} alt="" width={20} className="me-2" />
-                                                        <span className="d-none d-lg-inline">
-                                                            Drag your image here
-                                                            <br />
-                                                            or,{' '}
-                                                        </span>
-                                                        <Button variant="link" size="sm" className="p-0 fs--1">
-                                                            Browse
-                                                        </Button>
-                                                    </div>
+                                            <div {...getRootProps({ className: 'dropzone-area py-6' })}>
+                                                <input {...getInputProps()} multiple />
+                                                <div className="fs--1">
+                                                    <img src={cloudUpload} alt="" width={20} className="me-2" />
+                                                    <span className="d-none d-lg-inline">
+                                                        Drag your images here
+                                                        <br />
+                                                        or,{' '}
+                                                    </span>
+                                                    <Button variant="link" size="sm" className="p-0 fs--1">
+                                                        Browse
+                                                    </Button>
                                                 </div>
-                                                {cover && (
-                                                    <div className="mt-3">
+                                            </div>
+
+                                            {covers.length > 0 &&
+                                                <div className="mt-3">
+                                                    {covers.map((cover) => (
                                                         <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
                                                             <Image
                                                                 rounded
@@ -403,29 +454,29 @@ function EditEstimate() {
                                                                 alt={cover.path}
                                                             />
                                                             <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
-
                                                                 <h6 className="text-truncate">{cover.path}</h6>
                                                                 <div className="d-flex align-items-center position-relative">
                                                                     <p className="mb-0 fs--1 text-400 line-height-1">
                                                                         <strong>{getSize(cover.size)}</strong>
                                                                     </p>
                                                                 </div>
+                                                                <h6 className="mt-2 text-primary">01/05/2023</h6>
                                                             </div>
                                                             <CardDropdown>
                                                                 <div className="py-2">
                                                                     <Dropdown.Item
                                                                         className="text-danger"
-                                                                        onClick={() => setCover()}
+                                                                        onClick={() => removeCover(cover)}
                                                                     >
                                                                         Remove
                                                                     </Dropdown.Item>
                                                                 </div>
                                                             </CardDropdown>
                                                         </div>
-                                                    </div>
-                                                )}
+                                                    ))}
+                                                </div>
+                                            }
 
-                                            </div>
                                             <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
                                             <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
                                         </Col>

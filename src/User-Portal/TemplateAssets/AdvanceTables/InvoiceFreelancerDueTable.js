@@ -220,10 +220,9 @@ const InvoiceFreelancerDueTable = () => {
                     <h5 className="text-capitalize">
                         Invoice
                     </h5>
-                    <div className="d-flex justify-content-end">
-
-
-                    </div>
+                    <Button as={Link} to="/NewInvoice" className="text-uppercase border-0" style={{ background: '#003f6b' }}>
+                        Create Invoice
+                    </Button>
                 </Card.Header>
                 <Card.Body>
                     <AdvanceTableWrapper

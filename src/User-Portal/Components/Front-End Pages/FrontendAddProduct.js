@@ -1,4 +1,4 @@
-import { useState, React, useEffect, useCallback } from 'react';
+import { useState, React, useEffect, useCallback, useRef } from 'react';
 import { Col, Row, Card, Container, Button, Breadcrumb, Modal } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import { InputGroup } from 'react-bootstrap';
@@ -16,8 +16,11 @@ import { useDropzone } from 'react-dropzone';
 import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
 import { getSize } from '../../TemplateAssets/helpers/utils';
 import CardDropdown from '../../TemplateAssets/common/CardDropdown';
+import { Editor } from "@tinymce/tinymce-react";
 
 const FrontendAddProduct = () => {
+
+    const editorRef = useRef(null);
 
     const [show, setShow] = useState(false);
 
@@ -410,13 +413,51 @@ const FrontendAddProduct = () => {
                                         <Row className="mb-3 g-3">
                                             <Form.Group className="mb-3">
                                                 <Form.Label className="text-700 text-uppercase">Description </Form.Label>
-                                                <Form.Control value={form.description} required name="description" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Description....' rows={8} />
+                                                {/* <Form.Control value={form.description} required name="description" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Description....' rows={8} /> */}
+                                                <Editor
+                                                    onInit={(evt, editor) => editorRef.current = editor}
+                                                    initialValue=""
+                                                    init={{
+
+                                                        height: 200,
+                                                        menubar: false,
+                                                        // plugins: [
+                                                        //     'advlist autolink lists link image charmap print preview anchor',
+                                                        //     'searchreplace visualblocks code fullscreen',
+                                                        //     'insertdatetime media table paste code help wordcount'
+                                                        // ],
+                                                        toolbar: 'undo redo | formatselect | ' +
+                                                            'bold italic  | alignleft aligncenter ' +
+                                                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                            'removeformat ',
+                                                        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                    }}
+                                                />
                                             </Form.Group>
                                         </Row>
                                         <Row className="mb-3 g-3">
                                             <Form.Group className="mb-3">
                                                 <Form.Label className="text-700 text-uppercase">Return Policy </Form.Label>
-                                                <Form.Control value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Policy....' rows={8} />
+                                                {/* <Form.Control value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Policy....' rows={8} /> */}
+                                                <Editor
+                                                    onInit={(evt, editor) => editorRef.current = editor}
+                                                    initialValue=""
+                                                    init={{
+
+                                                        height: 200,
+                                                        menubar: false,
+                                                        // plugins: [
+                                                        //     'advlist autolink lists link image charmap print preview anchor',
+                                                        //     'searchreplace visualblocks code fullscreen',
+                                                        //     'insertdatetime media table paste code help wordcount'
+                                                        // ],
+                                                        toolbar: 'undo redo | formatselect | ' +
+                                                            'bold italic  | alignleft aligncenter ' +
+                                                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                            'removeformat ',
+                                                        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                    }}
+                                                />
                                             </Form.Group>
                                         </Row>
                                     </Card.Body>

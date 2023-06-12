@@ -1,4 +1,4 @@
-import React, { useState,useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { Row, Col, Card, Form, Button, Modal, Table, Image, Dropdown } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -37,8 +37,8 @@ function NewEstimate() {
     const handleShow1 = () => setShow1(true);
 
     // 
-    const [showModal, setShowModal] = useState(false);
-
+    const [show, setShowModal] = useState(false);
+    const handleShow = () => setShowModal(true);
     const handleModalClose = () => {
         setShowModal(false);
     };
@@ -215,9 +215,9 @@ function NewEstimate() {
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <Button className="btn-success me-2">Add New Item</Button>
-                                        <Button >Add VAT</Button>
+                                        <Button onClick={handleShow} >Add VAT</Button>
 
-                                        <Modal show={showModal} onHide={handleModalClose}>
+                                        <Modal show={show} onHide={handleModalClose}>
                                             <Modal.Header closeButton>
                                                 <Modal.Title>Add VAT</Modal.Title>
                                             </Modal.Header>
@@ -309,6 +309,14 @@ function NewEstimate() {
                                                     </div>
                                                     <div className="col-8 text-end">
                                                         <h6 >0.00</h6>
+                                                    </div>
+                                                </div>
+                                                <div className="row mb-3">
+                                                    <div className="col-4">
+                                                        <h6>Reduced Rate[5%]</h6>
+                                                    </div>
+                                                    <div className="col-8 text-end">
+                                                        <h6> 5</h6>
                                                     </div>
                                                 </div>
                                                 <div className="row">

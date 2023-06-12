@@ -221,7 +221,7 @@ function ListJobs(layout) {
                     <NavbarStandard />
                 </Col>
                 <Container>
-                   
+
                     <Row>
                         <Col className='' lg={3}>
                             <Card className="mt-5">
@@ -244,7 +244,7 @@ function ListJobs(layout) {
                                                 Reset
                                             </Button>
                                         </div>
-                         
+
                                     </Card.Header>
                                     <Card.Body className="py-0 mt-2">
 
@@ -365,7 +365,7 @@ function ListJobs(layout) {
                                                 <Col xs="auto" className="p-0">
                                                     <Row className="g-2 align-items-center">
                                                         <Col xs="auto" className="d-none d-lg-block">
-                                                            <small className='me-2'>View :</small>
+                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
                                                         </Col>
                                                         <Col xs="auto">
                                                             <OverlayTrigger

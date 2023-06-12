@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useCallback } from "react";
 import { Row, Col, Card, Form, Button, Modal, Table, Image, Dropdown } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -9,42 +9,37 @@ import cloudUpload from '../../../TemplateAssets/assets/cloud-upload.svg';
 import { getSize } from '../../../TemplateAssets/helpers/utils';
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 import { Link } from "react-router-dom";
-import { Editor } from "@tinymce/tinymce-react";
 
-function EditInvoice() {
-    const [cover, setCover] = useState();
+function NewInvoice() {
 
-    const { getRootProps, getInputProps } = useDropzone({
-        accept: 'image/*',
-        onDrop: acceptedFiles => {
-            setCover(
-                Object.assign(acceptedFiles[0], {
-                    preview: URL.createObjectURL(acceptedFiles[0])
-                })
-            );
-        }
-    });
+    const [covers, setCovers] = useState([]);
 
+    const onDrop = useCallback((acceptedFiles) => {
+        // Map the acceptedFiles to add the preview property
+        const updatedCovers = acceptedFiles.map((file) => Object.assign(file, {
+            preview: URL.createObjectURL(file)
+        }));
 
-    const [showModal, setShowModal] = useState(false);
-    const [newVatName, setNewVatName] = useState('');
-    const [newVatRate, setNewVatRate] = useState('');
+        setCovers((prevCovers) => [...prevCovers, ...updatedCovers]);
+    }, []);
 
-
-    const handleAddVat = () => {
-        setShowModal(true);
+    const removeCover = (cover) => {
+        setCovers((prevCovers) => prevCovers.filter((c) => c !== cover));
     };
 
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
+
+
+    const [show1, setShow1] = useState(false);
+
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
+
+    // 
+    const [show, setShowModal] = useState(false);
+    const handleShow = () => setShowModal(true);
     const handleModalClose = () => {
-        setShowModal(false);
-    };
-
-
-    const handleSaveNewVat = () => {
-        if (newVatName && newVatRate) {
-            const newVatOption = `${newVatName} (${newVatRate}%)`;
-            vatOptions.push(newVatOption);
-        }
         setShowModal(false);
     };
 
@@ -56,16 +51,6 @@ function EditInvoice() {
     const handleVatChange = (selected) => {
         setSelectedVat(selected);
     };
-
-
-    // 
-    const [show1, setShow1] = useState(false);
-
-    const handleClose1 = () => setShow1(false);
-    const handleShow1 = () => setShow1(true);
-
-    // 
-    const editorRef = useRef(null);
 
     return (
         <>
@@ -86,15 +71,15 @@ function EditInvoice() {
                                             <Form.Label className="text-uppercase">Customer Name<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                value={"Peter Leverkus"}
                                                 disabled
+                                                placeholder="Name of the Customer Who Raised the Enquiry"
                                             />
                                         </Form.Group>
                                         <Form.Group className="mb-3" as={Col} lg={6}>
                                             <Form.Label className="text-uppercase">Trader<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 disabled
-                                                value={"Daniel"}
+                                                placeholder="Name of the Trader Who Viewing this Enquiry"
                                                 type="text" />
                                         </Form.Group>
                                     </Row>
@@ -103,7 +88,7 @@ function EditInvoice() {
                                             <Form.Label className="text-uppercase">Enquiry Number<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 disabled
-                                                value={"#2737"}
+                                                placeholder="Eg : #2737"
                                                 type="text" />
                                         </Form.Group>
 
@@ -112,7 +97,7 @@ function EditInvoice() {
                                             <Form.Control
                                                 type="text"
                                                 disabled
-                                                value={"MAI/INV/2737"}
+                                                placeholder="MAI/INV/2737"
                                             />
                                         </Form.Group>
                                     </Row>
@@ -140,7 +125,7 @@ function EditInvoice() {
                                             <Form.Control
                                                 type="text"
                                                 disabled
-                                                value="Quartz"
+                                                placeholder="Eg : Quartz"
                                             />
                                         </Form.Group>
 
@@ -149,7 +134,7 @@ function EditInvoice() {
                                             <Form.Control
                                                 type="text"
                                                 disabled
-                                                value="Kitchen Worktops"
+                                                placeholder="Eg : Kitchen Worktops"
                                             />
                                         </Form.Group>
 
@@ -158,39 +143,17 @@ function EditInvoice() {
                                             <Form.Control
                                                 type="text"
                                                 disabled
-                                                value="20 MM"
+                                                placeholder="Eg : 20 MM"
 
                                             />
                                         </Form.Group>
                                     </Row>
                                     <Form.Group className="mb-3" as={Col} lg={6}>
                                         <Form.Label className="text-uppercase">Description<span className="text-danger">*</span></Form.Label>
-                                        {/* <Form.Control
+                                        <Form.Control
                                             as="textarea"
                                             rows={3}
-                                            value="Lorem Ipsum is simply dummy text of the printing and typesetting
-                                             industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                                        /> */}
-                                        <Editor
-                                            onInit={(evt, editor) => editorRef.current = editor}
-                                            initialValue="Lorem Ipsum is simply dummy text of the printing and typesetting
-                                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
 
-                                            init={{
-
-                                                height: 200,
-                                                menubar: false,
-                                                // plugins: [
-                                                //     'advlist autolink lists link image charmap print preview anchor',
-                                                //     'searchreplace visualblocks code fullscreen',
-                                                //     'insertdatetime media table paste code help wordcount'
-                                                // ],
-                                                toolbar: 'undo redo | formatselect | ' +
-                                                    'bold italic  | alignleft aligncenter ' +
-                                                    'alignright alignjustify | bullist numlist outdent indent | ' +
-                                                    'removeformat ',
-                                                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-                                            }}
                                         />
                                     </Form.Group>
                                     {/*  */}
@@ -212,29 +175,6 @@ function EditInvoice() {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>
-                                                <textarea style={{ width: '300px' }} className="form-control resize-none" rows="3">
-                                                    CALACATTA LIGHT QUARTZ
-                                                    Dimensions 20 MM - 30 MM
-                                                </textarea>
-                                            </td>
-                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} value={"2"} className="form-control  resize-none" /></td>
-                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} value={"307.21"} className=" form-control  resize-none" /></td>
-                                            <td style={{ width: '8%' }}><input type="number" style={{ width: '100px' }} value={"20"} className=" form-control  resize-none" /></td>
-                                            <td style={{ width: '0%' }}>
-                                                <Typeahead
-                                                    id="vatTypeahead"
-                                                    style={{ width: '200px' }}
-                                                    options={vatOptions}
-                                                    selected={selectedVat}
-                                                    placeholder=" Select VAT"
-                                                    onChange={handleVatChange}
-                                                />
-                                            </td>
-                                            <td style={{ width: '8%', fontWeight: 'bold' }}>£ 614.42</td>
-                                            <td style={{ width: '0%' }}><Icon className="cursor-pointer hover-danger" icon="ic:baseline-delete" width="24" height="24" /></td>
-                                        </tr>
-                                        <tr>
                                             <td><textarea style={{ width: '300px' }} className="form-control resize-none" rows="3"></textarea></td>
                                             <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className="form-control  resize-none" /></td>
                                             <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
@@ -251,15 +191,33 @@ function EditInvoice() {
                                             <td style={{ width: '0%' }}>0.00</td>
                                             <td style={{ width: '0%' }}><Icon className="cursor-pointer hover-danger" icon="ic:baseline-delete" width="24" height="24" /></td>
                                         </tr>
+                                        <tr>
+                                            <td style={{ width: '0%' }}><textarea style={{ width: '300px' }} className="form-control resize-none" rows="3"></textarea></td>
+                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
+                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
+                                            <td style={{ width: '0%' }}><input type="number" style={{ width: '100px' }} className=" form-control  resize-none" /></td>
+                                            <td>
+                                                <Typeahead
+                                                    id="vatTypeahead"
+                                                    style={{ width: '200px' }}
+                                                    options={vatOptions}
+                                                    selected={selectedVat}
+                                                    onChange={handleVatChange}
+                                                />
+                                            </td>
+                                            <td style={{ width: '0%' }}>0.00</td>
+                                            <td style={{ width: '0%' }}><Icon className="hover-danger cursor-pointer" icon="ic:baseline-delete" width="24" height="24" /></td>
+                                        </tr>
+
                                     </tbody>
                                 </Table>
                                 {/*  */}
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <Button className="btn-success me-2">Add New Item</Button>
-                                        <Button onClick={handleAddVat}>Add VAT</Button>
+                                        <Button onClick={handleShow} >Add VAT</Button>
 
-                                        <Modal show={showModal} onHide={handleModalClose}>
+                                        <Modal show={show} onHide={handleModalClose}>
                                             <Modal.Header closeButton>
                                                 <Modal.Title>Add VAT</Modal.Title>
                                             </Modal.Header>
@@ -283,7 +241,7 @@ function EditInvoice() {
                                                 <Button variant="secondary" onClick={handleModalClose}>
                                                     Cancel
                                                 </Button>
-                                                <Button variant="primary" onClick={handleSaveNewVat}>
+                                                <Button variant="primary" onClick={handleModalClose}>
                                                     Save
                                                 </Button>
                                             </Modal.Footer>
@@ -323,7 +281,7 @@ function EditInvoice() {
                                                         <h6>Sub Total</h6>
                                                     </div>
                                                     <div className="col-8 text-end">
-                                                        <h6>£ 614.42</h6>
+                                                        <h6>0.00</h6>
                                                     </div>
                                                 </div>
                                                 <div className="row mb-3">
@@ -336,7 +294,7 @@ function EditInvoice() {
                                                                 <h6 className="mb-2">
                                                                     Shipping charges
                                                                 </h6>
-                                                                <input style={{ width: '100px' }} value={"20"} className="form-control" />
+                                                                <input style={{ width: '100px' }} className="form-control" />
                                                             </div>
                                                         </div>
                                                         <p role="button" className="text-primary">Apply VAT on Shipping Charge</p>
@@ -350,7 +308,7 @@ function EditInvoice() {
                                                         />
                                                     </div>
                                                     <div className="col-8 text-end">
-                                                        <h6 >£ 100.00</h6>
+                                                        <h6 >0.00</h6>
                                                     </div>
                                                 </div>
                                                 <div className="row mb-3">
@@ -364,14 +322,16 @@ function EditInvoice() {
                                                 <div className="row">
                                                     <div className="col-5 mb-3">
                                                         <div className="col-12">
-                                                            <input style={{ width: '150px' }} value={"Price Match"} placeholder="Price Match" className="form-control" />
-
+                                                            <input style={{ width: '150px' }} placeholder="Price Match" className="form-control" />
+                                                            {/* <div className="row mb-3">
+                                                            </div> */}
+                                                            {/* <input value="Price Match" style={{ width: '150px' }} className="form-control" /> */}
 
                                                         </div>
                                                     </div>
 
                                                     <div className="col-7 text-end">
-                                                        <h6 >£ 614.42</h6>
+                                                        <h6 >0.00</h6>
                                                     </div>
                                                 </div>
                                                 <div className="row mb-3">
@@ -379,7 +339,7 @@ function EditInvoice() {
                                                         <h5>Total{''}(£)</h5>
                                                     </div>
                                                     <div className="col-4 text-end">
-                                                        <h6 className="fw-bold">£ 714.42</h6>
+                                                        <h6 className="fw-bold">0.00</h6>
                                                     </div>
                                                 </div>
                                                 <div className="row mb-3">
@@ -419,28 +379,31 @@ function EditInvoice() {
                                         </Form.Group>
                                     </div>
                                     <div className="col-lg-6">
+
                                         {/* Upload Samples */}
                                         <Col lg={12} className='me-2 mb-2 w-100'>
-                                            <div >
-                                                <Form.Label className='text-700 text-uppercase'>
-                                                    attachments
-                                                </Form.Label>
-                                                <div {...getRootProps({ className: 'dropzone-area py-6' })}>
-                                                    <input {...getInputProps({ multiple: false })} />
-                                                    <div className="fs--1">
-                                                        <img src={cloudUpload} alt="" width={20} className="me-2" />
-                                                        <span className="d-none d-lg-inline">
-                                                            Drag your image here
-                                                            <br />
-                                                            or,{' '}
-                                                        </span>
-                                                        <Button variant="link" size="sm" className="p-0 fs--1">
-                                                            Browse
-                                                        </Button>
-                                                    </div>
+
+                                            <Form.Label className='text-700 text-uppercase'>
+                                                attachments
+                                            </Form.Label>
+                                            <div {...getRootProps({ className: 'dropzone-area py-6' })}>
+                                                <input {...getInputProps()} multiple />
+                                                <div className="fs--1">
+                                                    <img src={cloudUpload} alt="" width={20} className="me-2" />
+                                                    <span className="d-none d-lg-inline">
+                                                        Drag your images here
+                                                        <br />
+                                                        or,{' '}
+                                                    </span>
+                                                    <Button variant="link" size="sm" className="p-0 fs--1">
+                                                        Browse
+                                                    </Button>
                                                 </div>
-                                                {cover && (
-                                                    <div className="mt-3">
+                                            </div>
+
+                                            {covers.length > 0 &&
+                                                <div className="mt-3">
+                                                    {covers.map((cover) => (
                                                         <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
                                                             <Image
                                                                 rounded
@@ -450,36 +413,36 @@ function EditInvoice() {
                                                                 alt={cover.path}
                                                             />
                                                             <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
-
                                                                 <h6 className="text-truncate">{cover.path}</h6>
                                                                 <div className="d-flex align-items-center position-relative">
                                                                     <p className="mb-0 fs--1 text-400 line-height-1">
                                                                         <strong>{getSize(cover.size)}</strong>
                                                                     </p>
                                                                 </div>
+                                                                <h6 className="mt-2 text-primary">01/05/2023</h6>
                                                             </div>
                                                             <CardDropdown>
                                                                 <div className="py-2">
                                                                     <Dropdown.Item
                                                                         className="text-danger"
-                                                                        onClick={() => setCover()}
+                                                                        onClick={() => removeCover(cover)}
                                                                     >
                                                                         Remove
                                                                     </Dropdown.Item>
                                                                 </div>
                                                             </CardDropdown>
                                                         </div>
-                                                    </div>
-                                                )}
+                                                    ))}
+                                                </div>
+                                            }
 
-                                            </div>
                                             <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
                                             <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
                                         </Col>
                                         {/* Upload Samples */}
                                     </div>
                                 </div>
-                                <Button as={Link} to="/InvoiceFreelancerCard" className="btn-primary me-2" type="submit">Save</Button>
+                                <Button as={Link} to="/InvoiceFreelancerCard" className="btn-secondary me-2" type="submit">Save as Draft</Button>
                                 <Button as={Link} to="/InvoiceFreelancerCard" className="btn-success me-2" type="submit">Save & Send</Button>
                                 <Button variant="danger" onClick={handleShow1}>
                                     Discard
@@ -489,30 +452,33 @@ function EditInvoice() {
                         </Card>
                     </Col>
                 </div>
+
+                {/*  */}
+                <div>
+
+
+                    <Modal show={show1} onHide={handleClose1}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Warning</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            Are you sure you want to discard this page?
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose1}>
+                                No
+                            </Button>
+                            <Button as={Link} to="/InvoiceFreelancerCard" variant="danger">
+                                Yes
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                </div>
+                {/*  */}
+
+
             </Row >
-            {/*  */}
-            {/*  */}
-            <div>
-                <Modal show={show1} onHide={handleClose1}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Warning</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        Are you sure you want to discard this page?
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose1}>
-                            No
-                        </Button>
-                        <Button as={Link} to="/InvoiceFreelancerCard" variant="danger">
-                            Yes
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
-            </div>
-            {/*  */}
-            {/*  */}
         </>
     )
 }
-export default EditInvoice
+export default NewInvoice

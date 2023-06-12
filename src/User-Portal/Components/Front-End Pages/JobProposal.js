@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useCallback } from "react";
+import React, { useEffect, useState, useCallback,useRef } from "react";
 import { Icon } from "@iconify/react";
 import toast, { Toaster } from 'react-hot-toast';
 import { createData } from "../../../Services/ProxyService";
@@ -17,6 +17,7 @@ import {
     Form,
     Container
 } from 'react-bootstrap';
+import { Editor } from '@tinymce/tinymce-react';
 import { getSize } from '../../TemplateAssets/helpers/utils';
 import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
 import Flex from '../../TemplateAssets/common/Flex';
@@ -81,6 +82,8 @@ function JobProposal() {
             cover_letter: "",
         });
     }
+    // 
+    const editorRef = useRef(null);
 
     // Level comparing 
     let lavel = ""
@@ -188,14 +191,35 @@ function JobProposal() {
                                             <Form.Label style={{ fontSize: '14px' }} className="text-700 text-uppercase">
                                                 Cover Letter<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
-                                            <Form.Control
+                                            {/* <Form.Control
                                                 as="textarea"
                                                 required
                                                 name="cover_letter"
                                                 value={form.cover_letter}
                                                 onChange={(e) => { handleChange(e) }}
                                                 placeholder="Cover Letter"
-                                                rows={6} />
+                                                rows={6} /> */}
+                                            <Editor
+                                                onInit={(evt, editor) => editorRef.current = editor}
+                                                initialValue=""
+                                                
+                                                init={{
+                                                    
+                                                    height: 200,
+                                                    menubar: false,
+                                                    placeholder:'Cover Letter',
+                                                    // plugins: [
+                                                    //     'advlist autolink lists link image charmap print preview anchor',
+                                                    //     'searchreplace visualblocks code fullscreen',
+                                                    //     'insertdatetime media table paste code help wordcount'
+                                                    // ],
+                                                    toolbar: 'undo redo | formatselect | ' +
+                                                        'bold italic  | alignleft aligncenter ' +
+                                                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                        'removeformat ',
+                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                }}
+                                            />
                                         </Form.Group>
                                         <div >
                                             {/* Upload Samples */}
