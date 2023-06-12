@@ -1,7 +1,16 @@
 import React, { useRef, useEffect } from "react";
-
-import interior_design_1 from "../Images/int-design-3.jpg"
-import interior_design_2 from "../Images/int-design-3.jpg"
+import homepage from '../Projectimages/HomeFrame.png'
+import temptingDiscounts from '../Projectimages/TemptingDiscounts.jpg'
+import Limstone from '../Projectimages/Limstone.jpg'
+import Quartzite from '../Projectimages/Quartzite.jpg'
+import bussinessman from '../Projectimages/handshakebussinessman.jpg'
+import twoWay from '../Projectimages/TwoWayReview.png'
+import Granite from '../Projectimages/Granite.jpg'
+import Sandstone from '../Projectimages/Sandstone.jpg'
+import slate from '../Projectimages/Slate.jpg'
+import Tiles from '../Projectimages/Titels.jpg'
+import trainer from '../Projectimages/trainer.png'
+import Travertine from '../Projectimages/Traventina.jpg'
 // import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -42,7 +51,7 @@ function HomePage() {
 
                             <div data-aos="fade-right" className="row  d-flex justify-content-lg-between justify-content-xl-between align-items-center">
                                 <div className="col-md col-lg-5 order-md-2">
-                                    <img className="img-fluid  px-md-0 text-end" style={{ borderRadius: '50px 2px' }} src={interior_design_1} alt="" />
+                                    <img className="img-fluid  px-md-0 text-end" style={{ borderRadius: '50px 2px' }} src={homepage} alt="" />
                                 </div>
                                 <div className="col-md mt-3  col-lg-7 col-xl-4">
                                     <h6 className="text-700 text-uppercase">BUILD AWESOME PROPERTIES</h6>
@@ -74,47 +83,47 @@ function HomePage() {
                             // onAutoplayTimeLeft={onAutoplayTimeLeft}
                             className="mySwiper mb-5"
                         >
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Granite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Marble Slabs</h5>
-                                    {/* <p className="text-light m-2">Hello World</p> */}
+                                    <h5 className="text-light m-2">Granite</h5>
+
                                 </Link>
                             </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Limstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Quartz Slabs</h5>
-                                    {/* <p className="text-light m-2">Hello World</p> */}
+                                    <h5 className="text-light m-2">Limstone</h5>
+
                                 </Link>
                             </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Quartzite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Sinks</h5>
-                                    {/* <p className="text-light m-2">Hello World</p> */}
+                                    <h5 className="text-light m-2">Quartzite</h5>
+
                                 </Link>
                             </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Sandstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Quartzite Slabs</h5>
-                                    {/* <p className="text-light m-2">Hello World</p> */}
+                                    <h5 className="text-light m-2">Sandstone</h5>
+
                                 </Link>
                             </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${slate})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Granite Slabs</h5>
-                                    {/* <p className="text-light m-2">Hello World</p> */}
+                                    <h5 className="text-light m-2">Slate</h5>
+
                                 </Link>
                             </SwiperSlide>
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Tiles})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Semi-Precious</h5>
-                                    {/* <p className="text-light m-2">Hello World</p> */}
+                                    <h5 className="text-light m-2">Tiles</h5>
+
                                 </Link>
                             </SwiperSlide>
 
-                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${interior_design_1})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                            <SwiperSlide className="img-fluid" style={{ backgroundImage: `url(${Travertine})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                 <Link to="/productlist">
-                                    <h5 className="text-light m-2">Tiles</h5>
-                                    {/* <p className="text-light m-2">Hello World</p> */}
+                                    <h5 className="text-light m-2">Travertine</h5>
+
                                 </Link>
                             </SwiperSlide>
 
@@ -160,7 +169,7 @@ function HomePage() {
                         {/* Section-3 */}
                         <div data-aos="fade-left" className="row  mb-5 d-flex justify-content-lg-between justify-content-xl-between align-items-center">
                             <div className="col-md  col-lg-5 ">
-                                <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={interior_design_2} alt="" />
+                                <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={temptingDiscounts} alt="" />
                             </div>
                             <div className="col-md mt-3  col-lg-7 col-xl-4">
                                 <h6 className="text-700 text-start text-uppercase">DON'T MISS</h6>
@@ -169,13 +178,16 @@ function HomePage() {
                                     We keep you updated about unmissable offers from numerous sellers and
                                     traders so that you can grab the best deal from the comfort of your home.
                                 </p>
-                                <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button>
+                                <Button as={Link} to="/productlist" style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button>
                             </div>
                         </div>
                         {/* Section-4 */}
                         <div data-aos="fade-right" >
 
                             <div className="row  mb-5 d-flex justify-content-lg-between justify-content-xl-between align-items-center">
+                                <div className="col-md mb-3 col-lg-5 order-md-2">
+                                    <img className="img-fluid  px-md-0 text-end" style={{ borderRadius: '50px 2px' }} src={bussinessman} alt="" />
+                                </div>
                                 <div className="col-md col-lg-5">
                                     <h6 className="text-700 text-start text-uppercase">SUCCESSFUL TRADE EXPERTS</h6>
                                     <h1 className="fs-2 fs-sm-4 fs-md-5">Choose to become Limitless</h1>
@@ -186,15 +198,12 @@ function HomePage() {
                                     </p>
                                     <Button as={Link} to="/freelancer/false" style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Register Your Trade</Button>
                                 </div>
-                                <div className="col-md  col-lg-5">
-                                    <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={interior_design_2} alt="" />
-                                </div>
                             </div>
                             {/* Section-5 */}
 
                             <div data-aos="fade-left" className="row  mb-5 d-flex justify-content-lg-between justify-content-xl-between align-items-center">
                                 <div className="col-md  col-lg-5 ">
-                                    <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={interior_design_2} alt="" />
+                                    <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={twoWay} alt="" />
                                 </div>
                                 <div className="col-md mt-3  col-lg-7 col-xl-4">
                                     <h6 className="text-700 text-start text-uppercase">UNIQUE IN THE INDUSTRY</h6>
@@ -207,7 +216,7 @@ function HomePage() {
                                     {/* <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button> */}
                                 </div>
                             </div>
-                            <div style={{ backgroundImage: `url(${interior_design_2})` }} data-aos="fade-down" className="row mb-5">
+                            <div style={{ backgroundImage: `url(${Granite})` }} data-aos="fade-down" className="row mb-5">
                                 <div className="col-12 text-center mt-3 mb-3">
                                     <div style={{ fontSize: '25px' }} className="row text-white fw-bold">
                                         <div className="col-lg-6 col-md-6 col-sm-12">
@@ -236,7 +245,7 @@ function HomePage() {
                             <div className="col">
                                 <h1 className="fs-2 mb-4 fs-sm-4 fs-md-5">See What Our Users Felt</h1>
                             </div>
-                            <div className="row">
+                            {/* <div className="row">
                                 <div className="col-lg-12 col-xl-12">
                                     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                                         <SwiperSlide>
@@ -261,35 +270,106 @@ function HomePage() {
                                         </SwiperSlide>
                                     </Swiper>
                                 </div>
-                            </div>
-                        </div>
-                        {/* Section-6 */}
-                        {/* <div data-aos="fade-up" className="text-center">
+                            </div> */}
+                            <section id="testimonials" class="testimonials">
+                                <div class="container aos-init aos-animate" data-aos="fade-up">
+                                    <div class="section-title">
+                                        <h2>Testimonials</h2>
+                                        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+                                    </div>
 
-                            <h5 className="mb-3 text-700 text-uppercase">Latest News</h5>
-                            <div className="col">
-                                <h1 className="fs-2 mb-4 fs-sm-4 fs-md-5">From Our Blog</h1>
-                            </div>
-                            <div className="row mb-5 d-flex justify-content-lg-around justify-content-xl-around align-items-center">
-                                <div className="col-md  col-lg-5 mb-3">
-                                    <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={interior_design_2} alt="" />
-                                    <h1 className="mt-3 text-start">2020 Interior Design Trends</h1>
-                                    <p className="mt-3 text-start">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua,
-                                    </p>
+                                    <div class="testimonials-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="swiper-wrapper" id="swiper-wrapper-46f25b73fc81e0910" aria-live="off" style={{ transform: "translate3d(-2272px, 0px, 0px)", transitionDuration: "0ms" }}><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
+                                            <div class="testimonial-wrap">
+                                                <div class="testimonial-item">
+                                                    <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
+                                                    <h3>Jena Karlis</h3>
+                                                    <h4>Store Owner</h4>
+                                                    <p>
+                                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
+                                                <div class="testimonial-wrap">
+                                                    <div class="testimonial-item">
+                                                        <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="" />
+                                                        <h3>Matt Brandon</h3>
+                                                        <h4>Freelancer</h4>
+                                                        <p>
+                                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                                            Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
+                                                <div class="testimonial-wrap">
+                                                    <div class="testimonial-item">
+                                                        <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="" />
+                                                        <h3>John Larson</h3>
+                                                        <h4>Entrepreneur</h4>
+                                                        <p>
+                                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                                            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat esse veniam culpa fore nisi cillum quid.
+                                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
+                                                <div class="testimonial-wrap">
+                                                    <div class="testimonial-item">
+                                                        <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
+                                                        <h3>Saul Goodman</h3>
+                                                        <h4>Ceo &amp; Founder</h4>
+                                                        <p>
+                                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                                            Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
+                                                <div class="testimonial-wrap">
+                                                    <div class="testimonial-item">
+                                                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
+                                                        <h3>Sara Wilsson</h3>
+                                                        <h4>Designer</h4>
+                                                        <p>
+                                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                                            Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style={{ width: '358.667px', marginRight: '20px' }}>
+                                                <div class="testimonial-wrap">
+                                                    <div class="testimonial-item">
+                                                        <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
+                                                        <h3>Jena Karlis</h3>
+                                                        <h4>Store Owner</h4>
+                                                        <p>
+                                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                                            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div></div>
+                                        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
+                                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
                                 </div>
-                                <div className="col-md  col-lg-5 ">
-                                    <img className="img-fluid  " style={{ borderRadius: '50px 2px' }} src={interior_design_2} alt="" />
-                                    <h1 className="mt-3 text-start">2020 Interior Design Trends</h1>
-                                    <p className="mt-3 text-start">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua,
-                                    </p>
-                                </div>
-                            </div>
-                        </div> */}
+                            </section>
+                        </div>
                     </Col>
                 </Container>
-                <Col>
+                <Col lg={12}>
                     <Footer />
                 </Col>
             </Row >

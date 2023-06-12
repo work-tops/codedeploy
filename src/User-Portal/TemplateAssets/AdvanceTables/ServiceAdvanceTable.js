@@ -93,18 +93,18 @@ const ServiceAdvancedTable = () => {
             accessor: 'image',
             Header: 'Service Image'
         },
-        {
-            accessor: 'email',
-            Header: 'Trader Email',
-            Cell: rowData => {
-                const { email } = rowData.row.original
-                return (
-                    <a href={'mailto:' + email}>
-                        {email}
-                    </a>
-                )
-            }
-        },
+        // {
+        //     accessor: 'email',
+        //     Header: 'Trader Email',
+        //     Cell: rowData => {
+        //         const { email } = rowData.row.original
+        //         return (
+        //             <a href={'mailto:' + email}>
+        //                 {email}
+        //             </a>
+        //         )
+        //     }
+        // },
         {
             accessor: 'priceType',
             Header: 'PriceType'

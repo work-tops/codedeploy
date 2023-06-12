@@ -74,15 +74,10 @@ function Chat() {
                                                 <div className="nav nav-tabs border-0 flex-column" role="tablist" aria-orientation="vertical">
                                                     <div className="hover-actions-trigger chat-contact nav-item active" role="tab" id="chat-link-0" data-bs-toggle="tab" data-bs-target="#chat-0" aria-controls="chat-0" aria-selected="true">
                                                         <div className="d-md-none  d-lg-block">
-                                                            <div className="dropdown dropdown-active-trigger dropdown-chat"><button className="hover-actions btn btn-link btn-sm text-400 dropdown-caret-none dropdown-toggle end-0 fs-0 mt-4 me-1 z-index-1 pb-2 mb-n2" type="button" data-boundary="viewport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg className="svg-inline--fa fa-cog fa-w-16" data-fa-transform="shrink-3 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" transform="translate(-256 -256)"></path></g></g></svg></button>
-                                                                <div className="dropdown-menu dropdown-menu-end border py-2 rounded-2"><a className="dropdown-item" onClick={setShow2}><span>Mute</span> <Icon className="me-2" icon="ion:volume-mute" width="20" height="20" />Muted </a>
-                                                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="#!">Archive <span>Archived</span></a><a className="dropdown-item text-danger" onClick={setShow3}>Delete</a>
-                                                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="#!">Mark as Unread</a><a className="dropdown-item" onClick={handleShow4}><span>Block</span> <span>Unblock</span></a>
-                                                                </div>
-                                                            </div>
+                                                            
                                                         </div>
                                                         <div className="d-flex p-3">
-                                                            <div className="avatar avatar-xl status-online">
+                                                            <div className="avatar avatar-xl ">
                                                                 <img className="rounded-circle" src={profile} alt="" />
                                                             </div>
                                                             <div className="flex-1 chat-contact-body ms-2 d-md-none d-lg-block">
@@ -100,15 +95,12 @@ function Chat() {
                                                     </div>
                                                     <div className="hover-actions-trigger chat-contact nav-item" role="tab" id="chat-link-2" data-bs-toggle="tab" data-bs-target="#chat-2" aria-controls="chat-2" aria-selected="false" tabindex="-1">
                                                         <div className="d-md-none d-lg-block">
-                                                            <div className="dropdown dropdown-active-trigger dropdown-chat"><button className="hover-actions btn btn-link btn-sm text-400 dropdown-caret-none dropdown-toggle end-0 fs-0 mt-4 me-1 z-index-1 pb-2 mb-n2" type="button" data-boundary="viewport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg className="svg-inline--fa fa-cog fa-w-16" data-fa-transform="shrink-3 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" transform="translate(-256 -256)"></path></g></g></svg></button>
-                                                                <div className="dropdown-menu dropdown-menu-end border py-2 rounded-2"><a className="dropdown-item" onClick={setShow2}> <span>Mute</span> <Icon className="me-2" icon="ion:volume-mute" width="20" height="20" />Muted</a>
-                                                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="#!">Archive <span>Archived</span></a><a className="dropdown-item text-danger" onClick={setShow3}>Delete</a>
-                                                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="#!">Mark as Unread</a><a className="dropdown-item" onClick={handleShow4}><span>Block</span> <span>Unblock</span></a>
-                                                                </div>
+                                                            <div className="dropdown dropdown-active-trigger dropdown-chat">
+                                                                
                                                             </div>
                                                         </div>
                                                         <div className="d-flex p-3">
-                                                            <div className="avatar status-away avatar-xl">
+                                                            <div className="avatar avatar-xl">
                                                                 <img className="rounded-circle" src={profile} alt="" />
                                                             </div>
                                                             <div className="flex-1 chat-contact-body ms-2 d-md-none d-lg-block">
@@ -124,15 +116,10 @@ function Chat() {
                                                     </div>
                                                     <div className="hover-actions-trigger chat-contact nav-item" role="tab" id="chat-link-2" data-bs-toggle="tab" data-bs-target="#chat-2" aria-controls="chat-2" aria-selected="false" tabindex="-1">
                                                         <div className="d-md-none d-lg-block">
-                                                            <div className="dropdown dropdown-active-trigger dropdown-chat"><button className="hover-actions btn btn-link btn-sm text-400 dropdown-caret-none dropdown-toggle end-0 fs-0 mt-4 me-1 z-index-1 pb-2 mb-n2" type="button" data-boundary="viewport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg className="svg-inline--fa fa-cog fa-w-16" data-fa-transform="shrink-3 down-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style={{ transformOrigin: "0.5em 0.75em" }}><g transform="translate(256 256)"><g transform="translate(0, 128)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" transform="translate(-256 -256)"></path></g></g></svg></button>
-                                                                <div className="dropdown-menu dropdown-menu-end border py-2 rounded-2"><a className="dropdown-item" onClick={setShow2}> <span>Mute</span> <Icon className="me-2" icon="ion:volume-mute" width="20" height="20" />Unmute</a>
-                                                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="#!">Archive <span>Archived</span></a><a className="dropdown-item text-danger" onClick={setShow3}>Delete</a>
-                                                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="#!">Mark as Unread</a><a className="dropdown-item" onClick={handleShow4}><span>Block</span> <span>Unblock</span></a>
-                                                                </div>
-                                                            </div>
+                                                            
                                                         </div>
                                                         <div className="d-flex p-3">
-                                                            <div className="avatar status-away avatar-xl">
+                                                            <div className="avatar  avatar-xl">
                                                                 <img className="rounded-circle" src={profile} alt="" />
                                                             </div>
                                                             <div className="flex-1 chat-contact-body ms-2 d-md-none d-lg-block">
@@ -225,7 +212,7 @@ function Chat() {
                                                 <div className="conversation-info" data-index="0">
                                                     <div className="h-100 overflow-auto scrollbar">
                                                         <div className="d-flex position-relative align-items-center p-3 border-bottom">
-                                                            <div className="avatar avatar-xl status-online">
+                                                            <div className="avatar avatar-xl ">
                                                                 <img className="rounded-circle" src={profile} alt="" />
                                                             </div>
                                                             <div className="flex-1 ms-2 d-flex flex-between-center">
@@ -289,7 +276,7 @@ function Chat() {
                                                 <div className="chat-content-scroll-area scrollbar">
                                                     <div className="d-flex position-relative p-3 border-bottom mb-3 align-items-center">
 
-                                                        <div className="avatar avatar-2xl status-online me-3">
+                                                        <div className="avatar avatar-2xl  me-3">
                                                             <img className="rounded-circle" src={profile} alt="" />
                                                         </div>
                                                         <div className="flex-1">
@@ -535,9 +522,6 @@ function Chat() {
                                             {/*  */}
                                         </div>
 
-                                        {/* Archieved Chat's */}
-                                        <div className="text-center text-capitalize">This Chat has Been Ended By <span style={{ color: "#003f6b" }}>Peter Leverkus</span></div>
-                                        {/* Archieved Chat's */}
                                         <Form className="">
                                             <Editor
                                                 onInit={(evt, editor) => editorRef.current = editor}

@@ -364,18 +364,18 @@ const AdvancedTable = () => {
             accessor: 'name',
             Header: 'Name'
         },
-        {
-            accessor: 'email',
-            Header: 'Seller',
-            Cell: rowData => {
-                const { email } = rowData.row.original
-                return (
-                    <a href={'mailto:' + email}>
-                        {email}
-                    </a>
-                )
-            }
-        },
+        // {
+        //     accessor: 'email',
+        //     Header: 'Seller',
+        //     Cell: rowData => {
+        //         const { email } = rowData.row.original
+        //         return (
+        //             <a href={'mailto:' + email}>
+        //                 {email}
+        //             </a>
+        //         )
+        //     }
+        // },
         {
             accessor: 'price',
             Header: 'Price'
@@ -398,7 +398,7 @@ const AdvancedTable = () => {
         productId: product._id,
         image: <img src={product.attachments[0].url} width="40px" height="35px" />,
         name: <p className="text-uppercase">{product.name}</p>,
-        email: product.seller_email,
+        // email: product.seller_email,
         price: `£${product.variant[0].pricing.price}`,
         quantity: `${product.variant[0].inventory.quantity} Pcs`,
         status: <span className="badge bg-success ">Approved</span>,

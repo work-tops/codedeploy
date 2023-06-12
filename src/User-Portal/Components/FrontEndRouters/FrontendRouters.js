@@ -93,7 +93,9 @@ import Estimate from "../Front-End Pages/Estimate";
 import EditEstimate from "../Front-End Pages/Profile/EditEstimate";
 import GuestCheckout from "../Front-End Pages/Cart/GuestCheckout";
 import OwnerEstimate from "../Front-End Pages/OwnerEstimate";
-
+import Notifications from '../Front-End Pages/Notifications'
+import EditInvoice from "../Front-End Pages/Profile/EditInvoice";
+import TextareaWithOptions from "../Front-End Pages/Profile/BussinessInformation";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -131,10 +133,10 @@ const FrontEndRouters = () => {
             <Route path='/addproductcard'><AddProductCard /></Route>
             <Route path='/addservicecard'><AddServiceCard /></Route>
             <Route path='/proposalcard'><ProposalCard /></Route>
+
             {/* Enquries */}
             <Route path='/Enquirescard'><ProductEnquiresCard /></Route>
             <Route path="/ownerEnquireDetails"><OwnerEnquiryDetails /></Route>
-            {/* <Route path='/sellerEnquirescard'><SellerEnquiryCard /></Route> */}
             <Route path="/sellerEnquireDetails"><SellerEnquiryDetails /></Route>
             {/* Enquries */}
 
@@ -156,7 +158,7 @@ const FrontEndRouters = () => {
             <Route path='/wishlist/seller'><WishListSellerCard /></Route>
             <Route path='/MyProfile'><MyProfile /></Route>
             <Route path='/user/allservices'><AllServices /></Route>
-            <Route path="/BussinessInformation"><BussinessInformation /></Route>
+            <Route path="/BussinessInformation"><TextareaWithOptions /></Route>
             <Route path="/paymentinfo"><PaymentInfo /></Route>
             <Route path="/invoice"><Invoice /></Route>
             <Route path="/Granite"><Granite /></Route>
@@ -175,7 +177,7 @@ const FrontEndRouters = () => {
             <Route path="/shippingpolicy"><ShippingPolicy /></Route>
             <Route path="/msppolicy"><MSPPolicy /></Route>
             <Route path="/termsofuse"><TermsOfUse /></Route>
-            <Route path="/carrer"><Carrer /></Route>
+            <Route path="/Career"><Carrer /></Route>
             <Route path="/faq"><FAQ /></Route>
             <Route path="/aboutus"><About /></Route>
             <Route path="/checkout"><Checkout /></Route>
@@ -197,7 +199,7 @@ const FrontEndRouters = () => {
 
             {/* New Pages */}
 
-            {/* <Route path="/notifications"><Notifications /></Route> */}
+            <Route path="/notifications"><Notifications /></Route>
             <Route path="/chat"><Chat /></Route>
             <Route path="/FreelancerProfile"><FreelancerProfile /></Route>
             <Route path="/FreelancerEditProfile"><FreelancerEditProfile /></Route>
@@ -213,6 +215,7 @@ const FrontEndRouters = () => {
             <Route path="/Estimates"><Estimate/></Route>
             <Route path="/GuestCheckout"><GuestCheckout/></Route>
             <Route path="/project-owner-estimate"><OwnerEstimate/></Route>
+            <Route path="/EditInvoice"><EditInvoice/></Route>
             {/* New Pages */}
         </Switch>
 

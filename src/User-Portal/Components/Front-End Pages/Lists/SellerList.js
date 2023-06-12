@@ -12,6 +12,8 @@ import Footer from "../../Footer/Footer";
 import Flex from "../../../TemplateAssets/common/Flex";
 import SimpleBarReact from "simplebar-react";
 import MultiSelect from 'multiselect-react-dropdown';
+
+
 function SellerList() {
 
     const [sellersList, setSellers] = useState([]);
@@ -631,7 +633,7 @@ function SellerList() {
                                 </Form.Check>
                             </Form.Group>
                         </Form>
-                        <Button as={Link} to="/owner" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
+                        <Button as={Link} to="/projectowner" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
                             SEND
                         </Button>
                     </Modal.Body>

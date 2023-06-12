@@ -141,7 +141,7 @@ const InvoiceTableCard = () => {
                     <h5 className="text-capitalize">
                         Invoice
                     </h5>
-                    
+
                 </Card.Header>
                 <Card.Body>
                     <AdvanceTableWrapper
@@ -176,7 +176,7 @@ const InvoiceTableCard = () => {
                 </Card.Body>
             </Card>
 
-            {/* View Modal */}
+            {/* Invoice Modal */}
 
             <Modal
                 show={show2}
@@ -186,161 +186,164 @@ const InvoiceTableCard = () => {
                 aria-labelledby="example-custom-modal-styling-title"
             >
                 <Modal.Header closeButton className="">
-                    <h5>
+                    {/* <h5>
                         Invoice :<span style={{ fontSize: '14px' }} className="ms-2 text-danger">Project Id : #123456</span>
-                    </h5>
+                    </h5> */}
 
                 </Modal.Header>
                 <Modal.Body>
-                    <RaiseInvoiceTable />
-                    <div className="row">
-                        <div className="col-lg-8 col-sm-12">
-                            <Form.Group className="mt-3">
-                                <Form.Label className="text-900">Message on Invoice</Form.Label>
-                                <p className="w-75 text-justify text-900">
-                                    It is a long estabcol-sm-12lished fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout.
-                                </p>
-                            </Form.Group>
-                            <Form.Group className="mt-3">
-                                <Form.Label className="text-900">Message on Statement</Form.Label>
-                                <p className="w-75 text-justify text-900">
-                                    It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout.
-                                </p>
-                            </Form.Group>
-                            <Form.Group className="mt-3 mb-3">
-                                <Form.Label className="text-900">Attachments</Form.Label>
-                                <div className="row bg-pre mt-3">
-                                    <div className="col ">
-                                        <img src={file} width="50px" height="50px" className="pro-pre" />
+                    <div className="card mb-3">
+                        <div className="card mb-3">
+                            <div className="card-body">
+                                <div className="row justify-content-between align-items-center">
+                                    <div className="col-md">
+                                        <h5 className="mb-2 mb-md-0"># MAI/INV/2737</h5>
+                                    </div>
+                                    <div className="col-auto">
+                                        <button className="btn btn-falcon-success btn-sm mb-2 me-1 mb-sm-0" type="button">
+                                            Download
+                                        </button>
+                                        <button className="btn btn-falcon-default btn-sm me-1 mb-2 mb-sm-0" type="button">
+                                            <span className="fas fa-print me-1"> </span>
+                                            Print
+                                        </button>
                                     </div>
                                 </div>
-                            </Form.Group>
-
+                            </div>
                         </div>
-                        <div className="col-lg-4 col-sm-12">
-                            <tr>
-                                <td>
-                                    <h6 className="mt-3 fw-bold text-900 me-3">Sub Total:</h6>
-                                </td>
-                                <td>
-                                    <h6 className=" mt-3 text-900 me-3">£ 200</h6>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h6 className=" mt-3 fw-bold text-900 me-3">Discount (20%):</h6>
+                        {/*  */}
+                        <div className="card mb-3">
+                            <div className="card-body">
+                                <div className="row align-items-center text-center mb-3">
+                                    <div className="col-sm-6 text-sm-start">
+                                        {/* <img src="../../assets/img/logos/logo-invoice.png" alt="invoice" width="150" /> */}
+                                        <h1 style={{ color: '#003f6b' }}>MAI</h1>
+                                        <p style={{ color: '#003f6b' }}>Myproject.ai</p>
+                                        <h6 className="">From,</h6>
+                                        <h6>Jagan</h6>
+                                        <p className="fs--1 mb-0">156 University Ave, Toronto<br></br>On, Canada, M5H 2H7</p>
+                                    </div>
 
-                                </td>
-                                <td>
-                                    <h6 className=" mt-3 text-900 me-3">£ 40</h6>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h6 className=" mt-3 fw-bold text-900 me-3">Shipping (20%):</h6>
-
-                                </td>
-                                <td>
-                                    <h6 className=" mt-3 text-900 me-3">£ 40</h6>
-                                    <Divider />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h6 className=" mt-3 fw-bold text-900 me-3">Total:</h6>
-
-                                </td>
-                                <td>
-                                    <h6 className=" mt-3 fw-bold text-900 me-3">£ 280</h6>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h6 className=" mt-3 fw-bold text-900 me-3">Deposit:</h6>
-
-                                </td>
-                                <td>
-                                    <h6 className=" mt-3 fw-bold text-900 me-3">£ 280</h6>
-                                    <Divider />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h6 className=" mt-3 fw-bold text-900 me-3">Balance Due:</h6>
-
-                                </td>
-                                <td>
-                                    <h6 className=" mt-3 fw-bold text-900 me-3">£ 280</h6>
-
-                                </td>
-                            </tr>
+                                    <div className="col-12">
+                                        <hr></hr>
+                                    </div>
+                                </div>
+                                <div className="row align-items-center">
+                                    <div className="col">
+                                        <h6 className="text-500">Invoice to</h6>
+                                        <h5>Peter Leverkus</h5>
+                                        <p className="fs--1">1954 Bloor Street West<br></br>Torronto ON, M6P 3K9<br></br>Canada</p>
+                                    </div>
+                                    <div className="col-sm-auto ms-auto">
+                                        <div className="table-responsive">
+                                            <table className="table table-sm table-borderless fs--1">
+                                                <tbody>
+                                                    <tr>
+                                                        <th className="text-sm-end">Invoice No:</th>
+                                                        <td># MAI/EST/2737</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th className="text-sm-end">Enquiry Number:</th>
+                                                        <td>#2737</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th className="text-sm-end">Invoice Date:</th>
+                                                        <td>2018-09-25</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th className="text-sm-end">Payment Status:</th>
+                                                        <td><span className="badge bg-success">Paid</span></td>
+                                                    </tr>
+                                                    <tr className="alert alert-success fw-bold">
+                                                        <th className="text-sm-end">Amount:</th>
+                                                        <td>£ 19688.40</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="table-responsive scrollbar mt-4 fs--1">
+                                    <table className="table table-striped border-bottom">
+                                        <thead className="light">
+                                            <tr className="bg-primary text-white dark__bg-1000">
+                                                <th className="border-0">Products</th>
+                                                <th className="border-0 text-center">Quantity</th>
+                                                <th className="border-0 text-end">Rate</th>
+                                                <th className="border-0 text-end">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td className="align-middle">
+                                                    <h6 className="mb-0 text-nowrap">Platinum web hosting package</h6>
+                                                    <p className="mb-0">Down 35mb, Up 100mb</p>
+                                                </td>
+                                                <td className="align-middle text-center">2</td>
+                                                <td className="align-middle text-end">£ 65.00</td>
+                                                <td className="align-middle text-end">£ 130.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="align-middle">
+                                                    <h6 className="mb-0 text-nowrap">2 Page website design</h6>
+                                                    <p className="mb-0">Includes basic wireframes and responsive templates</p>
+                                                </td>
+                                                <td className="align-middle text-center">1</td>
+                                                <td className="align-middle text-end">£ 2,100.00</td>
+                                                <td className="align-middle text-end">£ 2,100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="align-middle">
+                                                    <h6 className="mb-0 text-nowrap">Mobile App Development</h6>
+                                                    <p className="mb-0">Includes responsive navigation</p>
+                                                </td>
+                                                <td className="align-middle text-center">8</td>
+                                                <td className="align-middle text-end">£ 5,00.00</td>
+                                                <td className="align-middle text-end">£ 4,000.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="align-middle">
+                                                    <h6 className="mb-0 text-nowrap">Web App Development</h6>
+                                                    <p className="mb-0">Includes react spa</p>
+                                                </td>
+                                                <td className="align-middle text-center">6</td>
+                                                <td className="align-middle text-end">£ 2,000.00</td>
+                                                <td className="align-middle text-end">£ 12,000.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div className="row justify-content-end">
+                                    <div className="col-auto">
+                                        <table className="table table-sm table-borderless fs--1 text-end">
+                                            <tbody><tr>
+                                                <th className="text-900">Subtotal:</th>
+                                                <td className="fw-semi-bold">£ 18,230.00 </td>
+                                            </tr>
+                                                <tr>
+                                                    <th className="text-900">Tax 8%:</th>
+                                                    <td className="fw-semi-bold">£ 1458.40</td>
+                                                </tr>
+                                                <tr className="border-top">
+                                                    <th className="text-900">Total:</th>
+                                                    <td className="fw-semi-bold">£ 19688.40</td>
+                                                </tr>
+                                                <tr className="border-top border-top-2 fw-bolder text-900">
+                                                    <th>Amount Due:</th>
+                                                    <td>£ 19688.40</td>
+                                                </tr>
+                                            </tbody></table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card-footer bg-light">
+                                <p className="fs--1 mb-0"><strong>Notes: </strong>We really appreciate your business and if there’s anything else we can do, please let us know!</p>
+                            </div>
                         </div>
                     </div>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button as={Link} to="/InvoiceCheckout" className="btn btn-success">Pay Now</Button>
-                </Modal.Footer>
             </Modal>
-            {/* View Modal */}
-            {/* Modal */}
-            <Modal
-                show={show1}
-                onHide={() => setShow1(false)}
-                // backdrop="static"
-                dialogClassName="modal-lg modal-90w"
-                aria-labelledby="example-custom-modal-styling-title"
-            >
-                <Modal.Header className="">
-                    <h5>
-                        New Invoice:<span style={{ fontSize: '16px' }} className="ms-2 text-danger">Project Id : #123456</span>
-                    </h5>
-                    <Button className="bg-danger border-0" onClick={handleClose1}>
-                        Close
-                    </Button>
-                </Modal.Header>
-                <Modal.Body>
-                    <RaiseInvoiceTable/>
-                </Modal.Body>
-                <Modal.Footer>
-                    <div>
-                        <tr>
-                            <td>
-                                <h6 className="mt-3 text-900 me-3">Invoice Total:</h6>
-                            </td>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">£ 200</h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">Tax : <span className="fw-semibold ms-3 mt-2">20 %</span></h6>
-                            </td>
-                            <td>
-                                <h6 className=" mt-3 text-900 me-3">£ 40</h6>
-                                <Divider />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5 className="fw-semibold mt-3 text-900 me-3">Grand Total:</h5>
-
-                            </td>
-                            <td>
-                                <h5 className="fw-semibold mt-3 text-900 me-3">£ 240</h5>
-                                <Divider />
-                            </td>
-                        </tr>
-                        <div className="mt-3 d-flex justify-content-end">
-                            <span style={{ fontSize: '14px' }} onClick={handleClose} className="badge p-2 bg-danger ms-2 border-0">Cancelled</span>
-                        </div>
-                    </div>
-                </Modal.Footer>
-            </Modal>
-            {/*  */}
+            {/* Invoice Modal */}
         </>
     )
 }

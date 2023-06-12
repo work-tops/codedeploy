@@ -12,7 +12,7 @@ function FrontEndAllProducts() {
         <Card.Body>
           <div className='d-flex justify-content-between'>
             {/* <div className="m-3"> */}
-            <h4 className="mt-2">All Products</h4>
+            <h4 className="mt-2">My Products</h4>
             {/* </div> */}
             {/* <div className="m-3"> */}
 

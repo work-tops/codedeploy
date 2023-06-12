@@ -1,112 +1,72 @@
-// import { React, useState } from "react";
-// import { Card, Row, Col, Container, Form, Modal, Button } from "react-bootstrap";
-// import { Link } from "react-router-dom";
-// import profile from '../Projectimages/Handyman.jpg'
-// import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
-// import profile_1 from '../Images/employee.png'
-// function Notifications() {
-//     const [show2, setShow2] = useState(false);
+import { React, useState } from "react";
+import { Card, Row, Col, Container, Form, Modal, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import profile from '../Projectimages/Handyman.jpg'
+import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
+import profile_1 from '../Images/employee.png'
+function Notifications() {
+    return (
+        <>
+            <div className="row">
+                <div className="mb-5 col-12">
+                    <NavbarStandard />
+                </div>
+            </div>
+            <div className="ms-3 me-3 mt-4 card overflow-hidden mb-3">
+                <div className="card-header bg-light">
+                    <div className="row flex-between-center">
+                        <div className="col-sm-auto">
+                            <h5 className="mb-1 mb-md-0">Your Notifications</h5>
+                        </div>
+                        <div className="col-sm-auto fs--1">
+                            <a className="font-sans-serif ms-2 ms-sm-3" href="#!">Mark all as read</a>
+                        </div>
+                    </div>
+                </div>
+                <div className="card-body fs--1 p-0">
+                    <Link to="/chat">
+                        <a className="border-bottom-0 notification rounded-0 border-x-0 border-300" href="#!">
+                            <div className="notification-avatar">
+                                <div className="avatar avatar-xl me-3">
+                                    <img className="rounded-circle" src={profile_1} alt="" />
+                                </div>
+                            </div>
+                            <div className="notification-body">
+                                <p className="mb-1">Announcing the winners of the <span className="fw-semibold">The only book awards</span> decided by you, the readers. Check out the champions and runners-up in all 21 categories now!</p>
+                                <span className="notification-time">Just Now</span>
+                            </div>
+                        </a>
+                    </Link>
+                    <Link to="/chat">
+                        <a className="border-bottom-0 notification-unread notification rounded-0 border-x-0 border-300" href="#!">
+                            <div className="notification-avatar">
+                                <div className="avatar avatar-xl me-3">
+                                    <img className="rounded-circle" src={profile} alt="" />
+                                </div>
+                            </div>
+                            <div className="notification-body">
+                                <p className="mb-1">Last chance to vote in <span className="fw-semibold">The 2018 Falcon Choice Awards</span>! See what made it to the Final Round and help your favorites take home the win. Voting closes on November 26</p>
+                                <span className="notification-time">15m</span>
+                            </div>
+                        </a>
+                    </Link>
+                    <Link to="/chat">
+                        <a className="border-bottom-0 notification rounded-0 border-x-0 border-300" href="#!">
+                            <div className="notification-avatar">
+                                <div className="avatar avatar-xl me-3">
+                                    <img className="rounded-circle" src={profile} alt="" />
+                                </div>
+                            </div>
+                            <div className="notification-body">
+                                <p className="mb-1"><span className="fw-semibold">Jennifer Kent</span> declared you as a <span className="fw-semibold">President</span> of Computer Science and Engineering Society</p>
+                                <span className="notification-time">1h</span>
+                            </div>
+                        </a>
+                    </Link>
+                </div>
+            </div>
 
-//     const handleClose2 = () => setShow2(false);
-//     const handleShow2 = () => setShow2(true);
-//     return (
-//         <>
-//             {/*  */}
-//                 <div class="dropdown-menu dropdown-caret dropdown-menu-end dropdown-menu-card dropdown-menu-notification dropdown-caret-bg show" aria-labelledby="navbarDropdownNotification" data-bs-popper="static">
-//                     <div class="card card-notification shadow-none">
-//                         <div class="card-header">
-//                             <div class="row justify-content-between align-items-center">
-//                                 <div class="col-auto">
-//                                     <h6 class="card-header-title mb-0">Notifications</h6>
-//                                 </div>
-//                                 <div class="col-auto ps-0 ps-sm-3"><a class="card-link fw-normal" href="#">Mark all as read</a></div>
-//                             </div>
-//                         </div>
-//                         <div class="scrollbar-overlay" style={{ maxHeight: "19rem" }} data-simplebar="init">
-//                             <div class="simplebar-wrapper" style={{ margin: "0px" }}>
-//                                 <div class="simplebar-height-auto-observer-wrapper">
-//                                     <div class="simplebar-height-auto-observer">
-//                                     </div>
-//                                 </div>
-//                                 <div class="simplebar-mask">
-//                                     <div class="simplebar-offset" style={{ right: "0px", bottom: "0px" }}>
-//                                         <div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style={{ height: "auto", overflow: "hidden scroll" }}><div class="simplebar-content" style={{ padding: '0px' }}>
-//                                             <div class="list-group list-group-flush fw-normal fs--1">
-//                                                 <div class="list-group-title border-bottom">NEW</div>
-//                                                 <div class="list-group-item">
-//                                                     <a class="notification notification-flush notification-unread" href="#!">
-//                                                         <div class="notification-avatar">
-//                                                             <div class="avatar avatar-2xl me-3">
-//                                                                 <img class="rounded-circle" src="../../../assets/img/team/1-thumb.png" alt="" />
-//                                                             </div>
-//                                                         </div>
-//                                                         <div class="notification-body">
-//                                                             <p class="mb-1"><strong>Emma Watson</strong> replied to your comment : "Hello world 😍"</p>
-//                                                             <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">💬</span>Just now</span>
-//                                                         </div>
-//                                                     </a>
-//                                                 </div>
-//                                                 <div class="list-group-item">
-//                                                     <a class="notification notification-flush notification-unread" href="#!">
-//                                                         <div class="notification-avatar">
-//                                                             <div class="avatar avatar-2xl me-3">
-//                                                                 <div class="avatar-name rounded-circle"><span>AB</span></div>
-//                                                             </div>
-//                                                         </div>
-//                                                         <div class="notification-body">
-//                                                             <p class="mb-1"><strong>Albert Brooks</strong> reacted to <strong>Mia Khalifa's</strong> status</p>
-//                                                             <span class="notification-time">
-//                                                                 <span class="me-2 fab fa-gratipay text-danger"></span>9hr</span>
-//                                                         </div>
-//                                                     </a>
-//                                                 </div>
-//                                                 <div class="list-group-title border-bottom">EARLIER</div>
-//                                                 <div class="list-group-item">
-//                                                     <a class="notification notification-flush" href="#!">
-//                                                         <div class="notification-avatar">
-//                                                             <div class="avatar avatar-2xl me-3">
-//                                                                 <img class="rounded-circle" src="../../../assets/img/icons/weather-sm.jpg" alt="" />
-//                                                             </div>
-//                                                         </div>
-//                                                         <div class="notification-body">
-//                                                             <p class="mb-1">The forecast today shows a low of 20℃ in California. See today's weather.</p>
-//                                                             <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🌤️</span>1d</span>
-//                                                         </div>
-//                                                     </a>
-//                                                 </div>
-//                                                 <div class="list-group-item">
-//                                                     <a class="border-bottom-0 notification-unread  notification notification-flush" href="#!">
-//                                                         <div class="notification-avatar">
-//                                                             <div class="avatar avatar-xl me-3">
-//                                                                 <img class="rounded-circle" src="../../../assets/img/logos/oxford.png" alt="" />
-//                                                             </div>
-//                                                         </div>
-//                                                         <div class="notification-body">
-//                                                             <p class="mb-1"><strong>University of Oxford</strong> created an event : "Causal Inference Hilary 2019"</p>
-//                                                             <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">✌️</span>1w</span>
-//                                                         </div>
-//                                                     </a>
-//                                                 </div>
-//                                                 <div class="list-group-item">
-//                                                     <a class="border-bottom-0 notification notification-flush" href="#!">
-//                                                         <div class="notification-avatar">
-//                                                             <div class="avatar avatar-xl me-3">
-//                                                                 <img class="rounded-circle" src="../../../assets/img/team/10.jpg" alt="" />
-//                                                             </div>
-//                                                         </div>
-//                                                         <div class="notification-body">
-//                                                             <p class="mb-1"><strong>James Cameron</strong> invited to join the group: United Nations International Children's Fund</p>
-//                                                             <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🙋‍</span>2d</span>
-//                                                         </div>
-//                                                     </a>
-//                                                 </div>
-//                                             </div>
-//                                         </div></div></div></div><div class="simplebar-placeholder" style={{ width: "auto", height: "513px" }}></div></div><div class="simplebar-track simplebar-horizontal" style={{ visibility: "hidden", }}><div class="simplebar-scrollbar" style={{ width: "0px", display: "none" }}></div></div><div class="simplebar-track simplebar-vertical" style={{ visibility: "visible" }}><div class="simplebar-scrollbar" style={{ height: "180px", display: "block", transform: "translate3d(0px, 59px, 0px)" }}></div></div></div>
-//                         <div class="card-footer text-center border-top"><a class="card-link d-block" href="../../../app/social/notifications.html">View all</a></div>
-//                     </div>
-//                 </div>
-
-//         </>
-//     )
-// }
-// export default Notifications
+        </>
+    )
+}
+export default Notifications

@@ -1,4 +1,4 @@
-import { React, useState, useEffect,useCallback } from 'react';
+import { React, useState, useEffect, useCallback } from 'react';
 import { Col, Row, Card, Container, Button, Breadcrumb } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import { Dropdown, Image, Modal } from 'react-bootstrap';
@@ -257,12 +257,16 @@ const FrontendAddService = () => {
                                                 <Col sm={12} md={6} lg={6} xl={6}>
                                                     <Form.Group className='mb-3'>
                                                         <Form.Label className="text-uppercase text-700">Services Email<span className="text-danger">*</span></Form.Label>
-                                                        <Form.Select value={form.email} required name="email" onChange={(e) => { handleChange(e) }}>
+                                                        {/* <Form.Select value={form.email} required name="email" onChange={(e) => { handleChange(e) }}>
                                                             <option value="">Select Option</option>
                                                             {selemail.map((data) => (
                                                                 <option value={data.email}>{data.email}</option>
                                                             ))}
-                                                        </Form.Select>
+                                                        </Form.Select> */}
+                                                        <Form.Control
+                                                            disabled
+                                                            value="jaganseller@gmail.com"
+                                                        />
                                                     </Form.Group>
                                                 </Col>
                                             </Row>
@@ -281,7 +285,7 @@ const FrontendAddService = () => {
                                                     <Multiselect options={servitag[2]?.list} displayValue="value" className='form-control' />
                                                 </Form.Group> */}
                                             </Row>
-                                            <Row className='mb-3'>
+                                            {/* <Row className='mb-3'>
                                                 <Col>
                                                     <Form.Check type="checkbox" label="Shipping Requires" className="mb-0" />
 
@@ -293,7 +297,7 @@ const FrontendAddService = () => {
 
                                                 </Col>
 
-                                            </Row>
+                                            </Row> */}
                                             <Row className='g-3 mb-3'>
                                                 <Form.Group as={Col} className='mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Price Type<span className="text-danger">*</span></Form.Label>
@@ -380,7 +384,7 @@ const FrontendAddService = () => {
                                                 <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
                                             </div> */}
 
-                                            
+
                                             {/* Upload Samples */}
                                             <Col lg={12} className='me-2 mb-2 w-100'>
                                                 <div {...getRootProps({ className: 'dropzone-area py-6' })}>

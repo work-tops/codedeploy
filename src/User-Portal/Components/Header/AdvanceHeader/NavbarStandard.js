@@ -337,7 +337,7 @@ const NavbarStandard = () => {
                                     </div>
                                   </div></div></div></div><div class="simplebar-placeholder" style={{ width: "auto", height: "513px" }}></div></div><div class="simplebar-track simplebar-horizontal" style={{ visibility: "hidden", }}><div class="simplebar-scrollbar" style={{ width: "0px", display: "none" }}></div></div><div class="simplebar-track simplebar-vertical" style={{ visibility: "visible" }}><div class="simplebar-scrollbar" style={{ height: "180px", display: "block", transform: "translate3d(0px, 59px, 0px)" }}></div></div></div>
                           <div class="card-footer text-center border-top">
-                            <Link to="/chat">
+                            <Link to="/notifications">
                               <a className="card-link d-block">View all</a>
                             </Link>
                           </div>
