@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { Card, Button, Col, Row, Container, Tab, Nav } from "react-bootstrap";
 import SellerLandingPage from "../SellerLandingPage";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
-import OwnerEnquiryTable from "../../../TemplateAssets/AdvanceTables/OwnerEnquiryTable";
+import OwnerEnquiryTable from "../../../TemplateAssets/AdvanceTables/ServiceEnquiryTable";
 import { Link } from "react-router-dom";
-import SellerEnquiryTable from "../../../TemplateAssets/AdvanceTables/SellerEnquiryTable";
+import SellerEnquiryTable from "../../../TemplateAssets/AdvanceTables/ProductEnquiryTable";
 function ProductEnquiresCard() {
 
     const [activeTab, setActiveTab] = useState('tab1');

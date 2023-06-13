@@ -219,7 +219,7 @@ function SellerList() {
                                                     <Row className="g-2 align-items-center">
                                                         <div className="d-flex align-items-center">
 
-                                                        <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
+                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
                                                             <div className="d-flex">
                                                                 <div onClick={() => { setIsList(false) }}
                                                                     className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
@@ -653,7 +653,10 @@ function SellerList() {
                                 </Form.Check>
                             </Form.Group>
                         </Form>
-                        <Button as={Link} to="/projectowner" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
+                        <Button className="m-2 text-uppercase border-0" style={{ background: '#003f6b' }}>
+                            attachments
+                        </Button>
+                        <Button as={Link} to="/projectowner" className="m-2 text-uppercase border-0" style={{ background: '#003f6b' }}>
                             SEND
                         </Button>
                     </Modal.Body>

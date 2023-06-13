@@ -33,7 +33,7 @@ const InvoiceTableCard = () => {
     const columns = [
         {
             accessor: 'id',
-            Header: 'Invoice Id'
+            Header: 'Invoice No'
         },
         {
             accessor: 'itemName',
@@ -62,7 +62,7 @@ const InvoiceTableCard = () => {
     ];
     const data = [
         {
-            id: '625355',
+            id: 'MAI/INV/2737',
             itemName: 'CALACATTA LIGHT QUARTZ',
             date: '18/05/2023',
             description: 'Ricky Antony , 2392 Main Avenue , New Jersy 02149',
@@ -74,7 +74,7 @@ const InvoiceTableCard = () => {
             </CardDropdown>,
         },
         {
-            id: '625355',
+            id: 'MAI/INV/2737',
             itemName: 'CALACATTA LIGHT QUARTZ',
             date: '18/05/2023',
             description: 'Ricky Antony , 2392 Main Avenue , New Jersy 02149',
@@ -86,7 +86,7 @@ const InvoiceTableCard = () => {
             </CardDropdown>,
         },
         {
-            id: '625355',
+            id: 'MAI/INV/2737',
             itemName: 'CALACATTA LIGHT QUARTZ',
             date: '18/05/2023',
             description: 'Ricky Antony , 2392 Main Avenue , New Jersy 02149',
@@ -177,7 +177,6 @@ const InvoiceTableCard = () => {
             </Card>
 
             {/* Invoice Modal */}
-
             <Modal
                 show={show2}
                 onHide={() => setShow2(false)}

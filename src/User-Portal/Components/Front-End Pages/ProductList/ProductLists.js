@@ -246,6 +246,8 @@ function ProductList() {
                                                                 <Form.Select style={{ fontSize: '14px' }}>
                                                                     <option style={{ fontSize: '14px' }}>Recent Products</option>
                                                                     <option style={{ fontSize: '14px' }}>Old Products</option>
+                                                                    <option style={{ fontSize: '14px' }}>A-Z</option>
+                                                                    <option style={{ fontSize: '14px' }}>Z-A</option>
                                                                 </Form.Select>
                                                             </div>
                                                             <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>

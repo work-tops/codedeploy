@@ -1,9 +1,10 @@
-import { React, useState } from "react";
+import { React, useState, useRef } from "react";
 import { Col, Container, Row, Card, Button, Dropdown, Form, Modal } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import profile_img from "../Projectimages/Handyman.jpg"
 import { Link } from "react-router-dom";
 import file from '../Projectimages/BathroomFitting.jpg'
+import { Editor } from "@tinymce/tinymce-react";
 
 function ProposalDetails() {
     const [show, setShow] = useState(false);
@@ -16,6 +17,10 @@ function ProposalDetails() {
     const handleClose2 = () => {
         setShowModal2(false);
     };
+
+    const editorRef = useRef(null);
+
+
     return (
         <>
             <Container>
@@ -94,10 +99,30 @@ function ProposalDetails() {
                                     <Card.Body>
                                         <Form>
                                             <Form.Group className="mb-3">
-                                                <Form.Control
+                                                {/* <Form.Control
                                                     as="textarea" id="ask_question"
                                                     placeholder='Send Your Message'
-                                                    rows={5} />
+                                                    rows={5} /> */}
+                                                <Editor
+                                                    onInit={(evt, editor) => editorRef.current = editor}
+                                                    initialValue=""
+
+                                                    init={{
+
+                                                        height: 200,
+                                                        menubar: false,
+                                                        // plugins: [
+                                                        //     'advlist autolink lists link image charmap print preview anchor',
+                                                        //     'searchreplace visualblocks code fullscreen',
+                                                        //     'insertdatetime media table paste code help wordcount'
+                                                        // ],
+                                                        toolbar: 'undo redo | formatselect | ' +
+                                                            'bold italic  | alignleft aligncenter ' +
+                                                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                            'removeformat ',
+                                                        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                    }}
+                                                />
                                             </Form.Group>
                                             <Form.Check type="checkbox" id="rememberMe" className="mb-0">
                                                 <Form.Check.Input type="checkbox" />
@@ -106,7 +131,10 @@ function ProposalDetails() {
                                                     comply with MAI policy
                                                 </Form.Check.Label>
                                             </Form.Check>
-                                            <div className="d-flex justify-content-end mb-3">
+                                            <div className="d-flex justify-content-end gap-2 mb-3">
+                                                <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                    Attachments
+                                                </Button>
                                                 <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
                                                     SEND
                                                 </Button>

@@ -115,6 +115,10 @@ const InvoiceFreelancerDueTable = () => {
 
     const columns = [
         {
+            accessor: 'invoiceNo',
+            Header: 'Invoice No'
+        },
+        {
             accessor: 'itemName',
             Header: 'Item Name'
         },
@@ -142,6 +146,7 @@ const InvoiceFreelancerDueTable = () => {
     const data = [
         {
             itemName: 'CALACATTA LIGHT QUARTZ',
+            invoiceNo: 'MAI/INV/2737',
             date: '18/05/2023',
             description: 'Ricky Antony , 2392 Main Avenue , New Jersy 02149',
             amount: "£ 100",
@@ -154,6 +159,7 @@ const InvoiceFreelancerDueTable = () => {
         },
         {
             itemName: 'CALACATTA LIGHT QUARTZ',
+            invoiceNo: 'MAI/INV/2737',
             date: '18/05/2023',
             description: 'Ricky Antony , 2392 Main Avenue , New Jersy 02149',
             amount: "£ 100",
@@ -166,6 +172,7 @@ const InvoiceFreelancerDueTable = () => {
         },
         {
             itemName: 'CALACATTA LIGHT QUARTZ',
+            invoiceNo: 'MAI/INV/2737',
             date: '18/05/2023',
             description: 'Ricky Antony , 2392 Main Avenue , New Jersy 02149',
             amount: "£ 100",

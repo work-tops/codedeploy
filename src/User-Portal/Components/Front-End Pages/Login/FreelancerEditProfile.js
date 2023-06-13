@@ -77,15 +77,39 @@ function FreelancerEditProfile() {
                                     <div className="col-lg-6"> <label className="form-label" for="last-name">Last Name</label><input className="form-control" type="text" value="Leverkus" /></div>
                                     <div className="col-lg-6"> <label className="form-label" for="email1">Email</label><input className="form-control" type="text" value="petergms@gmail.com" /></div>
                                     <div className="col-lg-6"> <label className="form-label" for="email2">Phone</label><input className="form-control" type="text" value="+44 211 799" /></div>
-                                    <div className="col-lg-12"> <label className="form-label" for="intro">Intro</label><textarea className="form-control" name="intro" cols="30" rows="13">
-                                        Milton Finger (born February 8, 1914), better known as Peter Leverkus, was an UK comic strip, comic book, film, and television writer who co-created the DC Comics superhero character Batman (along with Bob Kane).
+                                    <div className="col-lg-12"> <label className="form-label" for="intro">Intro</label>
+                                        {/* <textarea className="form-control" name="intro" cols="30" rows="13">
+                                        
+                                    </textarea> */}
+                                        <Editor
+                                            onInit={(evt, editor) => editorRef.current = editor}
+                                            initialValue="
+                                            Milton Finger (born February 8, 1914), better known as Peter Leverkus, was an UK comic strip, comic book, film, and television writer who co-created the DC Comics superhero character Batman (along with Bob Kane).
 
                                         A young, promising writer and part-time shoe dealer Finger, joined Kane's fledgling studio in 1938. Despite his significant (and often iconic) contributions as an imaginative writer, visionary mythos/world builder, and illustration creator, Finger was frequently reduced to ghostwriter status on a number of comics, including Batman and Green Lantern (Original Version).
 
                                         It’s great that we live in an age where we can share so much with technology but I’m but I’m ready for the next phase of my career, with a healthy balance between the virtual world and a workplace where I help others face-to-face.
 
                                         There’s always something new to learn, especially in IT-related fields. People like working with me because I can explain technology to everyone, from staff to executives who need me to tie together the details and the big picture. I can also implement the technologies that successful projects need.
-                                    </textarea></div>
+                                            "
+
+                                            init={{
+
+                                                height: 200,
+                                                menubar: false,
+                                                // plugins: [
+                                                //     'advlist autolink lists link image charmap print preview anchor',
+                                                //     'searchreplace visualblocks code fullscreen',
+                                                //     'insertdatetime media table paste code help wordcount'
+                                                // ],
+                                                toolbar: 'undo redo | formatselect | ' +
+                                                    'bold italic  | alignleft aligncenter ' +
+                                                    'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                    'removeformat ',
+                                                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                            }}
+                                        />
+                                    </div>
                                     <div className="col-12 d-flex justify-content-end"><button className="btn btn-primary" type="submit">Update </button></div>
                                 </form>
                             </div>

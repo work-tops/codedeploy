@@ -79,6 +79,7 @@ function Checkout() {
                                                     <span className="fas fa-plus me-2" data-fa-transform="shrink-2"></span>Add New Address </a></div>
                                         </div>
                                         {/*  */}
+
                                         {/* Edit Modal */}
                                         <Modal
                                             show={show}
@@ -175,6 +176,7 @@ function Checkout() {
                                             </Modal.Footer>
                                         </Modal>
                                         {/* Edit Modal */}
+                                        
                                         {/*  */}
                                     </div>
                                     <div className="card-body">

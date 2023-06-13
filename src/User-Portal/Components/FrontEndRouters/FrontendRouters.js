@@ -1,4 +1,4 @@
-import React from "react";
+import React, {  } from "react";
 import { Route, Switch } from "react-router-dom";
 import ProposalList from "../Front-End Pages/ProposalList";
 import ListJobs from "../Front-End Pages/ListJobs";
@@ -212,12 +212,12 @@ const FrontEndRouters = () => {
             <Route path="/InvoiceCheckout"><InvoiceCheckout /></Route>
             <Route path="/NewEstimate"><NewEstimate /></Route>
             <Route path="/EditEstimate"><EditEstimate /></Route>
-            <Route path="/Allsellerlist"><AllSellerList/></Route>
-            <Route path="/Estimates"><Estimate/></Route>
-            <Route path="/GuestCheckout"><GuestCheckout/></Route>
-            <Route path="/project-owner-estimate"><OwnerEstimate/></Route>
-            <Route path="/EditInvoice"><EditInvoice/></Route>
-            <Route path="/NewInvoice"><NewInvoice/></Route>
+            <Route path="/Allsellerlist"><AllSellerList /></Route>
+            <Route path="/Estimates"><Estimate /></Route>
+            <Route path="/GuestCheckout"><GuestCheckout /></Route>
+            <Route path="/project-owner-estimate"><OwnerEstimate /></Route>
+            <Route path="/EditInvoice"><EditInvoice /></Route>
+            <Route path="/NewInvoice"><NewInvoice /></Route>
             {/* New Pages */}
         </Switch>
 

@@ -6,85 +6,6 @@ import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
 import NavbarStandard from "../../Components/Header/AdvanceHeader/NavbarStandard";
 import CardDropdown from '../common/CardDropdown'
 import { Link } from "react-router-dom";
-const columns = [
-    {
-        accessor: 'date',
-        Header: 'Date'
-    },
-
-    {
-        accessor: 'estimateNo',
-        Header: 'Estimate No'
-    },
-    {
-        accessor: 'enquiryNo',
-        Header: 'Enquiry No'
-    },
-    {
-        accessor: 'status',
-        Header: 'Status'
-    },
-    {
-        accessor: 'amount',
-        Header: 'Amount'
-    },
-    {
-        accessor: 'action',
-        Header: 'Action'
-    }
-];
-
-const data = [
-    {
-        date: '22 MAR 2023',
-        customerName: 'Peter Leverkus',
-        estimateNo: "MAI/EST/2737",
-        enquiryNo: '#2737',
-        status: <span className="badge bg-success">
-            Paid
-        </span>,
-        amount: "£ 281.81",
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>View</Dropdown.Item>
-                <Dropdown.Item>Download</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        date: '22 MAR 2023',
-        customerName: 'Peter Leverkus',
-        estimateNo: "MAI/EST/2737",
-        enquiryNo: '#2737',
-        status: <span className="badge bg-danger">
-            Declined
-        </span>,
-        amount: "£ 281.81",
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>View</Dropdown.Item>
-                <Dropdown.Item>Download</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        date: '22 MAR 2023',
-        customerName: 'Peter Leverkus',
-        estimateNo: "MAI/EST/2737",
-        enquiryNo: '#2737',
-        status: <span className="badge bg-primary">
-            New
-        </span>,
-        amount: "£ 281.81",
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>View</Dropdown.Item>
-                <Dropdown.Item>Download</Dropdown.Item>
-
-            </div>
-        </CardDropdown>
-    },
-];
 
 const OwnerEstimateTable = () => {
 
@@ -100,6 +21,88 @@ const OwnerEstimateTable = () => {
 
         );
     };
+
+    const columns = [
+        {
+            accessor: 'date',
+            Header: 'Date'
+        },
+
+        {
+            accessor: 'estimateNo',
+            Header: 'Estimate No'
+        },
+        {
+            accessor: 'enquiryNo',
+            Header: 'Enquiry No'
+        },
+        {
+            accessor: 'status',
+            Header: 'Status'
+        },
+        {
+            accessor: 'amount',
+            Header: 'Amount'
+        },
+        {
+            accessor: 'action',
+            Header: 'Action'
+        }
+    ];
+
+    const data = [
+        {
+            date: '22 MAR 2023',
+            customerName: 'Peter Leverkus',
+            estimateNo: "MAI/EST/2737",
+            enquiryNo: '#2737',
+            status: <span className="badge bg-success">
+                Paid
+            </span>,
+            amount: "£ 281.81",
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item onClick={handleShow}>View</Dropdown.Item>
+                    <Dropdown.Item>Download</Dropdown.Item>
+                </div>
+            </CardDropdown>
+        },
+        {
+            date: '22 MAR 2023',
+            customerName: 'Peter Leverkus',
+            estimateNo: "MAI/EST/2737",
+            enquiryNo: '#2737',
+            status: <span className="badge bg-danger">
+                Declined
+            </span>,
+            amount: "£ 281.81",
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item onClick={handleShow}>View</Dropdown.Item>
+                    <Dropdown.Item>Download</Dropdown.Item>
+                </div>
+            </CardDropdown>
+        },
+        {
+            date: '22 MAR 2023',
+            customerName: 'Peter Leverkus',
+            estimateNo: "MAI/EST/2737",
+            enquiryNo: '#2737',
+            status: <span className="badge bg-primary">
+                New
+            </span>,
+            amount: "£ 281.81",
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item onClick={handleShow}>View</Dropdown.Item>
+                    <Dropdown.Item>Download</Dropdown.Item>
+
+                </div>
+            </CardDropdown>
+        },
+    ];
+
+
 
     return (
         <>
@@ -150,10 +153,6 @@ const OwnerEstimateTable = () => {
                 </Card>
             </div>
             {/*  */}
-            < Button variant="primary" onClick={handleShow}>
-                Open Large Modal
-            </Button >
-
             <Modal show={show} onHide={handleClose} size="lg" centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Estimate Details</Modal.Title>
@@ -239,7 +238,7 @@ const OwnerEstimateTable = () => {
                                     <table className="table table-striped border-bottom">
                                         <thead className="light">
                                             <tr className="bg-primary text-white dark__bg-1000">
-                                                <th className="border-0">Products</th>
+                                                <th className="border-0"><span className="me-1">Product</span><span>Service</span></th>
                                                 <th className="border-0 text-center">Quantity</th>
                                                 <th className="border-0 text-end">Rate</th>
                                                 <th className="border-0 text-end">Amount</th>
@@ -293,32 +292,31 @@ const OwnerEstimateTable = () => {
                                                 <td className="fw-semi-bold">£ 18,230.00 </td>
                                             </tr>
                                                 <tr>
-                                                    <th className="text-900">Tax 8%:</th>
+                                                    <th className="text-900">Shipping Charges</th>
+                                                    <td className="fw-semi-bold">£ 1458.40</td>
+                                                </tr>
+                                                <tr>
+                                                    <th className="text-900">Reduced Rate [5%]:</th>
                                                     <td className="fw-semi-bold">£ 1458.40</td>
                                                 </tr>
                                                 <tr className="border-top">
                                                     <th className="text-900">Total:</th>
-                                                    <td className="fw-semi-bold">£ 19688.40</td>
+                                                    <td className="fw-semi-bold">£ 19,688.40</td>
                                                 </tr>
-                                                <tr className="border-top border-top-2 fw-bolder text-900">
+                                                {/* <tr className="border-top border-top-2 fw-bolder text-900">
                                                     <th>Amount Due:</th>
                                                     <td>£ 19688.40</td>
-                                                </tr>
+                                                </tr> */}
                                             </tbody></table>
                                     </div>
                                 </div>
                             </div>
                             <div className="card-footer bg-light">
-                                <p className="fs--1 mb-0"><strong>Notes: </strong>We really appreciate your business and if there’s anything else we can do, please let us know!</p>
+                                <p className="fs--1 mb-0"><span className="fw-bold" style={{fontSize:'16px'}}>Notes: </span>We really appreciate your business and if there’s anything else we can do, please let us know!</p>
                             </div>
                         </div>
                     </div>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                </Modal.Footer>
             </Modal>
             {/*  */}
         </>

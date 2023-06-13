@@ -244,7 +244,7 @@ function HomePage() {
                                         This is one of the most-unique advantages of using our platform. This increases the quality of service
                                         being provided as well as puts an insight on the compatibility with the project owner.
                                     </p>
-                                    <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button>
+                                    {/* <Button style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button> */}
                                 </div>
                             </div>
                             {/*  */}
@@ -291,31 +291,7 @@ function HomePage() {
                                                         </Card.Body>
                                                     </Card>
                                                 </div>
-                                                <div class="carousel-item">
-                                                    <Card>
-                                                        <Card.Body>
-                                                            <div>
-                                                                <div>
-                                                                    <div class="avatar avatar-4xl">
-                                                                        <div class="avatar-name rounded-circle"><span>BH</span></div>
-                                                                    </div>
-                                                                    <h5>Bhuvanesh</h5>
-                                                                    <div className="mb-1">
-                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
-                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
-                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
-                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
-                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
-                                                                    </div>
-                                                                    <p className="mb-0 text-center">
-                                                                        Peter was very professional on the phone. Met our expectations from day 1 right from us choosing our top till we got them installed. Communicated and kept us upto date.
-                                                                    </p>
-                                                                    <span className="text-primary" style={{ fontSize: '14px' }}>01 May 2023</span>
-                                                                </div>
-                                                            </div>
-                                                        </Card.Body>
-                                                    </Card>
-                                                </div>
+                                                
                                                 <div class="carousel-item">
                                                     <Card>
                                                         <Card.Body>

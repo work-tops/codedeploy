@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, Button, Col, Row, Container } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
-import SellerEnquiryTable from "../../../TemplateAssets/AdvanceTables/SellerEnquiryTable";
+import SellerEnquiryTable from "../../../TemplateAssets/AdvanceTables/ProductEnquiryTable";
 import { Link } from "react-router-dom";
 function SellerEnquiryCard() {
     return (

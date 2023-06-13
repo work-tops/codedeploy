@@ -15,53 +15,8 @@ function InvoiceCheckout() {
                 <Container className="mt-4">
                     <Col lg={12}>
                         <div className="row g-3">
-                            <div className="col-xl-4 order-xl-1">
-                                <div className="card">
-                                    <div className="card-header bg-light btn-reveal-trigger d-flex flex-between-center">
-                                        <h5 className="mb-0">Order Summary</h5>
-                                        <Link to="/Cart">
-                                            <a className="btn btn-link btn-sm btn-reveal text-600" >
-                                                <span className="fas fa-pencil-alt"></span>
-                                            </a>
-                                        </Link>
-                                    </div>
-                                    <div className="card-body">
-                                        <table className="table table-borderless fs--1 mb-0">
-                                            <tbody><tr className="border-bottom">
-                                                <th className="ps-0 pt-0">Apple MacBook Pro 15" x 1<div className="text-400 fw-normal fs--2">Z0V20008N: 2.9GHz 6-core 8th-Gen Intel Core i9, 32GB RAM</div>
-                                                </th>
-                                                <th className="pe-0 text-end pt-0">£1345</th>
-                                            </tr>
-                                                <tr className="border-bottom">
-                                                    <th className="ps-0">Apple iMac Pro x 1<div className="text-400 fw-normal fs--2">27-inch with Retina 5K Display, 3.0GHz 10-core Intel Xeon W, 1TB</div>
-                                                    </th>
-                                                    <th className="pe-0 text-end">£2010</th>
-                                                </tr>
-                                                <tr className="border-bottom">
-                                                    <th className="ps-0">Subtotal</th>
-                                                    <th className="pe-0 text-end">£3355</th>
-                                                </tr>
-                                                {/* <tr className="border-bottom">
-                                                    <th className="ps-0">Coupon: <span className="text-success">40SITEWIDE</span></th>
-                                                    <th className="pe-0 text-end">-£55</th>
-                                                </tr> */}
-                                                <tr className="border-bottom">
-                                                    <th className="ps-0">Shipping</th>
-                                                    <th className="pe-0 text-end">£20</th>
-                                                </tr>
-                                                <tr>
-                                                    <th className="ps-0 pb-0">Total</th>
-                                                    <th className="pe-0 text-end pb-0">£3320</th>
-                                                </tr>
-                                            </tbody></table>
-                                    </div>
-                                    <div className="card-footer d-flex justify-content-between bg-light">
-                                        <div className="fw-semi-bold">Payable Total</div>
-                                        <div className="fw-bold">£3320</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xl-8">
+                            
+                            <div className="col-xl-12">
                                 {/* <div className="card mb-3">
                                     <div className="card-header bg-light">
                                         <div className="row flex-between-center">

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import { Row, Col, Card, Form, Button, Modal, Table, Image, Dropdown } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -9,8 +9,11 @@ import cloudUpload from '../../../TemplateAssets/assets/cloud-upload.svg';
 import { getSize } from '../../../TemplateAssets/helpers/utils';
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 import { Link } from "react-router-dom";
+import { Editor } from "@tinymce/tinymce-react";
 
 function NewEstimate() {
+
+    const editorRef = useRef(null);
 
     const [covers, setCovers] = useState([]);
 
@@ -150,10 +153,30 @@ function NewEstimate() {
                                     </Row>
                                     <Form.Group className="mb-3" as={Col} lg={6}>
                                         <Form.Label className="text-uppercase">Description<span className="text-danger">*</span></Form.Label>
-                                        <Form.Control
+                                        {/* <Form.Control
                                             as="textarea"
                                             rows={3}
 
+                                        /> */}
+                                        <Editor
+                                            onInit={(evt, editor) => editorRef.current = editor}
+                                            initialValue=""
+
+                                            init={{
+
+                                                height: 200,
+                                                menubar: false,
+                                                // plugins: [
+                                                //     'advlist autolink lists link image charmap print preview anchor',
+                                                //     'searchreplace visualblocks code fullscreen',
+                                                //     'insertdatetime media table paste code help wordcount'
+                                                // ],
+                                                toolbar: 'undo redo | formatselect | ' +
+                                                    'bold italic  | alignleft aligncenter ' +
+                                                    'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                    'removeformat ',
+                                                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                            }}
                                         />
                                     </Form.Group>
                                     {/*  */}

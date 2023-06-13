@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
 import { Row, Button, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import CardDropdown from "../common/CardDropdown";
 import { Link } from "react-router-dom";
+import { Editor } from "@tinymce/tinymce-react";
 
 const SellerEnquiryTable = () => {
+
+    const editorRef = useRef(null);
 
     const [show, setShow] = useState(false);
 
@@ -122,15 +125,35 @@ const SellerEnquiryTable = () => {
 
                     aria-labelledby="example-custom-modal-styling-title"
                 >
-                    <Modal.Header>
+                    <Modal.Header closeButton>
                         <h6 className="text-uppercase">
                             Please Type Your Message
                         </h6>
-                        <Button onClick={handleClose} className="bg-danger border-0">Close</Button>
+
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group className="mb-3">
-                            <Form.Control as="textarea" placeholder='Type Your Message....' rows={8} />
+                            {/* <Form.Control as="textarea" placeholder='Type Your Message....' rows={8} /> */}
+                            <Editor
+                                onInit={(evt, editor) => editorRef.current = editor}
+                                initialValue=""
+
+                                init={{
+
+                                    height: 200,
+                                    menubar: false,
+                                    // plugins: [
+                                    //     'advlist autolink lists link image charmap print preview anchor',
+                                    //     'searchreplace visualblocks code fullscreen',
+                                    //     'insertdatetime media table paste code help wordcount'
+                                    // ],
+                                    toolbar: 'undo redo | formatselect | ' +
+                                        'bold italic  | alignleft aligncenter ' +
+                                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                                        'removeformat ',
+                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                }}
+                            />
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Check type="checkbox" id="rememberMe" className="mb-0">
@@ -140,7 +163,10 @@ const SellerEnquiryTable = () => {
                                 </Form.Check.Label>
                             </Form.Check>
                         </Form.Group>
-                        <div className="d-flex justify-content-end mb-3">
+                        <div className="d-flex justify-content-end gap-2 mb-3">
+                            <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                                Attachments
+                            </Button>
                             <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
                                 Send
                             </Button>
