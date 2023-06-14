@@ -303,10 +303,7 @@ const OwnerEstimateTable = () => {
                                                     <th className="text-900">Total:</th>
                                                     <td className="fw-semi-bold">£ 19,688.40</td>
                                                 </tr>
-                                                {/* <tr className="border-top border-top-2 fw-bolder text-900">
-                                                    <th>Amount Due:</th>
-                                                    <td>£ 19688.40</td>
-                                                </tr> */}
+                                                
                                             </tbody></table>
                                     </div>
                                 </div>

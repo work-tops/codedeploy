@@ -58,10 +58,10 @@ function Footer() {
 
                             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-                                <Link to="/">
+                                <Link target="_blank" to="/">
                                     <img src={logo} style={{ position: 'relative', bottom: '9px' }} width="135px" />
                                 </Link>
-                                <Link className="text-dark" to="/aboutus">
+                                <Link target="_blank" className="text-dark" to="/aboutus">
                                     <p>
                                         Here you can use rows and columns to organize your footer
                                         content. Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -79,12 +79,12 @@ function Footer() {
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: '60px', background: '#003F6B', height: '2px' }}
                                 />
-                                <Link className="text-dark" to="/termsofuse">
+                                <Link target="_blank" className="text-dark" to="/termsofuse">
                                     <p>
                                         <a className="text-dark">Terms & Conditions</a>
                                     </p>
                                 </Link>
-                                <Link className="text-dark" to="/privacypolicy">
+                                <Link target="_blank" className="text-dark" to="/privacypolicy">
                                 <p>
                                     <a className="text-dark">Privacy Policy</a>
                                 </p>
@@ -100,22 +100,22 @@ function Footer() {
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: '60px', background: '#003F6B', height: '2px' }}
                                 />
-                                <Link to="/freelancer/true" className="text-dark">
+                                <Link target="_blank" to="/freelancer/true" className="text-dark">
                                     <p>
                                         <a className="text-dark">Trade Login</a>
                                     </p>
                                 </Link>
-                                <Link to="/contactus" className="text-dark">
+                                <Link target="_blank" to="/contactus" className="text-dark">
                                     <p>
                                         <a className="text-dark">Contact Us</a>
                                     </p>
                                 </Link>
-                                <Link to="/Career" className="text-dark">
+                                <Link target="_blank" to="/Career" className="text-dark">
                                     <p>
                                         <a className="text-dark">Career</a>
                                     </p>
                                 </Link>
-                                <Link to="/FAQ" className="text-dark">
+                                <Link target="_blank" to="/FAQ" className="text-dark">
                                     <p>
                                         <a className="text-dark">FAQ</a>
                                     </p>

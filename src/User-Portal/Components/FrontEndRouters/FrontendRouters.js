@@ -206,7 +206,7 @@ const FrontEndRouters = () => {
             <Route path="/FreelancerEditProfile"><FreelancerEditProfile /></Route>
             <Route path='/InvoicedueCard'><InvoicedueCard /></Route>
             <Route path="/InvoiceFreelancerCard"><InvoiceFreelancerCard /></Route>
-            <Route path="/WorkstreamDetais"><WorkStreamDetails /></Route>
+            <Route path="/WorkstreamDetails"><WorkStreamDetails /></Route>
             <Route path="/EditPostProject"><Editpostproject /></Route>
             <Route path="/EditProposal"><EditProposal /></Route>
             <Route path="/InvoiceCheckout"><InvoiceCheckout /></Route>

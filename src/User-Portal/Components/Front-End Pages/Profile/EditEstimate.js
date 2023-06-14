@@ -10,6 +10,7 @@ import { getSize } from '../../../TemplateAssets/helpers/utils';
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 import { Link } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
+
 function EditEstimate() {
 
     // Upload Img
@@ -63,8 +64,19 @@ function EditEstimate() {
     const handleVatChange = (selected) => {
         setSelectedVat(selected);
     };
-
-
+    // 
+    // 
+    const [show2, setShow2] = useState(false);
+    const handleShow2 = () => setShow2(true);
+    const handleClose2 = () => setShow2(false);
+    // 
+    const [selectedCounty, setSelectedCounty] = useState([]);
+    const handleCountyChange = (selected) => setSelectedCounty(selected);
+    // 
+    const [show3, setShow3] = useState(false);
+    const handleShow3 = () => setShow3(true);
+    const handleClose3 = () => setShow3(false);
+    //
     // 
     const [show1, setShow1] = useState(false);
 
@@ -102,6 +114,26 @@ function EditEstimate() {
                                                 disabled
                                                 value={"Daniel"}
                                                 type="text" />
+                                        </Form.Group>
+                                    </Row>
+                                    <Row>
+                                        <Form.Group className="mb-3" as={Col} lg={6}>
+                                            <Form.Label className="text-uppercase">Billing Address
+                                                <span className="text-danger">*</span>
+                                            </Form.Label>
+                                            <Icon onClick={handleShow3} icon="fluent:edit-20-filled" width="15" height="15" />
+                                            <p className="mb-1 text-dark">1 De la warr way</p>
+                                            <p className="mb-1 text-dark">Cambridge</p>
+                                            <p className="mb-1 text-dark">CB23 6DX</p>
+                                            <p className="mb-1 text-dark">United Kingdom</p>
+                                        </Form.Group>
+                                        <Form.Group className="mb-3" as={Col} lg={6}>
+                                            <Form.Label className="text-uppercase">Shipping Address<span className="text-danger">*</span></Form.Label>
+                                            <p className="mb-1 text-dark">1 De la warr way</p>
+                                            <p className="mb-1 text-dark">Cambridge</p>
+                                            <p className="mb-1 text-dark">CB23 6DX</p>
+                                            <p className="mb-1 text-dark">United Kingdom</p>
+                                            <p role="button" onClick={handleShow2} className="text-primary">+ Add New Address</p>
                                         </Form.Group>
                                     </Row>
                                     <Row>
@@ -424,64 +456,6 @@ function EditEstimate() {
                                             />
                                         </Form.Group>
                                     </div>
-                                    <div className="col-lg-6">
-                                        {/* Upload Samples */}
-                                        <Col lg={12} className='me-2 mb-2 w-100'>
-                                            <div {...getRootProps({ className: 'dropzone-area py-6' })}>
-                                                <input {...getInputProps()} multiple />
-                                                <div className="fs--1">
-                                                    <img src={cloudUpload} alt="" width={20} className="me-2" />
-                                                    <span className="d-none d-lg-inline">
-                                                        Drag your images here
-                                                        <br />
-                                                        or,{' '}
-                                                    </span>
-                                                    <Button variant="link" size="sm" className="p-0 fs--1">
-                                                        Browse
-                                                    </Button>
-                                                </div>
-                                            </div>
-
-                                            {covers.length > 0 &&
-                                                <div className="mt-3">
-                                                    {covers.map((cover) => (
-                                                        <div key={cover.path} className='d-flex btn-reveal-trigger align-items-center'>
-                                                            <Image
-                                                                rounded
-                                                                width={40}
-                                                                height={40}
-                                                                src={cover.preview}
-                                                                alt={cover.path}
-                                                            />
-                                                            <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
-                                                                <h6 className="text-truncate">{cover.path}</h6>
-                                                                <div className="d-flex align-items-center position-relative">
-                                                                    <p className="mb-0 fs--1 text-400 line-height-1">
-                                                                        <strong>{getSize(cover.size)}</strong>
-                                                                    </p>
-                                                                </div>
-                                                                <h6 className="mt-2 text-primary">01/05/2023</h6>
-                                                            </div>
-                                                            <CardDropdown>
-                                                                <div className="py-2">
-                                                                    <Dropdown.Item
-                                                                        className="text-danger"
-                                                                        onClick={() => removeCover(cover)}
-                                                                    >
-                                                                        Remove
-                                                                    </Dropdown.Item>
-                                                                </div>
-                                                            </CardDropdown>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            }
-
-                                            <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
-                                            <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
-                                        </Col>
-                                        {/* Upload Samples */}
-                                    </div>
                                 </div>
                                 <Button as={Link} to="/Estimates" className="btn-primary me-2" type="submit">Save</Button>
                                 <Button as={Link} to="/Estimates" className="btn-success me-2" type="submit">Save & Send</Button>
@@ -515,7 +489,151 @@ function EditEstimate() {
                 </Modal>
             </div>
             {/*  */}
-            {/*  */}
+            {/* Modal-2 */}
+
+            <Modal show={show2} onHide={handleClose2}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Shipping Address</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Group controlId="formSameAsBilling">
+                            <Form.Check
+                                type="checkbox"
+                                label="Same as Billing Address"
+
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formAddressLine1">
+                            <Form.Label className="text-uppercase">Address Line 1<span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                className="resize-none "
+                                rows={1}
+                                placeholder="Enter Address Line 1"
+
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formAddressLine2">
+                            <Form.Label className="text-uppercase">Address Line 2<span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                className="resize-none "
+                                rows={1}
+                                placeholder="Enter Address Line 2"
+
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formCounty">
+                            <Form.Label className="text-uppercase">County<span className="text-danger">*</span></Form.Label>
+                            <Typeahead
+                                id="countyTypeahead"
+                                onChange={handleCountyChange}
+                                options={['Cambridge', 'Essex']}
+                                selected={selectedCounty}
+                                placeholder="Select County/Region"
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formPostcode">
+                            <Form.Label className="text-uppercase">Postcode<span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter Postcode"
+
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formPostcode">
+                            <Form.Label className="text-uppercase">Country<span className="text-danger">*</span></Form.Label>
+                            <Form.Select>
+                                <option>United Kingdom</option>
+                                <option>Ireland</option>
+                                <option>Scotland</option>
+                            </Form.Select>
+                        </Form.Group>
+
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={handleClose2}>
+                        Save Address
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+            {/* Modal-2 */}
+
+            {/* Modal-2 */}
+
+            <Modal show={show3} onHide={handleClose3}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Billing Address</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+
+                        <Form.Group className="mb-3" controlId="formAddressLine1">
+                            <Form.Label className="text-uppercase">Address Line 1<span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                className="resize-none "
+                                rows={1}
+                                placeholder="Enter Address Line 1"
+
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formAddressLine2">
+                            <Form.Label className="text-uppercase">Address Line 2<span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                className="resize-none "
+                                rows={1}
+                                placeholder="Enter Address Line 2"
+
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formCounty">
+                            <Form.Label className="text-uppercase">County<span className="text-danger">*</span></Form.Label>
+                            <Typeahead
+                                id="countyTypeahead"
+                                onChange={handleCountyChange}
+                                options={['Cambridge', 'Essex']}
+                                selected={selectedCounty}
+                                placeholder="Select County/Region"
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formPostcode">
+                            <Form.Label className="text-uppercase">Postcode<span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter Postcode"
+
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formPostcode">
+                            <Form.Label className="text-uppercase">Country<span className="text-danger">*</span></Form.Label>
+                            <Form.Select>
+                                <option>United Kingdom</option>
+                                <option>Ireland</option>
+                                <option>Scotland</option>
+                            </Form.Select>
+                        </Form.Group>
+
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={handleClose3}>
+                        Save Address
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+            {/* Modal-2 */}
         </>
     )
 }

@@ -1,8 +1,9 @@
-import { React, useState } from "react";
+import { React, useState, useRef } from "react";
 import { Card, Button, Col, Row, Container, Form, Modal, Dropdown } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import profile from '../Projectimages/Handyman.jpg'
 import { Icon } from "@iconify/react";
+import { Editor } from "@tinymce/tinymce-react";
 import { Link } from "react-router-dom";
 import file from '../Projectimages/BathroomFitting.jpg'
 function WorkStreamDetails() {
@@ -10,7 +11,7 @@ function WorkStreamDetails() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    const editorRef = useRef(null);
 
     return (
         <>
@@ -34,7 +35,7 @@ function WorkStreamDetails() {
                                             </Card.Header>
                                             <Card.Body>
 
-                                                <Card className="mb-3" style={{ background:'#f3f3f3' }}>
+                                                <Card className="mb-3" style={{ background: '#f3f3f3' }}>
                                                     <Card.Body>
                                                         <Row>
                                                             <Col className="" lg={3}>
@@ -43,7 +44,7 @@ function WorkStreamDetails() {
                                                             <Col className="" lg={9}>
                                                                 <p style={{ fontSize: '14px' }} className="text-justify mb-0">
                                                                     How are you? Sir / Madam Please send admin access details to website,
-                                                                     Bitrix and email host.Also Price £200.00
+                                                                    Bitrix and email host.Also Price £200.00
                                                                 </p>
                                                                 {/* <Button
                                                                     onClick={handleShow}
@@ -56,32 +57,53 @@ function WorkStreamDetails() {
                                                     </Card.Body>
                                                 </Card>
                                                 <Card className="mb-3" style={{ background: '#f3f3f3' }}>
-                                            <Card.Body>
-                                                <Row>
-                                                    <Col className="" lg={9}>
-                                                        <p style={{ fontSize: '14px' }} className="text-justify mb-0">
-                                                            How are you? Sir / Madam Please send admin access details to website,
-                                                            Bitrix and email host.Also Price £200.00
-                                                        </p>
-                                                        {/* <Button
+                                                    <Card.Body>
+                                                        <Row>
+                                                            <Col className="" lg={9}>
+                                                                <p style={{ fontSize: '14px' }} className="text-justify mb-0">
+                                                                    How are you? Sir / Madam Please send admin access details to website,
+                                                                    Bitrix and email host.Also Price £200.00
+                                                                </p>
+                                                                {/* <Button
                                                                     onClick={handleShow}
                                                                     style={{ background: '#003f6b', fontSize: '14px' }}
                                                                     className="btn mb-3 text-uppercase border-0">
                                                                     Reply
                                                                 </Button> */}
-                                                    </Col>
-                                                    <Col className="" lg={3}>
-                                                        <img src={file} height="60px" width="60px" className="m-3 rounded-circle" />
-                                                    </Col>
-                                                </Row>
-                                            </Card.Body>
-                                        </Card>
+                                                            </Col>
+                                                            <Col className="" lg={3}>
+                                                                <img src={file} height="60px" width="60px" className="m-3 rounded-circle" />
+                                                            </Col>
+                                                        </Row>
+                                                    </Card.Body>
+                                                </Card>
                                                 <Form className="mt-3">
                                                     <Form.Group className="mb-3">
-                                                        <Form.Control
+                                                        {/* <Form.Control
                                                             as="textarea" id="ask_question"
-                                                            placeholder='Send Your Message'
-                                                            rows={5} />
+                                                            
+                                                            rows={5} /> */}
+                                                        <Editor
+                                                            onInit={(evt, editor) => editorRef.current = editor}
+                                                            initialValue=""
+
+                                                            init={{
+
+                                                                height: 200,
+                                                                menubar: false,
+                                                                placeholder:'Send Your Message',
+                                                                // plugins: [
+                                                                //     'advlist autolink lists link image charmap print preview anchor',
+                                                                //     'searchreplace visualblocks code fullscreen',
+                                                                //     'insertdatetime media table paste code help wordcount'
+                                                                // ],
+                                                                toolbar: 'undo redo | formatselect | ' +
+                                                                    'bold italic  | alignleft aligncenter ' +
+                                                                    'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                                    'removeformat ',
+                                                                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                            }}
+                                                        />
                                                     </Form.Group>
                                                     <Form.Check type="checkbox" id="rememberMe" className="mb-0">
                                                         <Form.Check.Input type="checkbox" />
@@ -90,9 +112,12 @@ function WorkStreamDetails() {
                                                             comply with MAI policy
                                                         </Form.Check.Label>
                                                     </Form.Check>
-                                                    <div className="d-flex justify-content-end mb-3">
+                                                    <div className="d-flex justify-content-end gap-2 mb-3">
                                                         <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
-                                                            SEND
+                                                            send
+                                                        </Button>
+                                                        <Button as={Link} target="_blank" to="/NewInvoice" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                            Raise Invoice
                                                         </Button>
                                                     </div>
                                                 </Form>
