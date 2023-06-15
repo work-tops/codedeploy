@@ -365,7 +365,7 @@ function ListJobs(layout) {
                                                 <Col xs="auto" className="p-0">
                                                     <Row className="g-2 align-items-center">
                                                         <Col xs="auto" className="d-none d-lg-block">
-                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
+                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View</small>
                                                         </Col>
                                                         <Col xs="auto">
                                                             <OverlayTrigger

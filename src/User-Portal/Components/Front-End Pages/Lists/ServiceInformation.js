@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useRef } from "react";
 import { Row, Col, Button, Container, Card, Form, Modal } from "react-bootstrap";
 import worktops from '../../Projectimages/worktops-installation.jpg'
 import { Icon } from "@iconify/react";
@@ -11,7 +11,11 @@ import { FaStar } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Footer from "../../Footer/Footer";
+import { Editor } from "@tinymce/tinymce-react";
+
 function ServiceInformation() {
+    
+    const editorRef = useRef(null);
 
     const [show, setShow] = useState(false);
     const [sellersList, setSellers] = useState([]);
@@ -314,12 +318,31 @@ function ServiceInformation() {
                                         </Form.Group>
                                         <Form.Group className="mb-3" controlId="reviewText">
                                             <Form.Label>Write your review</Form.Label>
-                                            <Form.Control
+                                            {/* <Form.Control
                                                 as="textarea"
                                                 rows={3}
                                                 value={reviewText}
                                                 onChange={handleReviewChange}
                                                 required
+                                            /> */}
+                                            <Editor
+                                                onInit={(evt, editor) => editorRef.current = editor}
+                                                initialValue=""
+                                                init={{
+
+                                                    height: 200,
+                                                    menubar: false,
+                                                    // plugins: [
+                                                    //     'advlist autolink lists link image charmap print preview anchor',
+                                                    //     'searchreplace visualblocks code fullscreen',
+                                                    //     'insertdatetime media table paste code help wordcount'
+                                                    // ],
+                                                    toolbar: 'undo redo | formatselect | ' +
+                                                        'bold italic  | alignleft aligncenter ' +
+                                                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                        'removeformat ',
+                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                }}
                                             />
                                         </Form.Group>
 
@@ -530,7 +553,7 @@ function ServiceInformation() {
                                                     size="sm"
                                                     style={{ color: '#003f6b' }}
                                                 >
-                                                   <Icon className="me-1" icon="ion:copy" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" hFlip={true} />
+                                                    <Icon className="me-1" icon="ion:copy" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" hFlip={true} />
                                                     Copy Link
                                                 </Button>
                                             </li>
@@ -559,7 +582,7 @@ function ServiceInformation() {
                                                     className="text-800 border-0 bg-transparent fw-semi-bold font-base"
                                                     size="sm"
                                                     style={{ color: '#003f6b' }}
-                                                > 
+                                                >
                                                     <Icon className="me-1" icon="ri:whatsapp-fill" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" />
                                                     Whatsapp
                                                 </Button>
@@ -605,7 +628,27 @@ function ServiceInformation() {
                                 <Form.Label className="text-uppercase fw-semibold">
                                     Message<span className="text-danger">*</span>
                                 </Form.Label>
-                                <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
+                                {/* <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} /> */}
+                                <Editor
+                                    onInit={(evt, editor) => editorRef.current = editor}
+                                    initialValue=""
+
+                                    init={{
+
+                                        height: 200,
+                                        menubar: false,
+                                        // plugins: [
+                                        //     'advlist autolink lists link image charmap print preview anchor',
+                                        //     'searchreplace visualblocks code fullscreen',
+                                        //     'insertdatetime media table paste code help wordcount'
+                                        // ],
+                                        toolbar: 'undo redo | formatselect | ' +
+                                            'bold italic  | alignleft aligncenter ' +
+                                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                                            'removeformat ',
+                                        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                    }}
+                                />
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Check type="checkbox" className="mb-0 mt-3">
@@ -618,7 +661,10 @@ function ServiceInformation() {
                                 </Form.Check>
                             </Form.Group>
                         </Form>
-                        <Button as={Link} to="/owner" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
+                        <Button className="m-1 text-uppercase border-0" style={{ background: '#003f6b' }}>
+                            attachments
+                        </Button>
+                        <Button as={Link} to="/projectowner" className="m-1 text-uppercase border-0" style={{ background: '#003f6b' }}>
                             SEND
                         </Button>
                     </Modal.Body>

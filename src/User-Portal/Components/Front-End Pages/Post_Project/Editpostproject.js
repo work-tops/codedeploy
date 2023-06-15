@@ -375,7 +375,7 @@ function Editpostproject() {
                                             <Form.Control
                                                 type="text"
                                                 placeholder="Search for UK county..."
-                                                value={inputValue}
+                                                value={"Buckinghamshire"}
                                                 onChange={handleInputChange}
                                             />
                                             {filteredCounties.length > 0 && (

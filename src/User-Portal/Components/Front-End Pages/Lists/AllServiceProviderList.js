@@ -218,7 +218,7 @@ function AllSellerList() {
                                                     <Row className="g-2 align-items-center">
                                                         <div className="d-flex align-items-center">
 
-                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
+                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View</small>
                                                             <div className="d-flex">
                                                                 <div onClick={() => { setIsList(false) }}
                                                                     className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'

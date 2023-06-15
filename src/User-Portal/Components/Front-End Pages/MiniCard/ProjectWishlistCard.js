@@ -295,7 +295,7 @@ function ListJobs(layout) {
                                                 <Col xs="auto" className="p-0">
                                                     <Row className="g-2 align-items-center">
                                                         <Col xs="auto" className="d-none d-lg-block">
-                                                            <small className='me-2'>View :</small>
+                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View</small>
                                                         </Col>
                                                         <Col xs="auto">
                                                             <OverlayTrigger
@@ -476,7 +476,7 @@ function ListJobs(layout) {
                                     </div>
                                 </article>
                             </div>
-                           
+
                             {/* pagination */}
                             <div className="card mb-3 mt-3">
                                 <div className="card-body">
@@ -494,11 +494,11 @@ function ListJobs(layout) {
                                         <div className="col-auto"> <button className="btn btn-falcon-default btn-sm me-2" type="button" disabled="disabled" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Prev" data-bs-original-title="Prev">
                                             <span className="fas fa-chevron-left"></span></button><a className="btn btn-sm btn-falcon-default text-primary me-2" href="#!">1</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">2</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">3</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">
                                                 <span className="fas fa-ellipsis-h"></span></a><a className="btn btn-sm btn-falcon-default me-2" href="#!">303</a><button className="btn btn-falcon-default btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Next" data-bs-original-title="Next">
-                                                    <span className="fas fa-chevron-right">  </span></button></div>
+                                                <span className="fas fa-chevron-right">  </span></button></div>
                                     </div>
                                 </div>
                             </div>
-                          
+
                             {/* pagination */}
                         </Col>
                     </Row>

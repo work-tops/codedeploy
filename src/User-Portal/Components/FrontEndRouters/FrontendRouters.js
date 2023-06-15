@@ -101,18 +101,18 @@ const FrontEndRouters = () => {
     return (
         <Switch>
             {/* proper order routes */}
-            <Route path='/projectowner'><UserLogin /></Route>
-            <Route path='/project-owner-register'><SignUpPage /></Route>
+            <Route path='/ProjectOwner/Login'><UserLogin /></Route>
+            <Route path='/ProjectOwner/SignUp'><SignUpPage /></Route>
             <Route path="/freelancer/:login"><SellerLogin /></Route>
             <Route path="/productlist"><ProductList /></Route>
-            <Route path="/productgrid1"><ProductGrid /></Route>
+            {/* <Route path="/productgrid1"><ProductGrid /></Route> */}
             <Route path="/projectlist"><ListJobs /></Route>
             <Route path="/jobdetails/:jobid"><JobDetails /></Route>
             <Route path='/jobproposal/:jobid/jobproposal'><JobProposal /></Route>
 
             <Route path='/servicelist'><ServiceList /></Route>
 
-            <Route path="/PostProject"><PostProject /></Route>
+            <Route path="/ProjectOwner/PostProject"><PostProject /></Route>
             {/* proper order routes end */}
 
             <Route path='/projectlisting'><ProjectListing /></Route>
@@ -125,7 +125,7 @@ const FrontEndRouters = () => {
             {/*  */}
             <Route path='/user/addproduct'><FrontendAddProduct /></Route>
             <Route path='/user/addservices'><FrontendAddService /></Route>
-            <Route path='/how-it-works'><HowItWorks /></Route>
+            <Route path='/HowItWorks'><HowItWorks /></Route>
             <Route path='/Project-Owner/profile'><ProjectOwnerProfile /></Route>
             <Route path='/Project-Owner/Settings'><ProjectOwnerSettings /></Route>
             <Route path='/Seller/profile'><SellerProfile /></Route>
@@ -200,7 +200,7 @@ const FrontEndRouters = () => {
 
             {/* New Pages */}
 
-            <Route path="/notifications"><Notifications /></Route>
+            <Route path="/Notifications"><Notifications /></Route>
             <Route path="/chat"><Chat /></Route>
             <Route path="/FreelancerProfile"><FreelancerProfile /></Route>
             <Route path="/FreelancerEditProfile"><FreelancerEditProfile /></Route>

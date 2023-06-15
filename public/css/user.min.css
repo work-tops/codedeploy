@@ -388,54 +388,51 @@ body {
   background: #DBE7F1 !important;
 }
 
-/*  */
-/*--------------------------------------------------------------
-# Counts
---------------------------------------------------------------*/
-.counts {
-  padding-top: 80px;
+.navbar-top .navbar-toggler {
+  margin: 5px;
 }
-
-.counts .count-box {
-  padding: 30px 30px 25px 30px;
-  width: 100%;
+.navbar .nav-link {
+  outline: none;
+  margin-left: 5px;
+}
+.navbar-top {
+  position: sticky;
+  top: 0;
+  font-size: .8333333333rem;
+  font-weight: 600;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  z-index: 1020;
+  background-image: none;
+  min-height: 4.3125rem;
+}
+.fixed-top{
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  top:0;
+}
+/*  */
+.cart-icon-container {
   position: relative;
-  background: #fff;
-  text-align: center;
-  box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.06);
-  border-radius: 4px;
 }
 
-.counts .count-box i {
+.cart-badge {
   position: absolute;
-  width: 54px;
-  height: 54px;
-  top: -27px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  background: #fff;
-  color: #e03a3c;
-  border-radius: 50px;
-  border: 2px solid #fff;
-  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  top: -5px;
+  right: -1px;
+  animation: pulse 1s infinite;
 }
 
-.counts .count-box span {
-  font-size: 36px;
-  display: block;
-  font-weight: 700;
-  color: #111111;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-
-.counts .count-box p {
-  padding: 0;
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-}
-
-/*  */

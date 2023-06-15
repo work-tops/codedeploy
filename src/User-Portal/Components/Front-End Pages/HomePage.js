@@ -45,12 +45,12 @@ function HomePage() {
                 <Col lg={12} className="mb-5">
                     <NavbarStandard />
                 </Col>
-                <Container>
-                    <Col lg={12} className="mt-3">
+                <Col lg={12} className="mt-3">
+                    <Container>
                         <div className="mt-5 mb-5">
                             {/* Section-1 */}
 
-                            <div data-aos="fade-right" className="row  d-flex justify-content-lg-around justify-content-xl-around align-items-center">
+                            <div data-aos="fade-right" className="row ">
                                 <div className="col-md col-lg-5 order-md-2">
                                     <img className="img-fluid  px-md-0 text-end" style={{ borderRadius: '50px 2px' }} src={homepage} alt="" />
                                 </div>
@@ -198,7 +198,7 @@ function HomePage() {
                             </div>
                         </div>
                         {/* Section-3 */}
-                        <div data-aos="fade-left" className="row  mb-5 d-flex justify-content-lg-around justify-content-xl-around align-items-center">
+                        <div data-aos="fade-left" className="row  mb-5 ">
                             <div className="col-md  col-lg-5 ">
                                 <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={temptingDiscounts} alt="" />
                             </div>
@@ -215,7 +215,7 @@ function HomePage() {
                         {/* Section-4 */}
                         <div data-aos="fade-right" >
 
-                            <div className="row  mb-5 d-flex justify-content-lg-around justify-content-xl-around align-items-center">
+                            <div className="row  mb-5 ">
                                 <div className="col-md mb-3 col-lg-5 order-md-2">
                                     <img className="img-fluid  px-md-0 text-end" style={{ borderRadius: '50px 2px' }} src={bussinessman} alt="" />
                                 </div>
@@ -232,7 +232,7 @@ function HomePage() {
                             </div>
                             {/* Section-5 */}
 
-                            <div data-aos="fade-left" className="row  mb-5 d-flex justify-content-lg-around justify-content-xl-around align-items-center">
+                            <div data-aos="fade-left" className="row  mb-5 ">
                                 <div className="col-md  col-lg-5 ">
                                     <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={twoWay} alt="" />
                                 </div>
@@ -258,11 +258,7 @@ function HomePage() {
                             <div className="row">
                                 <div className="col-lg-12 col-xl-12">
                                     <div class="carousel slide theme-slider text-center" id="controlStyledExample" data-ride="carousel">
-                                        {/* <div class="carousel-indicators">
-                                            <button class="active" type="button" data-bs-target="#controlStyledExample" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
-                                            <button type="button" data-bs-target="#controlStyledExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                            <button type="button" data-bs-target="#controlStyledExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                        </div> */}
+
                                         <div className=" ">
                                             <div class="carousel-inner rounded">
                                                 <div class="carousel-item active">
@@ -291,7 +287,7 @@ function HomePage() {
                                                         </Card.Body>
                                                     </Card>
                                                 </div>
-                                                
+
                                                 <div class="carousel-item">
                                                     <Card>
                                                         <Card.Body>
@@ -333,8 +329,8 @@ function HomePage() {
                             </div>
 
                         </div>
-                    </Col>
-                </Container>
+                    </Container>
+                </Col>
                 <Col lg={12}>
                     <Footer />
                 </Col>

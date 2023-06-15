@@ -1,5 +1,5 @@
 import { React, useState, useEffect, useCallback, useRef } from 'react';
-import { Col, Row, Card, Container, Button, Breadcrumb } from 'react-bootstrap';
+import { Col, Row, Card, Container, Button, Breadcrumb, InputGroup } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import { Dropdown, Image, Modal } from 'react-bootstrap';
 import Multiselect from 'multiselect-react-dropdown';
@@ -329,17 +329,26 @@ const FrontendAddService = () => {
                                             </Form.Group>
                                             <Form.Group as={Col} className=' mb-3'>
                                                 <Form.Label className="text-uppercase text-700">Price<span className="text-danger">*</span></Form.Label>
-                                                <Form.Control value={form.price} required name="price" onChange={(e) => { handleChange(e) }} type="text" />
+                                                <InputGroup>
+                                                    <Button>£</Button>
+                                                    <Form.Control value={form.price} required name="price" onChange={(e) => { handleChange(e) }} type="text" />
+                                                </InputGroup>
                                             </Form.Group>
                                         </Row>
                                         <Row className='g-3 mb-3'>
                                             <Form.Group as={Col} className=' mb-3'>
                                                 <Form.Label className="text-uppercase text-700">Offer Price <span className="text-danger">*</span></Form.Label>
-                                                <Form.Control value={form.offer_price} required name="offer_price" onChange={(e) => { handleChange(e) }} type="text" />
+                                                <InputGroup>
+                                                    <Button>£</Button>
+                                                    <Form.Control value={form.offer_price} required name="offer_price" onChange={(e) => { handleChange(e) }} type="text" />
+                                                </InputGroup>
                                             </Form.Group>
                                             <Form.Group as={Col} className=' mb-3'>
                                                 <Form.Label className="text-uppercase text-700">Display Price<span className="text-danger">*</span></Form.Label>
-                                                <Form.Control value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} type="text" />
+                                                <InputGroup>
+                                                    <Button>£</Button>
+                                                    <Form.Control value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} type="text" />
+                                                </InputGroup>
                                             </Form.Group>
                                         </Row>
                                         <Form.Group className="mb-3">

@@ -5,7 +5,6 @@ import { createData } from "../../../Services/ProxyService";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { useHistory } from "react-router-dom";
 import { useDropzone } from 'react-dropzone';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     Button,
     Card,
@@ -20,7 +19,6 @@ import {
 import { Editor } from '@tinymce/tinymce-react';
 import { getSize } from '../../TemplateAssets/helpers/utils';
 import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
-import Flex from '../../TemplateAssets/common/Flex';
 import CardDropdown from '../../TemplateAssets/common/CardDropdown';
 import Footer from "../Footer/Footer";
 

@@ -4,8 +4,8 @@ import worktops from '../Projectimages/Conversions.jpg'
 import 'swiper/css';
 import HIW_1 from '../Projectimages/HIW-1.png'
 import HIW_2 from '../Projectimages/HIW-2.png'
-import Hiw_mindmap from '../Projectimages/HIW.png'
-import { Button, Col, Row } from "react-bootstrap";
+import Hiw_mindmap from '../Projectimages/HIWS.png'
+import { Button, Col, Row, Card } from "react-bootstrap";
 import profile from '../Projectimages/Handyman.jpg'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,11 +32,14 @@ function HowItWorks() {
                                 <div class="col-md-11 col-lg-11 col-xl-11 pb-7 pb-xl-9 ">
                                     <h3 className="text-dark fw-light">
                                         <div style={{ position: 'relative', top: '5rem' }}>
-                                            <span className="typed-start fw-bold" >
-                                                A KBB Certified Platform Chosen By
+                                            <span className="typed-start mb-2 d-block fw-bold" >
+                                                A KBB Certified Platform
+                                            </span>
+                                            <span className="typed-start d-block fw-bold">
+                                                Chosen By
                                                 Professionals Who Love Doing What They Do
                                             </span>
-                                            <p className="mt-3 mb-3 text-dark">
+                                            <p className="mt-3 fw-semibold mb-3 text-dark">
                                                 Every project is precious for the right professional
                                             </p>
                                         </div>
@@ -81,8 +84,9 @@ function HowItWorks() {
                                                     You have an advantage to review the list and choose the best one, so the right person connects with you.
                                                     All you need to do is give the best description about your requirement.
                                                 </p>
-                                                <div className="d-flex justify-content-center">
-                                                    <Button className="mb-5" as={Link} to="/projectowner" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
+                                                <div className="d-flex gap-1 justify-content-center">
+                                                    <Button className="mb-5" target="_blank" as={Link} to="/ProjectOwner/SignUp" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
+                                                    <Button className="mb-5" target="_blank" as={Link} to="/MyProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,6 +135,8 @@ function HowItWorks() {
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Check Ongoing Offers</h5>
                                                             <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
+                                                        </div>
+                                                        <div className="card-footer bg-light">
                                                             <Link to="/productlist">
                                                                 <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Current Offers</p>
                                                             </Link>
@@ -144,9 +150,13 @@ function HowItWorks() {
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Buy Materials Directly</h5>
-                                                            <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
+                                                            <p>
+                                                                Sellers and suppliers register everyday and upload the latest items. Browse the collection and pick the trendiest one.
+                                                            </p>
+                                                        </div>
+                                                        <div className="card-footer bg-light">
                                                             <Link to="/productlist">
-                                                                <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Current Offers</p>
+                                                                <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Listed Items</p>
                                                             </Link>
                                                         </div>
                                                     </div>
@@ -158,7 +168,11 @@ function HowItWorks() {
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
                                                             <h5 className="mb-2">Browse the Services</h5>
-                                                            <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
+                                                            <p>
+                                                                Here at MyProject.AI, you will find professionals that cover all types of construction-related jobs. You may check out the services listed here to get a better understanding.
+                                                            </p>
+                                                        </div>
+                                                        <div className="card-footer bg-light">
                                                             <Link to="/servicelist">
                                                                 <p style={{ fontSize: '16px', color: '#003f6b' }} className="fw-semibold text-center">Explore the Services</p>
                                                             </Link>
@@ -173,31 +187,75 @@ function HowItWorks() {
                                             <div className="col">
                                                 <h1 className="fs-2 mb-3 fs-sm-4 fs-md-5">Choose Best Reviewed Professionals</h1>
                                             </div>
-                                            <div className="container">
-                                                <div className="row">
-                                                    <div className="col-lg-12 col-xl-12">
-                                                        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                                                            <SwiperSlide>
-                                                                <img src={profile} width="100px" height="100px" className="mb-3 rounded-circle" />
-                                                                <h4>Peter Lverkus<span className="ms-2 text-700" style={{ fontSize: "14px" }}>/CEO at Google Inc.</span></h4>
-                                                                <div className="d-flex justify-content-center">
-                                                                    <p style={{ width: '50%' }}>
-                                                                        It is a long established fact that a reader will be distracted by the readable content
-                                                                        of a page when looking at its layout.
-                                                                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
+                                            <div className="row">
+                                                <div className="col-lg-12 col-xl-12">
+                                                    <div class="carousel slide theme-slider text-center" id="controlStyledExample" data-ride="carousel">
+
+                                                        <div className=" ">
+                                                            <div class="carousel-inner rounded">
+                                                                <div class="carousel-item active">
+                                                                    <Card>
+                                                                        <Card.Body>
+                                                                            <div>
+                                                                                <div>
+                                                                                    <div class="avatar avatar-4xl">
+                                                                                        <div class="avatar-name rounded-circle"><span>NR</span></div>
+                                                                                    </div>
+                                                                                    <h5>Nate Rees</h5>
+                                                                                    <div className="mb-1">
+                                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                                    </div>
+                                                                                    <p className="mb-0 text-center">
+                                                                                        Great experience all round. They were on the phone the same day to confirm the details of the order and explain the differences in the variants that I hadn't realised.
+                                                                                        As soon as the details were firmed up, they arranged for a specialist courier to collect the consignment and had it delivered with a couple of days.
+                                                                                    </p>
+                                                                                    <span className="text-primary" style={{ fontSize: '14px' }}>May 01, 2023</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </Card.Body>
+                                                                    </Card>
                                                                 </div>
-                                                            </SwiperSlide>
-                                                            <SwiperSlide>
-                                                                <img src={profile} width="100px" height="100px" className="mb-3 rounded-circle" />
-                                                                <h4>Saravanan<span className="ms-2 text-700" style={{ fontSize: "14px" }}>/CEO at Google Inc.</span></h4>
-                                                                <div className="d-flex justify-content-center">
-                                                                    <p style={{ width: '50%' }}>
-                                                                        It is a long established fact that a reader will be distracted by the readable content
-                                                                        of a page when looking at its layout.
-                                                                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
+
+                                                                <div class="carousel-item">
+                                                                    <Card>
+                                                                        <Card.Body>
+                                                                            <div>
+                                                                                <div>
+                                                                                    <div class="avatar avatar-4xl">
+                                                                                        <div class="avatar-name rounded-circle"><span>FR</span></div>
+                                                                                    </div>
+                                                                                    <h5>Fran</h5>
+                                                                                    <div className="mb-1">
+                                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                                        <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
+                                                                                    </div>
+                                                                                    <p className="mb-0 text-center">
+                                                                                        After a last minute let down from another provider Peter and his team provided
+                                                                                        an absolutely amazing service - we have a stunning new worktop that’s nicer than the original and was also cheaper! Communication was good and the installers
+                                                                                        did a very efficient and very beautiful job. Couldn’t recommend more highly!
+                                                                                    </p>
+                                                                                    <span className="text-primary" style={{ fontSize: '14px' }}>01 May 2023</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </Card.Body>
+                                                                    </Card>
                                                                 </div>
-                                                            </SwiperSlide>
-                                                        </Swiper>
+                                                                <button class="carousel-control-prev" type="button" data-bs-target="#controlStyledExample" data-bs-slide="prev">
+                                                                    <span class="fas fa-angle-left"></span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </button><button class="carousel-control-next" type="button" data-bs-target="#controlStyledExample" data-bs-slide="next">
+                                                                    <span class="fas fa-angle-right"></span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -206,7 +264,7 @@ function HowItWorks() {
                                             <div className="container">
                                                 <div className="row">
                                                     <div className="col">
-                                                        <h1 className="fs-2 fs-sm-4 fs-md-5">You Can Do a Lot</h1>
+                                                        <h1 className="fs-2 fs-sm-4 fs-md-5">You Get to</h1>
                                                     </div>
                                                 </div>
                                                 <div className="row mt-6">
@@ -217,7 +275,12 @@ function HowItWorks() {
                                                             </div>
                                                             <div className="card-body pt-6 pb-4">
                                                                 <h5 className="mb-2">Process Payment Securely</h5>
-                                                                <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
+                                                                <p>
+                                                                    Our escrow payment facility saves you from scams as the fee
+                                                                    is not released until you tell us
+                                                                    that the job is completed as per the description and you give
+                                                                    a green signal to release the payment.
+                                                                </p>
                                                                 {/* <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Current Offers</p> */}
                                                             </div>
                                                         </div>
@@ -229,7 +292,9 @@ function HowItWorks() {
                                                             </div>
                                                             <div className="card-body pt-6 pb-4">
                                                                 <h5 className="mb-2">Rate Your Professional</h5>
-                                                                <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
+                                                                <p>Leave feedback and reviews, and stars on the profile of the professional that completed your project.
+                                                                    This helps new customers understand the professional better
+                                                                    and make it easier to select the right person for their project.</p>
                                                                 {/* <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Current Offers</p> */}
                                                             </div>
                                                         </div>
@@ -241,7 +306,12 @@ function HowItWorks() {
                                                             </div>
                                                             <div className="card-body pt-6 pb-4">
                                                                 <h5 className="mb-2">Follow Up on Chat</h5>
-                                                                <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
+                                                                <p>
+                                                                    You always have an option to follow up
+                                                                    regarding your project with your chosen professional.
+                                                                    The chat history is stored forever so that you can always
+                                                                    go back to it to keep a track of conversations
+                                                                </p>
                                                                 {/* <p style={{ fontSize: '16px', color: '#003f6b' }} className="fw-semibold text-center">Check Current Offers</p> */}
                                                             </div>
                                                         </div>
@@ -257,8 +327,9 @@ function HowItWorks() {
                                                 <p className="text-center">
                                                     You are just one sign up away from taking the Game-Changing Decision of your Lifetime!
                                                 </p>
-                                                <div className="d-flex justify-content-center">
-                                                    <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
+                                                <div className="d-flex gap-1 justify-content-center">
+                                                    <Button target="_blank" as={Link} to="/Freelancer/False" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
+                                                    <Button target="_blank" as={Link} to="/FreelancerProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
                                                 </div>
                                             </div>
                                         </div>

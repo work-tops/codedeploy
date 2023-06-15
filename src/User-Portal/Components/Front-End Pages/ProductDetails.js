@@ -97,20 +97,23 @@ function ProductDetails() {
                                         </Col>
                                         <Col lg={7}>
                                             <h2 className="fw-bold text-white">{prodata.name}</h2>
-                                            <p className="text-white fw-semi-bold fs--1">
-                                                <span className="me-1">4.8</span>
-                                                <span>
-                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                    <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />
+                                            <div className="fw-semi-bold fs--1">
+                                                <span className="me-1 text-white me-2">4.9</span>
+                                                <div className="d-inline-block ">
+                                                    <span className="fa fa-star text-warning"></span>
+                                                    <span className="fa fa-star text-warning"></span>
+                                                    <span className="fa fa-star text-warning"></span>
+                                                    <span className="fa fa-star text-warning"></span>
+                                                    <span className="fa fa-star-half-alt text-warning star-icon"></span>
+                                                </div>
+                                                <span className="ms-2 text-primary">(78,259 reviews)</span>
+                                            </div>
+                                            <div style={{ fontSize: '14px' }} className="mt-3 text-white">
+                                                <span className="fw-bold me-1">SKU :</span>
+                                                <span className="fw-semibold">
+                                                    HOBCRT - 700480
                                                 </span>
-                                                <span className="text-info ms-2">
-                                                    (78,259 reviews)
-                                                </span>
-                                            </p>
-
+                                            </div>
                                         </Col>
                                     </Row>
                                     <hr className="text-secondary text-opacity-50" />
@@ -124,8 +127,14 @@ function ProductDetails() {
 
                                         {/* <Link to="/wishlist/product" className="text-300"> */}
                                         <li role="button" onClick={toastDanger}>
-                                            <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="text-white me-1" width="20" height="20" />
-                                            <span className="me-2">Add to Wishlist</span><span>Remove From Wishlist</span>
+                                            <span className="me-2">
+                                                <Icon style={{ marginTop: '-5px' }}  icon="flat-color-icons:like" className="text-white me-1" width="20" height="20" />
+                                                Add to Wishlist
+                                            </span>
+                                            <span>
+                                                <Icon  style={{ marginTop: '-5px' }} icon="icon-park-outline:like" className="me-1"  width="20" height="20" />
+                                                Remove From Wishlist
+                                            </span>
                                         </li>
                                         {/* </Link> */}
                                         {/* Wishlist Toast */}
@@ -214,9 +223,9 @@ function ProductDetails() {
                                     <div>
                                         <Form.Select size="sm" defaultValue="">
                                             <option value="">Sort by</option>
-                                            <option value="oldest">Oldest</option>
-                                            <option value="newest">Newest</option>
-                                            <option value="name">Name</option>
+                                            <option value="oldest">Old</option>
+                                            <option value="newest">New</option>
+                                            <option value="name">A-Z</option>
                                         </Form.Select>
                                     </div>
                                 </div>

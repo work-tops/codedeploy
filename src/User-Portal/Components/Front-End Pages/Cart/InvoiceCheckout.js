@@ -15,31 +15,8 @@ function InvoiceCheckout() {
                 <Container className="mt-4">
                     <Col lg={12}>
                         <div className="row g-3">
-                            
+
                             <div className="col-xl-12">
-                                {/* <div className="card mb-3">
-                                    <div className="card-header bg-light">
-                                        <div className="row flex-between-center">
-                                            <div className="col-sm-auto">
-                                                <h5 className="mb-2 mb-sm-0">Your Shipping Address</h5>
-                                            </div>
-                                            <div className="col-sm-auto"><a className="btn btn-falcon-default btn-sm" href="#!">
-                                                <span className="fas fa-plus me-2" data-fa-transform="shrink-2"></span>Add New Address </a></div>
-                                        </div>
-                                    </div>
-                                    <div className="card-body">
-                                        <div className="row">
-                                            <div className="col-md-6 mb-3 mb-md-0">
-                                                <div className="form-check mb-0 custom-radio radio-select"><input className="form-check-input" id="address-1" type="radio" name="clientName"  /><label className="form-check-label mb-0 fw-bold d-block" for="address-1">Antony Hopkins<span className="radio-select-content"><span> 2392 Main Avenue,Pensaukee,New Jersey 02139<span className="d-block mb-0 pt-2">+(856) 929-229</span></span></span></label><a className="fs--1" href="#!">Edit</a></div>
-                                            </div>
-                                            <div className="col-md-6">
-                                                <div className="position-relative">
-                                                    <div className="form-check mb-0 custom-radio radio-select"><input className="form-check-input" id="address-2" type="radio" name="clientName" /><label className="form-check-label mb-0 fw-bold d-block" for="address-2">Robert Bruce<span className="radio-select-content"><span>3448 Ile De France St #242Fort Wainwright, Alaska, 99703<span className="d-block mb-0 pt-2">+(901) 637-734</span></span></span></label><a className="fs--1" href="#!">Edit</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> */}
                                 <div className="card mb-3">
                                     <div className="card-header bg-light">
                                         <h5 className="mb-0">Payment Method</h5>

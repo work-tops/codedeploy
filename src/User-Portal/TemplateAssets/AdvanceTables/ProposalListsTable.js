@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
@@ -7,8 +7,11 @@ import CardDropdown from "../common/CardDropdown";
 import { Link } from "react-router-dom";
 import profile from '../../Components/Projectimages/Handyman.jpg'
 import { Icon } from "@iconify/react";
+import { Editor } from "@tinymce/tinymce-react";
 
 const ProposalListsTable = () => {
+
+    const editorRef = useRef(null);
 
     const [show, setShow] = useState(false);
     const [show1, setShow1] = useState(false);
@@ -162,7 +165,7 @@ const ProposalListsTable = () => {
                             </p>
                         </Modal.Body>
                         <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose2}>
+                            <Button variant="secondary" onClick={handleClose2}>
                                 Cancel
                             </Button>
                             <Button variant="danger" onClick={handleClose2}>
@@ -189,7 +192,7 @@ const ProposalListsTable = () => {
                                             <Row>
                                                 <Col lg={3}>
                                                     <Link to="/profile_publicview">
-                                                    <img src={profile} className="mb-3 rounded-circle" width="100px" height="100px" />
+                                                        <img src={profile} className="mb-3 rounded-circle" width="100px" height="100px" />
                                                     </Link>
                                                     <p className="fw-bold ms-2 text-uppercase  text-900">Soanes IT</p>
                                                 </Col>
@@ -205,21 +208,6 @@ const ProposalListsTable = () => {
                                                                 Many thanks David Soanes, Worthing BN11 4DT England
                                                             </p>
                                                             <p className="text-justify" style={{ fontSize: '14px' }} >
-                                                                <span className="d-block mb-2 fw-semibold">
-                                                                    Mobile : <span className="text-primary">07900 548 590</span>
-                                                                </span>
-                                                                <span className="d-block mb-2 fw-semibold">
-                                                                    WhatsApp : <span className="text-primary">044 07900 548 590</span>
-                                                                </span>
-                                                                <span className="d-block mb-2 fw-semibold">
-                                                                    Email : <span className="text-primary">info@alwebdezine.com</span>
-                                                                </span>
-                                                                <span className="d-block mb-2 fw-semibold">
-                                                                    Skype : <span className="text-primary">info@alwebdezine.com</span>
-                                                                </span>
-                                                                <span className="d-block mb-3 fw-semibold">
-                                                                    Web : <span className="text-primary">alwebdezine.com</span>
-                                                                </span>
                                                                 Please see my cv at this link <a href="#">https://surl.link/q0Lck3 https://surl.link/accessRestricted.html?</a> Decline
                                                                 u=34452 password is abcdFor screen sharing:------------------Windows: Please search and open Quick
                                                                 Assist App and | will send you the codeApple Mac: | will send you a Zoom link. Please send your
@@ -240,7 +228,7 @@ const ProposalListsTable = () => {
                                 <Col lg={4}>
                                     <Card className='mt-3 me-3'>
                                         <Card.Body>
-                                            <p className='text-end'>Fixed Price</p>
+                                            <p className='text-end fw-semibold'>Fixed Price</p>
                                             <p className='fw-semibold'>Details</p>
                                             <div className='d-flex justify-content-between'>
                                                 <p>Deposit</p>
@@ -262,7 +250,7 @@ const ProposalListsTable = () => {
                                                         {/* <Dropdown.Item  className="text-danger">Decline</Dropdown.Item> */}
                                                     </Dropdown.Menu>
                                                 </Dropdown>
-                                                <p role='button' onClick={handleShow1} className='mt-1 ms-3'>Report this Profile</p>
+                                                <p role='button' onClick={handleShow1} className='mt-1 text-primary ms-3'>Report this Profile</p>
                                             </div>
                                         </Card.Body>
                                     </Card>
@@ -279,8 +267,10 @@ const ProposalListsTable = () => {
                         centered
                         aria-labelledby="example-custom-modal-styling-title"
                     >
-                        <Modal.Body>
+                        <Modal.Header className="bg-light" closeButton>
                             <h5 className='text-uppercase mb-3 text-center'>Report Soanes IT</h5>
+                        </Modal.Header>
+                        <Modal.Body>
                             <h6 style={{ fontSize: '16px' }} className='text-900 mb-3 mt-3'>Why You are reporting to this profile</h6>
                             {/*  */}
                             <Form>
@@ -343,10 +333,29 @@ const ProposalListsTable = () => {
                                     <Form.Label>
                                         Details :
                                     </Form.Label>
-                                    <Form.Control
+                                    <Editor
+                                        onInit={(evt, editor) => editorRef.current = editor}
+                                        initialValue=""
+                                        init={{
+
+                                            height: 200,
+                                            menubar: false,
+                                            // plugins: [
+                                            //     'advlist autolink lists link image charmap print preview anchor',
+                                            //     'searchreplace visualblocks code fullscreen',
+                                            //     'insertdatetime media table paste code help wordcount'
+                                            // ],
+                                            toolbar: 'undo redo | formatselect | ' +
+                                                'bold italic  | alignleft aligncenter ' +
+                                                'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                'removeformat ',
+                                            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                        }}
+                                    />
+                                    {/* <Form.Control
                                         as="textarea"
                                         rows={4}
-                                    />
+                                    /> */}
                                 </Form.Group>
                                 <div className='d-flex justify-content-end'>
                                     <Button as={Link} to="/projectowner" onClick={handleClose1} style={{ background: '#003f6b' }}>Submit</Button>
@@ -427,7 +436,7 @@ const ProposalListsTable = () => {
             sortable
             pagination
             perPage={5}
-            selection
+            // selection
             selectionColumnWidth={30}
         >
             <BulAction table />

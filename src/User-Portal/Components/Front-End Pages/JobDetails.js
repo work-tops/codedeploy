@@ -197,6 +197,16 @@ function JobDetails() {
                         <Col lg={4}>
                             {/*  Customize Details  */}
                             <Card className="mt-5 overflow-hidden">
+                                <Card.Header className="bg-light">
+                                    <div style={{fontSize:'14px'}}>
+                                        <span className="me-1">
+                                            <Icon icon="ic:twotone-update" width="20" height="20" hFlip={true} />
+                                        </span>
+                                        <span className="fw-bold me-1">
+                                            Last Update On : <span className="fw-semibold">01/01/2023</span>
+                                        </span>
+                                    </div>
+                                </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
 

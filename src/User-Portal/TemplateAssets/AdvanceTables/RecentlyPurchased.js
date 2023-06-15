@@ -132,7 +132,7 @@ const RecentlyPurchased = () => {
                     sortable
                     pagination
                     perPage={5}
-                    selection
+                    // selection
                     selectionColumnWidth={30}
                 >
                     <BulAction table />

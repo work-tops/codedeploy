@@ -128,7 +128,7 @@ function WishListProductCard() {
     const toastDanger = () => toast.error(<h6 className="">Product Removed from Wishlist</h6>);
     return (
         <>
-        
+
             <Row>
                 <Col lg={12} className='mb-5'>
                     <NavbarStandard />
@@ -137,6 +137,12 @@ function WishListProductCard() {
                     <Row>
                         <Col className='mb-3' lg={3}>
                             <Card className="mt-5">
+                                <Card.Body>
+
+                                    <Form.Check type="checkbox" label="Offers" className="mb-0" />
+                                </Card.Body>
+                            </Card>
+                            <Card className="mt-3">
                                 <SimpleBarReact style={{ height: '100%' }}>
                                     <Card.Header as={Flex} className="flex-between-center pt-x1">
                                         {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
@@ -227,15 +233,16 @@ function WishListProductCard() {
                                                 <Col xs="auto" className="p-0">
                                                     <Row className="g-2 align-items-center">
                                                         <div className="d-flex align-items-center">
-                                                            <small className="fw-semi-bold me-2 d-lg-block lh-1">Sort By:</small>
+                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold me-2 d-lg-block lh-1">Sort By</small>
                                                             <div>
-                                                                <Form.Select>
-                                                                    <option>All</option>
-                                                                    <option>Offers</option>
-
+                                                                <Form.Select style={{ fontSize: '14px' }}>
+                                                                    <option style={{ fontSize: '14px' }}>Recent Products</option>
+                                                                    <option style={{ fontSize: '14px' }}>Old Products</option>
+                                                                    <option style={{ fontSize: '14px' }}>A-Z</option>
+                                                                    <option style={{ fontSize: '14px' }}>Z-A</option>
                                                                 </Form.Select>
                                                             </div>
-                                                            <small className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View:</small>
+                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View</small>
                                                             <div className="d-flex">
                                                                 <div onClick={() => { setIsList(false) }}
                                                                     className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'

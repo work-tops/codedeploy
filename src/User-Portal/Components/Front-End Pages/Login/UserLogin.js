@@ -2,13 +2,14 @@ import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import logo from '../../../TemplateAssets/Images/MP-logo.png'
 import worktops from '../../Projectimages/Conversions.jpg'
 import React, { useState } from 'react';
-import { Button, Col, Form, Row, Card, Container } from 'react-bootstrap';
+import { Button, Col, Form, Row, Card, Container, InputGroup } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { createData, getAllData } from "../../../../Services/ProxyService";
 import toast, { Toaster } from 'react-hot-toast';
 import Footer from "../../Footer/Footer";
 import SocialAuthButtons from "../../../TemplateAssets/authentication/SocialAuthButtons";
 import { Divider } from '@mui/material';
+import { Icon } from "@iconify/react";
 
 const UserLogin = ({ }) => {
   // State
@@ -71,9 +72,9 @@ const UserLogin = ({ }) => {
   return (
     <>
       <Row className="min-vh-100 bg-100">
-      <Col lg={12} className="mb-5">
-        <NavbarStandard/>
-      </Col>
+        <Col lg={12} className="mb-5">
+          <NavbarStandard />
+        </Col>
         <Col xs={6} className="d-none d-lg-block position-relative">
           <div style={{ backgroundImage: `url(${worktops})` }} className="bg-holder">
           </div>
@@ -107,13 +108,18 @@ const UserLogin = ({ }) => {
 
                         <Form.Group className="mb-3">
                           <Form.Label className='text-700'>Password<span className="text-danger">*</span></Form.Label>
-                          <Form.Control
-                            placeholder={'Password'}
-                            value={formData.password}
-                            name="password"
-                            onChange={handleFieldChange}
-                            type="password"
-                          />
+                          <InputGroup>
+                            <Form.Control
+                              placeholder={'Password'}
+                              value={formData.password}
+                              name="password"
+                              onChange={handleFieldChange}
+                              type="password"
+                            />
+                            <Button style={{border:'1px solid #f4f4f4'}} className=" bg-transparent">
+                              <Icon icon="mdi:eye" color="gray" width="24" height="24" />
+                            </Button>
+                          </InputGroup>
                         </Form.Group>
 
                         <Row className="justify-content-between align-items-center">
@@ -159,7 +165,7 @@ const UserLogin = ({ }) => {
                       </Form>
                       <p className="text-center fw-semibold text-900 mt-3 mb-3">Don't Have an Account ? <Link to='/project-owner-register'>Create Account</Link></p>
                       <Divider>Or Login With</Divider>
-                      <SocialAuthButtons/>
+                      <SocialAuthButtons />
                       <Toaster />
                     </>
                   </Card.Body>

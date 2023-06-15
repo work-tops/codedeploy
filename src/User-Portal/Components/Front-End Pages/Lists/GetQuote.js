@@ -1,4 +1,4 @@
-import { useState, React, useCallback,useRef } from "react";
+import { useState, React, useCallback, useRef } from "react";
 import { Row, Col, Card, Form, Button, Container, Image, Dropdown } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Editor } from "@tinymce/tinymce-react";
@@ -83,7 +83,7 @@ function GetQuote() {
                                             <Col lg={12}>
                                                 <div className="mb-3" >
                                                     <Form.Label className="fw-semibold text-uppercase text-900">
-                                                        Attach Kitchen Plan
+                                                        Attach diagrams/plans
                                                     </Form.Label>
                                                     <div {...getRootProps({ className: 'dropzone-area py-6' })}>
                                                         <input {...getInputProps()} multiple />

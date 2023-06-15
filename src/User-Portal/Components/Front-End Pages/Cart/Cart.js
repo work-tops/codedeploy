@@ -1,6 +1,6 @@
 import { React, useState } from "react";
-import { Row, Col, Button, Card, Modal, Container, Form } from "react-bootstrap";
-
+import { Row, Col, Button, Card, Modal, Container, Form, Breadcrumb } from "react-bootstrap";
+import emptycart from '../../Projectimages/EmptyCart.avif'
 import { Link } from "react-router-dom";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import product_image from '../../Images/semiprecious.png'
@@ -24,6 +24,7 @@ function Cart() {
                 <Col lg={12} className="mb-5">
                     <NavbarStandard />
                 </Col>
+
                 <Container className="mt-4">
                     <Col lg={12}>
                         <div className="card">
@@ -62,39 +63,51 @@ function Cart() {
                                         <Form.Check type="checkbox" />
                                     </div>
                                     <div className="col-6 py-3">
-                                        <Link
-                                            to={`productdetails/${"data._id"}`}
-                                            className="text-dark"
-                                        >
-                                            <div className="d-flex align-items-center"><a ><img className="img-fluid rounded-1 me-3 d-none d-md-block" src={product_image} alt="" width="60" /></a>
-                                                <div className="flex-1">
-                                                    <h5 className="fs-0"><a className="text-900" >MALACHITE SEMI PRECIOUS
-                                                    </a>
-                                                    </h5>
-                                                    <div>
-                                                        <Modal show={showModal} onHide={handleClose}>
-                                                            <Modal.Header>
-                                                                <Modal.Title>Warning</Modal.Title>
-                                                            </Modal.Header>
-                                                            <Modal.Body>
-                                                                <p className="text-capitalize">
-                                                                    Are you sure you want to remove (1) product from your cart?
-                                                                </p>
-                                                            </Modal.Body>
-                                                            <Modal.Footer>
-                                                                <Button variant="secondary" onClick={handleClose}>
-                                                                    Cancel
-                                                                </Button>
-                                                                <Button variant="danger" onClick={handleClose}>
-                                                                    Remove
-                                                                </Button>
 
-                                                            </Modal.Footer>
-                                                        </Modal>
-                                                    </div>
+                                        <div className="d-flex align-items-center">
+
+                                            <Link
+                                                to={`productdetails/${"data._id"}`}
+                                                className="text-dark"
+                                            >
+                                                <img className="img-fluid rounded-1 me-3 d-none d-md-block" src={product_image} alt="" width="60" />
+                                            </Link>
+
+                                            <div className="flex-1">
+                                                <h5 className="fs-0 text-uppercase">
+                                                    <Link
+                                                        to={`productdetails/${"data._id"}`}
+                                                        className="text-dark"
+                                                    >
+                                                        MALACHITE SEMI PRECIOUS
+                                                    </Link>
+                                                </h5>
+                                                <span style={{ fontSize: '14px' }} className="fw-semibold mt-2 d-block">White / 20MM / Polished / Per Sq Mt</span>
+
+                                                <div>
+                                                    <Modal show={showModal} onHide={handleClose}>
+                                                        <Modal.Header>
+                                                            <Modal.Title>Warning</Modal.Title>
+                                                        </Modal.Header>
+                                                        <Modal.Body>
+                                                            <p className="text-capitalize">
+                                                                Are you sure you want to remove (1) product from your cart?
+                                                            </p>
+                                                        </Modal.Body>
+                                                        <Modal.Footer>
+                                                            <Button variant="secondary" onClick={handleClose}>
+                                                                Cancel
+                                                            </Button>
+                                                            <Button variant="danger" onClick={handleClose}>
+                                                                Remove
+                                                            </Button>
+
+                                                        </Modal.Footer>
+                                                    </Modal>
                                                 </div>
                                             </div>
-                                        </Link>
+                                        </div>
+
                                     </div>
                                     <div className="col-4 py-3">
                                         <div className="row align-items-center">
@@ -119,9 +132,23 @@ function Cart() {
                             </div>
                             <div className="card-footer bg-light d-flex justify-content-end">
                                 <form className="me-3">
-                                <Button as={Link} to="/checkout" className="btn btn-sm btn-primary me-2" >Checkout</Button>
-                                <Button as={Link} to="/GuestCheckout" className="btn btn-sm btn-primary" >Guest Checkout</Button>
+                                    <Button as={Link} to="/checkout" className="btn btn-sm btn-primary me-2" >Checkout</Button>
+                                    <Button as={Link} to="/GuestCheckout" className="btn btn-sm btn-primary" >Guest Checkout</Button>
                                 </form>
+                            </div>
+                        </div>
+                        <div class="card mt-3 mb-3">
+                            <div class="card-body cart">
+                                <div class="col-sm-12 empty-cart-cls text-center">
+                                    <img src={emptycart} width="130" height="130" class="img-fluid mb-4 mr-3" />
+                                    <h3><strong>Your Cart is Empty</strong></h3>
+                                    <h6 className="text-capitalize">Must Add all Items Before You proceed to Checkout </h6>
+                                    <Link to="/productlist">
+                                    <a className="btn text-capitalize mt-3 btn-outline-secondary border-300 me-2 shadow-none" data-abc="true">continue shopping</a>
+                                    </Link>
+
+
+                                </div>
                             </div>
                         </div>
                     </Col>
@@ -131,151 +158,3 @@ function Cart() {
     )
 }
 export default Cart
-{/* <Col classNameName="mt-5" lg={12}>
-                    <Row>
-                        <Col lg={7}>
-                            <div classNameName="d-flex justify-content-between">
-                                <h3 classNameName="m-3">Cart List</h3>
-                                <div classNameName="m-3">
-                                    <Link to="/addproductcard">
-                                        <Button classNameName="bg-transparent text-dark border-dark">Add to List</Button>
-                                    </Link>
-                                </div>
-                            </div>
-                            <Card classNameName="m-3">
-                                <Card.Body>
-                                    <Row>
-                                        <Col lg={3}>
-                                            <p classNameName="fw-semibold">Category</p>
-                                            <Icon icon="ic:outline-image" color="gray" width="75" height="60" />
-                                        </Col>
-                                        <Col lg={5}>
-                                            <p classNameName="fw-semibold">DNA Mouse Heart from Bar Harbour,Maine</p>
-                                            <Row>
-                                                <Col>
-                                                    <p>Brand</p>
-                                                    <p>SKU</p>
-                                                    <p>Supplier</p>
-                                                </Col>
-                                                <Col>
-                                                    <p>Size</p>
-                                                    <p>Unit Price</p>
-                                                </Col>
-                                            </Row>
-                                        </Col>
-
-                                        <Col lg={4}>
-                                            <div classNameName="d-flex justify-content-end">
-                                                <Button classNameName="border-0 btn bg-danger">Remove</Button>
-                                            </div>
-                                            <div classNameName="d-flex justify-content-end">
-                                                <Form.Group classNameName="w-50 mb-3">
-                                                    <Form.Label classNameName=" fw-semibold">Quantity</Form.Label>
-                                                    <Form.Select>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </Form.Select>
-                                                </Form.Group>
-                                            </div>
-                                            <div classNameName="d-flex justify-content-end">
-                                                <span classNameName="fs-5 fw-semibold">Sub Total : £ 38.81</span>
-                                            </div>
-                                        </Col>
-                                        <Form.Group>
-                                            <Form.Label>
-                                                Note to Supplier (Optional)
-                                            </Form.Label>
-                                            <Form.Control type="text" />
-                                        </Form.Group>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            <Card classNameName="m-3">
-                                <Card.Body>
-                                    <Row>
-                                        <Col lg={3}>
-                                            <p classNameName="fw-semibold">Category</p>
-                                            <Icon icon="ic:outline-image" color="gray" width="75" height="60" />
-                                        </Col>
-                                        <Col lg={5}>
-                                            <p classNameName="fw-semibold">An Item to be deleted</p>
-                                            <Row>
-                                                <Col>
-                                                    <p>Brand</p>
-                                                    <p>SKU</p>
-                                                    <p>Supplier</p>
-                                                </Col>
-                                                <Col>
-                                                    <p>Size</p>
-                                                    <p>Unit Price</p>
-                                                </Col>
-                                            </Row>
-                                        </Col>
-
-                                        <Col lg={4}>
-                                            <div classNameName="d-flex justify-content-end">
-                                                <Button classNameName="border-0 btn bg-danger">Remove</Button>
-                                            </div>
-                                            <div classNameName="d-flex justify-content-end">
-                                                <Form.Group classNameName="w-50 mb-3">
-                                                    <Form.Label classNameName=" fw-semibold">Quantity</Form.Label>
-                                                    <Form.Select>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </Form.Select>
-                                                </Form.Group>
-                                            </div>
-                                            <div classNameName="d-flex justify-content-end">
-                                                <span classNameName="fs-5 fw-semibold">Sub Total : £ 1987.00</span>
-                                            </div>
-                                        </Col>
-                                        <Form.Group>
-                                            <Form.Label>
-                                                Note to Supplier (Optional)
-                                            </Form.Label>
-                                            <Form.Control type="text" />
-                                        </Form.Group>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-
-                        </Col>
-                        <Col lg={5}>
-                            <Card classNameName="m-5 shadow  position-fixed">
-                                <Card.Body>
-                                    <p classNameName="text-uppercase mb-2">
-                                        Summary
-                                    </p>
-                                    <Divider />
-                                    <Row classNameName="mt-3">
-                                        <Col lg={5}>
-                                            <p classNameName="fw-semibold text-capitalize">
-                                                Sub Total :
-                                            </p>
-                                        </Col>
-                                        <Col>
-                                            <p classNameName="fw-semibold">
-                                                £ 1987.00
-                                            </p>
-                                        </Col>
-                                    </Row>
-                                    <p classNameName="fw-semibold" style={{ fontSize: '12px' }}>Additional shipping & handling charges may
-                                        apply.
-                                    </p>
-                                    <div classNameName="d-flex justify-content-center">
-                                        <Link to='/shippingpage'>
-                                        <Button classNameName="bg-dark text-white border-0  mt-3">
-                                            Checkout
-                                        </Button>
-                                        </Link>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col lg={12}>
-                    <Footer />
-                </Col> */}
