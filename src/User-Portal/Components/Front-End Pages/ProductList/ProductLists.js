@@ -210,79 +210,10 @@ function ProductList() {
                             </Card>
                         </Col>
                         <Col className='mb-3' lg={9}>
-                            {/* <Card className="mt-5">
-                                <Card.Header className="bg-light position-relative">
-                                    <h4 className="text-uppercase  mb-0 mt-1">All Products</h4>
-                                </Card.Header>
-                                <Card.Body className="pt-0 mt-3 pt-md-3">
-                                    <Row className="g-3 align-items-center">
-                                        <Col xs="auto" className="d-xl-none">
-                                            <Button
-                                                className="position-relative p-0"
-                                                size="sm"
-                                                variant="link"
-                                            >
-                                                <FontAwesomeIcon icon="filter" className="fs-0 text-700" />
-                                            </Button>
-                                        </Col>
-                                        <Col>
-                                            <Form className="position-relative">
-                                                <Form.Control
-                                                    type="search"
-                                                    placeholder="Search..."
-                                                    
-                                                    size="sm"
-                                                    aria-label="Search"
-                                                    className="rounded search-input ps-4"
-                                                />
-                                                <FontAwesomeIcon
-                                                    icon="search"
-                                                    className="fs--1  text-400 position-absolute text-400 start-0 top-50 translate-middle-y ms-2"
-                                                />
-                                            </Form>
-                                        </Col>
-                                        <Col xs="auto" className="col-md">
-                                            <Row className="g-0 justify-content-end">
-
-                                                <Col xs="auto" className="p-0">
-                                                    <Row className="g-2 align-items-center">
-                                                        <div className="d-flex align-items-center">
-                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold me-2 d-lg-block lh-1">Sort By</small>
-                                                            <div>
-                                                                <Form.Select >
-                                                                    <option >Recent Products</option>
-                                                                    <option >Old Products</option>
-                                                                    <option >A-Z</option>
-                                                                    <option >Z-A</option>
-                                                                </Form.Select>
-                                                            </div>
-                                                            <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View</small>
-                                                            <div className="d-flex">
-                                                                <div onClick={() => { setIsList(false) }}
-                                                                    className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
-                                                                        }`}
-                                                                >
-                                                                    <Icon className="cursor-pointer" icon="material-symbols:grid-on-sharp" width="24" height="24" />
-                                                                </div>
-                                                                <div onClick={() => { setIsList(true) }}
-                                                                    className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
-                                                                        }`}
-                                                                >
-                                                                    <Icon className="cursor-pointer" icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </Row>
-                                                </Col>
-                                            </Row>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card> */}
+                           
                             <div className="card mt-5 mb-3">
                                 <div className="card-header bg-light position-relative">
-                                    <h5 className="mb-0 mt-1">All Products</h5>
+                                    <h5 className="mb-0 mt-1">Products</h5>
                                     <div className="bg-holder d-none d-md-block bg-card">
 
                                     </div>
@@ -318,8 +249,7 @@ function ProductList() {
                                                     </form>
                                                 </div>
                                                 <div className="col-auto">
-                                                    <div className="d-flex align-items-center"><small className="fw-semi-bold me-2 d-none d-lg-block lh-1">View:</small>
-                                                        {/* <div className="d-flex"> */}
+                                                    <div className="d-flex align-items-center"><small className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</small>
                                                         <div onClick={() => { setIsList(false) }}
                                                             className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}
@@ -332,7 +262,7 @@ function ProductList() {
                                                         >
                                                             <Icon className="cursor-pointer" icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
                                                         </div>
-                                                        {/* </div> */}
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -452,11 +382,11 @@ function ProductList() {
                                                         <div class="col-md-4 col-lg-3">
                                                             <div class="hoverbox h-md-100"><a class="text-decoration-none" data-gallery="attachment-bg">
                                                                 <Link to={`productdetails/${data._id}`}>
-                                                                <img class="h-100 cursor-pointer w-100 fit-cover" src={data?.attachments[0]?.url} alt="" />
+                                                                    <img class="h-100 cursor-pointer w-100 fit-cover" src={data?.attachments[0]?.url} alt="" />
                                                                 </Link>
-                                                                </a>
+                                                            </a>
                                                                 <div class="hoverbox-content flex-center pe-none bg-holder overlay overlay-2">
-                                                                   </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8 col-lg-9 p-x1">
@@ -505,14 +435,11 @@ function ProductList() {
                                                                         </div>
                                                                         <div class="mt-3 d-flex flex-lg-column gap-2">
                                                                             <button onClick={toastDanger} class="btn btn-md btn-falcon-default hover-danger fs--1 text-600">
-                                                                                <Icon icon="icon-park-outline:like" width="20" height="20" />
+                                                                                <span class="far fa-heart">
+                                                                                </span>
                                                                                 <span class="ms-1 text-600 d-none d-lg-inline">Add to Wishlist</span>
-                                                                            </button>
-                                                                            <button onClick={toastRemove} class="btn btn-md btn-falcon-default hover-danger fs--1 text-600">
-                                                                                <Icon icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
                                                                                 <span class="ms-1 text-600 d-none d-lg-inline">Remove from Wishlist</span>
                                                                             </button>
-
 
                                                                             <button onClick={toastDark} class="btn btn-md btn-primary fs--1">
                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>

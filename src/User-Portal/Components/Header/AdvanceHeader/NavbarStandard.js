@@ -259,7 +259,7 @@ function NavbarStandard() {
             <button className="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle Navigation"><Icon icon="material-symbols:menu" color="white" width="20" height="20" /><span className="toggle-line"></span></button>
             <a className="navbar-brand me-1 me-sm-3">
               <div className="d-flex align-items-center">
-                <Link target="_blank" to="/">
+                <Link  to="/">
                   <img style={{ width: '110px', marginRight: '5px', marginLeft: '5px' }} title='Myproject.Ai' className="" src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} alt="MAI Logo" />
                 </Link>
               </div>
@@ -268,7 +268,7 @@ function NavbarStandard() {
             </div>
             {/* Post A Project */}
             {id == 2 &&
-              <Button title='Click here to Post Your Project' as={Link} target="_blank" to="/ProjectOwner/PostProject" style={{ background: '#fff', color: '#003f6b', border: 'none' }}>
+              <Button title='Click here to Post Your Project' as={Link}  to="/ProjectOwner/PostProject" style={{ background: '#fff', color: '#003f6b', border: 'none' }}>
                 <div>
                   {isMobile ? (
                     <div>
@@ -288,28 +288,28 @@ function NavbarStandard() {
               <ul className=" navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
                 {/* HIW */}
                 <li>
-                  <Link target="_blank" to="/HowItWorks">
+                  <Link  to="/HowItWorks">
                     <a title='Products' className="text-uppercase text-white nav-link" role="button" aria-haspopup="true" aria-expanded="false" id="dashboards">How It Works</a>
                   </Link>
                 </li>
                 {/* HIW */}
                 {/* Products */}
                 <li>
-                  <Link target="_blank" to="/productlist">
+                  <Link  to="/productlist">
                     <a title='Products' className="text-uppercase text-white nav-link" role="button" aria-haspopup="true" aria-expanded="false" id="dashboards">Products</a>
                   </Link>
                 </li>
                 {/* Products */}
                 {/* Projects */}
                 <li>
-                  <Link target="_blank" to="/projectlist">
+                  <Link  to="/projectlist">
                     <a title='Projects' className="text-uppercase text-white nav-link" role="button" aria-haspopup="true" aria-expanded="false" id="dashboards">Projects</a>
                   </Link>
                 </li>
                 {/* Projects */}
                 {/* Services */}
                 <li>
-                  <Link target="_blank" to="/servicelist">
+                  <Link  to="/servicelist">
                     <a title='Services' className="text-uppercase text-white nav-link" role="button" aria-haspopup="true" aria-expanded="false" id="dashboards">Services</a>
                   </Link>
                 </li>
@@ -321,10 +321,10 @@ function NavbarStandard() {
                       <a title='Click here to Login or Signup as Projectowner in Myproject.Ai' className="text-uppercase text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Project Owner</a>
                       <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                         <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                          <Link target="_blank" to="/ProjectOwner/Login">
+                          <Link  to="/ProjectOwner/Login">
                             <a title='Click here to Login as Projectowner in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium">Login</a>
                           </Link>
-                          <Link target="_blank" to="/ProjectOwner/SignUp">
+                          <Link  to="/ProjectOwner/SignUp">
                             <a title='Click here to Signup as Projectowner in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium">Sign Up</a>
                           </Link>
                         </div>
@@ -337,10 +337,10 @@ function NavbarStandard() {
                       <a title='Click here to Login or Signup as Trader in Myproject.Ai' className="text-uppercase text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Trader</a>
                       <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                         <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                          <Link target="_blank" to="/Freelancer/True">
+                          <Link  to="/Freelancer/True">
                             <a title='Click here to Login as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Login</a>
                           </Link>
-                          <Link target="_blank" to="/Freelancer/False">
+                          <Link  to="/Freelancer/False">
                             <a title='Click here to SignUp as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Register</a>
                           </Link>
                         </div>
@@ -353,7 +353,7 @@ function NavbarStandard() {
             </div>
             <ul className="navbar-nav navbar-nav-icons ms-auto gap-2 flex-row align-items-center">
               {/* Cart */}
-              <Link title='Cart' target="_blank" to="/Cart">
+              <Link title='Cart'  to="/Cart">
                 <div className="cart-icon-container">
                   <Icon className=' me-2' icon="material-symbols:shopping-cart" color="white" width="24" height="24" />
                   <Badge pill bg="danger" className="cart-badge">

@@ -2266,7 +2266,7 @@ a {
     transition: all .5s;
   }
 
-  .multi-sel {
+  /* .multi-sel {
     margin-left: 20px;
     margin-top: 10px;
     border: 1px solid rgb(222, 171, 113);
@@ -2284,21 +2284,19 @@ a {
     width: 400px;
     background: #fff;
     margin-bottom: 15px !important;
-  }
+  } */
 
   .searchWrapper {
     border: none !important;
     border-radius: 0px !important;
   }
 
-  .chip {
+  /* .chip {
     background-color: orange !important;
     border-radius: 2px !important;
-  }
+  } */
 
-  .highlightOption {
-    background-color: orange !important;
-  }
+
 
   .note-list {
     color: #000;

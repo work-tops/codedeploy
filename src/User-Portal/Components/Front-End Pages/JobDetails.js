@@ -103,11 +103,11 @@ function JobDetails() {
                     <Row>
                         <Col lg={8}>
                             <Card className="mt-5">
-                                <Card.Header as="h4" className='bg-light text-justify  text-uppercase'>Project Details</Card.Header>
+                                <Card.Header as="h5" className='bg-light mb-0 mt-1'>Project Details</Card.Header>
                                 <Card.Body className="position-relative">
                                     <Row>
                                         <Col xl={12}>
-                                            <h5 className="mb-3 text-uppercase">{jobdata.project_title}</h5>
+                                            <h6 style={{ fontSize: '16px' }} className="mb-3 text-uppercase">{jobdata.project_title}</h6>
                                             <p style={{ fontSize: '14px' }} className="text-justify">{jobdata.project_description}</p>
                                         </Col>
                                     </Row>
@@ -198,7 +198,7 @@ function JobDetails() {
                             {/*  Customize Details  */}
                             <Card className="mt-5 overflow-hidden">
                                 <Card.Header className="bg-light">
-                                    <div style={{fontSize:'14px'}}>
+                                    <div style={{ fontSize: '14px' }}>
                                         <span className="me-1">
                                             <Icon icon="ic:twotone-update" width="20" height="20" hFlip={true} />
                                         </span>
@@ -209,7 +209,11 @@ function JobDetails() {
                                 </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
-
+                                        <p className='text-justiy fw-bold' style={{ fontSize: '14px' }}>
+                                            <Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />
+                                            1000
+                                            <span className="ms-1 text-primary">(Fixed Price)</span>
+                                        </p>
                                         {/* <li>
                                             <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
                                                 <Icon icon="tabler:currency-pound"
@@ -259,10 +263,10 @@ function JobDetails() {
                                         <Link to="/proposallist">
                                             <p className="fw-semibold text-center" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
                                         </Link>
-                                        <Button className="border-0 text-uppercase me-2" style={{ color: '#fff', background: '#003f6b', fontSize: '14px' }} as={Link} to="/EditPostProject">
+                                        <Button className="border-0 fs--1 text-uppercase me-2" style={{ color: '#fff', background: '#003f6b' }} as={Link} to="/EditPostProject">
                                             Edit
                                         </Button>
-                                        <Button onClick={() => sendProposal()} className="border-0  text-uppercase" style={{ color: '#fff', fontSize: '14px', background: '#003f6b' }}>
+                                        <Button onClick={() => sendProposal()} className="border-0  fs--1 text-uppercase" style={{ color: '#fff', background: '#003f6b' }}>
                                             Send Proposal
                                         </Button>
                                     </div>

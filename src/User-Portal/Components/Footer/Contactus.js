@@ -43,12 +43,12 @@ function ContactUs() {
                                 </div>
 
                                 <div className="col-md-6">
-                                    <Card className="mt-lg-4">
+                                    <Card className="">
                                         <Card.Header className="text-center bg-light" as={"h4"}>
                                             General Enquiries
                                         </Card.Header>
                                         <Card.Body>
-                                            <Row className="mb-4">
+                                            <Row className="">
                                                 <Form.Group as={Col} className="mb-3">
                                                     <Form.Label className="text-uppercase">First Name<span className="text-danger">*</span></Form.Label>
                                                     <Form.Control placeholder="First Name" />
@@ -56,6 +56,16 @@ function ContactUs() {
                                                 <Form.Group as={Col} className="mb-3">
                                                     <Form.Label className="text-uppercase">Last Name<span className="text-danger">*</span></Form.Label>
                                                     <Form.Control placeholder="First Name" />
+                                                </Form.Group>
+                                            </Row>
+                                            <Row className="">
+                                                <Form.Group as={Col} className="mb-3">
+                                                    <Form.Label className="text-uppercase">Email <span className="text-danger">*</span></Form.Label>
+                                                    <Form.Control type="email" placeholder="Enter Your Email Address" />
+                                                </Form.Group>
+                                                <Form.Group as={Col} className="mb-3">
+                                                    <Form.Label className="text-uppercase">Phone Number<span className="text-danger">*</span></Form.Label>
+                                                    <Form.Control placeholder="+44 0000 000 0000" />
                                                 </Form.Group>
                                             </Row>
                                             <Form.Group className="mb-3">

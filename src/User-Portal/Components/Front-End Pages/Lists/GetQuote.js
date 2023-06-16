@@ -43,10 +43,10 @@ function GetQuote() {
                         <NavbarStandard />
                     </Col>
                     <Col lg={12}>
-                        <div className="d-flex justify-content-center align-items-center mb-3 mt-5">
+                        <div className="d-flex justify-content-center align-items-center mt-5">
                             <h4 className="fw-bolder">Get Quote</h4>
                         </div>
-                        <div className="d-flex justify-content-center align-items-center m-3">
+                        <div className="d-flex justify-content-center align-items-center">
                             <p className="text-center" style={{ fontSize: '14px' }}>Give us the details of your project and we'll send it to specialist trades for you.</p>
                         </div>
                         <Row className="">

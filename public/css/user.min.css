@@ -391,10 +391,12 @@ body {
 .navbar-top .navbar-toggler {
   margin: 5px;
 }
+
 .navbar .nav-link {
   outline: none;
   margin-left: 5px;
 }
+
 .navbar-top {
   position: sticky;
   top: 0;
@@ -406,13 +408,15 @@ body {
   background-image: none;
   min-height: 4.3125rem;
 }
-.fixed-top{
+
+.fixed-top {
   position: fixed;
   right: 0;
   left: 0;
   z-index: 1030;
-  top:0;
+  top: 0;
 }
+
 /*  */
 .cart-icon-container {
   position: relative;
@@ -429,10 +433,66 @@ body {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.2);
   }
+
   100% {
     transform: scale(1);
   }
+}
+
+/*  */
+.thumb-slider-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-slider {
+  width: 100%;
+  max-width: 500px;
+  /* Adjust the maximum width as needed */
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 10px;
+  /* Adjust the margin as needed */
+}
+
+.image-slide {
+  display: none;
+
+
+}
+
+.image-slide.active {
+  display: block;
+}
+
+.thumb-slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumb-slide {
+  cursor: pointer;
+  margin: 5px;
+  /* Adjust the margin as needed */
+}
+
+.thumb-slide img {
+  width: 50px;
+  /* Adjust the thumbnail width as needed */
+  height: 50px;
+}
+
+.thumb-slide.active {
+  border: none;
+  /* Customize the active thumbnail style */
+}
+
+.chip {
+  background: #003f6b;
 }

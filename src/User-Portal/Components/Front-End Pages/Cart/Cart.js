@@ -70,20 +70,20 @@ function Cart() {
                                                 to={`productdetails/${"data._id"}`}
                                                 className="text-dark"
                                             >
-                                                <img className="img-fluid rounded-1 me-3 d-none d-md-block" src={product_image} alt="" width="60" />
+                                                <img style={{ position: 'relative', bottom: '8px' }} className="img-fluid rounded-1 me-3 d-none d-md-block" src={product_image} alt="" width="80" />
                                             </Link>
 
                                             <div className="flex-1">
                                                 <h5 className="fs-0 text-uppercase">
                                                     <Link
                                                         to={`productdetails/${"data._id"}`}
-                                                        className="text-dark"
+                                                        className="text-dark "
                                                     >
                                                         MALACHITE SEMI PRECIOUS
                                                     </Link>
                                                 </h5>
                                                 <span style={{ fontSize: '14px' }} className="fw-semibold mt-2 d-block">White / 20MM / Polished / Per Sq Mt</span>
-
+                                                <p className="text-danger" role="button">Remove</p>
                                                 <div>
                                                     <Modal show={showModal} onHide={handleClose}>
                                                         <Modal.Header>
@@ -91,15 +91,15 @@ function Cart() {
                                                         </Modal.Header>
                                                         <Modal.Body>
                                                             <p className="text-capitalize">
-                                                                Are you sure you want to remove (1) product from your cart?
+                                                                Are you sure want to remove selected items from your cart?
                                                             </p>
                                                         </Modal.Body>
                                                         <Modal.Footer>
                                                             <Button variant="secondary" onClick={handleClose}>
-                                                                Cancel
+                                                                No
                                                             </Button>
                                                             <Button variant="danger" onClick={handleClose}>
-                                                                Remove
+                                                                Yes
                                                             </Button>
 
                                                         </Modal.Footer>
@@ -144,7 +144,7 @@ function Cart() {
                                     <h3><strong>Your Cart is Empty</strong></h3>
                                     <h6 className="text-capitalize">Must Add all Items Before You proceed to Checkout </h6>
                                     <Link to="/productlist">
-                                    <a className="btn text-capitalize mt-3 btn-outline-secondary border-300 me-2 shadow-none" data-abc="true">continue shopping</a>
+                                        <a className="btn text-capitalize mt-3 btn-outline-secondary border-300 me-2 shadow-none" data-abc="true">continue shopping</a>
                                     </Link>
 
 
@@ -152,6 +152,7 @@ function Cart() {
                             </div>
                         </div>
                     </Col>
+
                 </Container>
             </Row >
         </>

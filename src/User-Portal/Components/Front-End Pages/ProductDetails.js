@@ -14,6 +14,7 @@ import Footer from "../Footer/Footer";
 import { Editor } from "@tinymce/tinymce-react";
 
 function ProductDetails() {
+
     let { proid } = useParams();
     const [prodata, setProdata] = useState([])
 
@@ -71,7 +72,11 @@ function ProductDetails() {
     const toastDark = () => toast.success(<h6 className="text-sucess">Your Product is Successfully Added to Cart</h6>);
     const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
     const editorRef = useRef(null);
-    // 
+    const [activeIndex, setActiveIndex] = useState(0);
+    const changeActiveIndex = (index) => {
+        setActiveIndex(index);
+    };
+
 
     return (
         <>
@@ -128,11 +133,11 @@ function ProductDetails() {
                                         {/* <Link to="/wishlist/product" className="text-300"> */}
                                         <li role="button" onClick={toastDanger}>
                                             <span className="me-2">
-                                                <Icon style={{ marginTop: '-5px' }}  icon="flat-color-icons:like" className="text-white me-1" width="20" height="20" />
+                                                <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="text-white me-1" width="20" height="20" />
                                                 Add to Wishlist
                                             </span>
                                             <span>
-                                                <Icon  style={{ marginTop: '-5px' }} icon="icon-park-outline:like" className="me-1"  width="20" height="20" />
+                                                <Icon style={{ marginTop: '-5px' }} icon="icon-park-outline:like" className="me-1" width="20" height="20" />
                                                 Remove From Wishlist
                                             </span>
                                         </li>
@@ -160,13 +165,29 @@ function ProductDetails() {
                                 Product Images
                             </Card.Header>
                             <Card.Body className="position-relative">
-                                {prodata.attachments?.map((data, key) => (
-                                    <div key={key} className="d-inline-block m-2">
-                                        <div>
-                                            <img src={data.url} width="150px" height="130px" />
-                                        </div>
+                                <div className="thumb-slider-container">
+                                    <div className="image-slider">
+                                        {prodata.attachments?.map((data, key) => (
+                                            <div
+                                                key={key}
+                                                className={`image-slide ${activeIndex === key ? 'active' : ''}`}
+                                            >
+                                                <img src={data.url} width={400} height={219} alt={`Image ${key}`} />
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
+                                    <div className="thumb-slider">
+                                        {prodata.attachments?.map((data, key) => (
+                                            <div
+                                                key={key}
+                                                className={`thumb-slide ${activeIndex === key ? 'active' : ''}`}
+                                                onClick={() => changeActiveIndex(key)}
+                                            >
+                                                <img src={data.url} alt={`Thumbnail ${key}`} />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
                             </Card.Body>
                         </Card>
                         {/* Product Images */}
