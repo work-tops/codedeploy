@@ -101,8 +101,8 @@ const FrontEndRouters = () => {
     return (
         <Switch>
             {/* proper order routes */}
-            <Route path='/ProjectOwner/Login'><UserLogin /></Route>
-            <Route path='/ProjectOwner/SignUp'><SignUpPage /></Route>
+            <Route path='/projectowner'><UserLogin /></Route>
+            <Route path='/project-owner-register'><SignUpPage /></Route>
             <Route path="/freelancer/:login"><SellerLogin /></Route>
             <Route path="/productlist"><ProductList /></Route>
             {/* <Route path="/productgrid1"><ProductGrid /></Route> */}

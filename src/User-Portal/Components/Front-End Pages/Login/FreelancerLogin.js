@@ -9,6 +9,7 @@ import SocialAuthButtons from '../../../TemplateAssets/authentication/SocialAuth
 import Footer from '../../Footer/Footer';
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard';
 import { Divider } from '@mui/material';
+import { Icon } from '@iconify/react';
 
 const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
 
@@ -83,6 +84,14 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
     console.log(login);
     login == 'true' ? setToggle(true) : setToggle(false);
   }, [])
+
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
+
   return (
     <>
       <Container>
@@ -150,7 +159,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                         >
                           {isToggle == false ?
                             <div className="p-4 p-md-5 flex-grow-1">
-                              <h4>Trader Registration</h4>
+                              <h4>Trader SignUp</h4>
                               <Form onSubmit={handleSubmit}>
                                 <Form.Group className='mb-3'>
                                   <Form.Label className='text-700'>First Name<span className="text-danger">*</span></Form.Label>
@@ -168,20 +177,35 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                   <Form.Label className='text-700'>Email address<span className="text-danger">*</span></Form.Label>
                                   <input className='form-control' placeholder={'Email Address'} value={formData.email} name="email" onChange={handleFieldChange} type="email" />
                                 </Form.Group>
-                                <Form.Group
-                                  className='mb-3'
-                                >
-                                  <Form.Label className='text-700'>Password<span className="text-danger">*</span></Form.Label>
-                                  <input className='form-control' placeholder={'Password'} value={formData.password} name="password" onChange={handleFieldChange} type="password" />
+                                <Form.Group className="mb-3">
+                                  <Form.Label className="text-700">Password<span className="text-danger">*</span></Form.Label>
+                                  <div className="position-relative">
+                                    <input
+                                      className="form-control"
+                                      placeholder="Password"
+                                      value={formData.password}
+                                      name="password"
+                                      onChange={handleFieldChange}
+                                      type={passwordVisible ? 'text' : 'password'}
+                                    />
+                                    {formData.password && (
+                                      <Icon
+                                        className="position-absolute me-2 cursor-pointer end-0 top-50 translate-middle-y"
+                                        icon="mdi:eye"
+                                        color="gray"
+                                        width="24"
+                                        height="24"
+                                        onClick={togglePasswordVisibility}
+                                      />
+                                    )}
+                                  </div>
                                 </Form.Group>
                                 <Form.Group
                                   className='mb-3'
                                 >
                                   <Form.Label className='text-700'>Phone</Form.Label>
                                   <input className='form-control' placeholder={'Phone'} value={formData.phone} name="phone" onChange={handleFieldChange} type="number" />
-                                  <Form.Control.Feedback type='invalid'>
-                                    Please Enter Your Phone Number
-                                  </Form.Control.Feedback>
+
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                   <Form.Label className="text-700">ID Verification<span className="text-danger">*</span></Form.Label>
@@ -200,19 +224,25 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                 </Form.Group>
                                 <Row className="justify-content-between align-items-center">
                                   <Col xs="auto">
-                                    <Form.Check type="checkbox" id="rememberMe" className="mb-0 mt-3">
-                                      <Form.Check.Input type="checkbox" />
-                                      <Form.Check.Label className="mb-0 text-900">
-                                        I'd like to receive MyProject News, Advice and Tips
-                                      </Form.Check.Label>
-                                    </Form.Check>
+                                    <Form.Group className="mb-3">
+                                      <Form.Check type="checkbox" className="mb-0 mt-3">
+                                        <Form.Check.Input type="checkbox" />
+                                        <Form.Check.Label
+                                          className="text-700 d-inline"
+
+                                        >
+                                          By Signing up you accept MyProject's <Link to="/termsofuse">Terms of Service </Link>.
+                                          I have read and understood MyProject's <Link to="/privacypolicy">Privacy Policy</Link>.
+                                        </Form.Check.Label>
+                                      </Form.Check>
+                                    </Form.Group>
                                   </Col>
                                 </Row>
                                 <Button type="submit" style={{ background: '#003f6b' }} className="mt-3 w-100 border-0" disabled={!formData.email || !formData.password}>
                                   Register
                                 </Button>
                                 <div className='mt-3'>
-                                <Divider>Or Register With</Divider>
+                                  <Divider>Or Register With</Divider>
                                   <SocialAuthButtons />
                                 </div>
                               </Form>

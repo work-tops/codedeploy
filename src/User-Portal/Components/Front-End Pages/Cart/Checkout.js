@@ -47,10 +47,7 @@ function Checkout() {
                                                     <th className="ps-0">Subtotal</th>
                                                     <th className="pe-0 text-end">£3355</th>
                                                 </tr>
-                                                {/* <tr className="border-bottom">
-                                                    <th className="ps-0">Coupon: <span className="text-success">40SITEWIDE</span></th>
-                                                    <th className="pe-0 text-end">-£55</th>
-                                                </tr> */}
+
                                                 <tr className="border-bottom">
                                                     <th className="ps-0">Shipping</th>
                                                     <th className="pe-0 text-end">£20</th>
@@ -166,6 +163,15 @@ function Checkout() {
                                                             placeholder="CB1 0SL"
                                                         />
                                                     </Form.Group>
+                                                    <Form.Group className="mb-3">
+                                                        <Form.Label className="text-uppercase">
+                                                            Country<span className="text-danger">*</span>
+                                                        </Form.Label>
+                                                        <Form.Select>
+                                                            <option>United Kingdom</option>
+                                                            <option>Ireland</option>
+                                                        </Form.Select>
+                                                    </Form.Group>
                                                 </Form>
                                             </Modal.Body>
                                             <Modal.Footer>
@@ -176,7 +182,7 @@ function Checkout() {
                                             </Modal.Footer>
                                         </Modal>
                                         {/* Edit Modal */}
-                                        
+
                                         {/*  */}
                                     </div>
                                     <div className="card-body">

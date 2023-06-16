@@ -10,11 +10,11 @@ import SocialAuthButtons from "../../TemplateAssets/authentication/SocialAuthBut
 import Footer from "../Footer/Footer";
 import { Divider } from '@mui/material';
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
-
+import { Icon } from "@iconify/react";
 
 function SignUpPage(hasLabel) {
     const [toggleForm, setToggleForm] = useState(2);
-    const [form, setForm] = useState({})
+    
     let history = useHistory();
 
     const toggleCard = async (id) => {
@@ -60,6 +60,16 @@ function SignUpPage(hasLabel) {
     useEffect(() => {
         console.log('loop')
     }, [])
+
+    const [passwordVisible, setPasswordVisible] = useState(false);
+    const [form, setForm] = useState({ password: '' });
+
+    
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
+    };
+
     return (
         <>
             <Row className=" min-vh-100 bg-100">
@@ -126,21 +136,33 @@ function SignUpPage(hasLabel) {
                                                             value={form.email}
                                                             onChange={(e) => { handleChange(e) }}
                                                             id="email"
-                                                            placeholder={!hasLabel ? 'Email address' : ''}
+                                                            placeholder={'Email address'}
                                                         />
                                                     </Form.Group>
 
                                                     <Form.Group className="mb-3">
-                                                        {hasLabel && <Form.Label className="text-700">Password<span className="text-danger">*</span></Form.Label>}
-                                                        <Form.Control
-                                                            type="password"
-                                                            required
-                                                            name="password"
-                                                            value={form.password}
-                                                            onChange={(e) => { handleChange(e) }}
-                                                            id="password"
-                                                            placeholder={!hasLabel ? 'Password' : ''}
-                                                        />
+                                                        <Form.Label className="text-700">Password<span className="text-danger">*</span></Form.Label>
+                                                        <div className="position-relative">
+                                                            <Form.Control
+                                                                type={passwordVisible ? 'text' : 'password'}
+                                                                required
+                                                                name="password"
+                                                                value={form.password}
+                                                                onChange={handleChange}
+                                                                id="password"
+                                                                placeholder="Password"
+                                                            />
+                                                            {form.password && (
+                                                                <Icon
+                                                                    className="position-absolute me-2 cursor-pointerw end-0 top-50 translate-middle-y"
+                                                                    icon="mdi:eye"
+                                                                    color="gray"
+                                                                    width="24"
+                                                                    height="24"
+                                                                    onClick={togglePasswordVisibility}
+                                                                />
+                                                            )}
+                                                        </div>
                                                     </Form.Group>
 
                                                     <Col xs="auto">
@@ -151,8 +173,8 @@ function SignUpPage(hasLabel) {
                                                                     className="text-700 d-inline"
 
                                                                 >
-                                                                    By Signing up you accept MyProject's Terms of Service.
-                                                                    I have read and understood MyProject's Privacy Policy.
+                                                                    By Signing up you accept MyProject's <Link to="/termsofuse">Terms of Service </Link>.
+                                                                    I have read and understood MyProject's <Link to="/privacypolicy">Privacy Policy</Link>.
                                                                 </Form.Check.Label>
                                                             </Form.Check>
                                                         </Form.Group>
@@ -214,7 +236,7 @@ function SignUpPage(hasLabel) {
                                                             onChange={(e) => { handleChange(e) }}
                                                             type="email"
                                                             id="trd-ip-bx"
-                                                            placeholder={!hasLabel ? 'Email address' : ''}
+                                                            placeholder="Email address"
                                                         />
                                                     </Form.Group>
                                                     <Form.Group className="mb-3">

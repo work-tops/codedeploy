@@ -62,6 +62,13 @@ const UserLogin = ({ }) => {
     //   theme: 'colored'
     // });
   };
+  // 
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  // Rest of your code...
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
 
   const handleFieldChange = e => {
     setFormData({
@@ -107,19 +114,26 @@ const UserLogin = ({ }) => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                          <Form.Label className='text-700'>Password<span className="text-danger">*</span></Form.Label>
-                          <InputGroup>
+                          <Form.Label className="text-700">Password<span className="text-danger">*</span></Form.Label>
+                          <div className="position-relative">
                             <Form.Control
-                              placeholder={'Password'}
+                              placeholder="Password"
                               value={formData.password}
                               name="password"
                               onChange={handleFieldChange}
-                              type="password"
+                              type={passwordVisible ? 'text' : 'password'}
                             />
-                            <Button style={{border:'1px solid #f4f4f4'}} className=" bg-transparent">
-                              <Icon icon="mdi:eye" color="gray" width="24" height="24" />
-                            </Button>
-                          </InputGroup>
+                            {formData.password && (
+                              <Icon
+                                className="position-absolute me-2 cursor-pointer end-0 top-50 translate-middle-y"
+                                icon="mdi:eye"
+                                color="gray"
+                                width="24"
+                                height="24"
+                                onClick={togglePasswordVisibility}
+                              />
+                            )}
+                          </div>
                         </Form.Group>
 
                         <Row className="justify-content-between align-items-center">

@@ -13,9 +13,11 @@ import worktops from '../../Components/Projectimages/Handyman.jpg'
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { Icon } from "@iconify/react";
 import { Divider } from "@mui/material";
-import CardDropdown from "../../TemplateAssets/common/CardDropdown";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function JobDetails() {
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -87,9 +89,11 @@ function JobDetails() {
     const timeDiff = expire_date.getTime() - new Date(today).getTime();
     const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
     console.log(daysDiff);
+    //
 
-    // 
     const editorRef = useRef(null);
+    const toastDanger = () => toast.success(<h6 className="text-sucess">Project Added to Wishlist</h6>);
+    const toastDanger1 = () => toast.success(<h6 className="text-sucess">Follower Added to Wishlist</h6>);
 
     return (
         <>
@@ -302,10 +306,11 @@ function JobDetails() {
                                         </p>
                                         <div className="d-flex justify-content-center">
                                             <Button
+                                                onClick={toastDanger}
                                                 variant="falcon-default"
                                                 className=""
-                                                as={Link}
-                                                to="/wishlist/project"
+                                            // as={Link}
+                                            // to="/wishlist/project"
                                             >
                                                 <span className="me-2">
                                                     <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
@@ -317,6 +322,18 @@ function JobDetails() {
                                             </Button>
                                         </div>
                                     </div>
+                                    {/*  */}
+                                    <ToastContainer
+                                        position="top-right"
+                                        autoClose={1000}
+                                        hideProgressBar={false}
+                                        newestOnTop={false}
+                                        closeOnClick
+                                        rtl={false}
+                                        pauseOnFocusLoss
+                                        draggable
+                                        pauseOnHover
+                                    />
                                     {/*  */}
                                     <Divider />
                                     {/* Profile Details */}
@@ -332,7 +349,7 @@ function JobDetails() {
                                     <div className="d-flex mt-3 justify-content-center gap-5">
                                         <p role="button" style={{ color: '#003f6b', cursor: 'default' }}>Name</p>
                                         <p role="button" style={{ color: '#003f6b', cursor: 'default' }}>Profession</p>
-                                        <p>
+                                        <p role="button" onClick={toastDanger1}>
                                             <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
                                             <Icon icon="icon-park-solid:like" style={{ marginTop: '-5px' }} color="#df2020" width="20" height="20" />
                                         </p>

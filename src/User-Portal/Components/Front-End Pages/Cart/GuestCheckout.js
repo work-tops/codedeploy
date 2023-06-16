@@ -73,7 +73,7 @@ function GuestCheckout() {
                                             </div>
                                         </div>
                                         {/*  */}
-                                        
+
                                         {/* Edit Modal */}
                                         {/*  */}
                                     </div>
@@ -152,6 +152,15 @@ function GuestCheckout() {
                                                     type="text"
                                                     placeholder="CB1 0SL"
                                                 />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label className="text-uppercase">
+                                                    Country<span className="text-danger">*</span>
+                                                </Form.Label>
+                                                <Form.Select>
+                                                    <option>United Kingdom</option>
+                                                    <option>Ireland</option>
+                                                </Form.Select>
                                             </Form.Group>
                                         </Form>
                                     </div>

@@ -268,7 +268,7 @@ function NavbarStandard() {
             </div>
             {/* Post A Project */}
             {id == 2 &&
-              <Button title='Click here to Post Your Project' as={Link}  to="/ProjectOwner/PostProject" style={{ background: '#fff', color: '#003f6b', border: 'none' }}>
+              <Button title='Click here to Post Your Project' as={Link}  to="/postproject" style={{ background: '#fff', color: '#003f6b', border: 'none' }}>
                 <div>
                   {isMobile ? (
                     <div>
@@ -321,10 +321,10 @@ function NavbarStandard() {
                       <a title='Click here to Login or Signup as Projectowner in Myproject.Ai' className="text-uppercase text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Project Owner</a>
                       <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                         <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                          <Link  to="/ProjectOwner/Login">
+                          <Link  to="/projectowner">
                             <a title='Click here to Login as Projectowner in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium">Login</a>
                           </Link>
-                          <Link  to="/ProjectOwner/SignUp">
+                          <Link  to="/project-owner-register">
                             <a title='Click here to Signup as Projectowner in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium">Sign Up</a>
                           </Link>
                         </div>
@@ -341,7 +341,7 @@ function NavbarStandard() {
                             <a title='Click here to Login as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Login</a>
                           </Link>
                           <Link  to="/Freelancer/False">
-                            <a title='Click here to SignUp as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Register</a>
+                            <a title='Click here to SignUp as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Sign Up</a>
                           </Link>
                         </div>
                       </div>
