@@ -112,7 +112,7 @@ const FrontEndRouters = () => {
 
             <Route path='/servicelist'><ServiceList /></Route>
 
-            <Route path="/ProjectOwner/PostProject"><PostProject /></Route>
+            <Route path="/postproject"><PostProject /></Route>
             {/* proper order routes end */}
 
             <Route path='/projectlisting'><ProjectListing /></Route>
