@@ -19,7 +19,7 @@ import cloudUpload from '../../../TemplateAssets/assets/cloud-upload.svg';
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 import file from '../../Projectimages/BathroomFitting.jpg'
 
-function Editpostproject() {
+function RepostProject() {
 
     // Upload Img
     const [covers, setCovers] = useState([]);
@@ -135,12 +135,7 @@ function Editpostproject() {
                             <Card.Header className='bg-light text-uppercase text-justify '>
                                 <div className="row">
                                     <div className="col-lg-8">
-                                        <h4 className="mb-3">Edit Your Project</h4>
-                                        <span className="d-block" style={{ fontSize: '12px' }}>Project Created On :<span className="ms-2 fw-semibold text-primary">01/01/01/05/2023</span> </span>
-                                        <span className="" style={{ fontSize: '12px' }}>Last Update On :<span className="ms-2 fw-semibold text-success">10/01/01/05/2023</span> </span>
-                                    </div>
-                                    <div className="col-lg-4 mt-3 d-flex justify-content-lg-end align-items-lg-end">
-                                        <button className="btn btn-primary mb-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Comment History</button>
+                                        <h4 className="mb-3">Repost Your Project</h4>
                                     </div>
                                 </div>
                             </Card.Header>
@@ -177,9 +172,8 @@ function Editpostproject() {
                                                 // onChange={(e) => { handleChange(e) }}
                                                 id="usr-prj-tit"
                                                 placeholder="e.g I Want to Make a New Kitchen"
-                                                minLength={30}
-                                                maxLength={150}
                                             />
+                                            <p className="text-900 text-uppercase">WHITE ATTICA SUPERNATURAL QUARTZ</p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={12} className='me-2'>
@@ -222,6 +216,13 @@ function Editpostproject() {
                                                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                                                 }}
                                             />
+                                            <p className="text-900">White Attica Supernatural Quartz has a crisp white base featured with an
+                                                intricate veiny pattern. This quartz slab has a super sleek look in polished
+                                                finish which
+                                                is more enhanced by the distinct black veins which have been manufactured to look fit for classNamey modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true
+                                                when installed in kitchens, baths, entryways, laundry and mudrooms, as well as a variety of other spaces in
+                                                both residential and commercial properties. This quartz's design is meant to create a timeless statement. Aside from worktops, these slabs are ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
+                                            </p>
                                             <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our Traders
                                             </p>
                                         </Form.Group>
@@ -305,6 +306,7 @@ function Editpostproject() {
                                                 <option value="Range"> Range</option>
                                                 <option value="No Idea">No Idea</option>
                                             </Form.Select>
+                                            <p className="text-900">Fixed Price</p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
@@ -322,6 +324,7 @@ function Editpostproject() {
                                                 <option value="£ GBP">£ GBP </option>
                                                 <option value="£ EUR">£ EUR</option>
                                             </Form.Select>
+                                            <p className="text-900">£ GBP </p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} className=''>
@@ -339,6 +342,7 @@ function Editpostproject() {
                                                 placeholder="£ 0"
                                                 type="number"
                                             />
+                                            <p className="text-900">200 </p>
                                             {/* <div className='row'>
                                                 <div className="col">
                                                     {form.budget_type == "No Idea" ? (
@@ -383,6 +387,7 @@ function Editpostproject() {
                                                 </ListGroup>
                                             )}
 
+                                            <p className="text-900">Buckinghamshire </p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
@@ -398,6 +403,7 @@ function Editpostproject() {
                                                 // onChange={(e) => { handleChange(e) }}
                                                 type='text'
                                             />
+                                            <p className="text-900">CD23BX</p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
@@ -450,8 +456,8 @@ function Editpostproject() {
                                                 <Form.Check.Label
                                                     style={{ fontSize: '14px' }}
                                                 >
-                                                    <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span >(Only Traders that you specifically invite can view the
-                                                        project post and send proposal)</span></span>
+                                                    <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private
+                                                        <span>(Only Traders that you specifically invite can view theproject post and send proposal)</span></span>
                                                 </Form.Check.Label>
                                             </Form.Check>
                                         </Form.Group>
@@ -510,6 +516,7 @@ function Editpostproject() {
                                             <Button onClick={() => setShowModal(true)} className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
                                             {/* </Link> */}
                                         </div>
+                                        <h5 className="text-center text-danger fw-bold">Your Project has been expired....Please Post New Project!!!</h5>
                                     </Col>
                                 </Row>
                             </Card.Body>
@@ -541,7 +548,7 @@ function Editpostproject() {
                         {/* ---------------- */}
                         <Modal size="lg" show={show1} onHide={handleClose1}>
                             <Modal.Header closeButton>
-                                <Modal.Title>Project Summary Preview</Modal.Title>
+                                <Modal.Title>Project Summary</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                                 {/*  */}
@@ -640,7 +647,7 @@ function Editpostproject() {
                                             <Form.Label className='text-700 text-uppercase'>
                                                 Starting Date
                                             </Form.Label>
-                                            <p className="text-900">01/04/2023 </p>
+                                            <p className="text-900">01/05/2023 </p>
                                         </Form.Group>
                                     </Col>
                                     <Col md="12">
@@ -648,21 +655,21 @@ function Editpostproject() {
                                             <Form.Label className='text-700 d-block text-uppercase'>
                                                 Project Visibility <span className="text-danger">*</span>
                                             </Form.Label>
-                                            {/* <Form.Check
+                                            <Form.Check
                                                 type='radio'
                                                 id="radio-btn"
                                                 // onChange={(e) => { handleChange(e) }}
                                                 name="visibility"
                                                 value="public"
                                                 className='d-inline-block'
-                                            > */}
-                                            {/* <Form.Check.Input name="visibility" type="radio" /> */}
-                                            <Form.Check.Label
-                                                style={{ fontSize: '14px' }}
                                             >
-                                                <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span >(All Traders can view the project post and send proposals)</span></span>
-                                            </Form.Check.Label>
-                                            {/* </Form.Check> */}
+                                                <Form.Check.Input name="visibility" type="radio" />
+                                                <Form.Check.Label
+                                                    style={{ fontSize: '14px' }}
+                                                >
+                                                    <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span>(All Traders can view the project post and send proposals)</span></span>
+                                                </Form.Check.Label>
+                                            </Form.Check>
                                         </Form.Group>
                                         {/* <Form.Group className=''>
                       <Form.Check
@@ -677,7 +684,7 @@ function Editpostproject() {
                         <Form.Check.Label
                           style={{ fontSize: '14px' }}
                         >
-                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span >(Only Traders that you specifically invite can view the
+                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only Traders that you specifically invite can view the
                             <p className="opt-span">project post and send proposal)</p></span></span>
                         </Form.Check.Label>
                       </Form.Check>
@@ -809,4 +816,4 @@ function Editpostproject() {
         </>
     )
 }
-export default Editpostproject
+export default RepostProject

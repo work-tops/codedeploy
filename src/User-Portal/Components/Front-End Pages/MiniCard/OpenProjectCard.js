@@ -79,7 +79,7 @@ function OpenProjectCard() {
                                                 <Dropdown.Menu>
                                                     <Dropdown.Item as={Link} className="text-success" to="/proposallist">View Proposals</Dropdown.Item>
                                                     <Dropdown.Item as={Link} className="text-primary" to="/EditPostProject">Edit</Dropdown.Item>
-                                                    <Dropdown.Item as={Link} className="text-warning" to="/EditPostProject">Repost</Dropdown.Item>
+                                                    <Dropdown.Item as={Link} className="text-warning" to="/RepostProject">Repost</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                             {/* </Button> */}

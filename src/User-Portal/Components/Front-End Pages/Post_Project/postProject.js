@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useCallback,useRef } from 'react';
+import { React, useState, useEffect, useCallback, useRef } from 'react';
 import {
   Col,
   Form,
@@ -48,9 +48,9 @@ const PostProject = () => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
   // Upload Img
 
- // 
-    const editorRef = useRef(null);
-    
+  // 
+  const editorRef = useRef(null);
+
   const history = useHistory();
 
   const [selectedFile, setSelectedFile] = useState([]);
@@ -324,9 +324,11 @@ const PostProject = () => {
                         value={form.project_title}
                         required
                         name="project_title"
-                        onChange={(e) => { handleChange(e) }}
+                        onChange={(e) => handleChange(e)}
                         id="usr-prj-tit"
                         placeholder="e.g I Want to Make a New Kitchen"
+                        minLength={30}
+                        maxLength={150}
                       />
                     </Form.Group>
                   </Col>
@@ -570,7 +572,7 @@ const PostProject = () => {
                         <Form.Check.Label
                           style={{ fontSize: '14px' }}
                         >
-                          <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All Traders can view the project post and send proposals)</span></span>
+                          <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span >(All Traders can view the project post and send proposals)</span></span>
                         </Form.Check.Label>
                       </Form.Check>
                     </Form.Group>
@@ -587,8 +589,7 @@ const PostProject = () => {
                         <Form.Check.Label
                           style={{ fontSize: '14px' }}
                         >
-                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only Traders that you specifically invite can view the
-                            <p className="opt-span">project post and send proposal)</p></span></span>
+                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span>(Only Traders that you specifically invite can view the project post and send proposal)</span></span>
                         </Form.Check.Label>
                       </Form.Check>
                     </Form.Group>
@@ -622,9 +623,20 @@ const PostProject = () => {
                       />
                     </Form.Group>
                   </Col>
-                  <Form.Group className=''>
-                    <Form.Check label="I Agree the Terms and conditions" />
-                  </Form.Group>
+                  <Col xs="auto">
+                    <Form.Check type="checkbox" className="mb-0">
+                      <Form.Check.Input
+                        type="checkbox"
+                        className="cursor-pointer "
+                        />
+                      <Form.Check.Label className="mb-0 text-700">
+                        I Agree the 
+                        <Link to="/termsofuse">
+                        <span className='ms-1'>Terms & Conditions</span>
+                        </Link>
+                      </Form.Check.Label>
+                    </Form.Check>
+                  </Col>
                   <Col lg={12} className=''>
                     <div className='d-flex justify-content-start'>
                       <Button

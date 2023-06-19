@@ -97,6 +97,7 @@ import Notifications from '../Front-End Pages/Notifications'
 import EditInvoice from "../Front-End Pages/Profile/EditInvoice";
 import TextareaWithOptions from "../Front-End Pages/Profile/BussinessInformation";
 import NewInvoice from "../Front-End Pages/Profile/NewInvoice";
+import RepostProject from "../Front-End Pages/Post_Project/RepostProject";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -218,6 +219,7 @@ const FrontEndRouters = () => {
             <Route path="/project-owner-estimate"><OwnerEstimate /></Route>
             <Route path="/EditInvoice"><EditInvoice /></Route>
             <Route path="/NewInvoice"><NewInvoice /></Route>
+            <Route path="/RepostProject"><RepostProject/></Route>
             {/* New Pages */}
         </Switch>
 

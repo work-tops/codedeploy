@@ -428,7 +428,7 @@ function ProductList() {
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4 col-xxl-3 mt-4 mt-lg-0">
-                                                                    <div class="h-100 rounded border-lg border-1 d-flex flex-lg-column justify-content-between p-lg-3">
+                                                                    <div class="h-100 rounded border-lg border-1  justify-content-between p-lg-3">
                                                                         <div class="mb-lg-4 mt-auto mt-lg-0">
                                                                             <h4 class="mb-1 lh-1 fs-2 text-warning d-flex align-items-end">£ {data?.variant[0]?.pricing?.price}<del class="ms-1 fs--1 text-500 mb-1">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
                                                                             <p class="mb-0 fs--2 text-800">92,632 Learners Purchased</p>

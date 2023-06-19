@@ -256,61 +256,106 @@ function NavbarStandard() {
       <div className='row'>
         <div className='col-12'>
           <nav style={{ background: '#003f6b' }} className="navbar fixed-top navbar-top navbar-expand-lg">
-            <button className="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle Navigation"><Icon icon="material-symbols:menu" color="white" width="20" height="20" /><span className="toggle-line"></span></button>
+            <button className="btn navbar-toggler-humburger-icon navbar-toggler  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle Navigation"><Icon icon="material-symbols:menu" color="white" width="20" height="20" /><span className="toggle-line"></span></button>
             <a className="navbar-brand me-1 me-sm-3">
               <div className="d-flex align-items-center">
-                <Link  to="/">
-                  <img style={{ width: '110px', marginRight: '5px', marginLeft: '5px' }} title='Myproject.Ai' className="" src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} alt="MAI Logo" />
+                <Link to="/">
+                  <img
+                    className="logo-image"
+                    style={{ width: '95px', marginRight: '-3px', marginLeft: '3px' }}
+                    title="Myproject.Ai"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"
+                    alt="MAI Logo"
+                  />
                 </Link>
               </div>
             </a>
             <div>
             </div>
+
+
             {/* Post A Project */}
             {id == 2 &&
-              <Button title='Click here to Post Your Project' as={Link}  to="/postproject" style={{ background: '#fff', color: '#003f6b', border: 'none' }}>
-                <div>
-                  {isMobile ? (
-                    <div>
-                      <Icon icon="mingcute:add-fill" color="#003f6b" width="16" height="16" />
-                    </div>
-                  ) : (
-                    <div>
-
+              <div>
+                {isMobile ? (
+                  <div>
+                    {/* <Button className='post-project-btn ms-lg-5' title='Click here to Post Your Project' as={Link} to="/postproject" > */}
+                      <Icon icon="mingcute:add-fill" color="#fff" width="10" height="10" />
+                    {/* </Button> */}
+                  </div>
+                ) : (
+                  <div>
+                    <Button className=' ms-lg-5' title='Click here to Post Your Project' as={Link} to="/postproject" >
                       <span style={{ fontSize: '14px' }} className="text-uppercase">Post Project</span>
-                    </div>
-                  )}
-                </div>
-              </Button>
+                    </Button>
+                  </div>
+                )}
+              </div>
             }
             {/* Post A Project */}
             <div className="navbar-collapse scrollbar collapse" id="navbarStandard" >
-              <ul className=" navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
+              <ul className=" ms-lg-5 navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
                 {/* HIW */}
                 <li>
-                  <Link  to="/HowItWorks">
-                    <a title='Products' className="text-uppercase text-white nav-link" role="button" aria-haspopup="true" aria-expanded="false" id="dashboards">How It Works</a>
+                  <Link to="/HowItWorks" className="link-item">
+                    <a
+                      title='How It Works'
+                      className="text-uppercase text-white nav-link"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      id="dashboards"
+                    >
+                      How It Works
+                    </a>
                   </Link>
                 </li>
                 {/* HIW */}
                 {/* Products */}
                 <li>
-                  <Link  to="/productlist">
-                    <a title='Products' className="text-uppercase text-white nav-link" role="button" aria-haspopup="true" aria-expanded="false" id="dashboards">Products</a>
+                  <Link to="/productlist" className="link-item">
+                    <a
+                      title='Products'
+                      className="text-uppercase text-white nav-link"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      id="dashboards"
+                    >
+                      Products
+                    </a>
                   </Link>
                 </li>
                 {/* Products */}
                 {/* Projects */}
                 <li>
-                  <Link  to="/projectlist">
-                    <a title='Projects' className="text-uppercase text-white nav-link" role="button" aria-haspopup="true" aria-expanded="false" id="dashboards">Projects</a>
+                  <Link to="/projectlist" className="link-item">
+                    <a
+                      title='Projects'
+                      className="text-uppercase text-white nav-link"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      id="dashboards"
+                    >
+                      Projects
+                    </a>
                   </Link>
                 </li>
                 {/* Projects */}
                 {/* Services */}
                 <li>
-                  <Link  to="/servicelist">
-                    <a title='Services' className="text-uppercase text-white nav-link" role="button" aria-haspopup="true" aria-expanded="false" id="dashboards">Services</a>
+                  <Link to="/servicelist" className="link-item">
+                    <a
+                      title='Services'
+                      className="text-uppercase text-white nav-link"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      id="dashboards"
+                    >
+                      Services
+                    </a>
                   </Link>
                 </li>
                 {/* Services */}
@@ -318,13 +363,24 @@ function NavbarStandard() {
                   <>
                     {/* Owner Portal */}
                     <li className="nav-item dropdown">
-                      <a title='Click here to Login or Signup as Projectowner in Myproject.Ai' className="text-uppercase text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Project Owner</a>
+                      <a
+                        title='Click here to Login or Signup as Projectowner in Myproject.Ai'
+                        className="text-uppercase text-white nav-link "
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        id="dashboards"
+                      >
+                        Project Owner
+                      </a>
                       <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                         <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                          <Link  to="/projectowner">
+                          <Link to="/projectowner">
                             <a title='Click here to Login as Projectowner in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium">Login</a>
                           </Link>
-                          <Link  to="/project-owner-register">
+                          <Link to="/project-owner-register">
                             <a title='Click here to Signup as Projectowner in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium">Sign Up</a>
                           </Link>
                         </div>
@@ -334,13 +390,13 @@ function NavbarStandard() {
 
                     {/* Trader Portal */}
                     <li className="nav-item dropdown">
-                      <a title='Click here to Login or Signup as Trader in Myproject.Ai' className="text-uppercase text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Trader</a>
+                      <a title='Click here to Login or Signup as Trader in Myproject.Ai' className="text-uppercase text-white nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Trader</a>
                       <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                         <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                          <Link  to="/Freelancer/True">
+                          <Link to="/Freelancer/True">
                             <a title='Click here to Login as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Login</a>
                           </Link>
-                          <Link  to="/Freelancer/False">
+                          <Link to="/Freelancer/False">
                             <a title='Click here to SignUp as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Sign Up</a>
                           </Link>
                         </div>
@@ -350,12 +406,13 @@ function NavbarStandard() {
                   </>
                 }
               </ul>
+
             </div>
-            <ul className="navbar-nav navbar-nav-icons ms-auto gap-2 flex-row align-items-center">
+            <ul class="navbar-nav navbar-nav-icons ms-auto  flex-row align-items-center">
               {/* Cart */}
-              <Link title='Cart'  to="/Cart">
+              <Link title='Cart' to="/Cart">
                 <div className="cart-icon-container">
-                  <Icon className=' me-2' icon="material-symbols:shopping-cart" color="white" width="24" height="24" />
+                  <Icon className='me-2' icon="material-symbols:shopping-cart" color="white" width="24" height="24" />
                   <Badge pill bg="danger" className="cart-badge">
                     1
                   </Badge>
@@ -370,31 +427,29 @@ function NavbarStandard() {
                     as={Link}
                     title='Wishlists'
                     to="#!"
-                    className="me-2"
+                    className=""
                   >
-                    <Icon icon="wpf:like" color="white" width="24" height="24" />
-
-
+                    <Icon icon="wpf:like" className='' color="white" width="24" height="24" />
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
+                  <Dropdown.Menu className="dropdown-caret dropdown-menu-card dropdown-menu-end dropdown-menu-start">
                     <div className="bg-white rounded-2 py-2 dark__bg-1000">
                       <Dropdown.Item href="#!">
-                        <Link target='_blank' to="/wishlist/product">
+                        <Link to="/wishlist/product">
                           <a className="text-uppercase dropdown-item text-900 fw-medium" >
                             Products
                           </a>
                         </Link>
                       </Dropdown.Item>
                       <Dropdown.Item href="#!">
-                        <Link target='_blank' to="/wishlist/project">
+                        <Link to="/wishlist/project">
                           <a className="text-uppercase dropdown-item text-900 fw-medium" >
                             Projects
                           </a>
                         </Link>
                       </Dropdown.Item>
                       <Dropdown.Item href="#!">
-                        <Link target='_blank' to="/wishlist/seller">
+                        <Link to="/wishlist/seller">
                           <a className="text-uppercase dropdown-item text-900 fw-medium" >
                             Followers
                           </a>
@@ -403,6 +458,7 @@ function NavbarStandard() {
                     </div>
                   </Dropdown.Menu>
                 </Dropdown>
+
               </div>
               {/* Wishlists */}
 
@@ -415,11 +471,11 @@ function NavbarStandard() {
                       as={Link}
                       title='Notifications'
                       to="#!"
-                      className="me-2"
+                      className=""
                     >
                       <Icon icon="mdi:bell" color="white" width="24" height="24" />
                     </Dropdown.Toggle>
-                    <Dropdown.Menu className="dropdown-menu dropdown-caret dropdown-menu-end dropdown-menu-card dropdown-menu-notification dropdown-caret-bg " aria-labelledby="navbarDropdownNotification" data-bs-popper="static">
+                    <Dropdown.Menu className="dropdown-menu dropdown-caret dropdown-menu-end dropdown-menu-start dropdown-menu-card dropdown-menu-notification dropdown-caret-bg " aria-labelledby="navbarDropdownNotification" data-bs-popper="static">
                       <div className="card card-notification shadow-none">
                         <div className="card-header">
                           <div className="row justify-content-between align-items-center">
@@ -491,7 +547,7 @@ function NavbarStandard() {
                                   </div>
                                 </div></div></div></div><div className="simplebar-placeholder" style={{ width: "auto", height: "513px" }}></div></div><div className="simplebar-track simplebar-horizontal" style={{ visibility: "hidden", }}><div className="simplebar-scrollbar" style={{ width: "0px", display: "none" }}></div></div><div className="simplebar-track simplebar-vertical" style={{ visibility: "visible" }}><div className="simplebar-scrollbar" style={{ height: "180px", display: "block", transform: "translate3d(0px, 59px, 0px)" }}></div></div></div>
                         <div className="card-footer text-center border-top">
-                          <Link title='Click here to see your Notifications' target='_blank' to="/Notifications">
+                          <Link title='Click here to see your Notifications' to="/Notifications">
                             <a className="card-link d-block">View all</a>
                           </Link>
                         </div>
