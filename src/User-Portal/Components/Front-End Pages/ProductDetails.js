@@ -93,12 +93,14 @@ function ProductDetails() {
                                 <Col sm={12} md={12} lg={8} xl={8} className="position-relative">
                                     <Row className="g-3 align-items-center">
                                         <Col lg={5}>
-                                            <div className="position-relative text-center ">
-                                                <img
-                                                    src={prodata.attachments?.[0]?.url}
-                                                    className="w-100 rounded-1 overlay"
-                                                />
-                                            </div>
+                                            {prodata.attachments?.map((data, key) => (
+                                                <div
+                                                    key={key}
+                                                    className={`image-slide ${activeIndex === key ? 'active' : ''}`}
+                                                >
+                                                    <img className="w-100 rounded-1 overlay" src={data.url} width={400} height={219} alt={`Image ${key}`} />
+                                                </div>
+                                            ))}
                                         </Col>
                                         <Col lg={7}>
                                             <h2 className="fw-bold text-white">{prodata.name}</h2>
@@ -161,33 +163,19 @@ function ProductDetails() {
 
                         {/* Product Images */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light">
+                            <Card.Header as="h5" className="bg-light text-uppercase">
                                 Product Images
                             </Card.Header>
                             <Card.Body className="position-relative">
-                                <div className="thumb-slider-container">
-                                    <div className="image-slider">
-                                        {prodata.attachments?.map((data, key) => (
-                                            <div
-                                                key={key}
-                                                className={`image-slide ${activeIndex === key ? 'active' : ''}`}
-                                            >
-                                                <img src={data.url} width={400} height={219} alt={`Image ${key}`} />
-                                            </div>
-                                        ))}
+                                {prodata.attachments?.map((data, key) => (
+                                    <div
+                                        key={key}
+                                        className={`thumb-slide ${activeIndex === key ? 'active' : ''} d-inline-block`}
+                                        onClick={() => changeActiveIndex(key)}
+                                    >
+                                        <img src={data.url} width="150px" height="120px" alt={`Thumbnail ${key}`} />
                                     </div>
-                                    <div className="thumb-slider">
-                                        {prodata.attachments?.map((data, key) => (
-                                            <div
-                                                key={key}
-                                                className={`thumb-slide ${activeIndex === key ? 'active' : ''}`}
-                                                onClick={() => changeActiveIndex(key)}
-                                            >
-                                                <img src={data.url} alt={`Thumbnail ${key}`} />
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                ))}
                             </Card.Body>
                         </Card>
                         {/* Product Images */}
@@ -195,7 +183,7 @@ function ProductDetails() {
 
                         {/* Description */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light">
+                            <Card.Header as="h5" className="bg-light text-uppercase">
                                 Description
                             </Card.Header>
                             <Card.Body className="position-relative">
@@ -212,7 +200,7 @@ function ProductDetails() {
 
                         {/* Disclaimer */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light">
+                            <Card.Header as="h5" className="bg-light text-uppercase">
                                 Disclaimer
                             </Card.Header>
                             <Card.Body className="position-relative">
@@ -227,7 +215,7 @@ function ProductDetails() {
                         {/* Disclaimer */}
                         <Card className="mb-3">
                             <Card.Header className=" text-capitalize bg-light">
-                                <h5 >
+                                <h5 className="text-uppercase">
                                     Reviews
                                 </h5>
                                 <div className="d-flex gap-2 justify-content-end">

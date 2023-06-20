@@ -32,7 +32,7 @@ import 'swiper/swiper.min.css';
 
 import Footer from "../Footer/Footer";
 function HomePage() {
-   
+
     return (
 
         <>
@@ -52,13 +52,16 @@ function HomePage() {
                                 </div>
                                 <div className="col-md mt-3  col-lg-7 col-xl-4">
                                     <h6 className="text-700 text-uppercase">BUILD AWESOME PROPERTIES</h6>
-                                    <h1 className="fs-2 text-capitalize fs-sm-4 fs-md-5">Your Abode of Interior and Exterior Experts
+                                    <h1 className="fs-2 text-capitalize fs-sm-4 fs-md-5">
+                                        <span className="typed-text-animation">Your Abode of Interior and Exterior Experts</span>
                                     </h1>
+
                                     <p className="text-justify" >
                                         We connect you with the most experienced and certified construction professionals who have been creating properties that mesmerise the millions.
                                     </p>
-                                    <Button title="Click Here " as={Link} to="/Allsellerlist" style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Discover Experts</Button>
-                                </div>
+                                    <button className="Home-btns" as={Link} to="/Allsellerlist">
+                                        <span className="button-text">Discover Experts</span>
+                                    </button></div>
                             </div>
                         </div>
                         {/*Section-2 */}
@@ -196,7 +199,7 @@ function HomePage() {
                                     We keep you updated about unmissable offers from numerous sellers and
                                     traders so that you can grab the best deal from the comfort of your home.
                                 </p>
-                                <Button as={Link} to="/productlist" style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button>
+                                <button className="Home-btns" as={Link} to="/productlist">Check Offers</button>
                             </div>
                         </div>
                         {/* Section-5 */}
@@ -213,7 +216,7 @@ function HomePage() {
                                     nationwide, who are looking for a variety of services. You are unstoppable, give chance to the bigger
                                     self within you.
                                 </p>
-                                <Button as={Link} to="/freelancer/false" style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Register Your Trade</Button>
+                                <button className="Home-btns" as={Link} to="/freelancer/false" >Register Your Trade</button>
                             </div>
                         </div>
                         {/* Section-6 */}
@@ -229,7 +232,7 @@ function HomePage() {
                                     This is one of the most-unique advantages of using our platform. This increases the quality of service
                                     being provided as well as puts an insight on the compatibility with the project owner.
                                 </p>
-                                <Button as={Link} to="/productlist" style={{ background: '#003f6b', border: '0px', borderRadius: '50px 2px' }}>Check Offers</Button>
+                                <button className="Home-btns" as={Link} to="/productlist">Check Offers</button>
                             </div>
                         </div>
                         {/* Section-7 */}

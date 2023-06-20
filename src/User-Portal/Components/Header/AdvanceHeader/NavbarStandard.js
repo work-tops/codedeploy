@@ -157,7 +157,7 @@
 //               {/* Cart */}
 //               <div style={{ marginTop: '10px' }}>
 //                 <Link to="/Cart">
-//                   <Icon icon="ic:round-shopping-cart" color="white" width="24" height="24" />
+//                   <Icon icon="ic:round-shopping-cart" color="white" width="18" height="18" />
 //                   {/* <Badge pill variant="danger" className="ml-1">
 //                         3
 //                       </Badge> */}
@@ -262,7 +262,7 @@ function NavbarStandard() {
                 <Link to="/">
                   <img
                     className="logo-image"
-                    style={{ width: '95px', marginRight: '-3px', marginLeft: '3px' }}
+                    style={{ width: '95px', marginRight: '3px', marginLeft: '5px' }}
                     title="Myproject.Ai"
                     src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"
                     alt="MAI Logo"
@@ -279,14 +279,14 @@ function NavbarStandard() {
               <div>
                 {isMobile ? (
                   <div>
-                    {/* <Button className='post-project-btn ms-lg-5' title='Click here to Post Your Project' as={Link} to="/postproject" > */}
-                      <Icon icon="mingcute:add-fill" color="#fff" width="10" height="10" />
-                    {/* </Button> */}
+                    <Button className='post-project-btn ms-lg-5' title='Click here to Post Your Project' as={Link} to="/postproject" >
+                      <Icon icon="mingcute:add-fill" color="#003f6b" width="10" height="10" />
+                    </Button>
                   </div>
                 ) : (
                   <div>
-                    <Button className=' ms-lg-5' title='Click here to Post Your Project' as={Link} to="/postproject" >
-                      <span style={{ fontSize: '14px' }} className="text-uppercase">Post Project</span>
+                    <Button className='post-project-btn-1 ms-lg-5' title='Click here to Post Your Project' as={Link} to="/postproject" >
+                      <span style={{ fontSize: '14px' }} className="text-uppercase">Post A Project</span>
                     </Button>
                   </div>
                 )}
@@ -412,7 +412,7 @@ function NavbarStandard() {
               {/* Cart */}
               <Link title='Cart' to="/Cart">
                 <div className="cart-icon-container">
-                  <Icon className='me-2' icon="material-symbols:shopping-cart" color="white" width="24" height="24" />
+                  <Icon style={{ marginRight: '5px' }} className='me-2' icon="material-symbols:shopping-cart" color="white" width="18" height="18" />
                   <Badge pill bg="danger" className="cart-badge">
                     1
                   </Badge>
@@ -429,10 +429,10 @@ function NavbarStandard() {
                     to="#!"
                     className=""
                   >
-                    <Icon icon="wpf:like" className='' color="white" width="24" height="24" />
+                    <Icon icon="wpf:like" style={{ marginRight: '5px', marginLeft: '5px' }} color="white" width="18" height="18" />
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu className="dropdown-caret dropdown-menu-card dropdown-menu-end dropdown-menu-start">
+                  <Dropdown.Menu className="dropdown-menu-card dropdown-menu-end dropdown-menu-start">
                     <div className="bg-white rounded-2 py-2 dark__bg-1000">
                       <Dropdown.Item href="#!">
                         <Link to="/wishlist/product">
@@ -473,10 +473,10 @@ function NavbarStandard() {
                       to="#!"
                       className=""
                     >
-                      <Icon icon="mdi:bell" color="white" width="24" height="24" />
+                      <Icon icon="mdi:bell" color="white" width="18" height="18" />
                     </Dropdown.Toggle>
-                    <Dropdown.Menu className="dropdown-menu dropdown-caret dropdown-menu-end dropdown-menu-start dropdown-menu-card dropdown-menu-notification dropdown-caret-bg " aria-labelledby="navbarDropdownNotification" data-bs-popper="static">
-                      <div className="card card-notification shadow-none">
+                    <Dropdown.Menu className="dropdown-menu dropdown-menu-end  dropdown-menu-start dropdown-menu-card dropdown-menu-notification " aria-labelledby="navbarDropdownNotification" data-bs-popper="static">
+                      <div className="card card-notification  shadow-none">
                         <div className="card-header">
                           <div className="row justify-content-between align-items-center">
                             <div className="col-auto">
@@ -573,7 +573,7 @@ function NavbarStandard() {
                             <img className="rounded-circle" src={trainer} alt="" />
                           </div>
                         </Dropdown.Toggle>
-                        <Dropdown.Menu className="dropdown-caret dropdown-menu-card  dropdown-menu-end">
+                        <Dropdown.Menu className="dropdown-menu-card me-2 dropdown-menu-end">
                           <div className="bg-white rounded-2 py-2 dark__bg-1000">
                             <Dropdown.Item className="fw-bold text-success" href="#!">
                               <FontAwesomeIcon icon="crown" className="me-1" />

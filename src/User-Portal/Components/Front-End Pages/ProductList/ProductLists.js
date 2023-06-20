@@ -125,8 +125,6 @@ function ProductList() {
     // const [show, setShow] = useState(true);
 
     const toastDark = () => toast.success(<h6 className="text-sucess">Your Product is Successfully Added to Cart</h6>);
-    const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
-    const toastRemove = () => toast.error(<h6 className="text-dark">Product Removed from Wishlist</h6>)
     // 
     const [showAll, setShowAll] = useState(false);
 
@@ -134,7 +132,21 @@ function ProductList() {
         setShowAll(!showAll);
     };
 
+    // 
+    const [isAdded, setIsAdded] = useState(false);
 
+    const handleAddToWishlist = () => {
+        setIsAdded(true);
+        const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+
+        toastDanger();
+    };
+
+    const handleRemoveFromWishlist = () => {
+        setIsAdded(false);
+        const toastDanger1 = () => toast.error(<h6 className="text-dark">Product Removed from Wishlist</h6>)
+        toastDanger1();
+    };
 
 
     return (
@@ -210,7 +222,7 @@ function ProductList() {
                             </Card>
                         </Col>
                         <Col className='mb-3' lg={9}>
-                           
+
                             <div className="card mt-5 mb-3">
                                 <div className="card-header bg-light position-relative">
                                     <h5 className="mb-0 mt-1">Products</h5>
@@ -265,7 +277,7 @@ function ProductList() {
                                                         >
                                                             <Icon className="cursor-pointer" icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -344,11 +356,46 @@ function ProductList() {
                                                                 </Link>
                                                             </div>
                                                             <div className="col-auto pe-3">
-                                                                {/* <Link to="/wishlist/product"> */}
-                                                                <a onClick={toastDanger} className="btn btn-sm btn-falcon-default me-2 hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
-                                                                    <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" /><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
-                                                                </a>
-                                                                {/* </Link> */}
+                                                                <>
+                                                                    {isAdded ? (
+                                                                        <a
+                                                                            onClick={handleRemoveFromWishlist}
+                                                                            className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                            href="#!"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            aria-label="Remove from Wishlist"
+                                                                            data-bs-original-title="Remove from Wishlist"
+                                                                        >
+                                                                            <Icon
+                                                                                style={{ marginTop: '-5px' }}
+                                                                                className="me-1"
+                                                                                icon="icon-park-solid:like"
+                                                                                color="#df2020"
+                                                                                width="20"
+                                                                                height="20"
+                                                                            />
+                                                                        </a>
+                                                                    ) : (
+                                                                        <a
+                                                                            onClick={handleAddToWishlist}
+                                                                            className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                            href="#!"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            aria-label="Add to Wishlist"
+                                                                            data-bs-original-title="Add to Wishlist"
+                                                                        >
+                                                                            <Icon
+                                                                                icon="icon-park-outline:like"
+                                                                                className="me-1"
+                                                                                style={{ marginTop: '-5px' }}
+                                                                                width="20"
+                                                                                height="20"
+                                                                            />
+                                                                        </a>
+                                                                    )}
+                                                                </>
                                                                 <a onClick={toastDark} className="btn btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Cart" data-bs-original-title="Add to Cart">
                                                                     <span className="fas fa-cart-plus" data-fa-transform="down-2"></span>
                                                                 </a>
@@ -437,22 +484,49 @@ function ProductList() {
                                                                             <p class="mb-0 fs--2 text-800">92,632 Learners Purchased</p>
                                                                         </div>
                                                                         <div class="mt-3 d-flex flex-lg-column gap-2">
-                                                                            <button onClick={toastDanger} class="btn btn-md btn-falcon-default hover-danger fs--1 text-600">
-                                                                                <span class="far fa-heart">
-                                                                                </span>
-                                                                                <span class="ms-1 text-600 d-none d-lg-inline">Add to Wishlist</span>
-                                                                                <span class="ms-1 text-600 d-none d-lg-inline">Remove from Wishlist</span>
-                                                                            </button>
 
+                                                                            <>
+                                                                                {isAdded ? (
+                                                                                    <button
+                                                                                        className="btn btn-md btn-falcon-danger fs--1 text-600"
+                                                                                        onClick={handleRemoveFromWishlist}
+                                                                                    >
+                                                                                        <span className="d-block">
+                                                                                            <Icon
+                                                                                                style={{ marginTop: '-2px' }}
+                                                                                                className="me-1"
+                                                                                                icon="icon-park-solid:like"
+                                                                                                color="#df2020"
+                                                                                                width="18"
+                                                                                                height="18"
+                                                                                            />
+                                                                                            <span className="d-none d-lg-inline">Remove from Wishlist</span>
+                                                                                        </span>
+                                                                                    </button>
+                                                                                ) : (
+                                                                                    <button
+                                                                                        className="btn btn-md btn-falcon-danger fs--1 text-600"
+                                                                                        onClick={handleAddToWishlist}
+                                                                                    >
+                                                                                        <span className="d-block">
+                                                                                            <Icon
+                                                                                                icon="icon-park-outline:like"
+                                                                                                className="me-1"
+                                                                                                style={{ marginTop: '-2px' }}
+                                                                                                width="18"
+                                                                                                height="18"
+                                                                                            />
+                                                                                            <span className="d-none d-lg-inline">Add to Wishlist</span>
+                                                                                        </span>
+                                                                                    </button>
+                                                                                )}
+                                                                            </>
                                                                             <button onClick={toastDark} class="btn btn-md btn-primary fs--1">
                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
                                                                             </button>
-                                                                            {/* <Link> */}
                                                                             <Button target="_blank" to="/GetQuote" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b', fontSize: '.8333333333rem' }} class="btn btn-md btn-primary fs--1">
                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Get Quote</span>
                                                                             </Button>
-                                                                            {/* </Link> */}
-
                                                                         </div>
                                                                     </div>
                                                                 </div>

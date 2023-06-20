@@ -224,116 +224,113 @@ function ListJobs(layout) {
 
                     <Row>
                         <Col className='' lg={3}>
-                            <Card className="mt-5">
-                                <SimpleBarReact style={{ height: '100%' }}>
-                                    <Card.Header as={Flex} className="flex-between-center pt-x1">
-                                        {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
-                                        <div className='justify-content-xl-between d-flex m-2'>
-                                            <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
-                                                <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
-                                                <span>Filter</span>
-                                            </h5>
-                                            <Button
-                                                variant="outline-secondary"
-                                                size="sm"
-                                                className="ms-2 mt-0 mb-0"
-                                                style={{ fontSize: '12px' }}
-                                                onClick={() => resetFilter()}
-                                            >
-                                                <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
-                                                Reset
-                                            </Button>
-                                        </div>
+                            <div  >
+                                <Card className="mt-5">
+                                    <SimpleBarReact style={{ height: '100%' }}>
+                                        <Card.Header as={Flex} className="flex-between-center pt-x1">
+                                            {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
+                                            <div className='justify-content-xl-between d-flex m-2'>
+                                                <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
+                                                    <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
+                                                    <span>Filter</span>
+                                                </h5>
+                                                <Button
+                                                    variant="outline-secondary"
+                                                    size="sm"
+                                                    className="ms-2 mt-0 mb-0"
+                                                    style={{ fontSize: '12px' }}
+                                                    onClick={() => resetFilter()}
+                                                >
+                                                    <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
+                                                    Reset
+                                                </Button>
+                                            </div>
 
-                                    </Card.Header>
-                                    <Card.Body className="py-0 mt-2">
+                                        </Card.Header>
+                                        <Card.Body className="py-0 mt-2">
 
-                                        <Flex wrap="wrap" className=" mb-2">
-                                            {filterList?.map((x, i) => {
-                                                return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon className='cursor-pointer' icon="ic:sharp-close" color="white" width="14" height="14" /></span>
-                                            })}
-                                        </Flex>
-                                        <ul className="list-unstyled">
-                                            {categories?.map((x, i) => {
-                                                // return <div key={`job_check_${i}`}>
-                                                //             <input type='checkbox' id={`job_check_${i}`} value={x?.category} onChange={(e) => categorySearch(e)} />{x?.category}
-                                                //             <br></br>
-                                                //         </div>
+                                            <Flex wrap="wrap" className=" mb-2">
+                                                {filterList?.map((x, i) => {
+                                                    return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon className='cursor-pointer' icon="ic:sharp-close" color="white" width="14" height="14" /></span>
+                                                })}
+                                            </Flex>
+                                            <ul className="list-unstyled">
+                                                {categories?.map((x, i) => {
+                                                    // return <div key={`job_check_${i}`}>
+                                                    //             <input type='checkbox' id={`job_check_${i}`} value={x?.category} onChange={(e) => categorySearch(e)} />{x?.category}
+                                                    //             <br></br>
+                                                    //         </div>
 
-                                                return <li key={`job_check_${i}`}>
-                                                    <Form.Check
-                                                        type="checkbox"
-                                                        className="form-check d-flex ps-0"
-                                                    >
-                                                        <Form.Check.Label
-                                                            className="fs--1 flex-1 text-truncate"
+                                                    return <li key={`job_check_${i}`}>
+                                                        <Form.Check
+                                                            type="checkbox"
+                                                            className="form-check d-flex ps-0"
                                                         >
-                                                            {x?.category}
-                                                        </Form.Check.Label>
+                                                            <Form.Check.Label
+                                                                className="fs--1 flex-1 text-truncate"
+                                                            >
+                                                                {x?.category}
+                                                            </Form.Check.Label>
 
-                                                        <Form.Check.Input id={`job_check_${i}`} value={x?.category} onChange={(e) => categorySearch(e)}
-                                                            type={'checkbox'}
-                                                            className='cursor-pointer'
-                                                        />
-                                                    </Form.Check>
-                                                </li>
-                                            })}
-                                        </ul>
-                                        {/*  */}
-                                        <div>
-                                            <Form.Label className='fs--1 fw-semibold text-start text-700 text-decoration-none mt-3 px-0'>Search County</Form.Label>
-                                            <MultiSelect
-                                                options={countyOptions}
-                                                selectedValues={selectedCounties}
-                                                onSelect={handleCountySelect}
-                                                onRemove={handleCountySelect}
-                                                displayValue="key"
-                                                className='form-control'
-                                            />
-                                        </div>
-                                        {/*  */}
-                                        <Form>
-                                            <Form.Group className='mb-3'>
-                                                <Form.Label className='fs--1 fw-semibold text-start text-700 text-decoration-none mt-3 px-0'>Range</Form.Label>
-                                                {/* <p className='fw-semibold' style={{ fontSize: '14px' }}>£ 0-10,000</p>
+                                                            <Form.Check.Input id={`job_check_${i}`} value={x?.category} onChange={(e) => categorySearch(e)}
+                                                                type={'checkbox'}
+                                                                className='cursor-pointer'
+                                                            />
+                                                        </Form.Check>
+                                                    </li>
+                                                })}
+                                            </ul>
+                                            {/*  */}
+                                            <div>
+                                                <Form.Label className='fs--1 fw-semibold text-start text-700 text-decoration-none mt-3 px-0'>Search County</Form.Label>
+                                                <MultiSelect
+                                                    options={countyOptions}
+                                                    selectedValues={selectedCounties}
+                                                    onSelect={handleCountySelect}
+                                                    onRemove={handleCountySelect}
+                                                    displayValue="key"
+                                                    className='form-control'
+                                                />
+                                            </div>
+                                            {/*  */}
+                                            <Form>
+                                                <Form.Group className='mb-3'>
+                                                    <Form.Label className='fs--1 fw-semibold text-start text-700 text-decoration-none mt-3 px-0'>Range</Form.Label>
+                                                    {/* <p className='fw-semibold' style={{ fontSize: '14px' }}>£ 0-10,000</p>
                                                 <Form.Range min={0} max={10000} onChange={(e) => priceSearch(e)} /> */}
-                                                <Form>
-                                                    <Form.Group controlId="rangeFilter">
-                                                        <div className="d-flex justify-content-between">
-                                                            <Form.Text className='fw-semibold text-900'>{`Budget: ${minValue}`}</Form.Text>
+                                                    <Form>
+                                                        <Form.Group controlId="rangeFilter">
+                                                            <div className="d-flex justify-content-between">
+                                                                <Form.Text className='fw-semibold text-900'>{`Budget: ${minValue}`}</Form.Text>
 
-                                                        </div>
-                                                        <Form.Range
-                                                            type="range"
-                                                            name="min"
-                                                            value={minValue}
-                                                            onChange={handleRangeChange}
-                                                            min={0}
-                                                            max={10000}
-                                                        />
-                                                    </Form.Group>
-                                                </Form>
-                                            </Form.Group>
-                                        </Form>
-                                    </Card.Body>
-                                </SimpleBarReact>
-                            </Card>
+                                                            </div>
+                                                            <Form.Range
+                                                                type="range"
+                                                                name="min"
+                                                                value={minValue}
+                                                                onChange={handleRangeChange}
+                                                                min={0}
+                                                                max={10000}
+                                                            />
+                                                        </Form.Group>
+                                                    </Form>
+                                                </Form.Group>
+                                            </Form>
+                                        </Card.Body>
+                                    </SimpleBarReact>
+                                </Card>
+                            </div>
                         </Col>
 
                         <Col className='' lg={9}>
                             <div className="card mt-5 mb-3">
                                 <div className="card-header bg-light position-relative">
                                     <h5 className="mb-0 mt-1">Projects</h5>
-                                    <div className="bg-holder d-none d-md-block bg-card">
-
-                                    </div>
-
                                 </div>
                                 <div className="card-body pt-0 pt-md-3">
                                     <div className="row g-3 align-items-center">
                                         <div className="col-auto d-xl-none">
                                             <button className="btn btn-sm p-0 btn-link position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas">
-                                                {/*<svg className="svg-inline--fa fa-filter fa-w-16 fs-0 text-700" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path></svg>*/}
                                                 <span className="fas fa-filter fs-0 text-700"></span>
                                             </button>
                                         </div>
@@ -341,12 +338,11 @@ function ListJobs(layout) {
                                             <form className="position-relative">
                                                 <input className="form-control form-control-sm search-input lh-1 rounded-2 ps-4" onChange={(e) => mainSearch(e)} type="search" placeholder="Search..." aria-label="Search" />
                                                 <div className="position-absolute top-50 start-0 translate-middle-y ms-2">
-                                                    {/*<svg className="svg-inline--fa fa-search fa-w-16 text-400 fs--1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg>*/}
                                                     <span className="fas fa-search text-400 fs--1"></span></div>
                                             </form>
                                         </div>
                                         <div className="col position-sm-relative position-absolute top-0 end-0  me-sm-0 p-0">
-                                            <div className="row g-0 g-md-3 justify-content-end">
+                                            <div className="row g-0 g-md-3  justify-content-end">
                                                 <div className="col-auto">
                                                     <form className="row gx-2">
                                                         <div className="col-auto d-none d-lg-block"><small className="fw-semi-bold">Sort by</small></div>
@@ -411,8 +407,8 @@ function ListJobs(layout) {
                                                     <Col md={12} lg={4} className=" mt-lg-0">
                                                         <div key={key}>
                                                             <p className='text-justiy fw-bold' style={{ fontSize: '14px' }}><Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />
-                                                            1000
-                                                            <span className="ms-1 text-primary">(Fixed Price)</span>
+                                                                1000
+                                                                <span className="ms-1 text-primary">(Fixed Price)</span>
                                                             </p>
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />{data?.location}</p>
                                                             {/* <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:folder-rounded" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" /> {data?.category}</p> */}
