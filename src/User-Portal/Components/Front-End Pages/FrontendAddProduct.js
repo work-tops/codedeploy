@@ -351,11 +351,10 @@ const FrontendAddProduct = () => {
     const handleClose1 = () => {
         setShowModal1(false);
     };
+    const [showModal3, setShowModal3] = useState(false);
 
-    const handleCancel = () => {
-        // Perform cancel action here
-        console.log('Cancel project');
-        setShowModal1(false);
+    const handleClose3 = () => {
+        setShowModal3(false);
     };
 
     // Upload Img
@@ -488,7 +487,7 @@ const FrontendAddProduct = () => {
                                         <Card className=''>
                                             <Card.Header className='d-flex justify-content-end bg-light'>
                                                 <button style={{ fontSize: '14px' }} className='btn me-1 border-secondary bg-transparent' type="button" onClick={() => editVarient(data, index)} >Edit</button>
-                                                <button onClick={() => { variantremove(index) }} type="button" style={{ fontSize: '14px' }} className='btn me-1 border-secondary bg-transparent'>Remove</button>
+                                                <button onClick={() => setShowModal3(true)} type="button" style={{ fontSize: '14px' }} className='btn me-1 border-secondary bg-transparent'>Remove</button>
                                             </Card.Header>
                                             <Card.Body>
                                                 <p><span className='fw-semibold'>Colour : </span>{data?.color}</p>
@@ -581,29 +580,38 @@ const FrontendAddProduct = () => {
                                                                 <Form.Group className='mb-3'>
                                                                     <Form.Label className="text-700 text-uppercase">Pricing<span className='text-danger'>*</span></Form.Label>
                                                                     <InputGroup className="mb-3">
-                                                                        <FormControl value={variant.price} required name="price" onChange={(e) => { variantChange(e) }} placeholder='0.00' type="number" aria-label="Text input with dropdown button" />
-
-                                                                        <DropdownButton
-                                                                            variant="outline-secondary"
-                                                                            title="lb"
-                                                                            id="input-group-dropdown-2"
-                                                                            align="end"
-                                                                        >
-                                                                            {/* <Dropdown.Item href="#">lb</Dropdown.Item> */}
-                                                                        </DropdownButton>
+                                                                        <Form.Control value={variant.price} required name="price" onChange={(e) => { variantChange(e) }} placeholder='0.00' type="number" aria-label="Text input with dropdown button" />
+                                                                        <Button>
+                                                                            £
+                                                                        </Button>
                                                                     </InputGroup>
                                                                 </Form.Group>
                                                                 <Form.Group className='mb-3'>
                                                                     <Form.Label className="text-700 text-uppercase">Compare Price<span className='text-danger'>*</span></Form.Label>
-                                                                    <Form.Control value={variant.compare_at} required name="compare_at" onChange={(e) => { variantChange(e) }} type="number" className='w-100' />
+                                                                    <InputGroup className="mb-3">
+                                                                        <Form.Control value={variant.compare_at} required name="compare_at" onChange={(e) => { variantChange(e) }} type="number" />
+                                                                        <Button>
+                                                                            £
+                                                                        </Button>
+                                                                    </InputGroup>
                                                                 </Form.Group>
                                                                 <Form.Group className='mb-3'>
                                                                     <Form.Label className="text-700 text-uppercase">Handling Charges<span className='text-danger'>*</span></Form.Label>
-                                                                    <Form.Control value={variant.handling_changes} required name="handling_changes" onChange={(e) => { variantChange(e) }} type="number" className='w-100' />
+                                                                    <InputGroup className="mb-3">
+                                                                        <Form.Control value={variant.handling_changes} required name="handling_changes" onChange={(e) => { variantChange(e) }} type="number" />
+                                                                        <Button>
+                                                                            £
+                                                                        </Button>
+                                                                    </InputGroup>
                                                                 </Form.Group>
                                                                 <Form.Group className='mb-3'>
                                                                     <Form.Label className="text-700 text-uppercase">Sales Price<span className='text-danger'>*</span></Form.Label>
-                                                                    <Form.Control value={variant.sales_price} required name="sales_price" onChange={(e) => { variantChange(e) }} type="number" className='w-100' />
+                                                                    <InputGroup className="mb-3">
+                                                                        <Form.Control disabled value={variant.sales_price} required name="sales_price" onChange={(e) => { variantChange(e) }} type="number" />
+                                                                        <Button>
+                                                                            £
+                                                                        </Button>
+                                                                    </InputGroup>
                                                                 </Form.Group>
                                                                 <Form.Group className='mb-3'>
                                                                     <Row>
@@ -888,13 +896,13 @@ const FrontendAddProduct = () => {
                             </Col>
                             <Row>
                                 <Col className='mt-3'>
-                                    {/* <Link to='/addproductcard'> */}
-                                    <Button type='submit' className='mb-3 btn text-light bg-success border-0'>Add Products</Button>
-                                    {/* </Link> */}
+                                    <Link to='/addproductcard'>
+                                        <Button type='submit' className='mb-3 btn text-light bg-success border-0'>Add Products</Button>
+                                    </Link>
 
                                     <Button onClick={() => setShowModal1(true)} className='mb-3 btn text-light border-0 ms-3 bg-danger '>Cancel</Button>
 
-                                    {/*  */}
+                                    {/* Modal Cancel Pop-up */}
                                     <Modal show={showModal1} onHide={handleClose1}>
                                         <Modal.Header >
                                             <Modal.Title>Warning</Modal.Title>
@@ -915,6 +923,29 @@ const FrontendAddProduct = () => {
                                             </Link>
                                         </Modal.Footer>
                                     </Modal>
+                                    {/*  */}
+                                    {/* Modal Warning Pop-up to Remove Variant Details */}
+                                    <Modal show={showModal3} onHide={handleClose3}>
+                                        <Modal.Header closeButton>
+                                            <Modal.Title>Warning</Modal.Title>
+                                        </Modal.Header>
+                                        <Modal.Body>
+                                            <p className='text-capitalize'>
+                                                Are you sure you want to remove the variant details ?
+                                            </p>
+                                        </Modal.Body>
+                                        <Modal.Footer>
+                                            <Button className='me-2' variant="secondary" onClick={handleClose3}>
+                                                No
+                                            </Button>
+                                            {variants.map((data, index) => (
+                                                <Button variant="danger" onClick={() => { variantremove(index) }}>
+                                                    Yes
+                                                </Button>
+                                            ))}
+                                        </Modal.Footer>
+                                    </Modal>
+                                    {/*  */}
                                 </Col>
                             </Row>
                         </Row>

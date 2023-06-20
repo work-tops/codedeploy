@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Button, Col, Form, Row, Container, InputGroup, Dropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 import { getAllData } from "../../../../Services/ProxyService";
 import ProjectOwnerLandingPage from '../ProjectOwnerLandingPage'
 import { Icon } from "@iconify/react";
@@ -21,6 +21,20 @@ function OpenProjectCard() {
         getJobList()
     }, [])
 
+    // 
+    const history = useHistory();
+    const [selectedOption, setSelectedOption] = useState('');
+
+    const handleChange = (event) => {
+        const selectedValue = event.target.value;
+        setSelectedOption(selectedValue);
+
+        if (selectedValue === 'In Progress') {
+            history.push('/WorkstreamDetails');
+        }
+    };
+    // 
+
     return (
         <>
             <Row>
@@ -32,12 +46,11 @@ function OpenProjectCard() {
                     <div className="d-flex justify-content-between">
                         <h4 className="mb-3 text-uppercase">Projects</h4>
                         <div>
-                            <Form.Select>
+                            <Form.Select value={selectedOption} onChange={handleChange}>
                                 <option>All</option>
                                 <option>Open</option>
-                                {/* <Link to="/workstreamcard"> */}
-                                <option>In Progress</option>
-                                {/* </Link> */}
+                                
+                                <option value="In Progress">In Progress</option>
                                 <option>Expired</option>
                             </Form.Select>
                         </div>

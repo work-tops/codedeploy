@@ -39,7 +39,9 @@ function WorkStreamDetails() {
                                                     <Card.Body>
                                                         <Row>
                                                             <Col className="" lg={3}>
-                                                                <img src={profile} height="60px" width="60px" className="m-3 rounded-circle" />
+                                                                <Link to="profile_publicview">
+                                                                    <img src={profile} height="60px" width="60px" className="m-3 rounded-circle" />
+                                                                </Link>
                                                             </Col>
                                                             <Col className="" lg={9}>
                                                                 <p style={{ fontSize: '14px' }} className="text-justify mb-0">
@@ -91,7 +93,7 @@ function WorkStreamDetails() {
 
                                                                 height: 200,
                                                                 menubar: false,
-                                                                placeholder:'Send Your Message',
+                                                                placeholder: 'Send Your Message',
                                                                 // plugins: [
                                                                 //     'advlist autolink lists link image charmap print preview anchor',
                                                                 //     'searchreplace visualblocks code fullscreen',
@@ -114,10 +116,10 @@ function WorkStreamDetails() {
                                                     </Form.Check>
                                                     <div className="d-flex justify-content-end gap-2 mb-3">
                                                         <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
-                                                            send
+                                                            Attachments
                                                         </Button>
-                                                        <Button as={Link} target="_blank" to="/NewInvoice" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
-                                                            Raise Invoice
+                                                        <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                            send
                                                         </Button>
                                                     </div>
                                                 </Form>
@@ -129,7 +131,9 @@ function WorkStreamDetails() {
                                             <Card.Body>
                                                 <div className="d-flex justify-content-start">
                                                     <div>
-                                                        <img src={profile} className="mb-3 me-4 rounded-circle" width="100px" height="100px" />
+                                                        <Link to="profile_publicview">
+                                                            <img src={profile} className="mb-3 me-4 rounded-circle" width="100px" height="100px" />
+                                                        </Link>
                                                     </div>
                                                     <div>
                                                         <p className="fw-bold text-uppercase mt-3 text-900">Soanes IT</p>

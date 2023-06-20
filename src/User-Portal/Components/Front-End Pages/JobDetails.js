@@ -216,7 +216,7 @@ function JobDetails() {
                                         <p className='text-justiy fw-bold' style={{ fontSize: '14px' }}>
                                             <Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />
                                             1000
-                                            <span className="ms-1 text-primary">(Fixed Price)</span>
+                                            {/* <span className="ms-1 text-primary">(Fixed Price)</span> */}
                                         </p>
                                         {/* <li>
                                             <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">

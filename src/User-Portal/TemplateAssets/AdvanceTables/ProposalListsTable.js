@@ -247,7 +247,7 @@ const ProposalListsTable = () => {
 
                                                     <Dropdown.Menu>
                                                         <Dropdown.Item as={Link} to="/proposaldetails" className="text-success">Accept</Dropdown.Item>
-                                                        {/* <Dropdown.Item  className="text-danger">Decline</Dropdown.Item> */}
+                                                        <Dropdown.Item  className="text-danger">Decline</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                                 <p role='button' onClick={handleShow1} className='mt-1 text-primary ms-3'>Report this Profile</p>

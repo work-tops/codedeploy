@@ -354,7 +354,8 @@ function ProjectWishlistCard(layout) {
                                                             <option >Recent Added</option>
                                                             <option >Price High to Low</option>
                                                             <option >Price Low to High</option>
-                                                            {/* <option >Z-A</option> */}
+                                                            <option >A-Z</option>
+                                                            <option >Z-A</option>
                                                         </select></div>
                                                     </form>
                                                 </div>

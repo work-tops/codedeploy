@@ -278,7 +278,6 @@ const FrontendAddService = () => {
                                                 onInit={(evt, editor) => editorRef.current = editor}
                                                 initialValue=""
                                                 init={{
-
                                                     height: 200,
                                                     menubar: false,
                                                     // plugins: [
@@ -290,14 +289,15 @@ const FrontendAddService = () => {
                                                         'bold italic  | alignleft aligncenter ' +
                                                         'alignright alignjustify | bullist numlist outdent indent | ' +
                                                         'removeformat ',
-                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+                                                    
                                                 }}
                                             />
                                         </Form.Group>
                                         <Row className='g-3 mb-3'>
                                             <Form.Group as={Col} className='mb-3'>
                                                 <Form.Label className="text-uppercase text-700">Services Location<span className="text-danger">*</span></Form.Label>
-                                                <Multiselect options={servitag[1]?.list} displayValue="value" className='form-control' />
+                                                <Multiselect style={{zIndex: '1000'}} options={servitag[1]?.list} displayValue="value" className='form-control' />
                                             </Form.Group>
                                             {/* <Form.Group as={Col} className=' mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Services Range
@@ -347,7 +347,7 @@ const FrontendAddService = () => {
                                                 <Form.Label className="text-uppercase text-700">Display Price<span className="text-danger">*</span></Form.Label>
                                                 <InputGroup>
                                                     <Button>£</Button>
-                                                    <Form.Control value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} type="text" />
+                                                    <Form.Control disabled value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} type="text" />
                                                 </InputGroup>
                                             </Form.Group>
                                         </Row>
@@ -505,13 +505,13 @@ const FrontendAddService = () => {
                                             <Form.Label className="text-uppercase text-700">
                                                 Title Tag Meta Field
                                                 <span className="text-danger">*</span></Form.Label>
-                                            <Form.Control value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                            <Form.Control maxLength={70} value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                         </Form.Group>
                                         <Form.Group className='mb-3'>
                                             <Form.Label className="text-uppercase text-700">
                                                 Description Tag Meta Field
                                                 <span className="text-danger">*</span></Form.Label>
-                                            <Form.Control value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                            <Form.Control value={form.metadescription} maxLength={300} required name="metadescription" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
                                         </Form.Group>
                                     </Card.Body>
                                 </Card>

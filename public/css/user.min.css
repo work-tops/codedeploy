@@ -529,10 +529,10 @@ body {
 }
 
 .logo-image:hover {
-  animation: zoomInOut 2s infinite;
+  animation: zoomOut 2s infinite;
 }
 
-@keyframes zoomInOut {
+@keyframes zoomOut {
 
   0%,
   100% {

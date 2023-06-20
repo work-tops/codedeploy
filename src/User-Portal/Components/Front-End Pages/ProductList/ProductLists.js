@@ -241,11 +241,14 @@ function ProductList() {
                                                     <form className="row gx-2">
                                                         <div className="col-auto d-none d-lg-block"><small className="fw-semi-bold">Sort by</small></div>
                                                         <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Bulk actions">
-                                                            <option >Recent Products</option>
-                                                            <option >Old Products</option>
-                                                            <option >A-Z</option>
-                                                            <option >Z-A</option>
-                                                        </select></div>
+                                                            <option >Recently uploaded</option>
+                                                            <option >Recommended</option>
+                                                            <option >New to Old</option>
+                                                            <option >Old to New</option>
+                                                            <option>Price High to Low</option>
+                                                            <option>Low to High</option>
+                                                            <option>A to Z</option>
+                                                            <option>Z to A</option>                                                       </select></div>
                                                     </form>
                                                 </div>
                                                 <div className="col-auto">
