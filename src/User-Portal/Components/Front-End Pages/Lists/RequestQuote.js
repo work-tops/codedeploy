@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
 
 function RequestQuote() {
-    
+
     const editorRef = useRef(null);
 
     return (
@@ -26,11 +26,13 @@ function RequestQuote() {
 
                             <Form>
                                 <Card className="mb-3">
+                                    <Card.Header className="bg-light">
+                                        <Form.Label className="fw-semibold text-uppercase text-900">
+                                            Describe Your Job<span className="ms-1 text-danger">*</span>
+                                        </Form.Label>
+                                    </Card.Header>
                                     <Card.Body>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-uppercase text-900">
-                                                Describe Your Job<span className="ms-1 text-danger">*</span>
-                                            </Form.Label>
                                             {/* <Form.Control as="textarea" placeholder="
                                         Please describe your job in detail and let the trade know when's the best time to contact you" rows={5} /> */}
                                             <Editor
@@ -57,22 +59,26 @@ function RequestQuote() {
                                     </Card.Body>
                                 </Card>
                                 <Card className="mb-3">
+                                    <Card.Header className="bg-light">
+                                        <Form.Label className="fw-semibold text-uppercase text-900">
+                                            What Service do you need ?<span className="ms-1 text-danger">*</span>
+                                        </Form.Label>
+                                    </Card.Header>
                                     <Card.Body>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-uppercase text-900">
-                                                What Service do you need ?<span className="ms-1 text-danger">*</span>
-                                            </Form.Label>
                                             <Form.Control type="text"
                                             />
                                         </Form.Group>
                                     </Card.Body>
                                 </Card>
                                 <Card className="mb-3">
+                                    <Card.Header className="bg-light">
+                                        <Form.Label className="fw-semibold text-uppercase text-900">
+                                            When You Would like the job to start ?<span className="ms-1 text-danger">*</span>
+                                        </Form.Label>
+                                    </Card.Header>
                                     <Card.Body>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-uppercase text-900">
-                                                When You Would like the job to start ?<span className="ms-1 text-danger">*</span>
-                                            </Form.Label>
                                             {/*  */}
                                             <Form.Check type="radio" className="mb-0 mt-3">
                                                 <Form.Check.Input name="job-start" type="radio" />
@@ -120,8 +126,9 @@ function RequestQuote() {
                                                 </Form.Check.Label>
                                             </Form.Check>
                                             {/*  */}
+                                            <hr></hr>
                                             <div className="d-flex justify-content-center align-items-center">
-                                                <Button as={Link} to="/projectowner" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
+                                                <Button as={Link} to="/projectowner" className="Home-btns-1 text-white border-0" style={{ background: "#0d406b" }}
                                                 >Request Quote
                                                 </Button>
                                             </div>

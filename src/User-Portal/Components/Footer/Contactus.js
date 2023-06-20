@@ -1,4 +1,4 @@
-import React,{useRef} from "react";
+import React, { useRef } from "react";
 import { Card, Form, Col, Row, Container, Button } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import Footer from "./Footer";
@@ -48,28 +48,36 @@ function ContactUs() {
                                 <div className="col-md-6">
                                     <Card className="">
                                         <Card.Header className="text-center bg-light" as={"h4"}>
-                                            General Enquiries
+                                            General Enquiry
                                         </Card.Header>
                                         <Card.Body>
                                             <Row className="">
-                                                <Form.Group as={Col} className="mb-3">
-                                                    <Form.Label className="text-uppercase">First Name<span className="text-danger">*</span></Form.Label>
-                                                    <Form.Control placeholder="First Name" />
-                                                </Form.Group>
-                                                <Form.Group as={Col} className="mb-3">
-                                                    <Form.Label className="text-uppercase">Last Name<span className="text-danger">*</span></Form.Label>
-                                                    <Form.Control placeholder="First Name" />
-                                                </Form.Group>
+                                                <Col md={6}>
+                                                    <Form.Group className="mb-3">
+                                                        <Form.Label className="text-uppercase">First Name<span className="text-danger">*</span></Form.Label>
+                                                        <Form.Control placeholder="First Name" />
+                                                    </Form.Group>
+                                                </Col>
+                                                <Col md={6}>
+                                                    <Form.Group className="mb-3">
+                                                        <Form.Label className="text-uppercase">Last Name<span className="text-danger">*</span></Form.Label>
+                                                        <Form.Control placeholder="First Name" />
+                                                    </Form.Group>
+                                                </Col>
                                             </Row>
                                             <Row className="">
-                                                <Form.Group as={Col} className="mb-3">
-                                                    <Form.Label className="text-uppercase">Email <span className="text-danger">*</span></Form.Label>
-                                                    <Form.Control type="email" placeholder="Enter Your Email Address" />
-                                                </Form.Group>
-                                                <Form.Group as={Col} className="mb-3">
-                                                    <Form.Label className="text-uppercase">Phone Number<span className="text-danger">*</span></Form.Label>
-                                                    <Form.Control placeholder="+44 0000 000 0000" />
-                                                </Form.Group>
+                                                <Col md={6}>
+                                                    <Form.Group className="mb-3">
+                                                        <Form.Label className="text-uppercase">Email <span className="text-danger">*</span></Form.Label>
+                                                        <Form.Control type="email" placeholder="Enter Your Email Address" />
+                                                    </Form.Group>
+                                                </Col>
+                                                <Col md={6}>
+                                                    <Form.Group className="mb-3">
+                                                        <Form.Label className="text-uppercase">Phone Number<span className="text-danger">*</span></Form.Label>
+                                                        <Form.Control placeholder="+44 0000 000 0000" />
+                                                    </Form.Group>
+                                                </Col>
                                             </Row>
                                             <Form.Group className="mb-3">
                                                 <Form.Label className="text-uppercase">Details</Form.Label>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Row, Col, Button, Card, Modal, Form, Container } from "react-bootstrap";
+import { Row, Col, Button, Card, Modal, Form, Container, Breadcrumb } from "react-bootstrap";
 import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Icon } from "@iconify/react";
@@ -106,10 +106,19 @@ function ProductDetails() {
 
                 <Col lg={12} className="mt-4 container mb-3">
                     <Card className="overflow-hidden light">
+                        <Card.Header className="bg-dark mb-0">
+                            <div className="d-flex  justify-content-center">
+                                <Breadcrumb>
+                                    <Breadcrumb.Item as={Link} to="/">Home</Breadcrumb.Item>
+                                    <Breadcrumb.Item as={Link} to="/productlist">Products</Breadcrumb.Item>
+                                    <Breadcrumb.Item as={Link} to="/productdetails/data._id">Product Name</Breadcrumb.Item>
+                                </Breadcrumb>
+                            </div>
+                        </Card.Header>
                         <Card.Body className="bg-dark">
                             <Row>
-                                <Col sm={12} md={12} lg={8} xl={8} className="position-relative">
-                                    <Row className="g-3 align-items-center">
+                                <Col sm={12} md={12} lg={8} xl={8} className=" position-relative">
+                                    <Row className="g-3  align-items-center">
                                         <Col md={5} lg={5}>
                                             {prodata.attachments?.map((data, key) => (
                                                 <div
@@ -198,7 +207,7 @@ function ProductDetails() {
 
 
                 <Row >
-                    <Col className="container" sm={12} lg={8} xl={8} md={12}>
+                    <Col className="container order-lg-0 order-2 " sm={12} lg={8} xl={8} md={12}>
 
                         {/* Product Images */}
                         <Card className="mb-3">
@@ -435,15 +444,12 @@ function ProductDetails() {
                     </Col>
                     <Col className="container" lg={4}>
 
-                        <div className=" course-details-sticky-sidebar mb-lg-8 mt-xl-n10 pe-xl-4 pe-xxl-7">
+                        <div className="order-md-1 order-lg-0 course-details-sticky-sidebar mb-lg-8 mt-xl-n10 pe-xl-4 pe-xxl-7">
                             {/* Plan Your Carrer */}
-                            <Card className="mt-5 mb-3">
-                                <Card.Header as="h2" className="bg-light text-capitalize">
-
-                                </Card.Header>
+                            <Card className="mt-lg-5 mt-md-0 mb-3 overflow-hidden">
                                 <Card.Body>
                                     <Row>
-                                        <Col md={7} lg={12} className="order-md-1 order-lg-0">
+                                        <Col md={12} lg={12} className="order-md-1  order-lg-0">
                                             <h2 className="fw-medium mb-3 d-flex align-items-center">
                                                 £ {prodata.variant?.[0]?.pricing?.price}
                                                 {' '}
@@ -482,7 +488,7 @@ function ProductDetails() {
                                                 <Button
                                                     style={{ background: '#003f6b' }}
                                                     size="lg"
-                                                    className="w-100 Home-btns-1 fs-0 mt-1"
+                                                    className="w-100 mb-3 Home-btns-1 fs-0 mt-1"
                                                 >
                                                     Get Quote
                                                 </Button>
@@ -491,7 +497,7 @@ function ProductDetails() {
                                                     14 day Refund Policy
                                                 </p> */}
                                         </Col>
-                                        <Col md={5} lg={12}>
+                                        <Col className="order-1 order-lg-0" md={12} lg={12}>
                                             <hr className="border-top border-dashed d-md-none d-lg-block" />
                                             <Form.Group className="mb-3">
                                                 {/* <h6 className="fw-bold">Colour</h6> */}

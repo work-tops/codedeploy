@@ -174,11 +174,13 @@ function GetQuote() {
                                     </Card.Body>
                                 </Card>
                                 <Card className="mb-3">
+                                    <Card.Header className="bg-light">
+                                        <Form.Label className="fw-semibold text-uppercase text-900">
+                                            When will you be ready for template?<span className="ms-1 text-danger">*</span>
+                                        </Form.Label>
+                                    </Card.Header>
                                     <Card.Body>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-uppercase text-900">
-                                                When will you be ready for template?<span className="ms-1 text-danger">*</span>
-                                            </Form.Label>
                                             {/*  */}
                                             <Form.Check type="radio" className="mb-0 mt-3">
                                                 <Form.Check.Input name="job-start" type="radio" />
@@ -227,9 +229,10 @@ function GetQuote() {
                                             </Form.Check>
                                             {/*  */}
                                         </Form.Group>
+                                        <hr></hr>
                                         <div className="d-flex justify-content-center align-items-center">
-                                            <Button as={Link} to="/projectowner" className="m-2 text-white border-0" style={{ background: "#0d406b" }}
-                                            >Request Quote
+                                            <Button as={Link} to="/projectowner" className="Home-btns-1 text-white border-0" style={{ background: "#0d406b" }}
+                                            >Get Quote
                                             </Button>
                                         </div>
                                     </Card.Body>

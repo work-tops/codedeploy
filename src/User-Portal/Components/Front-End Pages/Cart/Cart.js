@@ -35,7 +35,7 @@ function Cart() {
                                     </div>
                                     <div className="col-md-auto">
                                         <Link to="/productlist">
-                                            <a className="btn btn-sm btn-outline-secondary border-300 me-2 shadow-none" >
+                                            <a className="btn btn-sm mb-2 mb-lg-0 mb-md-0 btn-outline-secondary border-300 me-2 shadow-none" >
                                                 <span className="fas fa-chevron-left me-1" data-fa-transform="shrink-4"></span>
                                                 Continue Shopping
                                             </a>

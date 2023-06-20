@@ -240,28 +240,21 @@ function ListJobs(layout) {
                         <Col className='' lg={3}>
                             <div  >
                                 <Card className="mt-5">
-                                    <SimpleBarReact style={{ height: '100%' }}>
-                                        <Card.Header as={Flex} className="flex-between-center pt-x1">
-                                            {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
-                                            <div className='justify-content-xl-between d-flex m-2'>
-                                                <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
-                                                    <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
-                                                    <span>Filter</span>
-                                                </h5>
-                                                <Button
-                                                    variant="outline-secondary"
-                                                    size="sm"
-                                                    className="ms-2 mt-0 mb-0"
-                                                    style={{ fontSize: '12px' }}
-                                                    onClick={() => resetFilter()}
-                                                >
-                                                    <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
-                                                    Reset
-                                                </Button>
-                                            </div>
 
-                                        </Card.Header>
-                                        <Card.Body className="py-0 mt-2">
+                                    <Card.Header className='bg-light' >
+                                        <div className='justify-content-between d-flex'>
+                                            <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
+                                                <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
+                                                <span>Filter</span>
+                                            </h5>
+                                            <button
+                                                onClick={() => resetFilter()}
+                                                className="btn btn-sm btn-outline-secondary">Reset</button>
+                                        </div>
+
+                                    </Card.Header>
+                                    <Card.Body className="py-0 mt-2">
+                                        <SimpleBarReact style={{ height: '100%' }}>
 
                                             <Flex wrap="wrap" className=" mb-2">
                                                 {filterList?.map((x, i) => {
@@ -330,8 +323,8 @@ function ListJobs(layout) {
                                                     </Form>
                                                 </Form.Group>
                                             </Form>
-                                        </Card.Body>
-                                    </SimpleBarReact>
+                                        </SimpleBarReact>
+                                    </Card.Body>
                                 </Card>
                             </div>
                         </Col>
@@ -344,13 +337,13 @@ function ListJobs(layout) {
                                 <div className="card-body pt-0 pt-md-3">
                                     <div className="row g-3 align-items-center">
                                         <div className="col-auto d-xl-none">
-                                            <button className="btn btn-sm p-0 btn-link position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas">
+                                            <button className="btn btn-sm p-0 mt-3 mt-lg-0 mt-md-0 btn-link position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas">
                                                 <span className="fas fa-filter fs-0 text-700"></span>
                                             </button>
                                         </div>
                                         <div className="col">
                                             <form className="position-relative">
-                                                <input className="form-control form-control-sm search-input lh-1 rounded-2 ps-4" onChange={(e) => mainSearch(e)} type="search" placeholder="Search..." aria-label="Search" />
+                                                <input className="form-control form-control-sm mt-3 mt-lg-0 mt-md-0 search-input lh-1 rounded-2 ps-4" onChange={(e) => mainSearch(e)} type="search" placeholder="Search..." aria-label="Search" />
                                                 <div className="position-absolute top-50 start-0 translate-middle-y ms-2">
                                                     <span className="fas fa-search text-400 fs--1"></span></div>
                                             </form>
@@ -359,8 +352,8 @@ function ListJobs(layout) {
                                             <div className="row g-0 g-md-3  justify-content-end">
                                                 <div className="col-auto">
                                                     <form className="row gx-2">
-                                                        <div className="col-auto d-none d-lg-block"><small className="fw-semi-bold">Sort by</small></div>
-                                                        <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Bulk actions">
+                                                        <div className="col-auto d-none d-lg-block"><span className="fw-semi-bold">Sort by</span></div>
+                                                        <div className="col-auto"> <select className="form-select cursor-pointer form-select-sm" aria-label="Bulk actions">
                                                             <option >Recent Added</option>
                                                             <option >Price High to Low</option>
                                                             <option >Price Low to High</option>
@@ -370,18 +363,18 @@ function ListJobs(layout) {
                                                     </form>
                                                 </div>
                                                 <div className="col-auto">
-                                                    <div className="d-flex align-items-center"><small className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</small>
+                                                    <div className="d-flex align-items-center"><span className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</span>
                                                         <div
                                                             className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}
                                                         >
-                                                            <Icon className="cursor-pointer" icon="material-symbols:grid-on-sharp" width="24" height="24" />
+                                                            <Icon className="cursor-pointer ms-1" icon="material-symbols:grid-on-sharp" width="24" height="24" />
                                                         </div>
                                                         <div
                                                             className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}
                                                         >
-                                                            <Icon className="cursor-pointer" icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
+                                                            <Icon className="cursor-pointer ms-1" icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
                                                         </div>
 
                                                     </div>
@@ -418,7 +411,7 @@ function ListJobs(layout) {
 
 
                                                     {/* COl-4 */}
-                                                    <Col md={12} lg={4} className=" mt-lg-0">
+                                                    <Col md={12} lg={4} className="border-lg border-1 p-lg-3 mt-lg-0">
                                                         <div key={key}>
                                                             <p className='text-justiy fw-bold' style={{ fontSize: '14px' }}><Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />
                                                                 1000
@@ -493,43 +486,6 @@ function ListJobs(layout) {
                             <div className="row mt-1 mb-3 g-3">
                                 <article className="col-md-6 col-xxl-4">
                                     <div className="card h-100 overflow-hidden">
-                                        <div className="bg-light d-flex justify-content-end position-relative card-header">
-                                            <>
-                                                {isAdded ? (
-                                                    <p
-                                                        onClick={handleRemoveFromWishlist}
-                                                        role='button'
-                                                        style={{ fontSize: '14px' }}
-                                                        className="text-justify fw-semibold"
-                                                        href="#!"
-                                                        data-bs-toggle="tooltip"
-                                                        data-bs-placement="top"
-                                                        aria-label="Remove from Wishlist"
-                                                        data-bs-original-title="Remove from Wishlist"
-                                                    >
-                                                        <span>
-                                                            <Icon icon="icon-park-solid:like" className="me-1" style={{ marginTop: '-2px', color: '#df2020' }} width="20" height="20" />
-                                                        </span>
-                                                    </p>
-                                                ) : (
-                                                    <p
-                                                        onClick={handleAddToWishlist}
-                                                        role='button'
-                                                        style={{ fontSize: '14px' }}
-                                                        className="text-justify fw-semibold"
-                                                        href="#!"
-                                                        data-bs-toggle="tooltip"
-                                                        data-bs-placement="top"
-                                                        aria-label="Add to Wishlist"
-                                                        data-bs-original-title="Add to Wishlist"
-                                                    >
-                                                        <span>
-                                                            <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-2px' }} width="20" height="20" />
-                                                        </span>
-                                                    </p>
-                                                )}
-                                            </>
-                                        </div>
                                         <div className="card-body p-0 d-flex flex-column justify-content-between">
                                             <div>
                                                 <div className="p-3">
@@ -552,10 +508,47 @@ function ListJobs(layout) {
                                                         ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
                                                     </p>
                                                 </div>
-                                                <div>
-                                                    <Button as={Link} to="/jobdetails/:jobid" className='m-3 Home-btns-1 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
-                                                        VIEW JOB
-                                                    </Button>
+                                                <div className='row'>
+                                                    <div className='col'>
+                                                        <Button as={Link} to="/jobdetails/:jobid" className='m-3 Home-btns-1 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                            VIEW JOB
+                                                        </Button>
+                                                    </div>
+                                                    <div className='col d-flex justify-content-end'>
+                                                        {isAdded ? (
+                                                            <button
+                                                                onClick={handleRemoveFromWishlist}
+                                                                role='button'
+                                                                style={{ fontSize: '14px' }}
+                                                                className="m-3 btn btn-falcon-default fw-semibold"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Remove from Wishlist"
+                                                                data-bs-original-title="Remove from Wishlist"
+                                                            >
+                                                                <span>
+                                                                    <Icon icon="icon-park-solid:like" style={{ marginTop: '-2px', color: '#df2020' }} width="20" height="20" />
+                                                                </span>
+                                                            </button>
+                                                        ) : (
+                                                            <button
+                                                                onClick={handleAddToWishlist}
+                                                                role='button'
+                                                                style={{ fontSize: '14px' }}
+                                                                className="m-3 btn btn-falcon-default fw-semibold"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Add to Wishlist"
+                                                                data-bs-original-title="Add to Wishlist"
+                                                            >
+                                                                <span>
+                                                                    <Icon icon="icon-park-outline:like" style={{ marginTop: '-2px' }} width="20" height="20" />
+                                                                </span>
+                                                            </button>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -563,43 +556,6 @@ function ListJobs(layout) {
                                 </article>
                                 <article className="col-md-6 col-xxl-4">
                                     <div className="card h-100 overflow-hidden">
-                                        <div className="bg-light d-flex justify-content-end position-relative card-header">
-                                            <>
-                                                {isAdded ? (
-                                                    <p
-                                                        onClick={handleRemoveFromWishlist}
-                                                        role='button'
-                                                        style={{ fontSize: '14px' }}
-                                                        className="text-justify fw-semibold"
-                                                        href="#!"
-                                                        data-bs-toggle="tooltip"
-                                                        data-bs-placement="top"
-                                                        aria-label="Remove from Wishlist"
-                                                        data-bs-original-title="Remove from Wishlist"
-                                                    >
-                                                        <span>
-                                                            <Icon icon="icon-park-solid:like" className="me-1" style={{ marginTop: '-2px', color: '#df2020' }} width="20" height="20" />
-                                                        </span>
-                                                    </p>
-                                                ) : (
-                                                    <p
-                                                        onClick={handleAddToWishlist}
-                                                        role='button'
-                                                        style={{ fontSize: '14px' }}
-                                                        className="text-justify fw-semibold"
-                                                        href="#!"
-                                                        data-bs-toggle="tooltip"
-                                                        data-bs-placement="top"
-                                                        aria-label="Add to Wishlist"
-                                                        data-bs-original-title="Add to Wishlist"
-                                                    >
-                                                        <span>
-                                                            <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-2px' }} width="20" height="20" />
-                                                        </span>
-                                                    </p>
-                                                )}
-                                            </>
-                                        </div>
                                         <div className="card-body p-0 d-flex flex-column justify-content-between">
                                             <div>
                                                 <div className="p-3">
@@ -622,9 +578,48 @@ function ListJobs(layout) {
                                                         ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
                                                     </p>
                                                 </div>
-                                                <Button as={Link} to="/jobdetails/:jobid" className='m-3 Home-btns-1 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
-                                                    VIEW JOB
-                                                </Button>
+                                                <div className='row'>
+                                                    <div className='col'>
+                                                        <Button as={Link} to="/jobdetails/:jobid" className='m-3 Home-btns-1 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                            VIEW JOB
+                                                        </Button>
+                                                    </div>
+                                                    <div className='col d-flex justify-content-end'>
+                                                        {isAdded ? (
+                                                            <button
+                                                                onClick={handleRemoveFromWishlist}
+                                                                role='button'
+                                                                style={{ fontSize: '14px' }}
+                                                                className="m-3 btn btn-falcon-default fw-semibold"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Remove from Wishlist"
+                                                                data-bs-original-title="Remove from Wishlist"
+                                                            >
+                                                                <span>
+                                                                    <Icon icon="icon-park-solid:like" className="me-1" style={{ marginTop: '-2px', color: '#df2020' }} width="20" height="20" />
+                                                                </span>
+                                                            </button>
+                                                        ) : (
+                                                            <button
+                                                                onClick={handleAddToWishlist}
+                                                                role='button'
+                                                                style={{ fontSize: '14px' }}
+                                                                className="m-3 btn btn-falcon-default fw-semibold"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Add to Wishlist"
+                                                                data-bs-original-title="Add to Wishlist"
+                                                            >
+                                                                <span>
+                                                                    <Icon icon="icon-park-outline:like" style={{ marginTop: '-2px' }} width="20" height="20" />
+                                                                </span>
+                                                            </button>
+                                                        )}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
