@@ -263,7 +263,7 @@ function NavbarStandard() {
                   <img
                     className="logo-image"
                     style={{ width: '95px', marginRight: '3px', marginLeft: '5px' }}
-                    title="Myproject.Ai"
+                    title="MYPROJECT.AI"
                     src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"
                     alt="MAI Logo"
                   />
@@ -432,7 +432,7 @@ function NavbarStandard() {
                     <Icon icon="wpf:like" style={{ marginRight: '5px', marginLeft: '5px' }} color="white" width="18" height="18" />
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu className="dropdown-menu-card dropdown-menu-end dropdown-menu-start">
+                  <Dropdown.Menu className="dropdown-menu-card dropdown-menu-end me-2 dropdown-menu-start">
                     <div className="bg-white rounded-2 py-2 dark__bg-1000">
                       <Dropdown.Item href="#!">
                         <Link to="/wishlist/product">

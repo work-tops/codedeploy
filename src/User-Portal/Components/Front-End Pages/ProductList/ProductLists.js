@@ -185,16 +185,18 @@ function ProductList() {
                                                 <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
                                                 <span>Filter</span>
                                             </h5>
-                                            <Button
+                                            {/* <Button
                                                 variant="outline-secondary"
                                                 size="sm"
                                                 className=" mt-0 mb-0"
                                                 style={{ fontSize: '12px' }}
-                                                onClick={() => resetFilter()}
-                                            >
+                                                >
                                                 <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
                                                 Reset
-                                            </Button>
+                                            </Button> */}
+                                            <button
+                                                onClick={() => resetFilter()}
+                                                className="btn btn-sm btn-outline-secondary">Reset</button>
                                         </div>
 
                                     </Card.Header>
@@ -225,7 +227,7 @@ function ProductList() {
 
                             <div className="card mt-5 mb-3">
                                 <div className="card-header bg-light position-relative">
-                                    <h5 className="mb-0 mt-1">Products</h5>
+                                    <h1 className="mb-0 fs-2 mt-1">Products</h1>
                                     <div className="bg-holder d-none d-md-block bg-card">
 
                                     </div>
@@ -251,25 +253,26 @@ function ProductList() {
                                             <div className="row g-0 g-md-3 justify-content-end">
                                                 <div className="col-auto">
                                                     <form className="row gx-2">
-                                                        <div className="col-auto d-none d-lg-block"><small className="fw-semi-bold">Sort by</small></div>
-                                                        <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Bulk actions">
-                                                            <option >Recently uploaded</option>
-                                                            <option >Recommended</option>
-                                                            <option >New to Old</option>
-                                                            <option >Old to New</option>
-                                                            <option>Price High to Low</option>
-                                                            <option>Low to High</option>
-                                                            <option>A to Z</option>
-                                                            <option>Z to A</option>                                                       </select></div>
+                                                        <div className="col-auto d-none d-lg-block"><span className="fw-semi-bold">Sort by</span></div>
+                                                        <div className="col-auto">
+                                                            <select className="cursor-pointer form-select form-select-sm" aria-label="Bulk actions">
+                                                                <option>Recently uploaded</option>
+                                                                <option>Recommended</option>
+                                                                <option>New to Old</option>
+                                                                <option>Old to New</option>
+                                                                <option>Price High to Low</option>
+                                                                <option>Low to High</option>
+                                                                <option>A to Z</option>
+                                                                <option>Z to A</option>                                                       </select></div>
                                                     </form>
                                                 </div>
                                                 <div className="col-auto">
-                                                    <div className="d-flex align-items-center"><small className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</small>
+                                                    <div className="d-flex align-items-center"><span className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</span>
                                                         <div onClick={() => { setIsList(false) }}
                                                             className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}
                                                         >
-                                                            <Icon className="cursor-pointer" icon="material-symbols:grid-on-sharp" width="24" height="24" />
+                                                            <Icon className="cursor-pointer ms-1" icon="material-symbols:grid-on-sharp" width="24" height="24" />
                                                         </div>
                                                         <div onClick={() => { setIsList(true) }}
                                                             className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
@@ -309,18 +312,18 @@ function ProductList() {
                                                                         <span>Out of Stock</span>
                                                                     </span>
                                                                 </div>
-                                                                <h4 className="text-uppercase fs-0 mb-2">
+                                                                <h2 className="product-name text-uppercase fs-0 mb-2">
                                                                     <Link
                                                                         to={`productdetails/${data._id}`}
                                                                         className="text-dark"
                                                                     >
                                                                         {data?.name}
                                                                     </Link>
-                                                                </h4>
-                                                                <p className="fs--1 mt-2 mb-2 w-50 d-none d-lg-block">
+                                                                </h2>
+                                                                <h3 className="fs--1 mt-2 mb-2 w-50 d-none d-lg-block">
                                                                     {data?.type?.name}
-                                                                </p>
-                                                                <div style={{ fontSize: '12px' }} className=" mb-2 text-dark">
+                                                                </h3>
+                                                                <div style={{ fontSize: '12px' }} className=" mb-2 text-700">
                                                                     <span className="fw-bold me-1">SKU :</span>
                                                                     <span className="fw-semibold">
                                                                         HOBCRT - 700480
@@ -348,10 +351,10 @@ function ProductList() {
                                                                         size="md"
                                                                         variant="falcon-default"
                                                                         style={{ background: '#003f6b' }}
-                                                                        className="fs--1 border-0 border-0 text-600 mt-3 text-white"
+                                                                        className="fs--1 Home-btns-1 border-0 border-0 text-600 mt-3 text-white"
 
                                                                     >
-                                                                        Get a Quote
+                                                                        Get Quote
                                                                     </Button>
                                                                 </Link>
                                                             </div>
@@ -400,8 +403,6 @@ function ProductList() {
                                                                     <span className="fas fa-cart-plus" data-fa-transform="down-2"></span>
                                                                 </a>
                                                             </div>
-
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -450,16 +451,15 @@ function ProductList() {
                                                                             <span>Out of Stock</span>
                                                                         </span>
                                                                     </div>
-                                                                    <h4 class="mt-3 mt-sm-0 fs-0 fs-lg-1"><a class="text-900" >
-                                                                        <Link className="text-900" to={`productdetails/${data._id}`}>
+                                                                    <h2 class="mt-3 mt-sm-0 fs-0 fs-lg-1">
+                                                                        <Link className="product-name text-uppercase text-900" to={`productdetails/${data._id}`}>
                                                                             {data?.name}
                                                                         </Link>
-                                                                    </a>
-                                                                    </h4>
-                                                                    <p className="fs--1 mt-2 w- d-lg-block">
+                                                                    </h2>
+                                                                    <h3 className="fs--1 mt-2 w- d-lg-block">
                                                                         {data?.type?.name}
-                                                                    </p>
-                                                                    <div style={{ fontSize: '12px' }} className=" mb-2 text-dark">
+                                                                    </h3>
+                                                                    <div style={{ fontSize: '12px' }} className=" mb-2 text-700">
                                                                         <span className="fw-bold me-1">SKU :</span>
                                                                         <span className="fw-semibold">
                                                                             HOBCRT - 700480
@@ -472,7 +472,7 @@ function ProductList() {
                                                                             <span class="fa fa-star text-warning"></span>
                                                                             <span class="fa fa-star text-warning"></span>
                                                                             <span class="fa fa-star text-warning"></span>
-                                                                            <span class="fa fa-star text-warning"></span>
+                                                                            <span className="fa fa-star-half-alt text-warning star-icon"></span>
                                                                             <span className="ms-2 text-secondary">(78,259 reviews)</span>
                                                                         </div>
                                                                     </div>
@@ -481,7 +481,7 @@ function ProductList() {
                                                                     <div class="h-100 rounded border-lg border-1  justify-content-between p-lg-3">
                                                                         <div class="mb-lg-4 mt-auto mt-lg-0">
                                                                             <h4 class="mb-1 lh-1 fs-2 text-warning d-flex align-items-end">£ {data?.variant[0]?.pricing?.price}<del class="ms-1 fs--1 text-500 mb-1">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
-                                                                            <p class="mb-0 fs--2 text-800">92,632 Learners Purchased</p>
+                                                                            <p class="mb-0 fs--2 text-800">92,632 Members Purchased</p>
                                                                         </div>
                                                                         <div class="mt-3 d-flex flex-lg-column gap-2">
 
@@ -524,8 +524,8 @@ function ProductList() {
                                                                             <button onClick={toastDark} class="btn btn-md btn-primary fs--1">
                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
                                                                             </button>
-                                                                            <Button target="_blank" to="/GetQuote" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b', fontSize: '.8333333333rem' }} class="btn btn-md btn-primary fs--1">
-                                                                                <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Get Quote</span>
+                                                                            <Button to="/GetQuote" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b', fontSize: '.8333333333rem' }} class="Home-btns-1 btn btn-md btn-primary fs--1">
+                                                                                <span class="ms-1 Home-btns-1">Get Quote</span>
                                                                             </Button>
                                                                         </div>
                                                                     </div>

@@ -1,8 +1,11 @@
-import React from "react";
+import React,{useRef} from "react";
 import { Card, Form, Col, Row, Container, Button } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import Footer from "./Footer";
+import { Editor } from "@tinymce/tinymce-react";
+
 function ContactUs() {
+    const editorRef = useRef(null);
     return (
         <>
             <Row>
@@ -70,10 +73,30 @@ function ContactUs() {
                                             </Row>
                                             <Form.Group className="mb-3">
                                                 <Form.Label className="text-uppercase">Details</Form.Label>
-                                                <Form.Control
+                                                {/* <Form.Control
                                                     placeholder="Tell us About Your..."
                                                     as="textarea"
                                                     rows={5}
+                                                /> */}
+                                                <Editor
+                                                    onInit={(evt, editor) => editorRef.current = editor}
+                                                    initialValue=""
+
+                                                    init={{
+
+                                                        height: 200,
+                                                        menubar: false,
+                                                        // plugins: [
+                                                        //     'advlist autolink lists link image charmap print preview anchor',
+                                                        //     'searchreplace visualblocks code fullscreen',
+                                                        //     'insertdatetime media table paste code help wordcount'
+                                                        // ],
+                                                        toolbar: 'undo redo | formatselect | ' +
+                                                            'bold italic  | alignleft aligncenter ' +
+                                                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                            'removeformat ',
+                                                        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                    }}
                                                 />
                                             </Form.Group>
                                             <Button style={{ background: '#003f6b' }} className="border-0 w-100">Send Enquiry</Button>

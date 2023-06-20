@@ -30,20 +30,17 @@ function HowItWorks() {
                         <div className="col-lg-7">
                             <div className="text-center">
                                 <div class="col-md-11 col-lg-11 col-xl-11 pb-7 pb-xl-9 ">
-                                    <h3 className="text-dark fw-light">
-                                        <div style={{ position: 'relative', top: '5rem' }}>
-                                            <span className="typed-start mb-2 d-block fw-bold" >
-                                                A KBB Certified Platform
-                                            </span>
-                                            <span className="typed-start d-block fw-bold">
-                                                Chosen By
-                                                Professionals Who Love Doing What They Do
-                                            </span>
-                                            <p className="mt-3 fw-semibold mb-3 text-dark">
-                                                Every project is precious for the right professional
-                                            </p>
-                                        </div>
-                                    </h3>
+                                    
+                                    <div style={{ position: 'relative', top: '5rem' }}>
+                                        <h1 className="typed-start mb-2 d-block fw-bold text-dark fw-light"> A KBB Certified Platform</h1>
+                                        <h2 className="typed-start  fw-bold">
+                                            Chosen By
+                                            Professionals Who Love Doing What They Do
+                                        </h2>
+                                        <p className="mt-3 fw-semibold mb-3 text-dark">
+                                            Every project is precious for the right professional
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +82,8 @@ function HowItWorks() {
                                                     All you need to do is give the best description about your requirement.
                                                 </p>
                                                 <div className="d-flex gap-1 justify-content-center">
-                                                    <Button className="mb-5" target="_blank" as={Link} to="/ProjectOwner/SignUp" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
-                                                    <Button className="mb-5" target="_blank" as={Link} to="/MyProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
+                                                    <Button className="mb-5 Home-btns"  as={Link} to="/ProjectOwner/SignUp" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
+                                                    <Button className="mb-5 Home-btns"  as={Link} to="/MyProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
                                                 </div>
                                             </div>
                                         </div>
@@ -97,23 +94,23 @@ function HowItWorks() {
                                                         <img className="img-fluid px-6 px-md-0" src={HIW_2} alt="" /></div>
                                                     <div className="col-md col-lg-5 col-xl-4 mt-4 mt-md-0">
                                                         <h2>Play with Filters</h2>
-                                                        <p style={{ fontSize: '16px' }}>
+                                                        <p className="text-justify" style={{ fontSize: '16px' }}>
                                                             Use various filters to narrow your search based on your requirement; Skill, Location, Price Range, Project Type and many
                                                             more.
                                                         </p>
-                                                        <Button as={Link} to="/projectlist" style={{ background: '#003f6b', border: '0px' }}>Discover Best Professionals</Button>
+                                                        <Button className="Home-btns" as={Link} to="/Allsellerlist" style={{ background: '#003f6b', border: '0px' }}>Discover Best Professionals</Button>
                                                     </div>
                                                 </div>
                                                 <div className="row flex-center mt-7">
                                                     <div className="col-md col-lg-5 col-xl-4 pe-lg-6 order-md-2"><img className="img-fluid px-6 px-md-0" src={HIW_1} alt="" /></div>
                                                     <div className="col-md col-lg-5 col-xl-4 mt-4 mt-md-0">
                                                         <h2>Describe Your Requirements</h2>
-                                                        <p style={{ fontSize: '16px' }}>
+                                                        <p className="text-justify" style={{ fontSize: '16px' }}>
                                                             Select the categories and subcategories relevantly so we can recommend
                                                             appropriate professionals. If something you are searching for is not in option
                                                             you can type “Others"in the search box and add your requirement.
                                                         </p>
-                                                        <Button as={Link} to="/postproject" style={{ background: '#003f6b', border: '0px' }}>Upload My Project</Button>
+                                                        <Button className="Home-btns" as={Link} to="/postproject" style={{ background: '#003f6b', border: '0px' }}>Upload My Project</Button>
                                                     </div>
                                                 </div>
 
@@ -123,7 +120,7 @@ function HowItWorks() {
 
                                             <div className="row">
                                                 <div className="col">
-                                                    <h1 className="fs-2 fs-sm-4 fs-md-5">You Can Do a Lot</h1>
+                                                    <h2 className="fs-2 fs-sm-4 fs-md-5">You Can Do a Lot</h2>
                                                 </div>
                                             </div>
                                             <div className="row mt-6">
@@ -133,7 +130,7 @@ function HowItWorks() {
                                                             <Icon icon="teenyicons:discount-outline" color="#003f6b" width="42" height="42" />
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
-                                                            <h5 className="mb-2">Check Ongoing Offers</h5>
+                                                            <h3 className="mb-2">Check Ongoing Offers</h3>
                                                             <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
                                                         </div>
                                                         <div className="card-footer bg-light">
@@ -149,7 +146,7 @@ function HowItWorks() {
                                                             <Icon icon="icons8:buy" color="#003f6b" width="42" height="42" />
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
-                                                            <h5 className="mb-2">Buy Materials Directly</h5>
+                                                            <h3 className="mb-2">Buy Materials Directly</h3>
                                                             <p>
                                                                 Sellers and suppliers register everyday and upload the latest items. Browse the collection and pick the trendiest one.
                                                             </p>
@@ -167,7 +164,7 @@ function HowItWorks() {
                                                             <Icon icon="mdi:search-web" color="#003f6b" width="42" height="42" />
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
-                                                            <h5 className="mb-2">Browse the Services</h5>
+                                                            <h3 className="mb-2">Browse the Services</h3>
                                                             <p>
                                                                 Here at MyProject.AI, you will find professionals that cover all types of construction-related jobs. You may check out the services listed here to get a better understanding.
                                                             </p>
@@ -183,9 +180,9 @@ function HowItWorks() {
                                             {/* </div> */}
                                         </div>
                                         <div style={{ marginBottom: '3rem' }} className="mb-5  text-center">
-                                            <h5 className="mb-3 text-700 text-uppercase">Testimonials</h5>
+                                            <h2 className="mb-3 text-700 text-uppercase">Testimonials</h2>
                                             <div className="col">
-                                                <h1 className="fs-2 mb-3 fs-sm-4 fs-md-5">Choose Best Reviewed Professionals</h1>
+                                                <h3 className="fs-2 mb-3 fs-sm-4 fs-md-5">Choose Best Reviewed Professionals</h3>
                                             </div>
                                             <div className="row">
                                                 <div className="col-lg-12 col-xl-12">
@@ -201,7 +198,7 @@ function HowItWorks() {
                                                                                     <div class="avatar avatar-4xl">
                                                                                         <div class="avatar-name rounded-circle"><span>NR</span></div>
                                                                                     </div>
-                                                                                    <h5>Nate Rees</h5>
+                                                                                    <h4>Nate Rees</h4>
                                                                                     <div className="mb-1">
                                                                                         <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
                                                                                         <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
@@ -228,7 +225,7 @@ function HowItWorks() {
                                                                                     <div class="avatar avatar-4xl">
                                                                                         <div class="avatar-name rounded-circle"><span>FR</span></div>
                                                                                     </div>
-                                                                                    <h5>Fran</h5>
+                                                                                    <h4>Fran</h4>
                                                                                     <div className="mb-1">
                                                                                         <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
                                                                                         <Icon icon="solar:star-bold" color="#f68f57" width="20" height="20" />
@@ -264,7 +261,7 @@ function HowItWorks() {
                                             <div className="container">
                                                 <div className="row">
                                                     <div className="col">
-                                                        <h1 className="fs-2 fs-sm-4 fs-md-5">You Get to</h1>
+                                                        <h2 className="fs-2 fs-sm-4 fs-md-5">You Get to</h2>
                                                     </div>
                                                 </div>
                                                 <div className="row mt-6">
@@ -274,7 +271,7 @@ function HowItWorks() {
                                                                 <Icon icon="ri:secure-payment-fill" color="#003f6b" width="42" height="42" />
                                                             </div>
                                                             <div className="card-body pt-6 pb-4">
-                                                                <h5 className="mb-2">Process Payment Securely</h5>
+                                                                <h3 className="mb-2">Process Payment Securely</h3>
                                                                 <p>
                                                                     Our escrow payment facility saves you from scams as the fee
                                                                     is not released until you tell us
@@ -291,7 +288,7 @@ function HowItWorks() {
                                                                 <Icon icon="iconoir:three-stars" color="#003f6b" width="42" height="42" />
                                                             </div>
                                                             <div className="card-body pt-6 pb-4">
-                                                                <h5 className="mb-2">Rate Your Professional</h5>
+                                                                <h3 className="mb-2">Rate Your Professional</h3>
                                                                 <p>Leave feedback and reviews, and stars on the profile of the professional that completed your project.
                                                                     This helps new customers understand the professional better
                                                                     and make it easier to select the right person for their project.</p>
@@ -305,7 +302,7 @@ function HowItWorks() {
                                                                 <Icon icon="cil:chat-bubble" color="#003f6b" width="42" height="42" />
                                                             </div>
                                                             <div className="card-body pt-6 pb-4">
-                                                                <h5 className="mb-2">Follow Up on Chat</h5>
+                                                                <h3 className="mb-2">Follow Up on Chat</h3>
                                                                 <p>
                                                                     You always have an option to follow up
                                                                     regarding your project with your chosen professional.
@@ -327,9 +324,9 @@ function HowItWorks() {
                                                 <p className="text-center">
                                                     You are just one sign up away from taking the Game-Changing Decision of your Lifetime!
                                                 </p>
-                                                <div className="d-flex gap-1 justify-content-center">
-                                                    <Button target="_blank" as={Link} to="/Freelancer/False" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
-                                                    <Button target="_blank" as={Link} to="/FreelancerProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
+                                                <div className="d-flex mb-3 gap-1 justify-content-center">
+                                                    <Button  as={Link} to="/Freelancer/False" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
+                                                    <Button  as={Link} to="/FreelancerProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
                                                 </div>
                                             </div>
                                         </div>
@@ -341,7 +338,7 @@ function HowItWorks() {
                                             {/* <div className="container"> */}
                                             <div className="row">
                                                 <div className="col mt-5">
-                                                    <h1 className="fs-2 fs-sm-4 fs-md-5">You Can Do a Lot</h1>
+                                                    <h2 className="fs-2 fs-sm-4 fs-md-5">You Can Do a Lot</h2>
                                                 </div>
                                             </div>
                                             <div className="row mt-6">
@@ -351,7 +348,7 @@ function HowItWorks() {
                                                             <Icon icon="mdi:user-check" color="#003f6b" width="42" height="42" />
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
-                                                            <h5 className="mb-2">Stand Out With a Strong Profile</h5>
+                                                            <h3 className="mb-2">Stand Out With a Strong Profile</h3>
                                                             <p>
                                                                 Strengthen your profile by giving the best
                                                                 information about your skills in your
@@ -368,7 +365,7 @@ function HowItWorks() {
                                                             <Icon icon="dashicons:images-alt2" color="#003f6b" width="42" height="42" />
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
-                                                            <h5 className="mb-2">Upload Images to Promote Your Business</h5>
+                                                            <h3 className="mb-2">Upload Images to Promote Your Business</h3>
                                                             <p>
                                                                 Your past project will help buyers make their decision, so make it attractive.
                                                                 Upload your best project works. Let the world know how skilled you are!
@@ -383,7 +380,7 @@ function HowItWorks() {
                                                             <Icon icon="mdi:account-star" color="#003f6b" width="42" height="42" />
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
-                                                            <h5 className="mb-2">Facility to Review Your Clients</h5>
+                                                            <h3 className="mb-2">Facility to Review Your Clients</h3>
                                                             <p>
                                                                 Once you complete a project, leave a review about your buyers on their profile page.
                                                             </p>
@@ -398,7 +395,7 @@ function HowItWorks() {
                                                             <Icon icon="mdi:payment-clock" color="#003f6b" width="42" height="42" />
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
-                                                            <h5 className="mb-2">On-Time Payments</h5>
+                                                            <h3 className="mb-2">On-Time Payments</h3>
                                                             <p>
                                                                 Get paid instantly upon completion of the project
                                                             </p>
@@ -412,7 +409,7 @@ function HowItWorks() {
                                                             <Icon icon="mdi:card-account-details-star-outline" color="#003f6b" width="42" height="42" />
                                                         </div>
                                                         <div className="card-body pt-6 pb-4">
-                                                            <h5 className="mb-2"> Your Review Display page</h5>
+                                                            <h3 className="mb-2"> Your Review Display page</h3>
                                                             <p>
                                                                 Each project winds up with the customer reviews and stars on
                                                                 your profile which helps interested buyers understand you

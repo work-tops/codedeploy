@@ -197,7 +197,21 @@ function ListJobs(layout) {
         { key: 'Cheshire', value: 'Cheshire' },
     ];
     // 
+    // 
+    const [isAdded, setIsAdded] = useState(false);
 
+    const handleAddToWishlist = () => {
+        setIsAdded(true);
+        const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+
+        toastDanger();
+    };
+
+    const handleRemoveFromWishlist = () => {
+        setIsAdded(false);
+        const toastDanger1 = () => toast.error(<h6 className="text-dark">Product Removed from Wishlist</h6>)
+        toastDanger1();
+    };
 
 
     return (
@@ -411,22 +425,46 @@ function ListJobs(layout) {
                                                                 <span className="ms-1 text-primary">(Fixed Price)</span>
                                                             </p>
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />{data?.location}</p>
-                                                            {/* <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="material-symbols:folder-rounded" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" /> {data?.category}</p> */}
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:clock-time-eight" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} />20 to 30 days</p>
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:tag" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} /> Job ID : {data?._id}</p>
-                                                            {/* <Link to="/wishlist/project"> */}
-                                                            <p onClick={toastDanger} className='text-justiy text-700 cursor-pointer fw-semibold' style={{ fontSize: '14px' }}>
-                                                                <span className='me-2'>
-                                                                    <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />Click to Save
-                                                                </span>
-                                                                <span>
-                                                                    <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
-                                                                    Remove from Wishlist
-                                                                </span>
-                                                            </p>
-                                                            {/* </Link> */}
+
+                                                            <>
+                                                                {isAdded ? (
+                                                                    <p
+                                                                        onClick={handleRemoveFromWishlist}
+                                                                        role='button'
+                                                                        style={{ fontSize: '14px' }}
+                                                                        className="text-justify fw-semibold"
+                                                                        href="#!"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-placement="top"
+                                                                        aria-label="Remove from Wishlist"
+                                                                        data-bs-original-title="Remove from Wishlist"
+                                                                    >
+                                                                        <span>
+                                                                            <Icon icon="icon-park-solid:like" className="me-1" style={{ marginTop: '-2px', color: '#df2020' }} width="20" height="20" />Remove from Wishlist
+                                                                        </span>
+                                                                    </p>
+                                                                ) : (
+                                                                    <p
+                                                                        onClick={handleAddToWishlist}
+                                                                        role='button'
+                                                                        style={{ fontSize: '14px' }}
+                                                                        className="text-justify fw-semibold"
+                                                                        href="#!"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-placement="top"
+                                                                        aria-label="Add to Wishlist"
+                                                                        data-bs-original-title="Add to Wishlist"
+                                                                    >
+                                                                        <span>
+                                                                            <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-2px' }} width="20" height="20" />Add to Wishlist
+                                                                        </span>
+                                                                    </p>
+                                                                )}
+                                                            </>
                                                             <Link to={`jobdetails/${data._id}`} role="button">
-                                                                <Button className='border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                                <Button className='border-0 Home-btns-1' style={{ background: '#003f6b', fontSize: '14px' }}>
                                                                     VIEW JOB
                                                                 </Button>
                                                             </Link>
@@ -456,8 +494,41 @@ function ListJobs(layout) {
                                 <article className="col-md-6 col-xxl-4">
                                     <div className="card h-100 overflow-hidden">
                                         <div className="bg-light d-flex justify-content-end position-relative card-header">
-                                            <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
-                                            <Icon onClick={toastDanger} icon="icon-park-outline:like" className="cursor-pointer me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
+                                            <>
+                                                {isAdded ? (
+                                                    <p
+                                                        onClick={handleRemoveFromWishlist}
+                                                        role='button'
+                                                        style={{ fontSize: '14px' }}
+                                                        className="text-justify fw-semibold"
+                                                        href="#!"
+                                                        data-bs-toggle="tooltip"
+                                                        data-bs-placement="top"
+                                                        aria-label="Remove from Wishlist"
+                                                        data-bs-original-title="Remove from Wishlist"
+                                                    >
+                                                        <span>
+                                                            <Icon icon="icon-park-solid:like" className="me-1" style={{ marginTop: '-2px', color: '#df2020' }} width="20" height="20" />
+                                                        </span>
+                                                    </p>
+                                                ) : (
+                                                    <p
+                                                        onClick={handleAddToWishlist}
+                                                        role='button'
+                                                        style={{ fontSize: '14px' }}
+                                                        className="text-justify fw-semibold"
+                                                        href="#!"
+                                                        data-bs-toggle="tooltip"
+                                                        data-bs-placement="top"
+                                                        aria-label="Add to Wishlist"
+                                                        data-bs-original-title="Add to Wishlist"
+                                                    >
+                                                        <span>
+                                                            <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-2px' }} width="20" height="20" />
+                                                        </span>
+                                                    </p>
+                                                )}
+                                            </>
                                         </div>
                                         <div className="card-body p-0 d-flex flex-column justify-content-between">
                                             <div>
@@ -482,7 +553,7 @@ function ListJobs(layout) {
                                                     </p>
                                                 </div>
                                                 <div>
-                                                    <Button as={Link} to="/jobdetails/:jobid" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                    <Button as={Link} to="/jobdetails/:jobid" className='m-3 Home-btns-1 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
                                                         VIEW JOB
                                                     </Button>
                                                 </div>
@@ -493,8 +564,41 @@ function ListJobs(layout) {
                                 <article className="col-md-6 col-xxl-4">
                                     <div className="card h-100 overflow-hidden">
                                         <div className="bg-light d-flex justify-content-end position-relative card-header">
-                                            <Icon onClick={toastDanger} icon="icon-park-outline:like" className="cursor-pointer me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
-                                            <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
+                                            <>
+                                                {isAdded ? (
+                                                    <p
+                                                        onClick={handleRemoveFromWishlist}
+                                                        role='button'
+                                                        style={{ fontSize: '14px' }}
+                                                        className="text-justify fw-semibold"
+                                                        href="#!"
+                                                        data-bs-toggle="tooltip"
+                                                        data-bs-placement="top"
+                                                        aria-label="Remove from Wishlist"
+                                                        data-bs-original-title="Remove from Wishlist"
+                                                    >
+                                                        <span>
+                                                            <Icon icon="icon-park-solid:like" className="me-1" style={{ marginTop: '-2px', color: '#df2020' }} width="20" height="20" />
+                                                        </span>
+                                                    </p>
+                                                ) : (
+                                                    <p
+                                                        onClick={handleAddToWishlist}
+                                                        role='button'
+                                                        style={{ fontSize: '14px' }}
+                                                        className="text-justify fw-semibold"
+                                                        href="#!"
+                                                        data-bs-toggle="tooltip"
+                                                        data-bs-placement="top"
+                                                        aria-label="Add to Wishlist"
+                                                        data-bs-original-title="Add to Wishlist"
+                                                    >
+                                                        <span>
+                                                            <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-2px' }} width="20" height="20" />
+                                                        </span>
+                                                    </p>
+                                                )}
+                                            </>
                                         </div>
                                         <div className="card-body p-0 d-flex flex-column justify-content-between">
                                             <div>
@@ -518,7 +622,7 @@ function ListJobs(layout) {
                                                         ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
                                                     </p>
                                                 </div>
-                                                <Button as={Link} to="/jobdetails/:jobid" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
+                                                <Button as={Link} to="/jobdetails/:jobid" className='m-3 Home-btns-1 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
                                                     VIEW JOB
                                                 </Button>
                                             </div>

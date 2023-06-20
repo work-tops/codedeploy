@@ -76,6 +76,24 @@ function ProductDetails() {
     const changeActiveIndex = (index) => {
         setActiveIndex(index);
     };
+    // 
+    // 
+    const [isAdded, setIsAdded] = useState(false);
+
+    const handleAddToWishlist = () => {
+        setIsAdded(true);
+        const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+
+        toastDanger();
+    };
+
+    const handleRemoveFromWishlist = () => {
+        setIsAdded(false);
+        const toastDanger1 = () => toast.error(<h6 className="text-dark">Product Removed from Wishlist</h6>)
+        toastDanger1();
+    };
+
+
 
 
     return (
@@ -92,7 +110,7 @@ function ProductDetails() {
                             <Row>
                                 <Col sm={12} md={12} lg={8} xl={8} className="position-relative">
                                     <Row className="g-3 align-items-center">
-                                        <Col lg={5}>
+                                        <Col md={5} lg={5}>
                                             {prodata.attachments?.map((data, key) => (
                                                 <div
                                                     key={key}
@@ -102,8 +120,8 @@ function ProductDetails() {
                                                 </div>
                                             ))}
                                         </Col>
-                                        <Col lg={7}>
-                                            <h2 className="fw-bold text-white">{prodata.name}</h2>
+                                        <Col md={7} lg={7}>
+                                            <h1 className="fw-bold text-white">{prodata.name}</h1>
                                             <div className="fw-semi-bold fs--1">
                                                 <span className="me-1 text-white me-2">4.9</span>
                                                 <div className="d-inline-block ">
@@ -125,24 +143,45 @@ function ProductDetails() {
                                     </Row>
                                     <hr className="text-secondary text-opacity-50" />
                                     <ul className="list-unstyled d-flex flex-wrap gap-3 fs--1 fw-semi-bold text-300 mt-3 mb-0">
-
-                                        {/* <Link to="/productlist" className="text-300"> */}
                                         <li role="button" className="text-primary">
                                             Previous
                                         </li>
-                                        {/* </Link> */}
+                                        <>
+                                            {isAdded ? (
+                                                <li
+                                                    onClick={handleRemoveFromWishlist}
+                                                    role='button'
+                                                    style={{ fontSize: '14px' }}
+                                                    className="text-justify fw-semibold"
+                                                    href="#!"
+                                                    data-bs-toggle="tooltip"
+                                                    data-bs-placement="top"
+                                                    aria-label="Remove from Wishlist"
+                                                    data-bs-original-title="Remove from Wishlist"
+                                                >
+                                                    <span>
+                                                        <Icon icon="icon-park-solid:like" className="me-1" style={{ marginTop: '-2px', color: '#df2020' }} width="20" height="20" />Remove from Wishlist
+                                                    </span>
+                                                </li>
+                                            ) : (
+                                                <li
+                                                    onClick={handleAddToWishlist}
+                                                    role='button'
+                                                    style={{ fontSize: '14px' }}
+                                                    className="text-justify fw-semibold"
+                                                    href="#!"
+                                                    data-bs-toggle="tooltip"
+                                                    data-bs-placement="top"
+                                                    aria-label="Add to Wishlist"
+                                                    data-bs-original-title="Add to Wishlist"
+                                                >
+                                                    <span>
+                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-2px' }} width="20" height="20" />Add to Wishlist
+                                                    </span>
+                                                </li>
+                                            )}
+                                        </>
 
-                                        {/* <Link to="/wishlist/product" className="text-300"> */}
-                                        <li role="button" onClick={toastDanger}>
-                                            <span className="me-2">
-                                                <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="text-white me-1" width="20" height="20" />
-                                                Add to Wishlist
-                                            </span>
-                                            <span>
-                                                <Icon style={{ marginTop: '-5px' }} icon="icon-park-outline:like" className="me-1" width="20" height="20" />
-                                                Remove From Wishlist
-                                            </span>
-                                        </li>
                                         {/* </Link> */}
                                         {/* Wishlist Toast */}
                                         <Link to="/productdetails/:proid">
@@ -163,7 +202,7 @@ function ProductDetails() {
 
                         {/* Product Images */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light text-uppercase">
+                            <Card.Header as="h2" className="bg-light text-uppercase">
                                 Product Images
                             </Card.Header>
                             <Card.Body className="position-relative">
@@ -183,7 +222,7 @@ function ProductDetails() {
 
                         {/* Description */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light text-uppercase">
+                            <Card.Header as="h2" className="bg-light text-uppercase">
                                 Description
                             </Card.Header>
                             <Card.Body className="position-relative">
@@ -200,7 +239,7 @@ function ProductDetails() {
 
                         {/* Disclaimer */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light text-uppercase">
+                            <Card.Header as="h2" className="bg-light text-uppercase">
                                 Disclaimer
                             </Card.Header>
                             <Card.Body className="position-relative">
@@ -215,22 +254,21 @@ function ProductDetails() {
                         {/* Disclaimer */}
                         <Card className="mb-3">
                             <Card.Header className=" text-capitalize bg-light">
-                                <h5 className="text-uppercase">
+                                <h2 className="text-uppercase">
                                     Reviews
-                                </h5>
-                                <div className="d-flex gap-2 justify-content-end">
+                                </h2>
+                            </Card.Header>
+                            <Card.Body className="py-0">
+                                <div className="d-flex gap-2 mt-2 justify-content-lg-end">
                                     <Button
                                         variant="falcon-default"
                                         size="sm"
-                                        iconAlign="right"
                                         onClick={handleShow}
-                                        icon="filter"
-                                        iconClassName="ms-1 fs--2"
                                     >
                                         Write Review
                                     </Button>
                                     <div>
-                                        <Form.Select size="sm" defaultValue="">
+                                        <Form.Select className="cursor-pointer" size="sm" defaultValue="">
                                             <option value="">Sort by</option>
                                             <option value="oldest">Old</option>
                                             <option value="newest">New</option>
@@ -238,9 +276,6 @@ function ProductDetails() {
                                         </Form.Select>
                                     </div>
                                 </div>
-                            </Card.Header>
-                            <Card.Body className="py-0">
-
                                 <Row className='g-3 align-items-center text-center text-md-start py-3'>
                                     <Col md="auto">
                                         <Link to="#!">
@@ -278,7 +313,7 @@ function ProductDetails() {
                                                       fs--2 text-600"
                                                 >
                                                     <h6 className="fs--2 text-600 mb-0">3 Days Ago</h6>
-                                                    <p className="mb-0 ms-1">
+                                                    <p style={{ fontSize: "14px" }} className="fw-semibold mb-0 ms-1">
                                                         230 people found this helpful
                                                     </p>
                                                 </div>
@@ -351,7 +386,7 @@ function ProductDetails() {
                                                       fs--2 text-600"
                                                 >
                                                     <h6 className="fs--2 text-600 mb-0">3 Days Ago</h6>
-                                                    <p className="mb-0 ms-1">
+                                                    <p style={{ fontSize: "14px" }} className="fw-semibold mb-0 ms-1">
                                                         230 people found this helpful
                                                     </p>
                                                 </div>
@@ -403,7 +438,7 @@ function ProductDetails() {
                         <div className=" course-details-sticky-sidebar mb-lg-8 mt-xl-n10 pe-xl-4 pe-xxl-7">
                             {/* Plan Your Carrer */}
                             <Card className="mt-5 mb-3">
-                                <Card.Header as="h5" className="bg-light text-capitalize">
+                                <Card.Header as="h2" className="bg-light text-capitalize">
 
                                 </Card.Header>
                                 <Card.Body>
@@ -447,7 +482,7 @@ function ProductDetails() {
                                                 <Button
                                                     style={{ background: '#003f6b' }}
                                                     size="lg"
-                                                    className="w-100 fs-0 mt-1"
+                                                    className="w-100 Home-btns-1 fs-0 mt-1"
                                                 >
                                                     Get Quote
                                                 </Button>
@@ -460,8 +495,8 @@ function ProductDetails() {
                                             <hr className="border-top border-dashed d-md-none d-lg-block" />
                                             <Form.Group className="mb-3">
                                                 {/* <h6 className="fw-bold">Colour</h6> */}
-                                                <Form.Label className="text-900">Colour</Form.Label>
-                                                <Form.Select>
+                                                <Form.Label className="text-700 text-uppercase">Colour<span className="ms-1 text-danger">*</span></Form.Label>
+                                                <Form.Select className="cursor-pointer">
                                                     <option value="">Select</option>
                                                     {prodata.variant?.map((data, key) => (
                                                         <option key={key} value={data.color}>{data.color}</option>
@@ -470,8 +505,8 @@ function ProductDetails() {
                                             </Form.Group>
                                             <Form.Group className="mb-3">
                                                 {/* <h6 className="fw-bold">Size</h6> */}
-                                                <Form.Label className="text-900">Size</Form.Label>
-                                                <Form.Select>
+                                                <Form.Label className="text-700 text-uppercase">Size<span className="ms-1 text-danger">*</span></Form.Label>
+                                                <Form.Select className="cursor-pointer">
                                                     <option value="">Select</option>
                                                     {prodata.variant?.map((data, key) => (
                                                         <option key={key} value={data.size}>{data.size}</option>
@@ -480,8 +515,8 @@ function ProductDetails() {
                                             </Form.Group>
                                             <Form.Group className="mb-3">
                                                 {/* <h6 className="fw-bold">Finish Type</h6> */}
-                                                <Form.Label className="text-900">Finish Type</Form.Label>
-                                                <Form.Select>
+                                                <Form.Label className="text-700 text-uppercase">Finish Type<span className="ms-1 text-danger">*</span></Form.Label>
+                                                <Form.Select className="cursor-pointer">
                                                     <option value="">Select</option>
                                                     {prodata.variant?.map((data, key) => (
                                                         <option key={key} value={data.finish_type}>{data.finish_type}</option>
@@ -490,7 +525,7 @@ function ProductDetails() {
                                             </Form.Group>
                                             <Form.Group className="mb-3">
                                                 {/* <h6 className="fw-bold">Finish Type</h6> */}
-                                                <Form.Label className="text-900">Quantity</Form.Label>
+                                                <Form.Label className="text-700 text-uppercase">Quantity<span className="ms-1 text-danger">*</span></Form.Label>
                                                 <Form.Control
                                                     type="number"
                                                     placeholder="0"
@@ -502,48 +537,23 @@ function ProductDetails() {
                                     <h6 className="fw-bold">Share </h6>
                                     <div className="d-flex justify-content-start mt-4 mt-xxl-0">
                                         <ul className="list-unstyled mb-0 d-flex flex-wrap flex-xxl-column gap-3 justify-content-start">
-                                            <li>
-                                                <Button
-                                                    className="text-800 border-0 bg-transparent fw-semi-bold font-base"
-                                                    size="sm"
-                                                    style={{ color: '#003f6b' }}
-                                                >
-                                                    <Icon className="me-1" icon="ion:copy" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" hFlip={true} />
-                                                    Copy Link
-                                                </Button>
-                                            </li>
-                                            <li>
-                                                <Button
-                                                    className="text-800 border-0 bg-transparent fw-semi-bold font-base"
-                                                    size="sm"
-                                                    style={{ color: '#003f6b' }}
-                                                >
-                                                    <Icon className="me-1" icon="ic:sharp-facebook" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" />
-                                                    Facebook
-                                                </Button>
-                                            </li>
-                                            <li>
-                                                <Button
-                                                    className="text-800 border-0 bg-transparent fw-semi-bold font-base"
-                                                    size="sm"
-                                                    style={{ color: '#003f6b' }}
-                                                >
-                                                    <Icon className="me-1" style={{ marginTop: '-4px' }} icon="akar-icons:twitter-fill" color="#003f6b" width="20" height="20" />
-                                                    Twitter
-                                                </Button>
-                                            </li>
-                                            <li>
-                                                <Button
-                                                    className="text-800 border-0 bg-transparent fw-semi-bold font-base"
-                                                    size="sm"
-                                                    style={{ color: '#003f6b' }}
-                                                >
-                                                    <Icon className="me-1" icon="ri:whatsapp-fill" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" />
-                                                    Whatsapp
-                                                </Button>
-                                            </li>
+
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg">
+                                                    <FontAwesomeIcon style={{ width: '1rem', height: '1rem' }} icon="fa-solid fa-copy" />
+                                                </button>
+                                                <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg">
+                                                    <span class="fs-0 fab fa-facebook-f mr-1 text-primary"></span></button>
+                                                <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg">
+                                                    <span class="fs-0 fab fa-twitter mr-1 text-twitter"></span>
+                                                </button>
+                                                <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg">
+                                                    <span class="fs-0 fab fa-linkedin-in mr-1 text-info"></span>
+                                                </button>
+                                            </div>
                                         </ul>
                                     </div>
+
                                 </Card.Body>
                             </Card>
                             {/*  */}
@@ -562,14 +572,14 @@ function ProductDetails() {
                 dialogClassName="modal-lg modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
-                <Modal.Header>
-                    <h5 class="mb-3">Write your Review</h5>
+                <Modal.Header closeButton>
+                    <h5 className="text-uppercase">Write your Review</h5>
                 </Modal.Header>
                 <Modal.Body>
 
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="rating">
-                            <Form.Label>Rating</Form.Label>
+                            <Form.Label className="text-700 text-uppercase">Rating<span className="ms-1 text-danger">*</span></Form.Label>
                             <div className="star-rating">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <FaStar
@@ -581,7 +591,7 @@ function ProductDetails() {
                             </div>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="name">
-                            <Form.Label>Name</Form.Label>
+                            <Form.Label className="text-700 text-uppercase">Name<span className="ms-1 text-danger">*</span></Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Enter your name"
@@ -591,7 +601,7 @@ function ProductDetails() {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="email">
-                            <Form.Label>Email</Form.Label>
+                            <Form.Label className="text-700 text-uppercase">Email<span className="ms-1 text-danger">*</span></Form.Label>
                             <Form.Control
                                 type="email"
                                 placeholder="Enter your email"
@@ -601,7 +611,7 @@ function ProductDetails() {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="reviewText">
-                            <Form.Label>Write your review</Form.Label>
+                            <Form.Label className="text-700 text-uppercase">Write your review<span className="ms-1 text-danger">*</span></Form.Label>
                             {/* <Form.Control
                                 as="textarea"
                                 rows={3}
