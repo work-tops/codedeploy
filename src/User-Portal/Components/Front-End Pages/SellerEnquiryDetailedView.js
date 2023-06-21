@@ -1,4 +1,4 @@
-import { useState, React,useRef } from "react";
+import { useState, React, useRef } from "react";
 import { Col, Container, Row, Card, Button, Form, Modal } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,7 +6,7 @@ import profile from '../Projectimages/Handyman.jpg'
 import { Link } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
 import file from '../Projectimages/BathroomFitting.jpg'
-function SellerEnquiryDetails() {
+function ProductEnquiryDetails() {
     const [show, setShow] = useState(false);
     const editorRef = useRef(null);
     const handleClose = () => setShow(false);
@@ -49,7 +49,7 @@ function SellerEnquiryDetails() {
                                 <Card.Body>
                                     <Row>
                                         <Col md={6} lg={3}>
-                                            <h5 className="mb-3 fs-0 text-uppercase">Customer Details</h5>
+                                            <h5 className="mb-3 fs-0 text-uppercase">Customer Name</h5>
                                             <div className="d-flex">
                                                 <img
                                                     src={profile}
@@ -264,4 +264,4 @@ function SellerEnquiryDetails() {
         </>
     )
 }
-export default SellerEnquiryDetails
+export default ProductEnquiryDetails

@@ -29,8 +29,8 @@ function HowItWorks() {
                     <div className="row">
                         <div className="col-lg-7">
                             <div className="text-center">
-                                <div class="col-md-11 col-lg-11 col-xl-11 pb-7 pb-xl-9 ">
-                                    
+                                <div class="col-md-12 col-lg-12 col-xl-12 pb-7 pb-xl-9 ">
+
                                     <div style={{ position: 'relative', top: '5rem' }}>
                                         <h1 className="typed-start mb-2 d-block fw-bold text-dark fw-light"> A KBB Certified Platform</h1>
                                         <h2 className="typed-start  fw-bold">
@@ -82,8 +82,8 @@ function HowItWorks() {
                                                     All you need to do is give the best description about your requirement.
                                                 </p>
                                                 <div className="d-flex gap-1 justify-content-center">
-                                                    <Button className="mb-5 Home-btns"  as={Link} to="/ProjectOwner/SignUp" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
-                                                    <Button className="mb-5 Home-btns"  as={Link} to="/MyProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
+                                                    <Button className="mb-5 Home-btns" as={Link} to="/ProjectOwner/SignUp" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
+                                                    <Button className="mb-5 Home-btns" as={Link} to="/MyProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
                                                 </div>
                                             </div>
                                         </div>
@@ -325,8 +325,8 @@ function HowItWorks() {
                                                     You are just one sign up away from taking the Game-Changing Decision of your Lifetime!
                                                 </p>
                                                 <div className="d-flex mb-3 gap-1 justify-content-center">
-                                                    <Button  as={Link} to="/Freelancer/False" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
-                                                    <Button  as={Link} to="/FreelancerProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
+                                                    <Button as={Link} to="/Freelancer/False" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
+                                                    <Button as={Link} to="/FreelancerProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
                                                 </div>
                                             </div>
                                         </div>

@@ -67,7 +67,7 @@ const OwnerEnquiryTable = () => {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
             status: <span className="badge bg-success">Completed</span>,
             action: <CardDropdown>
-                <Dropdown.Item as={Link} to="/ownerEnquireDetails" className="text-success">View</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/ServiceEnquiryDetails" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
@@ -78,9 +78,9 @@ const OwnerEnquiryTable = () => {
             date: '10 May 2023',
             serviceName: 'Kitchen Worktops',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
-            status: <span className="badge bg-danger">Closed</span>,
+            status: <span className="badge bg-danger">Declined</span>,
             action: <CardDropdown>
-                <Dropdown.Item as={Link} to="/ownerEnquireDetails" className="text-success">View</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/ServiceEnquiryDetails" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
@@ -93,7 +93,7 @@ const OwnerEnquiryTable = () => {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
             status: <span className="badge bg-warning">Pending</span>,
             action: <CardDropdown>
-                <Dropdown.Item as={Link} to="/ownerEnquireDetails" className="text-success">View</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/ServiceEnquiryDetails" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
@@ -106,7 +106,7 @@ const OwnerEnquiryTable = () => {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
             status: <span className="badge bg-primary">Processing</span>,
             action: <CardDropdown>
-                <Dropdown.Item as={Link} to="/ownerEnquireDetails" className="text-success">View</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/ServiceEnquiryDetails" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
@@ -177,7 +177,7 @@ const OwnerEnquiryTable = () => {
 
                 {/*  */}
                 <Modal show={showModal1} onHide={handleClose1}>
-                    <Modal.Header >
+                    <Modal.Header closeButton>
                         <Modal.Title>Warning</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
@@ -187,10 +187,10 @@ const OwnerEnquiryTable = () => {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose1}>
-                            Cancel
+                            No
                         </Button>
                         <Button variant="danger" onClick={handleClose1}>
-                            Decline
+                            Yes
                         </Button>
 
                     </Modal.Footer>

@@ -122,7 +122,7 @@ function MyProfile() {
                                                         </tr>
                                                         <tr>
                                                             <td className="p-1" style={{ width: '35%' }}>
-                                                                Mobile No:
+                                                                Phone No:
                                                             </td>
                                                             <td className="p-1">
                                                                 <Link to="tel:+01234567890" className="text-600">
@@ -132,13 +132,38 @@ function MyProfile() {
                                                         </tr>
                                                         <tr>
                                                             <td className="p-1" style={{ width: '35%' }}>
-                                                                Address:
+                                                                Address :
                                                             </td>
                                                             <td className="p-1">
                                                                 <Link to="1 De La Warr Way, Cambridge, CB23 6DX" className="text-600">
                                                                     {user?.address}
                                                                 </Link>
-
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="p-1" style={{ width: '35%' }}>
+                                                                <span className="d-none">Address :</span>
+                                                            </td>
+                                                            <td className="p-1">
+                                                                <Link to="1 De La Warr Way, Cambridge, CB23 6DX" className="text-600">
+                                                                    {user?.address}
+                                                                </Link>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="p-1" style={{ width: '35%' }}>
+                                                                Postcode:
+                                                            </td>
+                                                            <td className="p-1">
+                                                                CDBX23B
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="p-1" style={{ width: '35%' }}>
+                                                                Country
+                                                            </td>
+                                                            <td className="p-1">
+                                                                UK
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -171,6 +196,7 @@ function MyProfile() {
 
                                     <Col lg={4} md={5}>
                                         {/* Payment */}
+
                                         <Card className="mb-3 btn-reveal-trigger h-100">
                                             <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
                                                 <h5 className="text-capitalize">
@@ -193,7 +219,7 @@ function MyProfile() {
                                                             {/* Modal */}
                                                             <div>
                                                                 <Modal show={showModal3} onHide={handleClose3}>
-                                                                    <Modal.Header>
+                                                                    <Modal.Header closeButton>
                                                                         <Modal.Title>
                                                                             <h5 className="mb-0">Payment Method</h5>
                                                                         </Modal.Title>
@@ -227,30 +253,21 @@ function MyProfile() {
                                                                                             <span className="fa fa-question-circle ms-2"></span></a></label><input className="form-control" type="text" placeholder="123" maxlength="3" pattern="[0-9]{3}" /></div>
                                                                                     </div>
                                                                                 </div>
-                                                                                {/* <div className="col-4 ps-3 text-center pt-2 d-none d-sm-block">
-                                                                                            <div className="rounded-1 p-2 mt-3 bg-100">
-                                                                                                <div className="text-uppercase fs--2 fw-bold">We Accept</div><img src={payment_methods} alt="" width="120" />
-                                                                                            </div>
-                                                                                        </div> */}
+
                                                                             </div>
                                                                             {/*  */}
-                                                                            {/* <div className="form-check d-flex align-items-center"><input className="form-check-input" type="radio" value="" id="paypal" name="payment-method" /><label className="form-check-label mb-0 ms-2" for="paypal"><img src={paypal} height="20" alt="" /></label></div> */}
-                                                                           </form>
+                                                                        </form>
                                                                     </Modal.Body>
                                                                     <Modal.Footer>
                                                                         <Button variant="primary" onClick={handleClose3}>
                                                                             Save
                                                                         </Button>
-                                                                        {/* <Button variant="primary" onClick={handleClose3}>
-                                                                            Save & Pay
-                                                                        </Button> */}
-
                                                                     </Modal.Footer>
                                                                 </Modal>
                                                             </div>
                                                             {/*  */}
                                                             <Modal show={showModal2} onHide={handleClose2}>
-                                                                <Modal.Header >
+                                                                <Modal.Header closeButton>
                                                                     <Modal.Title>Warning</Modal.Title>
                                                                 </Modal.Header>
                                                                 <Modal.Body>
@@ -260,10 +277,10 @@ function MyProfile() {
                                                                 </Modal.Body>
                                                                 <Modal.Footer>
                                                                     <Button variant="secondary" onClick={handleClose2}>
-                                                                        Cancel
+                                                                        No
                                                                     </Button>
                                                                     <Button variant="danger" onClick={handleClose2}>
-                                                                        Remove
+                                                                        Yes
                                                                     </Button>
 
                                                                 </Modal.Footer>
@@ -335,6 +352,16 @@ function MyProfile() {
                                                                 </tr>
                                                             </tbody>
                                                         </Table>
+                                                        <h6>Saved Cards:</h6>
+                                                        <div>
+                                                            <Form.Check name="saved-cards" type="radio" label="**** **** **** 9876" />
+                                                        </div>
+                                                        <div>
+                                                            <Form.Check name="saved-cards" type="radio" label="**** **** **** 9876" />
+                                                        </div>
+                                                        <div>
+                                                            <Form.Check name="saved-cards" type="radio" label="**** **** **** 9876" />
+                                                        </div>
                                                     </Col>
                                                 </Row>
                                             </Card.Body>
@@ -381,7 +408,7 @@ function MyProfile() {
                                                 </tr>
                                                 <tr>
                                                     <td className="p-1" style={{ width: '35%' }}>
-                                                        Mobile No:
+                                                        Phone No:
                                                     </td>
                                                     <td className="p-1">
                                                         <Link to="tel:+01234567890" className="text-600">
@@ -400,15 +427,39 @@ function MyProfile() {
 
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <td className="p-1" style={{ width: '35%' }}>
+                                                        <span className="d-none">Address:</span>
+                                                    </td>
+                                                    <td className="p-1">
+                                                        <Link to="1 De La Warr Way, Cambridge, CB23 6DX" className="text-600">
+                                                            {user?.address}
+                                                        </Link>
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="p-1" style={{ width: '35%' }}>
+                                                        Postcode:
+                                                    </td>
+                                                    <td className="p-1">
+                                                        CDBX23B
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="p-1" style={{ width: '35%' }}>
+                                                        Country
+                                                    </td>
+                                                    <td className="p-1">
+                                                        UK
+                                                    </td>
+                                                </tr>
                                             </tbody>
 
                                         </Table>
                                     </Card.Body>
                                 </Card>
                             </Col>
-
-
-                            {/*  */}
 
                             {/*  */}
                             <Col xs={12}>
@@ -429,14 +480,14 @@ function MyProfile() {
                 dialogClassName="modal-lg modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
-                <Modal.Header>
+                <Modal.Header closeButton>
                     <h5>Edit</h5>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
                         <Form.Group className="mb-3">
                             <Form.Label>
-                                First Name:
+                                First Name
                             </Form.Label>
                             <Form.Control
                                 className="form-control-sm"
@@ -445,7 +496,7 @@ function MyProfile() {
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>
-                                Last Name:
+                                Last Name
                             </Form.Label>
                             <Form.Control
                                 className="form-control-sm"
@@ -454,7 +505,7 @@ function MyProfile() {
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>
-                                Email:
+                                Email
                             </Form.Label>
                             <Form.Control
                                 className="form-control-sm"
@@ -463,7 +514,7 @@ function MyProfile() {
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>
-                                Mobile Number
+                                Phone Number
                             </Form.Label>
                             <Form.Control
                                 className="form-control-sm"
@@ -472,7 +523,7 @@ function MyProfile() {
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>
-                                Address:
+                                Address Line 1
                             </Form.Label>
                             <Form.Control
                                 as="textarea"
@@ -480,6 +531,33 @@ function MyProfile() {
                                 className="resize-none form-control-sm"
                             // type="email"
                             />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>
+                                Address Line 2
+                            </Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                rows={1}
+                                className="resize-none form-control-sm"
+
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>
+                                PostCode
+                            </Form.Label>
+                            <Form.Control
+                                className="form-control-sm"
+                                type="text"
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Country</Form.Label>
+                            <Form.Select>
+                                <option>UK</option>
+                                <option>Ireland</option>
+                            </Form.Select>
                         </Form.Group>
                     </Form>
                 </Modal.Body>
@@ -494,7 +572,7 @@ function MyProfile() {
                 dialogClassName="modal-lg modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
-                <Modal.Header>
+                <Modal.Header closeButton>
                     <h5 className="mb-0">Change Password</h5>
                 </Modal.Header>
                 <Modal.Body>
@@ -502,7 +580,7 @@ function MyProfile() {
                         <div className="mb-3"><label className="form-label" for="old-password">Old Password<span className="text-danger ms-1">*</span></label><input className="form-control" id="old-password" type="password" /></div>
                         <div className="mb-3"><label className="form-label" for="new-password">New Password<span className="text-danger ms-1">*</span></label><input className="form-control" id="new-password" type="password" /></div>
                         <div className="mb-3"><label className="form-label" for="confirm-password">Confirm Password<span className="text-danger ms-1">*</span></label><input className="form-control" id="confirm-password" type="password" /></div>
-
+                        
                     </form>
                 </Modal.Body>
                 <Modal.Footer>

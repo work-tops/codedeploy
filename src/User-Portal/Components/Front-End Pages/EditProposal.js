@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import { useDropzone } from 'react-dropzone';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Editor } from "@tinymce/tinymce-react";
+import { Link } from "react-router-dom";
 import {
     Button,
     Card,
@@ -64,7 +65,7 @@ function EditProposal() {
                                     {/* <h6 >Proposal Amount</h6> */}
                                     <Form>
                                         <Form.Group className='mb-3'>
-                                            <Form.Label style={{ fontSize: '14px' }} className=" text-700">
+                                            <Form.Label style={{ fontSize: '14px' }} className="text-uppercase text-700">
                                                 Proposal Amount<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
 
@@ -98,8 +99,8 @@ function EditProposal() {
                                             </Card.Body>
                                         </Card>
                                         <Form.Group className="mb-3">
-                                            <Form.Label style={{ fontSize: '14px' }} className=" text-700">
-                                                Completion Time<span className="ms-1 text-danger">*</span>
+                                            <Form.Label style={{ fontSize: '14px' }} className="text-uppercase text-700">
+                                                Duration<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
                                                 required
@@ -112,8 +113,8 @@ function EditProposal() {
                                                 placeholder="Add completion time" />
                                         </Form.Group>
                                         <Form.Group className="mb-3">
-                                            <Form.Label style={{ fontSize: '14px' }} className=" text-700">
-                                                Cover Letter<span className="ms-1 text-danger">*</span>
+                                            <Form.Label style={{ fontSize: '14px' }} className="text-uppercase text-700">
+                                                Description<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             {/* <Form.Control
                                                 as="textarea"
@@ -211,7 +212,7 @@ function EditProposal() {
 
                                         </div>
                                         <div className="d-flex justify-content-end">
-                                            <Button className="border-0 mt-3" style={{ background: '#003f6b', fontSize: '14px' }} type="submit">
+                                            <Button as={Link} to="/proposalcard" className="border-0 Home-btns-1 mt-3" style={{ background: '#003f6b', fontSize: '14px' }} type="submit">
                                                 SEND
                                             </Button>
                                         </div>
@@ -227,16 +228,7 @@ function EditProposal() {
                                 </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
-                                        <li>
-                                            <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
-                                                <Icon icon="tabler:currency-pound"
-                                                    className='me-1'
-                                                    style={{ marginTop: '-1px' }}
-                                                    color="#003f6b"
-                                                    width="20"
-                                                    height="20" />
-                                                Low </p>
-                                        </li>
+
                                         <li>
                                             <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
                                                 <Icon icon="material-symbols:location-on"

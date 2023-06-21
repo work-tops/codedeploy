@@ -30,7 +30,7 @@ function FreelancerProfile() {
                             <div className="col-lg-12">
                                 <h4 className="mb-1"> Peter Leverkus</h4>
                                 <h6 className="fs-0 text-primary fw-normal">petergms@gmail.com</h6>
-                                <p className="text-900">+012-345-67890</p>
+                                <p className="text-900">+044 4381 421 1323</p>
                                 <Button as={Link} to="/FreelancerEditProfile">Edit Your Profile</Button>
                             </div>
 

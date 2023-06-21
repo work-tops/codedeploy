@@ -21,6 +21,7 @@ import { getSize } from '../../TemplateAssets/helpers/utils';
 import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
 import CardDropdown from '../../TemplateAssets/common/CardDropdown';
 import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 function JobProposal() {
     const jobdatas = sessionStorage.getItem("jobdata")
@@ -174,7 +175,7 @@ function JobProposal() {
                                         </Card>
                                         <Form.Group className="mb-3">
                                             <Form.Label style={{ fontSize: '14px' }} className="text-700 text-uppercase">
-                                                Completion Time<span className="ms-1 text-danger">*</span>
+                                                Duration<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
                                                 required
@@ -183,11 +184,11 @@ function JobProposal() {
                                                 onChange={(e) => { handleChange(e) }}
                                                 type="text"
                                                 className=""
-                                                placeholder="Add completion time" />
+                                                placeholder="Add Duration" />
                                         </Form.Group>
                                         <Form.Group className="mb-3">
                                             <Form.Label style={{ fontSize: '14px' }} className="text-700 text-uppercase">
-                                                Cover Letter<span className="ms-1 text-danger">*</span>
+                                                Description<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             {/* <Form.Control
                                                 as="textarea"
@@ -282,7 +283,7 @@ function JobProposal() {
 
                                         </div>
                                         <div className="d-flex justify-content-end">
-                                            <Button className="border-0 mt-3" style={{ background: '#003f6b', fontSize: '14px' }} type="submit">
+                                            <Button as={Link} to="/proposalcard" className="border-0 mt-3" style={{ background: '#003f6b', fontSize: '14px' }} type="submit">
                                                 SEND
                                             </Button>
                                         </div>

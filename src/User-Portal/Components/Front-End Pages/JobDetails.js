@@ -383,7 +383,7 @@ function JobDetails() {
                                                     rows={5} />
                                             </Form.Group>
                                             <div className="d-flex justify-content-center">
-                                                <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 w-100 text-uppercase">
+                                                <Button as={Link}  style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 w-100 text-uppercase">
                                                     Submit
                                                 </Button>
                                             </div>

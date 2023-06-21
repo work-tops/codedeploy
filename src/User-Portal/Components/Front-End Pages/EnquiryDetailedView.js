@@ -8,7 +8,7 @@ import file from '../Projectimages/BathroomFitting.jpg'
 import { Editor } from "@tinymce/tinymce-react";
 
 
-function OwnerEnquiryDetails() {
+function ServiceEnquiryDetails() {
     const editorRef = useRef(null);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -234,4 +234,4 @@ function OwnerEnquiryDetails() {
         </>
     )
 }
-export default OwnerEnquiryDetails
+export default ServiceEnquiryDetails

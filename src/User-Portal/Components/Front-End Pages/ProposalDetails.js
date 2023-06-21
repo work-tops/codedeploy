@@ -213,20 +213,20 @@ function ProposalDetails() {
                                                     <p className="text-success fw-semibold" style={{ fontSize: '14px' }}>£ 200</p>
                                                 </div>
                                                 {/* Accept */}
+                                                <span style={{ fontSize: '14px' }} className="badge p-2 bg-success mb-2 d-block">Accepted</span>
                                                 <Dropdown>
-                                                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                                    <Dropdown.Toggle className="w-100" variant="success" id="dropdown-basic">
                                                         Accept
                                                     </Dropdown.Toggle>
 
-                                                    <Dropdown.Menu>
+                                                    <Dropdown.Menu className="w-100">
                                                         <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
                                                         <Dropdown.Item onClick={() => setShowModal2(true)} className="text-danger">Decline</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                                 {/* Accepted */}
-                                                <p className="badge bg-success mt-2 p-2">Accepted</p>
                                                 {/* Edit Your Proposal */}
-                                                <Button as={Link} to="/editproposal" className="d-block btn bg-secondary border-0">Edit Your Proposal</Button>
+                                                <Button as={Link} to="/editproposal" className="d-block mt-2 btn bg-secondary border-0">Edit Your Proposal</Button>
                                             </Card.Body>
                                         </Card>
                                     </Card.Body>
@@ -244,7 +244,7 @@ function ProposalDetails() {
 
                 aria-labelledby="example-custom-modal-styling-title"
             >
-                <Modal.Header>
+                <Modal.Header closeButton>
                     <Modal.Title id="example-custom-modal-styling-title">
                         <h6 className="text-uppercase">
                             Please Type Your Message
@@ -275,7 +275,7 @@ function ProposalDetails() {
             </Modal >
             {/* Modal Content */}
             <Modal show={showModal2} onHide={handleClose2}>
-                <Modal.Header >
+                <Modal.Header closeButton>
                     <Modal.Title>Warning</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -285,10 +285,10 @@ function ProposalDetails() {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose2}>
-                        Cancel
+                        No
                     </Button>
                     <Button as={Link} to="/proposallist" variant="danger" onClick={handleClose2}>
-                        Decline
+                        Yes
                     </Button>
 
                 </Modal.Footer>

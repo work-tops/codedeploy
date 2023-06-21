@@ -312,31 +312,49 @@ const InvoiceTableCard = () => {
                                         </tbody>
                                     </table>
                                 </div>
-                                <div className="row justify-content-end">
-                                    <div className="col-auto">
+                                <div className="row g-3 justify-content-between">
+                                    <div className="order-2 order-lg-0 col-md-6">
+                                        <h6>Customer Notes</h6>
+                                        <p className="text-justify">
+                                            <p>
+                                                <span className="fw-semibold">For Work-tops Related Jobs,</span>You are required to pay only £250/- before template by PayLink or BACS. Upon your payment confirmation, our template team will contact you to book the appointment at your convenience.
+                                            </p>
+                                            <h6 className="mb-1">Step-by-step guide <a href="https://trade.work-tops.com/writer/open/0ilzf913f0d467ea9458aadfe091078a03508?authId=%7B%22linkId%22%3A%222nkNPlsvhVw-lULEWY%22%7D" target="_blank">(more details)</a></h6>
+                                            <ul type="none">
+                                                <li>Step 1: <a href="#">Quote</a></li>
+                                                <li>Step 2: <a href="#">Placing an Order with us</a></li>
+                                                <li>Step 3: <a href="#">Booking a Template appointment</a></li>
+                                                <li>Step 4: <a href="#">At Template</a></li>
+                                                <li>Step 5: <a href="#">Between Template & Installation</a></li>
+                                                <li>Step 6: <a href="#">At Installation</a></li>
+                                                <li>Step 7: <a href="#">After Care</a></li>
+                                            </ul>
+                                        </p>
+                                        <h6>Terms & Conditions</h6>
+                                        Read our <Link to="/termsofuse" className="text-capitalize me-1">Terms & Conditions</Link>to know more
+                                    </div>
+                                    <div className="col-md-6">
                                         <table className="table table-sm table-borderless fs--1 text-end">
                                             <tbody><tr>
                                                 <th className="text-900">Subtotal:</th>
                                                 <td className="fw-semi-bold">£ 18,230.00 </td>
                                             </tr>
                                                 <tr>
-                                                    <th className="text-900">Tax 8%:</th>
+                                                    <th className="text-900">Shipping Charges 20%:</th>
+                                                    <td className="fw-semi-bold">£ 1458.40</td>
+                                                </tr>
+                                                <tr>
+                                                    <th className="text-900">Reduced Rate [5%]:</th>
                                                     <td className="fw-semi-bold">£ 1458.40</td>
                                                 </tr>
                                                 <tr className="border-top">
                                                     <th className="text-900">Total:</th>
-                                                    <td className="fw-semi-bold">£ 19688.40</td>
+                                                    <td className="fw-semi-bold">£ 19,688.40</td>
                                                 </tr>
-                                                <tr className="border-top border-top-2 fw-bolder text-900">
-                                                    <th>Amount Due:</th>
-                                                    <td>£ 19688.40</td>
-                                                </tr>
+
                                             </tbody></table>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="card-footer bg-light">
-                                <p className="fs--1 mb-0"><strong>Notes: </strong>We really appreciate your business and if there’s anything else we can do, please let us know!</p>
                             </div>
                         </div>
                     </div>

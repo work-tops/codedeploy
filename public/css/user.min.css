@@ -428,6 +428,7 @@ body {
   right: -1px;
   animation: pulse 1s infinite;
 }
+
 .cart-badge-1 {
   position: absolute;
   top: -5px;
@@ -675,6 +676,7 @@ body {
 .Home-btns:hover:before {
   transform: scaleX(1);
 }
+
 /* No-2 */
 .Home-btns-1 {
   background: #003f6b;
@@ -710,19 +712,22 @@ body {
 .Home-btns-1:hover:before {
   transform: scaleX(1);
 }
+
 /*  */
 .CardContainer {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px; /* Adjust the width as needed */
+  width: 300px;
+  /* Adjust the width as needed */
   background-color: #fff;
   overflow-y: scroll;
 }
 
 .CardContainer::-webkit-scrollbar {
-  width: 8px; /* Customize the width of the scrollbar */
+  width: 8px;
+  /* Customize the width of the scrollbar */
 }
 
 .CardContainer::-webkit-scrollbar-thumb {
@@ -737,6 +742,7 @@ body {
 .CardContainer .card {
   height: 100%;
 }
+
 /*  */
 .ResponsiveForm .form-group {
   margin-bottom: 1rem;
@@ -748,6 +754,7 @@ body {
     margin-bottom: 0.5rem;
   }
 }
+
 /*  */
 .product-name {
   position: relative;
@@ -770,4 +777,80 @@ body {
 .product-name:hover::before {
   visibility: visible;
   transform: scaleX(1);
+}
+
+/*  */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+  opacity: 0.7;
+}
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.prev-button,
+.next-button,
+.close-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.prev-button:hover,
+.next-button:hover,
+.close-button:hover {
+  opacity: 0.7;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.close-button {
+  top: 10px;
+  right: 10px;
 }

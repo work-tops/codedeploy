@@ -1,4 +1,4 @@
-import React, {  } from "react";
+import React, { } from "react";
 import { Route, Switch } from "react-router-dom";
 import ProposalList from "../Front-End Pages/ProposalList";
 import ListJobs from "../Front-End Pages/ListJobs";
@@ -98,6 +98,9 @@ import EditInvoice from "../Front-End Pages/Profile/EditInvoice";
 import TextareaWithOptions from "../Front-End Pages/Profile/BussinessInformation";
 import NewInvoice from "../Front-End Pages/Profile/NewInvoice";
 import RepostProject from "../Front-End Pages/Post_Project/RepostProject";
+import ServiceEnquiryDetails from "../Front-End Pages/EnquiryDetailedView";
+import ProductEnquiryDetails from "../Front-End Pages/SellerEnquiryDetailedView";
+import TraderWorkStreamDetails from "../Front-End Pages/TraderWorkstreamDetails";
 const FrontEndRouters = () => {
     return (
         <Switch>
@@ -138,8 +141,8 @@ const FrontEndRouters = () => {
 
             {/* Enquries */}
             <Route path='/Enquirescard'><ProductEnquiresCard /></Route>
-            <Route path="/ownerEnquireDetails"><OwnerEnquiryDetails /></Route>
-            <Route path="/sellerEnquireDetails"><SellerEnquiryDetails /></Route>
+            <Route path="/ServiceEnquiryDetails"><ServiceEnquiryDetails /></Route>
+            <Route path="/ProductEnquiryDetails"><ProductEnquiryDetails /></Route>
             {/* Enquries */}
 
             {/* Quote */}
@@ -208,6 +211,7 @@ const FrontEndRouters = () => {
             <Route path='/InvoicedueCard'><InvoicedueCard /></Route>
             <Route path="/InvoiceFreelancerCard"><InvoiceFreelancerCard /></Route>
             <Route path="/WorkstreamDetails"><WorkStreamDetails /></Route>
+            <Route path="/TraderWorkstreamDetails"><TraderWorkStreamDetails/></Route>
             <Route path="/EditPostProject"><Editpostproject /></Route>
             <Route path="/EditProposal"><EditProposal /></Route>
             <Route path="/InvoiceCheckout"><InvoiceCheckout /></Route>
@@ -219,7 +223,7 @@ const FrontEndRouters = () => {
             <Route path="/project-owner-estimate"><OwnerEstimate /></Route>
             <Route path="/EditInvoice"><EditInvoice /></Route>
             <Route path="/NewInvoice"><NewInvoice /></Route>
-            <Route path="/RepostProject"><RepostProject/></Route>
+            <Route path="/RepostProject"><RepostProject /></Route>
             {/* New Pages */}
         </Switch>
 
