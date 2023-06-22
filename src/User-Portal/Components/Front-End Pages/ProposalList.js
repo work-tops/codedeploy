@@ -41,6 +41,8 @@ function ProposalList() {
                                 </h5>
                                 <div className='text-uppercase'>
                                     <span className='badge me-5 mb-2 p-2 bg-primary'>open</span>
+                                    <span className='badge me-5 mb-2 p-2 bg-warning'>Progress</span>
+                                    <span className='badge me-5 mb-2 p-2 bg-danger'>Expired</span>
                                     <span className='fw-semibold' style={{ fontSize: '13px' }}>Job Id:1234567</span>
                                 </div>
                             </div>
@@ -169,7 +171,7 @@ function ProposalList() {
                                                     <Dropdown.Item as={Link} to="/proposaldetails" className="text-success">Accept</Dropdown.Item>
                                                     {/* <Dropdown.Item as={Link} to="/proposallist"  className="text-danger">Decline</Dropdown.Item> */}
                                                 </Dropdown.Menu>
-                                                
+
                                             </Dropdown>
                                             <p role='button' onClick={handleShow1} className='mt-1 ms-3'>Report this Profile</p>
                                         </div>

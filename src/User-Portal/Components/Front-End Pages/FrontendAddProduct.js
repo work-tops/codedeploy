@@ -814,7 +814,7 @@ const FrontendAddProduct = () => {
                                             <Form.Label className="text-700 text-uppercase">
                                                 Description Tag Meta Field<span className='text-danger'>*</span>
                                             </Form.Label>
-                                            <Form.Control value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                            <Form.Control value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} as={"textarea"} rows={1} maxLength={300} className='resize-none w-100' />
                                         </Form.Group>
                                     </Card.Body>
                                 </Card>

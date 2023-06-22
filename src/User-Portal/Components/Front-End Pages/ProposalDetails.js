@@ -93,8 +93,9 @@ function ProposalDetails() {
                                     </Card.Body>
                                 </Card>
                                 <Card className="mb-3">
-                                    <Card.Header>
-                                        <h5 className="bg-transparent text-900 border-secondary">Send Message</h5>
+                                    <Card.Header className="bg-light d-flex justify-content-between">
+                                        <h5 className="bg-transparent text-900 border-secondary">Clarification Board</h5>
+                                        <Button className="Home-btns-1 text-uppercase" style={{background:'#003f6b'}}>Ask a Question</Button>
                                     </Card.Header>
                                     <Card.Body>
                                         <Form>

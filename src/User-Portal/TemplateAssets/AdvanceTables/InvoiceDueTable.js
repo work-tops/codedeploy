@@ -331,7 +331,9 @@ const InvoiceTableCard = () => {
                                             </ul>
                                         </p>
                                         <h6>Terms & Conditions</h6>
+                                        <p>
                                         Read our <Link to="/termsofuse" className="text-capitalize me-1">Terms & Conditions</Link>to know more
+                                        </p>
                                     </div>
                                     <div className="col-md-6">
                                         <table className="table table-sm table-borderless fs--1 text-end">

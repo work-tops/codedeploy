@@ -38,6 +38,13 @@ function FreelancerEditProfile() {
         setShowModal4(false);
     };
 
+    // Cancel Modal
+    const [showModal5, setShowModal5] = useState(false);
+
+    const handleClose5 = () => {
+        setShowModal5(false);
+    };
+
     return (
         <>
 
@@ -76,7 +83,7 @@ function FreelancerEditProfile() {
                                     <div className="col-lg-6"> <label className="form-label" for="first-name">First Name</label><input className="form-control" type="text" value="Peter" /></div>
                                     <div className="col-lg-6"> <label className="form-label" for="last-name">Last Name</label><input className="form-control" type="text" value="Leverkus" /></div>
                                     <div className="col-lg-6"> <label className="form-label" for="email1">Email</label><input className="form-control" type="text" value="petergms@gmail.com" /></div>
-                                    <div className="col-lg-6"> <label className="form-label" for="email2">Phone</label><input className="form-control" type="text" value="+44 211 799" /></div>
+                                    <div className="col-lg-6"> <label className="form-label" for="email2">Phone</label><input className="form-control" type="text" value="044 4381 421 1323" /></div>
                                     <div className="col-lg-12"> <label className="form-label" for="intro">Intro</label>
                                         {/* <textarea className="form-control" name="intro" cols="30" rows="13">
                                         
@@ -129,7 +136,7 @@ function FreelancerEditProfile() {
                                         <div className="col-3 mb-3 text-lg-end"><label className="form-label me-2" for="degree" >Bussiness Email:</label></div>
                                         <div className="col-9 col-sm-7 mb-3"> <input className="form-control form-control-sm" value="testworktops@gmail.com" type="email" /></div>
                                         <div className="col-3 mb-3 text-lg-end"><label className="form-label me-2" for="field" >Phone No:</label></div>
-                                        <div className="col-9 col-sm-7 mb-3"> <input className="form-control form-control-sm" value="+012-345-67890" type="text" /></div>
+                                        <div className="col-9 col-sm-7 mb-3"> <input className="form-control form-control-sm" value="044 4381 421 1323" type="text" /></div>
                                         <div className="col-3 text-lg-end"><label className="form-label me-2" for="edu-form3" >Bussiness Address:	 </label></div>
                                         <div className="col-9 col-sm-7 mb-3">
                                             <Editor
@@ -515,7 +522,7 @@ function FreelancerEditProfile() {
                                     </form>
                                 </div>
                             </div>
-                            <Button as={Link} to="/FreelancerProfile" className="btn w-100  btn-falcon-primary d-block">Back</Button>
+                            <Button onClick={() => setShowModal5(true)}  className="btn w-100  btn-falcon-primary d-block">Back</Button>
                         </div>
                     </div>
                 </div>
@@ -523,7 +530,7 @@ function FreelancerEditProfile() {
             {/*  */}
             {/*  */}
             <Modal show={showModal1} onHide={handleClose1}>
-                <Modal.Header >
+                <Modal.Header closeButton >
                     <Modal.Title>Warning</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -533,10 +540,10 @@ function FreelancerEditProfile() {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose1}>
-                        Cancel
+                        No
                     </Button>
                     <Button variant="danger" onClick={handleClose1}>
-                        Remove
+                        Yes
                     </Button>
 
                 </Modal.Footer>
@@ -544,7 +551,7 @@ function FreelancerEditProfile() {
             {/*  */}
             {/* Modal-2 */}
             <Modal show={showModal2} onHide={handleClose2}>
-                <Modal.Header >
+                <Modal.Header closeButton >
                     <Modal.Title>Warning</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -554,10 +561,10 @@ function FreelancerEditProfile() {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose2}>
-                        Cancel
+                        No
                     </Button>
                     <Button variant="danger" onClick={handleClose2}>
-                        Delete
+                        Yes
                     </Button>
 
                 </Modal.Footer>
@@ -565,7 +572,7 @@ function FreelancerEditProfile() {
             {/*  */}
             {/* Modal-2 */}
             <Modal show={showModal3} onHide={handleClose3}>
-                <Modal.Header >
+                <Modal.Header closeButton >
                     <Modal.Title>Warning</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -575,10 +582,10 @@ function FreelancerEditProfile() {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose3}>
-                        Cancel
+                        No
                     </Button>
                     <Button variant="danger" onClick={handleClose3}>
-                        Remove
+                        Yes
                     </Button>
 
                 </Modal.Footer>
@@ -586,7 +593,7 @@ function FreelancerEditProfile() {
             {/*  */}
             {/* Modal-4 */}
             <Modal show={showModal4} onHide={handleClose4}>
-                <Modal.Header >
+                <Modal.Header closeButton >
                     <Modal.Title>Warning</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -600,6 +607,27 @@ function FreelancerEditProfile() {
                     </Button>
                     <Button variant="danger" onClick={handleClose4}>
                         Remove
+                    </Button>
+
+                </Modal.Footer>
+            </Modal>
+            {/*  */}
+            {/* Modal-4 */}
+            <Modal show={showModal5} onHide={handleClose4}>
+                <Modal.Header closeButton >
+                    <Modal.Title>Warning</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p className="text-capitalize">
+                        Are you sure you want to leave this page
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose5}>
+                        No
+                    </Button>
+                    <Button as={Link} to="/FreelancerProfile" variant="danger" onClick={handleClose5}>
+                        Yes
                     </Button>
 
                 </Modal.Footer>

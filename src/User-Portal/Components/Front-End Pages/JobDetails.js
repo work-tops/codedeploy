@@ -95,6 +95,34 @@ function JobDetails() {
     const toastDanger = () => toast.success(<h6 className="text-sucess">Project Added to Wishlist</h6>);
     const toastDanger1 = () => toast.success(<h6 className="text-sucess">Follower Added to Wishlist</h6>);
 
+    // 
+    const [isAdded, setIsAdded] = useState(false);
+    const [isAdded1, setIsAdded1] = useState(false);
+    const handleAddToWishlist = () => {
+        setIsAdded(true);
+        const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+
+        toastDanger();
+    };
+
+    const handleRemoveFromWishlist = () => {
+        setIsAdded(false);
+        const toastDanger1 = () => toast.error(<h6 className="text-dark">Product Removed from Wishlist</h6>)
+        toastDanger1();
+    };
+    // 
+    const handleAddToWishlist1 = () => {
+        setIsAdded1(true);
+        const toastDanger = () => toast.success(<h6 className="text-sucess">Follower Added to Wishlist</h6>);
+
+        toastDanger();
+    };
+
+    const handleRemoveFromWishlist1 = () => {
+        setIsAdded1(false);
+        const toastDanger1 = () => toast.error(<h6 className="text-dark">Follower Removed from Wishlist</h6>)
+        toastDanger1();
+    };
     return (
         <>
 
@@ -213,11 +241,11 @@ function JobDetails() {
                                 </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">
-                                        <p className='text-justiy fw-bold' style={{ fontSize: '14px' }}>
+                                        {/* <p className='text-justiy fw-bold' style={{ fontSize: '14px' }}>
                                             <Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />
                                             1000
-                                            {/* <span className="ms-1 text-primary">(Fixed Price)</span> */}
-                                        </p>
+                                            <span className="ms-1 text-primary">(Fixed Price)</span>
+                                        </p> */}
                                         {/* <li>
                                             <p style={{ fontSize: '14px' }} className="fw-semibold ms-1">
                                                 <Icon icon="tabler:currency-pound"
@@ -305,21 +333,51 @@ function JobDetails() {
                                             Project ID : : 1484KHON
                                         </p>
                                         <div className="d-flex justify-content-center">
-                                            <Button
+                                            <>
+                                                {isAdded ? (
+                                                    <Button
+                                                        onClick={handleRemoveFromWishlist}
+                                                        role='button'
+                                                        style={{ fontSize: '14px' }}
+                                                        variant="falcon-default"
+                                                        href="#!"
+                                                        data-bs-toggle="tooltip"
+                                                        data-bs-placement="top"
+                                                        aria-label="Remove from Wishlist"
+                                                        data-bs-original-title="Remove from Wishlist"
+                                                    >
+                                                        <span className="">
+                                                            <Icon icon="icon-park-solid:like" style={{ marginTop: '-5px' }} color="#df2020" width="20" height="20" /> Remove from Wishlist
+                                                        </span>
+                                                    </Button>
+                                                ) : (
+                                                    <Button
+                                                        onClick={handleAddToWishlist}
+                                                        role='button'
+                                                        style={{ fontSize: '14px' }}
+                                                        variant="falcon-default"
+                                                        href="#!"
+                                                        data-bs-toggle="tooltip"
+                                                        data-bs-placement="top"
+                                                        aria-label="Add to Wishlist"
+                                                        data-bs-original-title="Add to Wishlist"
+                                                    >
+                                                        <span className="">
+                                                            <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
+                                                            Add to Wishlist
+                                                        </span>
+                                                    </Button>
+                                                )}
+                                            </>
+                                            {/* <Button
                                                 onClick={toastDanger}
                                                 variant="falcon-default"
                                                 className=""
                                             // as={Link}
                                             // to="/wishlist/project"
                                             >
-                                                <span className="me-2">
-                                                    <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
-                                                    Add to Wishlist
-                                                </span>
-                                                <span className="">
-                                                    <Icon icon="icon-park-solid:like" style={{ marginTop: '-5px' }} color="#df2020" width="20" height="20" /> Remove from Wishlist
-                                                </span>
-                                            </Button>
+                                                
+                                               </Button> */}
                                         </div>
                                     </div>
                                     {/*  */}
@@ -349,10 +407,41 @@ function JobDetails() {
                                     <div className="d-flex mt-3 justify-content-center gap-5">
                                         <p role="button" style={{ color: '#003f6b', cursor: 'default' }}>Name</p>
                                         <p role="button" style={{ color: '#003f6b', cursor: 'default' }}>Profession</p>
-                                        <p role="button" onClick={toastDanger1}>
-                                            <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
-                                            <Icon icon="icon-park-solid:like" style={{ marginTop: '-5px' }} color="#df2020" width="20" height="20" />
-                                        </p>
+                                        <>
+                                            {isAdded1 ? (
+                                                <p
+                                                    onClick={handleRemoveFromWishlist1}
+                                                    role='button'
+                                                    style={{ fontSize: '14px' }}
+                                                    className="text-justify fw-semibold"
+                                                    href="#!"
+                                                    data-bs-toggle="tooltip"
+                                                    data-bs-placement="top"
+                                                    aria-label="Remove from Wishlist"
+                                                    data-bs-original-title="Remove from Wishlist"
+                                                >
+                                                    <span>
+                                                        <Icon icon="icon-park-solid:like" className="me-1" style={{ marginTop: '-2px', color: '#df2020' }} width="20" height="20" />
+                                                    </span>
+                                                </p>
+                                            ) : (
+                                                <p
+                                                    onClick={handleAddToWishlist1}
+                                                    role='button'
+                                                    style={{ fontSize: '14px' }}
+                                                    className="text-justify fw-semibold"
+                                                    href="#!"
+                                                    data-bs-toggle="tooltip"
+                                                    data-bs-placement="top"
+                                                    aria-label="Add to Wishlist"
+                                                    data-bs-original-title="Add to Wishlist"
+                                                >
+                                                    <span>
+                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-2px' }} width="20" height="20" />
+                                                    </span>
+                                                </p>
+                                            )}
+                                        </>
                                     </div>
 
 
@@ -383,7 +472,7 @@ function JobDetails() {
                                                     rows={5} />
                                             </Form.Group>
                                             <div className="d-flex justify-content-center">
-                                                <Button as={Link}  style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 w-100 text-uppercase">
+                                                <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 w-100 text-uppercase">
                                                     Submit
                                                 </Button>
                                             </div>

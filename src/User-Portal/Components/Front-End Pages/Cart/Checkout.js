@@ -84,7 +84,7 @@ function Checkout() {
                                             dialogClassName="modal-lg modal-90w"
                                             aria-labelledby="example-custom-modal-styling-title"
                                         >
-                                            <Modal.Header>
+                                            <Modal.Header closeButton>
                                                 <h5 className="text-900"> Address</h5>
                                             </Modal.Header>
                                             <Modal.Body>

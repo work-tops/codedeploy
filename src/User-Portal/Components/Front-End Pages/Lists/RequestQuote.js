@@ -66,7 +66,7 @@ function RequestQuote() {
                                     </Card.Header>
                                     <Card.Body>
                                         <Form.Group className="mb-3">
-                                            <Form.Control type="text"
+                                            <Form.Control disabled type="text"
                                             />
                                         </Form.Group>
                                     </Card.Body>

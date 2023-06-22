@@ -54,7 +54,7 @@ const OwnerEstimateTable = () => {
         {
             date: '22 MAR 2023',
             customerName: 'Peter Leverkus',
-            estimateNo: "MAI/EST/2737",
+            estimateNo: <a href="#" onClick={handleShow}>MAI/EST/000001</a>,
             enquiryNo: '#2737',
             status: <span className="badge bg-success">
                 Paid
@@ -70,7 +70,7 @@ const OwnerEstimateTable = () => {
         {
             date: '22 MAR 2023',
             customerName: 'Peter Leverkus',
-            estimateNo: "MAI/EST/2737",
+            estimateNo: <a href="#" onClick={handleShow}>MAI/EST/000001</a>,
             enquiryNo: '#2737',
             status: <span className="badge bg-danger">
                 Declined
@@ -86,7 +86,7 @@ const OwnerEstimateTable = () => {
         {
             date: '22 MAR 2023',
             customerName: 'Peter Leverkus',
-            estimateNo: "MAI/EST/2737",
+            estimateNo: <a href="#" onClick={handleShow}>MAI/EST/000001</a>,
             enquiryNo: '#2737',
             status: <span className="badge bg-primary">
                 New
@@ -163,7 +163,7 @@ const OwnerEstimateTable = () => {
                             <div className="card-body">
                                 <div className="row justify-content-between align-items-center">
                                     <div className="col-md">
-                                        <h5 className="mb-2 mb-md-0"># MAI/EST/2737</h5>
+                                        <h5 className="mb-2 mb-md-0"># MAI/EST/000001</h5>
                                     </div>
                                     <div className="col-auto">
                                         <Link to="/InvoiceCheckout">
@@ -211,7 +211,7 @@ const OwnerEstimateTable = () => {
                                                 <tbody>
                                                     <tr>
                                                         <th className="text-sm-end">Estimate No:</th>
-                                                        <td># MAI/EST/2737</td>
+                                                        <td># MAI/EST/000001</td>
                                                     </tr>
                                                     <tr>
                                                         <th className="text-sm-end">Enquiry Number:</th>

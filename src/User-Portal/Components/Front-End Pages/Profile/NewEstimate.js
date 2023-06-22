@@ -57,6 +57,13 @@ function NewEstimate() {
     const handleShow3 = () => setShow3(true);
     const handleClose3 = () => setShow3(false);
     //
+
+    // 
+    const [show4, setShow4] = useState(false);
+    const handleShow4 = () => setShow4(true);
+    const handleClose4 = () => setShow4(false);
+    //
+
     const vatOptions = ['Standard Rate [20%]', 'Reduced Rate[5%]', 'Zero Rate[0%]', 'Vat @ [20%]'];
 
 
@@ -131,7 +138,7 @@ function NewEstimate() {
                                             <Form.Control
                                                 type="text"
                                                 disabled
-                                                placeholder="MAI/EST/2737"
+                                                placeholder="MAI/EST/000001"
                                             />
                                         </Form.Group>
                                     </Row>
@@ -158,7 +165,7 @@ function NewEstimate() {
                                             <Form.Label className="text-uppercase">Product Title<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                disabled
+
                                                 placeholder="Eg : Quartz"
                                             />
                                         </Form.Group>
@@ -167,7 +174,7 @@ function NewEstimate() {
                                             <Form.Label className="text-uppercase">Service Title<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                disabled
+
                                                 placeholder="Eg : Kitchen Worktops"
                                             />
                                         </Form.Group>
@@ -176,7 +183,7 @@ function NewEstimate() {
                                             <Form.Label className="text-uppercase">Thickness<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                disabled
+
                                                 placeholder="Eg : 20 MM"
 
                                             />
@@ -243,7 +250,7 @@ function NewEstimate() {
                                                 />
                                             </td>
                                             <td style={{ width: '0%' }}>0.00</td>
-                                            <td style={{ width: '0%' }}><Icon className="cursor-pointer hover-danger" icon="ic:baseline-delete" width="24" height="24" /></td>
+                                            <td style={{ width: '0%' }}><Icon onClick={handleShow4} className="cursor-pointer hover-danger" icon="ic:baseline-delete" width="24" height="24" /></td>
                                         </tr>
                                         <tr>
                                             <td style={{ width: '0%' }}><textarea style={{ width: '300px' }} className="form-control resize-none" rows="3"></textarea></td>
@@ -260,7 +267,7 @@ function NewEstimate() {
                                                 />
                                             </td>
                                             <td style={{ width: '0%' }}>0.00</td>
-                                            <td style={{ width: '0%' }}><Icon className="hover-danger cursor-pointer" icon="ic:baseline-delete" width="24" height="24" /></td>
+                                            <td style={{ width: '0%' }}><Icon onClick={handleShow4} className="hover-danger cursor-pointer" icon="ic:baseline-delete" width="24" height="24" /></td>
                                         </tr>
 
                                     </tbody>
@@ -306,10 +313,10 @@ function NewEstimate() {
                                                 Customer Notes
                                                 {/* <span className="text-danger">*</span> */}
                                             </Form.Label>
-                                            <Form.Control
-                                                as="textarea"
-                                                rows={3}
-                                                value="You are required to pay only £250/- before template by PayLink or BACS. Upon your payment confirmation, our template team will contact you to book the appointment at your convenience.
+                                            <Editor
+                                                onInit={(evt, editor) => editorRef.current = editor}
+                                                initialValue="
+                                            For Work-tops Related Jobs,You are required to pay only £250/- before template by PayLink or BACS. Upon your payment confirmation, our template team will contact you to book the appointment at your convenience.
 
                                                 Step-by-step guide (more details)
                                                 
@@ -320,10 +327,22 @@ function NewEstimate() {
                                                  Step 5: Between Template & Installation
                                                  Step 6: At Installation
                                                  Step 7: After Care
-                                                
-                                                By making the payment you're agreeing our terms & conditions"
-                                                className="resize-none"
+                                                 "
+                                                init={{
 
+                                                    height: 200,
+                                                    menubar: false,
+                                                    // plugins: [
+                                                    //     'advlist autolink lists link image charmap print preview anchor',
+                                                    //     'searchreplace visualblocks code fullscreen',
+                                                    //     'insertdatetime media table paste code help wordcount'
+                                                    // ],
+                                                    toolbar: 'undo redo | formatselect | ' +
+                                                        'bold italic  | alignleft aligncenter ' +
+                                                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                        'removeformat ',
+                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                }}
                                             />
                                         </Form.Group>
                                     </div>
@@ -410,26 +429,9 @@ function NewEstimate() {
                                             <Form.Label className="text-uppercase">
                                                 Terms & Conditions
                                             </Form.Label>
-                                            <Form.Control
-                                                as="textarea"
-                                                rows={3}
-                                                value="ACCOUNT DETAILS :
-                                                JSL UK & EU Ltd
-                                                T/A Work-tops.com
-                                                BANK NAME & LOCATION: METRO BANK, CAMBRIDGE
-                                                ACCOUNT NUMBER: 0000000
-                                                SORT CODE NUMBER: 0000000
-                                                VAT Registration No: GB341745211
-                                                
-                                                Terms & Conditions
-                                                https://trade.work-tops.com/error/b453e6328b2edf6b4e37622eba00dc070e07358d565dcb75b2786cf57b
-                                                
-                                                Thank You
-                                                Accounts Team
-                                                Work-tops.com"
-                                                className="resize-none"
-
-                                            />
+                                            <p>
+                                                Read our <Link to="/termsofuse" className="text-capitalize me-1">Terms & Conditions</Link>to know more
+                                            </p>
                                         </Form.Group>
                                     </div>
 
@@ -612,7 +614,23 @@ function NewEstimate() {
                 </Modal>
 
                 {/* Modal-2 */}
-
+                {/* Modal-3 */}
+                <Modal show={show4} onHide={handleClose4} centered>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Warning</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>Are you sure you want to remove?</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose4}>
+                            No
+                        </Button>
+                        <Button variant="danger" onClick={handleClose4}>
+                            Yes
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             </Row >
         </>
     )

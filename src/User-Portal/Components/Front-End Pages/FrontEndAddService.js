@@ -290,14 +290,14 @@ const FrontendAddService = () => {
                                                         'alignright alignjustify | bullist numlist outdent indent | ' +
                                                         'removeformat ',
                                                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
-                                                    
+
                                                 }}
                                             />
                                         </Form.Group>
                                         <Row className='g-3 mb-3'>
                                             <Form.Group as={Col} className='mb-3'>
                                                 <Form.Label className="text-uppercase text-700">Services Location<span className="text-danger">*</span></Form.Label>
-                                                <Multiselect style={{zIndex: '1000'}} options={servitag[1]?.list} displayValue="value" className='form-control' />
+                                                <Multiselect style={{ zIndex: '1000' }} options={servitag[1]?.list} displayValue="value" className='form-control' />
                                             </Form.Group>
                                             {/* <Form.Group as={Col} className=' mb-3'>
                                                     <Form.Label className="text-uppercase text-700">Services Range
@@ -305,19 +305,11 @@ const FrontendAddService = () => {
                                                     <Multiselect options={servitag[2]?.list} displayValue="value" className='form-control' />
                                                 </Form.Group> */}
                                         </Row>
-                                        {/* <Row className='mb-3'>
-                                                <Col>
-                                                    <Form.Check type="checkbox" label="Shipping Requires" className="mb-0" />
-
-
-                                                </Col>
-                                                <Col>
-                                                    <Form.Check type="checkbox" label="Charge Taxes on this product" className="mb-0" />
-
-
-                                                </Col>
-
-                                            </Row> */}
+                                        <Row className='mb-3'>
+                                            <Col>
+                                                <Form.Check type="checkbox" label="Shipping Requires" className="mb-0" />
+                                            </Col>
+                                        </Row>
                                         <Row className='g-3 mb-3'>
                                             <Form.Group as={Col} className='mb-3'>
                                                 <Form.Label className="text-uppercase text-700">Price Type<span className="text-danger">*</span></Form.Label>
@@ -511,7 +503,7 @@ const FrontendAddService = () => {
                                             <Form.Label className="text-uppercase text-700">
                                                 Description Tag Meta Field
                                                 <span className="text-danger">*</span></Form.Label>
-                                            <Form.Control value={form.metadescription} maxLength={300} required name="metadescription" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                            <Form.Control value={form.metadescription} maxLength={300} required name="metadescription" onChange={(e) => { handleChange(e) }} as={"textarea"} rows={1} className='resize-none w-100' />
                                         </Form.Group>
                                     </Card.Body>
                                 </Card>

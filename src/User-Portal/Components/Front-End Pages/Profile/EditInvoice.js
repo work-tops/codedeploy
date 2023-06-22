@@ -12,18 +12,6 @@ import { Link } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
 
 function EditInvoice() {
-    const [cover, setCover] = useState();
-
-    const { getRootProps, getInputProps } = useDropzone({
-        accept: 'image/*',
-        onDrop: acceptedFiles => {
-            setCover(
-                Object.assign(acceptedFiles[0], {
-                    preview: URL.createObjectURL(acceptedFiles[0])
-                })
-            );
-        }
-    });
 
 
     const [showModal, setShowModal] = useState(false);
@@ -36,15 +24,6 @@ function EditInvoice() {
     };
 
     const handleModalClose = () => {
-        setShowModal(false);
-    };
-
-
-    const handleSaveNewVat = () => {
-        if (newVatName && newVatRate) {
-            const newVatOption = `${newVatName} (${newVatRate}%)`;
-            vatOptions.push(newVatOption);
-        }
         setShowModal(false);
     };
 
@@ -144,7 +123,7 @@ function EditInvoice() {
                                             <Form.Control
                                                 type="text"
                                                 disabled
-                                                value={"MAI/INV/2737"}
+                                                value={"MAI/INV/000001"}
                                             />
                                         </Form.Group>
                                     </Row>
@@ -171,7 +150,7 @@ function EditInvoice() {
                                             <Form.Label className="text-uppercase">Product Title<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                disabled
+
                                                 value="Quartz"
                                             />
                                         </Form.Group>
@@ -180,7 +159,7 @@ function EditInvoice() {
                                             <Form.Label className="text-uppercase">Service Title<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                disabled
+
                                                 value="Kitchen Worktops"
                                             />
                                         </Form.Group>
@@ -189,7 +168,7 @@ function EditInvoice() {
                                             <Form.Label className="text-uppercase">Thickness<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                disabled
+
                                                 value="20 MM"
 
                                             />
@@ -315,7 +294,7 @@ function EditInvoice() {
                                                 <Button variant="secondary" onClick={handleModalClose}>
                                                     Cancel
                                                 </Button>
-                                                <Button variant="primary" onClick={handleSaveNewVat}>
+                                                <Button variant="primary" onClick={handleModalClose}>
                                                     Save
                                                 </Button>
                                             </Modal.Footer>
@@ -326,10 +305,10 @@ function EditInvoice() {
                                                 Customer Notes
                                                 {/* <span className="text-danger">*</span> */}
                                             </Form.Label>
-                                            <Form.Control
-                                                as="textarea"
-                                                rows={3}
-                                                value="You are required to pay only £250/- before template by PayLink or BACS. Upon your payment confirmation, our template team will contact you to book the appointment at your convenience.
+                                            <Editor
+                                                onInit={(evt, editor) => editorRef.current = editor}
+                                                initialValue="
+                                            For Work-tops Related Jobs,You are required to pay only £250/- before template by PayLink or BACS. Upon your payment confirmation, our template team will contact you to book the appointment at your convenience.
 
                                                 Step-by-step guide (more details)
                                                 
@@ -340,10 +319,22 @@ function EditInvoice() {
                                                  Step 5: Between Template & Installation
                                                  Step 6: At Installation
                                                  Step 7: After Care
-                                                
-                                                By making the payment you're agreeing our terms & conditions"
-                                                className="resize-none"
+                                                 "
+                                                init={{
 
+                                                    height: 200,
+                                                    menubar: false,
+                                                    // plugins: [
+                                                    //     'advlist autolink lists link image charmap print preview anchor',
+                                                    //     'searchreplace visualblocks code fullscreen',
+                                                    //     'insertdatetime media table paste code help wordcount'
+                                                    // ],
+                                                    toolbar: 'undo redo | formatselect | ' +
+                                                        'bold italic  | alignleft aligncenter ' +
+                                                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                        'removeformat ',
+                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                }}
                                             />
                                         </Form.Group>
                                     </div>
@@ -428,29 +419,12 @@ function EditInvoice() {
                                             <Form.Label className="text-uppercase">
                                                 Terms & Conditions
                                             </Form.Label>
-                                            <Form.Control
-                                                as="textarea"
-                                                rows={3}
-                                                value="ACCOUNT DETAILS :
-                                                JSL UK & EU Ltd
-                                                T/A Work-tops.com
-                                                BANK NAME & LOCATION: METRO BANK, CAMBRIDGE
-                                                ACCOUNT NUMBER: 0000000
-                                                SORT CODE NUMBER: 0000000
-                                                VAT Registration No: GB341745211
-                                                
-                                                Terms & Conditions
-                                                https://trade.work-tops.com/error/b453e6328b2edf6b4e37622eba00dc070e07358d565dcb75b2786cf57b
-                                                
-                                                Thank You
-                                                Accounts Team
-                                                Work-tops.com"
-                                                className="resize-none"
-
-                                            />
+                                            <p>
+                                                Read our <Link to="/termsofuse" className="text-capitalize me-1">Terms & Conditions</Link>to know more
+                                            </p>
                                         </Form.Group>
                                     </div>
-                                    
+
                                 </div>
                                 <Button as={Link} to="/InvoiceFreelancerCard" className="btn-primary me-2" type="submit">Save</Button>
                                 <Button as={Link} to="/InvoiceFreelancerCard" className="btn-success me-2" type="submit">Save & Send</Button>

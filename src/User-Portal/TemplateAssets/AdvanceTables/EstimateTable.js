@@ -41,7 +41,7 @@ const data = [
     {
         date: '22 MAR 2023',
         customerName: 'Peter Leverkus',
-        estimateNo: "MAI/EST/2737",
+        estimateNo: "MAI/EST/000001",
         enquiryNo: '#2737',
         status: <span className="badge bg-success">
             Sent
@@ -59,7 +59,7 @@ const data = [
     {
         date: '22 MAR 2023',
         customerName: 'Peter Leverkus',
-        estimateNo: "MAI/EST/2737",
+        estimateNo: "MAI/EST/000001",
         enquiryNo: '#2737',
         status: <span className="badge bg-danger">
             Declined
@@ -77,7 +77,7 @@ const data = [
     {
         date: '22 MAR 2023',
         customerName: 'Peter Leverkus',
-        estimateNo: "MAI/EST/2737",
+        estimateNo: "MAI/EST/000001",
         enquiryNo: '#2737',
         status: <span className="badge bg-secondary">
             Draft
@@ -95,7 +95,7 @@ const data = [
     {
         date: '22 MAR 2023',
         customerName: 'Peter Leverkus',
-        estimateNo: "MAI/EST/2737",
+        estimateNo: "MAI/EST/000001",
         enquiryNo: '#2737',
         status: <span className="badge bg-primary">
             Invoiced
@@ -114,7 +114,7 @@ const data = [
     {
         date: '22 MAR 2023',
         customerName: 'Peter Leverkus',
-        estimateNo: "MAI/EST/2737",
+        estimateNo: "MAI/EST/000001",
         enquiryNo: '#2737',
         status: <span className="badge bg-warning">
             Expired
