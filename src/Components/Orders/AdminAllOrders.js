@@ -1,37 +1,28 @@
-// import React, { useEffect, useState } from "react";
+// import React, { useState, useEffect } from "react";
 // import AiHeader from "../Header/AiHeader";
 // import AiMenu from "../Menubar/AiMenu";
 // import { Link } from "react-router-dom";
-// import { getAllData, deleteData } from "../../Services/ProxyService";
+// import { getAllData } from "../../Services/ProxyService";
 // import ReactPaginate from 'react-paginate';
-// import toast, { Toaster } from 'react-hot-toast';
 
-// function AllCategoryCommission() {
-//     const [form, setform] = useState([]);
-//     const Catcomdata = async () => {
-//         const response = await getAllData("commission/category/3")
-//         setform(response.data.commission)
+// function AllOrders() {
+
+//     const [orders, setorders] = useState([]);
+//     const ordersdata = async () => {
+//         const response = await getAllData('orders/all');
+//         setorders(response.data.orders);
+//         setShowSpinner(false);
 //     }
-
+//     const [showSpinner, setShowSpinner] = useState(true);
 //     useEffect(() => {
-//         Catcomdata()
+//         ordersdata();
 //     }, [])
-
-//     const commmissiondel = async (data) => {
-//         const response = await deleteData('commission/' + data._id);
-//         if (response.status === 201) {
-//             toast.success('Successfully Commission Deleted')
-//             Catcomdata()
-//         } else {
-//             toast.error('Something went wrong')
-//         }
-//     }
 
 //     const [listPerPage] = useState(10);
 //     const [pageNumber, setPageNumber] = useState(0);
 //     const pagesVisited = pageNumber * listPerPage;
-//     const lists = form.slice(pagesVisited, pagesVisited + listPerPage);
-//     const pageCount = Math.ceil(form.length / listPerPage);
+//     const lists = orders.slice(pagesVisited, pagesVisited + listPerPage);
+//     const pageCount = Math.ceil(orders.length / listPerPage);
 //     const changePage = ({ selected }) => {
 //         setPageNumber(selected);
 //     }
@@ -48,15 +39,23 @@
 //                 <div className="page-bg">
 //                     <div className="product-adding-div">
 //                         <div>
-//                             <h4 className="ai-seller-title" >Category Commission Settings <span className="badge-1 badge bg-secondary">#100</span></h4>
-//                             <p className="ai-title-note">Here are the Category Commission Setting on your store</p>
+//                             <h4 className="ms-3 mt-2" >All Orders <span className="badge-1 badge bg-secondary">#100</span></h4>
+//                             <p className="med-sub-title">Here are the All Orders on your store</p>
 //                         </div>
+
 //                         <div className="row">
-//                             <div className="col-12">
-//                                 <Link to="categorycommission" role="button"><button className="add-commission">Add Commission to Category</button></Link>
+//                             <div className="dropdown col-12">
+//                                 <button className="export-details btn dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+//                                     Export Details
+//                                 </button>
+//                                 <ul className="dropdown-menu">
+//                                     <li className="dropdown-item">Export From Date : <input type="date" /></li>
+//                                     <li className="dropdown-item">Export -To- Date :- <input type="date" /></li>
+//                                 </ul>
 //                             </div>
 //                         </div>
 //                     </div>
+
 //                     <p className="bulk-actions">Bulk Action :{' '}
 //                         <select className="select-opt">
 //                             <option>Select Options</option>
@@ -86,32 +85,44 @@
 //                         </div>
 //                     </div>
 //                     <div className="all-jobs-div">
+//                         <div style={{ height: '0px' }} className="text-center">
+//                             {showSpinner && (
+//                                 <div
+//                                     className="spinner-border"
+//                                     role="status"
+//                                     style={{ width: '70px', height: '70px', fontSize: "20px", opacity: "0.7" }} // set the width and height here
+//                                 >
+//                                     <span className="sr-only">Loading...</span>
+//                                 </div>
+//                             )}
+//                         </div>
+
 //                         <table className="allproducts-table">
-//                             <tr className="product-heading ">
+//                             <tbody>
+//                                 <tr className="product-heading ">
 //                                             <td className="table_data rounded-start"><input type='checkbox' /></td>
-//                                             <td className="table_data">Category ID <i className="ri-arrow-down-s-fill"></i>
+//                                             <td className="table_data">Order ID <i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0 filter-search" type="search" />
 //                                             </td>
-//                                             <td className="table_data">Category Name <i className="ri-arrow-down-s-fill"></i>
+//                                             <td className="table_data">Store Order ID <i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0  filter-search" type="search" />
 //                                             </td>
-//                                             <td className="table_data">Commission Type<i className="ri-arrow-down-s-fill"></i>
+//                                             <td className="table_data">Seller Name <i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0  filter-search" type="search" />
 //                                             </td>
-//                                             <td className="table_data">Email ID <i className="ri-arrow-down-s-fill"></i>
+//                                             <td className="table_data">Payment Mode<i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0  filter-search" type="search" />
 //                                             </td>
 
-//                                             <td className="table_data">Commission Type <i className="ri-arrow-down-s-fill"></i>
+//                                             <td className="table_data">Payment Status<i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0  filter-search " type="search" />
 //                                             </td>
-//                                             <td className="table_data">First Commission <i className="ri-arrow-down-s-fill"></i>
-//                                                 <input className="width-100 border-0  filter-search" type="search" />
+//                                             <td className="table_data">Tracking ID<i className="ri-arrow-down-s-fill"></i>
+//                                                 <input className="width-100 border-0  filter-search " type="search" />
 //                                             </td>
-//                                             <td className="table_data">Second Commission<i className="ri-arrow-down-s-fill"></i>
-//                                                 <input className="width-100 border-0  filter-search" type="search" />
+//                                             <td className="table_data">Order Status<i className="ri-arrow-down-s-fill"></i>
+//                                                 <input className="width-100 border-0  filter-search " type="search" />
 //                                             </td>
-
 //                                             <td className="table_data">Created date<i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0  filter-search " type="search" />
 //                                             </td>
@@ -120,40 +131,34 @@
 //                                             </td>
 //                                             <td className="table_data rounded-end">Action</td>
 //                                         </tr>
-//                             {lists.map((data, key) => (
-//                                 <tr key={key}>
-//                                     <td classname="id"><input type='checkbox' /></td>
-//                                     <td classname="id">2456781</td>
-//                                     <td classname="id">{data.category}</td>
-//                                     <td classname="id">{data.commission_type}</td>
-//                                     <td classname="id">{data.first_commission == "" || data.first_commission == undefined ? (
-//                                         <span> -</span>
-//                                     ) : (
-//                                         <span> {data.first_commission}</span>
-//                                     )}</td>
-//                                      <td classname="id">{data.second_commission == "" || data.second_commission == undefined ? (
-//                                         <span> -</span>
-//                                     ) : (
-//                                         <span> {data.second_commission}</span>
-//                                     )}</td>
-//                                              <td classname="id"><span >{(data.created_date).slice(0, 10)}</span></td>
-//                                         <td classname="id"><span   >{(data.modified_date).slice(0, 10)}</span></td>
-//                                     <td classname="id">
-//                                         <div class="dropdown">
-//                                             <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-//                                                 <i class="fa-solid fa-ellipsis"></i>
-//                                             </a>
-//                                             <ul class="dropdown-menu">
-//                                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-//                                                 <li><a class="dropdown-item" onClick={()=>{commmissiondel(data)}}><i class="fa-solid fa-trash"></i> Delete</a></li>
-//                                             </ul>
-//                                         </div>
-//                                     </td>
-//                                 </tr>
-//                             ))}
-
+//                                 {lists.map((data, key) => (
+//                                     <tr key={key}>
+//                                         <td classname="td"><input type='checkbox' /></td>
+//                                         <td classname="td">{data.order_id}</td>
+//                                         <td classname="td">{data.store_order_id}</td>
+//                                         <td classname="td">{data.seller}</td>
+//                                         <td classname="td">{data.payment_mode}</td>
+//                                         <td classname="td"><span className="pro-status-processing">{data.payment_stats}</span></td>
+//                                         <td classname="td">{data.tracking_id}</td>
+//                                         <td classname="td"><span className="pro-status-open">{data.order_status}</span></td>
+//                                         <td classname="td"><span >{(data.created_date).slice(0, 10)}</span></td>
+//                                         <td classname="td"><span   >{(data.modified_date).slice(0, 10)}</span></td>
+//                                         <td classname="td">
+//                                             <div className="dropdown">
+//                                                 <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+//                                                     <i className="fa-solid fa-ellipsis"></i>
+//                                                 </a>
+//                                                 <ul className="dropdown-menu">
+//                                                     <li><a className="dropdown-item" href="#"><i className="fa-solid fa-eye"></i> View</a></li>
+//                                                     <li><a className="dropdown-item" href="#"><i className="fa-solid fa-bell"></i> Send Remainder</a></li>
+//                                                 </ul>
+//                                             </div>
+//                                         </td>
+//                                     </tr>
+//                                 ))}
+//                             </tbody>
 //                         </table>
-//                         <span className="showing-tag-name">Showing 1-30 List</span>
+
 //                         <div className="mt-5" >
 //                             <ReactPaginate
 //                                 style={{ padding: "5px", margin: "0px", border: "none" }}
@@ -169,13 +174,24 @@
 //                                 total={lists.length}
 //                             />
 //                         </div>
+
+//                         {/* <span className="showing-tag-name">Showing 1-30 List</span>
+//                         <div className="all-pro-pagination ">
+//                             <button className="back-btn shadow bg-body rounded"><i className="fa-solid fa-chevron-left"></i></button>
+//                             <button className="shadow bg-body rounded">1</button>
+//                             <button className="shadow bg-body rounded">2</button>
+//                             <button className="shadow bg-body rounded">3</button>
+//                             <button className="shadow bg-body rounded"><i className="fa-solid fa-ellipsis"></i></button>
+//                             <button className="shadow bg-body rounded">25</button>
+//                             <button className="next-btn"><i className="fa-solid fa-chevron-right"></i></button>
+//                         </div> */}
 //                     </div>
 //                 </div>
 //             </div>
 //         </div>
 //     )
 // }
-// export default AllCategoryCommission
+// export default AllOrders
 
 import React from "react";
 import AdvanceTableWrapper from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableWrapper";
@@ -188,8 +204,6 @@ import product_image from "../../Images/product_image.png"
 import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import AdminHeader from "../Menubar/AiMenu";
-import { Link } from "react-router-dom";
-
 const columns = [
     {
         accessor: 'jobId',
@@ -487,7 +501,7 @@ const data = [
     }
 ];
 
-const AllCategoryCommission = () => {
+const AllOrders = () => {
     function BulAction({ selectedRowIds }) {
         return (
             <Row className="flex-between-center mb-3">
@@ -495,7 +509,7 @@ const AllCategoryCommission = () => {
                     <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
-                                'You have selected ' + Object.keys(selectedRowIds).length + ' Category Commissions'
+                                'You have selected ' + Object.keys(selectedRowIds).length + ' Orders'
                                 :
                                 ''
                         }
@@ -557,14 +571,11 @@ const AllCategoryCommission = () => {
                     <AdminHeader />
                 </Col>
                 <Col lg={12} className="mt-4">
-                    <Card className=" ms-3 me-3 mb-3">
+                    <Card className="ms-3 me-3 mb-3">
                         <Card.Header className="bg-light" as={"h5"}>
-                            All Category Commission
+                            All Orders
                         </Card.Header>
                         <Card.Body>
-                            <div className="d-flex justify-content-end">
-                                <Button as={Link} to="/categorycommission" variant="success">Category Commission</Button>
-                            </div>
                             <AdvanceTableWrapper
                                 columns={columns}
                                 data={data}
@@ -601,4 +612,4 @@ const AllCategoryCommission = () => {
         </>
     )
 }
-export default AllCategoryCommission
+export default AllOrders

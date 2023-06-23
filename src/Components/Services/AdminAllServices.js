@@ -1,72 +1,84 @@
 // import React, { useEffect, useState } from "react";
 // import AiHeader from "../Header/AiHeader";
 // import AiMenu from "../Menubar/AiMenu";
+// import pom from '../../Images/product_image.png'
 // import { Link } from "react-router-dom";
 // import { getAllData, deleteData } from "../../Services/ProxyService";
 // import ReactPaginate from 'react-paginate';
 // import toast, { Toaster } from 'react-hot-toast';
 
-// function AllCategoryCommission() {
-//     const [form, setform] = useState([]);
-//     const Catcomdata = async () => {
-//         const response = await getAllData("commission/category/3")
-//         setform(response.data.commission)
+// function Serviceslist() {
+
+//     const [product, setproducts] = useState([])
+
+//     const Productlist = async () => {
+//         const response = await getAllData('services/all');
+//         setproducts(response.data.services);
+//         setShowSpinner(false);
 //     }
 
-//     useEffect(() => {
-//         Catcomdata()
-//     }, [])
-
-//     const commmissiondel = async (data) => {
-//         const response = await deleteData('commission/' + data._id);
+//     const productdel = async (data) => {
+//         const response = await deleteData('service/' + data._id);
 //         if (response.status === 201) {
-//             toast.success('Successfully Commission Deleted')
-//             Catcomdata()
+//             toast.success('Successfully Service deleted')
+//             Productlist()
 //         } else {
 //             toast.error('Something went wrong')
 //         }
 //     }
+//     const [showSpinner, setShowSpinner] = useState(true);
+
+//     useEffect(() => {
+//         Productlist()
+//     }, [])
 
 //     const [listPerPage] = useState(10);
 //     const [pageNumber, setPageNumber] = useState(0);
 //     const pagesVisited = pageNumber * listPerPage;
-//     const lists = form.slice(pagesVisited, pagesVisited + listPerPage);
-//     const pageCount = Math.ceil(form.length / listPerPage);
+//     const lists = product.slice(pagesVisited, pagesVisited + listPerPage);
+//     const pageCount = Math.ceil(product.length / listPerPage);
 //     const changePage = ({ selected }) => {
 //         setPageNumber(selected);
 //     }
 
 //     return (
-//         <div className="row">
-//             <div className="col-2">
-//                 <AiMenu />
-//             </div>
-//             <div className="col-10">
-//                 <div>
-//                     <AiHeader />
+//         <div className="">
+//             <div className="row">
+//                 <div className="col-2">
+//                     <AiMenu />
 //                 </div>
-//                 <div className="page-bg">
-//                     <div className="product-adding-div">
+//                 <div className="col-10">
+//                     <div className="ai-product-div">
 //                         <div>
-//                             <h4 className="ai-seller-title" >Category Commission Settings <span className="badge-1 badge bg-secondary">#100</span></h4>
-//                             <p className="ai-title-note">Here are the Category Commission Setting on your store</p>
+//                             <AiHeader />
 //                         </div>
-//                         <div className="row">
-//                             <div className="col-12">
-//                                 <Link to="categorycommission" role="button"><button className="add-commission">Add Commission to Category</button></Link>
+//                         <div className="page-bg">
+//                             <div className="product-adding-div">
+//                                 <div>
+//                                     <p className="capital-title">Services/Services list</p>
+//                                     <h4 className="ms-3 mt-1">All Services <span className="badge-1 badge bg-secondary">#100</span></h4>
+//                                     <p className="med-sub-title">Here You Can add Services to your profile</p>
+//                                 </div>
+//                                 <div className="row">
+//                                     <div className="dropdown col-3">
+//                                         <button className="more_action btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+//                                             More Action
+//                                         </button>
+//                                         <ul className="dropdown-menu">
+//                                             <li><a className="dropdown-item" href="#"><i className="fa-regular fa-pen-to-square"></i> Bulk Edit</a></li>
+//                                             <li><a className="dropdown-item" href="#"><i className="fa-solid fa-plus"></i> Add Services By CSV</a></li>
+//                                         </ul>
+//                                     </div>
+//                                     <div className="col-6">
+//                                         <Link to="addservices" role="button"><button className="create-btn toggle-btn">Add Service</button></Link>
+//                                     </div>
+//                                 </div>
 //                             </div>
-//                         </div>
-//                     </div>
-//                     <p className="bulk-actions">Bulk Action :{' '}
-//                         <select className="select-opt">
-//                             <option>Select Options</option>
-//                         </select>
-//                     </p>
-//                     <div className="d-flex justify-content-between">
-//                         <div>
-//                             <input type="text" className="all-order-search" placeholder="Search" />
-//                         </div>
-//                         <div>
+//                             <p className="bulk-actions">Bulk Action :{' '}
+//                                 <select className="select-opt">
+//                                     <option>Select Options</option>
+//                                 </select>
+//                             </p>
 //                             <p className="show-list">Show:
 //                                 <select>
 //                                     <option>1</option>
@@ -83,107 +95,107 @@
 //                                 {' '}
 //                                 List
 //                             </p>
-//                         </div>
-//                     </div>
-//                     <div className="all-jobs-div">
-//                         <table className="allproducts-table">
-//                             <tr className="product-heading ">
+//                             <div className="all-jobs-div">
+//                                 <div style={{ height: '0px' }} className="text-center">
+//                                     {showSpinner && (
+//                                         <div
+//                                             className="spinner-border"
+//                                             role="status"
+//                                             style={{ width: '70px', height: '70px', fontSize: "20px", opacity: "0.7" }} // set the width and height here
+//                                         >
+//                                             <span className="sr-only">Loading...</span>
+//                                         </div>
+//                                     )}
+//                                 </div>
+
+//                                 <table className="allproducts-table">
+//                                     <tbody>
+//                                         <tr className="product-heading ">
 //                                             <td className="table_data rounded-start"><input type='checkbox' /></td>
-//                                             <td className="table_data">Category ID <i className="ri-arrow-down-s-fill"></i>
+//                                             <td className="table_data">Name <i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0 filter-search" type="search" />
 //                                             </td>
-//                                             <td className="table_data">Category Name <i className="ri-arrow-down-s-fill"></i>
+//                                             <td className="table_data">Seller <i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0  filter-search" type="search" />
 //                                             </td>
-//                                             <td className="table_data">Commission Type<i className="ri-arrow-down-s-fill"></i>
+//                                             <td className="table_data">Price Type <i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0  filter-search" type="search" />
 //                                             </td>
-//                                             <td className="table_data">Email ID <i className="ri-arrow-down-s-fill"></i>
-//                                                 <input className="width-100 border-0  filter-search" type="search" />
-//                                             </td>
-
-//                                             <td className="table_data">Commission Type <i className="ri-arrow-down-s-fill"></i>
-//                                                 <input className="width-100 border-0  filter-search " type="search" />
-//                                             </td>
-//                                             <td className="table_data">First Commission <i className="ri-arrow-down-s-fill"></i>
-//                                                 <input className="width-100 border-0  filter-search" type="search" />
-//                                             </td>
-//                                             <td className="table_data">Second Commission<i className="ri-arrow-down-s-fill"></i>
+//                                             <td className="table_data">Price <i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0  filter-search" type="search" />
 //                                             </td>
 
-//                                             <td className="table_data">Created date<i className="ri-arrow-down-s-fill"></i>
-//                                                 <input className="width-100 border-0  filter-search " type="search" />
-//                                             </td>
-//                                             <td className="table_data">Modified date<i className="ri-arrow-down-s-fill"></i>
+//                                             <td className="table_data">Status <i className="ri-arrow-down-s-fill"></i>
 //                                                 <input className="width-100 border-0  filter-search " type="search" />
 //                                             </td>
 //                                             <td className="table_data rounded-end">Action</td>
 //                                         </tr>
-//                             {lists.map((data, key) => (
-//                                 <tr key={key}>
-//                                     <td classname="id"><input type='checkbox' /></td>
-//                                     <td classname="id">2456781</td>
-//                                     <td classname="id">{data.category}</td>
-//                                     <td classname="id">{data.commission_type}</td>
-//                                     <td classname="id">{data.first_commission == "" || data.first_commission == undefined ? (
-//                                         <span> -</span>
-//                                     ) : (
-//                                         <span> {data.first_commission}</span>
-//                                     )}</td>
-//                                      <td classname="id">{data.second_commission == "" || data.second_commission == undefined ? (
-//                                         <span> -</span>
-//                                     ) : (
-//                                         <span> {data.second_commission}</span>
-//                                     )}</td>
-//                                              <td classname="id"><span >{(data.created_date).slice(0, 10)}</span></td>
-//                                         <td classname="id"><span   >{(data.modified_date).slice(0, 10)}</span></td>
-//                                     <td classname="id">
-//                                         <div class="dropdown">
-//                                             <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-//                                                 <i class="fa-solid fa-ellipsis"></i>
-//                                             </a>
-//                                             <ul class="dropdown-menu">
-//                                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-//                                                 <li><a class="dropdown-item" onClick={()=>{commmissiondel(data)}}><i class="fa-solid fa-trash"></i> Delete</a></li>
-//                                             </ul>
-//                                         </div>
-//                                     </td>
-//                                 </tr>
-//                             ))}
+//                                         {lists.map((data, key) => (
+//                                             <tr>
+//                                                 <td className="table_data"><input type='checkbox' /></td>
+//                                                 {/* <td className="table_data">{data.title}</td> */}
+//                                                 {/* <td className="table_data"><img src={pom} alt="pro-thumb" className="img" /></td> */}
+//                                                 <td className="table_data">{data.title}</td>
+//                                                 <td className="table_data">{data.email}</td>
+//                                                 <td className="table_data">{data.price_type} </td>
+//                                                 <td className="table_data">£ {data.price}</td>
+//                                                 <td className="table_data"><span className="pro-status-approved">{data.status}</span></td>
+//                                                 <td className="table_data">
+//                                                     <div className="dropdown">
+//                                                         <a className="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+//                                                             <i className="fa-solid fa-ellipsis"></i>
+//                                                         </a>
+//                                                         <ul className="dropdown-menu">
+//                                                             <li><a className="dropdown-item" href="#"><i className="fa-solid fa-pencil"></i> Edit</a></li>
+//                                                             <li><a className="dropdown-item" href="#"><i className="fa-solid fa-check"></i> Enable</a></li>
+//                                                             <li><a className="dropdown-item" href="#"><i className="fa-solid fa-xmark"></i> Disable</a></li>
+//                                                             <li><a className="dropdown-item" href="#"><i className="fa-solid fa-ban"></i> Deny</a></li>
+//                                                             <li><a onClick={() => { productdel(data) }} className="dropdown-item" ><i className="fa-solid fa-trash"></i> Delete</a></li>
+//                                                         </ul>
+//                                                     </div>
+//                                                 </td>
+//                                             </tr>
+//                                         ))}
+//                                     </tbody>
 
-//                         </table>
-//                         <span className="showing-tag-name">Showing 1-30 List</span>
-//                         <div className="mt-5" >
-//                             <ReactPaginate
-//                                 style={{ padding: "5px", margin: "0px", border: "none" }}
-//                                 // previousLabel={""}
-//                                 // nextLabel={""}
-//                                 pageCount={pageCount}
-//                                 onPageChange={changePage}
-//                                 containerClassName={"pagination"}
-//                                 // previousLinkClassName={"previousBttn"}
-//                                 // nextLinkClassName={"nextBttn"}
-//                                 disabledClassName={"disabled"}
-//                                 activeClassName={"active"}
-//                                 total={lists.length}
-//                             />
+//                                 </table>
+
+//                                 <div className="mt-5" >
+//                                     <ReactPaginate
+//                                         style={{ padding: "5px", margin: "0px", border: "none" }}
+//                                         // previousLabel={""}
+//                                         // nextLabel={""}
+//                                         pageCount={pageCount}
+//                                         onPageChange={changePage}
+//                                         containerClassName={"pagination"}
+//                                         // previousLinkClassName={"previousBttn"}
+//                                         // nextLinkClassName={"nextBttn"}
+//                                         disabledClassName={"disabled"}
+//                                         activeClassName={"active"}
+//                                         total={lists.length}
+//                                     />
+//                                 </div>
+
+//                             </div>
 //                         </div>
 //                     </div>
 //                 </div>
 //             </div>
+//             <Toaster />
 //         </div>
 //     )
 // }
-// export default AllCategoryCommission
+// export default Serviceslist
+
+
 
 import React from "react";
 import AdvanceTableWrapper from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableFooter";
 import { Row, Button, Col, Form, Card } from "react-bootstrap";
-// import IconButton from "components/common/IconButton";
-// import AdvanceTableSearchBox from "components/common/advance-table/AdvanceTableSearchBox";
+// import IconButton from "../../User-Portal/TemplateAssets/common/IconButton";
+// import AdvanceTableSearchBox from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableSearchBox";
 import product_image from "../../Images/product_image.png"
 import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
@@ -192,40 +204,33 @@ import { Link } from "react-router-dom";
 
 const columns = [
     {
-        accessor: 'jobId',
-        Header: 'Job ID'
+        accessor: 'name',
+        Header: 'Name'
     },
     {
-        accessor: 'category',
-        Header: 'Category'
+        accessor: 'email',
+        Header: 'Seller',
+        Cell: rowData => {
+            const { email } = rowData.row.original
+            return (
+                <a href={'mailto:' + email}>
+                    {email}
+                </a>
+            )
+        }
     },
     {
-        accessor: 'title',
-        Header: 'Title'
+        accessor: 'priceType',
+        Header: 'PriceType'
     },
+
     {
-        accessor: 'budget',
-        Header: 'Budget'
-    },
-    {
-        accessor: 'jobStatus',
-        Header: 'Job Status'
-    },
-    {
-        accessor: 'expDate',
-        Header: 'Exp Date'
+        accessor: 'price',
+        Header: 'Price'
     },
     {
         accessor: 'status',
         Header: 'Status'
-    },
-    {
-        accessor: 'createdDate',
-        Header: 'Created Date        '
-    },
-    {
-        accessor: 'modifiedDate',
-        Header: 'Modified Date'
     },
     {
         accessor: 'action',
@@ -235,17 +240,18 @@ const columns = [
 
 const data = [
     {
-        jobId: '643456',
-        category: 'Bar ',
-        title: 'test-project-4',
-        budget: '123',
-        jobStatus: <span className="badge  bg-warning">Processing</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Electronic Servies',
+        image: <img src={product_image} width="40px" height="35px" />,
+        priceType: "Per Hour Cost",
+        email: 'anna@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -253,17 +259,18 @@ const data = [
         </CardDropdown>
     },
     {
-        jobId: '643456',
-        category: 'Bar ',
-        title: 'test-project-4',
-        budget: '123',
-        jobStatus: <span className="badge  bg-danger">Not Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-warning">Approval Pending</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'homer@example.com',
+        price: '£100',
+
+        status: <span className="badge p-2 bg-warning">Draft</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -271,17 +278,18 @@ const data = [
         </CardDropdown>
     },
     {
-        jobId: '643456',
-        category: 'ct-3 ',
-        title: 'test-project-3',
-        budget: '123',
-        jobStatus: <span className="badge  bg-success">Completed</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-secondary">Disabled</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'oscar@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -289,17 +297,18 @@ const data = [
         </CardDropdown>
     },
     {
-        jobId: '643456',
-        category: 'ct-3 ',
-        title: 'test-project-11',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-success">Completed</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-danger">Expired</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'emily@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -307,34 +316,36 @@ const data = [
         </CardDropdown>
     },
     {
-        jobId: '643456',
-        category: 'ct-3 ',
-        title: 'test-project-13',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'jara@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
             </div>
         </CardDropdown>
     }, {
-        jobId: '643456',
-        category: 'Bedroom ',
-        title: 'test-project-5',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'emily@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -342,34 +353,36 @@ const data = [
         </CardDropdown>
     },
     {
-        jobId: '643456',
-        category: 'Bedroom',
-        title: 'test-project-1',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'jara@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
             </div>
         </CardDropdown>
     }, {
-        jobId: '643456',
-        category: 'Attic ',
-        title: 'test-project-15',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'emily@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -377,34 +390,36 @@ const data = [
         </CardDropdown>
     },
     {
-        jobId: '643456',
-        category: 'Bathroom ',
-        title: 'test-project-7',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'jara@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
             </div>
         </CardDropdown>
     }, {
-        jobId: '643456',
-        category: 'Bathroom ',
-        title: 'test-project-4',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'emily@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -412,17 +427,18 @@ const data = [
         </CardDropdown>
     },
     {
-        jobId: '643456',
-        category: 'Bathroom ',
-        title: 'test-project-10',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'jara@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -430,17 +446,18 @@ const data = [
         </CardDropdown>
     },
     {
-        jobId: '643456',
-        category: 'Attic ',
-        title: 'test-project-14',
-        budget: '077',
-        jobStatus: <span className="badge  bg-danger">Not Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'jara@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -449,17 +466,18 @@ const data = [
     }
     ,
     {
-        jobId: '664345',
-        category: 'Attic ',
-        title: 'test-project-08',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Minor Home Repair Services',
+
+        priceType: "Per Hour Cost",
+        email: 'jara@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -468,17 +486,18 @@ const data = [
     }
     ,
     {
-        jobId: '643456',
-        category: 'Bar ',
-        title: 'test-project-9',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        name: 'Electronic Servies',
+
+        priceType: "Per Hour Cost",
+        email: 'jara@example.com',
+        price: '£100',
+
+        status: <span className="badge bg-success p-2">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
+                <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -487,7 +506,7 @@ const data = [
     }
 ];
 
-const AllCategoryCommission = () => {
+const AllServices = () => {
     function BulAction({ selectedRowIds }) {
         return (
             <Row className="flex-between-center mb-3">
@@ -495,7 +514,7 @@ const AllCategoryCommission = () => {
                     <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
-                                'You have selected ' + Object.keys(selectedRowIds).length + ' Category Commissions'
+                                'You have selected ' + Object.keys(selectedRowIds).length + ' Services Lists'
                                 :
                                 ''
                         }
@@ -557,13 +576,13 @@ const AllCategoryCommission = () => {
                     <AdminHeader />
                 </Col>
                 <Col lg={12} className="mt-4">
-                    <Card className=" ms-3 me-3 mb-3">
-                        <Card.Header className="bg-light" as={"h5"}>
-                            All Category Commission
+                    <Card className="ms-3 me-3 mb-3">
+                        <Card.Header as={"h5"} className="bg-light">
+                            All Services
                         </Card.Header>
                         <Card.Body>
                             <div className="d-flex justify-content-end">
-                                <Button as={Link} to="/categorycommission" variant="success">Category Commission</Button>
+                                <Button as={Link} to="/addservices" variant="success">Add Services</Button>
                             </div>
                             <AdvanceTableWrapper
                                 columns={columns}
@@ -581,7 +600,7 @@ const AllCategoryCommission = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        className: 'fs--1 mb-0 overflow-hidden'
+                                        classpriceType: 'fs--1 mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">
@@ -593,7 +612,7 @@ const AllCategoryCommission = () => {
                                         rowsPerPageSelection
                                     />
                                 </div>
-                            </AdvanceTableWrapper >
+                            </AdvanceTableWrapper>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -601,4 +620,4 @@ const AllCategoryCommission = () => {
         </>
     )
 }
-export default AllCategoryCommission
+export default AllServices

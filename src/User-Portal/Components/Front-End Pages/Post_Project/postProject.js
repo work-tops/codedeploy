@@ -253,8 +253,7 @@ const PostProject = () => {
             <Card className="mt-5">
               <Card.Header as="h4" className='bg-light text-justify text-uppercase'>Note</Card.Header>
               <Card.Body className="">
-                {/* <Row>
-                  <Col xl={12}> */}
+                
                 <ul>
                   <li style={{ fontSize: '14px', width: '100%' }}>
                     The customers who have described their requirements with better clarity while uploading the project have always connected with the right professionals and received better proposals, and hence completed their projects on time.
@@ -265,8 +264,6 @@ const PostProject = () => {
                   </li>
 
                 </ul>
-                {/* </Col>
-                </Row> */}
               </Card.Body>
             </Card>
 

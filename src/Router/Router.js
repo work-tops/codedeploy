@@ -1,17 +1,16 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import AiProducts from "../Components/Product/AiProducts";
-import AiProductDetails from "../Components/Product/AiProductDetails";
-import AllFreelancer from "../Components/Freelancer/AllFreelancer";
+import AiProductDetails from "../Components/Product/AdminAddProduct";
+import AllFreelancer from "../Components/Freelancer/AdminAllFreelancer";
 import AllJob from "../Components/Job/AllJob";
-import AiFreelancer from "../Components/Freelancer/AiAddFreelancer";
+import AiFreelancer from "../Components/Freelancer/AdminAddFreelancer";
 import AddJob from "../Components/Job/AddJob";
-import AllOrders from "../Components/Orders/AllOrders";
+import AllOrders from "../Components/Orders/AdminAllOrders";
 import Dashboard from "../Components/Dashboard/Dashboard";
-import AddServices from "../Components/Services/AddServices";
+import AddServices from "../Components/Services/AdminAddServices";
 import GlobalCommission from "../Components/Commission/GlobalCommission";
 import ServiceCommission from "../Components/Commission/ServiceCommission";
-import Serviceslist from "../Components/Services/Serviceslist"
+import Serviceslist from "../Components/Services/AdminAllServices"
 import CategoryCommission from "../Components/Commission/CategoryCommission"
 import AllCategoryCommission from "../Components/Commission/AllCategoryCommission"
 import AiLoginPage from "../Components/Admin/AiLoginPage";
@@ -19,8 +18,13 @@ import AllStaff from "../Components/Staff/AllStaff";
 import AddStaff from "../Components/Staff/AddStaff";
 import FreelancerCommission from "../Components/Commission/FreelancerCommission";
 import AllFreelancerCommission from "../Components/Commission/AllFreelancerCommission";
-import ProductList from "../User-Portal/Components/Front-End Pages/Lists/ProductList";
 import HomePage from "../User-Portal/Components/Front-End Pages/HomePage";
+import AllProducts from "../Components/Product/AdminAllProducts";
+import Payments from "../Components/Payments/AdminPaymentDetails";
+import AllEnquires from "../Components/Conversation/AllEnquires";
+import AllReviews from "../Components/Reviews/AdminReviews";
+import ConversationDetails from "../Components/Conversation/ConversationDetails";
+import ShippingRate from "../Components/ShippingRate/ShippingRate";
 // import AdvAllFreelancer from "../User-Portal/Components/AllFreelancer";
 
 const Routers = () => {
@@ -28,12 +32,12 @@ const Routers = () => {
         <Switch>
             {/* Routes for AI Pages //start */}
             {/* <Route exact path='/productlist'><ProductList /></Route> */}
-            <Route exact path='/'><HomePage/></Route>
-            <Route exact path='/homepage'><HomePage/></Route>
+            <Route exact path='/'><HomePage /></Route>
+            <Route exact path='/homepage'><HomePage /></Route>
             <Route exact path='/dashboard'><Dashboard /></Route>
             <Route path='/allfreelancer'><AllFreelancer /></Route>
             <Route path='/addfreelancer'><AiFreelancer /></Route>
-            <Route path='/allproduct'><AiProducts /></Route>
+            <Route path='/allproduct'><AllProducts /></Route>
             <Route path='/addproduct'><AiProductDetails /></Route>
             <Route path="/alljob"><AllJob /></Route>
             <Route path='/addjob'><AddJob /></Route>
@@ -42,14 +46,19 @@ const Routers = () => {
             <Route path='/addservices'><AddServices /></Route>
             <Route path='/globalcommission'><GlobalCommission /></Route>
             <Route path='/servicecommission'><ServiceCommission /></Route>
-            <Route path="/freelancercommission"><FreelancerCommission/></Route>
-            <Route path="/allcommission"><AllCategoryCommission/></Route>
-            <Route path="/allfreelancercommission"><AllFreelancerCommission/></Route>
+            <Route path="/freelancercommission"><FreelancerCommission /></Route>
+            <Route path="/allcommission"><AllCategoryCommission /></Route>
+            <Route path="/allfreelancercommission"><AllFreelancerCommission /></Route>
             <Route path="/categorycommission"><CategoryCommission /></Route>
-            <Route path="/allservices"><Serviceslist /></Route>
-            <Route path="/ailogin"><AiLoginPage/></Route>
-            <Route path="/allstaff"><AllStaff/></Route>
-            <Route path="/addstaff"><AddStaff/></Route>
+            <Route path="/payments"><Payments /></Route>
+            <Route path="/AllReviews"><AllReviews /></Route>
+            <Route path="/AllEnquires"><AllEnquires /></Route>
+            <Route path="/ConversationDetails"><ConversationDetails /></Route>
+            <Route path="/ShippingRate"><ShippingRate /></Route>
+            {/* <Route path="/allservices"><Serviceslist /></Route> */}
+            <Route path="/ailogin"><AiLoginPage /></Route>
+            <Route path="/allstaff"><AllStaff /></Route>
+            <Route path="/addstaff"><AddStaff /></Route>
             {/* Routes for AI Pages //end*/}
             {/* <Route path='/advallfreelancer'><AdvAllFreelancer/></Route> */}
         </Switch>
