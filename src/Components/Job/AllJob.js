@@ -207,7 +207,7 @@ import React from "react";
 import AdvanceTableWrapper from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableFooter";
-import { Row, Button, Col, Form, Card } from "react-bootstrap";
+import { Row, Button, Col, Form, Card, Breadcrumb, InputGroup } from "react-bootstrap";
 // import IconButton from "components/common/IconButton";
 // import AdvanceTableSearchBox from "components/common/advance-table/AdvanceTableSearchBox";
 // import product_image from "../../User-Portal/TemplateAssets/Images/product_image.png"
@@ -215,6 +215,9 @@ import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import AdminHeader from "../Menubar/AiMenu";
 import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
+
+
 const columns = [
     {
         accessor: 'jobId',
@@ -244,14 +247,14 @@ const columns = [
         accessor: 'status',
         Header: 'Status'
     },
-    {
-        accessor: 'createdDate',
-        Header: 'Created Date        '
-    },
-    {
-        accessor: 'modifiedDate',
-        Header: 'Modified Date'
-    },
+    // {
+    //     accessor: 'createdDate',
+    //     Header: 'Created Date        '
+    // },
+    // {
+    //     accessor: 'modifiedDate',
+    //     Header: 'Modified Date'
+    // },
     {
         accessor: 'action',
         Header: 'Action'
@@ -551,23 +554,9 @@ const AllJobs = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                            {/* <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="plus"
-                                transform="shrink-3"
-                                className='me-2'
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">New</span>
-                            </IconButton>
-                            <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="external-link-alt"
-                                transform="shrink-3"
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">Export</span>
-                            </IconButton> */}
+                            <Button variant="falcon-default"
+                                size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
+                            </Button>
                         </div>
                     )}
                 </Col>
@@ -583,12 +572,33 @@ const AllJobs = () => {
                 </Col>
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
-                        <Card.Header className="bg-light" as={"h5"}>
-                            All Jobs
+                        <Card.Header className="bg-light">
+                            <h5>
+                                All Jobs<span className="ms-1 fs--1 badge bg-secondary">#100</span>
+                            </h5>
+                            <Breadcrumb className="fs--1 mt-2">
+                                <Breadcrumb.Item>
+                                    All Jobs
+                                </Breadcrumb.Item>
+                                <Breadcrumb.Item>
+                                    Add Jobs
+                                </Breadcrumb.Item>
+                            </Breadcrumb>
+                            <p className="text-dark text-capitalize fs--1 mt-2">Here all the current Jobs on your store</p>
                         </Card.Header>
                         <Card.Body>
-                            <div className="d-flex justify-content-end">
-                                <Button as={Link} to="/addjob" variant="success">Add Job</Button>
+                            <div className="row g-3">
+                                <div className="col-md-6 d-flex justify-content-start">
+                                    <Form.Group>
+                                        <InputGroup>
+                                            <Form.Control size="sm" placeholder="Search.." type="search" />
+                                            <Button variant="secondary" size="sm"><Icon icon="mdi:search" color="white" width="20" height="20" /></Button>
+                                        </InputGroup>
+                                    </Form.Group>
+                                </div>
+                                <div className="col-md-6 d-flex  justify-content-end">
+                                    <Button as={Link} to="/addjob" variant="success">Add Job</Button>
+                                </div>
                             </div>
                             <AdvanceTableWrapper
                                 columns={columns}

@@ -11,7 +11,7 @@
 import Multiselect from "multiselect-react-dropdown";
 // import { useHistory } from 'react-router-dom';
 
-// function AiFreelancer() {
+// function AiTrader() {
 
 //     // Secondary Skill static data 
 
@@ -174,8 +174,8 @@ import Multiselect from "multiselect-react-dropdown";
 //         }
 //     };
 
-//     const AddFreelancer = async () => {
-//         const freelancerData = {
+//     const AddTrader = async () => {
+//         const TraderData = {
 //             name: form.first_name + " " + form.last_name,
 //             first_name: form.first_name,
 //             last_name: form.last_name,
@@ -187,7 +187,7 @@ import Multiselect from "multiselect-react-dropdown";
 //             operate_as: form.operate_as,
 //             business_name: form.business_name,
 //             no_of_employees: form.no_of_employees,
-//             role: "Freelancer",
+//             role: "Trader",
 //             type: selectedItems,
 //             primary_skill: form.primary_skill,
 //             skills: selectedSkills,
@@ -202,19 +202,19 @@ import Multiselect from "multiselect-react-dropdown";
 //             created_by: "1",
 //             attachments: selectedFile
 //         }
-//         console.log('add freelancer obj', freelancerData);
+//         console.log('add Trader obj', TraderData);
 //         var response = null;
 //         if (edituserid != '') {
-//             response = await updateData("admin/user/" + edituserid, freelancerData)
+//             response = await updateData("admin/user/" + edituserid, TraderData)
 //         } else {
-//             response = await createData("register", freelancerData)
+//             response = await createData("register", TraderData)
 //         }
 
 //         if (response.status === 201) {
-//             toast.success('Successfully Freelancer Added')
+//             toast.success('Successfully Trader Added')
 //             setform("");
 //             cleardata();
-//             history.push('/allfreelancer');
+//             history.push('/allTrader');
 //         } else {
 //             toast.error('Something went wrong')
 //         }
@@ -224,7 +224,7 @@ import Multiselect from "multiselect-react-dropdown";
 //     const formsubmit = (e) => {
 //         e.preventDefault()
 //         uploadFile()
-//         AddFreelancer()
+//         AddTrader()
 //     }
 
 //     const freelancetype = async () => {
@@ -238,7 +238,7 @@ import Multiselect from "multiselect-react-dropdown";
 //     }
 
 //     const freelancedoctype = async () => {
-//         const response = await getAllData('master/freelancer_document_type');
+//         const response = await getAllData('master/Trader_document_type');
 //         setdoctype(response.data.master[0].data);
 //     }
 
@@ -266,7 +266,7 @@ import Multiselect from "multiselect-react-dropdown";
 //             operate_as: _userdata.operate_as,
 //             business_name: _userdata.business_name,
 //             no_of_employees: _userdata.no_of_employees,
-//             role: "Freelancer",
+//             role: "Trader",
 //             type: _userdata.type,
 //             primary_skill: _userdata.primary_skill,
 //             skills: selectedSkills,
@@ -353,9 +353,9 @@ import Multiselect from "multiselect-react-dropdown";
 //                         <form onSubmit={(e) => { formsubmit(e) }}>
 //                             <div className="content-div">
 //                                 <div>
-//                                     <p className="ai-title">Freelancer/Add Freelancer</p>
-//                                     <p className="ai-add-title">Add Freelancer</p>
-//                                     <p className="ai-title-desc">Here you can add your freelancer</p>
+//                                     <p className="ai-title">Trader/Add Trader</p>
+//                                     <p className="ai-add-title">Add Trader</p>
+//                                     <p className="ai-title-desc">Here you can add your Trader</p>
 //                                     <br></br>
 //                                     <div className="add-seller-form">
 //                                         <span className="category">First Name</span> <span className="seller-email">Last Name</span>
@@ -429,14 +429,14 @@ import Multiselect from "multiselect-react-dropdown";
 //                                         <input required name="termsandcond" value={form.termsandcond} onChange={(e) => { handleChange(e) }} id="terms-conditions" type='checkbox' /><span className="agree-note">You agree to the terms and conditions.</span>
 //                                         <br></br>
 //                                         <button type="submit" className="create-acc-btn">Create Account</button>
-//                                         <Link to="allfreelancer" role="button"><button className="cancel-btn">Cancel</button></Link>
+//                                         <Link to="allTrader" role="button"><button className="cancel-btn">Cancel</button></Link>
 //                                     </div>
 
 //                                 </div>
 //                                 <div className="row">
 //                                     <div className="freelance-form-div col-12">
 //                                         <div className="freelance-form">
-//                                             <h5 className="form-title">Freelancer Type</h5>
+//                                             <h5 className="form-title">Trader Type</h5>
 //                                             {freel.map((data, key) => (
 //                                                 < div style={{ marginLeft: "15px" }}>
 //                                                     <input
@@ -504,17 +504,18 @@ import Multiselect from "multiselect-react-dropdown";
 //         </>
 //     )
 // }
-// export default AiFreelancer
+// export default AiTrader
 
 
-import React, { useRef } from 'react';
-import { Col, Row, Card, Container, Button, Breadcrumb } from 'react-bootstrap';
+import React, { useRef, useState } from 'react';
+import { Col, Row, Card, Container, Button, Breadcrumb, Modal } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import AdminHeader from "../Menubar/AiMenu";
 import { Editor } from "@tinymce/tinymce-react";
 
 
-const AddFreelancer = () => {
+const AddTrader = () => {
+
 
     const editorRef = useRef(null);
     return (
@@ -525,16 +526,19 @@ const AddFreelancer = () => {
                 </Col>
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 mb-3 me-3">
-                        <Card.Header className="bg-light" as={"h5"}>
-                            Add Freelancer
-                            <Breadcrumb as={"h6"} className='mt-3 text-capitalize'>
-                                <Breadcrumb.Item href="#">
-                                    Freelancer
+                        <Card.Header className="bg-light">
+                            <h5>
+                                Add Trader
+                            </h5>
+                            <Breadcrumb className="fs--1 mt-2">
+                                <Breadcrumb.Item>
+                                    All Traders
                                 </Breadcrumb.Item>
-                                <Breadcrumb.Item href="#">
-                                    Add Freelancer
+                                <Breadcrumb.Item>
+                                    Add Traders
                                 </Breadcrumb.Item>
                             </Breadcrumb>
+                            <p className="text-dark fs--1 mt-2">Here Add Traders to your store</p>
                         </Card.Header>
                         <Card.Body>
                             <Container>
@@ -542,61 +546,79 @@ const AddFreelancer = () => {
                                     <Col lg={8}>
                                         <Card className='mt-3'>
                                             <Card.Body>
-                                                <h5 className='mb-3'>Freelancer Information</h5>
+                                                <h5 className='mb-3'>Trader Information</h5>
                                                 <Form>
                                                     <Row className="mb-3 g-3">
-                                                        <Form.Group as={Col}>
-                                                            <Form.Label>First Name</Form.Label>
-                                                            <Form.Control type="text" />
-                                                        </Form.Group>
-                                                        <Form.Group as={Col}>
-                                                            <Form.Label>Last Name</Form.Label>
-                                                            <Form.Control type="text" />
-                                                        </Form.Group>
-                                                    </Row>
-                                                    <Row className="mb-3 g-3">
-                                                        <Form.Group as={Col}>
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" />
-                                                        </Form.Group>
-                                                        <Form.Group as={Col}>
-                                                            <Form.Label>Phone Number</Form.Label>
-                                                            <Form.Control type="text" />
-                                                        </Form.Group>
-                                                    </Row>
-                                                    <Row className="mb-3 g-3">
-                                                        <Form.Group as={Col}>
-                                                            <Form.Label>Date of Birth</Form.Label>
-                                                            <Form.Control type="email" />
-                                                        </Form.Group>
-                                                        <Form.Group as={Col}>
-                                                            <Form.Label>You Operate as a</Form.Label>
-                                                            <Form.Select>
-                                                                <option>Self-Employed/Sole Trader</option>
-                                                                <option>Limited Company</option>
-                                                                <option>Ordinary Partnership</option>
-                                                                <option>Limited Partnership</option>
-                                                            </Form.Select>
+                                                        <Col md={6}>
+                                                            <Form.Group>
+                                                                <Form.Label>First Name</Form.Label>
+                                                                <Form.Control type="text" />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={6}>
+                                                            <Form.Group>
+                                                                <Form.Label>Last Name</Form.Label>
+                                                                <Form.Control type="text" />
+                                                            </Form.Group>
+                                                        </Col>
 
-                                                        </Form.Group>
                                                     </Row>
                                                     <Row className="mb-3 g-3">
-                                                        <Form.Group as={Col}>
-                                                            <Form.Label>Bussiness Name</Form.Label>
-                                                            <Form.Control type="text" />
-                                                        </Form.Group>
-                                                        <Form.Group as={Col}>
-                                                            <Form.Label>No.Of Employee</Form.Label>
-                                                            <Form.Select>
-                                                                <option>Select</option>
-                                                                <option>Myself Only</option>
-                                                                <option>2-5</option>
-                                                                <option>5-10</option>
-                                                                <option>10+</option>
-                                                            </Form.Select>
-                                                        </Form.Group>
+                                                        <Col md={6}>
+                                                            <Form.Group >
+                                                                <Form.Label>Email</Form.Label>
+                                                                <Form.Control type="email" />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={6}>
+                                                            <Form.Group >
+                                                                <Form.Label>Phone Number</Form.Label>
+                                                                <Form.Control type="text" />
+                                                            </Form.Group>
+                                                        </Col>
                                                     </Row>
-                                                    <Form.Group className='mb-3' as={Col}>
+                                                    <Row className="mb-3 g-3">
+                                                        <Col md={6}>
+                                                            <Form.Group >
+                                                                <Form.Label>Date of Birth</Form.Label>
+                                                                <Form.Control type="date" />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={6}>
+                                                            <Form.Group >
+                                                                <Form.Label>You Operate as a</Form.Label>
+                                                                <Form.Select>
+                                                                    <option>Select</option>
+                                                                    <option>Self-Employed/Sole Trader</option>
+                                                                    <option>Limited Company</option>
+                                                                    <option>Ordinary Partnership</option>
+                                                                    <option>Limited Partnership</option>
+                                                                </Form.Select>
+
+                                                            </Form.Group>
+                                                        </Col>
+                                                    </Row>
+                                                    <Row className="mb-3 g-3">
+                                                        <Col md={6}>
+                                                            <Form.Group >
+                                                                <Form.Label>Bussiness Name</Form.Label>
+                                                                <Form.Control type="text" />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={6}>
+                                                            <Form.Group>
+                                                                <Form.Label>No.Of Employee</Form.Label>
+                                                                <Form.Select>
+                                                                    <option>Select</option>
+                                                                    <option>Myself Only</option>
+                                                                    <option>2-5</option>
+                                                                    <option>5-10</option>
+                                                                    <option>10+</option>
+                                                                </Form.Select>
+                                                            </Form.Group>
+                                                        </Col>
+                                                    </Row>
+                                                    <Form.Group className='mb-3' >
                                                         <Form.Label>Primary Skill</Form.Label>
                                                         <Form.Select>
                                                             <option>Select</option>
@@ -605,27 +627,27 @@ const AddFreelancer = () => {
                                                             <option>Skill 3</option>
                                                         </Form.Select>
                                                     </Form.Group >
-                                                    <Form.Group className='mb-3' as={Col}>
+                                                    <Form.Group className='mb-3' >
                                                         <Form.Label>Secondary Skill</Form.Label>
-                                                        <Multiselect />
+                                                        <Multiselect className='form-control' />
                                                     </Form.Group>
-                                                    <Form.Group className='mb-3' as={Col}>
-                                                        <Form.Label>Bussiness Address</Form.Label>
+                                                    <Form.Group className='mb-3' >
+                                                        <Form.Label>Bussiness Address 1</Form.Label>
                                                         <Form.Control as="textarea" placeholder='Enter Your Bussiness Address....' rows={1} />
                                                     </Form.Group>
-                                                    <Form.Group className='mb-3' as={Col}>
-                                                        <Form.Label>Bussiness Address</Form.Label>
+                                                    <Form.Group className='mb-3' >
+                                                        <Form.Label>Bussiness Address 2</Form.Label>
                                                         <Form.Control as="textarea" placeholder='Enter Your Bussiness Address....' rows={1} />
                                                     </Form.Group>
                                                     <Form.Group className="mb-3">
                                                         <Form.Check label={<> <span className="fw-semibold"> Note:</span> Address and the Billing address should be same.</>}></Form.Check>
                                                     </Form.Group>
-                                                    <Form.Group className='mb-3' as={Col}>
-                                                        <Form.Label>Billing Address</Form.Label>
+                                                    <Form.Group className='mb-3' >
+                                                        <Form.Label>Billing Address 1</Form.Label>
                                                         <Form.Control as="textarea" placeholder='Enter Your Billing Address....' rows={1} />
                                                     </Form.Group>
-                                                    <Form.Group className='mb-3' as={Col}>
-                                                        <Form.Label>Billing Address</Form.Label>
+                                                    <Form.Group className='mb-3' >
+                                                        <Form.Label>Billing Address 2</Form.Label>
                                                         <Form.Control as="textarea" placeholder='Enter Your Billing Address....' rows={1} />
                                                     </Form.Group>
                                                     <Form.Group className="mb-3">
@@ -634,9 +656,7 @@ const AddFreelancer = () => {
                                                         <Editor
                                                             onInit={(evt, editor) => editorRef.current = editor}
                                                             initialValue=""
-
                                                             init={{
-
                                                                 height: 200,
                                                                 menubar: false,
                                                                 // plugins: [
@@ -653,20 +673,24 @@ const AddFreelancer = () => {
                                                         />
                                                     </Form.Group>
                                                     <Row className="mb-3 g-3">
-                                                        <Form.Group as={Col}>
+                                                        <Col md={6}>
+                                                        <Form.Group >
                                                             <Form.Label>Password</Form.Label>
                                                             <Form.Control type="password" />
                                                         </Form.Group>
-                                                        <Form.Group as={Col}>
+                                                        </Col>
+                                                        <Col md={6}>
+                                                        <Form.Group >
                                                             <Form.Label>Confirm Password</Form.Label>
                                                             <Form.Control type="text" />
                                                         </Form.Group>
+                                                        </Col>
                                                     </Row>
                                                     <Form.Group className="mb-3">
                                                         <Form.Check type="checkbox" label="You Agree to the terms & conditions."></Form.Check>
                                                     </Form.Group>
                                                     <div className="d-flex justify-content-start gap-2">
-                                                        <Button variant="success">Add Freelancer</Button>
+                                                        <Button variant="success">Add Trader</Button>
                                                         <Button variant="danger">Cancel</Button>
                                                     </div>
                                                 </Form>
@@ -676,7 +700,7 @@ const AddFreelancer = () => {
                                     <Col lg={4}>
                                         <Card className='mt-3'>
                                             <Card.Body>
-                                                <h5 className='mb-3'>Freelancer Type</h5>
+                                                <h5 className='mb-3'>Trader Type</h5>
                                                 <Form.Group className="mb-3">
                                                     <Form.Check className='d-inline me-1'></Form.Check> <span>Fabricators</span>
                                                 </Form.Group>
@@ -704,58 +728,58 @@ const AddFreelancer = () => {
                                             <Card className='mt-3'>
                                                 <Card.Body>
                                                     <h5 className='mb-3'>Documents</h5>
-                                                    <Form.Group className='mb-3' as={Col}>
+                                                    <Form.Group className='mb-3' >
                                                         <Form.Select className='mb-3'>
                                                             <option>Select</option>
                                                             <option>Driving License</option>
                                                             <option>Passport</option>
                                                             <option>Registration Document</option>
                                                             <option>VAT Document</option>
-                                                            <option>Freelancer Type</option>
+                                                            <option>Trader Type</option>
                                                         </Form.Select>
                                                         <Button>Upload</Button>
                                                     </Form.Group >
-                                                    <Form.Group className='mb-3' as={Col}>
+                                                    <Form.Group className='mb-3' >
                                                         <Form.Select className='mb-3'>
                                                             <option>Select</option>
                                                             <option>Driving License</option>
                                                             <option>Passport</option>
                                                             <option>Registration Document</option>
                                                             <option>VAT Document</option>
-                                                            <option>Freelancer Type</option>
+                                                            <option>Trader Type</option>
                                                         </Form.Select>
                                                         <Button>Upload</Button>
                                                     </Form.Group >
-                                                    <Form.Group className='mb-3' as={Col}>
+                                                    <Form.Group className='mb-3' >
                                                         <Form.Select className='mb-3'>
                                                             <option>Select</option>
                                                             <option>Driving License</option>
                                                             <option>Passport</option>
                                                             <option>Registration Document</option>
                                                             <option>VAT Document</option>
-                                                            <option>Freelancer Type</option>
+                                                            <option>Trader Type</option>
                                                         </Form.Select>
                                                         <Button>Upload</Button>
                                                     </Form.Group >
-                                                    <Form.Group className='mb-3' as={Col}>
+                                                    <Form.Group className='mb-3' >
                                                         <Form.Select className='mb-3'>
                                                             <option>Select</option>
                                                             <option>Driving License</option>
                                                             <option>Passport</option>
                                                             <option>Registration Document</option>
                                                             <option>VAT Document</option>
-                                                            <option>Freelancer Type</option>
+                                                            <option>Trader Type</option>
                                                         </Form.Select>
                                                         <Button>Upload</Button>
                                                     </Form.Group >
-                                                    <Form.Group className='mb-3' as={Col}>
+                                                    <Form.Group className='mb-3' >
                                                         <Form.Select className='mb-3'>
                                                             <option>Select</option>
                                                             <option>Driving License</option>
                                                             <option>Passport</option>
                                                             <option>Registration Document</option>
                                                             <option>VAT Document</option>
-                                                            <option>Freelancer Type</option>
+                                                            <option>Trader Type</option>
                                                         </Form.Select>
                                                         <Button>Upload</Button>
                                                     </Form.Group >
@@ -763,9 +787,7 @@ const AddFreelancer = () => {
                                             </Card>
                                         </Col>
                                     </Col>
-
                                 </Row>
-
                             </Container>
                         </Card.Body >
                     </Card>
@@ -774,4 +796,4 @@ const AddFreelancer = () => {
         </>
     )
 }
-export default AddFreelancer;
+export default AddTrader;

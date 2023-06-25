@@ -5,6 +5,7 @@ import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-
 import { Row, Button, Col, Form, Card } from "react-bootstrap";
 import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
+import { Icon } from "@iconify/react";
 import AdminHeader from "../Menubar/AiMenu";
 import { Link } from "react-router-dom";
 const columns = [
@@ -33,220 +34,220 @@ const columns = [
         accessor: 'status',
         Header: 'Status'
     },
-  
+
 ];
 
 const data = [
     {
         customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         enquireId: "623643",
         QueryTitle: "Master Card",
         date: "10 April 2023",
         status: <span className="badge  bg-success">Open</span>,
-        
+
     },
     {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-danger">Closed</span>,
         enquireId: "623643", QueryTitle: "Master Card", date: "10 April 2023",
-        
+
     },
     {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "Master Card", date: "10 April 2023",
-        
+
     },
     {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "Master Card", date: "10 April 2023",
-        
+
     },
     {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "eBay", date: "10 April 2023",
-        
+
     }, {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "eBay", date: "10 April 2023",
-        
+
     },
     {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "Facebook", date: "10 April 2023",
-        
+
     }, {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "Facebook", date: "10 April 2023",
-        
+
     },
     {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "Gilletee", date: "10 April 2023",
-        
+
     }, {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "Gilletee", date: "10 April 2023",
-        
+
     },
     {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "Gilletee", date: "10 April 2023",
-        
+
     },
     {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-danger">Closed</span>,
         enquireId: "623643", QueryTitle: "Master Card", date: "10 April 2023",
-        
+
     }
     ,
     {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "Master Card", date: "10 April 2023",
-        
+
     }
     ,
     {
-        customerName:<>
+        customerName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Peter Leverkus</p>
+                <p className="fs--1">Peter Leverkus</p>
             </Link>
         </>,
         traderName: <>
             <Link to="/ConversationDetails">
-            <p className="fs--1">Gms</p>
+                <p className="fs--1">Gms</p>
             </Link>
         </>,
         status: <span className="badge  bg-success">Open</span>,
         enquireId: "623643", QueryTitle: "Master Card", date: "10 April 2023",
-        
+
     }
 ];
 
@@ -289,6 +290,9 @@ const AllEnquires = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
+                            <Button variant="falcon-default"
+                                size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
+                            </Button>
                         </div>
                     )}
                 </Col>
@@ -305,7 +309,7 @@ const AllEnquires = () => {
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
                         <Card.Header className="bg-light" as={"h5"}>
-                            AllEnquires
+                            All Enquires<span className="ms-1 fs--1 badge bg-secondary">#100</span>
                         </Card.Header>
                         <Card.Body>
 

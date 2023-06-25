@@ -193,14 +193,16 @@ import React from "react";
 import AdvanceTableWrapper from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableFooter";
-import { Row, Button, Col, Form, Card } from "react-bootstrap";
+import { Row, Button, Col, Form, Card, Breadcrumb, InputGroup } from "react-bootstrap";
 // import IconButton from "../../User-Portal/TemplateAssets/common/IconButton";
 // import AdvanceTableSearchBox from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableSearchBox";
 import product_image from "../../Images/product_image.png"
 import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import AdminHeader from "../Menubar/AiMenu";
+import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+
 
 const columns = [
     {
@@ -246,12 +248,12 @@ const data = [
         email: 'anna@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -265,12 +267,12 @@ const data = [
         email: 'homer@example.com',
         price: '£100',
 
-        status: <span className="badge p-2 bg-warning">Draft</span>,
+        status: <span className="badge  bg-warning">Draft</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -284,12 +286,12 @@ const data = [
         email: 'oscar@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -303,12 +305,12 @@ const data = [
         email: 'emily@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -322,12 +324,12 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -340,12 +342,12 @@ const data = [
         email: 'emily@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -359,12 +361,12 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -377,12 +379,12 @@ const data = [
         email: 'emily@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -396,12 +398,12 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -414,12 +416,12 @@ const data = [
         email: 'emily@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -433,12 +435,12 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -452,12 +454,12 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -472,12 +474,12 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -492,12 +494,12 @@ const data = [
         email: 'jara@example.com',
         price: '£100',
 
-        status: <span className="badge bg-success p-2">Active</span>,
+        status: <span className="badge bg-success ">Active</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
                 <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
+
                 <Dropdown.Item>Deny</Dropdown.Item>
                 <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
@@ -545,23 +547,9 @@ const AllServices = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                            {/* <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="plus"
-                                transform="shrink-3"
-                                className='me-2'
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">New</span>
-                            </IconButton>
-                            <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="external-link-alt"
-                                transform="shrink-3"
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">Export</span>
-                            </IconButton> */}
+                            <Button variant="falcon-default"
+                                size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
+                            </Button>
                         </div>
                     )}
                 </Col>
@@ -577,13 +565,38 @@ const AllServices = () => {
                 </Col>
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
-                        <Card.Header as={"h5"} className="bg-light">
-                            All Services
+                        <Card.Header className="bg-light">
+                            <h5>
+                                All Services
+                            </h5>
+                            <Breadcrumb className="fs--1 mt-2">
+                                <Breadcrumb.Item>
+                                    All Services
+                                </Breadcrumb.Item>
+                                <Breadcrumb.Item>
+                                    Add Services
+                                </Breadcrumb.Item>
+                            </Breadcrumb>
+                            <p className="text-dark text-capitalize fs--1 mt-2">Here all the current Services on your store</p>
                         </Card.Header>
                         <Card.Body>
-                            <div className="d-flex justify-content-end">
-                                <Button as={Link} to="/addservices" variant="success">Add Services</Button>
+                            {/* <div className="d-flex justify-content-end">
+                            </div> */}
+
+                            <div className="row g-3">
+                                <div className="col-md-6 d-flex justify-content-start">
+                                    <Form.Group>
+                                        <InputGroup>
+                                            <Form.Control size="sm" placeholder="Search.." type="search" />
+                                            <Button variant="secondary" size="sm"><Icon icon="mdi:search" color="white" width="20" height="20" /></Button>
+                                        </InputGroup>
+                                    </Form.Group>
+                                </div>
+                                <div className="col-md-6 d-flex  justify-content-end">
+                                    <Button as={Link} to="/addservices" variant="success">Add Services</Button>
+                                </div>
                             </div>
+
                             <AdvanceTableWrapper
                                 columns={columns}
                                 data={data}
@@ -600,7 +613,7 @@ const AllServices = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        classpriceType: 'fs--1 mb-0 overflow-hidden'
+                                        className: 'fs--1 mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">

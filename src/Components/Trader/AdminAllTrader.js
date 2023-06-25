@@ -55,7 +55,7 @@
 //                     <div className="product-adding-div">
 //                         <div>
 //                             <p className="capital-title">Freelancer / Freelancer list</p>
-//                             <h4 className="ms-3 mt-1" >All Freelancer <span className="badge-1 badge bg-secondary">#100</span></h4>
+//                             <h4 className="ms-3 mt-1" >All Trader <span className="badge-1 badge bg-secondary">#100</span></h4>
 //                             <p className="med-sub-title">Here are the current Freelancer on your store</p>
 //                         </div>
 
@@ -205,322 +205,164 @@
 // export default AllFreelancer
 
 
-import React from "react";
+import React, { useState, useRef } from "react";
 import AdvanceTableWrapper from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableFooter";
-import { Row, Button, Col, Form, Card } from "react-bootstrap";
+import { Row, Button, Col, Form, Card, Breadcrumb, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 // import IconButton from "components/common/IconButton";
 // import AdvanceTableSearchBox from "components/common/advance-table/AdvanceTableSearchBox";
 import product_image from "../../Images/product_image.png"
 import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, InputGroup } from "react-bootstrap";
 import AdminHeader from "../Menubar/AiMenu";
-const columns = [
-    {
-        accessor: 'freelancerId',
-        Header: 'Freelancer ID'
-    },
-    {
-        accessor: 'image',
-        Header: 'Freelancer Profile'
-    },
-    {
-        accessor: 'name',
-        Header: 'Name'
-    },
-    {
-        accessor: 'bussinessName',
-        Header: 'Bussiness Name'
-    },
-    {
-        accessor: 'verification',
-        Header: 'Verification'
-    },
-    {
-        accessor: 'date',
-        Header: 'Date'
-    },
-    {
-        accessor: 'status',
-        Header: 'Status'
-    },
-    {
-        accessor: 'action',
-        Header: 'Action'
-    }
-];
+import { Icon } from "@iconify/react";
+import { Editor } from "@tinymce/tinymce-react";
 
-const data = [
-    {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Steve",
-        bussinessName: 'anna',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Sam",
-        bussinessName: 'homer',
-        verification: <span className="badge p-2 bg-warning">Not Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-warning">Approval Pending</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "George",
-        bussinessName: 'oscar',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-secondary">Change Password</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Franncis",
-        bussinessName: 'emily',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Andreson",
-        bussinessName: 'jara',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Manikandan",
-        bussinessName: 'emily',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Vishnu",
-        bussinessName: 'jara',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Harish",
-        bussinessName: 'emily',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Saravanan",
-        bussinessName: 'jara',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Rahim",
-        bussinessName: 'emily',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Kumar",
-        bussinessName: 'jara',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Jagan",
-        bussinessName: 'jara',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
-    ,
-    {
-        freelancerId: '664345',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Gopal",
-        bussinessName: 'jara',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
-    ,
-    {
-        freelancerId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Abigail",
-        bussinessName: 'jara',
-        verification: <span className="badge p-2 bg-success">Verified</span>,
-        date: "31 Mar 2023",
-        status: <span className="badge p-2 bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Send Message</Dropdown.Item>
-                <Dropdown.Item>Change Password</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
-];
+const AllTraderTable = () => {
+    const editorRef = useRef(null);
 
-const AdvancedFreelancerTable = () => {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
+    const columns = [
+        {
+            accessor: 'freelancerId',
+            Header: 'Trader ID'
+        },
+        {
+            accessor: 'image',
+            Header: 'Trader Profile'
+        },
+        {
+            accessor: 'name',
+            Header: 'Name'
+        },
+        {
+            accessor: 'bussinessName',
+            Header: 'Bussiness Name'
+        },
+        {
+            accessor: 'verification',
+            Header: 'Verification'
+        },
+        {
+            accessor: 'date',
+            Header: 'Date'
+        },
+        {
+            accessor: 'status',
+            Header: 'Status'
+        },
+        {
+            accessor: 'action',
+            Header: 'Action'
+        }
+    ];
+
+    const data = [
+        {
+            freelancerId: '643456',
+            image: <img src={product_image} width="40px" height="35px" />,
+            name: "George",
+            bussinessName: 'oscar',
+            verification: <span className="badge  bg-success">Verified</span>,
+            date: "31 Mar 2023",
+            status: <span className="badge  bg-secondary">Change Password</span>,
+            action: <CardDropdown>
+                <div className="">
+                    <Dropdown.Item>Edit</Dropdown.Item>
+                    <Dropdown.Item>Enable</Dropdown.Item>
+                    <Dropdown.Item>Deny</Dropdown.Item>
+                    <Dropdown.Item onClick={handleShow}>Send Message</Dropdown.Item>
+                    <Dropdown.Item>Change Password</Dropdown.Item>
+                    <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+                </div>
+            </CardDropdown>
+        },
+        {
+            freelancerId: '643456',
+            image: <img src={product_image} width="40px" height="35px" />,
+            name: "George",
+            bussinessName: 'oscar',
+            verification: <span className="badge  bg-success">Verified</span>,
+            date: "31 Mar 2023",
+            status: <span className="badge  bg-secondary">Change Password</span>,
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>Edit</Dropdown.Item>
+                    <Dropdown.Item>Enable</Dropdown.Item>
+                    <Dropdown.Item>Deny</Dropdown.Item>
+                    <Dropdown.Item onClick={handleShow}>Send Message</Dropdown.Item>
+                    <Dropdown.Item>Change Password</Dropdown.Item>
+                    <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+                </div>
+            </CardDropdown>
+        },
+        {
+            freelancerId: '643456',
+            image: <img src={product_image} width="40px" height="35px" />,
+            name: "George",
+            bussinessName: 'oscar',
+            verification: <span className="badge  bg-success">Verified</span>,
+            date: "31 Mar 2023",
+            status: <span className="badge  bg-secondary">Change Password</span>,
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>Edit</Dropdown.Item>
+                    <Dropdown.Item>Enable</Dropdown.Item>
+                    <Dropdown.Item>Deny</Dropdown.Item>
+                    <Dropdown.Item onClick={handleShow}>Send Message</Dropdown.Item>
+                    <Dropdown.Item>Change Password</Dropdown.Item>
+                    <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+                </div>
+            </CardDropdown>
+        },
+        {
+            freelancerId: '643456',
+            image: <img src={product_image} width="40px" height="35px" />,
+            name: "George",
+            bussinessName: 'oscar',
+            verification: <span className="badge  bg-success">Verified</span>,
+            date: "31 Mar 2023",
+            status: <span className="badge  bg-secondary">Change Password</span>,
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>Edit</Dropdown.Item>
+                    <Dropdown.Item>Enable</Dropdown.Item>
+                    <Dropdown.Item>Deny</Dropdown.Item>
+                    <Dropdown.Item onClick={handleShow}>Send Message</Dropdown.Item>
+                    <Dropdown.Item>Change Password</Dropdown.Item>
+                    <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+                </div>
+            </CardDropdown>
+        },
+        {
+            freelancerId: '643456',
+            image: <img src={product_image} width="40px" height="35px" />,
+            name: "George",
+            bussinessName: 'oscar',
+            verification: <span className="badge  bg-success">Verified</span>,
+            date: "31 Mar 2023",
+            status: <span className="badge  bg-secondary">Change Password</span>,
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>Edit</Dropdown.Item>
+                    <Dropdown.Item>Enable</Dropdown.Item>
+                    <Dropdown.Item>Deny</Dropdown.Item>
+                    <Dropdown.Item onClick={handleShow}>Send Message</Dropdown.Item>
+                    <Dropdown.Item>Change Password</Dropdown.Item>
+                    <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
+                </div>
+            </CardDropdown>
+        },
+    ];
+
+
     function BulAction({ selectedRowIds }) {
         return (
             <Row className="flex-between-center mb-3">
@@ -528,7 +370,7 @@ const AdvancedFreelancerTable = () => {
                     <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
-                                'You have selected ' + Object.keys(selectedRowIds).length + ' Freelancer Lists'
+                                'You have selected ' + Object.keys(selectedRowIds).length + ' Traders Lists'
                                 :
                                 ''
                         }
@@ -536,7 +378,6 @@ const AdvancedFreelancerTable = () => {
                 </Col>
                 <Row className="flex-end-center mt-2 mb-3">
                     <Col xs="auto">
-                        <Button as={Link} to="/addfreelancer" variant="success">Add Freelancer</Button>
                     </Col>
                 </Row>
                 <Col xs={8} sm="auto" className="ms-auto text-end ps-0">
@@ -559,23 +400,9 @@ const AdvancedFreelancerTable = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                            {/* <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="plus"
-                                transform="shrink-3"
-                                className='me-2'
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">New</span>
-                            </IconButton>
-                            <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="external-link-alt"
-                                transform="shrink-3"
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">Export</span>
-                            </IconButton> */}
+                            <Button variant="falcon-default"
+                                size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
+                            </Button>
                         </div>
                     )}
                 </Col>
@@ -592,10 +419,34 @@ const AdvancedFreelancerTable = () => {
                 </Col>
                 <Col className="mt-4" lg={12}>
                     <Card className="ms-3 me-3 mb-3">
-                        <Card.Header as={"h5"} className="bg-light">
-                            All Freelancer
+                        <Card.Header className="bg-light">
+                            <h5>
+                                All Trader<span className="ms-1 fs--1 badge bg-secondary">#100</span>
+                            </h5>
+                            <Breadcrumb className="fs--1 mt-2">
+                                <Breadcrumb.Item>
+                                    All Traders
+                                </Breadcrumb.Item>
+                                <Breadcrumb.Item>
+                                    Add Traders
+                                </Breadcrumb.Item>
+                            </Breadcrumb>
+                            <p className="text-dark fs--1 mt-2">Here all the current Traders on your store</p>
                         </Card.Header>
                         <Card.Body>
+                            <div className="row g-3">
+                                <div className="col-md-6 d-flex justify-content-start">
+                                    <Form.Group>
+                                        <InputGroup>
+                                            <Form.Control size="sm" placeholder="Search.." type="search" />
+                                            <Button variant="secondary" size="sm"><Icon icon="mdi:search" color="white" width="20" height="20" /></Button>
+                                        </InputGroup>
+                                    </Form.Group>
+                                </div>
+                                <div className="col-md-6 d-flex  justify-content-end">
+                                    <Button as={Link} to="/AddTraders" variant="success">Add Trader</Button>
+                                </div>
+                            </div>
                             <AdvanceTableWrapper
                                 columns={columns}
                                 data={data}
@@ -629,8 +480,40 @@ const AdvancedFreelancerTable = () => {
                     </Card>
                 </Col>
             </Row>
+            {/*  */}
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Send Message</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Editor
+                        onInit={(evt, editor) => editorRef.current = editor}
+                        initialValue=""
+
+                        init={{
+
+                            height: 200,
+                            menubar: false,
+                            // plugins: [
+                            //     'advlist autolink lists link image charmap print preview anchor',
+                            //     'searchreplace visualblocks code fullscreen',
+                            //     'insertdatetime media table paste code help wordcount'
+                            // ],
+                            toolbar: 'undo redo | formatselect | ' +
+                                'bold italic  | alignleft aligncenter ' +
+                                'alignright alignjustify | bullist numlist outdent indent | ' +
+                                'removeformat ',
+                            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                        }}
+                    />
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
-        // </div >
     )
 }
-export default AdvancedFreelancerTable
+export default AllTraderTable

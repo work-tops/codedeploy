@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Row, Col, Button, Card, Modal, Form, Container, Breadcrumb } from "react-bootstrap";
+import { Row, Col, Button, Card, Modal, Form, ProgressBar, ButtonGroup, Breadcrumb } from "react-bootstrap";
 import NavbarStandard from '../Header/AdvanceHeader/NavbarStandard'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Icon } from "@iconify/react";
@@ -93,7 +93,7 @@ function ProductDetails() {
         toastDanger1();
     };
 
-
+    // 
 
 
     return (
@@ -211,7 +211,7 @@ function ProductDetails() {
 
                         {/* Product Images */}
                         <Card className="mb-3">
-                            <Card.Header as="h2" className="bg-light text-uppercase">
+                            <Card.Header as="h5" className="bg-light text-uppercase">
                                 Product Images
                             </Card.Header>
                             <Card.Body className="position-relative">
@@ -231,7 +231,7 @@ function ProductDetails() {
 
                         {/* Description */}
                         <Card className="mb-3">
-                            <Card.Header as="h2" className="bg-light text-uppercase">
+                            <Card.Header as="h5" className="bg-light text-uppercase">
                                 Description
                             </Card.Header>
                             <Card.Body className="position-relative">
@@ -248,7 +248,7 @@ function ProductDetails() {
 
                         {/* Disclaimer */}
                         <Card className="mb-3">
-                            <Card.Header as="h2" className="bg-light text-uppercase">
+                            <Card.Header as="h5" className="bg-light text-uppercase">
                                 Disclaimer
                             </Card.Header>
                             <Card.Body className="position-relative">
@@ -260,14 +260,14 @@ function ProductDetails() {
                                 </p>
                             </Card.Body>
                         </Card>
-                        {/* Disclaimer */}
+                        {/* Reviews */}
                         <Card className="mb-3">
                             <Card.Header className=" text-capitalize bg-light">
-                                <h2 className="text-uppercase">
-                                    Reviews
-                                </h2>
+                                <h5 className="text-uppercase">
+                                    Reviews (60)
+                                </h5>
                             </Card.Header>
-                            <Card.Body className="py-0">
+                            <Card.Body>
                                 <div className="d-flex gap-2 mt-2 justify-content-lg-end">
                                     <Button
                                         variant="falcon-default"
@@ -276,7 +276,7 @@ function ProductDetails() {
                                     >
                                         Write Review
                                     </Button>
-                                    <div>
+                                    <div title="Excellent">
                                         <Form.Select className="cursor-pointer" size="sm" defaultValue="">
                                             <option value="">Sort by</option>
                                             <option value="oldest">Old</option>
@@ -284,6 +284,87 @@ function ProductDetails() {
                                             <option value="name">A-Z</option>
                                         </Form.Select>
                                     </div>
+                                </div>
+                                <div>
+                                    <Form.Label>Filter By:</Form.Label>
+                                    <div title="Awesome">
+                                        <Form.Check type="checkbox" className="mb-0">
+                                            <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                            <Form.Check.Label className="mb-0 text-700">
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                            </Form.Check.Label>
+                                        </Form.Check>
+                                    </div>
+                                    <div>
+                                        <Form.Check type="checkbox" className="mb-0">
+                                             <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                            <Form.Check.Label className="mb-0 text-700">
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                            </Form.Check.Label>
+                                        </Form.Check>
+                                    </div>
+                                    <div title="Average">
+                                        <Form.Check type="checkbox" className="mb-0">
+                                             <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                            <Form.Check.Label className="mb-0 text-700">
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                            </Form.Check.Label>
+                                        </Form.Check>
+                                    </div>
+                                    <div title="Good">
+                                        <Form.Check type="checkbox" className="mb-0">
+                                             <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                            <Form.Check.Label className="mb-0 text-700">
+
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                            </Form.Check.Label>
+                                        </Form.Check>
+                                    </div>
+                                    <div title="Poor">
+                                        <Form.Check type="checkbox" className="mb-0">
+                                             <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                            <Form.Check.Label className="mb-0 text-700">
+
+                                                <FaStar color="#f68f57" />
+                                            </Form.Check.Label>
+                                        </Form.Check>
+                                    </div>
+                                </div>
+                            </Card.Body>
+                        </Card>
+                        <Card className="mb-3">
+                            <Card.Body className="py-0">
+                                {/*  */}
+                                {/*  */}
+                                <div>
+                                    {/*  */}
+
+                                    {/*  */}
                                 </div>
                                 <Row className='g-3 align-items-center text-center text-md-start py-3'>
                                     <Col md="auto">
@@ -450,12 +531,12 @@ function ProductDetails() {
                                 <Card.Body>
                                     <Row>
                                         <Col md={12} lg={12} className="order-md-1  order-lg-0">
-                                            <h2 className="fw-medium mb-3 d-flex align-items-center">
+                                            <h5 className="fw-medium mb-3 d-flex align-items-center">
                                                 £ {prodata.variant?.[0]?.pricing?.price}
                                                 {' '}
                                                 <del className="ms-2 fs--1 text-500">£ {prodata.variant?.[0]?.pricing?.compare_at}</del>
                                                 <span style={{ background: '#ff4242', fontSize: '12px' }} className="badge ms-2">{Math.round(100 - (prodata.variant?.[0]?.pricing?.price / prodata.variant?.[0]?.pricing?.compare_at * 100))}%</span>
-                                            </h2>
+                                            </h5>
                                             {/* <p className="text-danger fs--1 fw-semi-bold">
                                                     <FontAwesomeIcon icon={['far', 'clock']} className="me-2" />
                                                     Sale ends in 13h : 25m : 54s
@@ -570,14 +651,14 @@ function ProductDetails() {
                 <Col>
                     <Footer />
                 </Col>
-            </Row>
+            </Row >
             {/* Review */}
-            <Modal
+            < Modal
                 show={show}
-                onHide={() => setShow(false)}
+                onHide={() => setShow(false)
+                }
                 dialogClassName="modal-lg modal-90w"
-                aria-labelledby="example-custom-modal-styling-title"
-            >
+                aria-labelledby="example-custom-modal-styling-title">
                 <Modal.Header closeButton>
                     <h5 className="text-uppercase">Write your Review</h5>
                 </Modal.Header>
@@ -652,7 +733,7 @@ function ProductDetails() {
                         </div>
                     </Form>
                 </Modal.Body>
-            </Modal>
+            </Modal >
             {/* Review */}
         </>
     )

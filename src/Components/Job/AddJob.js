@@ -606,26 +606,29 @@ const AddJobs = () => {
                     <AdminHeader />
                 </Col>
                 <Col lg={12} className='mt-4'>
-                    <Form onSubmit={(e) => { formsubmit(e) }}>
+                    <Form>
                         <Row className=" font-sans-serif">
                             <Container>
                                 {/* Post A Project */}
                                 <Card className="mb-3">
-                                    <Card.Header className="bg-light" as={"h5"}>
-                                        Add Job
-                                        <Breadcrumb as={"h6"} className='mt-3 text-capitalize'>
-                                            <Breadcrumb.Item href="#">
-                                                Job
+                                    <Card.Header className="bg-light">
+                                        <h5>
+                                            All Jobs<span className="ms-1 fs--1 badge bg-secondary">#100</span>
+                                        </h5>
+                                        <Breadcrumb className="fs--1 mt-2">
+                                            <Breadcrumb.Item>
+                                                All Jobs
                                             </Breadcrumb.Item>
-                                            <Breadcrumb.Item href="#">
-                                                Add Job
+                                            <Breadcrumb.Item>
+                                                Add Jobs
                                             </Breadcrumb.Item>
                                         </Breadcrumb>
+                                        <p className="text-dark text-capitalize fs--1 mt-2">Here all the current Jobs on your store</p>
                                     </Card.Header>
                                     <Card.Body className="bg-white">
                                         <Form.Group className="mb-3">
                                             <Form.Label className="text-700 text-uppercase"> Customer Mail <span className="text-danger">*</span></Form.Label>
-                                            <Form.Control type="text" autoComplete="off" className="input-focus d-block input-box-440"
+                                            <Form.Control type="text" autoComplete="off"
                                             // value={value} onChange={onChange}
                                             />
                                             {/* <div className="autocom-dropdown">
@@ -729,9 +732,11 @@ const AddJobs = () => {
                                                 </Form.Group>
                                             </Col>
                                             {/* Upload Samples */}
+                                            <Form.Label className='text-700 text-uppercase'>
+                                                Upload Samples & Other Helpful
+                                            </Form.Label>
                                             <Card>
                                                 <Card.Body>
-
                                                     <Col lg={12} className='me-2 mb-2 w-100'>
                                                         <div {...getRootProps({ className: 'dropzone-area py-6' })}>
                                                             <input {...getInputProps()} multiple />
@@ -855,14 +860,6 @@ const AddJobs = () => {
                                             <Col lg={12} className=''>
                                                 <Form.Group className="mb-3">
                                                     <Form.Label className='text-700 text-uppercase'>Project Location <span className="text-danger">*</span> </Form.Label>
-
-                                                    {/* <Form.Control
-                        value={form.location}
-                        required
-                        name="location"
-                        onChange={(e) => { handleChange(e) }}
-                      /> */}
-
                                                     <Form>
                                                         <Form.Group>
                                                             <Form.Control

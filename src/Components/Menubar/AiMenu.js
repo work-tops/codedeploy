@@ -51,7 +51,7 @@ function AdminHeader() {
         <>
             <div className='row'>
                 <div className='col-12'>
-                    <nav style={{ background: '#003f6b' }} className="navbar fixed-top navbar-top navbar-expand-lg">
+                    <nav style={{ background: '#003f6b' }} className="navbar fixed-top navbar-top navbar-expand-xl">
                         <button className="btn navbar-toggler-humburger-icon navbar-toggler  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle Navigation"><Icon icon="material-symbols:menu" color="white" width="20" height="20" /><span className="toggle-line"></span></button>
                         <a className="navbar-brand me-1 me-sm-3">
                             <div className="d-flex align-items-center">
@@ -127,10 +127,10 @@ function AdminHeader() {
                                     </a>
                                     <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                                         <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                                            <Link to="/allfreelancer">
+                                            <Link to="/AllTraders">
                                                 <a title='All Freelancer' className="text-uppercase dropdown-item text-900 fw-medium">All Freelancers</a>
                                             </Link>
-                                            <Link to="/addfreelancer">
+                                            <Link to="/AddTraders">
                                                 <a title='Add Freelancer' className="text-uppercase dropdown-item text-900 fw-medium">Add Freelancers</a>
                                             </Link>
                                         </div>

@@ -189,35 +189,39 @@ import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import AdminHeader from "../Menubar/AiMenu";
 import { Link } from "react-router-dom";
-
+import { Icon } from "@iconify/react";
 const columns = [
     {
-        accessor: 'jobId',
-        Header: 'Job ID'
+        accessor: 'categoryID',
+        Header: 'Category ID'
     },
     {
-        accessor: 'category',
-        Header: 'Category'
+        accessor: 'categoryName',
+        Header: 'Category Name'
     },
     {
-        accessor: 'title',
-        Header: 'Title'
+        accessor: 'commissionType',
+        Header: 'Commission Type'
     },
     {
-        accessor: 'budget',
-        Header: 'Budget'
+        accessor: 'email',
+        Header: 'Email ID',
+        Cell: rowData => {
+            const { email } = rowData.row.original
+            return (
+                <a href={'mailto:' + email}>
+                    {email}
+                </a>
+            )
+        }
     },
     {
-        accessor: 'jobStatus',
-        Header: 'Job Status'
+        accessor: 'firstCommission',
+        Header: 'First Commission'
     },
     {
-        accessor: 'expDate',
-        Header: 'Exp Date'
-    },
-    {
-        accessor: 'status',
-        Header: 'Status'
+        accessor: 'secondCommission',
+        Header: 'Second Commission'
     },
     {
         accessor: 'createdDate',
@@ -235,256 +239,53 @@ const columns = [
 
 const data = [
     {
-        jobId: '643456',
-        category: 'Bar ',
-        title: 'test-project-4',
-        budget: '123',
-        jobStatus: <span className="badge  bg-warning">Processing</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
+        categoryID: '643456',
+        categoryName: 'Roofing ',
+        commissionType: '10%',
+        email: 'petergms@gmail.com',
+        firstCommission: '10',
+        secondCommission: '20%',
+        createdDate: "02 Apr 2023",
+        modifiedDate: "22 Apr 2023",
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
             </div>
         </CardDropdown>
     },
     {
-        jobId: '643456',
-        category: 'Bar ',
-        title: 'test-project-4',
-        budget: '123',
-        jobStatus: <span className="badge  bg-danger">Not Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-warning">Approval Pending</span>,
+        categoryID: '643456',
+        categoryName: 'Roofing ',
+        commissionType: '10%',
+        email: 'petergms@gmail.com',
+        firstCommission: '10',
+        secondCommission: '20%',
+        createdDate: "02 Apr 2023",
+        modifiedDate: "22 Apr 2023",
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
             </div>
         </CardDropdown>
     },
     {
-        jobId: '643456',
-        category: 'ct-3 ',
-        title: 'test-project-3',
-        budget: '123',
-        jobStatus: <span className="badge  bg-success">Completed</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-secondary">Disabled</span>,
+        categoryID: '643456',
+        categoryName: 'Roofing ',
+        commissionType: '10%',
+        email: 'petergms@gmail.com',
+        firstCommission: '10',
+        secondCommission: '20%',
+        createdDate: "02 Apr 2023",
+        modifiedDate: "22 Apr 2023",
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
                 <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
             </div>
         </CardDropdown>
     },
-    {
-        jobId: '643456',
-        category: 'ct-3 ',
-        title: 'test-project-11',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-success">Completed</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-danger">Expired</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'ct-3 ',
-        title: 'test-project-13',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        jobId: '643456',
-        category: 'Bedroom ',
-        title: 'test-project-5',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'Bedroom',
-        title: 'test-project-1',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        jobId: '643456',
-        category: 'Attic ',
-        title: 'test-project-15',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'Bathroom ',
-        title: 'test-project-7',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        jobId: '643456',
-        category: 'Bathroom ',
-        title: 'test-project-4',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'Bathroom ',
-        title: 'test-project-10',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'Attic ',
-        title: 'test-project-14',
-        budget: '077',
-        jobStatus: <span className="badge  bg-danger">Not Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
-    ,
-    {
-        jobId: '664345',
-        category: 'Attic ',
-        title: 'test-project-08',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
-    ,
-    {
-        jobId: '643456',
-        category: 'Bar ',
-        title: 'test-project-9',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
 ];
 
 const AllCategoryCommission = () => {
@@ -526,23 +327,9 @@ const AllCategoryCommission = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                            {/* <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="plus"
-                                transform="shrink-3"
-                                className='me-2'
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">New</span>
-                            </IconButton>
-                            <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="external-link-alt"
-                                transform="shrink-3"
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">Export</span>
-                            </IconButton> */}
+                             <Button variant="falcon-default"
+                                size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
+                            </Button>
                         </div>
                     )}
                 </Col>
@@ -558,12 +345,14 @@ const AllCategoryCommission = () => {
                 </Col>
                 <Col lg={12} className="mt-4">
                     <Card className=" ms-3 me-3 mb-3">
-                        <Card.Header className="bg-light" as={"h5"}>
-                            All Category Commission
+                        <Card.Header className="bg-light">
+                            <h5>All Category Commission Settings<span className="ms-1 fs--1 badge bg-secondary">#100</span></h5>
+                            <p className="fs--1 mt-3">Here are the Category Commission Setting on your store</p>
                         </Card.Header>
+
                         <Card.Body>
                             <div className="d-flex justify-content-end">
-                                <Button as={Link} to="/categorycommission" variant="success">Category Commission</Button>
+                                <Button as={Link} to="/categorycommission" variant="success">Add Commission to Category</Button>
                             </div>
                             <AdvanceTableWrapper
                                 columns={columns}

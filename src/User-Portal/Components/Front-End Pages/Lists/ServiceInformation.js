@@ -14,7 +14,7 @@ import Footer from "../../Footer/Footer";
 import { Editor } from "@tinymce/tinymce-react";
 
 function ServiceInformation() {
-    
+
     const editorRef = useRef(null);
 
     const [show, setShow] = useState(false);
@@ -65,6 +65,23 @@ function ServiceInformation() {
     // 
     const toastDark = () => toast.success(<h6 className="text-sucess">Your Product is Successfully Added to Cart</h6>);
     const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+    // 
+    // 
+    const [isAdded, setIsAdded] = useState(false);
+
+    const handleAddToWishlist = () => {
+        setIsAdded(true);
+        const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+
+        toastDanger();
+    };
+
+    const handleRemoveFromWishlist = () => {
+        setIsAdded(false);
+        const toastDanger1 = () => toast.error(<h6 className="text-dark">Product Removed from Wishlist</h6>)
+        toastDanger1();
+    };
+
     // 
 
     return (
@@ -120,10 +137,41 @@ function ServiceInformation() {
                                         </Link>
 
                                         {/* <Link to="/wishlist/product" className="text-300"> */}
-                                        <li role="button" onClick={toastDanger}>
-                                            <Icon style={{ marginTop: '-5px' }} icon="flat-color-icons:like" className="text-white me-1" width="20" height="20" />
-                                            <span className="me-2">Add to Wishlist</span><span>Remove From Wishlist</span>
-                                        </li>
+                                        <>
+                                            {isAdded ? (
+                                                <li
+                                                    onClick={handleRemoveFromWishlist}
+                                                    role='button'
+                                                    style={{ fontSize: '14px' }}
+                                                    className="text-justify fw-semibold"
+                                                    href="#!"
+                                                    data-bs-toggle="tooltip"
+                                                    data-bs-placement="top"
+                                                    aria-label="Remove from Wishlist"
+                                                    data-bs-original-title="Remove from Wishlist"
+                                                >
+                                                    <span>
+                                                        <Icon icon="icon-park-solid:like" className="me-1" style={{ marginTop: '-2px', color: '#df2020' }} width="20" height="20" />Remove from Wishlist
+                                                    </span>
+                                                </li>
+                                            ) : (
+                                                <li
+                                                    onClick={handleAddToWishlist}
+                                                    role='button'
+                                                    style={{ fontSize: '14px' }}
+                                                    className="text-justify fw-semibold"
+                                                    href="#!"
+                                                    data-bs-toggle="tooltip"
+                                                    data-bs-placement="top"
+                                                    aria-label="Add to Wishlist"
+                                                    data-bs-original-title="Add to Wishlist"
+                                                >
+                                                    <span>
+                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-2px' }} width="20" height="20" />Add to Wishlist
+                                                    </span>
+                                                </li>
+                                            )}
+                                        </>
                                         {/* </Link> */}
                                         <li role="button" className="text-primary">
                                             Next
@@ -244,34 +292,106 @@ function ServiceInformation() {
                             </Card.Body>
                         </Card>
                         {/* Skills */}
+                        {/* Review */}
                         <Card className="mb-3">
                             <Card.Header className=" text-capitalize bg-light">
-                                <h5 >
-                                    Reviews
+                                <h5 className="text-uppercase">
+                                    Reviews (60)
                                 </h5>
-                                <div className="d-flex gap-2 justify-content-end">
+                            </Card.Header>
+                            <Card.Body>
+                                <div className="d-flex gap-2 mt-2 justify-content-lg-end">
                                     <Button
                                         variant="falcon-default"
                                         size="sm"
-                                        iconAlign="right"
-                                        onClick={handleShow1}
-                                        icon="filter"
-                                        iconClassName="ms-1 fs--2"
+                                        onClick={handleShow}
                                     >
                                         Write Review
                                     </Button>
                                     <div>
-                                        <Form.Select size="sm" defaultValue="">
+                                        <Form.Select className="cursor-pointer" size="sm" defaultValue="">
                                             <option value="">Sort by</option>
-                                            <option value="oldest">Oldest</option>
-                                            <option value="newest">Newest</option>
-                                            <option value="name">Name</option>
+                                            <option value="oldest">Old</option>
+                                            <option value="newest">New</option>
+                                            <option value="name">A-Z</option>
                                         </Form.Select>
                                     </div>
                                 </div>
-                            </Card.Header>
+                                <div>
+                                    <Form.Label>Filter By:</Form.Label>
+                                    <div title="Excellent">
+                                        <Form.Check type="checkbox" className="mb-0">
+                                             <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                            <Form.Check.Label className="mb-0 text-700">
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                            </Form.Check.Label>
+                                        </Form.Check>
+                                    </div>
+                                    <div title="Awesome">
+                                        <Form.Check type="checkbox" className="mb-0">
+                                             <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                            <Form.Check.Label className="mb-0 text-700">
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                            </Form.Check.Label>
+                                        </Form.Check>
+                                    </div>
+                                    <div title="Average">
+                                        <Form.Check type="checkbox" className="mb-0">
+                                             <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                            <Form.Check.Label className="mb-0 text-700">
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                            </Form.Check.Label>
+                                        </Form.Check>
+                                    </div>
+                                    <div title="Good">
+                                        <Form.Check type="checkbox" className="mb-0">
+                                             <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                            <Form.Check.Label className="mb-0 text-700">
+
+                                                <FaStar color="#f68f57" />
+                                                <FaStar color="#f68f57" />
+                                            </Form.Check.Label>
+                                        </Form.Check>
+                                    </div>
+                                    <div title="Poor">
+                                        <Form.Check type="checkbox" className="mb-0">
+                                             <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                            <Form.Check.Label className="mb-0 text-700">
+
+                                                <FaStar color="#f68f57" />
+                                            </Form.Check.Label>
+                                        </Form.Check>
+                                    </div>
+                                </div>
+                            </Card.Body>
+                        </Card>
+
+                        <Card className="mb-3">
                             {/*  */}
-                            {/* Review */}
                             <Modal
                                 show={show1}
                                 onHide={() => setShow1(false)}
@@ -547,46 +667,20 @@ function ServiceInformation() {
                                     <h6 className="fw-bold">Share </h6>
                                     <div className="d-flex justify-content-start mt-4 mt-xxl-0">
                                         <ul className="list-unstyled mb-0 d-flex flex-wrap flex-xxl-column gap-3 justify-content-start">
-                                            <li>
-                                                <Button
-                                                    className="text-800 border-0 bg-transparent fw-semi-bold font-base"
-                                                    size="sm"
-                                                    style={{ color: '#003f6b' }}
-                                                >
-                                                    <Icon className="me-1" icon="ion:copy" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" hFlip={true} />
-                                                    Copy Link
-                                                </Button>
-                                            </li>
-                                            <li>
-                                                <Button
-                                                    className="text-800 border-0 bg-transparent fw-semi-bold font-base"
-                                                    size="sm"
-                                                    style={{ color: '#003f6b' }}
-                                                >
-                                                    <Icon className="me-1" icon="ic:sharp-facebook" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" />
-                                                    Facebook
-                                                </Button>
-                                            </li>
-                                            <li>
-                                                <Button
-                                                    className="text-800 border-0 bg-transparent fw-semi-bold font-base"
-                                                    size="sm"
-                                                    style={{ color: '#003f6b' }}
-                                                >
-                                                    <Icon className="me-1" style={{ marginTop: '-4px' }} icon="akar-icons:twitter-fill" color="#003f6b" width="20" height="20" />
-                                                    Twitter
-                                                </Button>
-                                            </li>
-                                            <li>
-                                                <Button
-                                                    className="text-800 border-0 bg-transparent fw-semi-bold font-base"
-                                                    size="sm"
-                                                    style={{ color: '#003f6b' }}
-                                                >
-                                                    <Icon className="me-1" icon="ri:whatsapp-fill" style={{ marginTop: '-4px' }} color="#003f6b" width="20" height="20" />
-                                                    Whatsapp
-                                                </Button>
-                                            </li>
+
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg">
+                                                    <FontAwesomeIcon style={{ width: '1rem', height: '1rem' }} icon="fa-solid fa-copy" />
+                                                </button>
+                                                <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg">
+                                                    <span class="fs-0 fab fa-facebook-f mr-1 text-primary"></span></button>
+                                                <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg">
+                                                    <span class="fs-0 fab fa-twitter mr-1 text-twitter"></span>
+                                                </button>
+                                                <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg">
+                                                    <span class="fs-0 fab fa-linkedin-in mr-1 text-info"></span>
+                                                </button>
+                                            </div>
                                         </ul>
                                     </div>
                                 </Card.Body>

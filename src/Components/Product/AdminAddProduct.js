@@ -413,13 +413,13 @@
 
 //                                             <div >
 //                                                 <label>Product Name</label>
-//                                                 <input value={form.name} required name="name" onChange={(e) => { handleChange(e) }} id="aipro-name" type='text' />
+//                                                 <input value={form.name} required name="name"  id="aipro-name" type='text' />
 //                                                 <br></br>
 //                                                 <span className="category">Category</span> <span className="seller-email">Seller Email</span>
 //                                                 <br></br>
 //                                                 <select
 //                                                     value={form.type?.name}
-//                                                     required name="type" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
+//                                                     required name="type"  id="aipro-category" className="select-category">
 //                                                     <option value="">Select</option>
 //                                                     {productCategory.map((data, key) => (
 //                                                         <option key={key} value={data.name}>
@@ -428,22 +428,22 @@
 //                                                     ))}
 //                                                 </select>
 
-//                                                 <select value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} id="aipro-category" className="select-category">
+//                                                 <select value={form.seller_email} required name="seller_email"  id="aipro-category" className="select-category">
 //                                                     <option value="">Select</option>
 //                                                     {sellerList.map((data, key) => (
 //                                                         <option key={key} value={data.email}>{data.email}</option>
 //                                                     ))}
 //                                                 </select>
-//                                                 {/* <input value={form.category} required name="category" onChange={(e) => { handleChange(e) }} id="aipro-category" type='text' /> */}
-//                                                 {/* <input value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} id="aipro-email" type='email' /> */}
+//                                                 {/* <input value={form.category} required name="category"  id="aipro-category" type='text' /> */}
+//                                                 {/* <input value={form.seller_email} required name="seller_email"  id="aipro-email" type='email' /> */}
 //                                                 <br />
 //                                                 <label>Description</label>
 //                                                 <br />
-//                                                 <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} id="aipro-description" className="ai-product-description"></textarea>
+//                                                 <textarea value={form.description} required name="description"  id="aipro-description" className="ai-product-description"></textarea>
 //                                                 <br />
 //                                                 {/* <label>Product Tag</label>
 //                                                 <br />
-//                                                 <input value={form.tags} required name="tags" onChange={(e) => { handleChange(e) }} className="ai-product-tag" type='text'></input> */}
+//                                                 <input value={form.tags} required name="tags"  className="ai-product-tag" type='text'></input> */}
 //                                                 <br></br>
 //                                                 {/*  */}
 //                                                 {/* <!-- Button trigger modal --> */}
@@ -573,7 +573,7 @@
 //                                                 {/*  */}
 //                                                 <label>Return Policy</label>
 //                                                 <br />
-//                                                 <textarea value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} id="aipro-returnpolicy"></textarea>
+//                                                 <textarea value={form.policy} required name="policy"  id="aipro-returnpolicy"></textarea>
 //                                                 <button type='submit' className="create-acc-btn">Save Product</button>
 //                                                 {/* <button className="btn btn-danger ms-3" onClick={clearData}>Clear</button> */}
 //                                                 <Link to="/allproduct"><button className="btn btn-danger ms-3">Cancel</button></Link> 
@@ -626,12 +626,12 @@
 
 //                                             <p className="sub-title mt-4">Product Handle and Metafields </p>
 //                                             <label className="label-name">Product handle</label>
-//                                             <input value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} className="input-focus input-box-300" type='text' />
+//                                             <input  required name="handle"  className="input-focus input-box-300" type='text' />
 //                                             <p className="sub-title">Product Meta Fields</p>
 //                                             <label className="label-name">Title tag meta field</label>
-//                                             <input value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} className="input-focus input-box-300" type='text' />
+//                                             <input  required name="metatitle"  className="input-focus input-box-300" type='text' />
 //                                             <label className="label-name">Description tag meta field</label>
-//                                             <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} className="input-focus input-box-300" type='text' />
+//                                             <input  required name="metadescription"  className="input-focus input-box-300" type='text' />
 //                                             <p className="sub-title">Product Tag</p>
 //                                             {productTags.map((x, i) => {
 //                                                 const defaultSelectedValues = selectedproductTags[i]?.list || []; 
@@ -666,6 +666,7 @@
 //     )
 // }
 // export default AiProductDetails
+
 import { useState, React, useEffect, useCallback, useRef } from 'react';
 import { Col, Row, Card, Button, Modal, Breadcrumb } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
@@ -692,323 +693,6 @@ const AddProduct = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    var _user = sessionStorage.getItem('user');
-    var _json = JSON.parse(_user);
-
-    //varient state
-    const history = useHistory();
-    const [variants, setVariants] = useState([]);
-    console.log(variants)
-    const [isEdit, setEditButton] = useState(false);
-    const [editIndex, setEditVarientIndex] = useState(0);
-
-    const [variant, setVarientObject] = useState({
-        imageInx: null,
-        color: "",
-        size: "",
-        finish_type: "",
-        price: "",
-        compare_at: "",
-        handling_changes: "",
-        sales_price: "",
-        required_shipping: false,
-        charge_taxes: false,
-        sku: "",
-        barcode: "",
-        min_purchase_qty: "",
-        quantity: "",
-        track_inventory: false,
-        remaining_quantity: 5,
-    });
-
-    console.log(Boolean(variant.required_shipping))
-
-    //varient functionality
-    const variantChange = (e) => {
-        const _variant = { ...variant };
-        _variant[e.target.name] = e.target.value;
-        setVarientObject(_variant);
-    };
-
-    const handlechange1 = (e) => {
-        setVarientObject({
-            ...variant,
-            [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
-        });
-    };
-
-    const handleVariantSubmit = (event) => {
-        event.preventDefault();
-        var _form = {
-            color: variant.color,
-            size: variant.size,
-            finish_type: variant.finish_type,
-            shipping: {
-                required_shipping: Boolean(variant.required_shipping),
-                charge_tax: Boolean(variant.charge_tax),
-            },
-            pricing: {
-                price: variant.price,
-                compare_at: variant.compare_at,
-                handling_changes: variant.handling_changes,
-                sales_price: variant.sales_price,
-                charge_taxes: Boolean(variant.charge_taxes),
-            },
-            inventory: {
-                sku: variant.sku,
-                barcode: variant.barcode,
-                min_purchase_qty: variant.min_purchase_qty,
-                quantity: variant.quantity,
-                remaining_quantity: variant.remaining_quantity,
-                track_inventory: Boolean(variant.track_inventory),
-            },
-            attachment: selectedFile[parseInt(variant.imageInx)]
-        }
-
-        var _variant = [...variants]
-        if (isEdit == true) {
-            _variant[editIndex] = _form;
-        } else {
-            _variant.push(_form);
-        }
-        setVariants(_variant);
-        console.log('variant', variant);
-        console.log('_form', _form);
-        console.log('variants list', variants);
-        resetVarientObject();
-        setShow(false)
-
-    };
-
-    const resetVarientObject = () => {
-        var _variant = {
-            imageInx: null,
-            color: "",
-            size: "",
-            finish_type: "",
-            price: "",
-            compare_at: "",
-            handling_changes: "",
-            sales_price: "",
-            required_shipping: false,
-            charge_taxes: false,
-            sku: "",
-            barcode: "",
-            min_purchase_qty: "",
-            quantity: "",
-            track_inventory: false,
-            remaining_quantity: 5,
-        }
-
-        setVarientObject(_variant);
-        setEditButton(false);
-        setEditVarientIndex(0);
-    };
-
-    const editVarient = (data, index) => {
-        setShow(true)
-        var _variant = {
-            imageInx: data?.imageInx,
-            color: data?.color,
-            size: data?.size,
-            finish_type: data?.finish_type,
-            price: data?.pricing?.price,
-            compare_at: data?.pricing?.compare_at,
-            handling_changes: data?.pricing?.handling_changes,
-            sales_price: data?.pricing?.sales_price,
-            required_shipping: data?.shipping?.required_shipping,
-            charge_taxes: data?.pricing?.charge_taxes,
-            sku: data?.inventory?.sku,
-            barcode: data?.inventory?.barcode,
-            min_purchase_qty: data?.inventory?.min_purchase_qty,
-            quantity: data?.inventory?.quantity,
-            track_inventory: data?.inventory?.track_inventory,
-            remaining_quantity: 5,
-
-        }
-        setVarientObject(_variant);
-        setEditButton(true);
-        setEditVarientIndex(index);
-    };
-    const variantremove = (index) => {
-        var _variant = [...variants]
-        _variant.splice(index, 1);
-        setVariants(_variant);
-    };
-
-    // file upload --state
-    const [selectedFile, setSelectedFile] = useState([]);
-    const [actualFiles, setActualFile] = useState([]);
-    const [uploadFiles, setUploadFile] = useState([]);
-    // file upload --functionality
-    const handleFileInput = (e) => {
-        // const files = e.target.files;
-        const _files = Array.from(e.target.files);
-        const _urls = [...actualFiles];
-        const fileArray = selectedFile;
-        const upload = uploadFiles;
-        _files.forEach((file) => {
-            upload.push(file);
-            const reader = new FileReader();
-
-            reader.onload = () => {
-                _urls.push(reader.result);
-                setActualFile(_urls);
-            };
-
-            reader.readAsDataURL(file);
-        });
-        for (let i = 0; i < _files.length; i++) {
-            fileArray.push({
-                name: _files[i].name,
-                url: `https://myproject-data.s3.eu-west-2.amazonaws.com/images/${_files[i].name}`,
-                type: _files[i].type
-            });
-        }
-        setSelectedFile(fileArray);
-        setUploadFile(upload);
-    };
-    const uploadFile = () => {
-        console.log('uploadFiles length', uploadFiles.length);
-        for (let i = 0; i < uploadFiles.length; i++) {
-            uploadImage(uploadFiles[i]);
-        }
-    };
-    const removeImage = async (index) => {
-        var selected = [...selectedFile];
-        var actual = [...actualFiles];
-        var uploads = [...uploadFiles];
-        selected.splice(index, 1);
-        actual.splice(index, 1);
-        uploads.splice(index, 1);
-        setActualFile(actual);
-        setSelectedFile(selected);
-        setUploadFile(uploads);
-    }
-    //product --state
-    const [form, setProductForm] = useState({
-        name: ""
-    })
-    const [productCategory, setproductCategory] = useState([])
-    const [sellerList, setsellerList] = useState([])
-    const [productTags, setproductTags] = useState([])
-    const [selectedproductTags, setSelectedproductTags] = useState([])
-    console.log(selectedproductTags)
-
-    //product --functionality
-    const handleChange = (e) => {
-        const myData = { ...form };
-        if (e.target.name == 'type') {
-            var _pd = productCategory.find(x => x.value == e.target.value);
-            var _type = {
-                id: _pd ? _pd.id : 1,
-                name: e.target.value
-            }
-            myData[e.target.name] = _type;
-        } else {
-            myData[e.target.name] = e.target.value;
-        }
-        setProductForm(myData);
-    }
-    const addProduct = async () => {
-        const productdata = {
-            seller_email: form.seller_email,
-            name: form.name,
-            // category: form.category,
-            type: form.type,
-            description: form.description,
-            tags: selectedproductTags,
-            policy: form.policy,
-            shipping: form.shipping,
-            pricing: { price: 100 },
-            inventory: { quantity: 100 },
-            handle: form.handle,
-            meta_fields: {
-                title: form.metatitle,
-                description: form.metadescription,
-            },
-            attachments: selectedFile,
-            // variant:form.tags,
-            variant: variants,
-            custom_fields: {},
-            created_by: _json._id,
-        }
-        console.log(productdata);
-        const response = await createData("admin/product/new", productdata);
-        if (response.status === 201) {
-            toast.success('Successfully Product Submitted');
-            clearData();
-            history.push('/addproductcard');
-        } else {
-            toast.error('Something went wrong')
-        }
-        console.log(response)
-    }
-
-    const formsubmit = (e) => {
-        if (variants.length === 0) {
-            toast.error("You have to add at least one variant")
-            e.preventDefault()
-
-        } else {
-            e.preventDefault()
-            addProduct()
-            uploadFile()
-        }
-    }
-
-    //reset all
-    const clearData = () => {
-        setProductForm({
-            name: "",
-            category: "",
-            seller_email: "",
-            description: "",
-            policy: "",
-            handle: "",
-            metatitle: "",
-            metadescription: ""
-        });
-        setActualFile([]);
-        setUploadFile([]);
-        setSelectedFile([]);
-        setVariants([]);
-        // getProductTags();
-        resetVarientObject();
-
-    }
-
-    const handleTagChange = (event, index) => {
-        var _list = [
-            {
-                id: 1,
-                value: event.target.value
-            }
-        ]
-        var _tags = selectedproductTags;
-        _tags[index].list = _list;
-        setSelectedproductTags(_tags);
-    }
-    const getProductTags = async () => {
-        const response = await getAllData('master/product_tags');
-        setproductTags(response.data.master[0].data);
-        var _selectList = [];
-        response.data.master[0].data.forEach(x => {
-            _selectList.push({ id: x.id, name: x.name, list: [] })
-        })
-        setSelectedproductTags(_selectList);
-    }
-    // others
-    //  const [productCategory, setproductCategory] = useState([])
-    const getProductCategories = async () => {
-        const response = await getAllData('master/product_tags');
-        setproductCategory(response.data.master[0].data[0].list);
-    }
-
-    useEffect(() => {
-        getProductCategories()
-        getProductTags()
-    }, [])
 
     // Cancel Modal
     const [showModal1, setShowModal1] = useState(false);
@@ -1052,35 +736,55 @@ const AddProduct = () => {
                 </Col>
                 <Col lg={12} className='container mt-4'>
                     <Card>
-                        <Card.Header className="bg-light" as={"h5"}>
-                            Add Product
-                            <Breadcrumb as={"h6"} className='mt-3 text-capitalize'>
-                                <Breadcrumb.Item href="#">
-                                    Product
+                        <Card.Header className="bg-light">
+                            <h5>
+                                Add Product
+                            </h5>
+                            <Breadcrumb className="fs--1 mt-2">
+                                <Breadcrumb.Item>
+                                    All Products
                                 </Breadcrumb.Item>
-                                <Breadcrumb.Item href="#">
-                                    Add Product
+                                <Breadcrumb.Item>
+                                    Add Products
                                 </Breadcrumb.Item>
                             </Breadcrumb>
+                            <p className="text-dark text-capitalize fs--1 mt-2">Here Add Products to your store</p>
                         </Card.Header>
                         <Card.Body>
-                            <Form onSubmit={(e) => { formsubmit(e) }}>
+                            <Form>
                                 <Row>
-                                    <Col lg={7}>
-                                        <Card className=''>
-
-
+                                    <Col md={7}>
+                                        <Card className='mb-3 '>
+                                            <Card.Header className='bg-light'>
+                                                <h5 className='text-uppercase'>Organization</h5>
+                                            </Card.Header>
                                             <Card.Body>
-                                                <h5 className='mb-3 text-uppercase'>Products Information</h5>
+                                                <Form.Group className='mb-3'>
+                                                    <Form.Label className="text-700 text-uppercase">Trader Email<span className="ms-1 text-danger">*</span></Form.Label>
+                                                    <Form.Control required name="seller_email" type="email" className='w-100' />
+                                                </Form.Group>
+                                                <Form.Group className='mb-3'>
+                                                    <Form.Label className="text-700 text-uppercase">Category<span className="ms-1 text-danger">*</span></Form.Label>
+                                                    <Form.Select required name="type" >
+                                                        <option value="">Select</option>
 
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Card.Body>
+                                        </Card>
+                                        <Card className=''>
+                                            <Card.Header className='bg-light'>
+                                                <h5 className='text-uppercase'>Products Information</h5>
+                                            </Card.Header>
+                                            <Card.Body>
                                                 <Form.Group className="mb-3">
                                                     <Form.Label className="text-700 text-uppercase">Name<span className="ms-1 text-danger">*</span></Form.Label>
-                                                    <Form.Control value={form.name} required name="name" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
+                                                    <Form.Control required name="name" type="text" className='w-100' />
                                                 </Form.Group>
                                                 <Row className="mb-3 g-3">
                                                     <Form.Group className="mb-3">
                                                         <Form.Label className="text-700 text-uppercase">Description </Form.Label>
-                                                        {/* <Form.Control value={form.description} required name="description" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Description....' rows={8} /> */}
+                                                        {/* <Form.Control value={form.description} required name="description"  as="textarea" placeholder='Tag Your Description....' rows={8} /> */}
                                                         <Editor
                                                             onInit={(evt, editor) => editorRef.current = editor}
                                                             initialValue=""
@@ -1105,7 +809,7 @@ const AddProduct = () => {
                                                 <Row className="mb-3 g-3">
                                                     <Form.Group className="mb-3">
                                                         <Form.Label className="text-700 text-uppercase">Return Policy </Form.Label>
-                                                        {/* <Form.Control value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Policy....' rows={8} /> */}
+                                                        {/* <Form.Control value={form.policy} required name="policy"  as="textarea" placeholder='Tag Your Policy....' rows={8} /> */}
                                                         <Editor
                                                             onInit={(evt, editor) => editorRef.current = editor}
                                                             initialValue=""
@@ -1129,44 +833,23 @@ const AddProduct = () => {
                                                 </Row>
                                             </Card.Body>
                                         </Card>
-                                        <Card className='mt-3 '>
-                                            <Card.Body>
-                                                <h5 className='mb-3 text-uppercase'>Organization</h5>
-                                                <Form.Group className='mb-3'>
-                                                    <Form.Label className="text-700 text-uppercase">Trader Email<span className="ms-1 text-danger">*</span></Form.Label>
-                                                    <Form.Control value={form.seller_email} required name="seller_email" onChange={(e) => { handleChange(e) }} type="email" className='w-100' />
-                                                </Form.Group>
-                                                <Form.Group className='mb-3'>
-                                                    <Form.Label className="text-700 text-uppercase">Category<span className="ms-1 text-danger">*</span></Form.Label>
-                                                    <Form.Select value={form.type?.name} required name="type" onChange={(e) => { handleChange(e) }}>
-                                                        <option value="">Select</option>
-                                                        {productCategory?.map((data, key) => (
-                                                            <option key={key} value={data.value}>
-                                                                {data.value}
-                                                            </option>
-                                                        ))}
-                                                    </Form.Select>
-                                                </Form.Group>
-                                            </Card.Body>
-                                        </Card>
                                         <Button onClick={handleShow} className='m-3 bg-transparent text-primary'>+ Add Variant</Button>
                                         <div>
-                                            {variants.map((data, index) => (
-                                                <Card className=''>
-                                                    <Card.Header className='d-flex justify-content-end bg-light'>
-                                                        <button style={{ fontSize: '14px' }} className='btn me-1 border-secondary bg-transparent' type="button" onClick={() => editVarient(data, index)} >Edit</button>
-                                                        <button onClick={() => setShowModal3(true)} type="button" style={{ fontSize: '14px' }} className='btn me-1 border-secondary bg-transparent'>Remove</button>
-                                                    </Card.Header>
-                                                    <Card.Body>
-                                                        <p><span className='fw-semibold'>Colour : </span>{data?.color}</p>
-                                                        <p><span className='fw-semibold'>Size : </span>{data?.size} </p>
-                                                        <p><span className='fw-semibold'>Finish Type : </span>{data?.finish_type}</p>
-                                                        <p><span className='fw-semibold'>Quantity : </span>{data?.quantity}</p>
-                                                        <p><span className='fw-semibold'>Inventory : </span>{data?.inventory?.sku}</p>
-                                                        <p><span className='fw-semibold'>Price : </span>£ {data?.pricing?.price}</p>
-                                                    </Card.Body>
-                                                </Card>
-                                            ))}
+                                            <Card className=''>
+                                                <Card.Header className='d-flex justify-content-end bg-light'>
+                                                    <button style={{ fontSize: '14px' }} className='btn me-1 border-secondary bg-transparent' type="button">Edit</button>
+                                                    <button onClick={() => setShowModal3(true)} type="button" style={{ fontSize: '14px' }} className='btn me-1 border-secondary bg-transparent'>Remove</button>
+                                                </Card.Header>
+                                                <Card.Body>
+                                                    <p className='fs--1'><span className='fw-semibold'>Colour : </span>Black</p>
+                                                    <p className='fs--1'><span className='fw-semibold'>Size : </span>20 mm</p>
+                                                    <p className='fs--1'><span className='fw-semibold'>Finish Type : </span>Polished Per Sq.ft</p>
+                                                    <p className='fs--1'><span className='fw-semibold'>Quantity : </span>2</p>
+                                                    <p className='fs--1'><span className='fw-semibold'>Inventory : </span>-007</p>
+                                                    <p className='fs--1'><span className='fw-semibold'>Price : </span>£ 200</p>
+                                                    <p className='fs--1'><span className='fw-semibold'>SKU : </span>HOBCRT - 700480</p>
+                                                </Card.Body>
+                                            </Card>
                                         </div>
 
                                         <div>
@@ -1177,7 +860,7 @@ const AddProduct = () => {
                                                     show={show}
                                                     onHide={() => setShow(false)}
                                                     dialogClassName="modal-xl modal-90w"
-
+                                                    backdrop="static"
                                                     aria-labelledby="example-custom-modal-styling-title"
                                                 >
                                                     <Modal.Header closeButton>
@@ -1186,69 +869,78 @@ const AddProduct = () => {
                                                     </Modal.Header>
                                                     <Modal.Body>
                                                         <Row>
-                                                            <Col lg={6}>
+                                                            <Col md={6}>
                                                                 <Card className='mt-3  me-3'>
+                                                                    <Card.Header className='bg-light'>
+                                                                        <h5 className=''>OPTIONS</h5>
+                                                                    </Card.Header>
                                                                     <Card.Body>
-                                                                        <div className='d-flex justify-content-between'>
-                                                                            <h5 className='mb-3 text-uppercase'>Variants</h5>
-
-                                                                        </div>
-                                                                        <h6 className='mt-3 mb-3'>OPTIONS</h6>
                                                                         <Row className="mb-3 g-3">
-                                                                            <Form.Group as={Col} className='mb-3'>
-
-                                                                                {/* <Form.Select className='w-75'>
-                                                                                    <option>Size</option>
-                                                                                    <option>Colour</option>
-                                                                                    <option>Material</option>
-                                                                                    <option>Style</option>
-                                                                                </Form.Select> */}
-                                                                                <Form.Label className="text-700 text-uppercase">Colour<span className="ms-1 text-danger">*</span></Form.Label>
-                                                                            </Form.Group>
-                                                                            <Form.Group as={Col} className='mb-3'>
-                                                                                <Form.Control value={variant.color} required name="color" onChange={(e) => { variantChange(e) }} type="text" placeholder='Enter tags' className='w-100' />
-                                                                            </Form.Group>
+                                                                            <Form.Label className="text-700 text-uppercase">Colour<span className="ms-1 text-danger">*</span></Form.Label>
+                                                                            <Col md={6}>
+                                                                                <Form.Group className='mb-3'>
+                                                                                    <Form.Select className=''>
+                                                                                        <option>Size</option>
+                                                                                        <option>Colour</option>
+                                                                                        <option>Material</option>
+                                                                                        <option>Style</option>
+                                                                                    </Form.Select>
+                                                                                </Form.Group>
+                                                                            </Col>
+                                                                            <Col md={6}>
+                                                                                <Form.Group className='mb-3'>
+                                                                                    <Form.Control required name="color" type="text" placeholder='Enter tags' className='w-100' />
+                                                                                </Form.Group>
+                                                                            </Col>
                                                                         </Row>
                                                                         <Row className="mb-3 g-3">
-                                                                            <Form.Group as={Col} className='mb-3'>
-                                                                                <Form.Label className="text-700 text-uppercase">Size<span className="ms-1 text-danger">*</span></Form.Label>
-                                                                                {/* <Form.Select className='w-75'>
-                                                                                    <option>Size</option>
-                                                                                    <option>Colour</option>
-                                                                                    <option>Material</option>
-                                                                                    <option>Style</option>
-                                                                                </Form.Select> */}
-                                                                            </Form.Group>
-                                                                            <Form.Group as={Col} className='mb-3'>
-                                                                                <Form.Control value={variant.size} required name="size" onChange={(e) => { variantChange(e) }} type="text" placeholder='Enter tags' className='w-100' />
-                                                                            </Form.Group>
+                                                                            <Form.Label className="text-700 text-uppercase">Size<span className="ms-1 text-danger">*</span></Form.Label>
+                                                                            <Col md={6}>
+                                                                                <Form.Group className='mb-3'>
+                                                                                    <Form.Select className=''>
+                                                                                        <option>Size</option>
+                                                                                        <option>Colour</option>
+                                                                                        <option>Material</option>
+                                                                                        <option>Style</option>
+                                                                                    </Form.Select>
+                                                                                </Form.Group>
+                                                                            </Col>
+                                                                            <Col md={6}>
+                                                                                <Form.Group className='mb-3'>
+                                                                                    <Form.Control required name="color" type="text" placeholder='Enter tags' className='w-100' />
+                                                                                </Form.Group>
+                                                                            </Col>
                                                                         </Row>
                                                                         <Row className="mb-3 g-3">
-                                                                            <Form.Group as={Col} className='mb-3'>
-                                                                                <Form.Label className="text-700 text-uppercase">Finish Type<span className="ms-1 text-danger">*</span></Form.Label>
-                                                                                {/* <Form.Select className='w-75'>
-                                                                                    <option>Size</option>
-                                                                                    <option>Colour</option>
-                                                                                    <option>Material</option>
-                                                                                    <option>Style</option>
-                                                                                </Form.Select> */}
-                                                                            </Form.Group>
-                                                                            <Form.Group as={Col} className='mb-3'>
-                                                                                <Form.Control value={variant.finish_type} required name="finish_type" onChange={(e) => { variantChange(e) }} type="text" placeholder='Enter tags' className='w-100' />
-                                                                            </Form.Group>
+                                                                            <Form.Label className="text-700 text-uppercase">Finish Type<span className="ms-1 text-danger">*</span></Form.Label>
+                                                                            <Col md={6}>
+                                                                                <Form.Group className='mb-3'>
+                                                                                    <Form.Select className=''>
+                                                                                        <option>Size</option>
+                                                                                        <option>Colour</option>
+                                                                                        <option>Material</option>
+                                                                                        <option>Style</option>
+                                                                                    </Form.Select>
+                                                                                </Form.Group>
+                                                                            </Col>
+                                                                            <Col md={6}>
+                                                                                <Form.Group className='mb-3'>
+                                                                                    <Form.Control required name="color" type="text" placeholder='Enter tags' className='w-100' />
+                                                                                </Form.Group>
+                                                                            </Col>
                                                                         </Row>
                                                                         {/* <Button className='bg-transparent text-primary'>+ Add Option</Button> */}
                                                                     </Card.Body>
                                                                 </Card>
                                                             </Col>
-                                                            <Col lg={5}>
+                                                            <Col md={5}>
                                                                 <Card className='mt-3 me-3'>
                                                                     <Card.Body>
-                                                                        <h5 className='mb-3 text-uppercase'>Pricing</h5>
+                                                                        <h5 className='text-uppercase'>Pricing</h5>
                                                                         <Form.Group className='mb-3'>
                                                                             <Form.Label className="text-700 text-uppercase">Pricing<span className='text-danger'>*</span></Form.Label>
                                                                             <InputGroup className="mb-3">
-                                                                                <Form.Control value={variant.price} required name="price" onChange={(e) => { variantChange(e) }} placeholder='0.00' type="number" aria-label="Text input with dropdown button" />
+                                                                                <Form.Control required name="price" placeholder='0.00' type="number" aria-label="Text input with dropdown button" />
                                                                                 <Button>
                                                                                     £
                                                                                 </Button>
@@ -1257,7 +949,7 @@ const AddProduct = () => {
                                                                         <Form.Group className='mb-3'>
                                                                             <Form.Label className="text-700 text-uppercase">Compare Price<span className='text-danger'>*</span></Form.Label>
                                                                             <InputGroup className="mb-3">
-                                                                                <Form.Control value={variant.compare_at} required name="compare_at" onChange={(e) => { variantChange(e) }} type="number" />
+                                                                                <Form.Control required name="compare_at" type="number" />
                                                                                 <Button>
                                                                                     £
                                                                                 </Button>
@@ -1266,7 +958,7 @@ const AddProduct = () => {
                                                                         <Form.Group className='mb-3'>
                                                                             <Form.Label className="text-700 text-uppercase">Handling Charges<span className='text-danger'>*</span></Form.Label>
                                                                             <InputGroup className="mb-3">
-                                                                                <Form.Control value={variant.handling_changes} required name="handling_changes" onChange={(e) => { variantChange(e) }} type="number" />
+                                                                                <Form.Control required name="handling_changes" type="number" />
                                                                                 <Button>
                                                                                     £
                                                                                 </Button>
@@ -1275,7 +967,7 @@ const AddProduct = () => {
                                                                         <Form.Group className='mb-3'>
                                                                             <Form.Label className="text-700 text-uppercase">Sales Price<span className='text-danger'>*</span></Form.Label>
                                                                             <InputGroup className="mb-3">
-                                                                                <Form.Control disabled value={variant.sales_price} required name="sales_price" onChange={(e) => { variantChange(e) }} type="number" />
+                                                                                <Form.Control disabled required name="sales_price" type="number" />
                                                                                 <Button>
                                                                                     £
                                                                                 </Button>
@@ -1290,7 +982,7 @@ const AddProduct = () => {
                                                                                     </Form.Label> */}
                                                                                     <Form.Check
                                                                                         type="checkbox"
-                                                                                        checked={variant.required_shipping} name="required_shipping" onChange={handlechange1}
+                                                                                        // checked={variant.required_shipping} name="required_shipping" onChange={handlechange1}
                                                                                         id="inventoryCheckbox"
                                                                                         label=" Shipping Requires"
                                                                                     />
@@ -1302,7 +994,7 @@ const AddProduct = () => {
                                                                                     </Form.Label> */}
                                                                                     <Form.Check
                                                                                         type="checkbox"
-                                                                                        checked={variant.charge_taxes} name="charge_taxes" onChange={handlechange1}
+                                                                                        // checked={variant.charge_taxes} name="charge_taxes" onChange={handlechange1}
                                                                                         id="inventoryCheckbox"
                                                                                         label=" Charge Taxes on this products"
                                                                                     />
@@ -1313,26 +1005,26 @@ const AddProduct = () => {
                                                                 </Card>
                                                                 <Card className='mt-3 me-3'>
                                                                     <Card.Body>
-                                                                        <h5 className='mb-3 text-uppercase'>Inventory</h5>
+                                                                        <h5 className='text-uppercase'>Inventory</h5>
                                                                         <Form.Group className='mb-3'>
                                                                             <Form.Label className="text-700 text-uppercase">SKU<span className='text-danger'>*</span></Form.Label>
-                                                                            <Form.Control value={variant.sku} required name="sku" onChange={(e) => { variantChange(e) }} className='w-100' type="text" placeholder='eg.324812302' />
+                                                                            <Form.Control required name="sku" className='w-100' type="text" placeholder='eg.324812302' />
                                                                         </Form.Group>
                                                                         <Form.Group className='mb-3'>
                                                                             <Form.Label className="text-700 text-uppercase">Barcode<span className='text-danger'>*</span></Form.Label>
                                                                             <Form.Control
-                                                                                value={variant.barcode} required name="barcode" onChange={(e) => { variantChange(e) }}
+                                                                                required name="barcode"
                                                                                 className='w-100'
                                                                                 type="text"
                                                                             />
                                                                         </Form.Group>
                                                                         <Form.Group className='mb-3'>
                                                                             <Form.Label className="text-700 text-uppercase">Minimum Purchase Quantity<span className='text-danger'>*</span></Form.Label>
-                                                                            <Form.Control value={variant.min_purchase_qty} required name="min_purchase_qty" onChange={(e) => { variantChange(e) }} type="number" className='w-100' />
+                                                                            <Form.Control required name="min_purchase_qty" type="number" className='w-100' />
                                                                         </Form.Group>
                                                                         <Form.Group className='mb-3'>
                                                                             <Form.Label className="text-700 text-uppercase">Quantity<span className='text-danger'>*</span></Form.Label>
-                                                                            <Form.Control value={variant.quantity} required name="quantity" onChange={(e) => { variantChange(e) }} type="number" className='w-100' />
+                                                                            <Form.Control required name="quantity" type="number" className='w-100' />
                                                                         </Form.Group>
                                                                         <Form.Group className='mb-3'>
                                                                             {/* <Form.Check  /> */}
@@ -1341,13 +1033,13 @@ const AddProduct = () => {
                                                                             </Form.Label> */}
                                                                             <Form.Check
                                                                                 type="checkbox"
-                                                                                checked={variant.track_inventory} name="track_inventory" onChange={handlechange1}
+                                                                                // checked={variant.track_inventory} name="track_inventory" onChange={handlechange1}
                                                                                 id="inventoryCheckbox"
                                                                                 label="Track this Product's Inventory"
                                                                             />
                                                                         </Form.Group>
 
-                                                                        <Button type='submit' onClick={(e) => { handleVariantSubmit(e) }} className='btn bg-success border border-0 m-3'>Submit</Button>
+                                                                        <Button type='submit' className='btn bg-success border border-0 m-3'>Submit</Button>
 
                                                                     </Card.Body>
                                                                 </Card>
@@ -1360,14 +1052,14 @@ const AddProduct = () => {
                                             {/* </Flex> */}
                                         </div>
                                     </Col>
-                                    <Col lg={5}>
+                                    <Col md={5}>
 
                                         <Card className=''>
+                                            <Card.Header className='bg-light'>
+                                                <h5 className='text-uppercase'>Media</h5>
+                                            </Card.Header>
                                             <Card.Body>
-                                                {/* <Flex justifyContent={between}> */}
-                                                <h5 className='mb-3 text-uppercase'>Media</h5>
 
-                                                {/* </Flex> */}
                                                 <div className='mt-3 border-secondary w-100'>
                                                     {/* <small className='d-block text-align-center'>
                                                 Drag and Drop
@@ -1463,43 +1155,52 @@ const AddProduct = () => {
                                         </Card>
 
                                         <Card className='mt-3'>
+                                            <Card.Header className='bg-light'>
+                                                <h5 className='text-uppercase'>Products Handle and Metafields</h5>
+                                            </Card.Header>
                                             <Card.Body>
-                                                <h5 className='mb-3 text-uppercase'>Products Handle and Metafields</h5>
                                                 <Form.Group className='mb-4'>
                                                     <Form.Label className="text-700 text-uppercase">
                                                         Products handle<span className='text-danger'>*</span>
                                                     </Form.Label>
-                                                    <Form.Control value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                                    <Form.Control required name="handle" type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
-                                                <h5 className='mb-3 text-uppercase'>Products Metafields</h5>
+                                            </Card.Body>
+                                        </Card>
+                                        <Card className='mt-3'>
+                                            <Card.Header className='bg-light'>
+                                                <h5 className='text-uppercase'>Products Metafields</h5>
+                                            </Card.Header>
+                                            <Card.Body>
                                                 <Form.Group className='mb-3'>
                                                     <Form.Label className="text-700 text-uppercase">
                                                         Title Tag Meta Field<span className='text-danger'>*</span>
                                                     </Form.Label>
-                                                    <Form.Control value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                                    <Form.Control required name="metatitle" type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
                                                     <Form.Label className="text-700 text-uppercase">
                                                         Description Tag Meta Field<span className='text-danger'>*</span>
                                                     </Form.Label>
-                                                    <Form.Control value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} as={"textarea"} rows={1} maxLength={300} className='resize-none w-100' />
+                                                    <Form.Control required name="metadescription" as={"textarea"} rows={1} maxLength={300} className='resize-none w-100' />
                                                 </Form.Group>
                                             </Card.Body>
                                         </Card>
                                         <Card className='mt-3'>
-
+                                            <Card.Header className='bg-light'>
+                                                <h5 className='text-uppercase'>Products Tag</h5>
+                                            </Card.Header>
                                             <Card.Body>
-                                                <h5 className='mb-3 text-uppercase'>Products Tag</h5>
-                                                {productTags.map((x, i) => {
+                                                {/* {productTags.map((x, i) => {
                                                     const defaultSelectedValues = selectedproductTags[i]?.list || [];
                                                     console.log(defaultSelectedValues)
                                                     return <Form.Group className='mb-3'>
                                                         <Form.Label className="text-700 text-uppercase">{x?.name}<span className='text-danger'>*</span></Form.Label>
                                                         {<Form.Control className="w-100" value={selectedproductTags[i]?.list[0]?.value} onChange={(e) => { handleTagChange(e, i) }} placeholder={`Enter ${x?.name}`} name={`tagname_${i}`} id={`tagname_${i}`} type="text" />}
                                                     </Form.Group>
-                                                })}
+                                                })} */}
 
-                                                {/* <Form.Group className='mb-3'>
+                                                <Form.Group className='mb-3'>
                                                     <Form.Label className="text-700 text-uppercase">
                                                         Category
                                                     </Form.Label>
@@ -1558,7 +1259,7 @@ const AddProduct = () => {
                                                         Offers
                                                     </Form.Label>
                                                     <Form.Control type="text" placeholder='' className='w-100' />
-                                                </Form.Group> */}
+                                                </Form.Group>
                                             </Card.Body>
                                         </Card>
                                     </Col>
@@ -1572,7 +1273,7 @@ const AddProduct = () => {
 
                                             {/* Modal Cancel Pop-up */}
                                             <Modal show={showModal1} onHide={handleClose1}>
-                                                <Modal.Header >
+                                                <Modal.Header closeButton>
                                                     <Modal.Title>Warning</Modal.Title>
                                                 </Modal.Header>
                                                 <Modal.Body>
@@ -1584,7 +1285,7 @@ const AddProduct = () => {
                                                     <Button className='me-2' variant="secondary" onClick={handleClose1}>
                                                         No
                                                     </Button>
-                                                    <Link to="/addproductcard">
+                                                    <Link to="/allproduct">
                                                         <Button variant="danger" onClick={handleClose1}>
                                                             Yes
                                                         </Button>
@@ -1606,11 +1307,11 @@ const AddProduct = () => {
                                                     <Button className='me-2' variant="secondary" onClick={handleClose3}>
                                                         No
                                                     </Button>
-                                                    {variants.map((data, index) => (
-                                                        <Button variant="danger" onClick={() => { variantremove(index) }}>
-                                                            Yes
-                                                        </Button>
-                                                    ))}
+
+                                                    <Button variant="danger" onClick={handleClose3}>
+                                                        Yes
+                                                    </Button>
+
                                                 </Modal.Footer>
                                             </Modal>
                                             {/*  */}
@@ -1622,10 +1323,10 @@ const AddProduct = () => {
                     </Card>
                     {/* </Card.Body >
                     </Card> */}
-                </Col>
+                </Col >
                 <Toaster />
 
-            </Row>
+            </Row >
 
         </>
     )

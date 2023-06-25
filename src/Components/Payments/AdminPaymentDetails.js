@@ -7,7 +7,7 @@ import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import AdminHeader from "../Menubar/AiMenu";
 import { Link } from "react-router-dom";
-
+import { Icon } from "@iconify/react";
 const Payments = () => {
 
     const [show, setShow] = useState(false);
@@ -17,6 +17,10 @@ const Payments = () => {
     const handleShow = () => setShow(true);
 
     const columns = [
+        {
+            accessor: 'paymentID',
+            Header: 'Payment ID'
+        },
         {
             accessor: 'customerName',
             Header: 'Customer Name'
@@ -53,6 +57,7 @@ const Payments = () => {
 
     const data = [
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             email: "petergms@gmail.com",
             ProductService: "Kitchen Worktops",
@@ -66,6 +71,7 @@ const Payments = () => {
             </CardDropdown>
         },
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-danger">Declined</span>,
             email: "petergms@gmail.com", ProductService: "Kitchen Worktops", Amount: "£ 100",
@@ -78,6 +84,7 @@ const Payments = () => {
             </CardDropdown>
         },
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-success">Successful</span>,
             email: "petergms@gmail.com", ProductService: "Kitchen Worktops", Amount: "£ 100",
@@ -90,6 +97,7 @@ const Payments = () => {
             </CardDropdown>
         },
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-warning">Pending</span>,
             email: "petergms@gmail.com", ProductService: "Kitchen Worktops", Amount: "£ 100",
@@ -102,6 +110,7 @@ const Payments = () => {
             </CardDropdown>
         },
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-success">Successful</span>,
             email: "petergms@gmail.com", ProductService: "Plumbing", Amount: "£ 100",
@@ -113,6 +122,7 @@ const Payments = () => {
                 </div>
             </CardDropdown>
         }, {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-success">Successful</span>,
             email: "petergms@gmail.com", ProductService: "Plumbing", Amount: "£ 100",
@@ -125,6 +135,7 @@ const Payments = () => {
             </CardDropdown>
         },
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-success">Successful</span>,
             email: "petergms@gmail.com", ProductService: "Roofing", Amount: "£ 100",
@@ -136,6 +147,7 @@ const Payments = () => {
                 </div>
             </CardDropdown>
         }, {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-success">Successful</span>,
             email: "petergms@gmail.com", ProductService: "Roofing", Amount: "£ 100",
@@ -148,6 +160,7 @@ const Payments = () => {
             </CardDropdown>
         },
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-success">Successful</span>,
             email: "petergms@gmail.com", ProductService: "Calacatta Light Quartz", Amount: "£ 100",
@@ -159,6 +172,7 @@ const Payments = () => {
                 </div>
             </CardDropdown>
         }, {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-success">Successful</span>,
             email: "petergms@gmail.com", ProductService: "Calacatta Light Quartz", Amount: "£ 100",
@@ -171,6 +185,7 @@ const Payments = () => {
             </CardDropdown>
         },
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-success">Successful</span>,
             email: "petergms@gmail.com", ProductService: "Calacatta Light Quartz", Amount: "£ 100",
@@ -183,6 +198,7 @@ const Payments = () => {
             </CardDropdown>
         },
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-danger">Declined</span>,
             email: "petergms@gmail.com", ProductService: "Kitchen Worktops", Amount: "£ 100",
@@ -196,6 +212,7 @@ const Payments = () => {
         }
         ,
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-success">Successful</span>,
             email: "petergms@gmail.com", ProductService: "Kitchen Worktops", Amount: "£ 100",
@@ -209,6 +226,7 @@ const Payments = () => {
         }
         ,
         {
+            paymentID: '456234',
             customerName: 'Peter Leverkus',
             payment: <span className="badge  bg-success">Successful</span>,
             email: "petergms@gmail.com", ProductService: "Kitchen Worktops", Amount: "£ 100",
@@ -260,6 +278,9 @@ const Payments = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
+                             <Button variant="falcon-default"
+                                size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
+                            </Button>
                         </div>
                     )}
                 </Col>
@@ -270,13 +291,10 @@ const Payments = () => {
     return (
         <>
             <Row>
-                <Col lg={12} className="mb-5">
-                    <AdminHeader />
-                </Col>
-                <Col lg={12} className="mt-4">
-                    <Card className="ms-3 me-3 mb-3">
+                <Col lg={12} className="">
+                    <Card className="">
                         <Card.Header className="bg-light" as={"h5"}>
-                            Payments
+                            Payments<span className="ms-1 fs--1 badge bg-secondary">#100</span>
                         </Card.Header>
                         <Card.Body>
 

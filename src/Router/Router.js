@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import AiProductDetails from "../Components/Product/AdminAddProduct";
-import AllFreelancer from "../Components/Freelancer/AdminAllFreelancer";
+import AllFreelancer from "../Components/Trader/AdminAllTrader";
 import AllJob from "../Components/Job/AllJob";
-import AiFreelancer from "../Components/Freelancer/AdminAddFreelancer";
+import AiFreelancer from "../Components/Trader/AdminAddTrader";
 import AddJob from "../Components/Job/AddJob";
 import AllOrders from "../Components/Orders/AdminAllOrders";
 import Dashboard from "../Components/Dashboard/Dashboard";
@@ -25,6 +25,8 @@ import AllEnquires from "../Components/Conversation/AllEnquires";
 import AllReviews from "../Components/Reviews/AdminReviews";
 import ConversationDetails from "../Components/Conversation/ConversationDetails";
 import ShippingRate from "../Components/ShippingRate/ShippingRate";
+import AllTraderTable from "../Components/Trader/AdminAllTrader";
+import AddTrader from "../Components/Trader/AdminAddTrader";
 // import AdvAllFreelancer from "../User-Portal/Components/AllFreelancer";
 
 const Routers = () => {
@@ -35,8 +37,8 @@ const Routers = () => {
             <Route exact path='/'><HomePage /></Route>
             <Route exact path='/homepage'><HomePage /></Route>
             <Route exact path='/dashboard'><Dashboard /></Route>
-            <Route path='/allfreelancer'><AllFreelancer /></Route>
-            <Route path='/addfreelancer'><AiFreelancer /></Route>
+            <Route path='/AllTraders'><AllTraderTable /></Route>
+            <Route path='/AddTraders'><AddTrader /></Route>
             <Route path='/allproduct'><AllProducts /></Route>
             <Route path='/addproduct'><AiProductDetails /></Route>
             <Route path="/alljob"><AllJob /></Route>

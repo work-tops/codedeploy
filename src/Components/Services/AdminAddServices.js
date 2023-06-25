@@ -202,11 +202,11 @@
 //                                     <p className="med-sub-title">Here You Can add Services to your profile</p>
 
 //                                     <label className="label-name">Service Title</label>
-//                                     <input value={form.title} required name="title" onChange={(e) => { handleChange(e) }} className="input-focus input-box-440 d-block" type='text' />
+//                                     <input  required name="title"  className="input-focus input-box-440 d-block" type='text' />
 
 //                                     <div className="d-inline-block">
 //                                         <label className="label-name">Service Category</label>
-//                                         <select value={form.category} required name="category" onChange={(e) => { handleChange(e) }} className="input-focus Dropdown-box-200">
+//                                         <select  required name="category"  className="input-focus Dropdown-box-200">
 //                                             <option value="">Select Option</option>
 //                                             {cate?.map((data) => (
 //                                                 <option value={data.value}>{data.value}</option>
@@ -215,7 +215,7 @@
 //                                     </div>
 //                                     <div className="d-inline-block">
 //                                         <label className="label-name">Service Email</label>
-//                                         <select value={form.email} required name="email" onChange={(e) => { handleChange(e) }} className="input-focus Dropdown-box-200">
+//                                         <select value={form.email} required name="email"  className="input-focus Dropdown-box-200">
 //                                             <option value="">Select Freelancer</option>
 //                                             {selemail.map((data) => (
 //                                                 <option value={data.email}>{data.email}</option>
@@ -225,7 +225,7 @@
 
 
 //                                     <label className="label-name">Description</label>
-//                                     <textarea value={form.description} required name="description" onChange={(e) => { handleChange(e) }} className="input-focus textarea-2"></textarea>
+//                                     <textarea value={form.description} required name="description"  className="input-focus textarea-2"></textarea>
 
 //                                     <label className="label-name">Service Location</label>
 //                                     <div className="Dropdown-box-440">
@@ -241,7 +241,7 @@
 //                                     </div>
 //                                     <div className="d-inline-block">
 //                                         <label className="label-name">Price Type</label>
-//                                         <select value={form.price_type} required name="price_type" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200">
+//                                         <select value={form.price_type} required name="price_type"  className="input-focus input-box-200">
 //                                             <option value="">Select Option</option>
 //                                             <option value="Per Hour Cost">Per Hour Cost</option>
 //                                             <option value="Fixed Price">Fixed Price</option>
@@ -249,22 +249,22 @@
 //                                     </div>
 //                                     <div className="d-inline-block">
 //                                         <label className="label-name">Price</label>
-//                                         <input value={form.price} required name="price" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200" type='number' />
+//                                         <input value={form.price} required name="price"  className="input-focus input-box-200" type='number' />
 //                                     </div>
 //                                     <div></div>
 //                                     <div className="d-inline-block">
 //                                         <label className="label-name">Office Price</label>
 
-//                                         <input value={form.offer_price} required name="offer_price" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200" type='number' />
+//                                         <input value={form.offer_price} required name="offer_price"  className="input-focus input-box-200" type='number' />
 //                                     </div>
 //                                     <div className="d-inline-block">
 //                                         <label className="label-name">Display Price</label>
 
-//                                         <input value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} className="input-focus input-box-200" type='number' />
+//                                         <input value={form.display_price} required name="display_price"  className="input-focus input-box-200" type='number' />
 //                                     </div>
 
 //                                     <label className="label-name">Terms & Conditions</label>
-//                                     <textarea value={form.terms_and_condition} required name="terms_and_condition" onChange={(e) => { handleChange(e) }} className="textarea-2 input-focus d-block"></textarea>
+//                                     <textarea value={form.terms_and_condition} required name="terms_and_condition"  className="textarea-2 input-focus d-block"></textarea>
 
 //                                     <input type='submit' className="create-btn" value='Add Services' />
 
@@ -272,7 +272,7 @@
 
 //                                 <div className="Add-Product-Images">
 //                                     <span className="status-tit">Status :</span>
-//                                     <select value={form.status} required name="status" onChange={(e) => { handleChange(e) }} className="dft-act">
+//                                     <select  required name="status"  className="dft-act">
 //                                         <option value="">Select</option>
 //                                         <option value="Draft">Draft</option>
 //                                         <option value="Active">Active</option>
@@ -390,12 +390,12 @@
 //                                     </div>
 //                                     <p className="sub-title">Services Handle and Metafields</p>
 //                                     <label className="label-name">Service handle</label>
-//                                     <input value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} className="input-box-300 input-focus" type='text' />
+//                                     <input value={form.handle} required name="handle"  className="input-box-300 input-focus" type='text' />
 //                                     <p className="sub-title">Service Meta Fields</p>
 //                                     <label className="label-name">Title tag meta field</label>
-//                                     <input value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} className="input-box-300 input-focus" type='text' />
+//                                     <input value={form.metatitle} required name="metatitle"  className="input-box-300 input-focus" type='text' />
 //                                     <label className="label-name">Descrption tag meta field</label>
-//                                     <input value={form.metadescription} required name="metadescription" onChange={(e) => { handleChange(e) }} className="input-box-300 input-focus" type='text' />
+//                                     <input value={form.metadescription} required name="metadescription"  className="input-box-300 input-focus" type='text' />
 //                                 </div>
 
 //                             </div>
@@ -626,20 +626,23 @@ const FrontendAddService = () => {
                 </Col>
                 <Col lg={12} className='container mt-4'>
                     <Card>
-                        <Card.Header className="bg-light" as={"h5"}>
-                            Add Service
-                            <Breadcrumb as={"h6"} className='mt-3 text-capitalize'>
-                                <Breadcrumb.Item href="#">
-                                    Service
+                        <Card.Header className="bg-light">
+                            <h5>
+                                Add Services
+                            </h5>
+                            <Breadcrumb className="fs--1 mt-2">
+                                <Breadcrumb.Item>
+                                    All Services
                                 </Breadcrumb.Item>
-                                <Breadcrumb.Item href="#">
-                                    Add Service
+                                <Breadcrumb.Item>
+                                    Add Services
                                 </Breadcrumb.Item>
                             </Breadcrumb>
+                            <p className="text-dark text-capitalize fs--1 mt-2">Here add the current Services on your store</p>
                         </Card.Header>
 
                         <Card.Body>
-                            <Form onSubmit={(e) => { formsubmit(e) }}>
+                            <Form>
 
                                 {/* <Container> */}
                                 <div className='d-flex justify-content-end'>
@@ -647,7 +650,7 @@ const FrontendAddService = () => {
                                     <Form.Group>
                                         <Form.Group className='mb-0'>
                                             <Form.Label className="text-uppercase text-700">Status<span className="text-danger">*</span></Form.Label>
-                                            <Form.Select value={form.status} required name="status" onChange={(e) => { handleChange(e) }}>
+                                            <Form.Select required name="status" >
                                                 <option value="">Select</option>
                                                 <option value="Draft">Draft</option>
                                                 <option value="Active">Active</option>
@@ -658,29 +661,27 @@ const FrontendAddService = () => {
                                 <Row>
                                     <Col lg={7}>
                                         <Card className='mt-3'>
+                                            <Card.Header className='bg-light'>
+                                                <h5 className='text-uppercase'>Services Information</h5>
+                                            </Card.Header>
                                             <Card.Body>
-                                                <h5 className='mb-2 text-uppercase'>Services Information</h5>
-
                                                 <Form.Group className="mb-3">
                                                     <Form.Label className="text-uppercase text-700">Services Title<span className="text-danger">*</span></Form.Label>
-                                                    <Form.Control value={form.title} required name="title" onChange={(e) => { handleChange(e) }} type="text" className='w-100' />
+                                                    <Form.Control required name="title" type="text" className='w-100' />
                                                 </Form.Group>
                                                 <Row className='g-3 mb-3'>
-                                                    <Col sm={12} md={6} lg={6} xl={6}>
+                                                    <Col md={6}>
                                                         <Form.Group className='mb-3'>
                                                             <Form.Label className="text-uppercase text-700">Services Category<span className="text-danger">*</span></Form.Label>
-                                                            <Form.Select value={form.category} required name="category" onChange={(e) => { handleChange(e) }}>
+                                                            <Form.Select required name="category" >
                                                                 <option value="">Select Option</option>
-                                                                {cate?.map((data) => (
-                                                                    <option value={data.value}>{data.value}</option>
-                                                                ))}
                                                             </Form.Select>
                                                         </Form.Group>
                                                     </Col>
-                                                    <Col sm={12} md={6} lg={6} xl={6}>
+                                                    <Col md={6}>
                                                         <Form.Group className='mb-3'>
                                                             <Form.Label className="text-uppercase text-700">Services Email<span className="text-danger">*</span></Form.Label>
-                                                            {/* <Form.Select value={form.email} required name="email" onChange={(e) => { handleChange(e) }}>
+                                                            {/* <Form.Select value={form.email} required name="email" >
                                     <option value="">Select Option</option>
                                     {selemail.map((data) => (
                                         <option value={data.email}>{data.email}</option>
@@ -694,8 +695,8 @@ const FrontendAddService = () => {
                                                     </Col>
                                                 </Row>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="text-uppercase text-700">Description <span className='text-grey'>(Optional)</span></Form.Label>
-                                                    {/* <Form.Control value={form.description} required name="description" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Description....' rows={8} /> */}
+                                                    <Form.Label className="text-uppercase text-700">Description </Form.Label>
+                                                    {/* <Form.Control value={form.description} required name="description"  as="textarea" placeholder='Tag Your Description....' rows={8} /> */}
                                                     <Editor
                                                         onInit={(evt, editor) => editorRef.current = editor}
                                                         initialValue=""
@@ -733,41 +734,49 @@ const FrontendAddService = () => {
                                                     </Col>
                                                 </Row>
                                                 <Row className='g-3 mb-3'>
-                                                    <Form.Group as={Col} className='mb-3'>
-                                                        <Form.Label className="text-uppercase text-700">Price Type<span className="text-danger">*</span></Form.Label>
-                                                        <Form.Select value={form.price_type} required name="price_type" onChange={(e) => { handleChange(e) }}>
-                                                            <option value="">Select Option</option>
-                                                            <option value="Per Hour Cost">Per Hour Cost</option>
-                                                            <option value="Fixed Price">Fixed Price</option>
-                                                        </Form.Select>
-                                                    </Form.Group>
-                                                    <Form.Group as={Col} className=' mb-3'>
-                                                        <Form.Label className="text-uppercase text-700">Price<span className="text-danger">*</span></Form.Label>
-                                                        <InputGroup>
-                                                            <Button>£</Button>
-                                                            <Form.Control value={form.price} required name="price" onChange={(e) => { handleChange(e) }} type="text" />
-                                                        </InputGroup>
-                                                    </Form.Group>
+                                                    <Col md={6}>
+                                                        <Form.Group className='mb-3'>
+                                                            <Form.Label className="text-uppercase text-700">Price Type<span className="text-danger">*</span></Form.Label>
+                                                            <Form.Select value={form.price_type} required name="price_type" >
+                                                                <option value="">Select Option</option>
+                                                                <option value="Per Hour Cost">Per Hour Cost</option>
+                                                                <option value="Fixed Price">Fixed Price</option>
+                                                            </Form.Select>
+                                                        </Form.Group>
+                                                    </Col>
+                                                    <Col md={6}>
+                                                        <Form.Group as={Col} className=' mb-3'>
+                                                            <Form.Label className="text-uppercase text-700">Price<span className="text-danger">*</span></Form.Label>
+                                                            <InputGroup>
+                                                                <Button>£</Button>
+                                                                <Form.Control value={form.price} required name="price" type="text" />
+                                                            </InputGroup>
+                                                        </Form.Group>
+                                                    </Col>
                                                 </Row>
                                                 <Row className='g-3 mb-3'>
-                                                    <Form.Group as={Col} className=' mb-3'>
-                                                        <Form.Label className="text-uppercase text-700">Offer Price <span className="text-danger">*</span></Form.Label>
-                                                        <InputGroup>
-                                                            <Button>£</Button>
-                                                            <Form.Control value={form.offer_price} required name="offer_price" onChange={(e) => { handleChange(e) }} type="text" />
-                                                        </InputGroup>
-                                                    </Form.Group>
-                                                    <Form.Group as={Col} className=' mb-3'>
-                                                        <Form.Label className="text-uppercase text-700">Display Price<span className="text-danger">*</span></Form.Label>
-                                                        <InputGroup>
-                                                            <Button>£</Button>
-                                                            <Form.Control disabled value={form.display_price} required name="display_price" onChange={(e) => { handleChange(e) }} type="text" />
-                                                        </InputGroup>
-                                                    </Form.Group>
+                                                    <Col md={6}>
+                                                        <Form.Group className=' mb-3'>
+                                                            <Form.Label className="text-uppercase text-700">Offer Price <span className="text-danger">*</span></Form.Label>
+                                                            <InputGroup>
+                                                                <Button>£</Button>
+                                                                <Form.Control value={form.offer_price} required name="offer_price" type="text" />
+                                                            </InputGroup>
+                                                        </Form.Group>
+                                                    </Col>
+                                                    <Col md={6}>
+                                                        <Form.Group className=' mb-3'>
+                                                            <Form.Label className="text-uppercase text-700">Display Price<span className="text-danger">*</span></Form.Label>
+                                                            <InputGroup>
+                                                                <Button>£</Button>
+                                                                <Form.Control disabled value={form.display_price} required name="display_price" type="text" />
+                                                            </InputGroup>
+                                                        </Form.Group>
+                                                    </Col>
                                                 </Row>
                                                 <Form.Group className="mb-3">
                                                     <Form.Label className="text-uppercase text-700">Terms & Conditions<span className="text-danger">*</span></Form.Label>
-                                                    {/* <Form.Control value={form.terms_and_condition} required name="terms_and_condition" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='' rows={8} /> */}
+                                                    {/* <Form.Control value={form.terms_and_condition} required name="terms_and_condition"  as="textarea" placeholder='' rows={8} /> */}
                                                     <Editor
                                                         onInit={(evt, editor) => editorRef.current = editor}
                                                         initialValue=""
@@ -794,8 +803,10 @@ const FrontendAddService = () => {
                                     </Col>
                                     <Col lg={5}>
                                         <Card className='mt-3'>
+                                            <Card.Header className='bg-light'>
+                                                <h5 className='text-uppercase'>Media</h5>
+                                            </Card.Header>
                                             <Card.Body>
-                                                <h5 className='mb-2 text-uppercase'>Media</h5>
                                                 {/* <Flex justifyContent={between}> */}
                                                 {/* <div className='d-flex justify-content-between'>
                             <Button variant="primary" onClick={handleShow}>
@@ -905,27 +916,35 @@ const FrontendAddService = () => {
                                                 {/* Upload Samples */}
                                             </Card.Body>
                                         </Card>
-                                        <Card className='mt-3'>
-                                            <Card.Body>
+                                        <Card className='mb-3 mt-3'>
+                                            <Card.Header className='bg-light'>
                                                 <h5 className='mb-2 text-uppercase'>Services Handle and Metafields</h5>
+                                            </Card.Header>
+                                            <Card.Body>
                                                 <Form.Group className='mb-4'>
                                                     <Form.Label className="text-uppercase text-700">
                                                         Services handle
                                                         <span className="text-danger">*</span></Form.Label>
-                                                    <Form.Control value={form.handle} required name="handle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                                    <Form.Control value={form.handle} required name="handle" type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
+                                            </Card.Body>
+                                        </Card>
+                                        <Card>
+                                            <Card.Header className='bg-light'>
                                                 <h5 className='mb-2 text-uppercase'>Services Metafields</h5>
+                                            </Card.Header>
+                                            <Card.Body>
                                                 <Form.Group className='mb-3'>
                                                     <Form.Label className="text-uppercase text-700">
                                                         Title Tag Meta Field
                                                         <span className="text-danger">*</span></Form.Label>
-                                                    <Form.Control maxLength={70} value={form.metatitle} required name="metatitle" onChange={(e) => { handleChange(e) }} type="text" placeholder='' className='w-100' />
+                                                    <Form.Control maxLength={70} value={form.metatitle} required name="metatitle" type="text" placeholder='' className='w-100' />
                                                 </Form.Group>
                                                 <Form.Group className='mb-3'>
                                                     <Form.Label className="text-uppercase text-700">
                                                         Description Tag Meta Field
                                                         <span className="text-danger">*</span></Form.Label>
-                                                    <Form.Control value={form.metadescription} maxLength={300} required name="metadescription" onChange={(e) => { handleChange(e) }} as={"textarea"} rows={1} className='resize-none w-100' />
+                                                    <Form.Control value={form.metadescription} maxLength={300} required name="metadescription" as={"textarea"} rows={1} className='resize-none w-100' />
                                                 </Form.Group>
                                             </Card.Body>
                                         </Card>
@@ -968,9 +987,9 @@ const FrontendAddService = () => {
                             </Form>
                         </Card.Body>
                     </Card>
-                </Col>
+                </Col >
                 <Toaster />
-            </Row>
+            </Row >
         </>
     )
 }

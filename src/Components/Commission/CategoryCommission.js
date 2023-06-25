@@ -212,7 +212,7 @@
 // export default CategoryCommission
 
 import React from "react";
-import { Button, Card, Form, InputGroup, Row, Col } from "react-bootstrap";
+import { Button, Card, Col, Row, Form, InputGroup } from "react-bootstrap";
 import AdminHeader from "../Menubar/AiMenu";
 
 function CategoryCommission() {
@@ -245,66 +245,96 @@ function CategoryCommission() {
                         </Card.Body>
                     </Card>
                     <Card className=" ms-3 me-3 mb-3">
-                        <Card.Header className="bg-light" as={"h5"}>
-                            Category Commission
+                        <Card.Header className="bg-light">
+                            <h5>Category Commission</h5>
+                            <p className="fs--1 mt-2">Here are the setting for Category Commission</p>
                         </Card.Header>
                         <Card.Body>
-                            <p className="fw-bold">Here are the setting for Category Commission</p>
+                            <Row className="g-3">
+                                <Col md={6}>
+                                    <Form.Group className="mb-3">
+                                        <Form.Label>
+                                            Category Commission Type
+                                        </Form.Label>
+                                        <Form.Select
+                                            // value={form.commission_type}
+                                            required name="commission_type"
+                                            // onChange={(e) => { handlechange(e) }}
+                                            className="">
+                                            <option value="">Choose Category Commission type</option>
+                                            <option value="%">%</option>
+                                            <option value="Fixed">Fixed</option>
+                                            <option value="% + Fixed">% + Fixed</option>
+                                            <option value="Fixed + %">Fixed + %</option>
+                                        </Form.Select>
+                                    </Form.Group>
+                                </Col>
+                                <Col md={6}>
+                                    <Form.Group className="mb-3">
+                                        <Form.Label>
+                                            Select Category
+                                        </Form.Label>
+                                        <Form.Select
+                                            // value={form.commission_type}
+                                            required name="commission_type"
+                                            // onChange={(e) => { handlechange(e) }}
+                                            className="">
+                                            <option value="">Select</option>
+                                            <option value="">Product</option>
+                                            <option value="">Services</option>
+                                        </Form.Select>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
                             <Form.Group className="mb-3">
-                                <Form.Label>
-                                    Category Commission Type
-                                </Form.Label>
-                                <Form.Select
-                                    // value={form.commission_type}
-                                    required name="commission_type"
-                                    // onChange={(e) => { handlechange(e) }}
-                                    className="">
-                                    <option value="">Choose Category Commission type</option>
-                                    <option value="%">%</option>
-                                    <option value="Fixed">Fixed</option>
-                                    <option value="% + Fixed">% + Fixed</option>
-                                    <option value="Fixed + %">Fixed + %</option>
-                                </Form.Select>
-                            </Form.Group>
-                            <Form.Group>
                                 <Form.Label>Category Commission</Form.Label>
-                                <InputGroup>
-                                    <Form.Control type="number"
-                                        required
-                                        // value={form.first_commission}
-                                        // className="input-box-600 input-focus"
-                                        name="first_commission"
-                                    // onChange={(e) => { handlechange(e) }}
-                                    />
-                                    <Button>
-                                        2    {/* {form.commission_type} */}
-                                    </Button>
-                                </InputGroup>
+                                <div className="mb-3">
+                                    <InputGroup>
+                                        <Form.Control type="number"
+                                            required
+                                            name="first_commission"
+                                        />
+                                        <Button>
+                                            %    {/* {form.commission_type} */}
+                                        </Button>
+                                    </InputGroup>
+                                </div>
+                                <div className="mb-3">
+                                    <InputGroup>
+                                        <Form.Control type="number"
+                                            required
+                                            name="first_commission"
+                                        />
+                                        <Button>
+                                            Fixed    {/* {form.commission_type} */}
+                                        </Button>
+                                    </InputGroup>
+                                </div>
                             </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Category Commission</Form.Label>
-                                <InputGroup>
-                                    <Form.Control type="number"
-                                        // required value={form.first_commission}
-                                        name="first_commission"
-                                    // onChange={(e) => { handlechange(e) }}
-                                    />
-                                    <Button>%</Button>
-                                </InputGroup>
-                            </Form.Group>
-                            <Form.Group>
+                            <Form.Group className="mb-3">
                                 <Form.Label>Second Category Commission</Form.Label>
-                                <InputGroup>
-                                    <Form.Control
-                                        type="number"
-                                        // id="fgc"
-                                        required
-                                        // value={form.second_commission}
-                                        name="second_commission"
-                                    // onChange={(e) => { handlechange(e) }}
-                                    />
-                                    <Button>FIXED</Button>
-                                </InputGroup>
+                                <div className="mb-3">
+                                    <InputGroup>
+                                        <Form.Control type="number"
+                                            required
+                                            name="first_commission"
+                                        />
+                                        <Button>
+                                            % + Fixed  {/* {form.commission_type} */}
+                                        </Button>
+                                    </InputGroup>
+                                </div>
+                                <div className="mb-3">
+                                    <InputGroup>
+                                        <Form.Control type="number"
+                                            required
+                                            name="first_commission"
+                                        />
+                                        <Button>
+                                            Fixed + %    {/* {form.commission_type} */}
+                                        </Button>
+                                    </InputGroup>
+                                </div>
                             </Form.Group>
                             <h6 className="mt-3">UPDATE EARLIER PRODUCT PRICE</h6>
                             <div className="form-check form-switch">
@@ -315,13 +345,13 @@ function CategoryCommission() {
                                     className="form-check-input"
                                     type="checkbox"
                                     role="switch"
-                                    id="flexSwitchCheckDefault"
+                                    id="custom-switch"
                                 />
                             </div>
                             <p className="fs--1 fw-semibold">If you enable this option , all the prices of exisiting products will change according to the given commission value</p>
                             <Button type="submit" variant="success">Save Changes</Button>
                         </Card.Body>
-                    </Card >
+                    </Card>
                 </Col>
             </Row>
         </>

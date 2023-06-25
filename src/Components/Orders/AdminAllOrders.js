@@ -1,31 +1,13 @@
 // import React, { useState, useEffect } from "react";
 // import AiHeader from "../Header/AiHeader";
-// import AiMenu from "../Menubar/AiMenu";
+// import AiMenu from "../Menu342567/AiMenu";
 // import { Link } from "react-router-dom";
-// import { getAllData } from "../../Services/ProxyService";
+
 // import ReactPaginate from 'react-paginate';
 
 // function AllOrders() {
 
-//     const [orders, setorders] = useState([]);
-//     const ordersdata = async () => {
-//         const response = await getAllData('orders/all');
-//         setorders(response.data.orders);
-//         setShowSpinner(false);
-//     }
-//     const [showSpinner, setShowSpinner] = useState(true);
-//     useEffect(() => {
-//         ordersdata();
-//     }, [])
 
-//     const [listPerPage] = useState(10);
-//     const [pageNumber, setPageNumber] = useState(0);
-//     const pagesVisited = pageNumber * listPerPage;
-//     const lists = orders.slice(pagesVisited, pagesVisited + listPerPage);
-//     const pageCount = Math.ceil(orders.length / listPerPage);
-//     const changePage = ({ selected }) => {
-//         setPageNumber(selected);
-//     }
 
 //     return (
 //         <div className="row">
@@ -40,7 +22,7 @@
 //                     <div className="product-adding-div">
 //                         <div>
 //                             <h4 className="ms-3 mt-2" >All Orders <span className="badge-1 badge bg-secondary">#100</span></h4>
-//                             <p className="med-sub-title">Here are the All Orders on your store</p>
+//                             <p className="med-sub-sellerName">Here are the All Orders on your store</p>
 //                         </div>
 
 //                         <div className="row">
@@ -193,315 +175,184 @@
 // }
 // export default AllOrders
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AdvanceTableWrapper from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableFooter";
-import { Row, Button, Col, Form, Card } from "react-bootstrap";
-// import IconButton from "components/common/IconButton";
-// import AdvanceTableSearchBox from "components/common/advance-table/AdvanceTableSearchBox";
+import { Row, Button, Col, Form, Card, InputGroup } from "react-bootstrap";
 import product_image from "../../Images/product_image.png"
 import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import AdminHeader from "../Menubar/AiMenu";
-const columns = [
-    {
-        accessor: 'jobId',
-        Header: 'Job ID'
-    },
-    {
-        accessor: 'category',
-        Header: 'Category'
-    },
-    {
-        accessor: 'title',
-        Header: 'Title'
-    },
-    {
-        accessor: 'budget',
-        Header: 'Budget'
-    },
-    {
-        accessor: 'jobStatus',
-        Header: 'Job Status'
-    },
-    {
-        accessor: 'expDate',
-        Header: 'Exp Date'
-    },
-    {
-        accessor: 'status',
-        Header: 'Status'
-    },
-    {
-        accessor: 'createdDate',
-        Header: 'Created Date        '
-    },
-    {
-        accessor: 'modifiedDate',
-        Header: 'Modified Date'
-    },
-    {
-        accessor: 'action',
-        Header: 'Action'
-    }
-];
-
-const data = [
-    {
-        jobId: '643456',
-        category: 'Bar ',
-        title: 'test-project-4',
-        budget: '123',
-        jobStatus: <span className="badge  bg-warning">Processing</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'Bar ',
-        title: 'test-project-4',
-        budget: '123',
-        jobStatus: <span className="badge  bg-danger">Not Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-warning">Approval Pending</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'ct-3 ',
-        title: 'test-project-3',
-        budget: '123',
-        jobStatus: <span className="badge  bg-success">Completed</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-secondary">Disabled</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'ct-3 ',
-        title: 'test-project-11',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-success">Completed</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-danger">Expired</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'ct-3 ',
-        title: 'test-project-13',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        jobId: '643456',
-        category: 'Bedroom ',
-        title: 'test-project-5',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'Bedroom',
-        title: 'test-project-1',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        jobId: '643456',
-        category: 'Attic ',
-        title: 'test-project-15',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'Bathroom ',
-        title: 'test-project-7',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        jobId: '643456',
-        category: 'Bathroom ',
-        title: 'test-project-4',
-        budget: '1213',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'Bathroom ',
-        title: 'test-project-10',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        jobId: '643456',
-        category: 'Attic ',
-        title: 'test-project-14',
-        budget: '077',
-        jobStatus: <span className="badge  bg-danger">Not Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
-    ,
-    {
-        jobId: '664345',
-        category: 'Attic ',
-        title: 'test-project-08',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
-    ,
-    {
-        jobId: '643456',
-        category: 'Bar ',
-        title: 'test-project-9',
-        budget: '077',
-        jobStatus: <span className="badge  bg-primary">Hired</span>,
-        expDate: "31 Mar 2023", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
-        status: <span className="badge  bg-success">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>Deny</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
-];
+import { getAllData } from "../../Services/ProxyService";
+import { Icon } from "@iconify/react";
 
 const AllOrders = () => {
+
+    const [orders, setorders] = useState([]);
+    const ordersdata = async () => {
+        const response = await getAllData('orders/all');
+        setorders(response.data.orders);
+        setShowSpinner(false);
+    }
+    const [showSpinner, setShowSpinner] = useState(true);
+    useEffect(() => {
+        ordersdata();
+    }, [])
+
+    const [listPerPage] = useState(10);
+    const [pageNumber, setPageNumber] = useState(0);
+    const pagesVisited = pageNumber * listPerPage;
+    const lists = orders.slice(pagesVisited, pagesVisited + listPerPage);
+    const pageCount = Math.ceil(orders.length / listPerPage);
+    const changePage = ({ selected }) => {
+        setPageNumber(selected);
+    }
+
+
+
+
+    const columns = [
+        {
+            accessor: 'orderId',
+            Header: 'Order ID'
+        },
+        {
+            accessor: 'storeOrderID',
+            Header: 'Store Order ID'
+        },
+        {
+            accessor: 'sellerName',
+            Header: 'Seller Name'
+        },
+        {
+            accessor: 'paymentMode',
+            Header: 'Payment Mode'
+        },
+        {
+            accessor: 'paymentStatus',
+            Header: 'Payment Status'
+        },
+        {
+            accessor: 'trackingId',
+            Header: 'Tracking ID'
+        },
+        {
+            accessor: 'orderStatus',
+            Header: 'Order Status'
+        },
+        {
+            accessor: 'createdDate',
+            Header: 'Created Date        '
+        },
+        {
+            accessor: 'modifiedDate',
+            Header: 'Modified Date'
+        },
+        {
+            accessor: 'action',
+            Header: 'Action'
+        }
+    ];
+
+    const data = [
+        {
+            orderId: '643456',
+            trackingId: '003456',
+            storeOrderID: '342567 ',
+            sellerName: 'GMS',
+            budget: '123',
+            orderStatus: <span className="badge  bg-warning">Processing</span>,
+            paymentMode: "UPI",
+            createdDate: "02 Apr 2023",
+            modifiedDate: "22 Apr 2023",
+            paymentStatus: <span className="badge  bg-success">Successful</span>,
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>View</Dropdown.Item>
+                    <Dropdown.Item>Send Remainder</Dropdown.Item>
+                </div>
+            </CardDropdown>
+        },
+        {
+            orderId: '643456',
+            trackingId: '003456',
+            storeOrderID: '342567 ',
+            sellerName: 'GMwarningS',
+            budget: '123',
+            orderStatus: <span className="badge  bg-success">Completed</span>,
+            paymentMode: "UPI", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
+            paymentStatus: <span className="badge  bg-warning">Processing</span>,
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>View</Dropdown.Item>
+                    <Dropdown.Item>Send Remainder</Dropdown.Item></div>
+            </CardDropdown>
+        },
+        {
+            orderId: '643456',
+            trackingId: '003456',
+            storeOrderID: '342564 ',
+            sellerName: 'Peter Leverkus',
+            budget: '123',
+            orderStatus: <span className="badge  bg-success">Completed</span>,
+            paymentMode: "UPI", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
+            paymentStatus: <span className="badge  bg-secondary">Disabled</span>,
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>View</Dropdown.Item>
+                    <Dropdown.Item>Send Remainder</Dropdown.Item></div>
+            </CardDropdown>
+        },
+        {
+            orderId: '643456',
+            trackingId: '003456',
+            storeOrderID: '342564 ',
+            sellerName: 'Peter Leverkus',
+            budget: '1213',
+            orderStatus: <span className="badge  bg-success">Completed</span>,
+            paymentMode: "UPI", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
+            paymentStatus: <span className="badge  bg-danger">Declined</span>,
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>View</Dropdown.Item>
+                    <Dropdown.Item>Send Remainder</Dropdown.Item></div>
+            </CardDropdown>
+        },
+        {
+            orderId: '643456',
+            trackingId: '003456',
+            storeOrderID: '342564 ',
+            sellerName: 'Peter Leverkus',
+            budget: '077',
+            orderStatus: <span className="badge  bg-success">Completed</span>,
+            paymentMode: "UPI",
+            createdDate: "02 Apr 2023",
+            modifiedDate: "22 Apr 2023",
+            paymentStatus: <span className="badge  bg-success">Successful</span>,
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>View</Dropdown.Item>
+                    <Dropdown.Item>Send Remainder</Dropdown.Item></div>
+            </CardDropdown>
+        }, {
+            orderId: '643456',
+            trackingId: '003456',
+            storeOrderID: '342568 ',
+            sellerName: 'Peter Leverkus',
+            budget: '1213',
+            orderStatus: <span className="badge  bg-success">Completed</span>,
+            paymentMode: "UPI", createdDate: "02 Apr 2023", modifiedDate: "22 Apr 2023",
+            paymentStatus: <span className="badge  bg-success">Successful</span>,
+            action: <CardDropdown>
+                <div className="py-2">
+                    <Dropdown.Item>View</Dropdown.Item>
+                    <Dropdown.Item>Send Remainder</Dropdown.Item></div>
+            </CardDropdown>
+        },
+    ];
+
+
     function BulAction({ selectedRowIds }) {
         return (
             <Row className="flex-between-center mb-3">
@@ -572,10 +423,42 @@ const AllOrders = () => {
                 </Col>
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
-                        <Card.Header className="bg-light" as={"h5"}>
-                            All Orders
+                        <Card.Header className="bg-light">
+                            <h5>All Orders<span className="badge ms-1 fs--1 bg-secondary">#100</span></h5>
+                            <p className="text-primary mt-2 fs--1">Here are the All Orders on your store</p>
                         </Card.Header>
                         <Card.Body>
+                            <div className="row g-3">
+                                <div className="col-md-6 d-flex justify-content-start">
+                                    <Form.Group>
+                                        <InputGroup>
+                                            <Form.Control size="sm" placeholder="Search.." type="search" />
+                                            <Button variant="secondary" size="sm"><Icon icon="mdi:search" color="white" width="20" height="20" /></Button>
+                                        </InputGroup>
+                                    </Form.Group>
+                                </div>
+                                <div className="col-md-6 d-flex  justify-content-end">
+                                    <Dropdown>
+                                        <Dropdown.Toggle>
+                                            Export Details
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Item>
+                                                <Form.Group className="mb-3">
+                                                    <Form.Label>Export From Date</Form.Label>
+                                                    <Form.Control type="date" />
+                                                </Form.Group>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item>
+                                                <Form.Group className="mb-3">
+                                                    <Form.Label>Export to Date</Form.Label>
+                                                    <Form.Control type="date" />
+                                                </Form.Group>
+                                            </Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                </div>
+                            </div>
                             <AdvanceTableWrapper
                                 columns={columns}
                                 data={data}

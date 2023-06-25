@@ -1,4 +1,4 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef } from "react";
 import AdvanceTableWrapper from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableFooter";
@@ -7,6 +7,7 @@ import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import AdminHeader from "../Menubar/AiMenu";
 import { Editor } from "@tinymce/tinymce-react";
+import { Icon } from "@iconify/react";
 
 const AllReviews = () => {
 
@@ -14,6 +15,10 @@ const AllReviews = () => {
 
 
     const columns = [
+        {
+            accessor: 'reviewID',
+            Header: 'Review ID'
+        },
         {
             accessor: 'rating',
             Header: 'Rating'
@@ -55,6 +60,7 @@ const AllReviews = () => {
                 <span className="fa fa-star text-warning"></span>
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
+            reviewID: '567890',
             source: "Product",
             created: "22/06/23,10:30",
             review: <>
@@ -79,6 +85,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-danger">Unpublished</span>,
+            reviewID: '567890',
             source: "Product", created: "22/06/23,10:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -100,7 +107,10 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-success">Published</span>,
-            source: "Service", created: "22/06/23,10:30", review: <>
+            source: "Service",
+            reviewID: '567890',
+            created: "22/06/23,10:30",
+            review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
             </>,
@@ -121,6 +131,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-warning">Pending</span>,
+            reviewID: '567890',
             source: "Product", created: "22/06/23,10:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -142,6 +153,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-success">Published</span>,
+            reviewID: '567890',
             source: "Product",
             created: "02/06/23,14:30",
             review: <>
@@ -163,6 +175,7 @@ const AllReviews = () => {
                 <span className="fa fa-star text-warning"></span>
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
+             reviewID: '567890',
             status: <span className="badge  bg-success">Published</span>,
             source: "Service", created: "02/06/23,14:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
@@ -185,6 +198,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-success">Published</span>,
+            reviewID: '567890',
             source: "Product", created: "02/06/22,19:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -205,6 +219,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-success">Published</span>,
+            reviewID: '567890',
             source: "Product", created: "02/06/22,19:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -226,6 +241,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-success">Published</span>,
+            reviewID: '567890',
             source: "Product", created: "02/06/22,19:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -246,6 +262,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-success">Published</span>,
+            reviewID: '567890',
             source: "Product", created: "02/06/22,19:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -267,6 +284,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-success">Published</span>,
+            reviewID: '567890',
             source: "Product", created: "02/06/22,19:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -288,6 +306,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-danger">Unpublished</span>,
+            reviewID: '567890',
             source: "Product", created: "22/06/23,10:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -310,6 +329,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-success">Published</span>,
+            reviewID: '567890',
             source: "Product", created: "22/06/23,10:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -332,6 +352,7 @@ const AllReviews = () => {
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
             status: <span className="badge  bg-success">Published</span>,
+            reviewID: '567890',
             source: "Product", created: "22/06/23,10:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
                 <p className="fs--1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -384,6 +405,9 @@ const AllReviews = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
+                             <Button variant="falcon-default"
+                                size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
+                            </Button>
                         </div>
                     )}
                 </Col>
@@ -400,7 +424,7 @@ const AllReviews = () => {
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
                         <Card.Header className="bg-light" as={"h5"}>
-                            All Reviews
+                            All Reviews<span className="ms-1 fs--1 badge bg-secondary">#100</span>
                         </Card.Header>
                         <Card.Body>
 

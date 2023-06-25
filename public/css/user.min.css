@@ -854,3 +854,9 @@ body {
   top: 10px;
   right: 10px;
 }
+
+/*  */
+#custom-switch {
+  position: relative;
+  cursor: pointer;
+}

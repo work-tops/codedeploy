@@ -54,8 +54,23 @@ function SellerList() {
     const [layout, setLayout] = useState('list');
     const [isList, setIsList] = useState(true);
     // 
+    // 
+    const [isAdded, setIsAdded] = useState(false);
 
-    const toastDanger = () => toast.success(<h6 className="text-sucess">Service Provider Added to Wishlist</h6>);
+    const handleAddToWishlist = () => {
+        setIsAdded(true);
+        const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+
+        toastDanger();
+    };
+
+    const handleRemoveFromWishlist = () => {
+        setIsAdded(false);
+        const toastDanger1 = () => toast.error(<h6 className="text-dark">Product Removed from Wishlist</h6>)
+        toastDanger1();
+    };
+
+    const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
     return (
 
         <>
@@ -296,15 +311,42 @@ function SellerList() {
                                                         >
                                                             {/* */}
 
-                                                            <Button
-                                                                size="md"
-                                                                variant="falcon-default"
-                                                                className="fs--1 mb-3 mt-4 text-600 white-space-nowrap w-100"
-                                                                onClick={toastDanger}
-                                                            >
-                                                                <span className="me-1"><Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />Add to Wishlist </span>
-                                                                <span className="d-block"><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />Remove from Wishlist</span>
-                                                            </Button>
+                                                            <>
+                                                                {isAdded ? (
+                                                                    <button
+                                                                        className="btn btn-md btn-falcon-danger w-100 mb-3  fs--1 text-600"
+                                                                        onClick={handleRemoveFromWishlist}
+                                                                    >
+                                                                        <span className="d-block">
+                                                                            <Icon
+                                                                                style={{ marginTop: '-2px' }}
+                                                                                className="me-1"
+                                                                                icon="icon-park-solid:like"
+                                                                                color="#df2020"
+                                                                                width="18"
+                                                                                height="18"
+                                                                            />
+                                                                            <span className="d-none d-lg-inline">Remove from Wishlist</span>
+                                                                        </span>
+                                                                    </button>
+                                                                ) : (
+                                                                    <button
+                                                                        className="btn btn-md btn-falcon-danger  w-100 mb-3 fs--1 text-600"
+                                                                        onClick={handleAddToWishlist}
+                                                                    >
+                                                                        <span className="d-block">
+                                                                            <Icon
+                                                                                icon="icon-park-outline:like"
+                                                                                className="me-1"
+                                                                                style={{ marginTop: '-2px' }}
+                                                                                width="18"
+                                                                                height="18"
+                                                                            />
+                                                                            <span className="d-none d-lg-inline">Add to Wishlist</span>
+                                                                        </span>
+                                                                    </button>
+                                                                )}
+                                                            </>
                                                             {/*  */}
                                                             <Button
                                                                 size="md"

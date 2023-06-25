@@ -143,9 +143,6 @@
 
 import React from "react";
 import { Button, Card, Col, Row, Form, InputGroup } from "react-bootstrap";
-import SideNavbar from "../Menubar/AiMenu";
-import VerticalNavbar from "../Menubar/AiMenu";
-import NavbarStandard from "../../User-Portal/Components/Header/AdvanceHeader/NavbarStandard";
 import AdminHeader from "../Menubar/AiMenu";
 
 function GlobalCommission() {
@@ -178,11 +175,11 @@ function GlobalCommission() {
                         </Card.Body>
                     </Card>
                     <Card className=" ms-3 me-3 mb-3">
-                        <Card.Header className="bg-light" as={"h5"}>
-                            Global Commission
+                        <Card.Header className="bg-light">
+                            <h5>Global Commission</h5>
+                            <p className="fs--1 mt-2">Here are the setting for global commission</p>
                         </Card.Header>
                         <Card.Body>
-                            <p className="fw-bold">Here are the setting for global commission</p>
                             <Form.Group className="mb-3">
                                 <Form.Label>
                                     Global Commission Type
@@ -199,20 +196,55 @@ function GlobalCommission() {
                                     <option value="Fixed + %">Fixed + %</option>
                                 </Form.Select>
                             </Form.Group>
-                            <Form.Group>
+                            <Form.Group className="mb-3">
                                 <Form.Label>Global Commission</Form.Label>
-                                <InputGroup>
-                                    <Form.Control type="number"
-                                        required
-                                        // value={form.first_commission}
-                                        // className="input-box-600 input-focus"
-                                        name="first_commission"
-                                    // onChange={(e) => { handlechange(e) }}
-                                    />
-                                    <Button>
-                                        2    {/* {form.commission_type} */}
-                                    </Button>
-                                </InputGroup>
+                                <div className="mb-3">
+                                    <InputGroup>
+                                        <Form.Control type="number"
+                                            required
+                                            name="first_commission"
+                                        />
+                                        <Button>
+                                            %    {/* {form.commission_type} */}
+                                        </Button>
+                                    </InputGroup>
+                                </div>
+                                <div className="mb-3">
+                                    <InputGroup>
+                                        <Form.Control type="number"
+                                            required
+                                            name="first_commission"
+                                        />
+                                        <Button>
+                                            Fixed    {/* {form.commission_type} */}
+                                        </Button>
+                                    </InputGroup>
+                                </div>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Second Global Commission</Form.Label>
+                                <div className="mb-3">
+                                    <InputGroup>
+                                        <Form.Control type="number"
+                                            required
+                                            name="first_commission"
+                                        />
+                                        <Button>
+                                            % + Fixed  {/* {form.commission_type} */}
+                                        </Button>
+                                    </InputGroup>
+                                </div>
+                                <div className="mb-3">
+                                    <InputGroup>
+                                        <Form.Control type="number"
+                                            required
+                                            name="first_commission"
+                                        />
+                                        <Button>
+                                            Fixed + %    {/* {form.commission_type} */}
+                                        </Button>
+                                    </InputGroup>
+                                </div>
                             </Form.Group>
                             <h6 className="mt-3">UPDATE EARLIER PRODUCT PRICE</h6>
                             <div className="form-check form-switch">
@@ -223,7 +255,7 @@ function GlobalCommission() {
                                     className="form-check-input"
                                     type="checkbox"
                                     role="switch"
-                                    id="flexSwitchCheckDefault"
+                                    id="custom-switch"
                                 />
                             </div>
                             <p className="fs--1 fw-semibold">If you enable this option , all the prices of exisiting products will change according to the given commission value</p>

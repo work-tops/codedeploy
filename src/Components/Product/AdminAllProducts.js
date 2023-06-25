@@ -219,13 +219,14 @@ import React from "react";
 import AdvanceTableWrapper from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableFooter";
-import { Row, Button, Col, Form, Card } from "react-bootstrap";
+import { Row, Button, Col, Form, Card, Breadcrumb, InputGroup } from "react-bootstrap";
 // import IconButton from "components/common/IconButton";
 // import AdvanceTableSearchBox from "components/common/advance-table/AdvanceTableSearchBox";
 import product_image from "../../Images/product_image.png"
 import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
 import AdminHeader from "../Menubar/AiMenu";
 const columns = [
     {
@@ -242,7 +243,7 @@ const columns = [
     },
     {
         accessor: 'email',
-        Header: 'Seller',
+        Header: 'Trader Email',
         Cell: rowData => {
             const { email } = rowData.row.original
             return (
@@ -278,7 +279,7 @@ const data = [
         email: 'anna@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
+        status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -297,7 +298,7 @@ const data = [
         email: 'homer@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge p-2 bg-warning">Approval Pending</span>,
+        status: <span className="badge  bg-warning">Approval Pending</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -316,7 +317,7 @@ const data = [
         email: 'oscar@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge p-2 bg-secondary">Disabled</span>,
+        status: <span className="badge  bg-secondary">Disabled</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -328,214 +329,6 @@ const data = [
             </div>
         </CardDropdown>
     },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'emily@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "PORTUM KC NATURAL DEKTON",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'emily@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "FANTASY BROWN GRANITE123",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'emily@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "VENDOME TERRAZZO",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }, {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "WHITE ROSE ONYXz",
-        email: 'emily@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    },
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
-    ,
-    {
-        productId: '664345',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
-    ,
-    {
-        productId: '643456',
-        image: <img src={product_image} width="40px" height="35px" />,
-        name: "Marble",
-        email: 'jara@example.com',
-        price: '£100',
-        quantity: "10 Pcs",
-        status: <span className="badge bg-success p-2">Approved</span>,
-        action: <CardDropdown>
-            <div className="py-2">
-                <Dropdown.Item>Edit</Dropdown.Item>
-                <Dropdown.Item>Enable</Dropdown.Item>
-                <Dropdown.Item>View in Store</Dropdown.Item>
-                <Dropdown.Item>Reassign</Dropdown.Item>
-                <Dropdown.Item>Disable</Dropdown.Item>
-                <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
-            </div>
-        </CardDropdown>
-    }
 ];
 
 const AllProducts = () => {
@@ -543,7 +336,7 @@ const AllProducts = () => {
         return (
             <Row className="flex-between-center mb-3">
                 <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
-                    <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
+                    <h5 className="fs-0 mb-0 mt-2 text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
                                 'You have selected ' + Object.keys(selectedRowIds).length + ' Product Lists'
@@ -554,7 +347,7 @@ const AllProducts = () => {
                 </Col>
                 <Row className="flex-end-center mt-2 mb-3">
                     <Col xs="auto">
-                        {/* <AdvanceTableSearchBox table /> */}
+
                     </Col>
                 </Row>
                 <Col xs={8} sm="auto" className="ms-auto text-end ps-0">
@@ -568,7 +361,7 @@ const AllProducts = () => {
                             </Form.Select>
                             <Button
                                 type="button"
-                                variant="falcon-default"
+                                variant="primary"
                                 size="sm"
                                 className="ms-2"
                             >
@@ -577,23 +370,9 @@ const AllProducts = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                            {/* <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="plus"
-                                transform="shrink-3"
-                                className='me-2'
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">New</span>
-                            </IconButton>
-                            <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="external-link-alt"
-                                transform="shrink-3"
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">Export</span>
-                            </IconButton> */}
+                             <Button variant="falcon-default"
+                                size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
+                            </Button>
                         </div>
                     )}
                 </Col>
@@ -609,12 +388,33 @@ const AllProducts = () => {
                 </Col>
                 <Col lg={12}>
                     <Card className="ms-3 me-3 mb-3 mt-4">
-                        <Card.Header className="bg-light" as={"h5"}>
-                            All Products
+                        <Card.Header className="bg-light">
+                            <h5>
+                                All Product<span className="ms-1 fs--1 badge bg-secondary">#100</span>
+                            </h5>
+                            <Breadcrumb className="fs--1 mt-2">
+                                <Breadcrumb.Item>
+                                    All Products
+                                </Breadcrumb.Item>
+                                <Breadcrumb.Item>
+                                    Add Products
+                                </Breadcrumb.Item>
+                            </Breadcrumb>
+                            <p className="text-dark text-capitalize fs--1 mt-2">Here all the current products on your store</p>
                         </Card.Header>
                         <Card.Body>
-                            <div className="d-flex justify-content-end">
-                                <Button as={Link} to="/addproduct" variant="success">Add Product</Button>
+                            <div className="row g-3">
+                                <div className="col-md-6 d-flex justify-content-start">
+                                    <Form.Group>
+                                        <InputGroup>
+                                            <Form.Control size="sm" placeholder="Search.." type="search" />
+                                            <Button variant="secondary" size="sm"><Icon icon="mdi:search" color="white" width="20" height="20" /></Button>
+                                        </InputGroup>
+                                    </Form.Group>
+                                </div>
+                                <div className="col-md-6 d-flex  justify-content-end">
+                                    <Button className="" as={Link} to="/addproduct" variant="success">Add Product</Button>
+                                </div>
                             </div>
                             <AdvanceTableWrapper
                                 columns={columns}
