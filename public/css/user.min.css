@@ -151,13 +151,6 @@ star-rating {
   height: 100% !important
 }
 
-@media (min-width:1200px) {
-  .course-filter {
-    height: calc(100vh - 4.3125rem) !important;
-    position: sticky !important;
-    top: 4.3125rem !important
-  }
-}
 
 /*  */
 .line-item-table {
@@ -352,6 +345,7 @@ body {
 
 
 /* Post Project Button  */
+
 .post-project-btn {
   background: #fff;
   color: #003f6b;
@@ -423,7 +417,7 @@ body {
 
 /* Authentication Portal */
 
-.dropdown-item {
+/* .dropdown-item {
   position: relative;
 }
 
@@ -445,7 +439,7 @@ body {
 
 .dropdown:hover .dropdown-menu {
   display: block;
-}
+} */
 
 /*  */
 .Home-btns {

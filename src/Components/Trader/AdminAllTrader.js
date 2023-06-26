@@ -228,6 +228,15 @@ const AllTraderTable = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [showModal3, setShowModal3] = useState(false);
+
+    const handleClose3 = () => {
+        setShowModal3(false);
+    };
+
+    const handleShow3 = () => {
+        setShowModal3(true);
+    };
 
     const columns = [
         {
@@ -279,7 +288,7 @@ const AllTraderTable = () => {
                     <Dropdown.Item>Enable</Dropdown.Item>
                     <Dropdown.Item>Deny</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Send Message</Dropdown.Item>
-                    <Dropdown.Item>Change Password</Dropdown.Item>
+                    <Dropdown.Item onClick={handleShow3}>Change Password</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
             </CardDropdown>
@@ -298,7 +307,7 @@ const AllTraderTable = () => {
                     <Dropdown.Item>Enable</Dropdown.Item>
                     <Dropdown.Item>Deny</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Send Message</Dropdown.Item>
-                    <Dropdown.Item>Change Password</Dropdown.Item>
+                    <Dropdown.Item onClick={handleShow3}>Change Password</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
             </CardDropdown>
@@ -317,7 +326,7 @@ const AllTraderTable = () => {
                     <Dropdown.Item>Enable</Dropdown.Item>
                     <Dropdown.Item>Deny</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Send Message</Dropdown.Item>
-                    <Dropdown.Item>Change Password</Dropdown.Item>
+                    <Dropdown.Item onClick={handleShow3}>Change Password</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
             </CardDropdown>
@@ -336,7 +345,7 @@ const AllTraderTable = () => {
                     <Dropdown.Item>Enable</Dropdown.Item>
                     <Dropdown.Item>Deny</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Send Message</Dropdown.Item>
-                    <Dropdown.Item>Change Password</Dropdown.Item>
+                    <Dropdown.Item onClick={handleShow3}>Change Password</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
             </CardDropdown>
@@ -355,7 +364,7 @@ const AllTraderTable = () => {
                     <Dropdown.Item>Enable</Dropdown.Item>
                     <Dropdown.Item>Deny</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Send Message</Dropdown.Item>
-                    <Dropdown.Item>Change Password</Dropdown.Item>
+                    <Dropdown.Item onClick={handleShow3}>Change Password</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
             </CardDropdown>
@@ -508,10 +517,34 @@ const AllTraderTable = () => {
                     />
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
+                    <Button variant="primary" onClick={handleClose}>
+                        Send
                     </Button>
                 </Modal.Footer>
+            </Modal>
+            {/*  */}
+            {/*  */}
+            <Modal backdrop="static" show={showModal3} onHide={handleClose3}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Change Password</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Group className="mb-3" controlId="formFirstName">
+                            <Form.Label>New Password</Form.Label>
+                            <Form.Control type="password" placeholder="New Password" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formLastName">
+                            <Form.Label>Confirm Password</Form.Label>
+                            <Form.Control type="password" placeholder="Confirm Password" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3">
+                            <Button>Submit</Button>
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
             </Modal>
         </>
     )

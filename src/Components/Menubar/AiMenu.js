@@ -202,14 +202,16 @@ function AdminHeader() {
                     <Link to="/dashboard">
                         <img
                             className="logo-image"
-                            style={{ width: '135px'}}
+                            style={{ width: '135px' }}
                             title="MYPROJECT.AI"
                             src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"
                             alt="MAI Logo"
                         />
                     </Link>
-                    <button class="btn-close text-reset text-white" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <Icon icon="ion:close" className="cursor-pointer" width="24" height="24" data-bs-dismiss="offcanvas" aria-label="Close" color="white" />
+                    {/* <button style={{ color: '#fff' }} class="btn-close text-reset " type="button" ></button> */}
                 </div>
+                {/* <hr className="text-white"></hr> */}
                 <div class="offcanvas-body">
                     <Link to="/dashboard">
                         <p className="fw-semibold text-white" role="button">Dashboard</p>

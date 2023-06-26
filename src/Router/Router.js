@@ -28,6 +28,7 @@ import ShippingRate from "../Components/ShippingRate/ShippingRate";
 import AllTraderTable from "../Components/Trader/AdminAllTrader";
 import AddTrader from "../Components/Trader/AdminAddTrader";
 import AdminPayment from "../Components/Payments/Payments";
+import AllOwnersTable from "../Components/ProjectOwners/AllOwners";
 // import AdvAllFreelancer from "../User-Portal/Components/AllFreelancer";
 
 const Routers = () => {
@@ -62,6 +63,7 @@ const Routers = () => {
             <Route path="/ailogin"><AiLoginPage /></Route>
             <Route path="/allstaff"><AllStaff /></Route>
             <Route path="/addstaff"><AddStaff /></Route>
+            <Route path="/AllOwner"><AllOwnersTable /></Route>
             {/* Routes for AI Pages //end*/}
             {/* <Route path='/advallfreelancer'><AdvAllFreelancer/></Route> */}
         </Switch>
