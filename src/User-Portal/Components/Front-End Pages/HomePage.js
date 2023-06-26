@@ -59,7 +59,7 @@ function HomePage() {
                                     <p className="text-justify" >
                                         We connect you with the most experienced and certified construction professionals who have been creating properties that mesmerise the millions.
                                     </p>
-                                    <Link to="/Allsellerlist">
+                                    <Link to="/user/sellerlist">
                                         <button className="Home-btns">
                                             <span className="button-text">Discover Experts</span>
                                         </button>

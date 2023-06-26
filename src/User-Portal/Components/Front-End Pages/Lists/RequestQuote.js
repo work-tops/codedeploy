@@ -74,6 +74,19 @@ function RequestQuote() {
                                 <Card className="mb-3">
                                     <Card.Header className="bg-light">
                                         <Form.Label className="fw-semibold text-uppercase text-900">
+                                            Postcode<span className="ms-1 text-danger"></span>
+                                        </Form.Label>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter Your Postcode"
+                                        />
+                                    </Card.Body>
+                                </Card>
+                                <Card className="mb-3">
+                                    <Card.Header className="bg-light">
+                                        <Form.Label className="fw-semibold text-uppercase text-900">
                                             When You Would like the job to start ?<span className="ms-1 text-danger">*</span>
                                         </Form.Label>
                                     </Card.Header>

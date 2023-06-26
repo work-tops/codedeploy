@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Col, Modal, Row, Container, Form, NavDropdown } from "react-bootstrap";
+import { Button, Col, Modal, Row, Container, Form, Card } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Link } from "react-router-dom";
 import payment_methods from '../../Projectimages/payment_methods.png'
@@ -198,6 +198,47 @@ function Checkout() {
                                         </div>
                                     </div>
                                 </div>
+                                {/*  */}
+                                <Card className="mb-3">
+                                    <Card.Header className="bg-light">
+                                        <h5>Shipping Method</h5>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        <div className="row">
+                                            <div className="col-6">
+                                                <Form.Check name="shippingCost" type="radio" label="A" />
+                                            </div>
+                                            <div className="col-6 d-flex justify-content-end">
+                                                <span className="fs--1 fw-semibold">£ 75.00</span>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-6">
+                                                <Form.Check name="shippingCost" type="radio" label="B" />
+                                            </div>
+                                            <div className="col-6 d-flex justify-content-end">
+                                                <span className="fs--1 fw-semibold">£ 75.00</span>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-6">
+                                                <Form.Check name="shippingCost" type="radio" label="C" />
+                                            </div>
+                                            <div className="col-6 d-flex justify-content-end">
+                                                <span className="fs--1 fw-semibold">£ 75.00</span>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-6">
+                                                <Form.Check name="shippingCost" type="radio" label="D" />
+                                            </div>
+                                            <div className="col-6 d-flex justify-content-end">
+                                                <span className="fs--1 fw-semibold">£ 75.00</span>
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                                {/*  */}
                                 <div className="card mb-3">
                                     <div className="card-header bg-light">
                                         <h5 className="mb-0">Payment Method</h5>

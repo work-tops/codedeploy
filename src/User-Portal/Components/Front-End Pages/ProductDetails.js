@@ -249,7 +249,7 @@ function ProductDetails() {
                         {/* Disclaimer */}
                         <Card className="mb-3">
                             <Card.Header as="h5" className="bg-light text-uppercase">
-                                Disclaimer
+                                Refund Policy
                             </Card.Header>
                             <Card.Body className="position-relative">
                                 <p
@@ -304,7 +304,7 @@ function ProductDetails() {
                                     </div>
                                     <div>
                                         <Form.Check type="checkbox" className="mb-0">
-                                             <Form.Check.Input
+                                            <Form.Check.Input
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
@@ -318,7 +318,7 @@ function ProductDetails() {
                                     </div>
                                     <div title="Average">
                                         <Form.Check type="checkbox" className="mb-0">
-                                             <Form.Check.Input
+                                            <Form.Check.Input
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
@@ -331,7 +331,7 @@ function ProductDetails() {
                                     </div>
                                     <div title="Good">
                                         <Form.Check type="checkbox" className="mb-0">
-                                             <Form.Check.Input
+                                            <Form.Check.Input
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
@@ -344,7 +344,7 @@ function ProductDetails() {
                                     </div>
                                     <div title="Poor">
                                         <Form.Check type="checkbox" className="mb-0">
-                                             <Form.Check.Input
+                                            <Form.Check.Input
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
@@ -531,12 +531,12 @@ function ProductDetails() {
                                 <Card.Body>
                                     <Row>
                                         <Col md={12} lg={12} className="order-md-1  order-lg-0">
-                                            <h5 className="fw-medium mb-3 d-flex align-items-center">
+                                            <h2 className="fw-medium mb-3 d-flex align-items-center">
                                                 £ {prodata.variant?.[0]?.pricing?.price}
                                                 {' '}
                                                 <del className="ms-2 fs--1 text-500">£ {prodata.variant?.[0]?.pricing?.compare_at}</del>
                                                 <span style={{ background: '#ff4242', fontSize: '12px' }} className="badge ms-2">{Math.round(100 - (prodata.variant?.[0]?.pricing?.price / prodata.variant?.[0]?.pricing?.compare_at * 100))}%</span>
-                                            </h5>
+                                            </h2>
                                             {/* <p className="text-danger fs--1 fw-semi-bold">
                                                     <FontAwesomeIcon icon={['far', 'clock']} className="me-2" />
                                                     Sale ends in 13h : 25m : 54s

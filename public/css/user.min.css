@@ -411,8 +411,8 @@ body {
 
 .fixed-top {
   position: fixed;
-  right: -17px;
-  left: -17px;
+  right: 0px;
+  left: 0px;
   z-index: 1030;
   top: 0;
 }
@@ -860,3 +860,21 @@ body {
   position: relative;
   cursor: pointer;
 }
+
+/*  */
+/* @media screen and (min-width: 992px) {
+
+  .logo-image {
+    position: relative;
+    left:20%;
+  }
+
+  .collapse-section {
+    position: relative;
+    left: 15%;
+  }
+.non-collapse-section{
+  position: relative;
+  right: 3%;
+}
+} */

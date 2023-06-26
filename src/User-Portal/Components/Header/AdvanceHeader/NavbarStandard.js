@@ -69,8 +69,8 @@ function NavbarStandard() {
               <div className="d-flex align-items-center">
                 <Link to="/">
                   <img
-                    className="logo-image"
-                    style={{ width: '95px', marginRight: '3px', marginLeft: '5px' }}
+                    className="logo-image ms-3"
+                    style={{ width: '135px' }}
                     title="MYPROJECT.AI"
                     src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"
                     alt="MAI Logo"
@@ -82,145 +82,152 @@ function NavbarStandard() {
             </div>
 
 
-            {/* Post A Project */}
-            {id == 2 &&
-              <div>
-                {isMobile ? (
-                  <div>
-                    <Button className='post-project-btn ms-lg-5' title='Click here to Post Your Project' as={Link} to="/postproject" >
-                      <Icon icon="mingcute:add-fill" color="#003f6b" width="10" height="10" />
-                    </Button>
-                  </div>
-                ) : (
-                  <div>
-                    <Button className='post-project-btn-1 ms-lg-5' title='Click here to Post Your Project' as={Link} to="/postproject" >
-                      <span style={{ fontSize: '14px' }} className="text-uppercase">Post A Project</span>
-                    </Button>
-                  </div>
-                )}
-              </div>
-            }
-            {/* Post A Project */}
-            <div className="navbar-collapse scrollbar collapse" id="navbarStandard" >
-              <ul className=" ms-lg-5 navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
-                {/* HIW */}
-                <li>
-                  <Link to="/HowItWorks" className="link-item">
-                    <a
-                      title='How It Works'
-                      className="text-uppercase text-white nav-link"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      id="dashboards"
-                    >
-                      How It Works
-                    </a>
-                  </Link>
-                </li>
-                {/* HIW */}
-                {/* Products */}
-                <li>
-                  <Link to="/productlist" className="link-item">
-                    <a
-                      title='Products'
-                      className="text-uppercase text-white nav-link"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      id="dashboards"
-                    >
-                      Products
-                    </a>
-                  </Link>
-                </li>
-                {/* Products */}
-                {/* Projects */}
-                <li>
-                  <Link to="/projectlist" className="link-item">
-                    <a
-                      title='Projects'
-                      className="text-uppercase text-white nav-link"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      id="dashboards"
-                    >
-                      Projects
-                    </a>
-                  </Link>
-                </li>
-                {/* Projects */}
-                {/* Services */}
-                <li>
-                  <Link to="/servicelist" className="link-item">
-                    <a
-                      title='Services'
-                      className="text-uppercase text-white nav-link"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      id="dashboards"
-                    >
-                      Services
-                    </a>
-                  </Link>
-                </li>
-                {/* Services */}
-                {id == 1 &&
-                  <>
-                    {/* Owner Portal */}
-                    <li className="nav-item dropdown">
-                      <a
-                        title='Click here to Login or Signup as Projectowner in Myproject.Ai'
-                        className="text-uppercase text-white nav-link "
-                        href="#"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        id="dashboards"
-                      >
-                        Project Owner
-                      </a>
-                      <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
-                        <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                          <Link to="/projectowner">
-                            <a title='Click here to Login as Projectowner in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium">Login</a>
-                          </Link>
-                          <Link to="/project-owner-register">
-                            <a title='Click here to Signup as Projectowner in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium">Sign Up</a>
-                          </Link>
-                        </div>
-                      </div>
-                    </li>
-                    {/* Owner Portal */}
 
-                    {/* Trader Portal */}
-                    <li className="nav-item dropdown">
-                      <a title='Click here to Login or Signup as Trader in Myproject.Ai' className="text-uppercase text-white nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Trader</a>
-                      <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
-                        <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                          <Link to="/Freelancer/True">
-                            <a title='Click here to Login as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Login</a>
-                          </Link>
-                          <Link to="/Freelancer/False">
-                            <a title='Click here to SignUp as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Sign Up</a>
-                          </Link>
+            <div className="navbar-collapse  scrollbar collapse" id="navbarStandard" >
+              <ul className="navbar-nav ms-lg-5" data-top-nav-dropdowns="data-top-nav-dropdowns">
+                {/* Post A Project */}
+                {id == 2 &&
+                  <li>
+                  {/*  <li className='mt-3 mb-3 mb-lg-0 mt-lg-0 ms-lg-5'> */}
+                      {/* <div>
+                      {isMobile ? (
+                        <div>
+                          <Button className='post-project-btn ms-lg-5' title='Click here to Post Your Project' as={Link} to="/postproject" >
+                            <Icon icon="mingcute:add-fill" color="#003f6b" width="10" height="10" />
+                          </Button>
                         </div>
-                      </div>
+                      ) : (
+                        <div>
+                          <Button className='post-project-btn-1 ms-lg-5' title='Click here to Post Your Project' as={Link} to="/postproject" >
+                            <span style={{ fontSize: '14px' }} className="text-uppercase">Post A Project</span>
+                          </Button>
+                        </div>
+                      )}
+                    </div> */}
+                      <Button variant='falcon-default' style={{ fontSize: '14px' }} className='mt-3 me-4 mb-3 mb-lg-0 mt-lg-0 text-uppercase'>Post a Project</Button>
                     </li>
-                    {/* Trader Portal */}
-                  </>
                 }
-              </ul>
+                    {/* Post A Project */}
+
+
+                    {/* HIW */}
+                    <li className=''>
+                      <Link to="/HowItWorks" className="link-item">
+                        <a
+                          title='How It Works'
+                          className="text-uppercase  text-white nav-link"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          id="dashboards"
+                        >
+                          How It Works
+                        </a>
+                      </Link>
+                    </li>
+                    {/* HIW */}
+                    {/* Products */}
+                    <li>
+                      <Link to="/productlist" className="link-item">
+                        <a
+                          title='Products'
+                          className="text-uppercase text-white nav-link"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          id="dashboards"
+                        >
+                          Products
+                        </a>
+                      </Link>
+                    </li>
+                    {/* Products */}
+                    {/* Projects */}
+                    <li>
+                      <Link to="/projectlist" className="link-item">
+                        <a
+                          title='Projects'
+                          className="text-uppercase text-white nav-link"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          id="dashboards"
+                        >
+                          Projects
+                        </a>
+                      </Link>
+                    </li>
+                    {/* Projects */}
+                    {/* Services */}
+                    <li>
+                      <Link to="/servicelist" className="link-item">
+                        <a
+                          title='Services'
+                          className="text-uppercase text-white nav-link"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          id="dashboards"
+                        >
+                          Services
+                        </a>
+                      </Link>
+                    </li>
+                    {/* Services */}
+                    {id == 1 &&
+                      <>
+                        {/* Owner Portal */}
+                        <li className="nav-item dropdown">
+                          <a
+                            title='Click here to Login or Signup as Projectowner in Myproject.Ai'
+                            className="text-uppercase text-white nav-link "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            id="dashboards"
+                          >
+                            Project Owner
+                          </a>
+                          <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
+                            <div className="bg-white dark__bg-1000 rounded-3 py-2">
+                              <Link to="/projectowner">
+                                <a title='Click here to Login as Projectowner in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium">Login</a>
+                              </Link>
+                              <Link to="/project-owner-register">
+                                <a title='Click here to Signup as Projectowner in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium">Sign Up</a>
+                              </Link>
+                            </div>
+                          </div>
+                        </li>
+                        {/* Owner Portal */}
+
+                        {/* Trader Portal */}
+                        <li className="nav-item dropdown">
+                          <a title='Click here to Login or Signup as Trader in Myproject.Ai' className="text-uppercase text-white nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Trader</a>
+                          <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
+                            <div className="bg-white dark__bg-1000 rounded-3 py-2">
+                              <Link to="/Freelancer/True">
+                                <a title='Click here to Login as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Login</a>
+                              </Link>
+                              <Link to="/Freelancer/False">
+                                <a title='Click here to SignUp as Trader in Myproject.Ai' className="text-uppercase dropdown-item text-900 fw-medium" >Sign Up</a>
+                              </Link>
+                            </div>
+                          </div>
+                        </li>
+                        {/* Trader Portal */}
+                      </>
+                    }
+                  </ul>
 
             </div>
-            <ul class="navbar-nav navbar-nav-icons ms-auto  flex-row align-items-center">
+            <ul class="navbar-nav navbar-nav-icons ms-auto non-collapse-section flex-row align-items-center">
               {/* Cart */}
               <Link title='Cart' to="/Cart">
                 <div className="cart-icon-container">
-                  <Icon style={{ marginRight: '5px' }} className='me-2' icon="material-symbols:shopping-cart" color="white" width="18" height="18" />
+                  <Icon style={{ marginRight: '5px' }} className='me-2' icon="material-symbols:shopping-cart" color="white" width="24" height="24" />
                   <Badge pill bg="danger" className="cart-badge">
                     1
                   </Badge>
@@ -237,7 +244,7 @@ function NavbarStandard() {
                     to="#!"
                     className=""
                   >
-                    <Icon icon="wpf:like" style={{ marginRight: '5px', marginLeft: '5px' }} color="white" width="18" height="18" />
+                    <Icon icon="wpf:like" style={{ marginRight: '5px', marginLeft: '5px' }} color="white" width="24" height="24" />
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu className="dropdown-menu-card dropdown-menu-end me-2 dropdown-menu-start">
@@ -281,7 +288,7 @@ function NavbarStandard() {
                       to="#!"
                       className=""
                     >
-                      <Icon icon="mdi:bell" color="white" width="18" height="18" />
+                      <Icon icon="mdi:bell" color="white" width="24" height="24" />
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="dropdown-menu dropdown-menu-end  dropdown-menu-start dropdown-menu-card dropdown-menu-notification " aria-labelledby="navbarDropdownNotification" data-bs-popper="static">
                       <div className="card card-notification  shadow-none">
