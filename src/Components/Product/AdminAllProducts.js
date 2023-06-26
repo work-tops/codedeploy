@@ -239,7 +239,7 @@ const columns = [
     },
     {
         accessor: 'name',
-        Header: 'Name'
+        Header: 'Product Name'
     },
     {
         accessor: 'email',

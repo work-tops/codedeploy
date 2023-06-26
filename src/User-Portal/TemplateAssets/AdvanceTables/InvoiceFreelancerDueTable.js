@@ -183,6 +183,20 @@ const InvoiceFreelancerDueTable = () => {
 
             </CardDropdown>,
         }
+        ,
+        {
+            itemName: 'CALACATTA LIGHT QUARTZ',
+            invoiceNo: 'MAI/INV/2737',
+            date: '18/05/2023',
+            description: 'Ricky Antony , 2392 Main Avenue , New Jersy 02149',
+            amount: "£ 100",
+            status: <span className="badge bg-secondary">Draft</span>,
+            action: <CardDropdown>
+                <Dropdown.Item onClick={handleShow2}>View</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/EditInvoice" >Edit</Dropdown.Item>
+
+            </CardDropdown>,
+        },
     ]
 
     function BulAction({ selectedRowIds }) {

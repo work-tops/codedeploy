@@ -132,21 +132,26 @@ function Editpostproject() {
 
                         {/* Post A Project */}
                         <Card className="mb-3 mt-3">
-                            <Card.Header className='bg-light text-uppercase text-justify '>
+                            <Card.Header className='bg-light'>
                                 <div className="row">
-                                    <div className="col-lg-8">
-                                        <h4 className="mb-3">Edit Your Project</h4>
-                                        <span className="d-block" style={{ fontSize: '12px' }}>Project Created On :<span className="ms-2 fw-semibold text-primary">01/01/01/05/2023</span> </span>
-                                        <span className="" style={{ fontSize: '12px' }}>Last Update On :<span className="ms-2 fw-semibold text-success">10/01/01/05/2023</span> </span>
-                                    </div>
-                                    <div className="col-lg-4 mt-3 d-flex justify-content-lg-end align-items-lg-end">
-                                        <button className="btn btn-primary mb-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Comment History</button>
-                                    </div>
+                                    <h4 className="text-uppercase text-justify ">Edit Your Project</h4>
+                                    {/* <div className="col-lg-4 mt-3 d-flex justify-content-lg-end align-items-lg-end"> */}
+                                    {/* </div> */}
+                                    <p className='mt-2 fs--1' >Select a relevant category so that traders can find your project</p>
                                 </div>
+                                <button className="btn btn-primary mb-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Comment History</button>
                             </Card.Header>
                             <Card.Body className="bg-white">
+                                <div className="row">
+                                    <div className="col-md-6 mb-3 d-flex justify-content-lg-start">
+                                        <span className="d-block" style={{ fontSize: '12px' }}>Project Created On :<span className="ms-2 fw-semibold text-primary">01/05/2023</span> </span>
+                                    </div>
+                                    <div className="col-md-6 mb-3 d-flex justify-content-lg-start">
+                                        <span className="" style={{ fontSize: '12px' }}>Last Update On :<span className="ms-2 fw-semibold text-success">10/05/2023</span> </span>
+                                    </div>
+                                </div>
+
                                 <Row className="gx-2 gy-3">
-                                    <p className='mt-2 me-2 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that traders can find your project</p>
 
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
@@ -484,7 +489,7 @@ function Editpostproject() {
                                             />
                                         </Form.Group>
                                     </Col>
-                                    <Col xs="auto">
+                                    {/* <Col xs="auto">
                                         <Form.Check type="checkbox" className="mb-0">
                                             <Form.Check.Input
                                                 type="checkbox"
@@ -498,7 +503,7 @@ function Editpostproject() {
                                                 </Link>
                                             </Form.Check.Label>
                                         </Form.Check>
-                                    </Col>
+                                    </Col> */}
                                     <Col lg={12} className=''>
                                         <div className='d-flex justify-content-start'>
                                             <Button
@@ -530,7 +535,7 @@ function Editpostproject() {
                                 <Button variant="secondary" onClick={handleClose}>
                                     Cancel
                                 </Button>
-                                <Button as={Link} to="/projectlist" variant="danger" onClick={handleClose}>
+                                <Button as={Link} to="/OpenProjectCard" variant="danger" onClick={handleClose}>
                                     Exit
                                 </Button>
 
@@ -589,11 +594,11 @@ function Editpostproject() {
                                     </Form.Label>
                                     <div className="col-6">
                                         <img src={file} width="50px" height="50px" className="pro-pre" />
-                                        <span className="text-900 ms-3 fil-name">File Name (540 KB)</span>
+                                        <span className="text-900 ms-3 fs--1"><span className="d-block mt-3 ms-2">File Name </span><span className="ms-2 d-block">(540 KB)</span><span className="ms-2 d-block">01/01/2023</span></span>
                                     </div>
                                     <div className="col-6">
                                         <img src={file} width="50px" height="50px" className="pro-pre" />
-                                        <span className="text-900 ms-3 fil-name">File Name (540 KB)</span>
+                                        <span className="text-900 ms-3 fs--1"><span className="d-block mt-3 ms-2">File Name </span><span className="ms-2 d-block">(540 KB)</span><span className="ms-2 d-block">01/01/2023</span></span>
                                     </div>
                                     {/* Upload Samples */}
                                     <Col lg={6} md={6} className=''>

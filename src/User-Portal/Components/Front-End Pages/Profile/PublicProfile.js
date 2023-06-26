@@ -15,8 +15,8 @@ function PublicProfile() {
     // const [show, setShow] = useState(true);
 
     const toastDark = () => toast.success(<h6 className="text-sucess">Your Product is Successfully Added to Cart</h6>);
-    const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
-    const toastDanger1 = () => toast.success(<h6 className="text-sucess">Added to Followers Wishlist</h6>);
+    // const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+    const toastSuccess1 = () => toast.success(<h6 className="text-sucess">Added to Followers Wishlist</h6>);
 
     // 
     const [activeTab, setActiveTab] = useState('tab2');
@@ -30,7 +30,36 @@ function PublicProfile() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    // 
+    const [isAdded, setIsAdded] = useState(false);
 
+    const handleAddToWishlist = () => {
+        setIsAdded(true);
+        const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+
+        toastDanger();
+    };
+
+    const handleRemoveFromWishlist = () => {
+        setIsAdded(false);
+        const toastDanger1 = () => toast.error(<h6 className="text-dark">Product Removed from Wishlist</h6>)
+        toastDanger1();
+    };
+    // 
+    const [isAdded1, setIsAdded1] = useState(false);
+
+    const handleAddToWishlist1 = () => {
+        setIsAdded1(true);
+        const toastFollow = () => toast.success(<h6 className="text-sucess">Follower Added to Wishlist</h6>);
+
+        toastFollow();
+    };
+
+    const handleRemoveFromWishlist1 = () => {
+        setIsAdded1(false);
+        const toastFollow1 = () => toast.error(<h6 className="text-dark">Follower Removed from Wishlist</h6>)
+        toastFollow1();
+    };
 
 
     return (
@@ -60,8 +89,48 @@ function PublicProfile() {
                                                             <span className="fas fa-comment me-1"></span> Message
                                                         </button>
                                                     </Link>
-                                                    <button onClick={toastDanger1} className="btn btn-primary btn-md w-100" type="button">
-                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" /><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" /> Follow</button></div>
+                                                    <>
+                                                        {isAdded1 ? (
+                                                            <button
+                                                                onClick={handleRemoveFromWishlist1}
+                                                                className="btn btn-md w-100 btn-falcon-default me-2 hover-danger"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Remove from Wishlist"
+                                                                data-bs-original-title="Remove from Wishlist"
+                                                            >
+                                                                <Icon
+                                                                    style={{ marginTop: '-5px' }}
+                                                                    className="me-1"
+                                                                    icon="icon-park-solid:like"
+                                                                    color="#df2020"
+                                                                    width="20"
+                                                                    height="20"
+                                                                /> Following
+                                                            </button>
+                                                        ) : (
+                                                            <button
+                                                                onClick={handleAddToWishlist1}
+                                                                className="btn btn-md w-100 btn-falcon-default me-2 hover-danger"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Add to Wishlist"
+                                                                data-bs-original-title="Add to Wishlist"
+                                                            >
+                                                                <Icon
+                                                                    icon="icon-park-outline:like"
+                                                                    className="me-1"
+                                                                    style={{ marginTop: '-5px' }}
+                                                                    width="20"
+                                                                    height="20"
+                                                                />Follow
+                                                            </button>
+                                                        )}
+                                                    </>
+
+                                                </div>
                                                 <div className="col mt-4 mt-md-5 mt-lg-4">
                                                     <div className="row text-center">
                                                         <div className="col-6 border-sm-end border-300"><img className="mb-2" src={""} width="30" alt="" />
@@ -195,9 +264,46 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="col-auto pe-3">
                                                                     {/* <Link to="/wishlist/product"> */}
-                                                                    <a onClick={toastDanger} className="btn btn-sm btn-falcon-default me-2 hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
-                                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" /><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
-                                                                    </a>
+                                                                    <>
+                                                                        {isAdded ? (
+                                                                            <a
+                                                                                onClick={handleRemoveFromWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Remove from Wishlist"
+                                                                                data-bs-original-title="Remove from Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    className="me-1"
+                                                                                    icon="icon-park-solid:like"
+                                                                                    color="#df2020"
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        ) : (
+                                                                            <a
+                                                                                onClick={handleAddToWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Add to Wishlist"
+                                                                                data-bs-original-title="Add to Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    icon="icon-park-outline:like"
+                                                                                    className="me-1"
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        )}
+                                                                    </>
                                                                     {/* </Link> */}
                                                                     <a onClick={toastDark} className="btn btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Cart" data-bs-original-title="Add to Cart">
                                                                         <span className="fas fa-cart-plus" data-fa-transform="down-2"></span>
@@ -279,9 +385,46 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="col-auto pe-3">
                                                                     {/* <Link to="/wishlist/product"> */}
-                                                                    <a onClick={toastDanger} className="btn btn-sm btn-falcon-default me-2 hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
-                                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" /><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
-                                                                    </a>
+                                                                    <>
+                                                                        {isAdded ? (
+                                                                            <a
+                                                                                onClick={handleRemoveFromWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Remove from Wishlist"
+                                                                                data-bs-original-title="Remove from Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    className="me-1"
+                                                                                    icon="icon-park-solid:like"
+                                                                                    color="#df2020"
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        ) : (
+                                                                            <a
+                                                                                onClick={handleAddToWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Add to Wishlist"
+                                                                                data-bs-original-title="Add to Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    icon="icon-park-outline:like"
+                                                                                    className="me-1"
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        )}
+                                                                    </>
                                                                     {/* </Link> */}
                                                                     <a onClick={toastDark} className="btn btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Cart" data-bs-original-title="Add to Cart">
                                                                         <span className="fas fa-cart-plus" data-fa-transform="down-2"></span>
@@ -363,9 +506,46 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="col-auto pe-3">
                                                                     {/* <Link to="/wishlist/product"> */}
-                                                                    <a onClick={toastDanger} className="btn btn-sm btn-falcon-default me-2 hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
-                                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" /><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
-                                                                    </a>
+                                                                    <>
+                                                                        {isAdded ? (
+                                                                            <a
+                                                                                onClick={handleRemoveFromWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Remove from Wishlist"
+                                                                                data-bs-original-title="Remove from Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    className="me-1"
+                                                                                    icon="icon-park-solid:like"
+                                                                                    color="#df2020"
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        ) : (
+                                                                            <a
+                                                                                onClick={handleAddToWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Add to Wishlist"
+                                                                                data-bs-original-title="Add to Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    icon="icon-park-outline:like"
+                                                                                    className="me-1"
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        )}
+                                                                    </>
                                                                     {/* </Link> */}
                                                                     <a onClick={toastDark} className="btn btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Cart" data-bs-original-title="Add to Cart">
                                                                         <span className="fas fa-cart-plus" data-fa-transform="down-2"></span>
@@ -447,9 +627,46 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="col-auto pe-3">
                                                                     {/* <Link to="/wishlist/product"> */}
-                                                                    <a onClick={toastDanger} className="btn btn-sm btn-falcon-default me-2 hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
-                                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" /><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
-                                                                    </a>
+                                                                    <>
+                                                                        {isAdded ? (
+                                                                            <a
+                                                                                onClick={handleRemoveFromWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Remove from Wishlist"
+                                                                                data-bs-original-title="Remove from Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    className="me-1"
+                                                                                    icon="icon-park-solid:like"
+                                                                                    color="#df2020"
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        ) : (
+                                                                            <a
+                                                                                onClick={handleAddToWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Add to Wishlist"
+                                                                                data-bs-original-title="Add to Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    icon="icon-park-outline:like"
+                                                                                    className="me-1"
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        )}
+                                                                    </>
                                                                     {/* </Link> */}
                                                                     <a onClick={toastDark} className="btn btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Cart" data-bs-original-title="Add to Cart">
                                                                         <span className="fas fa-cart-plus" data-fa-transform="down-2"></span>
@@ -531,9 +748,46 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="col-auto pe-3">
                                                                     {/* <Link to="/wishlist/product"> */}
-                                                                    <a onClick={toastDanger} className="btn btn-sm btn-falcon-default me-2 hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
-                                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" /><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
-                                                                    </a>
+                                                                    <>
+                                                                        {isAdded ? (
+                                                                            <a
+                                                                                onClick={handleRemoveFromWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Remove from Wishlist"
+                                                                                data-bs-original-title="Remove from Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    className="me-1"
+                                                                                    icon="icon-park-solid:like"
+                                                                                    color="#df2020"
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        ) : (
+                                                                            <a
+                                                                                onClick={handleAddToWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Add to Wishlist"
+                                                                                data-bs-original-title="Add to Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    icon="icon-park-outline:like"
+                                                                                    className="me-1"
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        )}
+                                                                    </>
                                                                     {/* </Link> */}
                                                                     <a onClick={toastDark} className="btn btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Cart" data-bs-original-title="Add to Cart">
                                                                         <span className="fas fa-cart-plus" data-fa-transform="down-2"></span>
@@ -615,9 +869,46 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="col-auto pe-3">
                                                                     {/* <Link to="/wishlist/product"> */}
-                                                                    <a onClick={toastDanger} className="btn btn-sm btn-falcon-default me-2 hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
-                                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" /><Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
-                                                                    </a>
+                                                                    <>
+                                                                        {isAdded ? (
+                                                                            <a
+                                                                                onClick={handleRemoveFromWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Remove from Wishlist"
+                                                                                data-bs-original-title="Remove from Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    className="me-1"
+                                                                                    icon="icon-park-solid:like"
+                                                                                    color="#df2020"
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        ) : (
+                                                                            <a
+                                                                                onClick={handleAddToWishlist}
+                                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                                href="#!"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                aria-label="Add to Wishlist"
+                                                                                data-bs-original-title="Add to Wishlist"
+                                                                            >
+                                                                                <Icon
+                                                                                    icon="icon-park-outline:like"
+                                                                                    className="me-1"
+                                                                                    style={{ marginTop: '-5px' }}
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                />
+                                                                            </a>
+                                                                        )}
+                                                                    </>
                                                                     {/* </Link> */}
                                                                     <a onClick={toastDark} className="btn btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Cart" data-bs-original-title="Add to Cart">
                                                                         <span className="fas fa-cart-plus" data-fa-transform="down-2"></span>
@@ -737,7 +1028,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <a onClick={toastDanger1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
+                                                                    {/* <a onClick={toastSuccess1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
                                                                         <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
                                                                         <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
                                                                     </a> */}
@@ -808,7 +1099,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <a onClick={toastDanger1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
+                                                                    {/* <a onClick={toastSuccess1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
                                                                         <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
                                                                         <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
                                                                     </a> */}
@@ -879,7 +1170,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <a onClick={toastDanger1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
+                                                                    {/* <a onClick={toastSuccess1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
                                                                         <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
                                                                         <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
                                                                     </a> */}
@@ -950,7 +1241,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <a onClick={toastDanger1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
+                                                                    {/* <a onClick={toastSuccess1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
                                                                         <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
                                                                         <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
                                                                     </a> */}
@@ -1021,7 +1312,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <a onClick={toastDanger1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
+                                                                    {/* <a onClick={toastSuccess1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
                                                                         <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
                                                                         <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
                                                                     </a> */}
@@ -1092,7 +1383,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <a onClick={toastDanger1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
+                                                                    {/* <a onClick={toastSuccess1} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
                                                                         <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
                                                                         <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
                                                                     </a> */}

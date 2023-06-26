@@ -354,7 +354,7 @@ const AllFreelancerCommission = () => {
                         </Card.Header>
                         <Card.Body>
                             <div className="d-flex justify-content-end">
-                                <Button as={Link} to="/freelancercommission" variant="success">Add Commission to Trader</Button>
+                                <Button as={Link} to="/Tradercommission" variant="success">Add Commission to Trader</Button>
                             </div>
                             <AdvanceTableWrapper
                                 columns={columns}

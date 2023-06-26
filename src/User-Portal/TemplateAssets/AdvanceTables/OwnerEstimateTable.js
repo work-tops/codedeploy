@@ -152,7 +152,7 @@ const OwnerEstimateTable = () => {
                     </Card.Body>
                 </Card>
             </div>
-            {/*  */}
+            {/* Estimate Modal */}
             <Modal show={show} onHide={handleClose} size="lg" centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Estimate Details</Modal.Title>
@@ -324,7 +324,8 @@ const OwnerEstimateTable = () => {
                                                     <td className="fw-semi-bold">£ 19,688.40</td>
                                                 </tr>
 
-                                            </tbody></table>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

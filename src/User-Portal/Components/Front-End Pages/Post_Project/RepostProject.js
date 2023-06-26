@@ -132,16 +132,12 @@ function RepostProject() {
 
                         {/* Post A Project */}
                         <Card className="mb-3 mt-3">
-                            <Card.Header className='bg-light text-uppercase text-justify '>
-                                <div className="row">
-                                    <div className="col-lg-8">
-                                        <h4 className="mb-3">Repost Your Project</h4>
-                                    </div>
-                                </div>
+                            <Card.Header className='bg-light text-justify '>
+                                <h5 className="mb-3 text-uppercase">Repost Your Project</h5>
+                                <p className='fs--1'>Select a relevant category so that traders can find your project</p>
                             </Card.Header>
                             <Card.Body className="bg-white">
                                 <Row className="gx-2 gy-3">
-                                    <p className='mt-2 me-2 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that traders can find your project</p>
 
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
@@ -168,12 +164,14 @@ function RepostProject() {
                                                 type="text"
                                                 value="WHITE ATTICA SUPERNATURAL QUARTZ"
                                                 required
+                                                minLength={30}
+                                                maxLength={150}
                                                 name="project_title"
                                                 // onChange={(e) => { handleChange(e) }}
                                                 id="usr-prj-tit"
                                                 placeholder="e.g I Want to Make a New Kitchen"
                                             />
-                                            <p className="text-900 text-uppercase">WHITE ATTICA SUPERNATURAL QUARTZ</p>
+
                                         </Form.Group>
                                     </Col>
                                     <Col lg={12} className='me-2'>
@@ -216,13 +214,6 @@ function RepostProject() {
                                                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                                                 }}
                                             />
-                                            <p className="text-900">White Attica Supernatural Quartz has a crisp white base featured with an
-                                                intricate veiny pattern. This quartz slab has a super sleek look in polished
-                                                finish which
-                                                is more enhanced by the distinct black veins which have been manufactured to look fit for classNamey modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true
-                                                when installed in kitchens, baths, entryways, laundry and mudrooms, as well as a variety of other spaces in
-                                                both residential and commercial properties. This quartz's design is meant to create a timeless statement. Aside from worktops, these slabs are ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
-                                            </p>
                                             <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our Traders
                                             </p>
                                         </Form.Group>
@@ -306,7 +297,7 @@ function RepostProject() {
                                                 <option value="Range"> Range</option>
                                                 <option value="No Idea">No Idea</option>
                                             </Form.Select>
-                                            <p className="text-900">Fixed Price</p>
+
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
@@ -324,7 +315,7 @@ function RepostProject() {
                                                 <option value="£ GBP">£ GBP </option>
                                                 <option value="£ EUR">£ EUR</option>
                                             </Form.Select>
-                                            <p className="text-900">£ GBP </p>
+
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} className=''>
@@ -342,7 +333,7 @@ function RepostProject() {
                                                 placeholder="£ 0"
                                                 type="number"
                                             />
-                                            <p className="text-900">200 </p>
+
                                             {/* <div className='row'>
                                                 <div className="col">
                                                     {form.budget_type == "No Idea" ? (
@@ -386,8 +377,6 @@ function RepostProject() {
                                                     ))}
                                                 </ListGroup>
                                             )}
-
-                                            <p className="text-900">Buckinghamshire </p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
@@ -403,7 +392,7 @@ function RepostProject() {
                                                 // onChange={(e) => { handleChange(e) }}
                                                 type='text'
                                             />
-                                            <p className="text-900">CD23BX</p>
+
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
@@ -516,7 +505,7 @@ function RepostProject() {
                                             <Button onClick={() => setShowModal(true)} className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
                                             {/* </Link> */}
                                         </div>
-                                        <h5 className="text-center text-danger fw-bold">Your Project has been expired....Please Post New Project!!!</h5>
+                                        {/* <h5 className="text-center text-danger fw-bold">Your Project has been expired....Please Post New Project!!!</h5> */}
                                     </Col>
                                 </Row>
                             </Card.Body>
@@ -537,7 +526,7 @@ function RepostProject() {
                                 <Button variant="secondary" onClick={handleClose}>
                                     Cancel
                                 </Button>
-                                <Button as={Link} to="/projectlist" variant="danger" onClick={handleClose}>
+                                <Button as={Link} to="/OpenProjectCard" variant="danger" onClick={handleClose}>
                                     Exit
                                 </Button>
 
@@ -596,11 +585,11 @@ function RepostProject() {
                                     </Form.Label>
                                     <div className="col-6">
                                         <img src={file} width="50px" height="50px" className="pro-pre" />
-                                        <span className="text-900 ms-3 fil-name">File Name (540 KB)</span>
+                                        <span className="text-900 ms-3 fs--1"><span className="d-block mt-3 ms-2">File Name </span><span className="ms-2 d-block">(540 KB)</span><span className="ms-2 d-block">01/01/2023</span></span>
                                     </div>
                                     <div className="col-6">
                                         <img src={file} width="50px" height="50px" className="pro-pre" />
-                                        <span className="text-900 ms-3 fil-name">File Name (540 KB)</span>
+                                        <span className="text-900 ms-3 fs--1"><span className="d-block mt-3 ms-2">File Name </span><span className="ms-2 d-block">(540 KB)</span><span className="ms-2 d-block">01/01/2023</span></span>
                                     </div>
                                     {/* Upload Samples */}
                                     <Col lg={6} md={6} className=''>

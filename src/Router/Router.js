@@ -27,6 +27,7 @@ import ConversationDetails from "../Components/Conversation/ConversationDetails"
 import ShippingRate from "../Components/ShippingRate/ShippingRate";
 import AllTraderTable from "../Components/Trader/AdminAllTrader";
 import AddTrader from "../Components/Trader/AdminAddTrader";
+import AdminPayment from "../Components/Payments/Payments";
 // import AdvAllFreelancer from "../User-Portal/Components/AllFreelancer";
 
 const Routers = () => {
@@ -48,11 +49,11 @@ const Routers = () => {
             <Route path='/addservices'><AddServices /></Route>
             <Route path='/globalcommission'><GlobalCommission /></Route>
             <Route path='/servicecommission'><ServiceCommission /></Route>
-            <Route path="/freelancercommission"><FreelancerCommission /></Route>
-            <Route path="/allcommission"><AllCategoryCommission /></Route>
-            <Route path="/allfreelancercommission"><AllFreelancerCommission /></Route>
+            <Route path="/Tradercommission"><FreelancerCommission /></Route>
+            <Route path="/AllCategoryCommission"><AllCategoryCommission /></Route>
+            <Route path="/AllTradercommission"><AllFreelancerCommission /></Route>
             <Route path="/categorycommission"><CategoryCommission /></Route>
-            <Route path="/payments"><Payments /></Route>
+            <Route path="/payments"><AdminPayment /></Route>
             <Route path="/AllReviews"><AllReviews /></Route>
             <Route path="/AllEnquires"><AllEnquires /></Route>
             <Route path="/ConversationDetails"><ConversationDetails /></Route>

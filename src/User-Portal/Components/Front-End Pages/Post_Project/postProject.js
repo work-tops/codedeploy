@@ -253,7 +253,7 @@ const PostProject = () => {
             <Card className="mt-5">
               <Card.Header as="h4" className='bg-light text-justify text-uppercase'>Note</Card.Header>
               <Card.Body className="">
-                
+
                 <ul>
                   <li style={{ fontSize: '14px', width: '100%' }}>
                     The customers who have described their requirements with better clarity while uploading the project have always connected with the right professionals and received better proposals, and hence completed their projects on time.
@@ -271,10 +271,12 @@ const PostProject = () => {
 
             {/* Post A Project */}
             <Card className="mb-3 mt-3">
-              <Card.Header as="h4" className='bg-light text-uppercase text-justify '>Post A Project</Card.Header>
+              <Card.Header className='bg-light'>
+                <h4 className='text-uppercase text-justify'>Post A Project</h4>
+                <p className='mt-2 fs--1' >Select a relevant category so that traders can find your project</p>
+              </Card.Header>
               <Card.Body className="bg-white">
                 <Row className="gx-2 gy-3">
-                  <p className='mt-2 me-2 fw-semibold' style={{ fontSize: '14px' }}>Select a relevant category so that traders can find your project</p>
 
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
@@ -625,11 +627,11 @@ const PostProject = () => {
                       <Form.Check.Input
                         type="checkbox"
                         className="cursor-pointer "
-                        />
+                      />
                       <Form.Check.Label className="mb-0 text-700">
-                        I Agree the 
+                        I Agree the
                         <Link to="/termsofuse">
-                        <span className='ms-1'>Terms & Conditions</span>
+                          <span className='ms-1'>Terms & Conditions</span>
                         </Link>
                       </Form.Check.Label>
                     </Form.Check>
@@ -664,11 +666,9 @@ const PostProject = () => {
                 <Button variant="secondary" onClick={handleClose}>
                   No
                 </Button>
-                <Link to="/projectlist">
-                  <Button variant="danger" onClick={handleClose}>
-                    Yes
-                  </Button>
-                </Link>
+                <Button as={Link} to="/OpenProjectCard" variant="danger" onClick={handleClose}>
+                  Exit
+                </Button>
               </Modal.Footer>
             </Modal>
             {/* Modal */}
@@ -723,11 +723,11 @@ const PostProject = () => {
                   </Form.Label>
                   <div className="col-6">
                     <img src={file} width="50px" height="50px" className="pro-pre" />
-                    <span className="text-900 ms-3 fil-name">File Name (540 KB)</span>
+                    <span className="text-900 ms-3 fs--1"><span className="d-block mt-3 ms-2">File Name </span><span className="ms-2 d-block">(540 KB)</span><span className="ms-2 d-block">01/01/2023</span></span>
                   </div>
                   <div className="col-6">
                     <img src={file} width="50px" height="50px" className="pro-pre" />
-                    <span className="text-900 ms-3 fil-name">File Name (540 KB)</span>
+                    <span className="text-900 ms-3 fs--1"><span className="d-block mt-3 ms-2">File Name </span><span className="ms-2 d-block">(540 KB)</span><span className="ms-2 d-block">01/01/2023</span></span>
                   </div>
                   {/* Upload Samples */}
                   <Col lg={6} md={6} className=''>

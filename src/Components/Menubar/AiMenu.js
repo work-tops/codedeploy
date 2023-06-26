@@ -40,9 +40,10 @@
 // export default AiMenu
 
 import React from "react";
+import logo from '../../User-Portal/Components/Projectimages/MYPRJ.png'
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, Navbar, Nav } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile from '../../User-Portal/Components/Projectimages/BathroomFitting.jpg'
 import trainer from '../../User-Portal/Components/Projectimages/trainer.png'
@@ -52,253 +53,22 @@ function AdminHeader() {
             <div className='row'>
                 <div className='col-12'>
                     <nav style={{ background: '#003f6b' }} className="navbar fixed-top navbar-top navbar-expand-xl">
-                        <button className="btn navbar-toggler-humburger-icon navbar-toggler  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle Navigation"><Icon icon="material-symbols:menu" color="white" width="20" height="20" /><span className="toggle-line"></span></button>
+                        <Icon icon="ci:hamburger-md" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft" className="ms-3 cursor-pointer" color="white" width="24" height="24" />
                         <a className="navbar-brand me-1 me-sm-3">
                             <div className="d-flex align-items-center">
                                 <img
-                                    className="logo-image"
-                                    style={{ width: '110px', marginRight: '3px', marginLeft: '5px' }}
+                                    className="logo-image ms-5"
+                                    style={{ width: '135px', marginRight: '3px', marginLeft: '5px' }}
                                     title="MYPROJECT.AI"
                                     src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"
                                     alt="MAI Logo"
                                 />
+
                             </div>
                         </a>
                         <div>
                         </div>
 
-                        <div className="navbar-collapse scrollbar collapse" id="navbarStandard" >
-                            <ul className=" ms-lg-5 navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
-                                {/* Dashboard */}
-                                <li>
-                                    <Link to="/dashboard" className="link-item">
-                                        <a
-                                            title='Dashboard'
-                                            className="text-uppercase text-white nav-link"
-                                            role="button"
-                                            aria-haspopup="true"
-                                            aria-expanded="false"
-                                            id="dashboards"
-                                        >
-                                            Dashboard
-                                        </a>
-                                    </Link>
-                                </li>
-                                {/* Dashboard */}
-                                {/* Products */}
-                                <li className="nav-item dropdown">
-                                    <a
-                                        title='Products'
-                                        className="text-uppercase text-white nav-link "
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                        id="dashboards"
-                                    >
-                                        Products
-                                    </a>
-                                    <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
-                                        <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                                            <Link to="/allproduct">
-                                                <a title='All Product' className="text-uppercase dropdown-item text-900 fw-medium">All Products</a>
-                                            </Link>
-                                            <Link to="/addproduct">
-                                                <a title='Add Product' className="text-uppercase dropdown-item text-900 fw-medium">Add Products</a>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </li>
-                                {/* Products */}
-                                {/* Freelancer */}
-                                <li className="nav-item dropdown">
-                                    <a
-                                        title='Freelancer'
-                                        className="text-uppercase text-white nav-link "
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                        id="dashboards"
-                                    >
-                                        Freelancer
-                                    </a>
-                                    <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
-                                        <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                                            <Link to="/AllTraders">
-                                                <a title='All Freelancer' className="text-uppercase dropdown-item text-900 fw-medium">All Freelancers</a>
-                                            </Link>
-                                            <Link to="/AddTraders">
-                                                <a title='Add Freelancer' className="text-uppercase dropdown-item text-900 fw-medium">Add Freelancers</a>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </li>
-                                {/* Freelancer */}
-                                {/* Services */}
-                                <li className="nav-item dropdown">
-                                    <a
-                                        title='Services'
-                                        className="text-uppercase text-white nav-link "
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                        id="dashboards"
-                                    >
-                                        Services
-                                    </a>
-                                    <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
-                                        <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                                            <Link to="/allservices">
-                                                <a title='All Services' className="text-uppercase dropdown-item text-900 fw-medium">All Services</a>
-                                            </Link>
-                                            <Link to="/addservices">
-                                                <a title='Add Services' className="text-uppercase dropdown-item text-900 fw-medium">Add Services</a>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </li>
-                                {/* Services */}
-                                {/* Post A Job */}
-                                <li className="nav-item dropdown">
-                                    <a
-                                        title='Post a Job'
-                                        className="text-uppercase text-white nav-link "
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                        id="dashboards"
-                                    >
-                                        Post A Job
-                                    </a>
-                                    <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
-                                        <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                                            <Link to="/alljob">
-                                                <a title='All Jobs' className="text-uppercase dropdown-item text-900 fw-medium">All Jobs</a>
-                                            </Link>
-                                            <Link to="/addjob">
-                                                <a title='Add Jobs' className="text-uppercase dropdown-item text-900 fw-medium">Add Jobs</a>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </li>
-                                {/* Post A Job */}
-                                {/* Orders */}
-                                <li className="nav-item dropdown">
-                                    <a
-                                        title='Orders'
-                                        className="text-uppercase text-white nav-link "
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                        id="dashboards"
-                                    >
-                                        Orders
-                                    </a>
-                                    <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
-                                        <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                                            <Link to="/allorders">
-                                                <a title='All Orders' className="text-uppercase dropdown-item text-900 fw-medium">All Orders</a>
-                                            </Link>
-                                            <Link to="/ShippingRate">
-                                                <a title='Shipping Cost' className="text-uppercase dropdown-item text-900 fw-medium">Shipping Cost</a>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </li>
-                                {/* Orders */}
-                                {/* Payments */}
-                                <li>
-                                    <Link to="/payments" className="link-item">
-                                        <a
-                                            title='Payments'
-                                            className="text-uppercase text-white nav-link"
-                                            role="button"
-                                            aria-haspopup="true"
-                                            aria-expanded="false"
-                                            id="dashboards"
-                                        >
-                                            Payments
-                                        </a>
-                                    </Link>
-                                </li>
-                                {/* Dashboard */}
-                                {/* Commission */}
-                                <li className="nav-item dropdown">
-                                    <a
-                                        title='Commission'
-                                        className="text-uppercase text-white nav-link "
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                        id="dashboards"
-                                    >
-                                        Commission
-                                    </a>
-                                    <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
-                                        <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                                            <Link to="/globalcommission">
-                                                <a title='Global Commission' className="text-uppercase dropdown-item text-900 fw-medium">Global Commission</a>
-                                            </Link>
-                                            <Link to="/servicecommission">
-                                                <a title='Service Commission' className="text-uppercase dropdown-item text-900 fw-medium">Service Commission</a>
-                                            </Link>
-                                            <Link to="/allfreelancercommission">
-                                                <a title='Freelancer Commission' className="text-uppercase dropdown-item text-900 fw-medium">Freelancer Commission</a>
-                                            </Link>
-                                            <Link to="/allcommission">
-                                                <a title='Category Commission' className="text-uppercase dropdown-item text-900 fw-medium">Category Commission</a>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </li>
-                                {/* Commission */}
-                                {/* Conversation */}
-                                <li>
-                                    <Link to="/AllEnquires" className="link-item">
-                                        <a
-                                            title='Conversation'
-                                            className="text-uppercase text-white nav-link"
-                                            role="button"
-                                            aria-haspopup="true"
-                                            aria-expanded="false"
-                                            id="dashboards"
-                                        >
-                                            Conversation
-                                        </a>
-                                    </Link>
-                                </li>
-                                {/* Conversation */}
-                                {/* Reviews */}
-                                <li>
-                                    <Link to="/AllReviews" className="link-item">
-                                        <a
-                                            title='Reviews'
-                                            className="text-uppercase text-white nav-link"
-                                            role="button"
-                                            aria-haspopup="true"
-                                            aria-expanded="false"
-                                            id="dashboards"
-                                        >
-                                            Reviews
-                                        </a>
-                                    </Link>
-                                </li>
-                                {/* Reviews */}
-
-                            </ul>
-
-                        </div>
                         <ul class="navbar-nav navbar-nav-icons ms-auto  flex-row align-items-center">
 
                             {/* Notifications */}
@@ -422,6 +192,86 @@ function AdminHeader() {
                             </li>
                         </ul>
                     </nav >
+                </div>
+            </div >
+
+
+            {/* <button class="btn btn-primary mb-1" type="button" >Left Offcanvas</button> */}
+            <div style={{ background: '#003f6b' }} class="offcanvas offcanvas-start" id="offcanvasLeft" tabindex="-1" aria-labelledby="offcanvasLeftLabel">
+                <div class="offcanvas-header">
+                    <Link to="/dashboard">
+                        <img
+                            className="logo-image"
+                            style={{ width: '135px'}}
+                            title="MYPROJECT.AI"
+                            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"
+                            alt="MAI Logo"
+                        />
+                    </Link>
+                    <button class="btn-close text-reset text-white" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <Link to="/dashboard">
+                        <p className="fw-semibold text-white" role="button">Dashboard</p>
+                    </Link>
+                    <Link to="/allproduct">
+                        <p className="fw-semibold text-white" role="button">Products</p>
+                    </Link>
+                    <Link to="/AllTraders">
+                        <p className="fw-semibold text-white" role="button">Traders</p>
+                    </Link>
+                    <Link to="/AllOwner">
+                        <p className="fw-semibold text-white" role="button">Owners</p>
+                    </Link>
+                    <Link to="/AllServices">
+                        <p className="fw-semibold text-white" role="button">Services</p>
+                    </Link>
+                    <Link to="/AllJob">
+                        <p className="fw-semibold text-white" role="button">Jobs</p>
+                    </Link>
+                    <Link to="/AllOrders">
+                        <p className="fw-semibold text-white" role="button">Orders</p>
+                    </Link>
+                    <div class="dropdown mb-3">
+                        <a class="text-700 fw-semibold text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Commission
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <Link to="/globalcommission">
+                                    <a class="dropdown-item" href="#">Global Commission</a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/AllTradercommission">
+                                    <a class="dropdown-item" href="#">Trader Commission</a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/Servicecommission">
+                                    <a class="dropdown-item" href="#">Service Commission</a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/AllCategoryCommission">
+                                    <a class="dropdown-item" href="#">Category Commission</a>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <Link to="/ShippingRate">
+                        <p className="fw-semibold text-white" role="button">Shipping Rate</p>
+                    </Link>
+                    <Link to="/Payments">
+                        <p className="fw-semibold text-white" role="button">Payments</p>
+                    </Link>
+                    <Link to="/AllReviews">
+                        <p className="fw-semibold text-white" role="button">Reviews</p>
+                    </Link>
+                    <Link to="/AllEnquires">
+                        <p className="fw-semibold text-white" role="button">Conversation</p>
+                    </Link>
                 </div>
             </div >
         </>
