@@ -164,7 +164,7 @@ function FreelancerProfile() {
                         <div className="sticky-sidebar">
                             <div className="card mb-3">
                                 <div className="card-header bg-light">
-                                    <h5 className="mb-0">Experience</h5>
+                                    <h5 className="mb-0">Skills</h5>
                                 </div>
                                 <div className="card-body fs--1">
                                     <div className="d-flex">

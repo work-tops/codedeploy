@@ -3,6 +3,7 @@ import { Row, Col, Card, Form, Button, Container } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Link } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
+import Footer from "../../Footer/Footer";
 
 function RequestQuote() {
 
@@ -181,6 +182,9 @@ function RequestQuote() {
                     </Col>
                 </Row>
             </Container>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

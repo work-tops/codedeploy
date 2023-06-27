@@ -6,6 +6,7 @@ import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import OwnerEnquiryTable from "../../../TemplateAssets/AdvanceTables/ServiceEnquiryTable";
 import { Link } from "react-router-dom";
 import SellerEnquiryTable from "../../../TemplateAssets/AdvanceTables/ProductEnquiryTable";
+import Footer from "../../Footer/Footer";
 function ProductEnquiresCard() {
 
     const [activeTab, setActiveTab] = useState('tab1');
@@ -54,6 +55,9 @@ function ProductEnquiresCard() {
                     </Row>
                 </Container>
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

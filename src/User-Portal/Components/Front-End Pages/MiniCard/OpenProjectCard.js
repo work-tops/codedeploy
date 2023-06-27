@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Card, Button, Col, Form, Row, Container, InputGroup, Dropdown } from "react-bootstrap";
-import { useHistory,Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { getAllData } from "../../../../Services/ProxyService";
 import ProjectOwnerLandingPage from '../ProjectOwnerLandingPage'
 import { Icon } from "@iconify/react";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
+import Footer from "../../Footer/Footer";
 
 
 function OpenProjectCard() {
@@ -49,7 +50,7 @@ function OpenProjectCard() {
                             <Form.Select value={selectedOption} onChange={handleChange}>
                                 <option>All</option>
                                 <option>Open</option>
-                                
+
                                 <option value="In Progress">In Progress</option>
                                 <option>Expired</option>
                             </Form.Select>
@@ -128,6 +129,9 @@ function OpenProjectCard() {
                 </Container>
                 {/* </Col > */}
             </Row >
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

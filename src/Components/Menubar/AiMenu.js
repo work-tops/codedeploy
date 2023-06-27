@@ -40,13 +40,13 @@
 // export default AiMenu
 
 import React from "react";
-import logo from '../../User-Portal/Components/Projectimages/MYPRJ.png'
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import { Dropdown, Navbar, Nav } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile from '../../User-Portal/Components/Projectimages/BathroomFitting.jpg'
 import trainer from '../../User-Portal/Components/Projectimages/trainer.png'
+import logo from '../../User-Portal/Components/Projectimages/My Project white logo-01.png'
 function AdminHeader() {
     return (
         <>
@@ -60,7 +60,7 @@ function AdminHeader() {
                                     className="logo-image ms-5"
                                     style={{ width: '135px', marginRight: '3px', marginLeft: '5px' }}
                                     title="MYPROJECT.AI"
-                                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"
+                                    src={logo}
                                     alt="MAI Logo"
                                 />
 
@@ -204,7 +204,7 @@ function AdminHeader() {
                             className="logo-image"
                             style={{ width: '135px' }}
                             title="MYPROJECT.AI"
-                            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"
+                            src={logo}
                             alt="MAI Logo"
                         />
                     </Link>

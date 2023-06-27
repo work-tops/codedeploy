@@ -688,8 +688,7 @@ const FrontendAddService = () => {
                                     ))}
                                 </Form.Select> */}
                                                             <Form.Control
-                                                                disabled
-                                                                value="jaganseller@gmail.com"
+                                                                type='email'
                                                             />
                                                         </Form.Group>
                                                     </Col>

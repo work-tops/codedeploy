@@ -6,7 +6,7 @@ import AppContext from '../../../TemplateAssets/context/Context';
 import trainer from '../../Projectimages/trainer.png'
 import { Button, Dropdown, Badge } from 'react-bootstrap';
 import profile from '../../Projectimages/Handyman.jpg'
-
+import logo from '../../Projectimages/My Project white logo-01.png'
 function NavbarStandard() {
 
   const {
@@ -72,7 +72,7 @@ function NavbarStandard() {
                     className="logo-image ms-3"
                     style={{ width: '135px' }}
                     title="MYPROJECT.AI"
-                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"
+                    src={logo}
                     alt="MAI Logo"
                   />
                 </Link>

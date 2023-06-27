@@ -59,18 +59,17 @@ function SellerList() {
 
     const handleAddToWishlist = () => {
         setIsAdded(true);
-        const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
+        const toastDanger = () => toast.success(<h6 className="text-sucess">Follower Added to Wishlist</h6>);
 
         toastDanger();
     };
 
     const handleRemoveFromWishlist = () => {
         setIsAdded(false);
-        const toastDanger1 = () => toast.error(<h6 className="text-dark">Product Removed from Wishlist</h6>)
+        const toastDanger1 = () => toast.error(<h6 className="text-dark">Follower Removed from Wishlist</h6>)
         toastDanger1();
     };
 
-    const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
     return (
 
         <>
@@ -82,25 +81,19 @@ function SellerList() {
                 <Col lg={12} className="container">
                     <Row>
                         <Col lg={3} className="mb-3">
-                            <Card className="mt-5 course-filter">
+                            <Card className="mt-5 ">
                                 <SimpleBarReact style={{ height: '100%' }}>
-                                    <Card.Header as={Flex} className="flex-between-center pt-x1">
+                                    <Card.Header as={Flex} className=" flex-between-center pt-x1">
 
                                         <div className='justify-content-between d-flex m-2'>
                                             <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
                                                 <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
                                                 <span>Filter</span>
                                             </h5>
-                                            <Button
-                                                variant="outline-secondary"
-                                                size="sm"
-                                                className="ms-2 mt-0 mb-0"
-                                                style={{ fontSize: '12px' }}
-                                            // onClick={() => resetFilter()}
-                                            >
-                                                <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
-                                                Reset
-                                            </Button>
+
+                                            <button
+
+                                                className="btn btn-sm btn-outline-secondary">Reset</button>
                                         </div>
 
                                     </Card.Header>
@@ -110,13 +103,13 @@ function SellerList() {
                                             <span
                                                 // key={`filter_${i}`}
                                                 //  onClick={() => removeFilter(i)} 
-                                                className='badge m-1 bg-secondary text-white'>
+                                                className='badge mt-3 ms-1 me-1 mb-3  bg-secondary text-white'>
                                                 {"Plumber"} <Icon className='cursor-pointer' icon="ic:sharp-close" color="white" width="14" height="14" />
                                             </span>
                                             <span
                                                 // key={`filter_${i}`}
                                                 //  onClick={() => removeFilter(i)} 
-                                                className='badge m-1 bg-secondary text-white'>
+                                                className='badge mt-3 ms-1 me-1 mb-3  bg-secondary text-white'>
                                                 {"Roofer"} <Icon className='cursor-pointer' icon="ic:sharp-close" color="white" width="14" height="14" />
                                             </span>
 
@@ -130,7 +123,7 @@ function SellerList() {
                                                     className="form-check d-flex ps-0"
                                                 >
                                                     <Form.Check.Label
-                                                        className="fs--1 flex-1 text-truncate"
+                                                        className="fs--1  flex-1 text-truncate"
                                                     >
                                                         Plumber
                                                     </Form.Check.Label>
@@ -179,7 +172,7 @@ function SellerList() {
                                         </ul>
                                         {/*  */}
                                         <div className="mb-3">
-                                            <Form.Label style={{ fontWeight: '500', fontSize: '.6944444444rem' }} className='text-700'>Search County</Form.Label>
+                                            <Form.Label className='text-start fw-semibold fs--1 text-700'>Search County</Form.Label>
                                             <MultiSelect
                                                 options={countyOptions}
                                                 selectedValues={selectedCounties}
@@ -198,7 +191,7 @@ function SellerList() {
                         <Col lg={9}>
                             <Card className="mt-5">
                                 <Card.Header className="bg-light position-relative">
-                                    <h4 className="text-uppercase  mb-0 mt-1">Service Provider Lists</h4>
+                                    <h4 className="  mb-0 mt-1">Service Provider Lists</h4>
                                 </Card.Header>
                                 <Card.Body className="pt-0 mt-3 pt-md-3">
                                     <Row className="g-3 align-items-center">
@@ -273,15 +266,15 @@ function SellerList() {
                                             <Col md={8} lg={9} className="p-x1">
                                                 <Row className="g-0 h-100">
                                                     <Col lg={8}>
-                                                        <h4 className="mt-3 mb-2 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
+                                                        <h4 className="mt-3 mb-2 text-start  mt-sm-0 fs-0 fs-lg-1">
                                                             <Link className="text-900" to="/ServiceInformation">
                                                                 {data.name}
                                                             </Link>
                                                         </h4>
-                                                        <p className="text-justify mb-2 text-primary">
+                                                        <p className="text-justify mb-2 fs--1 text-primary">
                                                             Roofer
                                                         </p>
-                                                        <p className="text-justify mb-2">
+                                                        <p className="text-justify fs--1 mb-2">
                                                             <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
                                                         </p>
                                                         <div className="fw-semi-bold fs--1 mb-2">
@@ -304,17 +297,14 @@ function SellerList() {
                                                             </p>
                                                         </div>
                                                     </Col>
-                                                    <Col lg={4} className=" mt-lg-0">
-                                                        <Flex
-                                                            justifyContent="between"
-                                                            className="h-100 rounded border-lg border-1 flex-lg-column p-lg-3"
-                                                        >
+                                                    <div class="col-lg-4 col-xxl-3 mt-4 mt-lg-0">
+                                                        <div class="h-100 rounded border-lg border-1   justify-content-between p-lg-3">
                                                             {/* */}
 
                                                             <>
                                                                 {isAdded ? (
                                                                     <button
-                                                                        className="btn btn-md btn-falcon-danger w-100 mb-3  fs--1 text-600"
+                                                                        className="btn btn-md btn-falcon-danger w-100 mb-3 mt-3 fs--1 text-600"
                                                                         onClick={handleRemoveFromWishlist}
                                                                     >
                                                                         <span className="d-block">
@@ -331,7 +321,7 @@ function SellerList() {
                                                                     </button>
                                                                 ) : (
                                                                     <button
-                                                                        className="btn btn-md btn-falcon-danger  w-100 mb-3 fs--1 text-600"
+                                                                        className="btn btn-md btn-falcon-danger mt-3  w-100 mb-3 fs--1 text-600"
                                                                         onClick={handleAddToWishlist}
                                                                     >
                                                                         <span className="d-block">
@@ -365,9 +355,8 @@ function SellerList() {
                                                             >Message Me
                                                             </Button>
                                                             {/*  */}
-                                                        </Flex>
-
-                                                    </Col>
+                                                        </div>
+                                                    </div>
                                                 </Row>
                                             </Col>
                                         </Row>
@@ -389,13 +378,16 @@ function SellerList() {
                                                     </Link>
                                                 </div>
                                                 <div className="p-3">
-                                                    <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
+                                                    <h4 className="mt-3 text-start  mt-sm-0 fs-0 fs-lg-1">
                                                         <Link className="text-900" to="/ServiceInformation">
                                                             {/* {data.name} */}
                                                             JAGAN SELLER
                                                         </Link>
                                                     </h4>
-                                                    <p className="text-justify">
+                                                    <p className="text-justify mb-2 fs--1 text-primary">
+                                                        Roofer
+                                                    </p>
+                                                    <p className="text-justify fs--1 mb-2">
                                                         <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
                                                     </p>
                                                     <div className="fw-semi-bold fs--1">
@@ -432,14 +424,49 @@ function SellerList() {
                                                     </Link>
                                                 </div>
                                                 <div className="col-auto pe-3">
-                                                    <a onClick={toastDanger} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
-                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
-                                                        <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
+                                                    <>
+                                                        {isAdded ? (
+                                                            <a
+                                                                onClick={handleRemoveFromWishlist}
+                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Remove from Wishlist"
+                                                                data-bs-original-title="Remove from Wishlist"
+                                                            >
+                                                                <Icon
+                                                                    style={{ marginTop: '-5px' }}
+                                                                    className="me-1"
+                                                                    icon="icon-park-solid:like"
+                                                                    color="#df2020"
+                                                                    width="20"
+                                                                    height="20"
+                                                                />
+                                                            </a>
+                                                        ) : (
+                                                            <a
+                                                                onClick={handleAddToWishlist}
+                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Add to Wishlist"
+                                                                data-bs-original-title="Add to Wishlist"
+                                                            >
+                                                                <Icon
+                                                                    icon="icon-park-outline:like"
+                                                                    className="me-1"
+                                                                    style={{ marginTop: '-5px' }}
+                                                                    width="20"
+                                                                    height="20"
+                                                                />
+                                                            </a>
+                                                        )}
+                                                    </>
+                                                    <a onClick={handleShow} className="btn ms-1 btn-sm btn-falcon-default" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message Me" data-bs-original-title="Message Me">
+                                                        <span className="fas fa-comment me-1"></span>
                                                     </a>
-                                                    <a onClick={handleShow} className="btn ms-1 btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message Me" data-bs-original-title="Message Me">
-                                                        <Icon icon="fa6-regular:message" color="gray" width="18" height="18" />
-                                                    </a>
-
                                                 </div>
 
 
@@ -460,13 +487,16 @@ function SellerList() {
                                                     </Link>
                                                 </div>
                                                 <div className="p-3">
-                                                    <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
+                                                    <h4 className="mt-3 text-start  mt-sm-0 fs-0 fs-lg-1">
                                                         <Link className="text-900" to="/ServiceInformation">
                                                             {/* {data.name} */}
                                                             JAGAN SELLER
                                                         </Link>
                                                     </h4>
-                                                    <p className="text-justify">
+                                                    <p className="text-justify mb-2 fs--1 text-primary">
+                                                        Roofer
+                                                    </p>
+                                                    <p className="text-justify fs--1 mb-2">
                                                         <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
                                                     </p>
                                                     <div className="fw-semi-bold fs--1">
@@ -503,14 +533,49 @@ function SellerList() {
                                                     </Link>
                                                 </div>
                                                 <div className="col-auto pe-3">
-                                                    <a onClick={toastDanger} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
-                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
-                                                        <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
+                                                    <>
+                                                        {isAdded ? (
+                                                            <a
+                                                                onClick={handleRemoveFromWishlist}
+                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Remove from Wishlist"
+                                                                data-bs-original-title="Remove from Wishlist"
+                                                            >
+                                                                <Icon
+                                                                    style={{ marginTop: '-5px' }}
+                                                                    className="me-1"
+                                                                    icon="icon-park-solid:like"
+                                                                    color="#df2020"
+                                                                    width="20"
+                                                                    height="20"
+                                                                />
+                                                            </a>
+                                                        ) : (
+                                                            <a
+                                                                onClick={handleAddToWishlist}
+                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Add to Wishlist"
+                                                                data-bs-original-title="Add to Wishlist"
+                                                            >
+                                                                <Icon
+                                                                    icon="icon-park-outline:like"
+                                                                    className="me-1"
+                                                                    style={{ marginTop: '-5px' }}
+                                                                    width="20"
+                                                                    height="20"
+                                                                />
+                                                            </a>
+                                                        )}
+                                                    </>
+                                                    <a onClick={handleShow} className="btn ms-1 btn-sm btn-falcon-default" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message Me" data-bs-original-title="Message Me">
+                                                        <span className="fas fa-comment me-1"></span>
                                                     </a>
-                                                    <a onClick={handleShow} className="btn ms-1 btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message Me" data-bs-original-title="Message Me">
-                                                        <Icon icon="fa6-regular:message" color="gray" width="18" height="18" />
-                                                    </a>
-
                                                 </div>
 
 
@@ -531,13 +596,17 @@ function SellerList() {
                                                     </Link>
                                                 </div>
                                                 <div className="p-3">
-                                                    <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
+                                                    <h4 className="mt-3 text-start  mt-sm-0 fs-0 fs-lg-1">
                                                         <Link className="text-900" to="/ServiceInformation">
                                                             {/* {data.name} */}
                                                             JAGAN SELLER
                                                         </Link>
                                                     </h4>
-                                                    <p className="text-justify">
+                                                    <p className="text-justify mb-2 fs--1 text-primary">
+                                                        Roofer
+                                                    </p>
+
+                                                    <p className="text-justify fs--1 mb-2">
                                                         <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
                                                     </p>
                                                     <div className="fw-semi-bold fs--1">
@@ -574,14 +643,49 @@ function SellerList() {
                                                     </Link>
                                                 </div>
                                                 <div className="col-auto pe-3">
-                                                    <a onClick={toastDanger} className="btn btn-sm btn-falcon-default hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
-                                                        <Icon icon="icon-park-outline:like" className="me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
-                                                        <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
+                                                    <>
+                                                        {isAdded ? (
+                                                            <a
+                                                                onClick={handleRemoveFromWishlist}
+                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Remove from Wishlist"
+                                                                data-bs-original-title="Remove from Wishlist"
+                                                            >
+                                                                <Icon
+                                                                    style={{ marginTop: '-5px' }}
+                                                                    className="me-1"
+                                                                    icon="icon-park-solid:like"
+                                                                    color="#df2020"
+                                                                    width="20"
+                                                                    height="20"
+                                                                />
+                                                            </a>
+                                                        ) : (
+                                                            <a
+                                                                onClick={handleAddToWishlist}
+                                                                className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                href="#!"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
+                                                                aria-label="Add to Wishlist"
+                                                                data-bs-original-title="Add to Wishlist"
+                                                            >
+                                                                <Icon
+                                                                    icon="icon-park-outline:like"
+                                                                    className="me-1"
+                                                                    style={{ marginTop: '-5px' }}
+                                                                    width="20"
+                                                                    height="20"
+                                                                />
+                                                            </a>
+                                                        )}
+                                                    </>
+                                                    <a onClick={handleShow} className="btn ms-1 btn-sm btn-falcon-default" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message Me" data-bs-original-title="Message Me">
+                                                        <span className="fas fa-comment me-1"></span>
                                                     </a>
-                                                    <a onClick={handleShow} className="btn ms-1 btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message Me" data-bs-original-title="Message Me">
-                                                        <Icon icon="fa6-regular:message" color="gray" width="18" height="18" />
-                                                    </a>
-
                                                 </div>
 
 
@@ -629,11 +733,11 @@ function SellerList() {
                         className="m-3"
                     />
 
-                </Col>
+                </Col >
                 <Col className="mt-3">
                     <Footer />
                 </Col>
-            </Row>
+            </Row >
 
             {/*  */}
 
@@ -695,10 +799,10 @@ function SellerList() {
                                 </Form.Check>
                             </Form.Group>
                         </Form>
-                        <Button className="m-2 text-uppercase border-0" style={{ background: '#003f6b' }}>
+                        <Button className="m-2  border-0" style={{ background: '#003f6b' }}>
                             attachments
                         </Button>
-                        <Button as={Link} to="/projectowner" className="m-2 text-uppercase border-0" style={{ background: '#003f6b' }}>
+                        <Button as={Link} to="/projectowner" className="m-2  border-0" style={{ background: '#003f6b' }}>
                             SEND
                         </Button>
                     </Modal.Body>

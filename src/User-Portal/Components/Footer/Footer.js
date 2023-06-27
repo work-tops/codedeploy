@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
-import logo from '../Projectimages/MYPRJ.png'
+import logo from '../Projectimages/My Project Final logo-01.png'
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 

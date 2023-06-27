@@ -951,8 +951,10 @@ const FrontendAddProduct = () => {
                     </Card> */}
                 </Col>
                 <Toaster />
-
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
 
         </>
     )

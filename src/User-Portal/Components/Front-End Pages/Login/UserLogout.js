@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Card, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logoutImg from '../../Projectimages/45.png';
-import logo from '../../../TemplateAssets/Images/MP-logo.png'
+import logo from '../../../Components/Projectimages/My Project white logo-01.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import worktops from '../../Projectimages/Carpent.jpg'
 function UserLogout() {

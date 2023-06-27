@@ -5,7 +5,7 @@ import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-
 import { Row, Button, Col, Form, Card, Modal } from "react-bootstrap";
 import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown } from "react-bootstrap";
-import AdminHeader from "../Menubar/AiMenu";
+import logo from '../../User-Portal/Components/Projectimages/My Project Final logo-01.png'
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 const Payments = () => {
@@ -278,7 +278,7 @@ const Payments = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                             <Button variant="falcon-default"
+                            <Button variant="falcon-default"
                                 size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
                             </Button>
                         </div>
@@ -293,8 +293,9 @@ const Payments = () => {
             <Row>
                 <Col lg={12} className="">
                     <Card className="">
-                        <Card.Header className="bg-light" as={"h5"}>
-                            Payments<span className="ms-1 fs--1 badge bg-secondary">#100</span>
+                        <Card.Header className="bg-light">
+                            <h5>Payments<span className="ms-1 fs--1 badge bg-secondary">#100</span></h5>
+                            <p className="text-dark text-capitalize fs--1 mt-2">Here all the Payments on your store</p>
                         </Card.Header>
                         <Card.Body>
 
@@ -359,12 +360,14 @@ const Payments = () => {
                             </div>
                             {/*  */}
                             <div className="card mb-3">
+                                <div className="card-header bg-light">
+                                    <div className="d-flex justify-content-center">
+                                        <img src={logo} alt="invoice" width="135px" />
+                                    </div>
+                                </div>
                                 <div className="card-body">
                                     <div className="row align-items-center text-center mb-3">
                                         <div className="col-sm-6 text-sm-start">
-                                            {/* <img src="../../assets/img/logos/logo-invoice.png" alt="invoice" width="150" /> */}
-                                            <h1 style={{ color: '#003f6b' }}>MAI</h1>
-                                            <p style={{ color: '#003f6b' }}>Myproject.ai</p>
                                             <h6 className="">From,</h6>
                                             <h6>Jagan</h6>
                                             <p className="fs--1 mb-0">156 University Ave, Toronto<br></br>On, Canada, M5H 2H7</p>
@@ -397,6 +400,10 @@ const Payments = () => {
                                                             <td>2018-09-25</td>
                                                         </tr>
                                                         <tr>
+                                                            <th className="text-sm-end">Expiry Date:</th>
+                                                            <td>2020-09-25</td>
+                                                        </tr>
+                                                        <tr>
                                                             <th className="text-sm-end">Payment Status:</th>
                                                             <td><span className="badge bg-success">Paid</span></td>
                                                         </tr>
@@ -416,6 +423,7 @@ const Payments = () => {
                                                     <th className="border-0">Products</th>
                                                     <th className="border-0 text-center">Quantity</th>
                                                     <th className="border-0 text-end">Rate</th>
+                                                    <th className="border-0 text-end">Discount</th>
                                                     <th className="border-0 text-end">Amount</th>
                                                 </tr>
                                             </thead>
@@ -423,38 +431,32 @@ const Payments = () => {
                                                 <tr>
                                                     <td className="align-middle">
                                                         <h6 className="mb-0 text-nowrap">Platinum web hosting package</h6>
-                                                        <p className="mb-0">Down 35mb, Up 100mb</p>
+                                                        <p className="mb-0 fs--1">Down 35mb, Up 100mb</p>
                                                     </td>
                                                     <td className="align-middle text-center">2</td>
                                                     <td className="align-middle text-end">£ 65.00</td>
+                                                    <td className="align-middle text-end">10%</td>
                                                     <td className="align-middle text-end">£ 130.00</td>
                                                 </tr>
                                                 <tr>
                                                     <td className="align-middle">
-                                                        <h6 className="mb-0 text-nowrap">2 Page website design</h6>
-                                                        <p className="mb-0">Includes basic wireframes and responsive templates</p>
+                                                        <h6 className="mb-0 text-nowrap">Platinum web hosting package</h6>
+                                                        <p className="mb-0 fs--1">Down 35mb, Up 100mb</p>
                                                     </td>
-                                                    <td className="align-middle text-center">1</td>
-                                                    <td className="align-middle text-end">£ 2,100.00</td>
-                                                    <td className="align-middle text-end">£ 2,100.00</td>
+                                                    <td className="align-middle text-center">2</td>
+                                                    <td className="align-middle text-end">£ 65.00</td>
+                                                    <td className="align-middle text-end">10%</td>
+                                                    <td className="align-middle text-end">£ 130.00</td>
                                                 </tr>
                                                 <tr>
                                                     <td className="align-middle">
-                                                        <h6 className="mb-0 text-nowrap">Mobile App Development</h6>
-                                                        <p className="mb-0">Includes responsive navigation</p>
+                                                        <h6 className="mb-0 text-nowrap">Platinum web hosting package</h6>
+                                                        <p className="mb-0 fs--1">Down 35mb, Up 100mb</p>
                                                     </td>
-                                                    <td className="align-middle text-center">8</td>
-                                                    <td className="align-middle text-end">£ 5,00.00</td>
-                                                    <td className="align-middle text-end">£ 4,000.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="align-middle">
-                                                        <h6 className="mb-0 text-nowrap">Web App Development</h6>
-                                                        <p className="mb-0">Includes react spa</p>
-                                                    </td>
-                                                    <td className="align-middle text-center">6</td>
-                                                    <td className="align-middle text-end">£ 2,000.00</td>
-                                                    <td className="align-middle text-end">£ 12,000.00</td>
+                                                    <td className="align-middle text-center">2</td>
+                                                    <td className="align-middle text-end">£ 65.00</td>
+                                                    <td className="align-middle text-end">10%</td>
+                                                    <td className="align-middle text-end">£ 130.00</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -463,19 +465,7 @@ const Payments = () => {
                                         <div className="order-2 order-lg-0 col-md-6">
                                             <h6>Customer Notes</h6>
                                             <p className="text-justify">
-                                                <p>
-                                                    <span className="fw-semibold">For Work-tops Related Jobs,</span>You are required to pay only £250/- before template by PayLink or BACS. Upon your payment confirmation, our template team will contact you to book the appointment at your convenience.
-                                                </p>
-                                                <h6 className="mb-1">Step-by-step guide <a href="https://trade.work-tops.com/writer/open/0ilzf913f0d467ea9458aadfe091078a03508?authId=%7B%22linkId%22%3A%222nkNPlsvhVw-lULEWY%22%7D" target="_blank">(more details)</a></h6>
-                                                <ul type="none">
-                                                    <li>Step 1: <a href="#">Quote</a></li>
-                                                    <li>Step 2: <a href="#">Placing an Order with us</a></li>
-                                                    <li>Step 3: <a href="#">Booking a Template appointment</a></li>
-                                                    <li>Step 4: <a href="#">At Template</a></li>
-                                                    <li>Step 5: <a href="#">Between Template & Installation</a></li>
-                                                    <li>Step 6: <a href="#">At Installation</a></li>
-                                                    <li>Step 7: <a href="#">After Care</a></li>
-                                                </ul>
+                                                ....
                                             </p>
                                             <h6>Terms & Conditions</h6>
                                             <p>

@@ -310,6 +310,7 @@ const AllEnquires = () => {
                     <Card className="ms-3 me-3 mb-3">
                         <Card.Header className="bg-light" as={"h5"}>
                             All Enquires<span className="ms-1 fs--1 badge bg-secondary">#100</span>
+                            <p className="text-dark text-capitalize fs--1 mt-2">Here all the enquires of the customer on your store</p>
                         </Card.Header>
                         <Card.Body>
 

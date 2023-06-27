@@ -567,7 +567,7 @@ const AllServices = () => {
                     <Card className="ms-3 me-3 mb-3">
                         <Card.Header className="bg-light">
                             <h5>
-                                All Services
+                                All Services<span className="ms-1 fs--1 badge bg-secondary">#100</span>
                             </h5>
                             <Breadcrumb className="fs--1 mt-2">
                                 <Breadcrumb.Item>

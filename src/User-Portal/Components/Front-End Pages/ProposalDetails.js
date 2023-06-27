@@ -1,10 +1,11 @@
 import { React, useState, useRef } from "react";
 import { Col, Container, Row, Card, Button, Dropdown, Form, Modal } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
-import profile_img from "../Projectimages/Handyman.jpg"
+import profile from "../Projectimages/Handyman.jpg"
 import { Link } from "react-router-dom";
 import file from '../Projectimages/BathroomFitting.jpg'
 import { Editor } from "@tinymce/tinymce-react";
+import Footer from "../Footer/Footer";
 
 function ProposalDetails() {
     const [show, setShow] = useState(false);
@@ -39,7 +40,7 @@ function ProposalDetails() {
                                         <Row>
                                             <Col lg={3}>
                                                 <Link to="/profile_publicview">
-                                                    <img src={profile_img} className="mb-3 rounded-circle" width="100px" height="100px" />
+                                                    <img src={profile} className="mb-3 rounded-circle" width="100px" height="100px" />
                                                 </Link>
                                             </Col>
                                             <Col lg={9}>
@@ -95,7 +96,7 @@ function ProposalDetails() {
                                 <Card className="mb-3">
                                     <Card.Header className="bg-light d-flex justify-content-between">
                                         <h5 className="bg-transparent text-900 border-secondary">Clarification Board</h5>
-                                        <Button className="Home-btns-1 text-uppercase" style={{background:'#003f6b'}}>Ask a Question</Button>
+                                        <Button className="Home-btns-1 text-uppercase" style={{ background: '#003f6b' }}>Ask a Question</Button>
                                     </Card.Header>
                                     <Card.Body>
                                         <Form>
@@ -141,50 +142,57 @@ function ProposalDetails() {
                                                 </Button>
                                             </div>
                                         </Form>
-                                        <Card className="mb-3" style={{ background: '#f3f3f3' }}>
-                                            <Card.Body>
-                                                <Row>
-                                                    <Col className="" lg={3}>
-                                                        <Link to="/profile_publicview">
-                                                            <img src={profile_img} height="60px" width="60px" className="m-3 rounded-circle" />
-                                                        </Link>
-                                                    </Col>
-                                                    <Col className="" lg={9}>
-                                                        <p style={{ fontSize: '14px' }} className="text-justify mb-0">
-                                                            How are you? Sir / Madam Please send admin access details to website,
-                                                            Bitrix and email host.Also Price £200.00
-                                                        </p>
-                                                        {/* <Button
-                                                                    onClick={handleShow}
-                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
-                                                                    className="btn mb-3 text-uppercase border-0">
-                                                                    Reply
-                                                                </Button> */}
-                                                    </Col>
-                                                </Row>
-                                            </Card.Body>
-                                        </Card>
-                                        <Card className="mb-3" style={{ background: '#f3f3f3' }}>
-                                            <Card.Body>
-                                                <Row>
-                                                    <Col className="" lg={9}>
-                                                        <p style={{ fontSize: '14px' }} className="text-justify mb-0">
-                                                            How are you? Sir / Madam Please send admin access details to website,
-                                                            Bitrix and email host.Also Price £200.00
-                                                        </p>
-                                                        {/* <Button
-                                                                    onClick={handleShow}
-                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
-                                                                    className="btn mb-3 text-uppercase border-0">
-                                                                    Reply
-                                                                </Button> */}
-                                                    </Col>
-                                                    <Col className="" lg={3}>
-                                                        <img src={file} height="60px" width="60px" className="m-3 rounded-circle" />
-                                                    </Col>
-                                                </Row>
-                                            </Card.Body>
-                                        </Card>
+                                        <div class="kanban-items-container scrollbar" tabindex="0">
+                                            <div class="kanban-item" tabindex="0">
+                                                <div class="card kanban-item-card hover-actions-trigger">
+                                                    <div style={{ background: '#f3f3f3' }} class="card-body">
+                                                        <div class="position-relative mb-1">
+                                                            <span>21 March 2023</span>,<span>00:00</span>
+                                                        </div>
+                                                        <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                        <div class="kanban-item-footer cursor-default">
+                                                            <div class="z-index-2">
+                                                                <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
+                                                                    <img class="rounded-circle" src={profile} alt="" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><div class="kanban-item" tabindex="0">
+                                                <div class="card kanban-item-card hover-actions-trigger">
+                                                    <div style={{ background: '#f3f3f3' }} class="card-body">
+                                                        <div class="position-relative mb-1">
+                                                            <span>21 March 2023</span>,<span>00:00</span>
+                                                        </div>
+                                                        <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                        <div class="kanban-item-footer cursor-default">
+                                                            <div class="z-index-2">
+                                                                <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
+                                                                    <img class="rounded-circle" src={profile} alt="" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><div class="kanban-item" tabindex="0">
+                                                <div class="card kanban-item-card hover-actions-trigger">
+                                                    <div style={{ background: '#f3f3f3' }} class="card-body">
+                                                        <div class="position-relative mb-1">
+                                                            <span>21 March 2023</span>,<span>00:00</span>
+                                                        </div>
+                                                        <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                        <div class="kanban-item-footer cursor-default">
+                                                            <div class="z-index-2">
+                                                                <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
+                                                                    <img class="rounded-circle" src={profile} alt="" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -194,7 +202,7 @@ function ProposalDetails() {
                                         <div className="d-flex justify-content-start">
                                             <div>
                                                 <Link to="/profile_publicview">
-                                                    <img src={profile_img} className="mb-3 me-4 rounded-circle" width="100px" height="100px" />
+                                                    <img src={profile} className="mb-3 me-4 rounded-circle" width="100px" height="100px" />
                                                 </Link>
                                             </div>
                                             <div>
@@ -294,6 +302,9 @@ function ProposalDetails() {
 
                 </Modal.Footer>
             </Modal>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

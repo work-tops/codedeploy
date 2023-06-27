@@ -191,7 +191,7 @@ function JobDetails() {
                                                             <Button id="FileUpload1" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
                                                                 Attachments
                                                             </Button>
-                                                            <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                            <Button onClick={() => { askaQuestion() }} style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
                                                                 Send
                                                             </Button>
                                                         </div>
@@ -202,24 +202,26 @@ function JobDetails() {
                                     </Row>
                                     {chatList.map((x) => {
 
-                                        return <Card className="mb-3">
-                                            <Card.Body>
-                                                <Row>
-                                                    <Col className="mt-3" lg={3}>
-                                                        <img src={worktops} height="60px" width="60px" className="m-3 rounded-circle" />
-                                                    </Col>
-                                                    <Col className="mt-3" lg={8}>
-                                                        <p style={{ fontSize: '14px' }} className=""> {x} </p>
-                                                        <Button
-                                                            onClick={handleShow}
-                                                            style={{ background: '#003f6b', fontSize: '14px' }}
-                                                            className="btn mb-3 text-uppercase border-0">
-                                                            Reply
-                                                        </Button>
-                                                    </Col>
-                                                </Row>
-                                            </Card.Body>
-                                        </Card>
+                                        return <div class="kanban-items-container scrollbar" tabindex="0">
+                                            <div class="kanban-item" tabindex="0">
+                                                <div class="card kanban-item-card hover-actions-trigger">
+                                                    <div style={{ background: '#f3f3f3' }} class="card-body">
+                                                        <div class="position-relative mb-1">
+                                                            <span>21 March 2023</span>,<span>00:00</span>
+                                                        </div>
+                                                        <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">{x}</p>
+                                                        <div class="kanban-item-footer cursor-default">
+                                                            <div class="z-index-2">
+                                                                <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
+                                                                    <img class="rounded-circle" src={worktops} alt="" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     })}
 
                                 </Card.Body>
@@ -484,7 +486,7 @@ function JobDetails() {
                         </Col>
                     </Row>
                 </Container>
-                <Col className="mt-3">
+                <Col lg={12} className="mt-3">
                     <Footer />
                 </Col>
             </Row>
@@ -526,8 +528,6 @@ function JobDetails() {
                 </Modal.Body>
             </Modal>
             {/* Modal Content */}
-
-
         </>
     )
 }

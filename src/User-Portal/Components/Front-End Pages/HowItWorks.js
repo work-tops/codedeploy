@@ -6,7 +6,6 @@ import HIW_1 from '../Projectimages/HIW-1.png'
 import HIW_2 from '../Projectimages/HIW-2.png'
 import Hiw_mindmap from '../Projectimages/HIWS.png'
 import { Button, Col, Row, Card } from "react-bootstrap";
-import profile from '../Projectimages/Handyman.jpg'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";

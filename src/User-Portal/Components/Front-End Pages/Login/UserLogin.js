@@ -1,5 +1,4 @@
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
-import logo from '../../../TemplateAssets/Images/MP-logo.png'
 import worktops from '../../Projectimages/Conversions.jpg'
 import React, { useState } from 'react';
 import { Button, Col, Form, Row, Card, Container, InputGroup } from 'react-bootstrap';
@@ -10,6 +9,7 @@ import Footer from "../../Footer/Footer";
 import SocialAuthButtons from "../../../TemplateAssets/authentication/SocialAuthButtons";
 import { Divider } from '@mui/material';
 import { Icon } from "@iconify/react";
+import logo from '../../Projectimages/My Project white logo-01.png'
 
 const UserLogin = ({ }) => {
   // State
@@ -82,18 +82,18 @@ const UserLogin = ({ }) => {
         <Col lg={12} className="mb-5">
           <NavbarStandard />
         </Col>
-        <Col xs={6} className="d-none d-lg-block position-relative">
+        <Col lg={7} className="d-none d-lg-block position-relative">
           <div style={{ backgroundImage: `url(${worktops})` }} className="bg-holder">
           </div>
         </Col>
-        <Col sm={10} md={6} className="px-sm-0 align-self-center mx-auto py-5">
+        <Col lg={5} className="px-sm-0 align-self-center mx-auto py-5">
           <Container>
-            <Row className="g-0  justify-content-center">
-              <Col lg={9} xl={8} className="col-xxl-8">
+            <Row className="g-0 justify-content-center">
+              <Col className="col-xxl-8">
                 <Card>
                   <Card.Header style={{ background: '#003f6b' }} className="text-center p-2">
                     <Link to={'/'}>
-                      <img src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png"} width="135px" />
+                      <img src={logo} width="135px" />
                     </Link>
                   </Card.Header>
                   <Card.Body className="p-4">
@@ -188,7 +188,7 @@ const UserLogin = ({ }) => {
             </Row>
           </Container>
         </Col >
-        <Col>
+        <Col lg={12}>
           <Footer />
         </Col>
       </Row >

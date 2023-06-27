@@ -571,7 +571,7 @@ function ProjectWishlistCard(layout) {
                     {/*  */}
                     {/* </div> */}
                 </Container >
-                <Col>
+                <Col lg={12}>
                     <Footer />
                 </Col>
             </Row >

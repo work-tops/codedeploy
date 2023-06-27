@@ -6,6 +6,7 @@ import product_image from '../../Projectimages/16.png'
 import { Icon } from "@iconify/react";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { link } from "d3";
+import Footer from "../../Footer/Footer";
 
 function WorkStreamCard() {
     return (
@@ -70,6 +71,9 @@ function WorkStreamCard() {
                     </Container>
                 </Col>
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

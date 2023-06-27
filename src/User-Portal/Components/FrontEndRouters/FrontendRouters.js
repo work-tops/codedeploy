@@ -119,7 +119,7 @@ const FrontEndRouters = () => {
             <Route path="/postproject"><PostProject /></Route>
             {/* proper order routes end */}
 
-            <Route path='/projectlisting'><ProjectListing /></Route>
+            {/* <Route path='/projectlisting'><ProjectListing /></Route> */}
 
             {/* Proposal  */}
             <Route path="/proposallist"><ProposalList /></Route>
@@ -130,11 +130,11 @@ const FrontEndRouters = () => {
             <Route path='/user/addproduct'><FrontendAddProduct /></Route>
             <Route path='/user/addservices'><FrontendAddService /></Route>
             <Route path='/HowItWorks'><HowItWorks /></Route>
-            <Route path='/Project-Owner/profile'><ProjectOwnerProfile /></Route>
-            <Route path='/Project-Owner/Settings'><ProjectOwnerSettings /></Route>
-            <Route path='/Seller/profile'><SellerProfile /></Route>
-            <Route path='/Seller/Settings'><SellerSettings /></Route>
-            <Route path='/Seller/Landing'><SellerLandingPage /></Route>
+            {/* <Route path='/Project-Owner/profile'><ProjectOwnerProfile /></Route> */}
+            {/* <Route path='/Project-Owner/Settings'><ProjectOwnerSettings /></Route> */}
+            {/* <Route path='/Seller/profile'><SellerProfile /></Route> */}
+            {/* <Route path='/Seller/Settings'><SellerSettings /></Route> */}
+            {/* <Route path='/Seller/Landing'><SellerLandingPage /></Route> */}
             <Route path='/addproductcard'><AddProductCard /></Route>
             <Route path='/addservicecard'><AddServiceCard /></Route>
             <Route path='/proposalcard'><ProposalCard /></Route>
@@ -149,12 +149,12 @@ const FrontEndRouters = () => {
             <Route path="/RequestQuote"><RequestQuote /></Route>
             <Route path="/GetQuote"><GetQuote /></Route>
             {/* Quote */}
-            <Route path='/reviewscard'><ReviewsCard /></Route>
-            <Route path='/ProjectOwner/Landing'><ProjectOwnerLandingPage /></Route>
+            {/* <Route path='/reviewscard'><ReviewsCard /></Route> */}
+            {/* <Route path='/ProjectOwner/Landing'><ProjectOwnerLandingPage /></Route> */}
             <Route path='/openProjectCard'><OpenProjectCard /></Route>
             <Route path='/workStreamCard'><WorkStreamCard /></Route>
 
-            <Route path='/POReviewsCard'><POReviewCard /></Route>
+            {/* <Route path='/POReviewsCard'><POReviewCard /></Route> */}
             {/* <Route path='/productList'><ProductList /></Route> */}
 
             <Route path='/productdetails/:proid'><ProductDetails /></Route>

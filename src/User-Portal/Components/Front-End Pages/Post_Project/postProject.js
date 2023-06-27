@@ -24,6 +24,7 @@ import { createData, getAllData } from "../../../../Services/ProxyService";
 import toast from 'react-hot-toast';
 import { uploadImage } from "../../../../Services/ImageService";
 import file from '../../Projectimages/BathroomFitting.jpg'
+import Footer from '../../Footer/Footer';
 
 
 const PostProject = () => {
@@ -652,6 +653,7 @@ const PostProject = () => {
                 </Row>
               </Card.Body>
             </Card >
+
             {/* Post A Project */}
             <Modal show={showModal} onHide={handleClose}>
               <Modal.Header >
@@ -847,6 +849,9 @@ const PostProject = () => {
           </Container>
         </Row>
       </Form >
+      <Col lg={12}>
+        <Footer />
+      </Col>
     </>
   );
 };

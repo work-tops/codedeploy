@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import logo from '../../../TemplateAssets/Images/MP-logo.png'
+import logo from '../../../Components/Projectimages/My Project Final logo-01.png'
 import worktops from '../../Projectimages/paint.jpg'
 import { Button, Col, Form, Row, Card, Container } from 'react-bootstrap';
 

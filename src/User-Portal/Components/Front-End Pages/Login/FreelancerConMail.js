@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Card, Button, Container } from "react-bootstrap";
 import bgShape from '../../../TemplateAssets/assets/illustrations/bg-shape.png';
 import shape1 from '../../../TemplateAssets/assets/illustrations/shape-1.png';
-import logo from '../../../TemplateAssets/Images/MP-logo.png'
+import logo from '../../../Components/Projectimages/My Project white logo-01.png'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import envelope from '../../Projectimages/16.png';

@@ -143,7 +143,6 @@ function TraderWorkStreamDetails() {
                                                 <p style={{ fontSize: '16px' }} className="fw-semibold text-secondary mt-2 text-capitalize">United Kingdom</p>
                                                 <Card style={{ border: '1px solid #003f6b' }}>
                                                     <Card.Body>
-                                                        {/* Accepted */}
                                                         <p style={{ fontSize: '14px' }} className="fw-bold" >Project Status</p>
                                                         <span style={{ fontSize: '14px' }} className="badge p-2 bg-success mt-2 d-block">Accepted</span>
                                                         <Button as={Link} to="/NewInvoice" style={{background:'#003f6b'}} className="Home-btns-1 mt-2 w-100">Create Invoice</Button>

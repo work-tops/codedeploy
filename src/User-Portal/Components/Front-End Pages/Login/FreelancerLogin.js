@@ -10,6 +10,9 @@ import Footer from '../../Footer/Footer';
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard';
 import { Divider } from '@mui/material';
 import { Icon } from '@iconify/react';
+import logo from '../../Projectimages/My Project white logo-01.png'
+
+
 
 const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
 
@@ -121,7 +124,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                         <Col style={{ background: '#003f6b' }} lg={5} className="text-white text-center">
                           <div className="position-relative p-4 pt-md-5 pb-md-7">
                             <div className="z-index-1 position-relative light">
-                              <Link to={'/'}> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTKPFQ2xkQ7dLyfk2V8MUCOwyx2Gre0wGxHTyZaJA8svDFmGn2a-Wbvs628WHzM1B60HM3gzHf5kIDINBYUtF_PSvLzz0LM8VzqWzUsb-wDfnTkSD3j2-vvObqiX4n3sKcOiy4Si3172Y5ZGlhueKM-8UhCYFbI4Ak_pwKdPJaOWn8Ivbv8NlWcmUPfg/s600/MP-logo.png" width="135px" /></Link>
+                              <Link to={'/'}> <img src={logo} width="135px" /></Link>
                               <h3 className="mt-5 opacity-75 text-white"> Welcome </h3>
                             </div>
                             {isToggle == false ? <p className="mt-5 text-white">
@@ -232,7 +235,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
 
                                         >
                                           By Signing up you accept MyProject's <Link to="/termsofuse">Terms of Service </Link>.
-                                          I have read and understood MyProject's <Link to="/privacypolicy">Privacy Policy</Link>.
+                                          {/* I have read and understood MyProject's <Link to="/privacypolicy">Privacy Policy</Link>. */}
                                         </Form.Check.Label>
                                       </Form.Check>
                                     </Form.Group>
@@ -255,7 +258,26 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                 </Form.Group>
                                 <Form.Group className='mb-3'>
                                   <Form.Label className='text-700'>Password<span className="text-danger">*</span></Form.Label>
-                                  <input className='form-control' placeholder={'Password'} value={formData.password} name="password" onChange={handleFieldChange} type="password" />
+                                  <div className="position-relative">
+                                    <input
+                                      className="form-control"
+                                      placeholder={'Password'}
+                                      value={formData.password}
+                                      name="password"
+                                      onChange={handleFieldChange}
+                                      type={passwordVisible ? 'text' : 'password'}
+                                    />
+                                    {formData.password && (
+                                      <Icon
+                                        className="position-absolute me-2 cursor-pointer end-0 top-50 translate-middle-y"
+                                        icon="mdi:eye"
+                                        color="gray"
+                                        width="24"
+                                        height="24"
+                                        onClick={togglePasswordVisibility}
+                                      />
+                                    )}
+                                  </div>
                                 </Form.Group>
                                 <Row className="justify-content-between align-items-center">
                                   <Col xs="auto">
@@ -293,7 +315,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
           <Toaster />
         </Row>
       </Container >
-      <Col>
+      <Col lg={12}>
         <Footer />
       </Col>
     </>

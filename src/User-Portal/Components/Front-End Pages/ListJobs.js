@@ -353,7 +353,7 @@ function ListJobs(layout) {
                                             <div className="row g-0 g-md-3  justify-content-end">
                                                 <div className="col-auto">
                                                     <form className="row gx-2">
-                                                        <div className="col-auto d-none d-lg-block"><small className="fw-semi-bold">Sort by</small></div>
+                                                        <div className="col-auto d-none d-lg-block"><span className="fw-semi-bold">Sort by</span></div>
                                                         <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Bulk actions">
                                                             <option >Recent Added</option>
                                                             <option >Price High to Low</option>
@@ -364,7 +364,7 @@ function ListJobs(layout) {
                                                     </form>
                                                 </div>
                                                 <div className="col-auto">
-                                                    <div className="d-flex align-items-center"><small className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</small>
+                                                    <div className="d-flex align-items-center"><span className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</span>
                                                         <div
                                                             className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}
@@ -670,7 +670,7 @@ function ListJobs(layout) {
                     {/*  */}
                     {/* </div> */}
                 </Container >
-                <Col>
+                <Col lg={12}>
                     <Footer />
                 </Col>
             </Row >

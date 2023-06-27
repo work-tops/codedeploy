@@ -434,9 +434,15 @@ function WishlistProductCard() {
                                                                         </div>
                                                                         <div class="mt-3 d-flex flex-lg-column gap-2">
                                                                             <button onClick={toastDanger} class="btn btn-md btn-falcon-default hover-danger fs--1 text-600">
-                                                                                <span class="far fa-heart">
-                                                                                </span>
-                                                                                <span class="ms-1 text-600 d-none d-lg-inline">Remove from Wishlist</span>
+                                                                                <Icon
+                                                                                    style={{ marginTop: '-2px' }}
+                                                                                    className="me-1"
+                                                                                    icon="icon-park-solid:like"
+                                                                                    color="#df2020"
+                                                                                    width="18"
+                                                                                    height="18"
+                                                                                />
+                                                                                <span className="d-none d-lg-inline">Remove from Wishlist</span>
                                                                             </button>
 
                                                                             <button onClick={toastDark} class="btn btn-md btn-primary fs--1">

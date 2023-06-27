@@ -578,12 +578,12 @@ const AddTrader = () => {
                                                         </Col>
                                                     </Row>
                                                     <Row className="mb-3 g-3">
-                                                        <Col md={6}>
+                                                        {/* <Col md={6}>
                                                             <Form.Group >
                                                                 <Form.Label>Date of Birth</Form.Label>
                                                                 <Form.Control type="date" />
                                                             </Form.Group>
-                                                        </Col>
+                                                        </Col> */}
                                                         <Col md={6}>
                                                             <Form.Group >
                                                                 <Form.Label>You Operate as a</Form.Label>
@@ -594,17 +594,17 @@ const AddTrader = () => {
                                                                     <option>Ordinary Partnership</option>
                                                                     <option>Limited Partnership</option>
                                                                 </Form.Select>
-
                                                             </Form.Group>
                                                         </Col>
-                                                    </Row>
-                                                    <Row className="mb-3 g-3">
                                                         <Col md={6}>
                                                             <Form.Group >
                                                                 <Form.Label>Bussiness Name</Form.Label>
                                                                 <Form.Control type="text" />
                                                             </Form.Group>
                                                         </Col>
+                                                    </Row>
+                                                    <Row className="mb-3 g-3">
+
                                                         <Col md={6}>
                                                             <Form.Group>
                                                                 <Form.Label>No.Of Employee</Form.Label>
@@ -674,16 +674,16 @@ const AddTrader = () => {
                                                     </Form.Group>
                                                     <Row className="mb-3 g-3">
                                                         <Col md={6}>
-                                                        <Form.Group >
-                                                            <Form.Label>Password</Form.Label>
-                                                            <Form.Control type="password" />
-                                                        </Form.Group>
+                                                            <Form.Group >
+                                                                <Form.Label>Password</Form.Label>
+                                                                <Form.Control type="password" />
+                                                            </Form.Group>
                                                         </Col>
                                                         <Col md={6}>
-                                                        <Form.Group >
-                                                            <Form.Label>Confirm Password</Form.Label>
-                                                            <Form.Control type="text" />
-                                                        </Form.Group>
+                                                            <Form.Group >
+                                                                <Form.Label>Confirm Password</Form.Label>
+                                                                <Form.Control type="text" />
+                                                            </Form.Group>
                                                         </Col>
                                                     </Row>
                                                     <Form.Group className="mb-3">

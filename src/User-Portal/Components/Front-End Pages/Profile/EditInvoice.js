@@ -156,6 +156,17 @@ function EditInvoice() {
                                         </Form.Group>
 
                                         <Form.Group className="mb-3" as={Col} lg={6}>
+                                            <Form.Label className="text-uppercase">Project Title<span className="text-danger">*</span></Form.Label>
+                                            <Form.Control
+                                                type="text"
+
+                                                value="Kitchen Worktops with Island"
+                                            />
+                                        </Form.Group>
+
+
+
+                                        <Form.Group className="mb-3" as={Col} lg={6}>
                                             <Form.Label className="text-uppercase">Service Title<span className="text-danger">*</span></Form.Label>
                                             <Form.Control
                                                 type="text"
@@ -174,36 +185,6 @@ function EditInvoice() {
                                             />
                                         </Form.Group>
                                     </Row>
-                                    <Form.Group className="mb-3" as={Col} lg={6}>
-                                        <Form.Label className="text-uppercase">Description<span className="text-danger">*</span></Form.Label>
-                                        {/* <Form.Control
-                                            as="textarea"
-                                            rows={3}
-                                            value="Lorem Ipsum is simply dummy text of the printing and typesetting
-                                             industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                                        /> */}
-                                        <Editor
-                                            onInit={(evt, editor) => editorRef.current = editor}
-                                            initialValue="Lorem Ipsum is simply dummy text of the printing and typesetting
-                                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-
-                                            init={{
-
-                                                height: 200,
-                                                menubar: false,
-                                                // plugins: [
-                                                //     'advlist autolink lists link image charmap print preview anchor',
-                                                //     'searchreplace visualblocks code fullscreen',
-                                                //     'insertdatetime media table paste code help wordcount'
-                                                // ],
-                                                toolbar: 'undo redo | formatselect | ' +
-                                                    'bold italic  | alignleft aligncenter ' +
-                                                    'alignright alignjustify | bullist numlist outdent indent | ' +
-                                                    'removeformat ',
-                                                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-                                            }}
-                                        />
-                                    </Form.Group>
                                     {/*  */}
 
                                 </Form>
@@ -307,19 +288,7 @@ function EditInvoice() {
                                             </Form.Label>
                                             <Editor
                                                 onInit={(evt, editor) => editorRef.current = editor}
-                                                initialValue="
-                                            For Work-tops Related Jobs,You are required to pay only £250/- before template by PayLink or BACS. Upon your payment confirmation, our template team will contact you to book the appointment at your convenience.
-
-                                                Step-by-step guide (more details)
-                                                
-                                                 Step 1: Quote
-                                                 Step 2: Placing an Order with us
-                                                 Step 3: Booking a Template appointment
-                                                 Step 4: At Template
-                                                 Step 5: Between Template & Installation
-                                                 Step 6: At Installation
-                                                 Step 7: After Care
-                                                 "
+                                                initialValue=""
                                                 init={{
 
                                                     height: 200,

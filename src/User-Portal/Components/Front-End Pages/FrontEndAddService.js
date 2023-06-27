@@ -13,6 +13,7 @@ import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
 import { getSize } from '../../TemplateAssets/helpers/utils';
 import CardDropdown from '../../TemplateAssets/common/CardDropdown';
 import { Editor } from "@tinymce/tinymce-react";
+import Footer from '../Footer/Footer';
 
 const FrontendAddService = () => {
 
@@ -547,6 +548,9 @@ const FrontendAddService = () => {
                 </Col>
                 <Toaster />
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

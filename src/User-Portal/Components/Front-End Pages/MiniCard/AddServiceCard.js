@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // import YourProjects from "../YourProjects";
 import SellerLandingPage from "../SellerLandingPage";
 import AllServices from '../AllServices'
+import Footer from "../../Footer/Footer";
 
 function AddServiceCard() {
     const serviceLength = sessionStorage.getItem("servicelength")
@@ -28,11 +29,14 @@ function AddServiceCard() {
                             </Card.Body>
                         </Card>
                     ) : ( */}
-                        <div className="container">
-                            <AllServices />
-                        </div>
+                    <div className="container">
+                        <AllServices />
+                    </div>
                     {/* )} */}
 
+                </Col>
+                <Col lg={12}>
+                    <Footer />
                 </Col>
             </Row>
         </>

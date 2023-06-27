@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback,useRef } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import { Icon } from "@iconify/react";
 import toast, { Toaster } from 'react-hot-toast';
 import { createData } from "../../../Services/ProxyService";
@@ -201,12 +201,12 @@ function JobProposal() {
                                             <Editor
                                                 onInit={(evt, editor) => editorRef.current = editor}
                                                 initialValue=""
-                                                
+
                                                 init={{
-                                                    
+
                                                     height: 200,
                                                     menubar: false,
-                                                    placeholder:'Cover Letter',
+                                                    placeholder: 'Cover Letter',
                                                     // plugins: [
                                                     //     'advlist autolink lists link image charmap print preview anchor',
                                                     //     'searchreplace visualblocks code fullscreen',
@@ -354,7 +354,7 @@ function JobProposal() {
                     {/* </Col> */}
                 </Container>
                 <Toaster />
-                <Col>
+                <Col lg={12}>
                     <Footer />
                 </Col>
             </Row>

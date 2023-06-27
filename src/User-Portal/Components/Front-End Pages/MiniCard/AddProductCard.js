@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // import YourProjects from "../YourProjects";
 import SellerLandingPage from "../SellerLandingPage";
 import FrontEndAllProducts from "../FrontendAllProducts";
+import Footer from "../../Footer/Footer";
 function AddProductCard() {
     const productLength = sessionStorage.getItem("productlength")
     return (
@@ -16,6 +17,9 @@ function AddProductCard() {
                     <div className="container">
                         <FrontEndAllProducts />
                     </div>
+                </Col>
+                <Col lg={12}>
+                    <Footer />
                 </Col>
             </Row>
         </>

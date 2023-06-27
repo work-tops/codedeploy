@@ -6,6 +6,8 @@ import { Icon } from "@iconify/react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Link } from "react-router-dom";
 import file from '../Projectimages/BathroomFitting.jpg'
+
+
 function WorkStreamDetails() {
 
     const [show, setShow] = useState(false);
@@ -34,51 +36,6 @@ function WorkStreamDetails() {
                                                 <h5 className="bg-transparent text-900 border-secondary">Messages</h5>
                                             </Card.Header>
                                             <Card.Body>
-
-                                                <Card className="mb-3" style={{ background: '#f3f3f3' }}>
-                                                    <Card.Body>
-                                                        <Row>
-                                                            <Col className="" lg={3}>
-                                                                <Link to="profile_publicview">
-                                                                    <img src={profile} height="60px" width="60px" className="m-3 rounded-circle" />
-                                                                </Link>
-                                                            </Col>
-                                                            <Col className="" lg={9}>
-                                                                <p style={{ fontSize: '14px' }} className="text-justify mb-0">
-                                                                    How are you? Sir / Madam Please send admin access details to website,
-                                                                    Bitrix and email host.Also Price £200.00
-                                                                </p>
-                                                                {/* <Button
-                                                                    onClick={handleShow}
-                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
-                                                                    className="btn mb-3 text-uppercase border-0">
-                                                                    Reply
-                                                                </Button> */}
-                                                            </Col>
-                                                        </Row>
-                                                    </Card.Body>
-                                                </Card>
-                                                <Card className="mb-3" style={{ background: '#f3f3f3' }}>
-                                                    <Card.Body>
-                                                        <Row>
-                                                            <Col className="" lg={9}>
-                                                                <p style={{ fontSize: '14px' }} className="text-justify mb-0">
-                                                                    How are you? Sir / Madam Please send admin access details to website,
-                                                                    Bitrix and email host.Also Price £200.00
-                                                                </p>
-                                                                {/* <Button
-                                                                    onClick={handleShow}
-                                                                    style={{ background: '#003f6b', fontSize: '14px' }}
-                                                                    className="btn mb-3 text-uppercase border-0">
-                                                                    Reply
-                                                                </Button> */}
-                                                            </Col>
-                                                            <Col className="" lg={3}>
-                                                                <img src={file} height="60px" width="60px" className="m-3 rounded-circle" />
-                                                            </Col>
-                                                        </Row>
-                                                    </Card.Body>
-                                                </Card>
                                                 <Form className="mt-3">
                                                     <Form.Group className="mb-3">
                                                         {/* <Form.Control
@@ -123,6 +80,76 @@ function WorkStreamDetails() {
                                                         </Button>
                                                     </div>
                                                 </Form>
+                                                <div class="kanban-items-container scrollbar" tabindex="0">
+                                                    <div class="kanban-item" tabindex="0">
+                                                        <div class="card kanban-item-card hover-actions-trigger">
+                                                            <div style={{ background: '#f3f3f3' }} class="card-body">
+                                                                <div class="position-relative mb-1">
+                                                                    <span>21 March 2023</span>,<span>00:00</span>
+                                                                </div>
+                                                                <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                                <div class="kanban-item-footer cursor-default">
+                                                                    <div class="z-index-2">
+                                                                        <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
+                                                                            <img class="rounded-circle" src={profile} alt="" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="kanban-item" tabindex="0">
+                                                        <div class="card kanban-item-card hover-actions-trigger">
+                                                            <div style={{ background: '#f3f3f3' }} class="card-body">
+                                                                <div class="position-relative mb-1">
+                                                                    <span>21 March 2023</span>,<span>00:00</span>
+                                                                </div>
+                                                                <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                                <div class="kanban-item-footer cursor-default">
+                                                                    <div class="z-index-2">
+                                                                        <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
+                                                                            <img class="rounded-circle" src={profile} alt="" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="kanban-item" tabindex="0">
+                                                        <div class="card kanban-item-card hover-actions-trigger">
+                                                            <div style={{ background: '#f3f3f3' }} class="card-body">
+                                                                <div class="position-relative mb-1">
+                                                                    <span>21 March 2023</span>,<span>00:00</span>
+                                                                </div>
+                                                                <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                                <div class="kanban-item-footer cursor-default">
+                                                                    <div class="z-index-2">
+                                                                        <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
+                                                                            <img class="rounded-circle" src={profile} alt="" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="kanban-item" tabindex="0">
+                                                        <div class="card kanban-item-card hover-actions-trigger">
+                                                            <div style={{ background: '#f3f3f3' }} class="card-body">
+                                                                <div class="position-relative mb-1">
+                                                                    <span>21 March 2023</span>,<span>00:00</span>
+                                                                </div>
+                                                                <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                                <div class="kanban-item-footer cursor-default">
+                                                                    <div class="z-index-2">
+                                                                        <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
+                                                                            <img class="rounded-circle" src={profile} alt="" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </Card.Body>
                                         </Card>
                                     </div>
@@ -143,19 +170,12 @@ function WorkStreamDetails() {
                                                 <p style={{ fontSize: '16px' }} className="fw-semibold text-secondary mt-2 text-capitalize">United Kingdom</p>
                                                 <Card style={{ border: '1px solid #003f6b' }}>
                                                     <Card.Body>
-                                                        {/* <div className="d-flex justify-content-between">
-                                                            <p style={{ fontSize: '14px' }} className="fw-bold" >Price:</p>
-                                                            <p className="text-success fw-semibold" style={{ fontSize: '14px' }}> £ 200</p>
-                                                        </div>
-                                                        <div className="d-flex justify-content-between">
-                                                            <p style={{ fontSize: '14px' }} className="fw-bold">Deposit:</p>
-                                                            <p className="text-success fw-semibold" style={{ fontSize: '14px' }}>£ 200</p>
-                                                        </div> */}
-                                                        {/* Accepted */}
                                                         <p style={{ fontSize: '14px' }} className="fw-bold" >Project Status</p>
                                                         <span style={{ fontSize: '14px' }} className="badge p-2 bg-success mt-2 d-block">Accepted</span>
+                                                        <Button as={Link} to="/NewInvoice" style={{ background: '#003f6b' }} className="Home-btns-1 mt-2 w-100">Create Invoice</Button>
                                                     </Card.Body>
                                                 </Card>
+
                                             </Card.Body>
                                         </Card>
                                         {/*  */}

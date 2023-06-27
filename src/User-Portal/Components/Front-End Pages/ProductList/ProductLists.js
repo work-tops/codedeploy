@@ -15,7 +15,6 @@ import { Link } from "react-router-dom";
 import Flex from '../../../TemplateAssets/common/Flex'
 import image from '../../../Components/Images/Granite.png'
 import { Icon } from "@iconify/react";
-import ListingHeader from "./ProductsHeader";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import ProductsFilters from "./ProductsFilter";
 import { getAllData } from "../../../../Services/ProxyService";
@@ -185,15 +184,7 @@ function ProductList() {
                                                 <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
                                                 <span>Filter</span>
                                             </h5>
-                                            {/* <Button
-                                                variant="outline-secondary"
-                                                size="sm"
-                                                className=" mt-0 mb-0"
-                                                style={{ fontSize: '12px' }}
-                                                >
-                                                <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
-                                                Reset
-                                            </Button> */}
+
                                             <button
                                                 onClick={() => resetFilter()}
                                                 className="btn btn-sm btn-outline-secondary">Reset</button>
@@ -263,7 +254,9 @@ function ProductList() {
                                                                 <option>Price High to Low</option>
                                                                 <option>Low to High</option>
                                                                 <option>A to Z</option>
-                                                                <option>Z to A</option>                                                       </select></div>
+                                                                <option>Z to A</option>
+                                                            </select>
+                                                        </div>
                                                     </form>
                                                 </div>
                                                 <div className="col-auto">
@@ -579,7 +572,7 @@ function ProductList() {
 
                     </Row>
                 </Container >
-                <Col>
+                <Col lg={12}>
                     <Footer />
                 </Col>
             </Row >

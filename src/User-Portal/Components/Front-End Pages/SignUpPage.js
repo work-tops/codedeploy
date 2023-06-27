@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Col, Row, Button, Form, Container } from 'react-bootstrap';
-import logo from '../../TemplateAssets/Images/MP-logo.png'
+import logo from '../../Components/Projectimages/MAI_white.png'
 import worktops from '../../Components/Projectimages/Floor.jpg'
 import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
@@ -76,19 +76,19 @@ function SignUpPage(hasLabel) {
                 <Col lg={12} className="mb-6">
                     <NavbarStandard />
                 </Col>
-                <Col xs={6} className="d-none d-lg-block position-relative">
+                <Col lg={7} className="d-none d-lg-block position-relative">
                     <div className="bg-holder" style={{ backgroundImage: `url(${worktops})` }}>
                     </div>
                 </Col>
-                <Col sm={10} md={6} className="px-sm-0 align-self-center mx-auto">
+                <Col lg={5} className="px-sm-0 align-self-center mx-auto">
                     <Row className="g-0 justify-content-center">
-                        <Col lg={9} xl={8} className="col-xxl-8">
+                        <Col className="col-xxl-8">
                             <Container>
-                                <Card className='m-3'>
+                                <Card className='mt-3 mb-3'>
                                     <Card.Header style={{ background: '#003f6b' }} className="text-center p-2">
                                         <Link to="/"><img src={logo} width="135px" /></Link>
                                     </Card.Header>
-                                    <Card.Body className="p-4">
+                                    <Card.Body className="">
                                         {toggleForm == 1 &&
                                             <div>
                                                 <>
@@ -174,7 +174,7 @@ function SignUpPage(hasLabel) {
 
                                                                 >
                                                                     By Signing up you accept MyProject's <Link to="/termsofuse">Terms of Service </Link>.
-                                                                    I have read and understood MyProject's <Link to="/privacypolicy">Privacy Policy</Link>.
+                                                                    {/* I have read and understood MyProject's <Link to="/privacypolicy">Privacy Policy</Link>. */}
                                                                 </Form.Check.Label>
                                                             </Form.Check>
                                                         </Form.Group>

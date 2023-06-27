@@ -189,7 +189,7 @@ function FreelancerEditProfile() {
                         </div>
                         <div className="card mb-3">
                             <div className="card-header d-flex justify-content-between">
-                                <h5 className="mb-0">Experiences</h5>
+                                <h5 className="mb-0">Skills</h5>
                                 <><Icon onClick={() => setShowModal2(true)} icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" color="#df2020" /></>
                             </div>
                             <div className="card-body bg-light"><a className="mb-4 d-block d-flex align-items-center collapsed" href="#experience-form1" data-bs-toggle="collapse" aria-expanded="false" aria-controls="experience-form1"><span className="circle-dashed">
@@ -202,7 +202,7 @@ function FreelancerEditProfile() {
                                         <div className="col-9 col-sm-7 mb-3"> <input className="form-control form-control-sm" id="position" type="text" /></div>
                                         <div className="col-3 mb-3 text-lg-end"><label className="form-label me-2 text-justify" for="city">City </label></div>
                                         <div className="col-9 col-sm-7 mb-3"> <input className="form-control form-control-sm" id="city" type="text" /></div>
-                                        <div className="col-3 mb-3 text-lg-end"><label className="form-label me-2 text-justify" >Experience(In Years)</label></div>
+                                        <div className="col-3 mb-3 text-lg-end"><label className="form-label me-2 text-justify" >Skill(In Years)</label></div>
                                         <div className="col-9 col-sm-7 mb-3"><input className="form-control form-control-sm" type="number" /></div>
 
                                         <div className="col-9 col-sm-7 offset-3"><button className="btn btn-primary" type="button">Save</button></div>

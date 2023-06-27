@@ -735,6 +735,9 @@ function ProductDetails() {
                 </Modal.Body>
             </Modal >
             {/* Review */}
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }
