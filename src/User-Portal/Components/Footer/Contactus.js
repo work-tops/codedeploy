@@ -115,10 +115,12 @@ function ContactUs() {
                             </div>
                             {/* */}
                         </Card.Body>
-                        <Footer />
                     </Card>
                 </Container>
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

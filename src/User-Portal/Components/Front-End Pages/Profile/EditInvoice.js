@@ -10,6 +10,7 @@ import { getSize } from '../../../TemplateAssets/helpers/utils';
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 import { Link } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
+import Footer from "../../Footer/Footer";
 
 function EditInvoice() {
 
@@ -570,8 +571,10 @@ function EditInvoice() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-
             {/* Modal-2 */}
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

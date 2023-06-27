@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import { Link } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
+import Footer from "../Footer/Footer";
 function Chat() {
 
     const [show, setShow] = useState(false);
@@ -74,7 +75,7 @@ function Chat() {
                                                 <div className="nav nav-tabs border-0 flex-column" role="tablist" aria-orientation="vertical">
                                                     <div className="hover-actions-trigger chat-contact nav-item active" role="tab" id="chat-link-0" data-bs-toggle="tab" data-bs-target="#chat-0" aria-controls="chat-0" aria-selected="true">
                                                         <div className="d-md-none  d-lg-block">
-                                                            
+
                                                         </div>
                                                         <div className="d-flex p-3">
                                                             <div className="avatar avatar-xl ">
@@ -96,7 +97,7 @@ function Chat() {
                                                     <div className="hover-actions-trigger chat-contact nav-item" role="tab" id="chat-link-2" data-bs-toggle="tab" data-bs-target="#chat-2" aria-controls="chat-2" aria-selected="false" tabindex="-1">
                                                         <div className="d-md-none d-lg-block">
                                                             <div className="dropdown dropdown-active-trigger dropdown-chat">
-                                                                
+
                                                             </div>
                                                         </div>
                                                         <div className="d-flex p-3">
@@ -116,7 +117,7 @@ function Chat() {
                                                     </div>
                                                     <div className="hover-actions-trigger chat-contact nav-item" role="tab" id="chat-link-2" data-bs-toggle="tab" data-bs-target="#chat-2" aria-controls="chat-2" aria-selected="false" tabindex="-1">
                                                         <div className="d-md-none d-lg-block">
-                                                            
+
                                                         </div>
                                                         <div className="d-flex p-3">
                                                             <div className="avatar  avatar-xl">
@@ -542,14 +543,14 @@ function Chat() {
                                                 }}
                                             />
                                         </Form>
-                                            <div className="d-flex gap-2 justify-content-end m-3">
-                                                <Button id="FileUpload1" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
-                                                    Attachments
-                                                </Button>
-                                                <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
-                                                    Send
-                                                </Button>
-                                            </div>
+                                        <div className="d-flex gap-2 justify-content-end m-3">
+                                            <Button id="FileUpload1" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                Attachments
+                                            </Button>
+                                            <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                Send
+                                            </Button>
+                                        </div>
                                     </div>
 
 
@@ -810,6 +811,9 @@ function Chat() {
                     </Col>
                 </Row>
             </Container >
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

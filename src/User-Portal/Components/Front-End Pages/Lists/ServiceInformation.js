@@ -691,7 +691,7 @@ function ServiceInformation() {
 
                     {/*  */}
                 </Row>
-                <Col>
+                <Col lg={12}>
                     <Footer />
                 </Col>
             </Row>

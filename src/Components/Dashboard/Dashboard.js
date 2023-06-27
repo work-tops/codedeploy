@@ -3,7 +3,7 @@ import AdminHeader from "../Menubar/AiMenu";
 import ReactECharts from 'echarts-for-react';
 import { Card } from "react-bootstrap";
 import Payments from "../Payments/AdminPaymentDetails";
-
+import { Link } from "react-router-dom";
 
 function Dashboard() {
     // 
@@ -24,6 +24,7 @@ function Dashboard() {
     };
     // 
     const option = {
+
         tooltip: {
             trigger: 'item',
             formatter: '{a} <br/>{b}: {c} ({d}%)',
@@ -31,10 +32,11 @@ function Dashboard() {
         legend: {
             orient: 'vertical',
             left: 10,
-            data: ['Direct', 'Email', 'Ad', 'Search Engine'],
+            data: ['Projects', 'Products', 'Services'],
         },
         series: [
             {
+
                 name: 'Access Source',
                 type: 'pie',
                 radius: ['50%', '70%'],
@@ -54,10 +56,9 @@ function Dashboard() {
                     show: false,
                 },
                 data: [
-                    { value: 335, name: 'Direct' },
-                    { value: 310, name: 'Email' },
-                    { value: 234, name: 'Ad' },
-                    { value: 135, name: 'Search Engine' },
+                    { value: 335, name: 'Products' },
+                    { value: 310, name: 'Projects' },
+                    { value: 234, name: 'Services' },
                 ],
             },
         ],
@@ -65,9 +66,6 @@ function Dashboard() {
 
     // 
     const option2 = {
-        title: {
-            text: 'Line Chart',
-        },
         xAxis: {
             type: 'category',
             data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -121,7 +119,9 @@ function Dashboard() {
                                                 <p class="fs--1 ps-2 mb-0"><strong>5 products</strong> didn’t publish to your Facebook page</p>
                                             </div>
                                         </div>
-                                        <div class="col-auto d-flex align-items-center"><a class="alert-link fs--1 fw-medium" href="#!">View products{/*<svg class="svg-inline--fa fa-chevron-right fa-w-10 ms-1 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>*/}<i class="fas fa-chevron-right ms-1 fs--2"></i></a></div>
+                                        <Link to="/allproduct">
+                                            <div class="col-auto d-flex align-items-center"><a class="alert-link fs--1 fw-medium" href="#!">View products{/*<svg class="svg-inline--fa fa-chevron-right fa-w-10 ms-1 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>*/}<i class="fas fa-chevron-right ms-1 fs--2"></i></a></div>
+                                        </Link>
                                     </div>
                                 </li>
                                 <li class="alert mb-0 rounded-0 py-3 px-x1 greetings-item border-top border-x-0 border-top-0">
@@ -132,7 +132,9 @@ function Dashboard() {
                                                 <p class="fs--1 ps-2 mb-0"><strong>7 orders</strong> have payments that need to be captured</p>
                                             </div>
                                         </div>
-                                        <div class="col-auto d-flex align-items-center"><a class="alert-link fs--1 fw-medium" href="#!">View payments{/*<svg class="svg-inline--fa fa-chevron-right fa-w-10 ms-1 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>*/}<i class="fas fa-chevron-right ms-1 fs--2"></i></a></div>
+                                        <Link to="/payments">
+                                            <div class="col-auto d-flex align-items-center"><a class="alert-link fs--1 fw-medium" href="#!">View payments{/*<svg class="svg-inline--fa fa-chevron-right fa-w-10 ms-1 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>*/}<i class="fas fa-chevron-right ms-1 fs--2"></i></a></div>
+                                        </Link>
                                     </div>
                                 </li>
                                 <li class="alert mb-0 rounded-0 py-3 px-x1 greetings-item border-top  border-0">
@@ -143,7 +145,9 @@ function Dashboard() {
                                                 <p class="fs--1 ps-2 mb-0"><strong>50+ orders</strong> need to be fulfilled</p>
                                             </div>
                                         </div>
-                                        <div class="col-auto d-flex align-items-center"><a class="alert-link fs--1 fw-medium" href="#!">View orders{/*<svg class="svg-inline--fa fa-chevron-right fa-w-10 ms-1 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>*/}<i class="fas fa-chevron-right ms-1 fs--2"></i></a></div>
+                                        <Link to="/allorders">
+                                            <div class="col-auto d-flex align-items-center"><a class="alert-link fs--1 fw-medium" href="#!">View orders{/*<svg class="svg-inline--fa fa-chevron-right fa-w-10 ms-1 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>*/}<i class="fas fa-chevron-right ms-1 fs--2"></i></a></div>
+                                        </Link>
                                     </div>
                                 </li>
                             </ul>
@@ -211,6 +215,10 @@ function Dashboard() {
                     <div className="row g-3">
                         <div className="col-md-6">
                             <div class="card h-md-100 h-100">
+                                <div class="card-header pb-0">
+                                    <h6 class="mb-0 mt-2 d-flex align-items-center">Category<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Calculated according to last week's sales" data-bs-original-title="Calculated according to last week's sales">
+                                    </span></h6>
+                                </div>
                                 <div class="card-body">
                                     <ReactECharts option={option} style={{ minHeight: '300px' }} />
 
@@ -221,7 +229,7 @@ function Dashboard() {
                             <div class="card h-md-100 ecommerce-card-min-width">
                                 <div class="card-header pb-0">
                                     <h6 class="mb-0 mt-2 d-flex align-items-center">Weekly Sales<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Calculated according to last week's sales" data-bs-original-title="Calculated according to last week's sales">
-                                        <span class="far fa-question-circle" data-fa-transform="shrink-1"></span></span></h6>
+                                    </span></h6>
                                 </div>
                                 <div class="card-body d-flex flex-column justify-content-end">
                                     <ReactECharts option={option1} style={{ minHeight: '320px' }} />
@@ -232,6 +240,10 @@ function Dashboard() {
                 </div>
                 <div className="col-lg-12 container mb-3">
                     <Card>
+                        <Card.Header>
+                            <h6 class="mb-0 mt-2 d-flex align-items-center">Sales<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Calculated according to last week's sales" data-bs-original-title="Calculated according to last week's sales">
+                            </span></h6>
+                        </Card.Header>
                         <Card.Body>
                             <ReactECharts option={option2} style={{ height: '400px' }} />
                         </Card.Body>

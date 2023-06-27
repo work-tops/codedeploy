@@ -304,6 +304,9 @@ function PrivacyPolicy() {
                     </div>
                 </div>
             </div>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

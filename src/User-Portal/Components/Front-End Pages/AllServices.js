@@ -1,7 +1,8 @@
 import React from "react";
-import { Card, Button, DropdownButton, Dropdown, Row, Col} from "react-bootstrap";
+import { Card, Button, DropdownButton, Dropdown, Row, Col } from "react-bootstrap";
 import ServiceAdvancedTable from "../../TemplateAssets/AdvanceTables/ServiceAdvanceTable";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 function AllServices() {
     return (
@@ -16,7 +17,7 @@ function AllServices() {
                             <Row>
                                 <Col lg={12}>
                                     <Link to="/user/addservices">
-                                    <Button className='m-1 bg-success border-success w-100'>Add Services</Button>
+                                        <Button className='m-1 bg-success border-success w-100'>Add Services</Button>
                                     </Link>
                                 </Col>
                             </Row>
@@ -27,6 +28,9 @@ function AllServices() {
                     </div>
                 </Card.Body>
             </Card>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

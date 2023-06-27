@@ -4,6 +4,7 @@ import bgShape from '../../../TemplateAssets/assets/illustrations/bg-shape.png';
 import shape1 from '../../../TemplateAssets/assets/illustrations/shape-1.png';
 import { Link } from "react-router-dom";
 import logo from '../../../Components/Projectimages/My Project white logo-01.png'
+import Footer from "../../Footer/Footer";
 
 function ForgetPasswordFreelancer() {
     return (
@@ -93,6 +94,9 @@ function ForgetPasswordFreelancer() {
                     </Col>
                 </Row>
             </Container>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

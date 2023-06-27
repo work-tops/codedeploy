@@ -23,6 +23,7 @@ import { getSize } from '../../TemplateAssets/helpers/utils';
 import cloudUpload from '../../TemplateAssets/assets/cloud-upload.svg';
 import Flex from '../../TemplateAssets/common/Flex';
 import CardDropdown from '../../TemplateAssets/common/CardDropdown';
+import Footer from "../Footer/Footer";
 
 function EditProposal() {
 
@@ -275,6 +276,9 @@ function EditProposal() {
                 </Container>
                 <Toaster />
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

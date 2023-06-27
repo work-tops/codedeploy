@@ -5,6 +5,9 @@ import logoutImg from '../../Projectimages/45.png';
 import logo from '../../../Components/Projectimages/My Project white logo-01.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import worktops from '../../Projectimages/Carpent.jpg'
+import Footer from "../../Footer/Footer";
+
+
 function UserLogout() {
     return (
         <>
@@ -61,6 +64,9 @@ function UserLogout() {
                     </Container>
                 </Col >
             </Row >
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

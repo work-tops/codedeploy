@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import payment_methods from '../../Projectimages/payment_methods.png'
 import paypal from '../../Projectimages/paypal.png'
 import sheild from '../../Projectimages/shield.png'
+import Footer from "../../Footer/Footer";
 function Checkout() {
 
     const [show, setShow] = useState(false);
@@ -293,6 +294,9 @@ function Checkout() {
                     </Col>
                 </Container>
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

@@ -5,6 +5,7 @@ import worktops from '../../Projectimages/Restoring.jpg'
 import { Col, Row, Card, Container, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import envelope from '../../Projectimages/16.png';
+import Footer from "../../Footer/Footer";
 
 
 function UserConMail() {
@@ -61,6 +62,9 @@ function UserConMail() {
                     </Container>
                 </Col >
             </Row >
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

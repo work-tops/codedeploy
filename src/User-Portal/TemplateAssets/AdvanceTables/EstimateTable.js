@@ -6,6 +6,7 @@ import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
 import NavbarStandard from "../../Components/Header/AdvanceHeader/NavbarStandard";
 import CardDropdown from '../common/CardDropdown'
 import { Link } from "react-router-dom";
+import Footer from "../../Components/Footer/Footer";
 
 
 const EstimateTable = () => {
@@ -366,6 +367,9 @@ const EstimateTable = () => {
                 </Modal.Body>
             </Modal>
             {/*  */}
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

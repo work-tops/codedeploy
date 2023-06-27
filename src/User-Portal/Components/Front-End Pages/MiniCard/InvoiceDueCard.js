@@ -3,6 +3,7 @@ import React from "react";
 import { Card, Container, Col, Row } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import InvoiceTableCard from "../../../TemplateAssets/AdvanceTables/InvoiceDueTable";
+import Footer from "../../Footer/Footer";
 function InvoicedueCard() {
     return (
         <>
@@ -16,6 +17,9 @@ function InvoicedueCard() {
                     </Container>
                 </Col>
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

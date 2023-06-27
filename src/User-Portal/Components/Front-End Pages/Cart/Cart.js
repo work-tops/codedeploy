@@ -4,6 +4,7 @@ import emptycart from '../../Projectimages/EmptyCart.avif'
 import { Link } from "react-router-dom";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import product_image from '../../Images/semiprecious.png'
+import Footer from "../../Footer/Footer";
 
 function Cart() {
     // Cancel Modal
@@ -152,9 +153,11 @@ function Cart() {
                             </div>
                         </div>
                     </Col>
-
                 </Container>
             </Row >
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

@@ -10,6 +10,7 @@ import { getSize } from '../../../TemplateAssets/helpers/utils';
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 import { Link } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
+import Footer from "../../Footer/Footer";
 
 function EditEstimate() {
 
@@ -617,6 +618,9 @@ function EditEstimate() {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

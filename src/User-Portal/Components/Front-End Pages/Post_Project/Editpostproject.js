@@ -18,6 +18,7 @@ import { getSize } from '../../../TemplateAssets/helpers/utils';
 import cloudUpload from '../../../TemplateAssets/assets/cloud-upload.svg';
 import CardDropdown from '../../../TemplateAssets/common/CardDropdown';
 import file from '../../Projectimages/BathroomFitting.jpg'
+import Footer from "../../Footer/Footer";
 
 function Editpostproject() {
 
@@ -811,6 +812,9 @@ function Editpostproject() {
                     </Container>
                 </Row>
             </Form >
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

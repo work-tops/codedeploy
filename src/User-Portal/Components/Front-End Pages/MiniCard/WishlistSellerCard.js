@@ -4,6 +4,7 @@ import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import profile from '../../Projectimages/Handyman.jpg'
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import Footer from "../../Footer/Footer";
 
 function WishListSellerCard() {
 
@@ -269,7 +270,7 @@ function WishListSellerCard() {
                                     </div>
                                 </div>
                             </div>
-                           
+
                         </div>
                         {/* Followers */}
 
@@ -318,6 +319,9 @@ function WishListSellerCard() {
                     </Col>
                 </Container>
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

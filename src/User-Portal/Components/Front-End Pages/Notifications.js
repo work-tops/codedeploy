@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import profile from '../Projectimages/Handyman.jpg'
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import profile_1 from '../Images/employee.png'
+import Footer from "../Footer/Footer";
 function Notifications() {
     return (
         <>
@@ -65,7 +66,9 @@ function Notifications() {
                     </Link>
                 </div>
             </div>
-
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

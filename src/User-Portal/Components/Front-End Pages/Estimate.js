@@ -4,7 +4,6 @@ function Estimate() {
 
     return (
         <>
-            
             <EstimateTable/>
         </>
     )

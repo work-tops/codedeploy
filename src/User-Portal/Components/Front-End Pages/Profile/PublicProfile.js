@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import granite from '../../Images/Granite.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from "../../Footer/Footer";
 
 
 function PublicProfile() {
@@ -1496,6 +1497,9 @@ function PublicProfile() {
                 {/* Message Me */}
                 {/*  */}
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

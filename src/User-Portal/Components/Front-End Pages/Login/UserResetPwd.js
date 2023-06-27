@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../Components/Projectimages/My Project white logo-01.png'
 import worktops from '../../Projectimages/Electric.jpg'
 import { Button, Col, Form, Row, Card, Container } from 'react-bootstrap';
+import Footer from "../../Footer/Footer";
 
 
 function UserResetPwd() {
@@ -58,6 +59,9 @@ function UserResetPwd() {
                     </Container>
                 </Col >
             </Row >
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

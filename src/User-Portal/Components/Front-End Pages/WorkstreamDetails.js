@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Link } from "react-router-dom";
 import file from '../Projectimages/BathroomFitting.jpg'
+import Footer from "../Footer/Footer";
 
 
 function WorkStreamDetails() {
@@ -254,6 +255,9 @@ function WorkStreamDetails() {
                     {/* Modal Content */}
                 </Container>
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }
