@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import Flex from '../Flex';
@@ -81,14 +81,14 @@ export const AdvanceTableFooter = ({
             size="sm"
             variant={canPreviousPage ? 'primary' : 'light'}
             onClick={() => previousPage()}
-            className={classNames({ disabled: !canPreviousPage })}
+            className={classnames({ disabled: !canPreviousPage })}
           >
             Previous
           </Button>
           <Button
             size="sm"
             variant={canNextPage ? 'primary' : 'light'}
-            className={classNames('px-4 ms-2', {
+            className={classnames('px-4 ms-2', {
               disabled: !canNextPage
             })}
             onClick={() => nextPage()}
