@@ -641,9 +641,9 @@ const PostProject = () => {
                     <div className='d-flex justify-content-start'>
                       <Button
                         onClick={handleShow1}
-
-                        className='d-block border-0 bg-success'
-                      >Post Project</Button>
+                        className='d-block border-0 bg-success'>
+                        Post Project
+                      </Button>
 
                       <Button onClick={() => setShowModal(true)} className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
 

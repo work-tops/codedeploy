@@ -182,7 +182,7 @@ function AdminHeader() {
                                                     <span>Peter</span>
                                                 </Dropdown.Item>
                                                 <Dropdown.Divider />
-                                                <Dropdown.Item>
+                                                <Dropdown.Item as={Link} to="/ailogin">
                                                     Sign Out
                                                 </Dropdown.Item>
                                             </div>

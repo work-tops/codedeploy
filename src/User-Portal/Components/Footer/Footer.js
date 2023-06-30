@@ -2,14 +2,11 @@ import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import logo from '../Projectimages/My Project Final logo-01.png'
 import { Link } from "react-router-dom";
-import { Icon } from "@iconify/react";
 
 function Footer() {
     return (
         <>
-
             <div>
-
                 <footer
                     className="text-center text-lg-start text-dark"
                     style={{ background: '#DBE7F1' }}
@@ -23,7 +20,6 @@ function Footer() {
                         <div className="me-5">
                             <span>Get connected with us on social networks:</span>
                         </div>
-
 
 
                         <div>
@@ -49,8 +45,6 @@ function Footer() {
 
                     </section>
 
-
-
                     {/* <section className=""> */}
                     <div className="container text-center text-md-start mt-5">
 
@@ -58,16 +52,18 @@ function Footer() {
 
                             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-                                <Link target="_blank" to="/">
+                                <Link to="/">
                                     <img src={logo} style={{ position: 'relative', bottom: '9px' }} width="135px" />
                                 </Link>
-                                <Link target="_blank" className="text-dark" to="/aboutus">
-                                    <p>
-                                        Here you can use rows and columns to organize your footer
-                                        content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit....
-                                    </p>
-                                </Link>
+
+                                <p className="text-justify">
+                                    MAI transforms your house into a home by taking care
+                                    of all your projects from simple to difficult ones,
+                                    including painting,furnishing,bathroom upscaling,kitchen
+                                    remodelling,stone worktop installations....<Link to="/aboutus">
+                                    Learn More</Link>
+                                </p>
+
                             </div>
 
 
@@ -79,15 +75,15 @@ function Footer() {
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: '60px', background: '#003F6B', height: '2px' }}
                                 />
-                                <Link target="_blank" className="text-dark" to="/termsofuse">
+                                <Link className="text-dark" to="/termsofuse">
                                     <p>
                                         <a className="text-dark">Terms & Conditions</a>
                                     </p>
                                 </Link>
-                                <Link target="_blank" className="text-dark" to="/privacypolicy">
-                                <p>
-                                    <a className="text-dark">Privacy Policy</a>
-                                </p>
+                                <Link className="text-dark" to="/privacypolicy">
+                                    <p>
+                                        <a className="text-dark">Privacy Policy</a>
+                                    </p>
                                 </Link>
                             </div>
 
@@ -100,22 +96,22 @@ function Footer() {
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: '60px', background: '#003F6B', height: '2px' }}
                                 />
-                                <Link target="_blank" to="/freelancer/true" className="text-dark">
+                                <Link to="/freelancer/true" className="text-dark">
                                     <p>
                                         <a className="text-dark">Trade Login</a>
                                     </p>
                                 </Link>
-                                <Link target="_blank" to="/contactus" className="text-dark">
+                                <Link to="/contactus" className="text-dark">
                                     <p>
                                         <a className="text-dark">Contact Us</a>
                                     </p>
                                 </Link>
-                                <Link target="_blank" to="/Career" className="text-dark">
+                                <Link to="/Career" className="text-dark">
                                     <p>
                                         <a className="text-dark">Career</a>
                                     </p>
                                 </Link>
-                                <Link target="_blank" to="/FAQ" className="text-dark">
+                                <Link to="/FAQ" className="text-dark">
                                     <p>
                                         <a className="text-dark">FAQ</a>
                                     </p>
@@ -136,8 +132,8 @@ function Footer() {
                                     style={{ width: '60px', background: '#003F6B', height: '2px' }}
                                 />
                                 <p><i className="fas fa-home me-2"></i>1 De La Warr Way, Cambridge, CB23 6DX</p>
-                                <p><i className="fas fa-envelope me-2"></i> info@work-tops.com</p>
-                                <p><i className="fas fa-phone me-2"></i> +44 0330 113 5868</p>
+                                <p className="text-lowercase"><i className="fas fa-envelope  me-2"></i>info@myproject.ai</p>
+                                <p><i className="fas fa-phone me-2"></i> +44 0330 000 5000</p>
 
                             </div>
 
@@ -145,8 +141,6 @@ function Footer() {
 
                     </div>
                     {/* </section> */}
-
-
 
                     <div
                         className="text-center p-3"

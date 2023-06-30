@@ -23,7 +23,7 @@ function ProductEnquiresCard() {
                     <NavbarStandard />
                 </Col>
                 <Container>
-                    <Row className="mt-5">
+                    <Row className="mt-4">
                         <Col lg={12}>
                             <Card className="mb-3" >
                                 <Card.Header className="bg-light d-flex justify-content-between">

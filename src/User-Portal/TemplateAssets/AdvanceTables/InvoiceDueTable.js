@@ -187,7 +187,7 @@ const InvoiceTableCard = () => {
 
                 </Modal.Header>
                 <Modal.Body>
-                    <div className="card mb-3">
+                    {/* <div className="card mb-3"> */}
                         <div className="card mb-3">
                             <div className="card-body">
                                 <div className="row justify-content-between align-items-center">
@@ -354,7 +354,7 @@ const InvoiceTableCard = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {/* </div> */}
                 </Modal.Body>
             </Modal>
             {/* Invoice Modal */}

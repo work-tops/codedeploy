@@ -12,9 +12,9 @@ function InvoiceFreelancerCard() {
                     <NavbarStandard />
                 </Col>
                 <Col lg={12}>
-                    <Container>
+                    <div className="ms-3 me-3 mb-3">
                         <InvoiceFreelancerDueTable />
-                    </Container>
+                    </div>
                 </Col>
             </Row>
             <Col lg={12}>

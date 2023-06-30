@@ -51,7 +51,7 @@ function FreelancerEditProfile() {
             <div className="mb-4">
                 <NavbarStandard />
             </div>
-            <Container>
+            <div className="ms-3 me-3 mb-3">
                 <div className="row ">
                     <div className="col-12 mt-5">
                         <div className="card mb-3 btn-reveal-trigger">
@@ -522,11 +522,11 @@ function FreelancerEditProfile() {
                                     </form>
                                 </div>
                             </div>
-                            <Button onClick={() => setShowModal5(true)}  className="btn w-100  btn-falcon-primary d-block">Back</Button>
+                            <Button onClick={() => setShowModal5(true)} className="btn w-100  btn-falcon-primary d-block">Back</Button>
                         </div>
                     </div>
                 </div>
-            </Container >
+            </div>
             {/*  */}
             {/*  */}
             <Modal show={showModal1} onHide={handleClose1}>

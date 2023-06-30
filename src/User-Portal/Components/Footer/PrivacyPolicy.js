@@ -10,295 +10,223 @@ function PrivacyPolicy() {
             </Row>
             <div className="card mt-7 ms-2 me-2 mb-3">
                 <div className="bg-holder d-none d-lg-block bg-card" ></div>
-                <div className="card-body position-relative">
+                <div className="card-header bg-light position-relative">
                     <div className="row">
                         <div className="col-lg-8">
                             <h3>Privacy policy</h3>
-                            <p className="mb-0">A privacy policy is a statement or legal document that discloses some or all of the ways a party gathers, uses, discloses, and manages a customer or client's data.</p>
                         </div>
                     </div>
+                </div>
+                <div className="card-body position-relative">
+                    <p className="mb-0">
+                        This privacy notice for MyProject.AI ("Company" "we," "us," or "our"), describes how and why we might collect, store, use, and/or share ("process") your information when you use our services ("Services").
+
+                        Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at
+                        <a href="#" className="text-lowercase ms-1">info@myproject.ai</a>
+                    </p>
                 </div>
             </div>
             <div className="row ms-2 me-2 g-0">
                 <div className="col-lg-8 pe-lg-2">
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="account">Account</h5>
+                            <h5 className="mb-0" id="WHAT_INFORMATION_DO_WE_COLLECT">WHAT INFORMATION DO WE COLLECT?</h5>
                         </div>
                         <div className="card-body">
-                            <h6 className="text-primary">Eligibility </h6>
-                            <p className="fs-0 mb-0 fw-semi-bold">In order to use the Service, you must:</p>
-                            <ol type="1">
-                                <li>be a business or a consumer able to enter into valid contracts;</li>
-                                <li>complete the signup process;</li>
-                                <li>agree to the Terms; and</li>
-                                <li>provide true, complete, and up to date contact information.</li>
-                            </ol>
+                            <h6 className="text-primary">Personal information you disclose to us</h6>
+
+                            <p className="mb-3">
+                                In Short: We collect personal information that you provide to us.
+                            </p>
+                            <p className="mb-3">
+                                We collect personal information that you voluntarily provide to us when you register on the Services, express an interest in obtaining information about us or our products and Services when you participate in activities on the Services, or otherwise when you contact us.
+                            </p>
+                            <p className="mb-3">
+                                Sensitive Information. We do not process sensitive information
+                            </p>
+                            <p className="mb-3">
+                                All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.
+                            </p>
+
                             <hr className="my-4"></hr>
-                            <h6 className="text-primary">Accepting these Terms</h6>
-                            <p className="mb-0 ps-3">These Terms apply from when you sign up for the Service. Clicking the ‘Get started’ or ‘Sign up with Google’ button on the Sign up page means that you’ve officially “signed” the Terms and a binding contract will come into existence on the basis of the Terms (“Agreement”). If you sign up for the Service on behalf of a company or other entity, you represent and warrant that you have the authority to accept these Terms on their behalf.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Closing your account</h6>
-                            <p className="mb-0 ps-3">You or we may terminate this Agreement at any time and for any reason by giving notice in writing (including email) to the other party. You need to clear the unpaid invoices (if any exists) before terminating this Agreement. Once terminated, we may permanently delete your account and all the data associated with it, including your Content from our Website.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Changes</h6>
-                            <p className="mb-0 ps-3">We may change any of the Terms by posting revised Terms of Use on our Website and sending an email to the last email address you gave us or a message to your account area of the Service (“Dashboard”). Unless you terminate your account within seven (7) days of that email, the new Terms will be effective immediately and apply to any continued or new use of the Service. We may change the Website, the Service, or any features of the Service at any time.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Account and password</h6>
-                            <p className="mb-0 ps-3">You’re responsible for keeping your account name and password confidential. You’re also responsible for any use of your account, whether or not you authorized the use. You must immediately notify us of any unauthorized use of your accounts. We’re not responsible for any losses due to stolen or hacked passwords. We don’t have access to your current password, and for security reasons, we may only reset your password.</p>
+                            <h6 className="text-primary">Information automatically collected</h6>
+                            <p className="mb-3">
+                                In Short: Some information - such as your Internet Protocol (IP) address and/or browser and device characteristics - is collected automatically when you visit our Services.
+                            </p>
+                            <p className="mb-3">
+                                We automatically collect certain information when you visit, use, or navigate the Services. This information does not reveal your specific identity (like your name or contact information) but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about how and when you use our Services, and other technical information. This information is primarily needed to maintain the security and operation of our Services, and for our internal analytics and reporting purposes.
+                            </p>
+                            <p className="mb-3">
+                                Like many businesses, we also collect information through cookies and similar technologies.
+                            </p>
                         </div>
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="subscriptions">Subscriptions and payment </h5>
+                            <h5 className="mb-0" id="HOW_DO_WE_PROCESS_YOUR_INFORMATION">HOW DO WE PROCESS YOUR INFORMATION?</h5>
                         </div>
                         <div className="card-body">
-                            <h6 className="text-primary">Free service</h6>
-                            <p className="mb-0 ps-3">We may make certain Services available to you free of charge, up to certain limits as described on the Website (“Free Services”). Usage of the Services in excess of those limits requires a payment. We may terminate your access to the Free Services at any time without prior notice and will have no liability in respect of such termination. Without limiting the scope of clause 15, Free Services are provided without any warranty.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Paid service</h6>
-                            <ol type="1">
-                                <li>If you use our Services and cross the limits of the Free Services we provide, the ‘Paid service’ section applies for you</li>
-                                <li>The “Invoice Payment” are the fees payable for your invoice, as specified to you when you use our Service beyond the free usage limit. You shall pay for the Invoice Payment to us for the term of your paid usage.</li>
-                                <li>You won’t be charged for using our services until your usage crosses the free usage limit. At the end of each month (considering you have used beyond our free usage limit), we will generate an invoice containing your usage information, and the due amount for that month.</li>
-                                <li>Invoice Fees are payable in the currency specified when you sign up for the Service and are exclusive of value added tax (or other applicable sales tax), which shall be added at the appropriate rate.</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Credit cards</h6>
-                            <p className="mb-0 ps-3">As long as you’re a paid user or have an outstanding balance with us, you will provide us with valid credit card information and authorize us to deduct the monthly invoice charges against that credit card (considering you have used beyond our free usage limit). We do not save card information that you provided, rather we use Stripe. You must replace the information for any credit card that expires with information for a different valid credit card. You can add multiple credit cards in our service, but only the card that you mark as Primary will be used to charge you for using paid services. </p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Refunds</h6>
-                            <p className="mb-0 ps-3">You won’t be entitled to a refund from us. As a postpaid service, it’s invalid. But if your invoice has inappropriate information due to any software bug or any other reason, we will refund the extra amount we charged within 14 working days after the discovery. You need to let us know about the extra amount charged from you.</p>
+                            <p className="mb-0 ">
+                                In Short: We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent
+                            </p>
                         </div>
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="termination">Termination</h5>
+                            <h5 className="mb-0" id="WHEN_AND_WITH_WHOM_DO_WE_SHARE_YOUR_PERSONAL_INFORMATION">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h5>
                         </div>
                         <div className="card-body">
-                            <p className="mb-0 ps-3">Either you or we may terminate this Agreement upon written notice to the other party of a material breach, or if the other party becomes the subject of a petition in insolvency proceedings, bankruptcy, receivership, liquidation or assignment for the benefit of its creditors.</p>
+                            <p className="mb-3">
+                                In Short: We may share information in specific situations described in this section and/or with the following third parties.
+                            </p>
+                            <p className="mb-3">
+                                We may need to share your personal information in the following situations:
+                            </p>
+                            <ul>
+                                <li className="mb-3">
+                                    Business Transfers. We may share or transfer your information in connection with, or during negotiations of any merger, sale of company assets, financing or acquisition of all or a portion of our business to another company.
+                                </li>
+                                <li className="mb-3">
+                                    Affiliates. We may share your information with our affiliates, in which case we will require those affiliates to honour this privacy notice. Affiliates include our parent company and any subsidiaries, joint venture partners, or other companies that we control or that are under common control with us.
+                                </li>
+                                <li className="mb-3">
+                                    Business Partners. We may share your information with our business partners to offer you certain products, services, or promotions.
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="rules">Rules and abuse</h5>
+                            <h5 className="mb-0" id="DO_WE_USE_COOKIES_AND_OTHER_TRACKING_TECHNOLOGIES">DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</h5>
                         </div>
                         <div className="card-body">
-                            <h6 className="text-primary">General rules</h6>
-                            <p className="fs-0 mb-0 fw-semi-bold">You promise to follow these rules:</p>
-                            <ol type="1">
-                                <li>You won’t send Spam! By "spam", we mean the definition provided by Spamhaus;</li>
-                                <li>You won’t use purchased, rented, or third-party lists of email addresses;</li>
-                                <li>You won’t violate our <a href="#!">Acceptable use policy</a>, which is part of this Agreement;</li>
-                                <li>If you violate any of these rules, then we may suspend or terminate your account;</li>
-                                <li>You will comply with all applicable data protection legislation, including the EU General Data Protection Regulation; and</li>
-                                <li>ou may only use our bandwidth for your use of the Service.</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <p className="fs-0 mb-0 fw-semi-bold">You shall:</p>
-                            <ol type="1">
-                                <li>provide us with all necessary cooperation in relation to the Service and all necessary access to such information as may be required by us in order to provide you with the Service;</li>
-                                <li>comply with all applicable laws and regulations with respect to your Content and activities under these Terms;</li>
-                                <li>obtain and shall maintain all necessary licenses, consents, and permissions necessary for us, our contractors and agents to perform our obligations under these Terms, including without limitation the Service;</li>
-                                <li>ensure that your Amazon Web Services (“AWS”) account complies with the requirements specified by us on our website from time to time; and</li>
-                                <li>be solely responsible for maintaining your AWS account necessary for the provision of the Service.</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Reporting abuse</h6>
-                            <p className="mb-0 ps-3"> If you think anyone is violating any of these Terms, please <a href="mailto:support@themewagon.com">notify us</a> immediately. If you received spam you think came from a falcon user, we want to <a href="mailto:support@themewagon.com">hear about it</a>. If you think anyone has posted material that violates any copyrights, then you may<a href="mailto:support@themewagon.com"> notify us</a>.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">SES and third-party providers</h6>
-                            <ol type="1">
-                                <li>As a condition of using the Service, you shall enable us to access your AWS account. Subject to the terms of these Terms, you acknowledge and agree that access to AWS, the AWS Simple Email Service (SES) and the AWS Simple Notification Service (SNS) is not provided to you under these Terms, and is subject to a separate agreement between you and Amazon Web Services.</li>
-                                <li>falcon facilitates integration with a number of third party services which you can use in relation to your account or your Contents (“Third Party Service”), although we make no warranty as to any ongoing support for any third party service. We make no representation or commitment and shall have no liability or obligation whatsoever in relation to the content or use of, or correspondence with, any Third Party Service. Any contract entered into and any transaction completed by means of your use of the Service with any Third Party Service is between you and the relevant third party, and not us. We recommend that you refer to the third party’s website terms and conditions and privacy policy prior to using the relevant Third Party Service.</li>
-                                <li>You acknowledge that the AWS or an operator of a Third Party Service may render ineffective or impair the sending, receipt of viewing of any Content (for example, by breaking links in the Content or removing images from the Content). For the avoidance of doubt, you acknowledge that we shall have no liability to you in respect of any such action. </li>
-                                <li>If at any time you cease to have a current SES account in good standing, you will be unable to use the Service. Your obligation to pay for any unpaid invoice fees will remain unaffected.</li>
-                            </ol>
+                            <p className="mb-3">In Short: We may use cookies and other tracking technologies to collect and store your information.</p>
+                            <p className="mb-3">We may use cookies and similar tracking technologies to access or store information. Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice.</p>
                         </div>
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="liability">Liability</h5>
+                            <h5 className="mb-0" id="HOW_DO_WE_HANDLE_YOUR_SOCIAL_LOGINS">HOW DO WE HANDLE YOUR SOCIAL LOGINS?</h5>
                         </div>
                         <div className="card-body">
-                            <h6 className="text-primary">Indemnity</h6>
-                            <p className="mb-0 ps-3">You shall defend, indemnify and hold us harmless against claims, actions, proceedings, losses, damages, expenses and costs (including without limitation court costs and reasonable legal fees) arising out of or in connection with your use of the Service (or us taking any action in relation to the Service at your direction), including any claim or action from a recipient of any Content sent by means of the Service.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Our responsibility for loss or damage if you are a business</h6>
-                            <p className="fs-0 mb-0 fw-semi-bold">Our responsibility for loss or damage if you are a business</p>
-                            <ol type="1">
-                                <li>arising under or in connection with these Terms;</li>
-                                <li>in respect of any use made by you of the Service; and</li>
-                                <li>in respect of any representation, statement or tortious act or omission (including negligence) arising under or in connection with these Terms.</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <p className="fs-0 mb-0 fw-semi-bold">Except as expressly and specifically provided in these Terms:</p>
-                            <ol type="1">
-                                <li>you assume sole responsibility for results obtained from your use of the Service, and for conclusions drawn from such use. We shall have no liability for any damage caused by errors or omissions in any information, instructions or scripts provided to us by you in connection with the Service, or any actions taken by us at your direction;</li>
-                                <li>all warranties, representations, conditions and all other terms of any kind whatsoever implied by statute or common law are, to the fullest extent permitted by applicable law, excluded from these Terms; and</li>
-                                <li>the Service is provided to you on an “as is” basis.</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <p className="fs-0 mb-0 fw-semi-bold">Nothing in these Terms excludes our liability:</p>
-                            <ol type="1">
-                                <li>for death or personal injury caused by our negligence; or</li>
-                                <li>for fraud or fraudulent misrepresentation.</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <p className="fs-0 mb-0 fw-semi-bold">Subject to section 15.3 above: We shall not be liable whether in tort (including for negligence or breach of statutory duty), contract, misrepresentation, restitution or otherwise for any:</p>
-                            <ol type="1">
-                                <li>loss of profits,</li>
-                                <li>loss of business,</li>
-                                <li>depletion of goodwill and/or similar losses,</li>
-                                <li>loss or corruption of data or information,</li>
-                                <li>pure economic loss, or</li>
-                                <li>special, indirect or consequential loss, costs, damages, charges or expenses however arising under these Terms;</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <p className="fs-0 mb-0 fw-semi-bold">Our responsibility for loss or damage if you are a consumer</p>
-                            <ol type="1">
-                                <li>We are responsible to you for foreseeable loss and damage caused by us. If we fail to comply with these terms, we are responsible for loss or damage you suffer that is a foreseeable result of our breaking this contract or our failing to use reasonable care and skill, but we are not responsible for any loss or damage that is not foreseeable. Loss or damage is foreseeable if either it is obvious that it will happen or if, at the time the contract was made, both we and you knew it might happen, for example, if you discussed it with us during the sales process.</li>
-                                <li>We do not exclude or limit in any way our liability to you where it would be unlawful to do so. This includes liability for death or personal injury caused by our negligence or the negligence of our employees, agents or subcontractors; for fraud or fraudulent misrepresentation; for breach of your legal consumer rights in relation to the Service.</li>
-                                <li>We are not liable for business losses. If you are a consumer we only supply our services to you for domestic and private use. If you use our service for any commercial, business or resale purpose our liability to you will be limited as set out in Clause 15.</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <p className="fs-0 mb-0 fw-semi-bold">Force majeur</p>
-                            <p className="mb-0 ps-3">We won’t be held liable for any delays or failure in performance of any part of the Service, from any cause beyond our control. This includes, but is not limited to, changes to law or regulations, embargoes, fires, earthquakes, floods, strikes, power blackouts, unusually severe weather conditions, and acts of hackers or third-party internet service providers.</p>
-                            <hr className="my-4"></hr>
-                            <p className="fs-0 mb-0 fw-semi-bold">Data processing term</p>
-                            <p className="mb-0 ps-3"> To the extent that you are a business and we process personal data on your behalf in providing the Services, the <a href="#!">Data processing terms</a> shall apply and are incorporated into these Terms.</p>
+                            <p className="mb-3">
+                                In Short: If you choose to register or log in to our Services using a social media account, we may have access to certain information about you.
+                            </p>
+                            <p className="mb-3">
+                                Our Services offer you the ability to register and log in using your third-party social media account details (like your Facebook or Twitter logins) Where you choose to do this, we will receive certain profile information about you from your social media provider. The profile information we receive may vary depending on the social media provider concerned, but will often include your name, email address, friends list, and profile picture, as well as other information you choose to make public on such a social media platform.
+                            </p>
+                            <p className="mb-3">
+                                We will use the information we receive only for the purposes that are described in this privacy notice or that are otherwise made clear to you on the relevant Services. Please note that we do not control, and are not responsible for, other uses of your personal information by your third-party social media provider. We recommend that you review their privacy notice to understand how they collect, use, and share your personal information, and how you can set your privacy preferences on their sites and apps.
+                            </p>
+
                         </div>
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="rights">Rights</h5>
+                            <h5 className="mb-0" id="IS_YOUR_INFORMATION_TRANSFERRED_INTERNATIONALLY">IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</h5>
                         </div>
                         <div className="card-body">
-                            <h6 className="text-primary">Proprietary rights owned by us</h6>
-                            <p className="mb-0 ps-3">Subject to the limited rights expressly granted in these Terms, we reserve all our rights in and to the Services, including all of our related intellectual property rights (including patents, trademarks, trade secrets, and copyrights). No rights are granted to you under these Terms other than as expressly set forth in these Terms. You will respect our proprietary rights. “falcon” and the “falcon” logo are trademarks belonging to ThemeWagon, Inc. You are not authorized by us to use our trademarks or brand assets without prior permission.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Proprietary rights owned by you</h6>
-                            <p className="mb-0 ps-3">ou represent and warrant that you either own or have permission to use all of your Content. You retain ownership of your Content. By using the Service you grant us and our agents and subcontractors a license to use your Content in order for us to provide, and ensure proper operation of the Service. You acknowledge and agree that we will have the right to use your Content in an anonymized way (which does not identify you or the recipient) for the purposes of increasing our spam identification techniques.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Privacy Policy</h6>
-                            <p className="mb-0 ps-3">We may use and disclose your information according to our Privacy Policy. Our Privacy Policy is treated as part of these Terms</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Waiver</h6>
-                            <p className="mb-0 ps-3">Even if we delay in enforcing these terms, we can still enforce them later. If we do not insist immediately that you do anything you are required to do under these terms, or if we delay in taking steps against you in respect of your breaking them, that will not mean that you do not have to do those things and it will not prevent us from taking steps against you at a later date.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Survival</h6>
-                            <p className="mb-0 ps-3">Any of these terms that expressly or by implication is intended to continue or come into force on or after termination of this Agreement shall continue in full force and effect. Without limitation, clauses 14 Indemnity, 15 Our responsibility for loss or damage Suffered by you if you are a business, 16 Our responsibility for loss or damage suffered by you if you are a consumer, 18 Data processing terms, 28 Third party rights,29 If you are a business – governing law and jurisdiction, and 30 Which laws apply to this contract and where you may bring legal proceedings if you are a consumer shall continue in full force and effect notwithstanding the termination of this Agreement.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Severance</h6>
-                            <ol type="1">
-                                <li>If any provision (or part of a provision) of these Terms is found by any court or administrative body of competent jurisdiction to be invalid, unenforceable or illegal, the other provisions shall remain in force.</li>
-                                <li>If any invalid, unenforceable or illegal provision would be valid, enforceable or legal if some part of it were deleted, the provision shall apply with whatever modification is necessary to give effect to the commercial intention of the parties.</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Entire agreement</h6>
-                            <ol type="1">
-                                <li>These Terms and any documents referred to in them constitute the whole agreement between the parties and supersede any previous arrangement, understanding or agreement between them relating to the subject matter they cover</li>
-                                <li>Each of the parties acknowledges and agrees that in entering into these Terms it does not rely on any undertaking, promise, assurance, statement, representation, warranty or understanding (whether in writing or not) of any person (whether party to these Terms or not) relating to the subject matter of these Terms, other than as expressly set out in these Terms.</li>
-                            </ol>
-                            <h6 className="text-primary">Assignment</h6>
-                            <ol type="1">
-                                <li>You shall not, without our prior written consent of us, assign, transfer, charge, sub-contract or deal in any other manner with all or any of our rights or obligations under these Terms.</li>
-                                <li>We may at any time assign, transfer, charge, sub-contract or deal in any other manner with all or any of our rights or obligations under these Terms.</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">No partnership or agency</h6>
-                            <p className="mb-0 ps-3">Nothing in these Terms is intended to or shall operate to create a partnership between the parties, or authorize either party to act as agent for the other, and neither party shall have the authority to act in the name or on behalf of or otherwise to bind the other in any way (including, but not limited to, the making of any representation or warranty, the assumption of any obligation or liability and the exercise of any right or power).</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Third party rights</h6>
-                            <p className="mb-0 ps-3">These Terms do not confer any rights on any person or party other than you and us.</p>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">If you are a business – Governing Law and Jurisdiction</h6>
-                            <ol type="1">
-                                <li>These Terms and any disputes or claims arising out of or in connection with them or their subject matter or formation (including non-contractual disputes or claims) are governed by, and construed in accordance with, the laws of the USA.</li>
-                                <li>The parties irrevocably agree that the courts of the USA have exclusive jurisdiction to settle any dispute or claim that arises out of or in connection with these Terms or its subject matter or formation (including non-contractual disputes or claims).</li>
-                            </ol>
-                            <hr className="my-4"></hr>
-                            <h6 className="text-primary">Which laws apply to this contract and where you may bring legal proceedings if you are a consumer?</h6>
-                            <p className="mb-0 ps-3">These Terms are governed by USA law and you can bring legal proceedings in respect of the products in the USA courts. As a consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident. Nothing in these terms and conditions, including this clause 30, affects your rights as a consumer to rely on such mandatory provisions of local law.</p>
-                            <p className="pt-2">Thank you for taking the time to read these Terms.</p>
-                            <p>Last update: 04 Nov 2020</p>
+                            <p className="mb-3">
+                                In Short: We may transfer, store, and process your information in countries other than your own.
+                            </p>
+                            <p className="mb-3">
+                                Our servers are located in. If you are accessing our Services from outside, please be aware that your information may be transferred to, stored, and processed by us in our facilities and by those third parties with whom we may share your personal information in and other countries.
+                            </p>
                         </div>
                     </div>
-                    <div className="card mb-3 mb-lg-0">
+                    <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="instructions"> Instructions</h5>
+                            <h5 className="mb-0" id="HOW_LONG_DO_WE_KEEP_YOUR_INFORMATION">HOW LONG DO WE KEEP YOUR INFORMATION?</h5>
                         </div>
                         <div className="card-body">
-                            <h6 className="mb-3 text-primary">Instructions for Processing: </h6>
-                            <table className="table table-striped table-bordered">
-                                <tbody>
-                                    <tr className="bg-300">
-                                        <td><strong>Description</strong></td>
-                                        <td><strong>Details</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Subject matter of the processing </td>
-                                        <td>Providing the Customer with bulk email sending via the Falcon platform.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Duration of the processing </td>
-                                        <td>For the duration of the Agreement</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nature and purposes of the processing</td>
-                                        <td>Sending campaigns through the Falcon platform storing email addresses provided through one of our forms or integrations. Storing data on recipient behavior, whether they click, open, unsubscribe, bounce when a campaign is sent. Actioning on the Customer’s behalf any ‘unsubscribe’ requests from recipients of messages sent using the Service.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Type of Personal Data </td>
-                                        <td>Email address, Customer IP Address, First Name, Last Name, Timezone and any other personal data provided through a custom field.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Categories of Data Subject</td>
-                                        <td>Recipients of the emails as specified when creating a campaign</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Plan for return and destruction of the data once the Customer wants to destroy them UNLESS there is a requirement under EU or applicable EU Member State law to preserve that type of data</td>
-                                        <td>Campaign data (Sent, Delivered, Fails, Bounces, Opens, Clicks, Revenues, Sells, Complaints, Unsubscribes), Customer data (email addresses, first name, last name, timezone, and any associated custom fields) will be held forever until the request to terminate The customer data is received.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p>IN WITNESS WHEREOF, this Addendum is entered into and becomes a binding part of the Agreement with effect from the last date of execution below.</p>
-                            <div className="row">
-                                <div className="col-6">
-                                    <p><strong>Falcon</strong><br></br></p>
-                                    <p><strong>Signature _____________________________</strong><br></br></p>
-                                    <p><strong>Name: John Doe</strong><br></br></p>
-                                    <p><strong>Title: CEO</strong><br></br></p>
-                                    <p><strong>Date Signed: </strong></p>
-                                </div>
-                                <div className="col-6">
-                                    <p><strong>Customer: </strong><br></br></p>
-                                    <p><strong>Signature _____________________________</strong><br></br></p>
-                                    <p><strong>Name: </strong><br></br></p>
-                                    <p><strong>Title: </strong><br></br></p>
-                                    <p><strong>Date Signed: </strong></p>
-                                </div>
-                            </div>
-                            <p>Last update: 04 Nov 2020</p>
+                            <p className="mb-3">
+                                In Short: We keep your information for as long as necessary to fulfil the purposes outlined in this privacy notice unless otherwise required by law.
+                            </p>
+                            <p className="mb-3">
+                                We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements).
+                            </p>
+                            <p className="mb-3">
+                                When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="card mb-3">
+                        <div className="card-header bg-light">
+                            <h5 className="mb-0" id="DO_WE_COLLECT_INFORMATION_FROM_MINORS">DO WE COLLECT INFORMATION FROM MINORS?</h5>
+                        </div>
+                        <div className="card-body">
+                            <p className="mb-3">
+                                In Short: We do not knowingly collect data from or market to children under 18 years of age.
+
+                            </p>
+                            <p className="mb-3">
+                                We do not knowingly solicit data from or market to children under 18 years of age. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at <a href="#" className="text-lowercase">info@myproject.ai</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="card mb-3">
+                        <div className="card-header bg-light">
+                            <h5 className="mb-0" id="WHAT_ARE_YOUR_PRIVACY_RIGHTS">WHAT ARE YOUR PRIVACY RIGHTS?</h5>
+                        </div>
+                        <div className="card-body">
+                            <p className="mb-3">
+                                In Short: You may review, change, or terminate your account at any time.
+                            </p>
+                            <p className="mb-3">
+                                If you are located in the EEA or UK and you believe we are unlawfully processing your personal information, you also have the right to complain to your Member State data protection authority or UK data protection authority.
+                                Withdrawing your consent: If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided at bottom.
+                            </p>
+                            <p className="mb-3">
+                                However, please note that this will not affect the lawfulness of the processing before its withdrawal nor, when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent
+                            </p>
+                            <h6 className="text-primary mb-3">Account Information</h6>
+                            <p className="mb-3">
+                                If you would at any time like to review or change the information in your account or terminate your account, you can
+                            </p>
+                            <p className="mb-3">
+                                Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms and/or comply with applicable legal requirements.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="card mb-3">
+                        <div className="card-header bg-light">
+                            <h5 className="mb-0" id="DO_WE_MAKE_UPDATES_TO_THIS_NOTICE">DO WE MAKE UPDATES TO THIS NOTICE?</h5>
+                        </div>
+                        <div className="card-body">
+                            <p className="mb-3">
+                                In Short: Yes, we will update this notice as necessary to stay compliant with relevant laws
+                            </p>
+                            <p className="mb-3">
+                                We may update this privacy notice from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible. It is your responsibility to review this privacy notice frequently to be informed of how we are protecting your information.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 ps-lg-2">
                     <div className="sticky-sidebar">
-                        <div className="card sticky-top">
+                        <div className="card  sticky-top">
                             <div className="card-header border-bottom">
-                                <h6 className="mb-0 fs-0">On this page</h6>
+                                <h6 className="mb-0 fs-0">TABLE OF CONTENTS</h6>
                             </div>
-                            <div className="card-body">
+                            <div className="card-body mb-3">
                                 <div className="terms-sidebar nav flex-column fs--1" id="terms-sidebar">
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#account">Account</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#subscriptions">Subscriptions</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#termination">Termination</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#rules">Rules and abuse</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#liability">Liability</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#rights">Rights</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#instructions">Instructions</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#WHAT_INFORMATION_DO_WE_COLLECT">WHAT INFORMATION DO WE COLLECT?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#HOW_DO_WE_PROCESS_YOUR_INFORMATION">HOW DO WE PROCESS YOUR INFORMATION?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#WHEN_AND_WITH_WHOM_DO_WE_SHARE_YOUR_PERSONAL_INFORMATION">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#DO_WE_USE_COOKIES_AND_OTHER_TRACKING_TECHNOLOGIES">DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#HOW_DO_WE_HANDLE_YOUR_SOCIAL_LOGINS">HOW DO WE HANDLE YOUR SOCIAL LOGINS?
+                                    </a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#IS_YOUR_INFORMATION_TRANSFERRED_INTERNATIONALLY">IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#HOW_LONG_DO_WE_KEEP_YOUR_INFORMATION">HOW LONG DO WE KEEP YOUR INFORMATION?
+                                    </a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#DO_WE_COLLECT_INFORMATION_FROM_MINORS">DO WE COLLECT INFORMATION FROM MINORS?
+                                    </a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#WHAT_ARE_YOUR_PRIVACY_RIGHTS">WHAT ARE YOUR PRIVACY RIGHTS?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#DO_WE_MAKE_UPDATES_TO_THIS_NOTICE">DO WE MAKE UPDATES TO THIS NOTICE?
+                                    </a></div>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>

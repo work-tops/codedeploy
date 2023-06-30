@@ -589,6 +589,28 @@ function ServiceList(layout) {
                                 </Col>
 
                             </Row>
+                                    {/* pagination */}
+                                    <div className="card mb-3">
+                                        <div className="card-body">
+                                            <div className="row g-3 flex-center justify-content-md-between">
+                                                <div className="col-auto">
+                                                    <form className="row gx-2">
+                                                        <div className="col-auto"><small>Show:</small></div>
+                                                        <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Show courses">
+                                                            <option selected="selected" value="9">9</option>
+                                                            <option value="20">20</option>
+                                                            <option value="50">50</option>
+                                                        </select></div>
+                                                    </form>
+                                                </div>
+                                                <div className="col-auto"> <button className="btn btn-falcon-default btn-sm me-2" type="button" disabled="disabled" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Prev" data-bs-original-title="Prev">
+                                                    <span className="fas fa-chevron-left"></span></button><a className="btn btn-sm btn-falcon-default text-primary me-2" href="#!">1</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">2</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">3</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">
+                                                        <span className="fas fa-ellipsis-h"></span></a><a className="btn btn-sm btn-falcon-default me-2" href="#!">303</a><button className="btn btn-falcon-default btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Next" data-bs-original-title="Next">
+                                                        <span className="fas fa-chevron-right">  </span></button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* pagination */}
                         </Container>
                     </Row>
                 </Container>

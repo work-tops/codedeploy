@@ -28,9 +28,6 @@ function AllServices() {
                     </div>
                 </Card.Body>
             </Card>
-            <Col lg={12}>
-                <Footer />
-            </Col>
         </>
     )
 }

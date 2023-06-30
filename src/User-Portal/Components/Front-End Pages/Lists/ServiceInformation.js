@@ -321,7 +321,7 @@ function ServiceInformation() {
                                     <Form.Label>Filter By:</Form.Label>
                                     <div title="Excellent">
                                         <Form.Check type="checkbox" className="mb-0">
-                                             <Form.Check.Input
+                                            <Form.Check.Input
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
@@ -336,7 +336,7 @@ function ServiceInformation() {
                                     </div>
                                     <div title="Awesome">
                                         <Form.Check type="checkbox" className="mb-0">
-                                             <Form.Check.Input
+                                            <Form.Check.Input
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
@@ -350,7 +350,7 @@ function ServiceInformation() {
                                     </div>
                                     <div title="Average">
                                         <Form.Check type="checkbox" className="mb-0">
-                                             <Form.Check.Input
+                                            <Form.Check.Input
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
@@ -363,7 +363,7 @@ function ServiceInformation() {
                                     </div>
                                     <div title="Good">
                                         <Form.Check type="checkbox" className="mb-0">
-                                             <Form.Check.Input
+                                            <Form.Check.Input
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
@@ -376,7 +376,7 @@ function ServiceInformation() {
                                     </div>
                                     <div title="Poor">
                                         <Form.Check type="checkbox" className="mb-0">
-                                             <Form.Check.Input
+                                            <Form.Check.Input
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
@@ -479,7 +479,9 @@ function ServiceInformation() {
                                 <Row className='g-3 align-items-center text-center text-md-start py-3'>
                                     <Col md="auto">
                                         <Link to="#!">
-                                            <img width="80px" height="75px" className=" rounded-circle" src={worktops} />
+                                            <div class="avatar avatar-2xl">
+                                                <div class="avatar-name rounded-circle"><span>EW</span></div>
+                                            </div>
                                         </Link>
                                     </Col>
                                     <Col>
@@ -487,7 +489,7 @@ function ServiceInformation() {
                                             <Col xs={12}>
                                                 <h6 className="fs-0">
                                                     <Link to="#!" className="me-2">
-                                                        Lee
+                                                        Emma Watson
                                                     </Link>
                                                     <span>
                                                         <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
@@ -513,7 +515,7 @@ function ServiceInformation() {
                                                       fs--2 text-600"
                                                 >
                                                     <h6 className="fs--2 text-600 mb-0">3 Days Ago</h6>
-                                                    <p className="mb-0 ms-1">
+                                                    <p style={{ fontSize: "14px" }} className="fw-semibold mb-0 ms-1">
                                                         230 people found this helpful
                                                     </p>
                                                 </div>
@@ -544,6 +546,26 @@ function ServiceInformation() {
                                         </Button>
                                     </Col>
                                 </Row>
+                                <Card className="mb-3" style={{ background: '#f3f3f3' }}>
+                                    <Card.Header className="d-flex justify-content-between">
+                                        <h6><Icon icon="mdi:reply-outline" width="24" height="24" hFlip={true} vFlip={true} />Reply from MAI</h6>
+                                        <span className="fs--1 fw-semibold">01/01/2023</span>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        <p className="text-justify fs--1">
+                                            Thank you for this awesome review, Michael.
+                                            We're so pleased to know that you love your new Urban Concrete Quartz worktops and have had a truly positive experience from start to finish with MAI.com.
+
+                                            Thank you for choosing us.
+                                            We would love to serve your friends and family as well.
+
+
+                                            Thanks and regards,
+                                            Team MAI
+
+                                        </p>
+                                    </Card.Body>
+                                </Card>
                             </Card.Body>
                             <Divider />
                             {/*  */}
@@ -552,7 +574,9 @@ function ServiceInformation() {
                                 <Row className='g-3 align-items-center text-center text-md-start py-3'>
                                     <Col md="auto">
                                         <Link to="#!">
-                                            <img width="80px" height="75px" className=" rounded-circle" src={worktops} />
+                                            <div class="avatar avatar-2xl">
+                                                <div class="avatar-name rounded-circle"><span>L</span></div>
+                                            </div>
                                         </Link>
                                     </Col>
                                     <Col>
@@ -586,7 +610,7 @@ function ServiceInformation() {
                                                       fs--2 text-600"
                                                 >
                                                     <h6 className="fs--2 text-600 mb-0">3 Days Ago</h6>
-                                                    <p className="mb-0 ms-1">
+                                                    <p style={{ fontSize: "14px" }} className="fw-semibold mb-0 ms-1">
                                                         230 people found this helpful
                                                     </p>
                                                 </div>
@@ -617,7 +641,25 @@ function ServiceInformation() {
                                         </Button>
                                     </Col>
                                 </Row>
+                                <Card className="mb-3" style={{ background: '#f3f3f3' }}>
+                                    <Card.Header className="d-flex justify-content-between">
+                                        <h6><Icon icon="mdi:reply-outline" width="24" height="24" hFlip={true} vFlip={true} />Reply from MAI</h6>
+                                        <span className="fs--1 fw-semibold">01/01/2023</span>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        <p className="text-justify fs--1">
+                                            Thank you for this awesome review, Michael.
+                                            We're so pleased to know that you love your new Urban Concrete Quartz worktops and have had a truly positive experience from start to finish with MAI.com.
 
+                                            Thank you for choosing us.
+                                            We would love to serve your friends and family as well.
+
+                                            Thanks and regards,
+                                            Team MAI
+
+                                        </p>
+                                    </Card.Body>
+                                </Card>
                             </Card.Body>
                             <Card.Footer className="bg-light text-end py-2">
                                 <p

@@ -2,6 +2,9 @@ import React from "react";
 import { Card, Button, Col, Row, Container } from "react-bootstrap";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
+
+
 function FAQ() {
     return (
         <>
@@ -10,27 +13,149 @@ function FAQ() {
                     <NavbarStandard />
                 </Col>
                 <Container>
-                    <Card className="mt-4">
+                    <div className="card mt-4 mb-3">
+                        <div className="card-body position-relative">
+                            <div className="row">
+                                <div className="col-lg-8">
+                                    <h3>FAQ </h3>
+                                    <h5>Frequently Asked Questions</h5>
+                                </div>
+                                <div className="col-lg-4">
+                                    <h6 className="mt-lg-3 mt-sm-0 mt-md-0">Search Your Questions Here</h6>
+                                    <input type="search" placeholder="Search" className="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card mb-3">
+                        <div className="card-body">
+                            <div className="accordion border rounded overflow-hidden" id="accordionFaq">
+                                <div className="card shadow-none rounded-bottom-0 border-bottom">
+                                    <div className="accordion-item border-0">
+                                        <div className="card-header p-0" id="faqAccordionHeading1"><button className="accordion-button btn btn-link text-decoration-none d-block w-100 py-2 px-3 border-0 text-start rounded-0 shadow-none collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFaqAccordion1" aria-expanded="false" aria-controls="collapseFaqAccordion1">
+                                            <span className="fas fa-caret-right accordion-icon me-3" data-fa-transform="shrink-2"></span> <span className="fw-medium font-sans-serif text-900">Do I need to pay to use MAI services?</span></button></div>
+                                        <div className="accordion-collapse collapse" id="collapseFaqAccordion1" aria-labelledby="faqAccordionHeading1" data-parent="#accordionFaq" >
+                                            <div className="accordion-body p-0">
+                                                <div className="card-body pt-2">
+                                                    <p className="ps-3 mb-0">
+                                                        Zero fees. You are not required to pay any kind of fee to MAi to buy the products and services. We do not have any hidden charges.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card shadow-none rounded-0 border-bottom">
+                                    <div className="accordion-item border-0">
+                                        <div className="card-header p-0" id="faqAccordionHeading2"><button className="accordion-button btn btn-link text-decoration-none d-block w-100 py-2 px-3 collapsed border-0 text-start rounded-0 shadow-none" data-bs-toggle="collapse" data-bs-target="#collapseFaqAccordion2" aria-expanded="false" aria-controls="collapseFaqAccordion2">
+                                            <span className="fas fa-caret-right accordion-icon me-3" data-fa-transform="shrink-2"></span> <span className="fw-medium font-sans-serif text-900">Can I find a service provider from my area?</span></button></div>
+                                        <div className="accordion-collapse collapse" id="collapseFaqAccordion2" aria-labelledby="faqAccordionHeading2" data-parent="#accordionFaq">
+                                            <div className="accordion-body p-0">
+                                                <div className="card-body pt-2">
+                                                    <p className="ps-3 mb-0">
+                                                        Absolutely. We have various traders from all over the nation. All you need to do is enter your postcode when searching for services. Our AI will show up a list of traders who work in your area.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card shadow-none rounded-0 border-bottom">
+                                    <div className="accordion-item border-0">
+                                        <div className="card-header p-0" id="faqAccordionHeading3"><button className="accordion-button btn btn-link text-decoration-none d-block w-100 py-2 px-3 collapsed border-0 text-start rounded-0 shadow-none" data-bs-toggle="collapse" data-bs-target="#collapseFaqAccordion3" aria-expanded="false" aria-controls="collapseFaqAccordion3">
+                                            <span className="fas fa-caret-right accordion-icon me-3" data-fa-transform="shrink-2"></span> <span className="fw-medium font-sans-serif text-900">What kind of services can I search for in MAI?</span></button></div>
+                                        <div className="accordion-collapse collapse" id="collapseFaqAccordion3" aria-labelledby="faqAccordionHeading3" data-parent="#accordionFaq">
+                                            <div className="accordion-body p-0">
+                                                <div className="card-body pt-2">
+                                                    <p className="ps-3 mb-0">
+                                                        At MAI, you can look for all kinds of property building and renovation related services. We have a range of services, right from painting, gardening, vanity and worktop installation, kitchen upgrading to commercial building services.
+                                                        You can request quotes from multiple vendors that interest you.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card shadow-none rounded-0 border-bottom">
+                                    <div className="accordion-item border-0">
+                                        <div className="card-header p-0" id="faqAccordionHeading4"><button className="accordion-button btn btn-link text-decoration-none d-block w-100 py-2 px-3 border-0 text-start rounded-0 shadow-none collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFaqAccordion4" aria-expanded="false" aria-controls="collapseFaqAccordion4">
+                                            <span className="fas fa-caret-right accordion-icon me-3" data-fa-transform="shrink-2"></span> <span className="fw-medium font-sans-serif text-900">Can I suggest traders that I know ?</span></button></div>
+                                        <div className="accordion-collapse collapse" id="collapseFaqAccordion4" aria-labelledby="faqAccordionHeading4" data-parent="#accordionFaq">
+                                            <div className="accordion-body p-0">
+                                                <div className="card-body pt-2">
+                                                    <p className="ps-3 mb-0">
+                                                        We are always open to recommendations and suggestions. As we aim to make our services feasible for the entire nation, you are welcome to recommend those trades that you have used. We will then contact the trade or service provider and bring them onboard after following up our verification process.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card shadow-none rounded-0 border-bottom">
+                                    <div className="accordion-item border-0">
+                                        <div className="card-header p-0" id="faqAccordionHeading5"><button className="accordion-button btn btn-link text-decoration-none d-block w-100 py-2 px-3 border-0 text-start rounded-0 shadow-none collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFaqAccordion5" aria-expanded="false" aria-controls="collapseFaqAccordion5">
+                                            <span className="fas fa-caret-right accordion-icon me-3" data-fa-transform="shrink-2"></span> <span className="fw-medium font-sans-serif text-900">How does the payment work at MAI?</span></button></div>
+                                        <div className="accordion-collapse collapse" id="collapseFaqAccordion5" aria-labelledby="faqAccordionHeading5" data-parent="#accordionFaq">
+                                            <div className="accordion-body p-0">
+                                                <div className="card-body pt-2">
+                                                    <p className="ps-3 mb-0">
+                                                        Once the project is uploaded by the owner, they receive various proposals. Once they accept their desired proposal, the payment will be required to be made that will be held by MAI and related upon project completion.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card shadow-none rounded-0 border-bottom">
+                                    <div className="accordion-item border-0">
+                                        <div className="card-header p-0" id="faqAccordionHeading6"><button className="accordion-button btn btn-link text-decoration-none d-block w-100 py-2 px-3 border-0 text-start rounded-0 shadow-none collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFaqAccordion6" aria-expanded="false" aria-controls="collapseFaqAccordion6">
+                                            <span className="fas fa-caret-right accordion-icon me-3" data-fa-transform="shrink-2"></span> <span className="fw-medium font-sans-serif text-900">What is a two-way review at MAI?</span></button></div>
+                                        <div className="accordion-collapse collapse" id="collapseFaqAccordion6" aria-labelledby="faqAccordionHeading6" data-parent="#accordionFaq">
+                                            <div className="accordion-body p-0">
+                                                <div className="card-body pt-2">
+                                                    <p className="ps-3 mb-3">
+                                                        Here at MAI, we offer both the project owner as well as traders the option to leave review.
+                                                        The project owners will be requested to provide a review for the trader they used the service from. They can take this opportunity to rate and leave on many aspects, like their work quality and customer service.
+                                                        On the other hand, the traders will be given the opportunity to review the clients they worked with, where they can give feedback about whether the client made payments on time and their attitude throughout the project.
+                                                    </p>
+                                                    <p className="ps-3 mb-0">
+                                                        The reviews check and balance all members using MAI. The fear of getting negative reviews  prevents users from exploiting our platform thus ensuring that quality service is provided and also prevents ungenuine project owners from exploiting the traders.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card shadow-none rounded-0 border-bottom">
+                                    <div className="accordion-item border-0">
+                                        <div className="card-header p-0" id="faqAccordionHeading7"><button className="accordion-button btn btn-link text-decoration-none d-block w-100 py-2 px-3 border-0 text-start rounded-0 shadow-none collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFaqAccordion7" aria-expanded="false" aria-controls="collapseFaqAccordion7">
+                                            <span className="fas fa-caret-right accordion-icon me-3" data-fa-transform="shrink-2"></span> <span className="fw-medium font-sans-serif text-900">Can a registered trader use the same email to register as a project owner?</span></button></div>
+                                        <div className="accordion-collapse collapse" id="collapseFaqAccordion7" aria-labelledby="faqAccordionHeading7" data-parent="#accordionFaq">
+                                            <div className="accordion-body p-0">
+                                                <div className="card-body pt-2">
+                                                    <p className="ps-3 mb-3">
+                                                        Yes they can. We realise that even traders need to look for projects that are not from their field, so we have made it easy. The same email id can be used to register as a trader as well as a project owner.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="text-end">
+                                <Link to="/contactus">Contact us for More Information</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <Card className="mt-4">
                         <Card.Header className="bg-light">
                             <h1 className="">FAQ</h1>
                         </Card.Header>
                         <Card.Body>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-                            Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-
-                            1914 translation by H. Rackham
-                            "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
-
-                            Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                            "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
-
-                            1914 translation by H. Rackham
-                            "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
                         </Card.Body>
                         <Footer />
-                    </Card>
+                    </Card> */}
                 </Container>
             </Row>
         </>

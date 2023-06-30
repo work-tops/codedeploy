@@ -14,7 +14,7 @@ function AddProductCard() {
                     <SellerLandingPage />
                 </Col>
                 <Col lg={12}>
-                    <div className="container">
+                    <div className="ms-3 me-3 mb-3">
                         <FrontEndAllProducts />
                     </div>
                 </Col>

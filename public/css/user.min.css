@@ -673,3 +673,26 @@ span,
 small {
   text-transform: capitalize !important;
 }
+
+/*  */
+.sticky-sidebar_1 {
+  overflow-y: scroll;
+  scrollbar-width: thin; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-color: transparent transparent; /* For Chrome, Safari, and Opera */
+}
+
+.sticky-sidebar_1::-webkit-scrollbar {
+  width: 5px; /* Adjust the width as needed */
+}
+
+.sticky-sidebar_1::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.sticky-sidebar_1::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.text-justify{
+  word-break: break-all ;
+}

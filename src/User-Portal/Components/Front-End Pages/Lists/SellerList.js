@@ -83,17 +83,16 @@ function SellerList() {
                         <Col lg={3} className="mb-3">
                             <Card className="mt-5 ">
                                 <SimpleBarReact style={{ height: '100%' }}>
-                                    <Card.Header as={Flex} className=" flex-between-center pt-x1">
+                                    <Card.Header className="bg-light d-flex justify-content-between pt-x1">
 
-                                        <div className='justify-content-between d-flex m-2'>
-                                            <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
-                                                <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
-                                                <span>Filter</span>
-                                            </h5>
-
+                                        <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
+                                            <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
+                                            <span>Filter</span>
+                                        </h5>
+                                        <div>
                                             <button
-
-                                                className="btn btn-sm btn-outline-secondary">Reset</button>
+                                                className="btn btn-sm btn-outline-secondary">Reset
+                                            </button>
                                         </div>
 
                                     </Card.Header>
@@ -230,7 +229,7 @@ function SellerList() {
                                                             <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View</small>
                                                             <div className="d-flex">
                                                                 <div onClick={() => { setIsList(false) }}
-                                                                    className={`me-3 ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
+                                                                    className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
                                                                         }`}
                                                                 >
                                                                     <Icon className="cursor-pointer" icon="material-symbols:grid-on-sharp" width="24" height="24" />

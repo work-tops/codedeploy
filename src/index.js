@@ -5,7 +5,7 @@ import './index.css';
 import './User-Portal/Components/User-portal.css'
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
-import 'remixicon/fonts/remixicon.css'
+// import 'remixicon/fonts/remixicon.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import Routers from './Router/Router';

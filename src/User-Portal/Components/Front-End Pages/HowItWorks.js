@@ -97,7 +97,7 @@ function HowItWorks() {
                                                             Use various filters to narrow your search based on your requirement; Skill, Location, Price Range, Project Type and many
                                                             more.
                                                         </p>
-                                                        <Button className="Home-btns" as={Link} to="/Allsellerlist" style={{ background: '#003f6b', border: '0px' }}>Discover Best Professionals</Button>
+                                                        <Button className="Home-btns" as={Link} to="/user/SellerList" style={{ background: '#003f6b', border: '0px' }}>Discover Best Professionals</Button>
                                                     </div>
                                                 </div>
                                                 <div className="row flex-center mt-7">

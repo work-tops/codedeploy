@@ -15,30 +15,14 @@ function AddServiceCard() {
                     <SellerLandingPage />
                 </Col>
                 <Col lg={12}>
-                    {/* {serviceLength < 1 ? (
-                        <Card className="m-5">
-                            <Card.Body>
-                                <div className="mt-4 d-flex justify-content-center">
-                                    <h3 className="text-center">Please Add your Services Here</h3>
-                                </div>
-                                <div className="mt-4 d-flex justify-content-center">
-                                    <Link to="/user/addservices">
-                                        <Button className="btn text-white btn-outline-success">Add Services</Button>
-                                    </Link>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                    ) : ( */}
-                    <div className="container">
+                    <div className="ms-3 me-3 mb-3">
                         <AllServices />
                     </div>
-                    {/* )} */}
-
-                </Col>
-                <Col lg={12}>
-                    <Footer />
                 </Col>
             </Row>
+            <Col lg={12}>
+                <Footer />
+            </Col>
         </>
     )
 }

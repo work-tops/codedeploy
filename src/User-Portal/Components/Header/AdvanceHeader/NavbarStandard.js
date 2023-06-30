@@ -104,7 +104,7 @@ function NavbarStandard() {
                         </div>
                       )}
                     </div> */}
-                      <Button variant='falcon-default' style={{ fontSize: '14px' }} className='mt-3 me-4 mb-3 mb-lg-0 mt-lg-0 text-uppercase'>Post a Project</Button>
+                      <Button as={Link} to="/postproject" variant='falcon-default' style={{ fontSize: '14px' }} className='mt-3 me-4 mb-3 mb-lg-0 mt-lg-0 text-uppercase'>Post a Project</Button>
                     </li>
                 }
                     {/* Post A Project */}

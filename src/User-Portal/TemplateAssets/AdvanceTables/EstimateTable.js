@@ -7,7 +7,7 @@ import NavbarStandard from "../../Components/Header/AdvanceHeader/NavbarStandard
 import CardDropdown from '../common/CardDropdown'
 import { Link } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
-
+import logo from '../../Components/Projectimages/My Project Final logo-01.png'
 
 const EstimateTable = () => {
 
@@ -158,7 +158,7 @@ const EstimateTable = () => {
                     <NavbarStandard />
                 </Col>
             </Row>
-            <div className="container mt-4">
+            <div className="ms-3 me-3 mt-4">
                 <Card className="mb-3 btn-reveal-trigger h-100">
                     <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
                         <h5 className="text-capitalize">
@@ -202,27 +202,39 @@ const EstimateTable = () => {
             {/* Estimate Modal */}
             <Modal show={show} onHide={handleClose} size="lg" centered>
                 <Modal.Header closeButton>
-                    <Modal.Title>Estimate Details</Modal.Title>
+                    <h5>Estimate Details</h5>
                 </Modal.Header>
                 <Modal.Body>
-                    <div className="card mb-3">
+                    {/* <div className="card mb-3"> */}
                         <div className="card mb-3">
                             <div className="card-body">
                                 <div className="row justify-content-between align-items-center">
                                     <div className="col-md">
                                         <h5 className="mb-2 mb-md-0"># MAI/EST/000001</h5>
                                     </div>
+                                    <div className="col-auto">
+                                        <button className="btn  btn-falcon-success btn-sm me-1 mb-2 mb-sm-0" type="button">
+                                            Download
+                                        </button>
+                                        <button className="btn btn-falcon-default btn-sm me-1 mb-2 mb-sm-0" type="button">
+                                            <span className="fas fa-print me-1"> </span>
+                                            Print
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         {/*  */}
                         <div className="card mb-3">
+                            <div className="card-header bg-light">
+                                <div className="d-flex justify-content-center">
+                                    <img src={logo} alt="invoice" width="135px" />
+                                </div>
+                            </div>
                             <div className="card-body">
                                 <div className="row align-items-center text-center mb-3">
                                     <div className="col-sm-6 text-sm-start">
-                                        {/* <img src="../../assets/img/logos/logo-invoice.png" alt="invoice" width="150" /> */}
-                                        <h1 style={{ color: '#003f6b' }}>MAI</h1>
-                                        <p style={{ color: '#003f6b' }}>Myproject.ai</p>
+
                                         <h6 className="">From,</h6>
                                         <h6>Jagan</h6>
                                         <p className="fs--1 mb-0">156 University Ave, Toronto<br></br>On, Canada, M5H 2H7</p>
@@ -244,7 +256,7 @@ const EstimateTable = () => {
                                                 <tbody>
                                                     <tr>
                                                         <th className="text-sm-end">Estimate No:</th>
-                                                        <td># MAI/EST/000001</td>
+                                                        <td># MAI/EST/2737</td>
                                                     </tr>
                                                     <tr>
                                                         <th className="text-sm-end">Enquiry Number:</th>
@@ -253,6 +265,10 @@ const EstimateTable = () => {
                                                     <tr>
                                                         <th className="text-sm-end">Estimate Date:</th>
                                                         <td>2018-09-25</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th className="text-sm-end">Expiry Date:</th>
+                                                        <td>2020-09-25</td>
                                                     </tr>
                                                     <tr>
                                                         <th className="text-sm-end">Payment Status:</th>
@@ -271,9 +287,10 @@ const EstimateTable = () => {
                                     <table className="table table-striped border-bottom">
                                         <thead className="light">
                                             <tr className="bg-primary text-white dark__bg-1000">
-                                                <th className="border-0"><span className="me-1">Product</span><span>Service</span></th>
+                                                <th className="border-0">Products</th>
                                                 <th className="border-0 text-center">Quantity</th>
                                                 <th className="border-0 text-end">Rate</th>
+                                                <th className="border-0 text-end">Discount</th>
                                                 <th className="border-0 text-end">Amount</th>
                                             </tr>
                                         </thead>
@@ -281,38 +298,32 @@ const EstimateTable = () => {
                                             <tr>
                                                 <td className="align-middle">
                                                     <h6 className="mb-0 text-nowrap">Platinum web hosting package</h6>
-                                                    <p className="mb-0">Down 35mb, Up 100mb</p>
+                                                    <p className="mb-0 fs--1">Down 35mb, Up 100mb</p>
                                                 </td>
                                                 <td className="align-middle text-center">2</td>
                                                 <td className="align-middle text-end">£ 65.00</td>
+                                                <td className="align-middle text-end">10%</td>
                                                 <td className="align-middle text-end">£ 130.00</td>
                                             </tr>
                                             <tr>
                                                 <td className="align-middle">
-                                                    <h6 className="mb-0 text-nowrap">2 Page website design</h6>
-                                                    <p className="mb-0">Includes basic wireframes and responsive templates</p>
+                                                    <h6 className="mb-0 text-nowrap">Platinum web hosting package</h6>
+                                                    <p className="mb-0 fs--1">Down 35mb, Up 100mb</p>
                                                 </td>
-                                                <td className="align-middle text-center">1</td>
-                                                <td className="align-middle text-end">£ 2,100.00</td>
-                                                <td className="align-middle text-end">£ 2,100.00</td>
+                                                <td className="align-middle text-center">2</td>
+                                                <td className="align-middle text-end">£ 65.00</td>
+                                                <td className="align-middle text-end">10%</td>
+                                                <td className="align-middle text-end">£ 130.00</td>
                                             </tr>
                                             <tr>
                                                 <td className="align-middle">
-                                                    <h6 className="mb-0 text-nowrap">Mobile App Development</h6>
-                                                    <p className="mb-0">Includes responsive navigation</p>
+                                                    <h6 className="mb-0 text-nowrap">Platinum web hosting package</h6>
+                                                    <p className="mb-0 fs--1">Down 35mb, Up 100mb</p>
                                                 </td>
-                                                <td className="align-middle text-center">8</td>
-                                                <td className="align-middle text-end">£ 5,00.00</td>
-                                                <td className="align-middle text-end">£ 4,000.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="align-middle">
-                                                    <h6 className="mb-0 text-nowrap">Web App Development</h6>
-                                                    <p className="mb-0">Includes react spa</p>
-                                                </td>
-                                                <td className="align-middle text-center">6</td>
-                                                <td className="align-middle text-end">£ 2,000.00</td>
-                                                <td className="align-middle text-end">£ 12,000.00</td>
+                                                <td className="align-middle text-center">2</td>
+                                                <td className="align-middle text-end">£ 65.00</td>
+                                                <td className="align-middle text-end">10%</td>
+                                                <td className="align-middle text-end">£ 130.00</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -321,19 +332,7 @@ const EstimateTable = () => {
                                     <div className="order-2 order-lg-0 col-md-6">
                                         <h6>Customer Notes</h6>
                                         <p className="text-justify">
-                                            <p>
-                                                <span className="fw-semibold">For Work-tops Related Jobs,</span>You are required to pay only £250/- before template by PayLink or BACS. Upon your payment confirmation, our template team will contact you to book the appointment at your convenience.
-                                            </p>
-                                            <h6 className="mb-1">Step-by-step guide <a href="https://trade.work-tops.com/writer/open/0ilzf913f0d467ea9458aadfe091078a03508?authId=%7B%22linkId%22%3A%222nkNPlsvhVw-lULEWY%22%7D" target="_blank">(more details)</a></h6>
-                                            <ul type="none">
-                                                <li>Step 1: <a href="#">Quote</a></li>
-                                                <li>Step 2: <a href="#">Placing an Order with us</a></li>
-                                                <li>Step 3: <a href="#">Booking a Template appointment</a></li>
-                                                <li>Step 4: <a href="#">At Template</a></li>
-                                                <li>Step 5: <a href="#">Between Template & Installation</a></li>
-                                                <li>Step 6: <a href="#">At Installation</a></li>
-                                                <li>Step 7: <a href="#">After Care</a></li>
-                                            </ul>
+                                            .....
                                         </p>
                                         <h6>Terms & Conditions</h6>
                                         Read our <Link to="/termsofuse" className="text-capitalize me-1">Terms & Conditions</Link>to know more
@@ -357,13 +356,13 @@ const EstimateTable = () => {
                                                     <td className="fw-semi-bold">£ 19,688.40</td>
                                                 </tr>
 
-                                            </tbody>
-                                        </table>
+                                            </tbody></table>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-                    </div>
+                    {/* </div> */}
                 </Modal.Body>
             </Modal>
             {/*  */}

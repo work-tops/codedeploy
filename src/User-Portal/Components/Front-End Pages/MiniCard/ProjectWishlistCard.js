@@ -226,23 +226,17 @@ function ProjectWishlistCard(layout) {
                         <Col className='' lg={3}>
                             <Card className="mt-5">
                                 <SimpleBarReact style={{ height: '100%' }}>
-                                    <Card.Header as={Flex} className="flex-between-center pt-x1">
-                                        {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
-                                        <div className='justify-content-xl-between d-flex m-2'>
-                                            <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
-                                                <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
-                                                <span>Filter</span>
-                                            </h5>
-                                            <Button
-                                                variant="outline-secondary"
-                                                size="sm"
-                                                className="ms-2 mt-0 mb-0"
-                                                style={{ fontSize: '12px' }}
+                                    <Card.Header className="bg-light d-flex justify-content-between pt-x1">
+
+                                        <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
+                                            <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
+                                            <span>Filter</span>
+                                        </h5>
+                                        <div>
+                                            <button
                                                 onClick={() => resetFilter()}
-                                            >
-                                                <FontAwesomeIcon icon="redo-alt" className="me-1 fs--2" />
-                                                Reset
-                                            </Button>
+                                                className="btn btn-sm btn-outline-secondary">Reset
+                                            </button>
                                         </div>
 
                                     </Card.Header>
@@ -349,7 +343,7 @@ function ProjectWishlistCard(layout) {
                                             <div className="row g-0 g-md-3 justify-content-end">
                                                 <div className="col-auto">
                                                     <form className="row gx-2">
-                                                        <div className="col-auto d-none d-lg-block"><small className="fw-semi-bold">Sort by</small></div>
+                                                        <div className="col-auto d-none d-lg-block"><span className="fw-semi-bold">Sort by</span></div>
                                                         <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Bulk actions">
                                                             <option >Recent Added</option>
                                                             <option >Price High to Low</option>
@@ -360,7 +354,7 @@ function ProjectWishlistCard(layout) {
                                                     </form>
                                                 </div>
                                                 <div className="col-auto">
-                                                    <div className="d-flex align-items-center"><small className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</small>
+                                                    <div className="d-flex align-items-center"><span className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</span>
                                                         <div
                                                             className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}

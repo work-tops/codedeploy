@@ -1,7 +1,7 @@
 import React from "react";
 import worktops from '../../User-Portal/Components/Projectimages/Electric.jpg'
 import logo from "../../User-Portal/Components/Projectimages/MAI_white.png"
-import landscape from "../../Images/Landscape.png"
+
 function AiLoginPage() {
     return (
         <>
@@ -24,7 +24,6 @@ function AiLoginPage() {
                                         <div class="col-auto">
                                             <h3>Admin Login</h3>
                                         </div>
-                                        {/* <div class="col-auto fs--1 text-600"><span class="mb-0 fw-semi-bold">New User?</span> <span><a href="../../../pages/authentication/split/register.html">Create account</a></span></div> */}
                                     </div>
                                     <form>
                                         <div class="mb-3">

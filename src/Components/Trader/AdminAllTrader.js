@@ -211,8 +211,6 @@ import AdvanceTable from "../../User-Portal/TemplateAssets/common/advance-table/
 import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableFooter";
 import { Row, Button, Col, Form, Card, Breadcrumb, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import IconButton from "components/common/IconButton";
-// import AdvanceTableSearchBox from "components/common/advance-table/AdvanceTableSearchBox";
 import product_image from "../../Images/product_image.png"
 import CardDropdown from "../../User-Portal/TemplateAssets/common/CardDropdown";
 import { Dropdown, InputGroup } from "react-bootstrap";
