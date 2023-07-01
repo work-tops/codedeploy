@@ -405,13 +405,11 @@ const AdvancedTable = () => {
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item as={Link} to="/user/addproduct" >Edit</Dropdown.Item>
-                {/* <Dropdown.Item>Enable</Dropdown.Item> */}
                 <Dropdown.Item>View in Store</Dropdown.Item>
-                {/* <Dropdown.Item>Reassign</Dropdown.Item> */}
                 <Dropdown.Item onClick={() => setShowModal1(true)} className='text-danger'>Disable</Dropdown.Item>
                 {/*  */}
                 <Modal show={showModal1} onHide={handleClose1}>
-                    <Modal.Header >
+                    <Modal.Header closeButton>
                         <Modal.Title>Warning</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
@@ -421,10 +419,10 @@ const AdvancedTable = () => {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose1}>
-                            Cancel
+                            No
                         </Button>
                         <Button variant="danger" onClick={handleClose1}>
-                            Decline
+                            Yes
                         </Button>
 
                     </Modal.Footer>

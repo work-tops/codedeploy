@@ -517,7 +517,7 @@ function ProductList() {
                                                                             <button onClick={toastDark} class="btn btn-md btn-primary fs--1">
                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
                                                                             </button>
-                                                                            <Button to="/GetQuote" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b', fontSize: '.8333333333rem' }} class="Home-btns-1 btn btn-md btn-primary fs--1">
+                                                                            <Button to="/GetQuote" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b'}} class="Home-btns-1 btn btn-md btn-primary fs--1">
                                                                                 <span class="ms-1 Home-btns-1">Get Quote</span>
                                                                             </Button>
                                                                         </div>

@@ -398,7 +398,7 @@ function ServiceInformation() {
                                 dialogClassName="modal-lg modal-90w"
                                 aria-labelledby="example-custom-modal-styling-title"
                             >
-                                <Modal.Header>
+                                <Modal.Header closeButton>
                                     <h5 class="mb-3">Write your Review</h5>
                                 </Modal.Header>
                                 <Modal.Body>

@@ -446,7 +446,7 @@ const ProposalListsTable = () => {
                 rowClassName="align-middle white-space-nowrap"
                 tableProps={{
                     striped: true,
-                    classpriceType: 'fs--1 mb-0 overflow-hidden'
+                    className: 'fs--1 mb-0 overflow-hidden'
                 }}
             />
             <div className="mt-3">

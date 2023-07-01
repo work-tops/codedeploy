@@ -11,9 +11,9 @@ import Footer from '../Footer/Footer';
 function ProposalList() {
 
     const [show, setShow] = useState(false);
-    const [show1, setShow1] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [show1, setShow1] = useState(false);
     const handleClose1 = () => setShow1(false);
     const handleShow1 = () => setShow1(true);
     // Cancel Modal
@@ -63,11 +63,6 @@ function ProposalList() {
                                         </Button>
                                     </Link>
                                 </div>
-                                {/* <Form.Label>Sort By :</Form.Label>
-                            <Form.Select className='w-50'>
-                                <option>Location</option>
-                                <option>Rating</option>
-                            </Form.Select> */}
                             </Card.Body>
                         </Card>
                         <Card>
@@ -195,7 +190,7 @@ function ProposalList() {
                     aria-labelledby="example-custom-modal-styling-title"
                 >
                     <Modal.Body>
-                        <h5 className='text-uppercase mb-3 text-center'>Report Soanes IT</h5>
+                        <h5 className='text-uppercase mb-3 text-center'>Report this Profile</h5>
                         <h6 style={{ fontSize: '16px' }} className='text-900 mb-3 mt-3'>Why You are reporting to this profile</h6>
                         {/*  */}
                         <Form>

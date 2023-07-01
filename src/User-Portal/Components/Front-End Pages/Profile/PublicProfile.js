@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard'
 import trainer from '../../Projectimages/trainer.png'
 import { Row, Col, Image, Button, Nav, Form, Modal, Tab } from "react-bootstrap";
@@ -9,11 +9,11 @@ import granite from '../../Images/Granite.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../../Footer/Footer";
-
+import { Editor } from "@tinymce/tinymce-react";
 
 function PublicProfile() {
 
-    // const [show, setShow] = useState(true);
+    const editorRef = useRef(null);
 
     const toastDark = () => toast.success(<h6 className="text-sucess">Your Product is Successfully Added to Cart</h6>);
     // const toastDanger = () => toast.success(<h6 className="text-sucess">Product Added to Wishlist</h6>);
@@ -135,11 +135,11 @@ function PublicProfile() {
                                                 <div className="col mt-4 mt-md-5 mt-lg-4">
                                                     <div className="row text-center">
                                                         <div className="col-6 border-sm-end border-300"><img className="mb-2" src={""} width="30" alt="" />
-                                                            <h4 className="text-700" data-countup="{&quot;endValue&quot;:79563}">79,563</h4>
+                                                            <h4 className="text-700" >79,563</h4>
                                                             <h5 className="fw-normal mb-0">Following</h5>
                                                         </div>
                                                         <div className="col-6"><img className="mb-2" src={""} width="30" alt="" />
-                                                            <h4 className="text-700" data-countup="{&quot;endValue&quot;:120302}">120,302</h4>
+                                                            <h4 className="text-700" >120,302</h4>
                                                             <h5 className="fw-normal mb-0">Followers</h5>
                                                         </div>
                                                     </div>
@@ -499,7 +499,6 @@ function PublicProfile() {
                                                                             variant="falcon-default"
                                                                             style={{ background: '#003f6b' }}
                                                                             className="fs--1 border-0 border-0 text-600 mt-3 text-white"
-
                                                                         >
                                                                             Get a Quote
                                                                         </Button>
@@ -613,7 +612,7 @@ function PublicProfile() {
                                                                         </del>
                                                                     </h4>
 
-                                                                    <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
+                                                                    <p className="mb-0 fs--1 text-800">92,632 Members Purchased</p>
                                                                     <Link to="/GetQuote">
                                                                         <Button
                                                                             size="md"
@@ -733,7 +732,6 @@ function PublicProfile() {
                                                                             £ 420
                                                                         </del>
                                                                     </h4>
-
                                                                     <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
                                                                     <Link to="/GetQuote">
                                                                         <Button
@@ -741,7 +739,6 @@ function PublicProfile() {
                                                                             variant="falcon-default"
                                                                             style={{ background: '#003f6b' }}
                                                                             className="fs--1 border-0 border-0 text-600 mt-3 text-white"
-
                                                                         >
                                                                             Get a Quote
                                                                         </Button>
@@ -1475,7 +1472,27 @@ function PublicProfile() {
                                     <Form.Label className="fw-semibold">
                                         Message
                                     </Form.Label>
-                                    <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} />
+                                    <Editor
+                                        onInit={(evt, editor) => editorRef.current = editor}
+                                        initialValue=""
+
+                                        init={{
+
+                                            height: 200,
+                                            menubar: false,
+                                            // plugins: [
+                                            //     'advlist autolink lists link image charmap print preview anchor',
+                                            //     'searchreplace visualblocks code fullscreen',
+                                            //     'insertdatetime media table paste code help wordcount'
+                                            // ],
+                                            toolbar: 'undo redo | formatselect | ' +
+                                                'bold italic  | alignleft aligncenter ' +
+                                                'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                'removeformat ',
+                                            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                        }}
+                                    />
+                                    {/* <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} /> */}
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Check type="checkbox" className="mb-0 mt-3">
@@ -1488,7 +1505,7 @@ function PublicProfile() {
                                     </Form.Check>
                                 </Form.Group>
                             </Form>
-                            <Button as={Link} to="/owner" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
+                            <Button as={Link} to="/projectowner" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
                                 SEND
                             </Button>
                         </Modal.Body>

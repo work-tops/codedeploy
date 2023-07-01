@@ -319,7 +319,7 @@ function HowItWorks() {
                                     <div class="tab-pane" id="tab-2" role="tabpanel">
                                         <div class="row">
                                             <div class="col-lg-12 details order-2 order-lg-1">
-                                                <h3 className="text-center">Join This Global Family of Trusted & Skilled Project Bidders</h3>
+                                                <h2 className="text-center">Join This Global Family of Trusted & Skilled Project Bidders</h2>
                                                 <p className="text-center">
                                                     You are just one sign up away from taking the Game-Changing Decision of your Lifetime!
                                                 </p>

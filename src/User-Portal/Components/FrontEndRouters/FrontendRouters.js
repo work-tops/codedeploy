@@ -224,6 +224,7 @@ const FrontEndRouters = () => {
             <Route path="/EditInvoice"><EditInvoice /></Route>
             <Route path="/NewInvoice"><NewInvoice /></Route>
             <Route path="/RepostProject"><RepostProject /></Route>
+            <Route path="/projectOwnerprofile"><ProjectOwnerProfile/></Route>
             {/* New Pages */}
         </Switch>
 

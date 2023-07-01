@@ -798,11 +798,11 @@ function SellerList() {
                                 </Form.Check>
                             </Form.Group>
                         </Form>
-                        <Button className="m-2  border-0" style={{ background: '#003f6b' }}>
+                        <Button className="m-2 text-uppercase border-0" style={{ background: '#003f6b' }}>
                             attachments
                         </Button>
-                        <Button as={Link} to="/projectowner" className="m-2  border-0" style={{ background: '#003f6b' }}>
-                            SEND
+                        <Button as={Link} to="/projectowner" className="m-2 text-uppercase border-0" style={{ background: '#003f6b' }}>
+                            Send
                         </Button>
                     </Modal.Body>
                 </Modal>

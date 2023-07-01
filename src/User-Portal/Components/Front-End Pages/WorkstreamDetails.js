@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import file from '../Projectimages/BathroomFitting.jpg'
 import Footer from "../Footer/Footer";
 
-
 function WorkStreamDetails() {
 
     const [show, setShow] = useState(false);
@@ -72,13 +71,17 @@ function WorkStreamDetails() {
                                                             comply with MAI policy
                                                         </Form.Check.Label>
                                                     </Form.Check>
-                                                    <div className="d-flex justify-content-end gap-2 mb-3">
-                                                        <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
-                                                            Attachments
-                                                        </Button>
-                                                        <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
-                                                            send
-                                                        </Button>
+                                                    <div className="row g-2 ">
+                                                        <div className="col-md-6">
+                                                            <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                                Attachments
+                                                            </Button>
+                                                        </div>
+                                                        <div className="col-md-6">
+                                                            <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                                send
+                                                            </Button>
+                                                        </div>
                                                     </div>
                                                 </Form>
                                                 <div class="kanban-items-container scrollbar" tabindex="0">
