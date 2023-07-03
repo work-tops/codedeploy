@@ -17,7 +17,7 @@ function TermsOfUse() {
                     <div className="row">
                         <div className="col-lg-12">
                             <h5 className="mb-3">AGREEMENT TO OUR LEGAL TERMS</h5>
-                            <p className="text-justify text-capitalize mb-0 text-justify">
+                            <p className="text-justify  mb-0 text-justify">
                                 We are Myproject.AI, doing business as MAI [‘Company’, ‘we’, ‘us’, or ‘our’], a company registered in the United Kingdom at 1 De la Warr Way, Cambourne, Cambridgeshire, CB23 6DX, United Kingdom.
                                 These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity [‘you’], and MYProject.AI, concerning your access to and use of the services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.
 
@@ -37,7 +37,7 @@ function TermsOfUse() {
                             <h5 className="mb-0 text-uppercase" id="ourservices">Our Services</h5>
                         </div>
                         <div className="card-body">
-                            <p className="text-justify text-capitalize mb-0 ">
+                            <p className="text-justify  mb-0 ">
                                 The information provided when using the Services is not intended for distribution to or use
                                 by any person or entity in any jurisdiction or country where such distribution or use would
                                 be contrary to law or regulation or which would subject us to any registration requirement within
@@ -52,26 +52,36 @@ function TermsOfUse() {
                             <h5 className="mb-0" id="ipr">INTELLECTUAL PROPERTY RIGHTS</h5>
                         </div>
                         <div className="card-body">
+                            <h6 className="text-primary">Our Intellectual Property</h6>
+                            <p className="text-justify  mb-3 ">
+                                We are the owner or the licensee of all intellectual property rights in our Services, including all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics in the Services [collectively, the ‘Content’], as well as the trademarks, service marks, and logos contained therein [the ‘Marks’].
+                            </p>
+                            <p className="text-justify  mb-3 ">
+                                Our Content and Marks are provided in or through the Services ‘AS IS’ for your personal, non-commercial use or internal business purpose only.
+                            </p>
+                            <hr className="my-4"></hr>
                             <h6 className="text-primary">Your use of our Services</h6>
-                            <p className="text-justify text-capitalize mb-3 ">
+                            <p className="text-justify  mb-3 ">
                                 Subject to your compliance with these Legal Terms, including the
                                 ‘PROHIBITED ACTIVITIES’ action below, we grant you a non-exclusive,
                                 non-transferable, revocable licence to:
                             </p>
                             <ul type="">
-                                <li className="text-capitalize">access the Services; and
+                                <li className="">access the Services; and
                                 </li>
-                                <li className="text-capitalize">download or print a copy of any portion of the content to which you have properly gained access</li>
+                                <li className="">download or print a copy of any portion of the content to which you have properly gained access</li>
                             </ul>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 solely for your personal, non-commercial use or internal business purpose.
+                            </p>
+                            <p className="text-justify  mt-3 ">
                                 Except as set out in this section or elsewhere in our Legal Terms, so part of
                                 the services and no Content or Marks may be copied, reproduced, aggregated,
                                 republished, uploaded, posted, publicly displayed, encoded, translated,
                                 transmitted, distributed,sold, licensed, or otherwise exploited for any commercial
                                 purpose, whatsoever, without our express prior written permission.
                             </p>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 If you wish to make use of the Services, Content, or Marks other than as set out in this
                                 section or elsewhere in our Legal terms, please address your request to: info@myproject.ai.
                                 If we ever grant you the permission to post, reproduce or publicly display any part of our
@@ -79,25 +89,25 @@ function TermsOfUse() {
                                 or Marks and ensure that any copyright or proprietary notice appears or is visible on posting,
                                 reproducing, or displaying our discontent.
                             </p>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 We reserve all rights not expressly granulated to you
                                 in and to the Services,
                                 Content, and Marks.
 
                             </p>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 Any breach of these intellectual property Rights will constitute a material breach
                                 of our Legal Terms and your right to use our Services will terminate immediately.
                             </p>
                             <hr className="my-4"></hr>
                             <h6 className="text-primary">Your submissions and contributions</h6>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 Please review this section and the ‘PROHIBITED ACTIVITIES’ section
                                 carefully prior to using our Services to understand the [a] rights
                                 you give us and [b] obligations you have when you post or upload any
                                 content through the Services.
                             </p>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 <span className="fw-bold me-2">Submissions:</span>
                                 By directly sending us any question, comment, suggestion, idea, feedback,
                                 or other information about the Services [‘Submissions’], you agree to assign
@@ -106,7 +116,7 @@ function TermsOfUse() {
                                 and dissemination for any lawful purpose, commercial or otherwise, without
                                 acknowledgement or compensation to you.
                             </p>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 <span className="fw-bold me-2">Contributions:</span>
                                 The Services may invite you to chat, contribute to, or participate in blogs,
                                 message boards, online forums and other functionality during which you may create,
@@ -118,17 +128,17 @@ function TermsOfUse() {
                                 and possibly through third-party websites.
 
                             </p>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 <span className="fw-bold me-2">When you post Contributions, you grant us the licence [including use of your name, trademarks, and logos]:</span>
                                 By posting any Contributions, you grant us an unrestricted, unlimited, irrevocable,
                                 perpetual, non-exclusive, transferable, royalty-free, fully-paid, worldwide right, and
                                 licence to: use, copy, reproduce, distribute, sell, resell, publish, broadcast, retitle, store, publicly reform, publicly display, reformat, translate, excerpt [in whole or in part], exploit your Contributions [including, without limitation, your image, name, and voice] for any purpose, commercial, advertising, or otherwise, tp prepare derivative works of, or incorporate into other works, your Contributions, and to sublicense the licences granted in this section.\
                                 Our use and distribution may occur in any media formats and through any media channels.
                             </p>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 The licence includes our use of your name, company name, and franchise name, as applicable, and any of the trademarks, service marks, trade names, logos, and personal and commercial images you provide.
                             </p>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 <span className="fw-bold me-2">You are responsible for what you post or upload:</span>
                                 By sending us Submissions an/or posting Contributions through any part of the Services or making Contributions accessible through the Services by linking your account through he Services to any of your Social networking accounts, you:
                             </p>
@@ -146,19 +156,19 @@ function TermsOfUse() {
                                     warrant  and represent that your Submissions and/or Contributions do not constitute any confidential information.
                                 </li>
                             </ul>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 You are solely responsible for your Submissions and/or Contributions
                                 and you expressly agree to reimburse us for any and all losses that we
                                 may suffer because of your breach of [a] this section,
                                 [b] any third party’s intellectual property rights, or [c] applicable law.
                             </p>
-                            <p className="text-justify text-capitalize mt-3 ">
+                            <p className="text-justify  mt-3 ">
                                 <span className="fw-bold me-2">We may remove or edit your Content:</span>
                                 Although we have no obligation to monitor any Contributions, we shall have the right to remove or edit any Contributions at any time without notice if in our reasonable opinion we consider such Contributions harmful or in breach of these Legal terms. If we remove or edit any such Contributions, we may also suspend or disable your account and report you to the authorities.
                             </p>
                             <hr className="my-4"></hr>
                             <h6 className="text-primary">Copyright infringement </h6>
-                            <p className="text-justify text-capitalize mb-0 ">
+                            <p className="text-justify  mb-0 ">
                                 We respect the intellectual property rights of otters. If you believe that any material available on or through the Services infringes upon any copyright you own or control, please immediately refer to the ‘COPYRIGHT INFRINGEMENTS’ section below.
                             </p>
                         </div>
@@ -168,7 +178,7 @@ function TermsOfUse() {
                             <h5 className="mb-0" id="USER_REPRESENTATIONS">USER REPRESENTATIONS</h5>
                         </div>
                         <div className="card-body">
-                            <p className="text-justify text-capitalize mb-0 ">
+                            <p className="text-justify  mb-0 ">
                                 By using the Services, you represent and warrant that: [1] all registration information you submit will be true, accurate, current, and complete; [2] you will maintain the accuracy of such information and promptly update such registration information as necessary; [3] you have the legal capacity and you agree to comply with these Legal terms; [4] you are not a minor in the jurisdiction in which you reside; [5] you will not access the Services through automated or non-human means, whether through a bot, script or otherwise; [6] you will not use the Services for any illegal or unauthorised purpose; and [7] your use of the Services will not violate any applicable law or regulation.
 
                                 If you provide any information that is untrue, in accurate, not current, or incomplete, we have the right to suspend or terminate your account and refuse any and all current or future use of the Services [or any portion thereof].
@@ -180,7 +190,7 @@ function TermsOfUse() {
                             <h5 className="mb-0" id="USER_REGISTRATION">USER REGISTRATION</h5>
                         </div>
                         <div className="card-body">
-                            <p className="text-justify text-capitalize fs-0 mb-0 ">
+                            <p className="text-justify  fs-0 mb-0 ">
                                 You may be required to register to use the Services. You agree to keep your password confidential and will be responsible for all use of your account and password. We receive the right to remove, reclaim, or change a username you select if we determine, in our sole discretion, that such username is inappropriate, obscene or otherwise objectionable.
                             </p>
                         </div>
@@ -190,7 +200,7 @@ function TermsOfUse() {
                             <h5 className="mb-0" id="PRODUCTS">PRODUCTS</h5>
                         </div>
                         <div className="card-body">
-                            <p className="text-justify text-capitalize mb-0 ">
+                            <p className="text-justify  mb-0 ">
                                 We make every effort to display as accurately as possible the colours, features,
                                 specifications, and details of the product will be accurate, complete, reliable,
                                 current, or free of other errors, and your electronic display may not accurately
@@ -207,7 +217,7 @@ function TermsOfUse() {
                         <div className="card-body">
                             <h6 className="text-primary">We accept the following forms of payment: </h6>
                             <li className="fw-bold text-900">CARD & BACS</li>
-                            <p className="text-justify text-capitalize mb-0 ">
+                            <p className="text-justify  mb-0 ">
                                 You agree to provide current, complete, and accurate purchase and account information for all purchases made via the services. You further agree to promptly update account and payment information, including email address, payment method, and payment card expiration date, so that we can complete your transactions and contact you as needed. Sales tax will be added to the price of purchases as deemed required by us. We may change prices at any time. All payments shall be in Pound sterling.
 
                                 You agree to pay all charges at the prices then in effect for your purchases and any applicable shipping fees, and you authorise us to charge your chosen payment provider for any such amounts upon placing your order. If your order is subject to recurring charges, then you consett to our charging your payment method on a recurring basis without requiring your prior approval for each recurring charge, until such time as you cancel the applicable order. We reserve the right to correct any errors or mistakes in pricing, even if we have already requested or received payment.
@@ -634,12 +644,12 @@ function TermsOfUse() {
 
                 {/* MODIFICATIONS_AND_INTERRUPTIONS */}
                 <div className="col-lg-4 mb-3 ps-lg-2">
-                    <div  className="sticky-sidebar">
+                    <div className="sticky-sidebar">
                         <div className="card sticky-top sticky-sidebar_1">
                             <div className="card-header border-bottom">
                                 <h6 className="mb-0 fs-0">TABLE OF CONTENTS</h6>
                             </div>
-                            <div  className="card-body">
+                            <div className="card-body">
                                 <div className="terms-sidebar nav flex-column fs--1" id="terms-sidebar">
                                     <div className="nav-item"><a className="nav-link px-0 py-1" href="#ourservices">OUR SERVICES</a></div>
                                     <div className="nav-item"><a className="nav-link px-0 py-1" href="#ipr">INTELLECTUAL PROPERTY RIGHTS</a></div>

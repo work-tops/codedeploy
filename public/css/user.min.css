@@ -667,16 +667,16 @@ h3,
 h4,
 h5,
 h6,
-p,
+/* p, */
 .form-label,
 span,
 small,
 strong,
 select,
 option,
-ul,
+/* ul,
 li,
-ol,
+ol, */
 a,
 .btn,
 button,
@@ -690,9 +690,6 @@ label {
   font-family: 'Open-sans' !important;
 }
 
-.text-justify {
-  word-break: break-all;
-}
 
 .fs--1{
   font-size: 16px !important;
