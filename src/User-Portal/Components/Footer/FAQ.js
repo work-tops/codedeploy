@@ -13,21 +13,22 @@ function FAQ() {
                     <NavbarStandard />
                 </Col>
                 <Container>
+                    {/* <div className="card mt-4 mb-3">
+                        </div>
+                    </div> */}
                     <div className="card mt-4 mb-3">
-                        <div className="card-body position-relative">
+                        <div className="card-header bg-light position-relative">
                             <div className="row">
                                 <div className="col-lg-8">
-                                    <h3>FAQ </h3>
-                                    <h5>Frequently Asked Questions</h5>
+                                    <h1>FAQ </h1>
+                                    <h4>Frequently Asked Questions</h4>
                                 </div>
                                 <div className="col-lg-4">
-                                    <h6 className="mt-lg-3 mt-sm-0 mt-md-0">Search Your Questions Here</h6>
+                                    <h4 className="mt-lg-3 mt-sm-0 mt-md-0">Search Your Questions</h4>
                                     <input type="search" placeholder="Search" className="form-control" />
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="card mb-3">
                         <div className="card-body">
                             <div className="accordion border rounded overflow-hidden" id="accordionFaq">
                                 <div className="card shadow-none rounded-bottom-0 border-bottom">
@@ -142,21 +143,17 @@ function FAQ() {
                                     </div>
                                 </div>
                                 <div className="text-end">
-                                <Link to="/contactus">Contact us for More Information</Link>
+                                    <h5 className="m-1">
+                                        <Link to="/contactus">Contact us for More Information</Link>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {/* <Card className="mt-4">
-                        <Card.Header className="bg-light">
-                            <h1 className="">FAQ</h1>
-                        </Card.Header>
-                        <Card.Body>
-
-                        </Card.Body>
-                        <Footer />
-                    </Card> */}
                 </Container>
+                <Col lg={12}>
+                    <Footer/>
+                </Col>
             </Row>
         </>
     )

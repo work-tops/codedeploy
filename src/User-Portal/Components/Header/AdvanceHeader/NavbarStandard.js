@@ -404,13 +404,13 @@ function NavbarStandard() {
                             {id == 3 && <Dropdown.Item as={Link} to="/chat">Messages</Dropdown.Item>}
                             {id == 3 && <Dropdown.Item as={Link} to="/addservicecard">My Services</Dropdown.Item>}
                             {id == 3 && <Dropdown.Item as={Link} to="/proposalcard">My Proposals</Dropdown.Item>}
-                            {id == 3 && <Dropdown.Item as={Link} to="/InvoiceFreelancerCard">Invoice</Dropdown.Item>}
-                            {id == 2 && <Dropdown.Item as={Link} to="/InvoicedueCard">Invoice</Dropdown.Item>}
+                            {id == 3 && <Dropdown.Item as={Link} to="/InvoiceFreelancerCard">Invoices</Dropdown.Item>}
+                            {id == 2 && <Dropdown.Item as={Link} to="/InvoicedueCard">Invoices</Dropdown.Item>}
                             {id == 3 && <Dropdown.Item as={Link} to="/Estimates">Estimates</Dropdown.Item>}
                             {id == 2 && <Dropdown.Item as={Link} to="/project-owner-estimate">Estimates</Dropdown.Item>}
                             {/* <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item> */}
                             {/* <Dropdown.Divider /> */}
-                            <Dropdown.Item as={Link} to="/Enquirescard">Enquires</Dropdown.Item>
+                            <Dropdown.Item as={Link} to="/EnquiriesCard">Enquiries</Dropdown.Item>
                             {id == 3 && <Dropdown.Item as={Link} to="/FreelancerEditProfile">Settings</Dropdown.Item>}
                             <Dropdown.Item onClick={() => { logOut() }}>
                               Logout

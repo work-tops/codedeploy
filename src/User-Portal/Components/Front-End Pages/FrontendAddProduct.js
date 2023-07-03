@@ -452,7 +452,7 @@ const FrontendAddProduct = () => {
                                         </Row>
                                         <Row className="mb-3 g-3">
                                             <Form.Group className="mb-3">
-                                                <Form.Label className="text-700 ">Return Policy </Form.Label>
+                                                <Form.Label className="text-700 ">Return Policy<span className='ms-1 text-danger'>*</span></Form.Label>
                                                 {/* <Form.Control value={form.policy} required name="policy" onChange={(e) => { handleChange(e) }} as="textarea" placeholder='Tag Your Policy....' rows={8} /> */}
                                                 <Editor
                                                     onInit={(evt, editor) => editorRef.current = editor}

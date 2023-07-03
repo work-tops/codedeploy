@@ -56,7 +56,7 @@ function Footer() {
                                     <img src={logo} style={{ position: 'relative', bottom: '9px' }} width="135px" />
                                 </Link>
 
-                                <p className="text-justify">
+                                <p style={{wordBreak:'break-all'}}>
                                     MAI transforms your house into a home by taking care
                                     of all your projects from simple to difficult ones,
                                     including painting,furnishing,bathroom upscaling,kitchen

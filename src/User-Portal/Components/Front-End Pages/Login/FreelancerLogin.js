@@ -128,13 +128,14 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                               <h3 className="mt-5 opacity-75 text-white"> Welcome </h3>
                             </div>
                             {isToggle == false ? <p className="mt-5 text-white">
-                              <p className='mb-2'>
+                              <p className='mb-2 text-center'>
                                 Already Have an Account ?
                               </p>
-
-                              <a className="btn btn-outline-light mt-2 px-4" onClick={() => { setToggle(true) }}>
-                                Login
-                              </a>
+                              <div className='d-flex justify-content-center mt-3'>
+                                <a className="btn btn-outline-light  mt-2 px-4" onClick={() => { setToggle(true) }}>
+                                  Login
+                                </a>
+                              </div>
                             </p> :
                               <div className="mt-5 text-white">
                                 Don't have an account?
@@ -231,11 +232,9 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                                       <Form.Check type="checkbox" className="mb-0 mt-3">
                                         <Form.Check.Input type="checkbox" />
                                         <Form.Check.Label
-                                          className="text-700 d-inline"
-
+                                          className="text-900 d-inline"
                                         >
-                                          By Signing up you accept MyProject's <Link to="/termsofuse">Terms of Service </Link>.
-                                          {/* I have read and understood MyProject's <Link to="/privacypolicy">Privacy Policy</Link>. */}
+                                          By signing up you accept MAI's <Link to="/termsofuse">Terms and Conditions</Link>.
                                         </Form.Check.Label>
                                       </Form.Check>
                                     </Form.Group>

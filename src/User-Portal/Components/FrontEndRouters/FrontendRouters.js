@@ -140,7 +140,7 @@ const FrontEndRouters = () => {
             <Route path='/proposalcard'><ProposalCard /></Route>
 
             {/* Enquries */}
-            <Route path='/Enquirescard'><ProductEnquiresCard /></Route>
+            <Route path='/EnquiriesCard'><ProductEnquiresCard /></Route>
             <Route path="/ServiceEnquiryDetails"><ServiceEnquiryDetails /></Route>
             <Route path="/ProductEnquiryDetails"><ProductEnquiryDetails /></Route>
             {/* Enquries */}

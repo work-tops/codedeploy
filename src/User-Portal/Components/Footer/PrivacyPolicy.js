@@ -9,13 +9,8 @@ function PrivacyPolicy() {
                 <NavbarStandard />
             </Row>
             <div className="card mt-7 ms-2 me-2 mb-3">
-                <div className="bg-holder d-none d-lg-block bg-card" ></div>
                 <div className="card-header bg-light position-relative">
-                    <div className="row">
-                        <div className="col-lg-8">
-                            <h3>Privacy policy</h3>
-                        </div>
-                    </div>
+                    <h1>Privacy policy</h1>
                 </div>
                 <div className="card-body position-relative">
                     <p className="mb-0">
@@ -30,10 +25,10 @@ function PrivacyPolicy() {
                 <div className="col-lg-8 pe-lg-2">
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="WHAT_INFORMATION_DO_WE_COLLECT">WHAT INFORMATION DO WE COLLECT?</h5>
+                            <h4 className="mb-0" id="WHAT_INFORMATION_DO_WE_COLLECT">WHAT INFORMATION DO WE COLLECT?</h4>
                         </div>
                         <div className="card-body">
-                            <h6 className="text-primary">Personal information you disclose to us</h6>
+                            <h4 className="">Personal information you disclose to us</h4>
 
                             <p className="mb-3">
                                 In Short: We collect personal information that you provide to us.
@@ -49,7 +44,7 @@ function PrivacyPolicy() {
                             </p>
 
                             <hr className="my-4"></hr>
-                            <h6 className="text-primary">Information automatically collected</h6>
+                            <h4 className="">Information automatically collected</h4>
                             <p className="mb-3">
                                 In Short: Some information - such as your Internet Protocol (IP) address and/or browser and device characteristics - is collected automatically when you visit our Services.
                             </p>
@@ -63,7 +58,7 @@ function PrivacyPolicy() {
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="HOW_DO_WE_PROCESS_YOUR_INFORMATION">HOW DO WE PROCESS YOUR INFORMATION?</h5>
+                            <h4 className="mb-0" id="HOW_DO_WE_PROCESS_YOUR_INFORMATION">HOW DO WE PROCESS YOUR INFORMATION?</h4>
                         </div>
                         <div className="card-body">
                             <p className="mb-0 ">
@@ -73,7 +68,7 @@ function PrivacyPolicy() {
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="WHEN_AND_WITH_WHOM_DO_WE_SHARE_YOUR_PERSONAL_INFORMATION">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h5>
+                            <h4 className="mb-0" id="WHEN_AND_WITH_WHOM_DO_WE_SHARE_YOUR_PERSONAL_INFORMATION">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h4>
                         </div>
                         <div className="card-body">
                             <p className="mb-3">
@@ -97,7 +92,7 @@ function PrivacyPolicy() {
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="DO_WE_USE_COOKIES_AND_OTHER_TRACKING_TECHNOLOGIES">DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</h5>
+                            <h4 className="mb-0" id="DO_WE_USE_COOKIES_AND_OTHER_TRACKING_TECHNOLOGIES">DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</h4>
                         </div>
                         <div className="card-body">
                             <p className="mb-3">In Short: We may use cookies and other tracking technologies to collect and store your information.</p>
@@ -106,7 +101,7 @@ function PrivacyPolicy() {
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="HOW_DO_WE_HANDLE_YOUR_SOCIAL_LOGINS">HOW DO WE HANDLE YOUR SOCIAL LOGINS?</h5>
+                            <h4 className="mb-0" id="HOW_DO_WE_HANDLE_YOUR_SOCIAL_LOGINS">HOW DO WE HANDLE YOUR SOCIAL LOGINS?</h4>
                         </div>
                         <div className="card-body">
                             <p className="mb-3">
@@ -123,7 +118,7 @@ function PrivacyPolicy() {
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="IS_YOUR_INFORMATION_TRANSFERRED_INTERNATIONALLY">IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</h5>
+                            <h4 className="mb-0" id="IS_YOUR_INFORMATION_TRANSFERRED_INTERNATIONALLY">IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</h4>
                         </div>
                         <div className="card-body">
                             <p className="mb-3">
@@ -136,7 +131,7 @@ function PrivacyPolicy() {
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="HOW_LONG_DO_WE_KEEP_YOUR_INFORMATION">HOW LONG DO WE KEEP YOUR INFORMATION?</h5>
+                            <h4 className="mb-0" id="HOW_LONG_DO_WE_KEEP_YOUR_INFORMATION">HOW LONG DO WE KEEP YOUR INFORMATION?</h4>
                         </div>
                         <div className="card-body">
                             <p className="mb-3">
@@ -152,7 +147,7 @@ function PrivacyPolicy() {
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="DO_WE_COLLECT_INFORMATION_FROM_MINORS">DO WE COLLECT INFORMATION FROM MINORS?</h5>
+                            <h4 className="mb-0" id="DO_WE_COLLECT_INFORMATION_FROM_MINORS">DO WE COLLECT INFORMATION FROM MINORS?</h4>
                         </div>
                         <div className="card-body">
                             <p className="mb-3">
@@ -166,7 +161,7 @@ function PrivacyPolicy() {
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="WHAT_ARE_YOUR_PRIVACY_RIGHTS">WHAT ARE YOUR PRIVACY RIGHTS?</h5>
+                            <h4 className="mb-0" id="WHAT_ARE_YOUR_PRIVACY_RIGHTS">WHAT ARE YOUR PRIVACY RIGHTS?</h4>
                         </div>
                         <div className="card-body">
                             <p className="mb-3">
@@ -179,7 +174,7 @@ function PrivacyPolicy() {
                             <p className="mb-3">
                                 However, please note that this will not affect the lawfulness of the processing before its withdrawal nor, when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent
                             </p>
-                            <h6 className="text-primary mb-3">Account Information</h6>
+                            <h4 className=" mb-3">Account Information</h4>
                             <p className="mb-3">
                                 If you would at any time like to review or change the information in your account or terminate your account, you can
                             </p>
@@ -190,7 +185,7 @@ function PrivacyPolicy() {
                     </div>
                     <div className="card mb-3">
                         <div className="card-header bg-light">
-                            <h5 className="mb-0" id="DO_WE_MAKE_UPDATES_TO_THIS_NOTICE">DO WE MAKE UPDATES TO THIS NOTICE?</h5>
+                            <h4 className="mb-0" id="DO_WE_MAKE_UPDATES_TO_THIS_NOTICE">DO WE MAKE UPDATES TO THIS NOTICE?</h4>
                         </div>
                         <div className="card-body">
                             <p className="mb-3">
@@ -204,25 +199,25 @@ function PrivacyPolicy() {
                 </div>
                 <div className="col-lg-4 ps-lg-2">
                     <div className="sticky-sidebar">
-                        <div className="card  sticky-top">
-                            <div className="card-header border-bottom">
-                                <h6 className="mb-0 fs-0">TABLE OF CONTENTS</h6>
+                        <div className="card sticky-top">
+                            <div className="card-header bg-light">
+                                <h4 className="mb-0">TABLE OF CONTENTS</h4>
                             </div>
                             <div className="card-body mb-3">
                                 <div className="terms-sidebar nav flex-column fs--1" id="terms-sidebar">
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#WHAT_INFORMATION_DO_WE_COLLECT">WHAT INFORMATION DO WE COLLECT?</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#HOW_DO_WE_PROCESS_YOUR_INFORMATION">HOW DO WE PROCESS YOUR INFORMATION?</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#WHEN_AND_WITH_WHOM_DO_WE_SHARE_YOUR_PERSONAL_INFORMATION">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#DO_WE_USE_COOKIES_AND_OTHER_TRACKING_TECHNOLOGIES">DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#HOW_DO_WE_HANDLE_YOUR_SOCIAL_LOGINS">HOW DO WE HANDLE YOUR SOCIAL LOGINS?
+                                    <div className="nav-item"><a className="nav-link px-0 py-1 text-900" href="#WHAT_INFORMATION_DO_WE_COLLECT">WHAT INFORMATION DO WE COLLECT?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1 text-900" href="#HOW_DO_WE_PROCESS_YOUR_INFORMATION">HOW DO WE PROCESS YOUR INFORMATION?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1 text-900" href="#WHEN_AND_WITH_WHOM_DO_WE_SHARE_YOUR_PERSONAL_INFORMATION">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1 text-900" href="#DO_WE_USE_COOKIES_AND_OTHER_TRACKING_TECHNOLOGIES">DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1 text-900" href="#HOW_DO_WE_HANDLE_YOUR_SOCIAL_LOGINS">HOW DO WE HANDLE YOUR SOCIAL LOGINS?
                                     </a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#IS_YOUR_INFORMATION_TRANSFERRED_INTERNATIONALLY">IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#HOW_LONG_DO_WE_KEEP_YOUR_INFORMATION">HOW LONG DO WE KEEP YOUR INFORMATION?
+                                    <div className="nav-item"><a className="nav-link px-0 py-1 text-900" href="#IS_YOUR_INFORMATION_TRANSFERRED_INTERNATIONALLY">IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1 text-900" href="#HOW_LONG_DO_WE_KEEP_YOUR_INFORMATION">HOW LONG DO WE KEEP YOUR INFORMATION?
                                     </a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#DO_WE_COLLECT_INFORMATION_FROM_MINORS">DO WE COLLECT INFORMATION FROM MINORS?
+                                    <div className="nav-item"><a className="nav-link px-0 py-1 text-900" href="#DO_WE_COLLECT_INFORMATION_FROM_MINORS">DO WE COLLECT INFORMATION FROM MINORS?
                                     </a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#WHAT_ARE_YOUR_PRIVACY_RIGHTS">WHAT ARE YOUR PRIVACY RIGHTS?</a></div>
-                                    <div className="nav-item"><a className="nav-link px-0 py-1" href="#DO_WE_MAKE_UPDATES_TO_THIS_NOTICE">DO WE MAKE UPDATES TO THIS NOTICE?
+                                    <div className="nav-item"><a className="nav-link px-0 py-1 text-900" href="#WHAT_ARE_YOUR_PRIVACY_RIGHTS">WHAT ARE YOUR PRIVACY RIGHTS?</a></div>
+                                    <div className="nav-item"><a className="nav-link px-0 py-1 text-900" href="#DO_WE_MAKE_UPDATES_TO_THIS_NOTICE">DO WE MAKE UPDATES TO THIS NOTICE?
                                     </a></div>
                                 </div>
 

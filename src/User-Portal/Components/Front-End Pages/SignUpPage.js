@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Col, Row, Button, Form, Container } from 'react-bootstrap';
-import logo from '../../Components/Projectimages/MAI_white.png'
+import logo from '../../Components/Projectimages/My Project white logo-01.png'
 import worktops from '../../Components/Projectimages/Floor.jpg'
 import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
@@ -170,11 +170,9 @@ function SignUpPage(hasLabel) {
                                                             <Form.Check type="checkbox" className="mb-0 mt-3">
                                                                 <Form.Check.Input type="checkbox" />
                                                                 <Form.Check.Label
-                                                                    className="text-700 d-inline"
-
+                                                                    className="text-900 d-inline"
                                                                 >
-                                                                    By Signing up you accept MyProject's <Link to="/termsofuse">Terms of Service </Link>.
-                                                                    {/* I have read and understood MyProject's <Link to="/privacypolicy">Privacy Policy</Link>. */}
+                                                                     By signing up you accept MAI's <Link to="/termsofuse">Terms and Conditions</Link>.
                                                                 </Form.Check.Label>
                                                             </Form.Check>
                                                         </Form.Group>
