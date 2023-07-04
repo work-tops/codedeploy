@@ -157,48 +157,57 @@ function ProductList() {
                 <Container>
                     <Row>
                         <Col className='mb-3' lg={3}>
-                            <Card className="mt-5">
-                                <Card.Body>
-                                    <Form.Check
-                                        type="checkbox"
-                                        className="form-check d-flex ps-0"
-                                    >
-                                        <Form.Check.Label
-                                            className="fs--1 flex-1 text-truncate"
-                                        >
-                                            Offers
-                                        </Form.Check.Label>
-
-                                        <Form.Check.Input
+                            <div className="course-details-sticky-sidebar">
+                                <Card className=" mt-5">
+                                    <Card.Body>
+                                        <Form.Check
                                             type="checkbox"
-                                            className="cursor-pointer"
-                                        />
-                                    </Form.Check>
-                                </Card.Body>
-                            </Card>
-                            <Card className="mt-3">
-                                <SimpleBarReact style={{ height: '100%' }}>
-                                    <Card.Header as={Flex} className="flex-between-center pt-x1">
-                                        <div className='justify-content-between d-flex m-2'>
-                                            <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
+                                            className="form-check d-flex ps-0"
+                                        >
+                                            <Form.Check.Label
+                                                className="fs--1 flex-1 text-truncate"
+                                            >
+                                                Offers
+                                            </Form.Check.Label>
+
+                                            <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                        </Form.Check>
+                                    </Card.Body>
+                                </Card>
+
+                                <Card className="mt-3">
+                                    {/* <SimpleBarReact style={{ overflow:'hidden',height: '100%' }}> */}
+                                    <Card.Header as={Flex} className="flex-between-center pt-x1 bg-white">
+                                        <div className="justify-content-between d-flex m-2">
+                                            <h4 className="mb-0 text-700 fs-0 d-flex align-items-center">
                                                 <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
                                                 <span>Filter</span>
-                                            </h5>
-
-                                            <button
-                                                onClick={() => resetFilter()}
-                                                className="btn btn-sm btn-outline-secondary">Reset</button>
+                                            </h4>
+                                            <button onClick={() => resetFilter()} className="btn btn-sm btn-outline-secondary">Reset</button>
                                         </div>
-
                                     </Card.Header>
-                                    <Card.Body className="py-0 mt-2">
-
+                                    <Card.Body className="py-0 mt-2" style={{ overflowY: 'auto' }}>
                                         <div className="d-flex flex-wrap mb-2">
-                                            {filterList?.map((x, i) => {
-                                                return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon icon="ic:sharp-close" className="cursor-pointer" color="white" width="14" height="14" /></span>
-                                            })}
+                                            {filterList?.map((x, i) => (
+                                                <span
+                                                    key={`filter_${i}`}
+                                                    onClick={() => removeFilter(i)}
+                                                    className="badge m-1 bg-secondary text-white"
+                                                >
+                                                    {x}{' '}
+                                                    <Icon
+                                                        icon="ic:sharp-close"
+                                                        className="cursor-pointer"
+                                                        color="white"
+                                                        width="14"
+                                                        height="14"
+                                                    />
+                                                </span>
+                                            ))}
                                         </div>
-
                                         <ul className="list-unstyled mt-1">
                                             {productTags?.map((data, key) => (
                                                 <FilterItem
@@ -208,11 +217,13 @@ function ProductList() {
                                                     filterList={filterList}
                                                     setFilterList={setFilterList}
                                                     handleFilter={handleFilter}
-                                                />))}
+                                                />
+                                            ))}
                                         </ul>
                                     </Card.Body>
-                                </SimpleBarReact>
-                            </Card>
+                                    {/* </SimpleBarReact> */}
+                                </Card>
+                            </div>
                         </Col>
                         <Col className='mb-3' lg={9}>
 
@@ -245,7 +256,7 @@ function ProductList() {
                                                 <div className="col-auto">
                                                     <form className="row gx-2">
                                                         <div className="col-auto d-none d-lg-block"><span className="fw-semi-bold">Sort by</span></div>
-                                                        <div className="col-auto">
+                                                        <div className="col-auto me-2">
                                                             <select className="cursor-pointer form-select form-select-sm" aria-label="Bulk actions">
                                                                 <option>Recently uploaded</option>
                                                                 <option>Recommended</option>
@@ -260,15 +271,15 @@ function ProductList() {
                                                     </form>
                                                 </div>
                                                 <div className="col-auto">
-                                                    <div className="d-flex align-items-center"><span className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</span>
+                                                    <div className="d-flex align-items-center"><span className="fw-semi-bold me-2 d-none d-md-block lh-1">View</span>
                                                         <div onClick={() => { setIsList(false) }}
-                                                            className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
+                                                            className={`d-none d-md-block ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}
                                                         >
                                                             <Icon className="cursor-pointer ms-1" icon="material-symbols:grid-on-sharp" width="24" height="24" />
                                                         </div>
                                                         <div onClick={() => { setIsList(true) }}
-                                                            className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
+                                                            className={`d-none d-md-block me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}
                                                         >
                                                             <Icon className="cursor-pointer" icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
@@ -287,7 +298,7 @@ function ProductList() {
                                         {products.map((data, key) => (
                                             <article className="col-md-6 col-lg-6 col-xl-4">
                                                 <div className="card h-100 overflow-hidden">
-                                                    <div style={{ maxWidth: '100%', height: '100%' }} className="card-body p-0 d-flex flex-column justify-content-between">
+                                                    <div className="card-body p-0 d-flex flex-column justify-content-between">
                                                         <div>
                                                             <div>
                                                                 <Link to={`productdetails/${data._id}`}>
@@ -337,17 +348,16 @@ function ProductList() {
                                                         </div>
                                                         <div className="row g-0 mb-3 align-items-end">
                                                             <div className="col ps-3">
-                                                                <h4 className="fs-1 text-warning d-flex align-items-center"><span>£ {data?.variant[0]?.pricing?.price}</span><del className="ms-2 fs--1 text-700">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
+                                                                <h4 className="fs-1 text-warning d-flex align-items-center"><span>£ {data?.variant[0]?.pricing?.price}</span><del className="ms-2 fs--1 fw-bold text-900">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
                                                                 <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
                                                                 <Link to="/GetQuote">
                                                                     <Button
                                                                         size="md"
-                                                                        variant="falcon-default"
                                                                         style={{ background: '#003f6b' }}
                                                                         className="fs--1 Home-btns-1 border-0 border-0 text-600 mt-3 text-white"
 
                                                                     >
-                                                                        Get Quote
+                                                                        Get a Quote
                                                                     </Button>
                                                                 </Link>
                                                             </div>
@@ -424,7 +434,7 @@ function ProductList() {
                                                     <div class="row g-0">
 
                                                         <div class="col-md-4 col-lg-3">
-                                                            <div class="hoverbox h-md-100"><a class="text-decoration-none" data-gallery="attachment-bg">
+                                                            <div class="hoverbox h-md-100"><a class="text-decoration-none">
                                                                 <Link to={`productdetails/${data._id}`}>
                                                                     <img class="h-100 cursor-pointer w-100 fit-cover" src={data?.attachments[0]?.url} alt="" />
                                                                 </Link>
@@ -449,7 +459,7 @@ function ProductList() {
                                                                             {data?.name}
                                                                         </Link>
                                                                     </h2>
-                                                                    <h3 className="fs--1 mt-2 w- d-lg-block">
+                                                                    <h3 className="fs-0 mt-1 mb-2 w- d-lg-block">
                                                                         {data?.type?.name}
                                                                     </h3>
                                                                     <div style={{ fontSize: '12px' }} className=" mb-2 text-700">
@@ -473,7 +483,7 @@ function ProductList() {
                                                                 <div class="col-lg-4 col-xxl-3 mt-4 mt-lg-0">
                                                                     <div class="h-100 rounded border-lg border-1  justify-content-between p-lg-3">
                                                                         <div class="mb-lg-4 mt-auto mt-lg-0">
-                                                                            <h4 class="mb-1 lh-1 fs-2 text-warning d-flex align-items-end">£ {data?.variant[0]?.pricing?.price}<del class="ms-1 fs--1 text-500 mb-1">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
+                                                                            <h4 class="mb-1 lh-1 fs-2 text-warning d-flex align-items-end">£ {data?.variant[0]?.pricing?.price}<del class="ms-1 fs--1 fw-bold text-900 mb-1">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
                                                                             <p class="mb-0 fs--2 text-800">92,632 Members Purchased</p>
                                                                         </div>
                                                                         <div class="mt-3 d-flex flex-lg-column gap-2">
@@ -517,9 +527,11 @@ function ProductList() {
                                                                             <button onClick={toastDark} class="btn btn-md btn-primary fs--1">
                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
                                                                             </button>
-                                                                            <Button to="/GetQuote" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b'}} class="Home-btns-1 btn btn-md btn-primary fs--1">
-                                                                                <span class="ms-1 Home-btns-1">Get Quote</span>
-                                                                            </Button>
+                                                                            <Link to="/GetQuote">
+                                                                                <button className="btn w-100 Home-btns-1 text-white btn-md fs--1" style={{ background: '#003f6b', border: '1px solid #003f6b' }} >
+                                                                                    <span class="ms-1">Get a Quote</span>
+                                                                                </button>
+                                                                            </Link>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -560,10 +572,27 @@ function ProductList() {
                                                 </select></div>
                                             </form>
                                         </div>
-                                        <div className="col-auto"> <button className="btn btn-falcon-default btn-sm me-2" type="button" disabled="disabled" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Prev" data-bs-original-title="Prev">
-                                            <span className="fas fa-chevron-left"></span></button><a className="btn btn-sm btn-falcon-default text-primary me-2" href="#!">1</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">2</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">3</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">
-                                                <span className="fas fa-ellipsis-h"></span></a><a className="btn btn-sm btn-falcon-default me-2" href="#!">303</a><button className="btn btn-falcon-default btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Next" data-bs-original-title="Next">
-                                                <span className="fas fa-chevron-right">  </span></button></div>
+                                        <div className="col-auto">
+                                            <button className="btn btn-falcon-default btn-sm me-2" type="button" disabled="disabled" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Prev" data-bs-original-title="Prev">
+                                                <span className="fas fa-chevron-left"></span>
+                                            </button>
+                                            <a className="btn btn-sm btn-falcon-default text-primary me-2" href="#!">
+                                                1
+                                            </a>
+                                            <a className="btn btn-sm btn-falcon-default me-2" href="#!">2
+                                            </a>
+                                            <a className="btn btn-sm btn-falcon-default me-2" href="#!">3
+                                            </a>
+                                            <a className="btn btn-sm btn-falcon-default me-2" href="#!">
+                                                <span className="fas fa-ellipsis-h"></span>
+                                            </a>
+                                            <a className="btn btn-sm btn-falcon-default me-2" href="#!">
+                                                303
+                                            </a>
+                                            <button className="btn btn-falcon-default btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Next" data-bs-original-title="Next">
+                                                <span className="fas fa-chevron-right"></span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

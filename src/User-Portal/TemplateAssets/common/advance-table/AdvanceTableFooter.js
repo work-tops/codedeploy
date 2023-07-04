@@ -67,7 +67,7 @@ export const AdvanceTableFooter = ({
               defaultValue={pageSize}
             >
               {rowsPerPageOptions.map(value => (
-                <option value={value} key={value}>
+                <option  value={value} key={value}>
                   {value}
                 </option>
               ))}
@@ -76,7 +76,7 @@ export const AdvanceTableFooter = ({
         )}
       </div>
       {navButtons && (
-        <div className='d-flex'>
+        <div className='d-flex justify-content-end gap-1 ms-2 flex-wrap'>
           <Button
             size="sm"
             variant={canPreviousPage ? 'primary' : 'light'}

@@ -29,8 +29,13 @@ function InvoiceCheckout() {
                                                     <div className="mb-3"><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0" for="inputNumber">Card Number</label><input className="form-control" id="inputNumber" type="text" placeholder="•••• •••• •••• ••••" /></div>
                                                     <div className="d-flex gap-2 align-items-center">
                                                         <div className=""><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0">Exp Date</label><input className="form-control" type="text" placeholder="mm/yyyy" /></div>
-                                                        <div className=""><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0">CVV<a className="d-inline-block" href="#" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Card verification value" data-bs-original-title="Card verification value">
-                                                            <span className="fa fa-question-circle ms-2"></span></a></label><input className="form-control" type="text" placeholder="123" maxlength="3" pattern="[0-9]{3}" /></div>
+                                                        <div className="">
+                                                            <label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0">
+                                                                CVV
+                                                                <span title="3 digit code at the back of your card" className="fa fa-question-circle text-primary ms-2"></span>
+                                                            </label>
+                                                            <input className="form-control" type="text" placeholder="123" maxlength="3" pattern="[0-9]{3}" />
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className="col-4 ps-3 text-center pt-2 d-none d-sm-block">
@@ -43,8 +48,13 @@ function InvoiceCheckout() {
                                                     <div className="mb-3"><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0" for="inputNumber">Card Number</label><input className="form-control" id="inputNumber" type="text" placeholder="•••• •••• •••• ••••" /></div>
                                                     <div className="d-flex gap-2 align-items-center">
                                                         <div className=""><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0">Exp Date</label><input className="form-control" type="text" placeholder="mm/yyyy" /></div>
-                                                        <div className=""><label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0">CVV<a className="d-inline-block" href="#" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Card verification value" data-bs-original-title="Card verification value">
-                                                            <span className="fa fa-question-circle ms-2"></span></a></label><input className="form-control" type="text" placeholder="123" maxlength="3" pattern="[0-9]{3}" /></div>
+                                                        <div className="">
+                                                            <label className="form-label ls text-uppercase text-600 fw-semi-bold mb-0">
+                                                                CVV
+                                                                <span title="3 digit code at the back of your card" className="fa fa-question-circle text-primary ms-2"></span>
+                                                            </label>
+                                                            <input className="form-control" type="text" placeholder="123" maxlength="3" pattern="[0-9]{3}" />
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className="col-4 ps-3 text-center pt-2 d-none d-sm-block">

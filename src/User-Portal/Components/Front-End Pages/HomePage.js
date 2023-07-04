@@ -45,18 +45,16 @@ function HomePage() {
                         {/* Section-1 */}
                         <div className="mt-5  mb-5">
                             <div className="row justify-content-xl-evenly">
-                                <div
-                                    className="col-md col-lg-5 order-md-2">
-
-                                    <img title="Your Abode of Interior and Exterior Experts" className="img-fluid   px-md-0 text-end" style={{ borderRadius: '50px 2px' }} src={homepage} alt="" />
+                                <div style={{ width: '443px', height: 'auto' }} className="col-md col-lg-5 order-md-2">
+                                    <img className="img-fluid px-md-0 text-end" style={{ borderRadius: '50px 2px' }} src={homepage} alt="" />
                                 </div>
                                 <div className="col-md mt-3  col-lg-7 col-xl-4">
-                                    <h6 className="text-700 text-uppercase">BUILD AWESOME PROPERTIES</h6>
-                                    <h1 className="fs-2 text-capitalize fs-sm-4 fs-md-5">
+                                    <h6 className="text-900">BUILD AWESOME PROPERTIES</h6>
+                                    <h1 className="fs-2  fs-sm-4 fs-md-5">
                                         <span className="typed-text-animation">Your Abode of Interior and Exterior Experts</span>
                                     </h1>
 
-                                    <p className="text-justify" >
+                                    <p className="" >
                                         We connect you with the most experienced and certified construction professionals who have been creating properties that mesmerise the millions.
                                     </p>
                                     <Link to="/user/sellerlist">
@@ -69,7 +67,7 @@ function HomePage() {
                             {/*Section-2 */}
                             <Container>
                                 <div className="fade-down-container" >
-                                    <h1 className="fs-2 text-center fs-sm-4 mt-3 mb-3 fs-md-5">Frequently Bought Materials</h1>
+                                    <h1 className="fs-2 text-center fs-sm-4 mt-5 mb-3 fs-md-5">Frequently Bought Materials</h1>
                                     <Swiper
                                         spaceBetween={10}
                                         autoplay={{
@@ -96,77 +94,89 @@ function HomePage() {
                                             },
                                             993: {
                                                 slidesPerView: 3,
-                                                spaceBetween: 20,
+                                                // spaceBetween: 10,
                                             },
                                         }}
                                     >
-                                        <SwiperSlide>
-                                            <Link to="/productlist">
-                                                <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Granite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                                    <Card.Body>
-                                                        <h5 className="text-light m-2">Granite</h5>
-                                                    </Card.Body>
-                                                </Card>
-                                            </Link>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <Link to="/productlist">
-                                                <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Limstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                                    <Card.Body>
-                                                        <h5 className="text-light m-2">Limstone</h5>
-                                                    </Card.Body>
-                                                </Card>
-                                            </Link>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <Link to="/productlist">
-                                                <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Quartzite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                                    <Card.Body>
-                                                        <h5 className="text-light m-2">Quartzite</h5>
-                                                    </Card.Body>
-                                                </Card>
-                                            </Link>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <Link to="/productlist">
-                                                <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Sandstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                                    <Card.Body>
-                                                        <h5 className="text-light m-2">Sandstone</h5>
-                                                    </Card.Body>
-                                                </Card>
-                                            </Link>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <Link to="/productlist">
-                                                <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${slate})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                                    <Card.Body>
-                                                        <h5 className="text-light m-2">Sinks</h5>
-                                                    </Card.Body>
-                                                </Card>
-                                            </Link>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <Link to="/productlist">
-                                                <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Travertine})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
-                                                    <Card.Body>
-                                                        <h5 className="text-light m-2">Traventine</h5>
-                                                    </Card.Body>
-                                                </Card>
-                                            </Link>
-                                        </SwiperSlide>
+                                        <div style={{ width: '345px', height: 'auto' }}>
+                                            <SwiperSlide>
+                                                <Link to="/productlist">
+                                                    <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Granite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                                        <Card.Body>
+                                                            <h5 className="text-light m-2">Granite</h5>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </Link>
+                                            </SwiperSlide>
+                                        </div>
+                                        <div style={{ width: '345px', height: 'auto' }}>
+                                            <SwiperSlide>
+                                                <Link to="/productlist">
+                                                    <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Limstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                                        <Card.Body>
+                                                            <h5 className="text-light m-2">Limstone</h5>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </Link>
+                                            </SwiperSlide>
+                                        </div>
+                                        <div style={{ width: '345px', height: 'auto' }}>
+                                            <SwiperSlide>
+                                                <Link to="/productlist">
+                                                    <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Quartzite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                                        <Card.Body>
+                                                            <h5 className="text-light m-2">Quartzite</h5>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </Link>
+                                            </SwiperSlide>
+                                        </div>
+                                        <div style={{ width: '345px', height: 'auto' }}>
+                                            <SwiperSlide>
+                                                <Link to="/productlist">
+                                                    <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Sandstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                                        <Card.Body>
+                                                            <h5 className="text-light m-2">Sandstone</h5>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </Link>
+                                            </SwiperSlide>
+                                        </div>
+                                        <div style={{ width: '345px', height: 'auto' }}>
+                                            <SwiperSlide>
+                                                <Link to="/productlist">
+                                                    <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${slate})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                                        <Card.Body>
+                                                            <h5 className="text-light m-2">Sinks</h5>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </Link>
+                                            </SwiperSlide>
+                                        </div>
+                                        <div style={{ width: '345px', height: 'auto' }}>
+                                            <SwiperSlide>
+                                                <Link to="/productlist">
+                                                    <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Travertine})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
+                                                        <Card.Body>
+                                                            <h5 className="text-light m-2">Traventine</h5>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </Link>
+                                            </SwiperSlide>
+                                        </div>
                                     </Swiper>
                                 </div>
                             </Container>
                             {/* Section-3 */}
                             <div className="row fade-down-container mb-5">
-                                <h6 className="text-700 text-center text-uppercase">CHECK OUT</h6>
+                                <h6 className="text-900 text-center ">CHECK OUT</h6>
                                 <h1 className="fs-2 mb-4 text-center fs-sm-4 fs-md-5">Popularly Enquired Projects</h1>
                                 <div className=" col-lg-4 col-md-6 mt-2 mt-lg-0">
 
                                     <div style={{ borderRadius: '50px 2px' }} className=" card card-span h-100">
                                         <div className=" card-body pt-4 pb-3">
                                             <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Kitchen Worktops</p>
-                                            <p className="text-justify">Long lasting, easy maintenance, durable countertops</p>
+                                            <p className="">Long lasting, easy maintenance, durable countertops</p>
                                         </div>
                                     </div>
 
@@ -175,7 +185,7 @@ function HomePage() {
                                     <div style={{ borderRadius: '50px 2px' }} className=" card card-span h-100">
                                         <div className=" card-body pt-4 pb-3">
                                             <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Bathroom Interiors</p>
-                                            <p className="text-justify">Highly moisture-resistant wall claddings and vanity tops</p>
+                                            <p className="">Highly moisture-resistant wall claddings and vanity tops</p>
                                         </div>
                                     </div>
                                 </div>
@@ -183,7 +193,7 @@ function HomePage() {
                                     <div style={{ borderRadius: '50px 2px' }} className=" card card-span h-100">
                                         <div className=" card-body pt-4 pb-3 ">
                                             <p style={{ fontSize: '20px' }} className="mb-2 fw-semibold ">Reception Desks</p>
-                                            <p className="text-justify">Trendy and classy stone surfaces
+                                            <p className="">Trendy and classy stone surfaces
                                             </p>
                                         </div>
                                     </div>
@@ -191,13 +201,13 @@ function HomePage() {
                             </div>
                             {/* Section-4 */}
                             <div className="row justify-content-xl-evenly  mb-5">
-                                <div className="col-md fade-left-container mt-md-2 col-lg-5 ">
-                                    <img className="img-fluid  " style={{ borderRadius: '50px 2px' }} src={temptingDiscounts} alt="" />
+                                <div style={{ width: '443px', height: 'auto' }} className="col-md fade-left-container mt-md-2 col-lg-5 ">
+                                    <img className="img-fluid" style={{ borderRadius: '50px 2px' }} src={temptingDiscounts} alt="" />
                                 </div>
                                 <div className="col-md mt-3 fade-right-container col-lg-7 col-xl-4">
-                                    <h6 className="text-700 text-start text-uppercase">DON'T MISS</h6>
+                                    <h6 className="text-900 text-start ">DON'T MISS</h6>
                                     <h1 className="fs-2 fs-sm-4 fs-md-5">Tempting Discounts</h1>
-                                    <p className="text-justify">
+                                    <p className="">
                                         We keep you updated about unmissable offers from numerous sellers and
                                         traders so that you can grab the best deal from the comfort of your home.
                                     </p>
@@ -209,11 +219,11 @@ function HomePage() {
                             {/* Section-5 */}
                             <div className="row justify-content-xl-evenly  mb-5">
 
-                                <div className="col-md mt-md-2 fade-left-container order-md-2 col-lg-5 ">
+                                <div style={{ width: '443px', height: 'auto' }} className="col-md mt-md-2 fade-left-container order-md-2 col-lg-5 ">
                                     <img className="img-fluid " style={{ borderRadius: '50px 2px' }} src={bussinessman} alt="" />
                                 </div>
                                 <div className="col-md mt-3  fade-right-container col-lg-7 col-xl-4">
-                                    <h6 className="text-700 text-start text-uppercase">SUCCESSFUL TRADE EXPERTS</h6>
+                                    <h6 className="text-900 text-start ">SUCCESSFUL TRADE EXPERTS</h6>
                                     <h1 className="fs-2 fs-sm-4 fs-md-5">Choose to become Limitless</h1>
                                     <p >
                                         Do not limit yourself to your local regions. Join our network and connect with millions of customers,
@@ -227,13 +237,13 @@ function HomePage() {
                             </div>
                             {/* Section-6 */}
                             <div className="row justify-content-xl-evenly  mb-5">
-                                <div className="col-md fade-left-container mt-md-2 col-lg-5 ">
+                                <div style={{ width: '443px', height: 'auto' }} className="col-md fade-left-container mt-md-2 col-lg-5 ">
                                     <img className="img-fluid  " style={{ borderRadius: '50px 2px' }} src={twoWay} alt="" />
                                 </div>
                                 <div className="col-md mt-3 fade-right-container col-lg-7 col-xl-4">
-                                    <h6 className="text-700 text-start text-uppercase">UNIQUE IN THE INDUSTRY</h6>
+                                    <h6 className="text-900 text-start ">UNIQUE IN THE INDUSTRY</h6>
                                     <h1 className="fs-2 fs-sm-4 fs-md-5">2 Way Review Facility</h1>
-                                    <p className="text-justify">
+                                    <p className="">
                                         Here at MAI, the project owners as well as the traders get fair opportunities to review one another.
                                         This is one of the most-unique advantages of using our platform. This increases the quality of service
                                         being provided as well as puts an insight on the compatibility with the project owner.
@@ -243,9 +253,9 @@ function HomePage() {
                             </div>
                             {/* Section-7 */}
                             <div className="mb-5 fade-down-container text-center">
-                                <h6 className="text-700 text-center text-uppercase">stories</h6>
+                                <h6 className="text-900 text-center">STORIES</h6>
                                 <div className="col">
-                                    <h1 className="fs-2 mb-4 fs-sm-4 fs-md-5"></h1>
+                                    <h1 className="fs-2 fs-sm-4 fs-md-5"></h1>
                                     <h1 className="fs-2 text-center fs-sm-4 mt-3 mb-3 fs-md-5">See What Our Users Felt</h1>
                                 </div>
                                 <div className="row">

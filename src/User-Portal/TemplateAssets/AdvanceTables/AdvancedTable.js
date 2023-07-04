@@ -397,8 +397,8 @@ const AdvancedTable = () => {
     const data = product.map(product => ({
         productId: product._id,
         image: <img src={product.attachments[0].url} width="40px" height="35px" />,
-        name: <p className="text-uppercase">{product.name}</p>,
-        // email: product.seller_email,
+        name: <p className="fs--1 text-uppercase">{product.name}</p>,
+        
         price: `£${product.variant[0].pricing.price}`,
         quantity: `${product.variant[0].inventory.quantity} Pcs`,
         status: <span className="badge bg-success ">Approved</span>,
@@ -452,9 +452,9 @@ const AdvancedTable = () => {
                         <div className="d-flex">
                             <Form.Select size="sm" aria-label="Bulk actions">
                                 <option>Bulk Actions</option>
-                                <option value="refund">Refund</option>
-                                <option value="delete">Delete</option>
-                                <option value="archive">Archive</option>
+                                {/* <option value="refund">Refund</option> */}
+                                {/* <option value="archive">Archive</option> */}
+                                <option value="delete">Disable</option>
                             </Form.Select>
                             <Button
                                 type="button"
@@ -497,8 +497,8 @@ const AdvancedTable = () => {
             data={data}
             sortable
             pagination
-            // perPage={5}
-            // selection
+            perPage={5}
+            selection
             selectionColumnWidth={30}
         >
             <BulAction table />

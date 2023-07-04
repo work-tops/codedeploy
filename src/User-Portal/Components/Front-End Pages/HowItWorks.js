@@ -25,21 +25,20 @@ function HowItWorks() {
                     <NavbarStandard />
                 </Col>
                 <Col lg={12} className="mt-3">
-                    <div className="row">
+                    <div className="row justify-content-center align-items-center ">
                         <div className="col-lg-7">
                             <div className="text-center">
-                                <div class="col-md-12 col-lg-12 col-xl-12 pb-7 pb-xl-9 ">
-
-                                    <div style={{ position: 'relative', top: '5rem' }}>
-                                        <h1 className="typed-start mb-2 d-block fw-bold text-dark fw-light"> A KBB Certified Platform</h1>
-                                        <h2 className="typed-start  fw-bold">
-                                            Chosen By
-                                            Professionals Who Love Doing What They Do
-                                        </h2>
-                                        <p className="mt-3 fw-semibold mb-3 text-dark">
-                                            Every project is precious for the right professional
-                                        </p>
-                                    </div>
+                                <div class="col-md-12 col-lg-12 col-xl-12 ">
+                                    {/* <div className="d-flex flex-column "> */}
+                                    <h1 className=" mb-2 mt-3 d-block fw-bold text-dark fw-light">A KBB Certified Platform</h1>
+                                    <h2 className="  fw-bold">
+                                        Chosen By
+                                        Professionals Who Love Doing What They Do
+                                    </h2>
+                                    <p className="mt-3 text-center fw-semibold mb-3 text-dark">
+                                        Every project is precious for the right professional
+                                    </p>
+                                    {/* </div> */}
                                 </div>
                             </div>
                         </div>
@@ -93,7 +92,7 @@ function HowItWorks() {
                                                         <img className="img-fluid px-6 px-md-0" src={HIW_2} alt="" /></div>
                                                     <div className="col-md col-lg-5 col-xl-4 mt-4 mt-md-0">
                                                         <h2>Play with Filters</h2>
-                                                        <p className="text-justify" style={{ fontSize: '16px' }}>
+                                                        <p className="" style={{ fontSize: '16px' }}>
                                                             Use various filters to narrow your search based on your requirement; Skill, Location, Price Range, Project Type and many
                                                             more.
                                                         </p>
@@ -104,7 +103,7 @@ function HowItWorks() {
                                                     <div className="col-md col-lg-5 col-xl-4 pe-lg-6 order-md-2"><img className="img-fluid px-6 px-md-0" src={HIW_1} alt="" /></div>
                                                     <div className="col-md col-lg-5 col-xl-4 mt-4 mt-md-0">
                                                         <h2>Describe Your Requirements</h2>
-                                                        <p className="text-justify" style={{ fontSize: '16px' }}>
+                                                        <p className="" style={{ fontSize: '16px' }}>
                                                             Select the categories and subcategories relevantly so we can recommend
                                                             appropriate professionals. If something you are searching for is not in option
                                                             you can type “Others"in the search box and add your requirement.
@@ -324,8 +323,8 @@ function HowItWorks() {
                                                     You are just one sign up away from taking the Game-Changing Decision of your Lifetime!
                                                 </p>
                                                 <div className="d-flex mb-3 gap-1 justify-content-center">
-                                                    <Button as={Link} to="/Freelancer/False" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
-                                                    <Button as={Link} to="/FreelancerProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
+                                                    <Button className="Home-btns" as={Link} to="/Freelancer/False" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
+                                                    <Button className="Home-btns" as={Link} to="/FreelancerProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
                                                 </div>
                                             </div>
                                         </div>

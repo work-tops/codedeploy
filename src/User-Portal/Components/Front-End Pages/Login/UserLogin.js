@@ -142,6 +142,7 @@ const UserLogin = ({ }) => {
                               <Form.Check.Input
                                 type="checkbox"
                                 name="remember"
+                                className="cursor-pointer"
                                 checked={formData.remember}
                                 onChange={e =>
                                   setFormData({
@@ -177,7 +178,12 @@ const UserLogin = ({ }) => {
                           </Button>
                         </Form.Group>
                       </Form>
-                      <p className="text-center fw-semibold text-900 mt-3 mb-3">Don't Have an Account ? <Link to='/project-owner-register'>Create Account</Link></p>
+                      <p class="text-center fs--1 text-900 mt-3 mb-3">
+                        Don't Have an Account ?
+                        <Link className="ms-1" to='/project-owner-register'>
+                          Create Account
+                        </Link>
+                      </p>
                       <Divider>Or Login With</Divider>
                       <SocialAuthButtons />
                       <Toaster />

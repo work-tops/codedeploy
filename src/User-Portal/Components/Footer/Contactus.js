@@ -52,13 +52,13 @@ function ContactUs() {
                                         </Card.Header>
                                         <Card.Body>
                                             <Row className="">
-                                                <Col md={6}>
+                                                <Col md={12} lg={6}>
                                                     <Form.Group className="mb-3">
                                                         <Form.Label className="text-uppercase">First Name<span className="text-danger">*</span></Form.Label>
                                                         <Form.Control placeholder="First Name" />
                                                     </Form.Group>
                                                 </Col>
-                                                <Col md={6}>
+                                                <Col md={12} lg={6}>
                                                     <Form.Group className="mb-3">
                                                         <Form.Label className="text-uppercase">Last Name<span className="text-danger">*</span></Form.Label>
                                                         <Form.Control placeholder="First Name" />
@@ -66,13 +66,13 @@ function ContactUs() {
                                                 </Col>
                                             </Row>
                                             <Row className="">
-                                                <Col md={6}>
+                                                <Col md={12} lg={6}>
                                                     <Form.Group className="mb-3">
                                                         <Form.Label className="text-uppercase">Email <span className="text-danger">*</span></Form.Label>
                                                         <Form.Control type="email" placeholder="Enter Your Email Address" />
                                                     </Form.Group>
                                                 </Col>
-                                                <Col md={6}>
+                                                <Col md={12} lg={6}>
                                                     <Form.Group className="mb-3">
                                                         <Form.Label className="text-uppercase">Phone Number<span className="text-danger">*</span></Form.Label>
                                                         <Form.Control placeholder="+44 0000 000 0000" />

@@ -387,11 +387,13 @@ function NewInvoice() {
                                         </Form.Group>
                                     </div>
                                 </div>
-                                <Button as={Link} to="/InvoiceFreelancerCard" className="btn-secondary me-2" type="submit">Save as Draft</Button>
-                                <Button as={Link} to="/InvoiceFreelancerCard" className="btn-success me-2" type="submit">Save & Send</Button>
+                                <div className="d-flex justify-content-md-start gap-2 flex-wrap">
+                                <Button as={Link} to="/InvoiceFreelancerCard" className=" btn-secondary" type="submit">Save as Draft</Button>
+                                <Button as={Link} to="/InvoiceFreelancerCard" className="btn-success" type="submit">Save & Send</Button>
                                 <Button variant="danger" onClick={handleShow1}>
                                     Discard
                                 </Button>
+                                </div>
                             </Card.Body>
 
                         </Card>

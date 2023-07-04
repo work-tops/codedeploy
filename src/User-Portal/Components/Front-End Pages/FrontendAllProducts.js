@@ -9,22 +9,16 @@ function FrontEndAllProducts() {
   return (
     <>
       <Card className="mb-3">
-        <Card.Body>
-          <div className='d-flex justify-content-between'>
-            {/* <div className="m-3"> */}
-            <h4 className="mt-2">My Products</h4>
-            {/* </div> */}
-            {/* <div className="m-3"> */}
-
+        <Card.Body className="bg-light">
+          <div className='d-flex justify-content-between flex-wrap'>
+            <h4 className="mt-2 mb-3">My Products</h4>
             <Link to="/user/addproduct">
               <Button className='m-1 bg-success border-success'>Add Product</Button>
             </Link>
-
-            {/* </div> */}
           </div>
-         
-            <AdvancedTable />
-         
+
+          <AdvancedTable />
+
         </Card.Body>
       </Card>
     </>

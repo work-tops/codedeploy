@@ -48,7 +48,7 @@ function ProjectOwnerProfile() {
     // 
     const editorRef = useRef(null);
 
-    const [activeTab, setActiveTab] = useState('tab2');
+    const [activeTab, setActiveTab] = useState('tab3');
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
@@ -86,7 +86,7 @@ function ProjectOwnerProfile() {
                                             <div className="row row-cols-1 g-0">
                                                 <div className="col text-center">
                                                     <h4>Bill Finger </h4>
-                                                    <p className="mb-0 fs--1">Sheldon,United Kingdom</p>
+                                                    <p className="mb-0 text-center fs--1">Sheldon,United Kingdom</p>
                                                 </div>
                                                 {/*</svg>*/}
                                                 <div className="col mt-4 mt-md-5 mt-lg-4 order-md-1 order-lg-0">
@@ -104,7 +104,7 @@ function ProjectOwnerProfile() {
                                                             <h5 className="fw-normal mb-0">Traders Worked</h5>
                                                             <h5 className="text-700 mt-2" >3</h5>
                                                         </div>
-                                                        <p onClick={handleShow1} className="text-primary mt-3" role="button">Report this Profile</p>
+                                                        <p onClick={handleShow1} className="text-primary text-center mt-3" role="button">Report this Profile</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -122,10 +122,10 @@ function ProjectOwnerProfile() {
                             <Tab.Container activeKey={activeTab} onSelect={handleTabChange}>
                                 <Nav variant="tabs">
                                     <Nav.Item>
-                                        <Nav.Link className="text-uppercase" eventKey="tab2">My Projects</Nav.Link>
+                                        <Nav.Link className="text-uppercase" eventKey="tab3">Reviews</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link className="text-uppercase" eventKey="tab3">Reviews</Nav.Link>
+                                        <Nav.Link className="text-uppercase" eventKey="tab2">My Projects</Nav.Link>
                                     </Nav.Item>
                                 </Nav>
 

@@ -47,77 +47,72 @@ function Footer() {
 
                     {/* <section className=""> */}
                     <div className="container text-center text-md-start mt-5">
-
                         <div className="row mt-3">
-
-                            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
+                            <div className="text-center col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
                                 <Link to="/">
                                     <img src={logo} style={{ position: 'relative', bottom: '9px' }} width="135px" />
                                 </Link>
-
-                                <p style={{wordBreak:'break-all'}}>
+                                <p className="text-start">
                                     MAI transforms your house into a home by taking care
                                     of all your projects from simple to difficult ones,
                                     including painting,furnishing,bathroom upscaling,kitchen
                                     remodelling,stone worktop installations....<Link to="/aboutus">
-                                    Learn More</Link>
+                                        Learn More</Link>
                                 </p>
-
                             </div>
 
 
 
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                                <h6 className="text-uppercase fw-bold">Shopping Guide</h6>
+                                <h6 className=" fw-bold">Shopping Guide</h6>
                                 <hr
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: '60px', background: '#003F6B', height: '2px' }}
                                 />
                                 <Link className="text-dark" to="/termsofuse">
-                                    <p>
-                                        <a className="text-dark">Terms & Conditions</a>
+                                    <p >
+                                        <a className="text-dark hover-mai">Terms & Conditions</a>
                                     </p>
                                 </Link>
                                 <Link className="text-dark" to="/privacypolicy">
-                                    <p>
-                                        <a className="text-dark">Privacy Policy</a>
+                                    <p >
+                                        <a className="text-dark hover-mai">Privacy Policy</a>
                                     </p>
                                 </Link>
                             </div>
 
 
 
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                                <h6 className="text-uppercase fw-bold">Useful links</h6>
+                                <h6 className=" fw-bold">Useful links</h6>
                                 <hr
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: '60px', background: '#003F6B', height: '2px' }}
                                 />
                                 <Link to="/freelancer/true" className="text-dark">
-                                    <p>
-                                        <a className="text-dark">Trade Login</a>
+                                    <p >
+                                        <a className="text-dark hover-mai">Trade Login</a>
                                     </p>
                                 </Link>
                                 <Link to="/contactus" className="text-dark">
-                                    <p>
-                                        <a className="text-dark">Contact Us</a>
+                                    <p >
+                                        <a className="text-dark hover-mai">Contact Us</a>
                                     </p>
                                 </Link>
                                 <Link to="/Career" className="text-dark">
-                                    <p>
-                                        <a className="text-dark">Career</a>
+                                    <p >
+                                        <a className="text-dark hover-mai">Career</a>
                                     </p>
                                 </Link>
                                 <Link to="/FAQ" className="text-dark">
-                                    <p>
-                                        <a className="text-dark">FAQ</a>
+                                    <p >
+                                        <a className="hover-mai text-dark">FAQ</a>
                                     </p>
                                 </Link>
-                                <p>
-                                    <a className="text-dark">Site Map</a>
+                                <p >
+                                    <a className="hover-mai text-dark">Site Map</a>
                                 </p>
 
                             </div>
@@ -126,13 +121,13 @@ function Footer() {
 
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
-                                <h6 className="text-uppercase fw-bold">Contact</h6>
+                                <h6 className=" fw-bold">Contact</h6>
                                 <hr
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: '60px', background: '#003F6B', height: '2px' }}
                                 />
                                 <p><i className="fas fa-home me-2"></i>1 De La Warr Way, Cambridge, CB23 6DX</p>
-                                <p className="text-lowercase"><i className="fas fa-envelope  me-2"></i>info@myproject.ai</p>
+                                <p className=""><i className="fas fa-envelope  me-2"></i>info@myproject.ai</p>
                                 <p><i className="fas fa-phone me-2"></i> +44 0330 000 5000</p>
 
                             </div>

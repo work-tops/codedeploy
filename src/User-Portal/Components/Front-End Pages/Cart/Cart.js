@@ -35,15 +35,15 @@ function Cart() {
                                         <h5 className="mb-3 mb-md-0">Cart (1 Items)</h5>
                                     </div>
                                     <div className="col-md-auto">
-                                        <Link to="/productlist">
-                                            <a className="btn btn-sm mb-2 mb-lg-0 mb-md-0 btn-outline-secondary border-300 me-2 shadow-none" >
-                                                <span className="fas fa-chevron-left me-1" data-fa-transform="shrink-4"></span>
-                                                Continue Shopping
-                                            </a>
-                                        </Link>
-                                        <Button onClick={() => setShowModal(true)} className="btn btn-sm btn-danger" >Remove</Button></div>
-                                    {/* <div className="fs--2 fs-md--1"><a role="button"  className="text-danger" >Remove</a></div> */}
-
+                                    <div className="d-flex justify-content-start gap-1 flex-wrap">
+                                            <Link to="/productlist">
+                                                <a className="btn btn-sm  btn-outline-secondary   border-300 shadow-none" >
+                                                    <span  data-fa-transform="shrink-4"></span>
+                                                    Continue Shopping
+                                                </a>
+                                            </Link>
+                                            <Button onClick={() => setShowModal(true)} className="btn btn-sm btn-danger" >Remove</Button></div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="card-body p-0">
@@ -51,8 +51,8 @@ function Cart() {
                                     <div className="col-2 col-md-2 py-2">
                                         <Form.Check type="checkbox" />
                                     </div>
-                                    <div className="col-7 col-md-6 py-2">Product Name</div>
-                                    <div className="col-3 col-md-4">
+                                    <div className="col-6 col-md-6 py-2">Product Name</div>
+                                    <div className="col-4 col-md-4">
                                         <div className="row">
                                             <div className="col-md-8 py-2 d-none d-md-block text-center">Quantity</div>
                                             <div className="col-12 col-md-4 text-end py-2">Price</div>
@@ -84,10 +84,10 @@ function Cart() {
                                                     </Link>
                                                 </h5>
                                                 <span style={{ fontSize: '14px' }} className="fw-semibold mt-2 d-block">White / 20MM / Polished / Per Sq Mt</span>
-                                                <p className="text-danger" role="button">Remove</p>
+                                                <p className="text-danger" onClick={setShowModal} style={{fontSize:'14px',marginTop:'5px'}} role="button">Remove</p>
                                                 <div>
                                                     <Modal show={showModal} onHide={handleClose}>
-                                                        <Modal.Header>
+                                                        <Modal.Header closeButton>
                                                             <Modal.Title>Warning</Modal.Title>
                                                         </Modal.Header>
                                                         <Modal.Body>
@@ -122,11 +122,11 @@ function Cart() {
                                     </div>
                                 </div>
                                 <div className="row fw-bold gx-card mx-0">
-                                    <div className="col-9 col-md-8 py-2 text-end text-900">Total</div>
+                                    <div className="col-8 col-md-8 py-2 text-end text-900">Total</div>
                                     <div className="col px-0">
                                         <div className="row gx-card mx-0">
-                                            <div className="col-md-8 py-2 d-none d-md-block text-center">1 (items)</div>
-                                            <div className="col-12 col-md-4 text-end py-2">£ 200</div>
+                                            <div className="col-md-8 py-2 d-none d-md-block">1 (items)</div>
+                                            <div className="col-12 col-md-4 text-start py-2">£ 200</div>
                                         </div>
                                     </div>
                                 </div>

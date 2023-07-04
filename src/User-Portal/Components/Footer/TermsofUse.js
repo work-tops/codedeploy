@@ -206,7 +206,12 @@ function TermsOfUse() {
                                 current, or free of other errors, and your electronic display may not accurately
                                 reflect the actual colours and details of the products. All products are subject to
                                 availability, and we cannot guarantee that items will be in stock. We reserve the right
-                                to discontinue any products at any time for any reasons. Prices for all products are subject to change.
+                                to discontinue any products at any time for any reasons.
+                                Prices for all products are subject to change.Following UK Government’s Health and Safety Policies,
+                                traders are not permitted to sell and deliver stone slabs to the end user’s address
+                                as they do not have the appropriate equipment to handle those gigantic weights.
+                                Project owners must thus add their trader’s shipping address when checking out stone slabs.
+                                In case of wrong address being given, MAI will not be responsible for any losses.
                             </p>
                         </div>
                     </div>
@@ -215,8 +220,10 @@ function TermsOfUse() {
                             <h4 className="mb-0" id="PURCHASES_AND_PAYMENT">PURCHASES AND PAYMENT</h4>
                         </div>
                         <div className="card-body">
-                            <h4 className="">We accept the following forms of payment: </h4>
-                            <li className="fw-semibold text-900">CARD & BACS</li>
+                            <p className="mb-2">
+                                We accept the following forms of payment:
+                            </p>
+                            <li className="fw-semibold mb-2 text-900">CARD & BACS</li>
                             <p className="  mb-0 ">
                                 You agree to provide current, complete, and accurate purchase and account information for all purchases made via the services. You further agree to promptly update account and payment information, including email address, payment method, and payment card expiration date, so that we can complete your transactions and contact you as needed. Sales tax will be added to the price of purchases as deemed required by us. We may change prices at any time. All payments shall be in Pound sterling.
 
@@ -241,15 +248,18 @@ function TermsOfUse() {
                         </div>
                         <div className="card-body">
                             <p className="mb-3">
-                                You may not access or use the Services for any purpose other
-                                than that for which we make the Services available.The Services
-                                may not be used in connection with any commercial endeavours
-                                except those that are specifically endorsed or approved by us.
+                                You may not access or use the Services for any purpose other than that for which we make the Services available. The Services may not be used in connection with any commercial endeavours except those that are specifically endorsed or approved by us.  Every communication must be exclusively done through MAI and refrain from sharing any private information, such as email addresses or personal contact numbers. Your access to the website will be restricted and there will be legal actions if you don't comply with our terms mentioned in the prohibited activities.
                             </p>
                             <p className="mb-3">
                                 As a user of the Services, you agree not to:
                             </p>
                             <ul>
+                                <li>
+                                    Share or attempt to share any private information, through MAI, such as email addresses or personal contact numbers whether through writing or in the form of images, voice notes, or any possible means.
+                                </li>
+                                <li>
+                                    Communicate or attempt to communicate outside our platform in regards to MAI services/products/projects.
+                                </li>
                                 <li>
                                     Systemically retrieve data or other content from the Services to create or compile,
                                     directly,directly or indirectly, a collection, compilation, database, or directory without written permission from us.

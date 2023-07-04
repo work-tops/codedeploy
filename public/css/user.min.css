@@ -4,7 +4,6 @@
 
 p {
   font-size: 16px;
-  text-align: justify;
 }
 
 .hover-danger:hover {
@@ -210,8 +209,8 @@ body {
 
 .fixed-top {
   position: fixed;
-  right: 0px;
-  left: 0px;
+  right: -30px;
+  left: -34px;
   z-index: 1030;
   top: 0;
 }
@@ -674,23 +673,24 @@ small,
 strong,
 select,
 option,
-/* ul,
-li,
-ol, */
 a,
 .btn,
 button,
 label {
   text-transform: capitalize;
-  font-family: 'Open-sans';
+  font-family: 'Open Sans', sans-serif;
 }
 
 .nav-item,
 .nav-link {
-  font-family: 'Open-sans' !important;
+  font-family: 'Open Sans', sans-serif;
 }
 
+.hover-mai:hover {
+  color: #003f6b !important;
+  transition: all .5s !important;
+}
 
-.fs--1{
-  font-size: 16px !important;
+button{
+  font-size: 14px !important;
 }

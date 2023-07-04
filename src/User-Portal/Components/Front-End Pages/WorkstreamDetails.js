@@ -23,8 +23,10 @@ function WorkStreamDetails() {
                 </Col>
                 <Col lg={12} className="mt-4">
                     <Card className="mb-3 overflow-hidden g-3 ms-3 me-3">
-                        <Card.Body className="bg-light">
-                            <h5 className="mb-3">Workstream with <span className="text-uppercase">Sonaes</span></h5>
+                        <Card.Header className="bg-light">
+                            <h5 className="mb-3">Workstream with <span className="">Sonaes</span></h5>
+                        </Card.Header>
+                        <Card.Body>
                             <h5><span className="text-success me-2">#3901031</span>New Kitchen Worktops With Island</h5>
                         </Card.Body>
                     </Card>
@@ -162,11 +164,11 @@ function WorkStreamDetails() {
                                             </Link>
                                         </div>
                                         <div>
-                                            <p className="fw-bold text-uppercase mt-3 text-900">Soanes IT</p>
-                                            <p style={{ fontSize: '14px' }} className="fw-semibold text-capitalize text-700">Fabricator</p>
+                                            <p className="fw-bold  mt-3 text-900">Soanes IT</p>
+                                            <p style={{ fontSize: '14px' }} className="fw-semibold  text-700">Fabricator</p>
                                         </div>
                                     </div>
-                                    <p style={{ fontSize: '16px' }} className="fw-semibold text-secondary mt-2 text-capitalize">United Kingdom</p>
+                                    <p style={{ fontSize: '16px' }} className="fw-semibold text-secondary mt-2 ">United Kingdom</p>
                                     <Card style={{ border: '1px solid #003f6b' }}>
                                         <Card.Body>
                                             <p style={{ fontSize: '14px' }} className="fw-bold" >Project Status</p>
@@ -199,7 +201,7 @@ function WorkStreamDetails() {
                                         Mark Bowen mark@supportedlivinggateway.comMr Colin McGregor colin@tranquilico.comMiss
                                         Tracie Mckenna tracie.mckenna@1stresponse.org.uk
                                     </p>
-                                    <h6 className="mt-3 text-uppercase mb-3">Uploaded File</h6>
+                                    <h6 className="mt-3  mb-3">Uploaded File</h6>
                                     <div className="row bg-pre mt-3">
                                         <div className="col-4">
                                             <img src={file} width="50px" height="50px" className="pro-pre" />
@@ -227,7 +229,7 @@ function WorkStreamDetails() {
                 >
                     <Modal.Header>
                         <Modal.Title id="example-custom-modal-styling-title">
-                            <h6 className="text-uppercase">
+                            <h6 className="">
                                 Please Type Your Message
                             </h6>
                         </Modal.Title>
@@ -248,7 +250,7 @@ function WorkStreamDetails() {
                             </Form.Check>
                         </Form.Group>
                         <div className="d-flex justify-content-end mb-3">
-                            <Button onClick={handleClose} style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                            <Button onClick={handleClose} style={{ background: '#003f6b' }} className=" border-0">
                                 Send
                             </Button>
                         </div>

@@ -359,7 +359,7 @@ function ProductDetails() {
                         </Card>
                         <Card className="mb-3">
                             <Card.Body className="py-0">
-                              
+
                                 <Row className='g-3 align-items-center text-center text-md-start py-3'>
                                     <Col md="auto">
                                         <Link to="#!">
@@ -439,14 +439,14 @@ function ProductDetails() {
                                         <p className="text-justify fs--1">
                                             Thank you for this awesome review, Michael.
                                             We're so pleased to know that you love your new Urban Concrete Quartz worktops and have had a truly positive experience from start to finish with MAI.com.
-                                            
-                                                Thank you for choosing us.
-                                                We would love to serve your friends and family as well.
-                                            
-                                            
-                                                Thanks and regards,
-                                                Team MAI
-                                            
+
+                                            Thank you for choosing us.
+                                            We would love to serve your friends and family as well.
+
+
+                                            Thanks and regards,
+                                            Team MAI
+
                                         </p>
                                     </Card.Body>
                                 </Card>
@@ -534,13 +534,13 @@ function ProductDetails() {
                                         <p className="text-justify fs--1">
                                             Thank you for this awesome review, Michael.
                                             We're so pleased to know that you love your new Urban Concrete Quartz worktops and have had a truly positive experience from start to finish with MAI.com.
-                                            
-                                                Thank you for choosing us.
-                                                We would love to serve your friends and family as well.
-                                            
-                                                Thanks and regards,
-                                                Team MAI
-                                            
+
+                                            Thank you for choosing us.
+                                            We would love to serve your friends and family as well.
+
+                                            Thanks and regards,
+                                            Team MAI
+
                                         </p>
                                     </Card.Body>
                                 </Card>
@@ -579,14 +579,14 @@ function ProductDetails() {
                                                 </p> */}
 
 
-                                            <Button
-                                                onClick={toastDark}
-                                                variant="primary"
-                                                size="lg"
-                                                className="mb-3 w-100 fs-0 mt-1"
-                                            >
-                                                Add to Cart
-                                            </Button>
+                                            <button onClick={toastDark} class="btn w-100 mb-2 btn-md btn-primary fs--1">
+                                                <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
+                                            </button>
+                                            <Link to="/GetQuote">
+                                                <button className="btn w-100 Home-btns-1 text-white btn-md fs--1" style={{ background: '#003f6b', border: '1px solid #003f6b' }} >
+                                                    <span class="ms-1">Get a Quote</span>
+                                                </button>
+                                            </Link>
 
                                             {/* Cart Toast */}
                                             <ToastContainer
@@ -601,15 +601,6 @@ function ProductDetails() {
                                                 pauseOnHover
                                             />
                                             {/*  */}
-                                            <Link to="/GetQuote">
-                                                <Button
-                                                    style={{ background: '#003f6b' }}
-                                                    size="lg"
-                                                    className="w-100 mb-3 Home-btns-1 fs-0 mt-1"
-                                                >
-                                                    Get Quote
-                                                </Button>
-                                            </Link>
                                             {/* <p className="text-700 fw-medium fs--1 mt-3 mb-0">
                                                     14 day Refund Policy
                                                 </p> */}
