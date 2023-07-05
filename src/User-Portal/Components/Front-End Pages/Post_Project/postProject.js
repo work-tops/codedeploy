@@ -557,25 +557,25 @@ const PostProject = () => {
                   </Col>
                   <Col md="12">
                     <Form.Group className='mb-3 mt-2'>
-                      <Form.Label className='text-700 d-block text-uppercase'>
-                        Project Visibility <span className="text-danger">*</span>
-                      </Form.Label>
                       <Form.Check
+                        className="mb-0 mt-3"
                         type='radio'
                         id="radio-btn"
                         onChange={(e) => { handleChange(e) }}
                         name="visibility"
                         value="public"
-                        className='d-inline-block'
                       >
                         <Form.Check.Input name="visibility" type="radio" />
                         <Form.Check.Label
+                          className="d-inline"
                           style={{ fontSize: '14px' }}
                         >
                           <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span >(All Traders can view the project post and send proposals)</span></span>
+
                         </Form.Check.Label>
                       </Form.Check>
                     </Form.Group>
+
                     <Form.Group className=''>
                       <Form.Check
                         type='radio'
@@ -583,10 +583,12 @@ const PostProject = () => {
                         onChange={(e) => { handleChange(e) }}
                         name="visibility"
                         value="private"
-                        className='d-inline-block'
+                        className="mb-0 mt-3"
+                      // className='d-inline-block'
                       >
                         <Form.Check.Input name="visibility" type="radio" />
                         <Form.Check.Label
+                          className='d-inline'
                           style={{ fontSize: '14px' }}
                         >
                           <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span>(Only Traders that you specifically invite can view the project post and send proposal)</span></span>

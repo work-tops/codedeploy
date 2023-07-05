@@ -688,9 +688,5 @@ label {
   transition: all .5s !important;
 }
 
-button,
-.btn {
-  font-size: .8333333333rem !important;
-}
 
 /*  */
