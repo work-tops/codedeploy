@@ -146,9 +146,6 @@ star-rating {
 }
 
 /*  */
-.course-filter {
-  height: 100% !important
-}
 
 
 /*  */
@@ -691,6 +688,9 @@ label {
   transition: all .5s !important;
 }
 
-button{
-  font-size: 14px !important;
+button,
+.btn {
+  font-size: .8333333333rem !important;
 }
+
+/*  */

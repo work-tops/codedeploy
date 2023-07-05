@@ -16,7 +16,7 @@ function AllServices() {
                         <div>
                             <Row>
                                 <Col lg={12}>
-                                    <Link to="/user/addservices">
+                                    <Link to="/dashboard-addservice">
                                         <Button className='m-1 bg-success border-success w-100'>Add Services</Button>
                                     </Link>
                                 </Col>

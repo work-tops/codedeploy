@@ -41,7 +41,7 @@ function SignUpPage(hasLabel) {
             toast.success('Successfully Registered')
             setForm({});
             // clearForm();
-            history.push('/projectowner');
+            history.push('/Project-owner/login');
         } else {
             toast.error('Something went wrong')
         }
@@ -188,7 +188,7 @@ function SignUpPage(hasLabel) {
                                                     >
                                                         Sign Up
                                                     </Button>
-                                                    <p className="text-center fs--1 text-900 mt-3 mb-3">Already Have an Account ? <Link to='/projectowner'>Login</Link></p>
+                                                    <p className="text-center fs--1 text-900 mt-3 mb-3">Already Have an Account ? <Link to='/Project-owner/login'>Login</Link></p>
                                                     {/* Social Buttons*/}
                                                     <Divider>Or Register With</Divider>
                                                     <SocialAuthButtons />

@@ -388,8 +388,8 @@ function NewInvoice() {
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-md-start gap-2 flex-wrap">
-                                <Button as={Link} to="/InvoiceFreelancerCard" className=" btn-secondary" type="submit">Save as Draft</Button>
-                                <Button as={Link} to="/InvoiceFreelancerCard" className="btn-success" type="submit">Save & Send</Button>
+                                <Button as={Link} to="/t/invoices" className=" btn-secondary" type="submit">Save as Draft</Button>
+                                <Button as={Link} to="/t/invoices" className="btn-success" type="submit">Save & Send</Button>
                                 <Button variant="danger" onClick={handleShow1}>
                                     Discard
                                 </Button>
@@ -413,7 +413,7 @@ function NewInvoice() {
                             <Button variant="secondary" onClick={handleClose1}>
                                 No
                             </Button>
-                            <Button as={Link} to="/InvoiceFreelancerCard" variant="danger">
+                            <Button as={Link} to="/t/invoices" variant="danger">
                                 Yes
                             </Button>
                         </Modal.Footer>

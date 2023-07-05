@@ -404,7 +404,7 @@ const AdvancedTable = () => {
         status: <span className="badge bg-success ">Approved</span>,
         action: <CardDropdown>
             <div className="py-2">
-                <Dropdown.Item as={Link} to="/user/addproduct" >Edit</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/dashboard-addproduct" >Edit</Dropdown.Item>
                 <Dropdown.Item>View in Store</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal1(true)} className='text-danger'>Disable</Dropdown.Item>
                 {/*  */}

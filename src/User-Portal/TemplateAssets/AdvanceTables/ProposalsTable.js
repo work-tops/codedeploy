@@ -58,11 +58,11 @@ const AdvancedTable = () => {
         price: x?.amount,
         status: <span className={`badge ${x.is_approved ? 'bg-success' : 'bg-danger'}`}>{x.is_approved == true ? `Accepted` : `Pending`}</span>,
         action: <p className="mt-2" role="button">
-            <Link to={'/proposalDetails'}>
+            <Link to={'/proposal-details'}>
                 View
             </Link>
         </p>
-        // action: <Link to={'/proposalDetails'}><Icon className="ms-3" icon="ic:outline-remove-red-eye" color="#003f6b" width="20" height="20" /></Link>
+        // action: <Link to={'/proposal-details'}><Icon className="ms-3" icon="ic:outline-remove-red-eye" color="#003f6b" width="20" height="20" /></Link>
     }));
 
 

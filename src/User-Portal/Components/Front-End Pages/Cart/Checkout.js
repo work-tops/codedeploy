@@ -26,7 +26,7 @@ function Checkout() {
                                 <div className="card">
                                     <div className="card-header bg-light btn-reveal-trigger d-flex flex-between-center">
                                         <h5 className="mb-0">Order Summary</h5>
-                                        <Link to="/Cart">
+                                        <Link to="/cart">
                                             <a className="btn btn-link btn-sm btn-reveal text-600" >
                                                 <span className="fas fa-pencil-alt"></span>
                                             </a>

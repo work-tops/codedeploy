@@ -60,7 +60,7 @@ const EstimateTable = () => {
             amount: "£ 281.81",
             action: <CardDropdown>
                 <div className="py-2">
-                    <Dropdown.Item as={Link} to="/EditEstimate">Edit</Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/edit-estimate">Edit</Dropdown.Item>
                     <Dropdown.Item>Send</Dropdown.Item>
                     <Dropdown.Item>Print</Dropdown.Item>
 
@@ -78,7 +78,7 @@ const EstimateTable = () => {
             amount: "£ 281.81",
             action: <CardDropdown>
                 <div className="py-2">
-                    <Dropdown.Item as={Link} to="/EditEstimate">Edit</Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/edit-estimate">Edit</Dropdown.Item>
                     <Dropdown.Item>Send</Dropdown.Item>
                     <Dropdown.Item>Print</Dropdown.Item>
 
@@ -96,7 +96,7 @@ const EstimateTable = () => {
             amount: "£ 281.81",
             action: <CardDropdown>
                 <div className="py-2">
-                    <Dropdown.Item as={Link} to="/EditEstimate">Edit</Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/edit-estimate">Edit</Dropdown.Item>
                     <Dropdown.Item>Send</Dropdown.Item>
                     <Dropdown.Item>Print</Dropdown.Item>
 
@@ -114,7 +114,7 @@ const EstimateTable = () => {
             amount: "£ 281.81",
             action: <CardDropdown>
                 <div className="py-2">
-                    <Dropdown.Item as={Link} to="/EditEstimate">Edit</Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/edit-estimate">Edit</Dropdown.Item>
                     <Dropdown.Item>Send</Dropdown.Item>
                     <Dropdown.Item>Print</Dropdown.Item>
 
@@ -133,7 +133,7 @@ const EstimateTable = () => {
             amount: "£ 281.81",
             action: <CardDropdown>
                 <div className="py-2">
-                    <Dropdown.Item as={Link} to="/EditEstimate">Edit</Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/edit-estimate">Edit</Dropdown.Item>
                     <Dropdown.Item>Send</Dropdown.Item>
                     <Dropdown.Item>Print</Dropdown.Item>
 

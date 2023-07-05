@@ -105,63 +105,63 @@ const FrontEndRouters = () => {
     return (
         <Switch>
             {/* proper order routes */}
-            <Route path='/projectowner'><UserLogin /></Route>
-            <Route path='/project-owner-register'><SignUpPage /></Route>
+            <Route path='/Project-owner/login'><UserLogin /></Route>
+            <Route path='/Project-owner/register'><SignUpPage /></Route>
             <Route path="/freelancer/:login"><SellerLogin /></Route>
-            <Route path="/productlist"><ProductList /></Route>
+            <Route path="/products"><ProductList /></Route>
             {/* <Route path="/productgrid1"><ProductGrid /></Route> */}
-            <Route path="/projectlist"><ListJobs /></Route>
+            <Route path="/projects"><ListJobs /></Route>
             <Route path="/jobdetails/:jobid"><JobDetails /></Route>
             <Route path='/jobproposal/:jobid/jobproposal'><JobProposal /></Route>
 
-            <Route path='/servicelist'><ServiceList /></Route>
+            <Route path='/services'><ServiceList /></Route>
 
-            <Route path="/postproject"><PostProject /></Route>
+            <Route path="/post-a-project"><PostProject /></Route>
             {/* proper order routes end */}
 
-            {/* <Route path='/projectlisting'><ProjectListing /></Route> */}
+            {/* <Route path='/projectsing'><ProjectListing /></Route> */}
 
             {/* Proposal  */}
-            <Route path="/proposallist"><ProposalList /></Route>
-            <Route path="/proposalDetails"><ProposalDetails /></Route>
+            <Route path="/proposal-list"><ProposalList /></Route>
+            <Route path="/proposal-details"><ProposalDetails /></Route>
             {/* Proposal  */}
 
             {/*  */}
-            <Route path='/user/addproduct'><FrontendAddProduct /></Route>
-            <Route path='/user/addservices'><FrontendAddService /></Route>
-            <Route path='/HowItWorks'><HowItWorks /></Route>
+            <Route path='/dashboard-addproduct'><FrontendAddProduct /></Route>
+            <Route path='/dashboard-addservice'><FrontendAddService /></Route>
+            <Route path='/how-it-work'><HowItWorks /></Route>
             {/* <Route path='/Project-Owner/profile'><ProjectOwnerProfile /></Route> */}
             {/* <Route path='/Project-Owner/Settings'><ProjectOwnerSettings /></Route> */}
             {/* <Route path='/Seller/profile'><SellerProfile /></Route> */}
             {/* <Route path='/Seller/Settings'><SellerSettings /></Route> */}
             {/* <Route path='/Seller/Landing'><SellerLandingPage /></Route> */}
-            <Route path='/addproductcard'><AddProductCard /></Route>
-            <Route path='/addservicecard'><AddServiceCard /></Route>
-            <Route path='/proposalcard'><ProposalCard /></Route>
+            <Route path='/dashboard-products'><AddProductCard /></Route>
+            <Route path='/dashboard-services'><AddServiceCard /></Route>
+            <Route path='/user/myproposals'><ProposalCard /></Route>
 
             {/* Enquries */}
-            <Route path='/EnquiriesCard'><ProductEnquiresCard /></Route>
-            <Route path="/ServiceEnquiryDetails"><ServiceEnquiryDetails /></Route>
-            <Route path="/ProductEnquiryDetails"><ProductEnquiryDetails /></Route>
+            <Route path='/enquire'><ProductEnquiresCard /></Route>
+            <Route path="/enquire-service"><ServiceEnquiryDetails /></Route>
+            <Route path="/enquire-product"><ProductEnquiryDetails /></Route>
             {/* Enquries */}
 
             {/* Quote */}
-            <Route path="/RequestQuote"><RequestQuote /></Route>
-            <Route path="/GetQuote"><GetQuote /></Route>
+            <Route path="/s/enquiry"><RequestQuote /></Route>
+            <Route path="/p/enquiry"><GetQuote /></Route>
             {/* Quote */}
             {/* <Route path='/reviewscard'><ReviewsCard /></Route> */}
-            {/* <Route path='/ProjectOwner/Landing'><ProjectOwnerLandingPage /></Route> */}
-            <Route path='/openProjectCard'><OpenProjectCard /></Route>
+            {/* <Route path='/Project-owner/login/Landing'><ProjectOwnerLandingPage /></Route> */}
+            <Route path='/dashboard/my-project'><OpenProjectCard /></Route>
             <Route path='/workStreamCard'><WorkStreamCard /></Route>
 
             {/* <Route path='/POReviewsCard'><POReviewCard /></Route> */}
             {/* <Route path='/productList'><ProductList /></Route> */}
 
             <Route path='/productdetails/:proid'><ProductDetails /></Route>
-            <Route path='/wishlist/product'><WishListProductCard /></Route>
-            <Route path='/wishlist/project'><ProjectWishListCard /></Route>
-            <Route path='/wishlist/seller'><WishListSellerCard /></Route>
-            <Route path='/MyProfile'><MyProfile /></Route>
+            <Route path='/wishlist/products'><WishListProductCard /></Route>
+            <Route path='/wishlist/projects'><ProjectWishListCard /></Route>
+            <Route path='/wishlist/followers'><WishListSellerCard /></Route>
+            <Route path='/projectowner/profile'><MyProfile /></Route>
             <Route path='/user/allservices'><AllServices /></Route>
             {/* <Route path="/BussinessInformation"><TextareaWithOptions /></Route> */}
             {/* <Route path="/paymentinfo"><PaymentInfo /></Route> */}
@@ -172,12 +172,11 @@ const FrontEndRouters = () => {
             {/* <Route path="/userallproduct"><FrontEndAllProducts /></Route> */}
             {/* <Route path="/userallservice"><AllServices /></Route> */}
             {/* <Route path="/editProduct"><EditProduct /></Route> */}
-            <Route path="/user/sellerList"><SellerList /></Route>
-            <Route path="/ServiceInformation"><ServiceInformation /></Route>
-            <Route path="/Cart"><Cart /></Route>
-            <Route path="/contactus"><ContactUs /></Route>
+            <Route path="/service/categories"><SellerList /></Route>
+            <Route path="/service-provider"><ServiceInformation /></Route>
+            <Route path="/cart"><Cart /></Route>
             <Route path="/privacypolicy"><PrivacyPolicy /></Route>
-            <Route path="/contactus"><ContactUs /></Route>
+            <Route path="/contact-us"><ContactUs /></Route>
             {/* <Route path="/refundpolicy"><RefundPolicy /></Route>
             <Route path="/shippingpolicy"><ShippingPolicy /></Route> */}
             {/* <Route path="/msppolicy"><MSPPolicy /></Route> */}
@@ -189,7 +188,7 @@ const FrontEndRouters = () => {
             {/* <Route path="/postjob1"><PostJob1 /></Route>
             <Route path="/postjob2"><PostJob2 /></Route> */}
             {/* New Pages */}
-            <Route path="/profile_publicview"><PublicProfile /></Route>
+            <Route path="/trader-profile-public"><PublicProfile /></Route>
             {/* Freelancer */}
             <Route path="/freelance/forgetpassword"><ForgetPasswordFreelancer /></Route>
             <Route path="/freelance/confirm-mail"><FreelanceConMail /></Route>
@@ -205,24 +204,24 @@ const FrontEndRouters = () => {
             {/* New Pages */}
 
             <Route path="/Notifications"><Notifications /></Route>
-            <Route path="/chat"><Chat /></Route>
-            <Route path="/FreelancerProfile"><FreelancerProfile /></Route>
-            <Route path="/FreelancerEditProfile"><FreelancerEditProfile /></Route>
-            <Route path='/InvoicedueCard'><InvoicedueCard /></Route>
-            <Route path="/InvoiceFreelancerCard"><InvoiceFreelancerCard /></Route>
-            <Route path="/WorkstreamDetails"><WorkStreamDetails /></Route>
+            <Route path="/conversation"><Chat /></Route>
+            <Route path="/trader/profile"><FreelancerProfile /></Route>
+            <Route path="/user/setting"><FreelancerEditProfile /></Route>
+            <Route path='/p/invoices'><InvoicedueCard /></Route>
+            <Route path="/t/invoices"><InvoiceFreelancerCard /></Route>
+            <Route path="/work-stream"><WorkStreamDetails /></Route>
             {/* <Route path="/TraderWorkstreamDetails"><TraderWorkStreamDetails/></Route> */}
             <Route path="/EditPostProject"><Editpostproject /></Route>
-            <Route path="/EditProposal"><EditProposal /></Route>
-            <Route path="/InvoiceCheckout"><InvoiceCheckout /></Route>
-            <Route path="/NewEstimate"><NewEstimate /></Route>
-            <Route path="/EditEstimate"><EditEstimate /></Route>
+            <Route path="/edit-proposal"><EditProposal /></Route>
+            <Route path="/invoice/checkout"><InvoiceCheckout /></Route>
+            <Route path="/new-estimate"><NewEstimate /></Route>
+            <Route path="/edit-estimate"><EditEstimate /></Route>
             {/* <Route path="/Allsellerlist"><AllSellerList /></Route> */}
-            <Route path="/Estimates"><Estimate /></Route>
-            <Route path="/GuestCheckout"><GuestCheckout /></Route>
-            <Route path="/project-owner-estimate"><OwnerEstimate /></Route>
-            <Route path="/EditInvoice"><EditInvoice /></Route>
-            <Route path="/NewInvoice"><NewInvoice /></Route>
+            <Route path="/t/estimate-list"><Estimate /></Route>
+            <Route path="/g/checkout"><GuestCheckout /></Route>
+            <Route path="/p/estimate-list"><OwnerEstimate /></Route>
+            <Route path="/edit-invoice"><EditInvoice /></Route>
+            <Route path="/new-invoice"><NewInvoice /></Route>
             <Route path="/RepostProject"><RepostProject /></Route>
             <Route path="/projectOwnerprofile"><ProjectOwnerProfile/></Route>
             {/* New Pages */}

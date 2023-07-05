@@ -73,7 +73,7 @@ const ProposalListsTable = () => {
         {
             name: 'IRIE ARTS INC',
             image:
-                <Link to="/profile_publicview">
+                <Link to="/trader-profile-public">
                     <img src={profile} className="rounded-circle" height={30} width={30} />
                 </Link>,
             date: '01 May 2023',
@@ -85,14 +85,14 @@ const ProposalListsTable = () => {
             status: <span className="badge bg-success">Accepted</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/invoice/checkout" className="text-success">Accept</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/proposal-details" className="text-secondary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
         {
             name: 'IRIE ARTS INC',
-            image: <Link to="/profile_publicview">
+            image: <Link to="/trader-profile-public">
                 <img src={profile} className="rounded-circle" height={30} width={30} />
             </Link>,
             date: '01 May 2023',
@@ -104,14 +104,14 @@ const ProposalListsTable = () => {
             status: <span className="badge bg-danger">Declined</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/invoice/checkout" className="text-success">Accept</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/proposal-details" className="text-secondary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
         {
             name: 'IRIE ARTS INC',
-            image: <Link to="/profile_publicview">
+            image: <Link to="/trader-profile-public">
                 <img src={profile} className="rounded-circle" height={30} width={30} />
             </Link>,
             date: '01 May 2023',
@@ -123,14 +123,14 @@ const ProposalListsTable = () => {
             status: <span className="badge bg-warning">Pending</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/invoice/checkout" className="text-success">Accept</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/proposal-details" className="text-secondary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
         {
             name: 'IRIE ARTS INC',
-            image: <Link to="/profile_publicview">
+            image: <Link to="/trader-profile-public">
                 <img src={profile} className="rounded-circle" height={30} width={30} />
             </Link>,
             date: '01 May 2023',
@@ -142,8 +142,8 @@ const ProposalListsTable = () => {
             status: <span className="badge bg-danger">Declined</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow} className="text-primary">View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/proposalDetails" className="text-secondary">Reply</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/invoice/checkout" className="text-success">Accept</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/proposal-details" className="text-secondary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal2(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
         },
@@ -191,7 +191,7 @@ const ProposalListsTable = () => {
                                         <Card.Body>
                                             <Row>
                                                 <Col lg={3}>
-                                                    <Link to="/profile_publicview">
+                                                    <Link to="/trader-profile-public">
                                                         <img src={profile} className="mb-3 rounded-circle" width="100px" height="100px" />
                                                     </Link>
                                                     <p className="fw-bold ms-2 text-uppercase  text-900">Soanes IT</p>
@@ -246,7 +246,7 @@ const ProposalListsTable = () => {
                                                     </Dropdown.Toggle>
 
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item as={Link} to="/proposaldetails" className="text-success">Accept</Dropdown.Item>
+                                                        <Dropdown.Item as={Link} to="/proposal-details" className="text-success">Accept</Dropdown.Item>
                                                         <Dropdown.Item  className="text-danger">Decline</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
@@ -358,7 +358,7 @@ const ProposalListsTable = () => {
                                     /> */}
                                 </Form.Group>
                                 <div className='d-flex justify-content-end'>
-                                    <Button as={Link} to="/projectowner" onClick={handleClose1} style={{ background: '#003f6b' }}>Submit</Button>
+                                    <Button as={Link} to="/Project-owner/login" onClick={handleClose1} style={{ background: '#003f6b' }}>Submit</Button>
                                 </div>
                             </Form>
                         </Modal.Body>

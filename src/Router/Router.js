@@ -35,7 +35,7 @@ const Routers = () => {
     return (
         <Switch>
             {/* Routes for AI Pages //start */}
-            {/* <Route exact path='/productlist'><ProductList /></Route> */}
+            {/* <Route exact path='/products'><ProductList /></Route> */}
             <Route exact path='/'><HomePage /></Route>
             <Route exact path='/homepage'><HomePage /></Route>
             <Route exact path='/dashboard'><Dashboard /></Route>

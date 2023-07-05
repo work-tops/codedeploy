@@ -87,7 +87,7 @@ function NavbarStandard() {
                   {/* Post A Project */}
                   {id == 2 &&
                     <li>
-                      <Button as={Link} to="/postproject" variant='falcon-default' className='mt-3 me-4 mb-3 mb-lg-0 mt-lg-0 ms-1 ms-lg-0 '>Post a Project</Button>
+                      <Button as={Link} to="/post-a-project" variant='falcon-default' className='mt-3 me-4 mb-3 mb-lg-0 mt-lg-0 ms-1 ms-lg-0 '>Post a Project</Button>
                     </li>
                   }
                   {/* Post A Project */}
@@ -95,7 +95,7 @@ function NavbarStandard() {
 
                   {/* HIW */}
                   <li className=''>
-                    <Link to="/HowItWorks" className="link-item">
+                    <Link to="/how-it-work" className="link-item">
                       <a
                         title='How It Works'
                         className="  text-white nav-link"
@@ -111,7 +111,7 @@ function NavbarStandard() {
                   {/* HIW */}
                   {/* Products */}
                   <li>
-                    <Link to="/productlist" className="link-item">
+                    <Link to="/products" className="link-item">
                       <a
                         title='Products'
                         className=" text-white nav-link"
@@ -127,7 +127,7 @@ function NavbarStandard() {
                   {/* Products */}
                   {/* Projects */}
                   <li>
-                    <Link to="/projectlist" className="link-item">
+                    <Link to="/projects" className="link-item">
                       <a
                         title='Projects'
                         className=" text-white nav-link"
@@ -143,7 +143,7 @@ function NavbarStandard() {
                   {/* Projects */}
                   {/* Services */}
                   <li>
-                    <Link to="/servicelist" className="link-item">
+                    <Link to="/services" className="link-item">
                       <a
                         title='Services'
                         className=" text-white nav-link"
@@ -175,10 +175,10 @@ function NavbarStandard() {
                         </a>
                         <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                           <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                            <Link to="/projectowner">
+                            <Link to="/Project-owner/login">
                               <a title='Click here to Login as Projectowner in Myproject.Ai' className=" dropdown-item text-900 fw-medium">Login</a>
                             </Link>
-                            <Link to="/project-owner-register">
+                            <Link to="/Project-owner/register">
                               <a title='Click here to Signup as Projectowner in Myproject.Ai' className=" dropdown-item text-900 fw-medium">Sign Up</a>
                             </Link>
                           </div>
@@ -191,10 +191,10 @@ function NavbarStandard() {
                         <a title='Click here to Login or Signup as Trader in Myproject.Ai' className=" text-white nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Trader</a>
                         <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                           <div className="bg-white dark__bg-1000 rounded-3 py-2">
-                            <Link to="/Freelancer/True">
+                            <Link to="/freelancer/true">
                               <a title='Click here to Login as Trader in Myproject.Ai' className=" dropdown-item text-900 fw-medium" >Login</a>
                             </Link>
-                            <Link to="/Freelancer/False">
+                            <Link to="/freelancer/false">
                               <a title='Click here to SignUp as Trader in Myproject.Ai' className=" dropdown-item text-900 fw-medium" >Sign Up</a>
                             </Link>
                           </div>
@@ -208,7 +208,7 @@ function NavbarStandard() {
               </div>
               <ul class="navbar-nav navbar-nav-icons ms-auto non-collapse-section flex-row align-items-center">
                 {/* Cart */}
-                <Link title='Cart' to="/Cart">
+                <Link title='Cart' to="/cart">
                   <div className="cart-icon-container">
                     <Icon style={{ marginRight: '5px' }} className='me-2' icon="material-symbols:shopping-cart" color="white" width="24" height="24" />
                     <Badge pill bg="danger" className="cart-badge">
@@ -233,21 +233,21 @@ function NavbarStandard() {
                     <Dropdown.Menu className="dropdown-menu-card  me-2 dropdown-menu-end">
                       <div className="bg-white rounded-2 py-2 dark__bg-1000">
                         <Dropdown.Item href="#!">
-                          <Link to="/wishlist/product">
+                          <Link to="/wishlist/products">
                             <a className=" dropdown-item text-900 fw-medium" >
                               Products
                             </a>
                           </Link>
                         </Dropdown.Item>
                         <Dropdown.Item href="#!">
-                          <Link to="/wishlist/project">
+                          <Link to="/wishlist/projects">
                             <a className=" dropdown-item text-900 fw-medium" >
                               Projects
                             </a>
                           </Link>
                         </Dropdown.Item>
                         <Dropdown.Item href="#!">
-                          <Link to="/wishlist/seller">
+                          <Link to="/wishlist/followers">
                             <a className=" dropdown-item text-900 fw-medium" >
                               Followers
                             </a>
@@ -295,7 +295,7 @@ function NavbarStandard() {
                                   <div className="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style={{ height: "auto", overflow: "hidden scroll" }}><div className="simplebar-content" style={{ padding: '0px' }}>
                                     <div className="list-group list-group-flush fw-normal fs--1">
                                       <div className="list-group-title border-bottom">NEW</div>
-                                      <Link to="/chat">
+                                      <Link to="/conversation">
                                         <div className="list-group-item">
                                           <a className="notification notification-flush notification-unread" href="#!">
                                             <div className="notification-avatar">
@@ -310,7 +310,7 @@ function NavbarStandard() {
                                           </a>
                                         </div>
                                       </Link>
-                                      <Link to="/chat">
+                                      <Link to="/conversation">
                                         <div className="list-group-item">
                                           <a className="notification notification-flush notification-unread" href="#!">
                                             <div className="notification-avatar">
@@ -327,7 +327,7 @@ function NavbarStandard() {
                                       </Link>
                                       {/* Earlier Messages */}
                                       <div className="list-group-title border-bottom">EARLIER</div>
-                                      <Link to="/chat">
+                                      <Link to="/conversation">
                                         <div className="list-group-item">
                                           <a className="notification notification-flush" href="#!">
                                             <div className="notification-avatar">
@@ -378,23 +378,23 @@ function NavbarStandard() {
                                 <span>{user?.role}</span>
                               </Dropdown.Item>
                               <Dropdown.Divider />
-                              {id == 3 && <Dropdown.Item as={Link} to="/FreelancerProfile">Profile</Dropdown.Item>}
-                              {id == 2 && <Dropdown.Item as={Link} to="/MyProfile">Profile</Dropdown.Item>}
-                              {id == 2 && <Dropdown.Item as={Link} to="/OpenProjectCard">My Projects</Dropdown.Item>}
+                              {id == 3 && <Dropdown.Item as={Link} to="/trader/profile">Profile</Dropdown.Item>}
+                              {id == 2 && <Dropdown.Item as={Link} to="/projectowner/profile">Profile</Dropdown.Item>}
+                              {id == 2 && <Dropdown.Item as={Link} to="/dashboard/my-project">My Projects</Dropdown.Item>}
                               {/* {id == 2 && <Dropdown.Item as={Link} to="/workstreamcard">Workstreams</Dropdown.Item>} */}
-                              {id == 3 && <Dropdown.Item as={Link} to="/addproductcard">My Products</Dropdown.Item>}
-                              {id == 2 && <Dropdown.Item as={Link} to="/chat">Messages</Dropdown.Item>}
-                              {id == 3 && <Dropdown.Item as={Link} to="/chat">Messages</Dropdown.Item>}
-                              {id == 3 && <Dropdown.Item as={Link} to="/addservicecard">My Services</Dropdown.Item>}
-                              {id == 3 && <Dropdown.Item as={Link} to="/proposalcard">My Proposals</Dropdown.Item>}
-                              {id == 3 && <Dropdown.Item as={Link} to="/InvoiceFreelancerCard">Invoices</Dropdown.Item>}
-                              {id == 2 && <Dropdown.Item as={Link} to="/InvoicedueCard">Invoices</Dropdown.Item>}
-                              {id == 3 && <Dropdown.Item as={Link} to="/Estimates">Estimates</Dropdown.Item>}
-                              {id == 2 && <Dropdown.Item as={Link} to="/project-owner-estimate">Estimates</Dropdown.Item>}
+                              {id == 3 && <Dropdown.Item as={Link} to="/dashboard-products">My Products</Dropdown.Item>}
+                              {id == 2 && <Dropdown.Item as={Link} to="/conversation">Messages</Dropdown.Item>}
+                              {id == 3 && <Dropdown.Item as={Link} to="/conversation">Messages</Dropdown.Item>}
+                              {id == 3 && <Dropdown.Item as={Link} to="/dashboard-services">My Services</Dropdown.Item>}
+                              {id == 3 && <Dropdown.Item as={Link} to="/user/myproposals">My Proposals</Dropdown.Item>}
+                              {id == 3 && <Dropdown.Item as={Link} to="/t/invoices">Invoices</Dropdown.Item>}
+                              {id == 2 && <Dropdown.Item as={Link} to="/p/invoices">Invoices</Dropdown.Item>}
+                              {id == 3 && <Dropdown.Item as={Link} to="/t/estimate-list">Estimates</Dropdown.Item>}
+                              {id == 2 && <Dropdown.Item as={Link} to="/p/estimate-list">Estimates</Dropdown.Item>}
                               {/* <Dropdown.Item as={Link} to="/reviewscard">Reviews</Dropdown.Item> */}
                               {/* <Dropdown.Divider /> */}
-                              <Dropdown.Item as={Link} to="/EnquiriesCard">Enquiries</Dropdown.Item>
-                              {id == 3 && <Dropdown.Item as={Link} to="/FreelancerEditProfile">Settings</Dropdown.Item>}
+                              <Dropdown.Item as={Link} to="/enquire">Enquiries</Dropdown.Item>
+                              {id == 3 && <Dropdown.Item as={Link} to="/user/setting">Settings</Dropdown.Item>}
                               <Dropdown.Item onClick={() => { logOut() }}>
                                 Logout
                               </Dropdown.Item>

@@ -423,8 +423,8 @@ function EditEstimate() {
                                         </Form.Group>
                                     </div>
                                 </div>
-                                <Button as={Link} to="/Estimates" className="btn-primary me-2" type="submit">Save</Button>
-                                <Button as={Link} to="/Estimates" className="btn-success me-2" type="submit">Save & Send</Button>
+                                <Button as={Link} to="/t/estimate-list" className="btn-primary me-2" type="submit">Save</Button>
+                                <Button as={Link} to="/t/estimate-list" className="btn-success me-2" type="submit">Save & Send</Button>
                                 <Button variant="danger" onClick={handleShow1}>
                                     Discard
                                 </Button>
@@ -448,7 +448,7 @@ function EditEstimate() {
                         <Button variant="secondary" onClick={handleClose1}>
                             No
                         </Button>
-                        <Button as={Link} to="/Estimates" variant="danger">
+                        <Button as={Link} to="/t/estimate-list" variant="danger">
                             Yes
                         </Button>
                     </Modal.Footer>

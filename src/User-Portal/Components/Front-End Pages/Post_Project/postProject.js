@@ -125,7 +125,7 @@ const PostProject = () => {
     const response = await createData("job/new", productdata)
     if (response.status === 201) {
       toast.success('Successfully Product Added')
-      history.push('/projectlist');
+      history.push('/projects');
       cleardata()
     } else {
       toast.error('Something went wrong')
@@ -668,7 +668,7 @@ const PostProject = () => {
                 <Button variant="secondary" onClick={handleClose}>
                   No
                 </Button>
-                <Button as={Link} to="/OpenProjectCard" variant="danger" onClick={handleClose}>
+                <Button as={Link} to="/dashboard/my-project" variant="danger" onClick={handleClose}>
                   Exit
                 </Button>
               </Modal.Footer>

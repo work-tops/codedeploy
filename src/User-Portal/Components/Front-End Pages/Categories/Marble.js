@@ -322,7 +322,7 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
-                                    <Link to="/RequestQuote">
+                                    <Link to="/s/enquiry">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                     </Link>
                                 </div>
@@ -353,7 +353,7 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
-                                    <Link to="/RequestQuote">
+                                    <Link to="/s/enquiry">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                     </Link>
                                 </div>
@@ -384,7 +384,7 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
-                                    <Link to="/RequestQuote">
+                                    <Link to="/s/enquiry">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                     </Link>
                                 </div>
@@ -415,7 +415,7 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
-                                    <Link to="/RequestQuote">
+                                    <Link to="/s/enquiry">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                     </Link>
                                 </div>
@@ -446,7 +446,7 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
-                                    <Link to="/RequestQuote">
+                                    <Link to="/s/enquiry">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                     </Link>
                                 </div>
@@ -477,7 +477,7 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
-                                    <Link to="/RequestQuote">
+                                    <Link to="/s/enquiry">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                     </Link>
                                 </div>
@@ -508,7 +508,7 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
-                                    <Link to="/RequestQuote">
+                                    <Link to="/s/enquiry">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                     </Link>
                                 </div>
@@ -539,7 +539,7 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
-                                    <Link to="/RequestQuote">
+                                    <Link to="/s/enquiry">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                     </Link>
                                 </div>
@@ -570,7 +570,7 @@ function Marble() {
                                         </Col>
                                     </Row>
                                     <span style={{ color: '#f68f57' }} className="fw-bold fs-5">£ 1199.99 <small className="fs-6 ms-1" style={{ color: '#9da8ba', textDecoration: 'line-through' }}>£2399</small></span>
-                                    <Link to="/RequestQuote">
+                                    <Link to="/s/enquiry">
                                     <Button style={{ background: '#003f6b' }} className="text-white w-75">Get a Quote</Button>
                                     </Link>
                                 </div>

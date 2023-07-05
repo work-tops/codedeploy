@@ -512,7 +512,7 @@ function Editpostproject() {
 
                                                 className='d-block border-0 bg-success'
                                             >Post Project</Button>
-                                            {/* <Link to="/projectlist"> */}
+                                            {/* <Link to="/projects"> */}
                                             <Button onClick={() => setShowModal(true)} className='d-block ms-3 border-0 bg-danger'>Cancel</Button>
                                             {/* </Link> */}
                                         </div>
@@ -536,7 +536,7 @@ function Editpostproject() {
                                 <Button variant="secondary" onClick={handleClose}>
                                     Cancel
                                 </Button>
-                                <Button as={Link} to="/OpenProjectCard" variant="danger" onClick={handleClose}>
+                                <Button as={Link} to="/dashboard/my-project" variant="danger" onClick={handleClose}>
                                     Exit
                                 </Button>
 

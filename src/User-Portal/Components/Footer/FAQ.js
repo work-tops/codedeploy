@@ -144,7 +144,7 @@ function FAQ() {
                                 </div>
                                 <div className="text-end">
                                     <h5 className="m-1">
-                                        <Link to="/contactus">Contact us for More Information</Link>
+                                        <Link to="/contact-us">Contact us for More Information</Link>
                                     </h5>
                                 </div>
                             </div>

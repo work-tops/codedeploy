@@ -43,11 +43,11 @@ const UserLogin = ({ }) => {
       })
       toast.success('Successfully Logged In')
       sessionStorage.setItem("token", response.data.token);
-      history.push("/OpenProjectCard");
+      history.push("/dashboard/my-project");
       // if (formData.role == "Freelancer") {
       //   history.push("/Seller/Landing");
       // } else {
-      //   history.push("/ProjectOwner/Landing");
+      //   history.push("/Project-owner/login/Landing");
       // }
     }).catch(err => {
       toast.error(err.response.data.message);
@@ -180,7 +180,7 @@ const UserLogin = ({ }) => {
                       </Form>
                       <p class="text-center fs--1 text-900 mt-3 mb-3">
                         Don't Have an Account ?
-                        <Link className="ms-1" to='/project-owner-register'>
+                        <Link className="ms-1" to='/Project-owner/register'>
                           Create Account
                         </Link>
                       </p>

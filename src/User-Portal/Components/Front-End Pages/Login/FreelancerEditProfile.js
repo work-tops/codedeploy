@@ -286,7 +286,7 @@ function FreelancerEditProfile() {
                                 <div class="row g-0 text-center fs--1">
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -302,7 +302,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -318,7 +318,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -334,7 +334,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -350,7 +350,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -366,7 +366,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -382,7 +382,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -398,7 +398,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -414,7 +414,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -430,7 +430,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -446,7 +446,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -462,7 +462,7 @@ function FreelancerEditProfile() {
                                     </div>
                                     <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                         <div class="bg-white dark__bg-1100 p-3 h-100">
-                                            <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                            <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                                 <div className="circle-container">
                                                     <img src={profile} alt="Image" className="circle-image d-flex justify-content-center" />
                                                 </div>
@@ -626,7 +626,7 @@ function FreelancerEditProfile() {
                     <Button variant="secondary" onClick={handleClose5}>
                         No
                     </Button>
-                    <Button as={Link} to="/FreelancerProfile" variant="danger" onClick={handleClose5}>
+                    <Button as={Link} to="/trader/profile" variant="danger" onClick={handleClose5}>
                         Yes
                     </Button>
 

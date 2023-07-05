@@ -16,14 +16,14 @@ function Menubar() {
                                 </Link>
                             </Col>
                             <Col lg={1}>
-                                <Link to="/productlist">
+                                <Link to="/products">
                                     <Button className="btn bg-transparent text-dark border-0">
                                         Product
                                     </Button>
                                 </Link>
                             </Col>
                             <Col lg={1}>
-                                <Link to="/servicelist">
+                                <Link to="/services">
                                     <Button className="btn bg-transparent text-dark border-0">
                                         Services
                                     </Button>

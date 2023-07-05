@@ -173,7 +173,7 @@ function WorkStreamDetails() {
                                         <Card.Body>
                                             <p style={{ fontSize: '14px' }} className="fw-bold" >Project Status</p>
                                             <span style={{ fontSize: '14px' }} className="badge p-2 bg-success mt-2 d-block">Accepted</span>
-                                            <Button as={Link} to="/NewInvoice" style={{ background: '#003f6b' }} className="Home-btns-1 mt-2 w-100">Create Invoice</Button>
+                                            <Button as={Link} to="/new-invoice" style={{ background: '#003f6b' }} className="Home-btns-1 mt-2 w-100">Create Invoice</Button>
                                         </Card.Body>
                                     </Card>
 

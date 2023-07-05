@@ -69,7 +69,7 @@ function InvoiceCheckout() {
                                                     <div className="col-md-5 col-xl-12 col-xxl-5 ps-lg-4 ps-xl-2 ps-xxl-5 text-center text-md-start text-xl-center text-xxl-start">
                                                         <div className="border-bottom border-dashed d-block d-md-none d-xl-block d-xxl-none my-4"></div>
                                                         <div className="fs-2 fw-semi-bold">All Total: <span className="text-primary">£3320</span></div>
-                                                        <Link to="/InvoicedueCard">
+                                                        <Link to="/p/invoices">
                                                             <button className="btn btn-success mt-3 px-5" type="submit">Confirm &amp; Pay</button>
                                                         </Link>
                                                         <p className="fs--1 mt-3 mb-0">By clicking <strong style={{ fontSize: "14px" }}>Confirm &amp; Pay </strong>button you agree to the <a href="#!">Terms &amp; Conditions</a></p>

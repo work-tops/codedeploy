@@ -168,7 +168,7 @@ function ProjectOwnerProfile() {
                                                                         <Dropdown.Toggle style={{ background: '#003f6b', border: "none" }}>
                                                                         </Dropdown.Toggle>
                                                                         <Dropdown.Menu>
-                                                                            <Dropdown.Item as={Link} className="text-success" to="/proposallist">View Proposals</Dropdown.Item>
+                                                                            <Dropdown.Item as={Link} className="text-success" to="/proposal-list">View Proposals</Dropdown.Item>
                                                                             <Dropdown.Item as={Link} className="text-primary" to="/EditPostProject">Edit</Dropdown.Item>
                                                                             <Dropdown.Item as={Link} className="text-warning" to="/RepostProject">Repost</Dropdown.Item>
                                                                         </Dropdown.Menu>
@@ -198,7 +198,7 @@ function ProjectOwnerProfile() {
                                                                         <Dropdown.Toggle style={{ background: '#003f6b', border: "none" }}>
                                                                         </Dropdown.Toggle>
                                                                         <Dropdown.Menu>
-                                                                            <Dropdown.Item as={Link} className="text-success" to="/proposallist">View Proposals</Dropdown.Item>
+                                                                            <Dropdown.Item as={Link} className="text-success" to="/proposal-list">View Proposals</Dropdown.Item>
                                                                             <Dropdown.Item as={Link} className="text-primary" to="/EditPostProject">Edit</Dropdown.Item>
                                                                             <Dropdown.Item as={Link} className="text-warning" to="/RepostProject">Repost</Dropdown.Item>
                                                                         </Dropdown.Menu>
@@ -227,7 +227,7 @@ function ProjectOwnerProfile() {
                                                                         <Dropdown.Toggle style={{ background: '#003f6b', border: "none" }}>
                                                                         </Dropdown.Toggle>
                                                                         <Dropdown.Menu>
-                                                                            <Dropdown.Item as={Link} className="text-success" to="/proposallist">View Proposals</Dropdown.Item>
+                                                                            <Dropdown.Item as={Link} className="text-success" to="/proposal-list">View Proposals</Dropdown.Item>
                                                                             <Dropdown.Item as={Link} className="text-primary" to="/EditPostProject">Edit</Dropdown.Item>
                                                                             <Dropdown.Item as={Link} className="text-warning" to="/RepostProject">Repost</Dropdown.Item>
                                                                         </Dropdown.Menu>

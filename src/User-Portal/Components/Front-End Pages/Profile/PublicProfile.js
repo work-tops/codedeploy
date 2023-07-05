@@ -85,7 +85,7 @@ function PublicProfile() {
                                                     <p className="mb-0 fs--1">National Comics Publications, NY, USA</p>
                                                 </div>
                                                 <div className="col mt-4 mt-md-5 mt-lg-4 order-md-1 order-lg-0">
-                                                    <Link to="/chat">
+                                                    <Link to="/conversation">
                                                         <button className="btn btn-falcon-default btn-md mb-2 w-100" type="button">
                                                             <span className="fas fa-comment me-1"></span> Message
                                                         </button>
@@ -251,7 +251,7 @@ function PublicProfile() {
                                                                     </h4>
 
                                                                     <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
-                                                                    <Link to="/GetQuote">
+                                                                    <Link to="/p/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -264,7 +264,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <Link to="/wishlist/product"> */}
+                                                                    {/* <Link to="/wishlist/products"> */}
                                                                     <>
                                                                         {isAdded ? (
                                                                             <a
@@ -372,7 +372,7 @@ function PublicProfile() {
                                                                     </h4>
 
                                                                     <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
-                                                                    <Link to="/GetQuote">
+                                                                    <Link to="/p/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -385,7 +385,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <Link to="/wishlist/product"> */}
+                                                                    {/* <Link to="/wishlist/products"> */}
                                                                     <>
                                                                         {isAdded ? (
                                                                             <a
@@ -493,7 +493,7 @@ function PublicProfile() {
                                                                     </h4>
 
                                                                     <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
-                                                                    <Link to="/GetQuote">
+                                                                    <Link to="/p/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -505,7 +505,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <Link to="/wishlist/product"> */}
+                                                                    {/* <Link to="/wishlist/products"> */}
                                                                     <>
                                                                         {isAdded ? (
                                                                             <a
@@ -613,7 +613,7 @@ function PublicProfile() {
                                                                     </h4>
 
                                                                     <p className="mb-0 fs--1 text-800">92,632 Members Purchased</p>
-                                                                    <Link to="/GetQuote">
+                                                                    <Link to="/p/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -626,7 +626,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <Link to="/wishlist/product"> */}
+                                                                    {/* <Link to="/wishlist/products"> */}
                                                                     <>
                                                                         {isAdded ? (
                                                                             <a
@@ -733,7 +733,7 @@ function PublicProfile() {
                                                                         </del>
                                                                     </h4>
                                                                     <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
-                                                                    <Link to="/GetQuote">
+                                                                    <Link to="/p/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -745,7 +745,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <Link to="/wishlist/product"> */}
+                                                                    {/* <Link to="/wishlist/products"> */}
                                                                     <>
                                                                         {isAdded ? (
                                                                             <a
@@ -853,7 +853,7 @@ function PublicProfile() {
                                                                     </h4>
 
                                                                     <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
-                                                                    <Link to="/GetQuote">
+                                                                    <Link to="/p/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -866,7 +866,7 @@ function PublicProfile() {
                                                                     </Link>
                                                                 </div>
                                                                 <div className="col-auto pe-3">
-                                                                    {/* <Link to="/wishlist/product"> */}
+                                                                    {/* <Link to="/wishlist/products"> */}
                                                                     <>
                                                                         {isAdded ? (
                                                                             <a
@@ -975,7 +975,7 @@ function PublicProfile() {
                                                         <div style={{ maxWidth: '100%', height: '100%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                                             <div>
                                                                 <div>
-                                                                    <Link to="/ServiceInformation">
+                                                                    <Link to="/service-provider">
                                                                         {/* {data.attachments.length > 0 ? */}
                                                                         {/* <Image variant='top' className="img-fluid cursor-pointer" style={{ aspectRatio: '1.1', objectFit: 'cover' }} alt="Service Provider Profile" /> : */}
                                                                         <Image variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={freelancer} alt="Service Provider Profile" />
@@ -984,7 +984,7 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="p-3">
                                                                     <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
-                                                                        <Link className="text-900" to="/ServiceInformation">
+                                                                        <Link className="text-900" to="/service-provider">
                                                                             {/* {data.name} */}
                                                                             JAGAN SELLER
                                                                         </Link>
@@ -1013,7 +1013,7 @@ function PublicProfile() {
                                                             </div>
                                                             <div className="row g-0 mb-3 align-items-end">
                                                                 <div className="col ps-3">
-                                                                    <Link to="/RequestQuote">
+                                                                    <Link to="/s/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -1046,7 +1046,7 @@ function PublicProfile() {
                                                         <div style={{ maxWidth: '100%', height: '100%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                                             <div>
                                                                 <div>
-                                                                    <Link to="/ServiceInformation">
+                                                                    <Link to="/service-provider">
                                                                         {/* {data.attachments.length > 0 ? */}
                                                                         {/* <Image variant='top' className="img-fluid cursor-pointer" style={{ aspectRatio: '1.1', objectFit: 'cover' }} alt="Service Provider Profile" /> : */}
                                                                         <Image variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={freelancer} alt="Service Provider Profile" />
@@ -1055,7 +1055,7 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="p-3">
                                                                     <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
-                                                                        <Link className="text-900" to="/ServiceInformation">
+                                                                        <Link className="text-900" to="/service-provider">
                                                                             {/* {data.name} */}
                                                                             JAGAN SELLER
                                                                         </Link>
@@ -1084,7 +1084,7 @@ function PublicProfile() {
                                                             </div>
                                                             <div className="row g-0 mb-3 align-items-end">
                                                                 <div className="col ps-3">
-                                                                    <Link to="/RequestQuote">
+                                                                    <Link to="/s/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -1117,7 +1117,7 @@ function PublicProfile() {
                                                         <div style={{ maxWidth: '100%', height: '100%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                                             <div>
                                                                 <div>
-                                                                    <Link to="/ServiceInformation">
+                                                                    <Link to="/service-provider">
                                                                         {/* {data.attachments.length > 0 ? */}
                                                                         {/* <Image variant='top' className="img-fluid cursor-pointer" style={{ aspectRatio: '1.1', objectFit: 'cover' }} alt="Service Provider Profile" /> : */}
                                                                         <Image variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={freelancer} alt="Service Provider Profile" />
@@ -1126,7 +1126,7 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="p-3">
                                                                     <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
-                                                                        <Link className="text-900" to="/ServiceInformation">
+                                                                        <Link className="text-900" to="/service-provider">
                                                                             {/* {data.name} */}
                                                                             JAGAN SELLER
                                                                         </Link>
@@ -1155,7 +1155,7 @@ function PublicProfile() {
                                                             </div>
                                                             <div className="row g-0 mb-3 align-items-end">
                                                                 <div className="col ps-3">
-                                                                    <Link to="/RequestQuote">
+                                                                    <Link to="/s/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -1188,7 +1188,7 @@ function PublicProfile() {
                                                         <div style={{ maxWidth: '100%', height: '100%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                                             <div>
                                                                 <div>
-                                                                    <Link to="/ServiceInformation">
+                                                                    <Link to="/service-provider">
                                                                         {/* {data.attachments.length > 0 ? */}
                                                                         {/* <Image variant='top' className="img-fluid cursor-pointer" style={{ aspectRatio: '1.1', objectFit: 'cover' }} alt="Service Provider Profile" /> : */}
                                                                         <Image variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={freelancer} alt="Service Provider Profile" />
@@ -1197,7 +1197,7 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="p-3">
                                                                     <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
-                                                                        <Link className="text-900" to="/ServiceInformation">
+                                                                        <Link className="text-900" to="/service-provider">
                                                                             {/* {data.name} */}
                                                                             JAGAN SELLER
                                                                         </Link>
@@ -1226,7 +1226,7 @@ function PublicProfile() {
                                                             </div>
                                                             <div className="row g-0 mb-3 align-items-end">
                                                                 <div className="col ps-3">
-                                                                    <Link to="/RequestQuote">
+                                                                    <Link to="/s/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -1259,7 +1259,7 @@ function PublicProfile() {
                                                         <div style={{ maxWidth: '100%', height: '100%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                                             <div>
                                                                 <div>
-                                                                    <Link to="/ServiceInformation">
+                                                                    <Link to="/service-provider">
                                                                         {/* {data.attachments.length > 0 ? */}
                                                                         {/* <Image variant='top' className="img-fluid cursor-pointer" style={{ aspectRatio: '1.1', objectFit: 'cover' }} alt="Service Provider Profile" /> : */}
                                                                         <Image variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={freelancer} alt="Service Provider Profile" />
@@ -1268,7 +1268,7 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="p-3">
                                                                     <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
-                                                                        <Link className="text-900" to="/ServiceInformation">
+                                                                        <Link className="text-900" to="/service-provider">
                                                                             {/* {data.name} */}
                                                                             JAGAN SELLER
                                                                         </Link>
@@ -1297,7 +1297,7 @@ function PublicProfile() {
                                                             </div>
                                                             <div className="row g-0 mb-3 align-items-end">
                                                                 <div className="col ps-3">
-                                                                    <Link to="/RequestQuote">
+                                                                    <Link to="/s/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -1330,7 +1330,7 @@ function PublicProfile() {
                                                         <div style={{ maxWidth: '100%', height: '100%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                                             <div>
                                                                 <div>
-                                                                    <Link to="/ServiceInformation">
+                                                                    <Link to="/service-provider">
                                                                         {/* {data.attachments.length > 0 ? */}
                                                                         {/* <Image variant='top' className="img-fluid cursor-pointer" style={{ aspectRatio: '1.1', objectFit: 'cover' }} alt="Service Provider Profile" /> : */}
                                                                         <Image variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={freelancer} alt="Service Provider Profile" />
@@ -1339,7 +1339,7 @@ function PublicProfile() {
                                                                 </div>
                                                                 <div className="p-3">
                                                                     <h4 className="mt-3 text-start text-uppercase mt-sm-0 fs-0 fs-lg-1">
-                                                                        <Link className="text-900" to="/ServiceInformation">
+                                                                        <Link className="text-900" to="/service-provider">
                                                                             {/* {data.name} */}
                                                                             JAGAN SELLER
                                                                         </Link>
@@ -1368,7 +1368,7 @@ function PublicProfile() {
                                                             </div>
                                                             <div className="row g-0 mb-3 align-items-end">
                                                                 <div className="col ps-3">
-                                                                    <Link to="/RequestQuote">
+                                                                    <Link to="/s/enquiry">
                                                                         <Button
                                                                             size="md"
                                                                             variant="falcon-default"
@@ -1505,7 +1505,7 @@ function PublicProfile() {
                                     </Form.Check>
                                 </Form.Group>
                             </Form>
-                            <Button as={Link} to="/projectowner" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
+                            <Button as={Link} to="/Project-owner/login" className="m-2 bg-transparent" style={{ color: "#0d406b", border: "1px solid #0d406b" }}>
                                 SEND
                             </Button>
                         </Modal.Body>

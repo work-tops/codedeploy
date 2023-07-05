@@ -52,7 +52,7 @@ function Footer() {
                                 <Link to="/">
                                     <img src={logo} style={{ position: 'relative', bottom: '9px' }} width="135px" />
                                 </Link>
-                                <p className="text-start">
+                                <p className="">
                                     MAI transforms your house into a home by taking care
                                     of all your projects from simple to difficult ones,
                                     including painting,furnishing,bathroom upscaling,kitchen
@@ -96,7 +96,7 @@ function Footer() {
                                         <a className="text-dark hover-mai">Trade Login</a>
                                     </p>
                                 </Link>
-                                <Link to="/contactus" className="text-dark">
+                                <Link to="/contact-us" className="text-dark">
                                     <p >
                                         <a className="text-dark hover-mai">Contact Us</a>
                                     </p>

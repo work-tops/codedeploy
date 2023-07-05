@@ -39,7 +39,7 @@ function ProposalDetails() {
                                     <Card.Body>
                                         <Row>
                                             <Col lg={3}>
-                                                <Link to="/profile_publicview">
+                                                <Link to="/trader-profile-public">
                                                     <img src={profile} className="mb-3 rounded-circle" width="100px" height="100px" />
                                                 </Link>
                                             </Col>
@@ -201,7 +201,7 @@ function ProposalDetails() {
                                     <Card.Body>
                                         <div className="d-flex justify-content-start">
                                             <div>
-                                                <Link to="/profile_publicview">
+                                                <Link to="/trader-profile-public">
                                                     <img src={profile} className="mb-3 me-4 rounded-circle" width="100px" height="100px" />
                                                 </Link>
                                             </div>
@@ -229,13 +229,13 @@ function ProposalDetails() {
                                                     </Dropdown.Toggle>
 
                                                     <Dropdown.Menu className="w-100">
-                                                        <Dropdown.Item as={Link} to="/InvoiceCheckout" className="text-success">Accept</Dropdown.Item>
+                                                        <Dropdown.Item as={Link} to="/invoice/checkout" className="text-success">Accept</Dropdown.Item>
                                                         <Dropdown.Item onClick={() => setShowModal2(true)} className="text-danger">Decline</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                                 {/* Accepted */}
                                                 {/* Edit Your Proposal */}
-                                                <Button as={Link} to="/editproposal" className="d-block mt-2 btn bg-secondary border-0">Edit Your Proposal</Button>
+                                                <Button as={Link} to="/edit-proposal" className="d-block mt-2 btn bg-secondary border-0">Edit Your Proposal</Button>
                                             </Card.Body>
                                         </Card>
                                     </Card.Body>
@@ -296,7 +296,7 @@ function ProposalDetails() {
                     <Button variant="secondary" onClick={handleClose2}>
                         No
                     </Button>
-                    <Button as={Link} to="/proposallist" variant="danger" onClick={handleClose2}>
+                    <Button as={Link} to="/proposal-list" variant="danger" onClick={handleClose2}>
                         Yes
                     </Button>
 

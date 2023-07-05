@@ -25,7 +25,7 @@ function Notifications() {
                     </div>
                 </div>
                 <div className="card-body fs--1 p-0">
-                    <Link to="/chat">
+                    <Link to="/conversation">
                         <a className="border-bottom-0 notification rounded-0 border-x-0 border-300" href="#!">
                             <div className="notification-avatar">
                                 <div className="avatar avatar-xl me-3">
@@ -38,7 +38,7 @@ function Notifications() {
                             </div>
                         </a>
                     </Link>
-                    <Link to="/chat">
+                    <Link to="/conversation">
                         <a className="border-bottom-0 notification-unread notification rounded-0 border-x-0 border-300" href="#!">
                             <div className="notification-avatar">
                                 <div className="avatar avatar-xl me-3">
@@ -51,7 +51,7 @@ function Notifications() {
                             </div>
                         </a>
                     </Link>
-                    <Link to="/chat">
+                    <Link to="/conversation">
                         <a className="border-bottom-0 notification rounded-0 border-x-0 border-300" href="#!">
                             <div className="notification-avatar">
                                 <div className="avatar avatar-xl me-3">

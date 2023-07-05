@@ -31,7 +31,7 @@ function FreelancerProfile() {
                                 <h4 className="mb-1"> Peter Leverkus</h4>
                                 <h6 className="fs-0 text-primary fw-normal">petergms@gmail.com</h6>
                                 <p className="text-900">+044 4381 421 1323</p>
-                                <Button as={Link} to="/FreelancerEditProfile">Edit Your Profile</Button>
+                                <Button as={Link} to="/user/setting">Edit Your Profile</Button>
                             </div>
 
                         </div>
@@ -227,13 +227,13 @@ function FreelancerProfile() {
                         <div className="row g-0 text-center fs--1">
                             <div className="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                 <div className="bg-white dark__bg-1100 p-3 h-100">
-                                    <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                    <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                         <div className="circle-container">
                                             <img src={profile} alt="Image" className="circle-image" />
                                         </div>
                                     </Link>
                                     <h6 className="mb-1">
-                                        <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                        <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                             <a>Emilia Clarke</a>
                                         </Link>
                                     </h6>
@@ -243,18 +243,18 @@ function FreelancerProfile() {
                             <div className="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                 <div className="bg-white dark__bg-1100 p-3 h-100">
 
-                                    <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                    <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                         <div className="circle-container">
                                             <img src={profile} alt="Image" className="circle-image" />
                                         </div>
                                     </Link>
                                     <h6 className="mb-1">
-                                        <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                        <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                             <a >Kit Harington</a>
                                         </Link>
                                     </h6>
                                     <p className="fs--2 mb-1">
-                                        {/* <Link to="/profile_publicview" className="d-flex justify-content-center"> */}
+                                        {/* <Link to="/trader-profile-public" className="d-flex justify-content-center"> */}
                                         <a className="text-700" href="#!">Harvard Korea Society</a>
                                         {/* </Link> */}
                                     </p>
@@ -262,13 +262,13 @@ function FreelancerProfile() {
                             </div>
                             <div className="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                 <div className="bg-white dark__bg-1100 p-3 h-100">
-                                    <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                    <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                         <div className="circle-container">
                                             <img src={profile} alt="Image" className="circle-image" />
                                         </div>
                                     </Link>
                                     <h6 className="mb-1">
-                                        <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                        <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                             <a >Sophie Turner</a>
                                         </Link>
                                     </h6>
@@ -277,13 +277,13 @@ function FreelancerProfile() {
                             </div>
                             <div className="col-6 col-md-4 col-lg-3 col-xxl-2 mb-1">
                                 <div className="bg-white dark__bg-1100 p-3 h-100">
-                                    <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                    <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                         <div className="circle-container">
                                             <img src={profile} alt="Image" className="circle-image" />
                                         </div>
                                     </Link>
                                     <h6 className="mb-1">
-                                        <Link to="/profile_publicview" className="d-flex justify-content-center">
+                                        <Link to="/trader-profile-public" className="d-flex justify-content-center">
                                             <a >Peter</a>
                                         </Link>
                                     </h6>

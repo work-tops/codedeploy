@@ -38,7 +38,7 @@ function ProjectOwnerHeader() {
                 <Col lg={3}>
                     <div className="d-flex justify-content-end">
                         <div>
-                            <Link to="/Cart">
+                            <Link to="/cart">
                                 <Icon icon="material-symbols:shopping-cart-outline-rounded" className="mt-2 me-3" color="white" width="28" height="28" />
                             </Link>
                         </div>
@@ -52,17 +52,17 @@ function ProjectOwnerHeader() {
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     <Dropdown.Item>
-                                        <Link to='/wishlist/product'>
+                                        <Link to='/wishlist/products'>
                                             Product
                                         </Link>
                                     </Dropdown.Item>
                                     <Dropdown.Item>
-                                        <Link to='/wishlist/project'>
+                                        <Link to='/wishlist/projects'>
                                             Project
                                         </Link>
                                     </Dropdown.Item>
                                     <Dropdown.Item >
-                                        <Link to='/wishlist/seller'>
+                                        <Link to='/wishlist/followers'>
                                             Seller
                                         </Link>
                                     </Dropdown.Item>
@@ -77,7 +77,7 @@ function ProjectOwnerHeader() {
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 <Dropdown.Item>
-                                    <Link to="/MyProfile">
+                                    <Link to="/projectowner/profile">
                                         Profile
                                     </Link>
                                 </Dropdown.Item>
@@ -87,12 +87,12 @@ function ProjectOwnerHeader() {
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item href="">
-                                    <Link to="/user/addproduct">
+                                    <Link to="/dashboard-addproduct">
                                         Product
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item href="">
-                                    <Link to="/user/addservices">
+                                    <Link to="/dashboard-addservice">
                                         Services
                                     </Link>
                                 </Dropdown.Item>

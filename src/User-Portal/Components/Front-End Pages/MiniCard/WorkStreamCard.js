@@ -39,7 +39,7 @@ function WorkStreamCard() {
                                     </div>
                                     <div className="col-lg-4 col-xxl-4 mt-4 mt-lg-0">
                                         <div className="d-flex justify-content-center mt-4">
-                                            <Button as={Link} to="/WorkstreamDetails" style={{ color: "#003f6b", border: '1px solid #003f6b' }} className="bg-transparent">View</Button>
+                                            <Button as={Link} to="/work-stream" style={{ color: "#003f6b", border: '1px solid #003f6b' }} className="bg-transparent">View</Button>
                                         </div>
                                     </div>
                                 </div>

@@ -254,7 +254,7 @@ function PostJob2() {
                                 <input value={form.expire_date} required name="expire_date" onChange={(e) => { handleChange(e) }} id="postcode-1" type='date' />
                                 <br></br>
                                 {/* <Link to="/listjobs" role="button"> */}
-                                <Link to="/OpenProjectCard">
+                                <Link to="/dashboard/my-project">
                                     <button type="submit" className="usr-create-acc-btn">Post a Project</button>
                                 </Link>
                                 <Link to="/postjob1">

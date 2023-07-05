@@ -104,7 +104,7 @@ function AdminHeader() {
                                                         <div className="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style={{ height: "auto", overflow: "hidden scroll" }}><div className="simplebar-content" style={{ padding: '0px' }}>
                                                             <div className="list-group list-group-flush fw-normal fs--1">
                                                                 <div className="list-group-title border-bottom">NEW</div>
-                                                                <Link to="/chat">
+                                                                <Link to="/conversation">
                                                                     <div className="list-group-item">
                                                                         <a className="notification notification-flush notification-unread" href="#!">
                                                                             <div className="notification-avatar">
@@ -119,7 +119,7 @@ function AdminHeader() {
                                                                         </a>
                                                                     </div>
                                                                 </Link>
-                                                                <Link to="/chat">
+                                                                <Link to="/conversation">
                                                                     <div className="list-group-item">
                                                                         <a className="notification notification-flush notification-unread" href="#!">
                                                                             <div className="notification-avatar">
@@ -136,7 +136,7 @@ function AdminHeader() {
                                                                 </Link>
                                                                 {/* Earlier Messages */}
                                                                 <div className="list-group-title border-bottom">EARLIER</div>
-                                                                <Link to="/chat">
+                                                                <Link to="/conversation">
                                                                     <div className="list-group-item">
                                                                         <a className="notification notification-flush" href="#!">
                                                                             <div className="notification-avatar">

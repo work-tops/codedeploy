@@ -70,7 +70,7 @@
 //                         92,632 Members Purchased
 //                       </p>
 
-//                       <Link to="/RequestQuote">
+//                       <Link to="/s/enquiry">
 //                         <Button
 //                           size="md"
 //                           variant="falcon-default"
@@ -83,7 +83,7 @@
 //                       </Link>
 //                     </Col>
 //                     <Col xs="auto" className="pe-3">
-//                       <Link to="/wishlist/product">
+//                       <Link to="/wishlist/products">
 //                         <Button
 //                           variant="falcon-default"
 //                           size="sm"
@@ -92,7 +92,7 @@
 //                           <Icon icon="flat-color-icons:like" width="20" height="20" />
 //                         </Button>
 //                       </Link>
-//                       <Link to="/Cart">
+//                       <Link to="/cart">
 //                         <Button
 //                           variant="primary"
 //                           size="sm"
@@ -145,7 +145,7 @@
 //                         92,632 Members Purchased
 //                       </p>
 
-//                       <Link to="/RequestQuote">
+//                       <Link to="/s/enquiry">
 //                         <Button
 //                           size="md"
 //                           variant="falcon-default"
@@ -158,7 +158,7 @@
 //                       </Link>
 //                     </Col>
 //                     <Col xs="auto" className="pe-3">
-//                       <Link to="/wishlist/product">
+//                       <Link to="/wishlist/products">
 //                         <Button
 //                           variant="falcon-default"
 //                           size="sm"
@@ -167,7 +167,7 @@
 //                           <Icon icon="flat-color-icons:like" width="20" height="20" />
 //                         </Button>
 //                       </Link>
-//                       <Link to="/Cart">
+//                       <Link to="/cart">
 //                         <Button
 //                           variant="primary"
 //                           size="sm"
@@ -219,7 +219,7 @@
 //                         92,632 Members Purchased
 //                       </p>
 
-//                       <Link to="/RequestQuote">
+//                       <Link to="/s/enquiry">
 //                         <Button
 //                           size="md"
 //                           variant="falcon-default"
@@ -232,7 +232,7 @@
 //                       </Link>
 //                     </Col>
 //                     <Col xs="auto" className="pe-3">
-//                       <Link to="/wishlist/product">
+//                       <Link to="/wishlist/products">
 //                         <Button
 //                           variant="falcon-default"
 //                           size="sm"
@@ -241,7 +241,7 @@
 //                           <Icon icon="flat-color-icons:like" width="20" height="20" />
 //                         </Button>
 //                       </Link>
-//                       <Link to="/Cart">
+//                       <Link to="/cart">
 //                         <Button
 //                           variant="primary"
 //                           size="sm"
@@ -293,7 +293,7 @@
 //                         92,632 Members Purchased
 //                       </p>
 
-//                       <Link to="/RequestQuote">
+//                       <Link to="/s/enquiry">
 //                         <Button
 //                           size="md"
 //                           variant="falcon-default"
@@ -306,7 +306,7 @@
 //                       </Link>
 //                     </Col>
 //                     <Col xs="auto" className="pe-3">
-//                       <Link to="/wishlist/product">
+//                       <Link to="/wishlist/products">
 //                         <Button
 //                           variant="falcon-default"
 //                           size="sm"
@@ -315,7 +315,7 @@
 //                           <Icon icon="flat-color-icons:like" width="20" height="20" />
 //                         </Button>
 //                       </Link>
-//                       <Link to="/Cart">
+//                       <Link to="/cart">
 //                         <Button
 //                           variant="primary"
 //                           size="sm"
@@ -367,7 +367,7 @@
 //                         92,632 Members Purchased
 //                       </p>
 
-//                       <Link to="/RequestQuote">
+//                       <Link to="/s/enquiry">
 //                         <Button
 //                           size="md"
 //                           variant="falcon-default"
@@ -380,7 +380,7 @@
 //                       </Link>
 //                     </Col>
 //                     <Col xs="auto" className="pe-3">
-//                       <Link to="/wishlist/product">
+//                       <Link to="/wishlist/products">
 //                         <Button
 //                           variant="falcon-default"
 //                           size="sm"
@@ -389,7 +389,7 @@
 //                           <Icon icon="flat-color-icons:like" width="20" height="20" />
 //                         </Button>
 //                       </Link>
-//                       <Link to="/Cart">
+//                       <Link to="/cart">
 //                         <Button
 //                           variant="primary"
 //                           size="sm"
@@ -441,7 +441,7 @@
 //                         92,632 Members Purchased
 //                       </p>
 
-//                       <Link to="/RequestQuote">
+//                       <Link to="/s/enquiry">
 //                         <Button
 //                           size="md"
 //                           variant="falcon-default"
@@ -454,7 +454,7 @@
 //                       </Link>
 //                     </Col>
 //                     <Col xs="auto" className="pe-3">
-//                       <Link to="/wishlist/product">
+//                       <Link to="/wishlist/products">
 //                         <Button
 //                           variant="falcon-default"
 //                           size="sm"
@@ -463,7 +463,7 @@
 //                           <Icon icon="flat-color-icons:like" width="20" height="20" />
 //                         </Button>
 //                       </Link>
-//                       <Link to="/Cart">
+//                       <Link to="/cart">
 //                         <Button
 //                           variant="primary"
 //                           size="sm"

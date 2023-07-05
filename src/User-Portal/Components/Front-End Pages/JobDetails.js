@@ -135,12 +135,14 @@ function JobDetails() {
                     <Row>
                         <Col lg={8}>
                             <Card className="mt-5">
-                                <Card.Header as="h5" className='bg-light mb-0 mt-1'>Project Details</Card.Header>
+                                <Card.Header className='bg-light mb-0 mt-1'>
+                                    <h1 className="mb-0 fs-2 mt-1">Project Details</h1>
+                                </Card.Header>
                                 <Card.Body className="position-relative">
                                     <Row>
                                         <Col xl={12}>
-                                            <h6 style={{ fontSize: '16px' }} className="mb-3 text-uppercase">{jobdata.project_title}</h6>
-                                            <p style={{ fontSize: '14px' }} className="text-justify">{jobdata.project_description}</p>
+                                            <h2 className=" text-uppercase fs-0 mb-3">{jobdata.project_title}</h2>
+                                            <p>{jobdata.project_description}</p>
                                         </Col>
                                     </Row>
                                 </Card.Body>
@@ -294,13 +296,13 @@ function JobDetails() {
                                 </Card.Body>
                                 <Card.Footer className="bg-light">
                                     <div className="d-flex justify-content-between">
-                                        <Link to="/proposallist">
-                                            <p className="fw-semibold text-center" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
+                                        <Link to="/proposal-list">
+                                            <p className="fw-semibold fs--1 mb-0 me-1" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
                                         </Link>
-                                        <Button className="border-0 fs--1 text-uppercase me-2" style={{ color: '#fff', background: '#003f6b' }} as={Link} to="/EditPostProject">
+                                        <Button className="border-0 fs--1  text-uppercase me-2" style={{ color: '#fff', background: '#003f6b' }} as={Link} to="/EditPostProject">
                                             Edit
                                         </Button>
-                                        <Button onClick={() => sendProposal()} className="border-0  fs--1 text-uppercase" style={{ color: '#fff', background: '#003f6b' }}>
+                                        <Button onClick={() => sendProposal()} className="border-0   fs--1 text-uppercase" style={{ color: '#fff', background: '#003f6b' }}>
                                             Send Proposal
                                         </Button>
                                     </div>
@@ -376,7 +378,7 @@ function JobDetails() {
                                                 variant="falcon-default"
                                                 className=""
                                             // as={Link}
-                                            // to="/wishlist/project"
+                                            // to="/wishlist/projects"
                                             >
                                                 
                                                </Button> */}

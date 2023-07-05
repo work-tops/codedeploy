@@ -68,7 +68,7 @@ const SellerEnquiryTable = () => {
             postcode: 'CB236DX',
             status: <span className="badge bg-success">Completed</span>,
             action: <CardDropdown>
-                <Dropdown.Item as={Link} to="/ProductEnquiryDetails" className="text-success">View</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/enquire-product" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
@@ -81,7 +81,7 @@ const SellerEnquiryTable = () => {
             postcode: 'CB236DX',
             status: <span className="badge bg-danger">Declined</span>,
             action: <CardDropdown>
-                <Dropdown.Item as={Link} to="/ProductEnquiryDetails" className="text-success">View</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/enquire-product" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
@@ -94,7 +94,7 @@ const SellerEnquiryTable = () => {
             postcode: 'CB236DX',
             status: <span className="badge bg-warning">Pending</span>,
             action: <CardDropdown>
-                <Dropdown.Item as={Link} to="/ProductEnquiryDetails" className="text-success">View</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/enquire-product" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>
@@ -107,7 +107,7 @@ const SellerEnquiryTable = () => {
             postcode: 'CB236DX',
             status: <span className="badge bg-primary">Processing</span>,
             action: <CardDropdown>
-                <Dropdown.Item as={Link} to="/ProductEnquiryDetails" className="text-success">View</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/enquire-product" className="text-success">View</Dropdown.Item>
                 <Dropdown.Item onClick={handleShow} className="text-primary">Reply</Dropdown.Item>
                 <Dropdown.Item onClick={() => setShowModal1(true)} as={Link} to="#" className="text-danger">Decline</Dropdown.Item>
             </CardDropdown>

@@ -327,7 +327,7 @@
 //                                                             <div className="col ps-3">
 //                                                                 <h4 className="fs-1 text-warning d-flex align-items-center"><span>£ {data?.variant[0]?.pricing?.price}</span><del className="ms-2 fs--1 text-700">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
 //                                                                 <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
-//                                                                 <Link to="/GetQuote">
+//                                                                 <Link to="/p/enquiry">
 //                                                                     <Button
 //                                                                         size="md"
 //                                                                         variant="falcon-default"
@@ -340,7 +340,7 @@
 //                                                                 </Link>
 //                                                             </div>
 //                                                             <div className="col-auto pe-3">
-//                                                                 {/* <Link to="/wishlist/product"> */}
+//                                                                 {/* <Link to="/wishlist/products"> */}
 //                                                                 <a onClick={toastDanger} className="btn btn-sm btn-falcon-default me-2 hover-danger" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Wishlist" data-bs-original-title="Add to Wishlist">
 //                                                                     <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
 //                                                                 </a>
@@ -449,7 +449,7 @@
 //                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
 //                                                                             </button>
 //                                                                             {/* <Link> */}
-//                                                                             <Button target="_blank" to="/GetQuote" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b', fontSize: '.8333333333rem' }} class="btn btn-md btn-primary fs--1">
+//                                                                             <Button target="_blank" to="/p/enquiry" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b', fontSize: '.8333333333rem' }} class="btn btn-md btn-primary fs--1">
 //                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Get Quote</span>
 //                                                                             </Button>
 //                                                                             {/* </Link> */}
@@ -901,7 +901,7 @@ function WishlistProductCard() {
                                                             <div className="col ps-3">
                                                                 <h4 className="fs-1 text-warning d-flex align-items-center"><span>£ {data?.variant[0]?.pricing?.price}</span><del className="ms-2 fs--1 text-700">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
                                                                 <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
-                                                                <Link to="/GetQuote">
+                                                                <Link to="/p/enquiry">
                                                                     <Button
                                                                         size="md"
                                                                         variant="falcon-default"
@@ -1042,7 +1042,7 @@ function WishlistProductCard() {
                                                                             <button onClick={toastDark} class="btn btn-md btn-primary fs--1">
                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
                                                                             </button>
-                                                                            <Button to="/GetQuote" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b', fontSize: '.8333333333rem' }} class="Home-btns-1 btn btn-md btn-primary fs--1">
+                                                                            <Button to="/p/enquiry" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b', fontSize: '.8333333333rem' }} class="Home-btns-1 btn btn-md btn-primary fs--1">
                                                                                 <span class="ms-1 Home-btns-1">Get Quote</span>
                                                                             </Button>
                                                                         </div>

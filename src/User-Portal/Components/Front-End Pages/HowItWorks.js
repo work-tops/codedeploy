@@ -80,8 +80,8 @@ function HowItWorks() {
                                                     All you need to do is give the best description about your requirement.
                                                 </p>
                                                 <div className="d-flex gap-1 justify-content-center">
-                                                    <Button className="mb-5 Home-btns" as={Link} to="/ProjectOwner/SignUp" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
-                                                    <Button className="mb-5 Home-btns" as={Link} to="/MyProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
+                                                    <Button className="mb-5 Home-btns" as={Link} to="/Project-owner/login/SignUp" style={{ background: '#003f6b', border: '0px' }}>Sign Up to Begin</Button>
+                                                    <Button className="mb-5 Home-btns" as={Link} to="/projectowner/profile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
                                                 </div>
                                             </div>
                                         </div>
@@ -96,7 +96,7 @@ function HowItWorks() {
                                                             Use various filters to narrow your search based on your requirement; Skill, Location, Price Range, Project Type and many
                                                             more.
                                                         </p>
-                                                        <Button className="Home-btns" as={Link} to="/user/SellerList" style={{ background: '#003f6b', border: '0px' }}>Discover Best Professionals</Button>
+                                                        <Button className="Home-btns" as={Link} to="/service/categories" style={{ background: '#003f6b', border: '0px' }}>Discover Best Professionals</Button>
                                                     </div>
                                                 </div>
                                                 <div className="row flex-center mt-7">
@@ -108,7 +108,7 @@ function HowItWorks() {
                                                             appropriate professionals. If something you are searching for is not in option
                                                             you can type “Others"in the search box and add your requirement.
                                                         </p>
-                                                        <Button className="Home-btns" as={Link} to="/postproject" style={{ background: '#003f6b', border: '0px' }}>Upload My Project</Button>
+                                                        <Button className="Home-btns" as={Link} to="/post-a-project" style={{ background: '#003f6b', border: '0px' }}>Upload My Project</Button>
                                                     </div>
                                                 </div>
 
@@ -132,7 +132,7 @@ function HowItWorks() {
                                                             <p>Check out unmissable offers from numerous sellers and traders and grab the best deal.</p>
                                                         </div>
                                                         <div className="card-footer bg-light">
-                                                            <Link to="/productlist">
+                                                            <Link to="/products">
                                                                 <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Current Offers</p>
                                                             </Link>
                                                         </div>
@@ -150,7 +150,7 @@ function HowItWorks() {
                                                             </p>
                                                         </div>
                                                         <div className="card-footer bg-light">
-                                                            <Link to="/productlist">
+                                                            <Link to="/products">
                                                                 <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Listed Items</p>
                                                             </Link>
                                                         </div>
@@ -168,7 +168,7 @@ function HowItWorks() {
                                                             </p>
                                                         </div>
                                                         <div className="card-footer bg-light">
-                                                            <Link to="/servicelist">
+                                                            <Link to="/services">
                                                                 <p style={{ fontSize: '16px', color: '#003f6b' }} className="fw-semibold text-center">Explore the Services</p>
                                                             </Link>
                                                         </div>
@@ -323,8 +323,8 @@ function HowItWorks() {
                                                     You are just one sign up away from taking the Game-Changing Decision of your Lifetime!
                                                 </p>
                                                 <div className="d-flex mb-3 gap-1 justify-content-center">
-                                                    <Button className="Home-btns" as={Link} to="/Freelancer/False" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
-                                                    <Button className="Home-btns" as={Link} to="/FreelancerProfile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
+                                                    <Button className="Home-btns" as={Link} to="/freelancer/false" style={{ background: '#003f6b', border: '0px' }}>Only Trusted Bidders May Sign up Here</Button>
+                                                    <Button className="Home-btns" as={Link} to="/trader/profile" style={{ background: '#003f6b', border: '0px' }}>Update Your Profile</Button>
                                                 </div>
                                             </div>
                                         </div>

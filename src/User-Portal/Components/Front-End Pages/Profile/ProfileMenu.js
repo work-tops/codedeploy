@@ -14,7 +14,7 @@ function ProfileMenu() {
                 </Link>
             </div>
         </div>
-            <Link to="/MyProfile">
+            <Link to="/projectowner/profile">
                 <Button className="m-3 d-block btn bg-transparent text-dark border border-0">
                     My Profile
                 </Button>

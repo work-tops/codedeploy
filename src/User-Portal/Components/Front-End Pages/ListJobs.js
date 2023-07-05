@@ -238,15 +238,14 @@ function ListJobs(layout) {
 
                     <Row>
                         <Col className='' lg={3}>
-                            <div  >
-                                <Card className="mt-5">
-                                    <SimpleBarReact style={{ height: '100%' }}>
+                            <div className="course-details-sticky-sidebar">
+                                <Card className="mt-5 mb-3">
+                                    {/* <SimpleBarReact style={{ height: '100%' }}> */}
                                         <Card.Header className="bg-light d-flex justify-content-between pt-x1">
-
-                                            <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
-                                                <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
-                                                <span>Filter</span>
-                                            </h5>
+                                            <h4 className="mb-0 text-900 fs-0 d-flex align-items-center">
+                                                <FontAwesomeIcon icon="filter" className=" me-1" />
+                                                Filter
+                                            </h4>
                                             <div>
                                                 <button
                                                     onClick={() => resetFilter()}
@@ -275,7 +274,7 @@ function ListJobs(layout) {
                                                             className="form-check d-flex ps-0"
                                                         >
                                                             <Form.Check.Label
-                                                                className="fs--1 flex-1 text-truncate"
+                                                                className=" flex-1 text-truncate"
                                                             >
                                                                 {x?.category}
                                                             </Form.Check.Label>
@@ -290,20 +289,20 @@ function ListJobs(layout) {
                                             </ul>
                                             {/*  */}
                                             <div>
-                                                <Form.Label className='fs--1 fw-semibold text-start text-700 text-decoration-none mt-3 px-0'>Search County</Form.Label>
+                                                <Form.Label className=' fw-semibold  text-decoration-none mt-3 px-0'>Search County</Form.Label>
                                                 <MultiSelect
                                                     options={countyOptions}
                                                     selectedValues={selectedCounties}
                                                     onSelect={handleCountySelect}
                                                     onRemove={handleCountySelect}
                                                     displayValue="key"
-                                                    className='form-control'
+                                                    className='form-control cursor-default form-control-sm'
                                                 />
                                             </div>
                                             {/*  */}
                                             <Form>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label className='fs--1 fw-semibold text-start text-700 text-decoration-none mt-3 px-0'>Range</Form.Label>
+                                                    <Form.Label className=' fw-semibold  text-700 text-decoration-none mt-3 px-0'>Range</Form.Label>
                                                     {/* <p className='fw-semibold' style={{ fontSize: '14px' }}>£ 0-10,000</p>
                                                 <Form.Range min={0} max={10000} onChange={(e) => priceSearch(e)} /> */}
                                                     <Form>
@@ -325,15 +324,16 @@ function ListJobs(layout) {
                                                 </Form.Group>
                                             </Form>
                                         </Card.Body>
-                                    </SimpleBarReact>
+                                    {/* </SimpleBarReact> */}
                                 </Card>
                             </div>
+
                         </Col>
 
                         <Col className='' lg={9}>
                             <div className="card mt-5 mb-3">
                                 <div className="card-header bg-light position-relative">
-                                    <h5 className="mb-0 mt-1">Projects</h5>
+                                    <h1 className="mb-0 fs-2 mt-1">Projects</h1>
                                 </div>
                                 <div className="card-body pt-0 pt-md-3">
                                     <div className="row g-3 align-items-center">
@@ -346,7 +346,7 @@ function ListJobs(layout) {
                                             <form className="position-relative">
                                                 <input className="form-control form-control-sm search-input lh-1 rounded-2 ps-4" onChange={(e) => mainSearch(e)} type="search" placeholder="Search..." aria-label="Search" />
                                                 <div className="position-absolute top-50 start-0 translate-middle-y ms-2">
-                                                    <span className="fas fa-search text-400 fs--1"></span></div>
+                                                    <span className="fas fa-search text-400 "></span></div>
                                             </form>
                                         </div>
                                         <div className="col position-sm-relative position-absolute top-0 end-0  me-sm-0 p-0">
@@ -354,17 +354,19 @@ function ListJobs(layout) {
                                                 <div className="col-auto">
                                                     <form className="row gx-2">
                                                         <div className="col-auto d-none d-lg-block"><span className="fw-semi-bold">Sort by</span></div>
-                                                        <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Bulk actions">
-                                                            <option >Recent Added</option>
-                                                            <option >Price High to Low</option>
-                                                            <option >Price Low to High</option>
-                                                            <option >A-Z</option>
-                                                            <option >Z-A</option>
-                                                        </select></div>
+                                                        <div className="col-auto me-1">
+                                                            <select className="form-select form-select-sm cursor-pointer">
+                                                                <option >Recent Added</option>
+                                                                <option >Price High to Low</option>
+                                                                <option >Price Low to High</option>
+                                                                <option >A-Z</option>
+                                                                <option >Z-A</option>
+                                                            </select>
+                                                        </div>
                                                     </form>
                                                 </div>
-                                                <div className="col-auto">
-                                                    <div className="d-flex align-items-center"><span className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</span>
+                                                <div className="col-auto d-none d-md-block">
+                                                    <div className="d-flex align-items-center"><span className="fw-semi-bold me-2 d-none d-md-block lh-1">View</span>
                                                         <div
                                                             className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
                                                                 }`}
@@ -390,9 +392,9 @@ function ListJobs(layout) {
                                 <Card className="overflow-hidden mt-3 mb-3">
                                     <Card.Body className="p-0">
                                         <Row className="g-0">
-                                            <Col md={12} lg={12} className="p-x1">
+                                            <Col md={12}  className="p-x1">
                                                 <Row className="g-0 h-100">
-                                                    <Col lg={8}>
+                                                    <Col md={8}>
                                                         <div className='d-flex justify-content-start mb-3'>
                                                             <span className='badge m-1 rounded-pill p-2' style={{ background: '#d5e5fa', color: '#1c4f93' }}>{data?.category}</span>
                                                             <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>{data?.sub_category}</span>
@@ -402,9 +404,9 @@ function ListJobs(layout) {
                                                         <div key={key}>
                                                             {/* <h5 className='text-primary mb-3'>{data.customer_email}</h5> */}
                                                             <Link to={`jobdetails/${data._id}`} role="button">
-                                                                <h6 style={{ fontSize: '16px' }} className="mb-3 text-uppercase">{data.project_title}</h6>
+                                                                <h2 className="product-name text-uppercase fs-0 mb-3">{data.project_title}</h2>
                                                             </Link>
-                                                            <p className='fifty-chars text-justify' style={{ fontSize: '14px', width: '96%' }}>{data.project_description}</p>
+                                                            <p className='fifty-chars' style={{ width: '90%' }}>{data.project_description}</p>
                                                         </div>
 
                                                         {/* *8-Col */}
@@ -412,7 +414,7 @@ function ListJobs(layout) {
 
 
                                                     {/* COl-4 */}
-                                                    <Col md={12} lg={4} className=" mt-lg-0">
+                                                    <Col md={4} className=" mt-lg-0">
                                                         <div key={key}>
                                                             <p className='text-justiy fw-bold' style={{ fontSize: '14px' }}><Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />
                                                                 1000
@@ -428,7 +430,7 @@ function ListJobs(layout) {
                                                                         onClick={handleRemoveFromWishlist}
                                                                         role='button'
                                                                         style={{ fontSize: '14px' }}
-                                                                        className="text-justify fw-semibold"
+                                                                        className=" fw-semibold"
                                                                         href="#!"
                                                                         data-bs-toggle="tooltip"
                                                                         data-bs-placement="top"
@@ -444,7 +446,7 @@ function ListJobs(layout) {
                                                                         onClick={handleAddToWishlist}
                                                                         role='button'
                                                                         style={{ fontSize: '14px' }}
-                                                                        className="text-justify fw-semibold"
+                                                                        className=" fw-semibold"
                                                                         href="#!"
                                                                         data-bs-toggle="tooltip"
                                                                         data-bs-placement="top"
@@ -495,10 +497,10 @@ function ListJobs(layout) {
                                                         <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Worktop</span>
                                                     </div>
                                                     {/* <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5> */}
-                                                    <h5 className=" text-uppercase text-900 mb-3">
+                                                    <h2 className="product-name cursor-pointer text-uppercase fs-0 mb-3">
                                                         Bathroom Installation
-                                                    </h5>
-                                                    <p className='one-twenty-chars mb-lg-0 text-justify' style={{ fontSize: '14px' }}>White Attica
+                                                    </h2>
+                                                    <p className='one-twenty-chars mb-lg-0'>White Attica
                                                         Supernatural Quartz has a crisp white base featured with an intricate
                                                         veiny pattern. This quartz slab has a super sleek look in polished finish which
                                                         is more enhanced by the distinct black veins which have been manufactured to look fit
@@ -564,10 +566,10 @@ function ListJobs(layout) {
                                                         <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Worktop</span>
                                                     </div>
                                                     {/* <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5> */}
-                                                    <h5 className=" text-uppercase text-900 mb-3">
+                                                    <h2 className="product-name cursor-pointer text-uppercase fs-0 mb-3">
                                                         Bathroom Installation
-                                                    </h5>
-                                                    <p className='one-twenty-chars mb-lg-0 text-justify' style={{ fontSize: '14px' }}>White Attica
+                                                    </h2>
+                                                    <p className='one-twenty-chars mb-lg-0'>White Attica
                                                         Supernatural Quartz has a crisp white base featured with an intricate
                                                         veiny pattern. This quartz slab has a super sleek look in polished finish which
                                                         is more enhanced by the distinct black veins which have been manufactured to look fit
@@ -623,25 +625,6 @@ function ListJobs(layout) {
                                         </div>
                                     </div>
                                 </article>
-                                {/*  */}
-                                {/* <Button
-                                    variant="primary"
-                                    className={`scroll-to-top ${isVisible ? 'visible' : 'invisible'}`}
-                                    onClick={scrollToTop}
-                                    style={{
-                                        position: 'fixed',
-                                        bottom: '20px',
-                                        right: '20px',
-                                        borderRadius: '50%',
-                                        width: '40px',
-                                        height: '40px',
-                                        // opacity: '0.7',
-                                        transition: 'opacity 0.3s'
-                                    }}
-                                >
-                                    <FontAwesomeIcon icon={faHandPointUp} />
-                                </Button> */}
-                                {/*  */}
                             </div>
                             {/* pagination */}
                             <div className="card mb-3 mt-3">

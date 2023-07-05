@@ -36,7 +36,7 @@ function Cart() {
                                     </div>
                                     <div className="col-md-auto">
                                     <div className="d-flex justify-content-start gap-1 flex-wrap">
-                                            <Link to="/productlist">
+                                            <Link to="/products">
                                                 <a className="btn btn-sm  btn-outline-secondary   border-300 shadow-none" >
                                                     <span  data-fa-transform="shrink-4"></span>
                                                     Continue Shopping
@@ -134,7 +134,7 @@ function Cart() {
                             <div className="card-footer bg-light d-flex justify-content-end">
                                 <form className="me-3">
                                     <Button as={Link} to="/checkout" className="btn btn-sm btn-primary me-2" >Checkout</Button>
-                                    <Button as={Link} to="/GuestCheckout" className="btn btn-sm btn-primary" >Guest Checkout</Button>
+                                    <Button as={Link} to="/g/checkout" className="btn btn-sm btn-primary" >Guest Checkout</Button>
                                 </form>
                             </div>
                         </div>
@@ -144,7 +144,7 @@ function Cart() {
                                     <img src={emptycart} width="130" height="130" class="img-fluid mb-4 mr-3" />
                                     <h3><strong>Your Cart is Empty</strong></h3>
                                     <h6 className="text-capitalize">Must Add all Items Before You proceed to Checkout </h6>
-                                    <Link to="/productlist">
+                                    <Link to="/products">
                                         <a className="btn text-capitalize mt-3 btn-outline-secondary border-300 me-2 shadow-none" data-abc="true">continue shopping</a>
                                     </Link>
 

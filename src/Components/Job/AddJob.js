@@ -489,7 +489,7 @@ const AddJobs = () => {
         const response = await createData("job/new", productdata)
         if (response.status === 201) {
             toast.success('Successfully Product Added')
-            history.push('/projectlist');
+            history.push('/projects');
             cleardata()
         } else {
             toast.error('Something went wrong')
@@ -1028,7 +1028,7 @@ const AddJobs = () => {
                                         <Button variant="secondary" onClick={handleClose}>
                                             No
                                         </Button>
-                                        <Link to="/projectlist">
+                                        <Link to="/projects">
                                             <Button variant="danger" onClick={handleClose}>
                                                 Yes
                                             </Button>

@@ -130,13 +130,13 @@ function ServiceInformation() {
                                     <hr className="text-secondary text-opacity-50" />
                                     <ul className="list-unstyled d-flex flex-wrap gap-3 fs--1 fw-semi-bold text-300 mt-3 mb-0">
 
-                                        <Link to="/user/sellerlist" className="text-300">
+                                        <Link to="/service/categories" className="text-300">
                                             <li role="button" className="text-primary">
                                                 Previous
                                             </li>
                                         </Link>
 
-                                        {/* <Link to="/wishlist/product" className="text-300"> */}
+                                        {/* <Link to="/wishlist/products" className="text-300"> */}
                                         <>
                                             {isAdded ? (
                                                 <li
@@ -693,7 +693,7 @@ function ServiceInformation() {
                                             >
                                                 Message Me                                                    </Button>
 
-                                            <Link to="/RequestQuote">
+                                            <Link to="/s/enquiry">
                                                 <Button
                                                     style={{ background: '#003f6b' }}
                                                     size="lg"
@@ -800,7 +800,7 @@ function ServiceInformation() {
                         <Button className="m-1 text-uppercase border-0" style={{ background: '#003f6b' }}>
                             attachments
                         </Button>
-                        <Button as={Link} to="/projectowner" className="m-1 text-uppercase border-0" style={{ background: '#003f6b' }}>
+                        <Button as={Link} to="/Project-owner/login" className="m-1 text-uppercase border-0" style={{ background: '#003f6b' }}>
                             SEND
                         </Button>
                     </Modal.Body>

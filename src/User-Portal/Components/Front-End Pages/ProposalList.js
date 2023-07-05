@@ -95,7 +95,7 @@ function ProposalList() {
                                         <Card.Body>
                                             <Row>
                                                 <Col lg={3}>
-                                                    <Link to="/profile_publicview">
+                                                    <Link to="/trader-profile-public">
                                                         <img src={profile_img} className="mb-3 rounded-circle" width="100px" height="100px" />
                                                     </Link>
                                                     <p className="fw-bold ms-2 text-uppercase  text-900">Soanes IT</p>
@@ -165,8 +165,8 @@ function ProposalList() {
                                                     </Dropdown.Toggle>
 
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item as={Link} to="/proposaldetails" className="text-success">Accept</Dropdown.Item>
-                                                        {/* <Dropdown.Item as={Link} to="/proposallist"  className="text-danger">Decline</Dropdown.Item> */}
+                                                        <Dropdown.Item as={Link} to="/proposal-details" className="text-success">Accept</Dropdown.Item>
+                                                        {/* <Dropdown.Item as={Link} to="/proposal-list"  className="text-danger">Decline</Dropdown.Item> */}
                                                     </Dropdown.Menu>
 
                                                 </Dropdown>

@@ -6,13 +6,13 @@ function YourProjectsSeller() {
         <>
         <p className="fw-semibold m-5 fs-5">Your Projects</p>
                             <div className="d-flex justify-content-around">
-                                <Link to="/addproductcard">
+                                <Link to="/dashboard-products">
                                 <Button className="btn bg-transparent text-dark border-0">All Products</Button>
                                 </Link>
-                                <Link to="/addservicecard">
+                                <Link to="/dashboard-services">
                                 <Button className="btn bg-transparent text-dark border-0">All Services</Button>
                                 </Link>
-                                <Link to='/proposalcard'>
+                                <Link to='/user/myproposals'>
                                 <Button className="btn bg-transparent text-dark border-0">Proposals</Button>
                                 </Link>
                                 <Link to='/productenquirescard'>

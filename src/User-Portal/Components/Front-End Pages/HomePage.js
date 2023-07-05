@@ -57,7 +57,7 @@ function HomePage() {
                                     <p className="" >
                                         We connect you with the most experienced and certified construction professionals who have been creating properties that mesmerise the millions.
                                     </p>
-                                    <Link to="/user/sellerlist">
+                                    <Link to="/service/categories">
                                         <button className="Home-btns">
                                             <span className="button-text">Discover Experts</span>
                                         </button>
@@ -100,7 +100,7 @@ function HomePage() {
                                     >
                                         <div style={{ width: '345px', height: 'auto' }}>
                                             <SwiperSlide>
-                                                <Link to="/productlist">
+                                                <Link to="/products">
                                                     <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Granite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                                         <Card.Body>
                                                             <h5 className="text-light m-2">Granite</h5>
@@ -111,7 +111,7 @@ function HomePage() {
                                         </div>
                                         <div style={{ width: '345px', height: 'auto' }}>
                                             <SwiperSlide>
-                                                <Link to="/productlist">
+                                                <Link to="/products">
                                                     <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Limstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                                         <Card.Body>
                                                             <h5 className="text-light m-2">Limstone</h5>
@@ -122,7 +122,7 @@ function HomePage() {
                                         </div>
                                         <div style={{ width: '345px', height: 'auto' }}>
                                             <SwiperSlide>
-                                                <Link to="/productlist">
+                                                <Link to="/products">
                                                     <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Quartzite})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                                         <Card.Body>
                                                             <h5 className="text-light m-2">Quartzite</h5>
@@ -133,7 +133,7 @@ function HomePage() {
                                         </div>
                                         <div style={{ width: '345px', height: 'auto' }}>
                                             <SwiperSlide>
-                                                <Link to="/productlist">
+                                                <Link to="/products">
                                                     <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Sandstone})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                                         <Card.Body>
                                                             <h5 className="text-light m-2">Sandstone</h5>
@@ -144,7 +144,7 @@ function HomePage() {
                                         </div>
                                         <div style={{ width: '345px', height: 'auto' }}>
                                             <SwiperSlide>
-                                                <Link to="/productlist">
+                                                <Link to="/products">
                                                     <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${slate})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                                         <Card.Body>
                                                             <h5 className="text-light m-2">Sinks</h5>
@@ -155,7 +155,7 @@ function HomePage() {
                                         </div>
                                         <div style={{ width: '345px', height: 'auto' }}>
                                             <SwiperSlide>
-                                                <Link to="/productlist">
+                                                <Link to="/products">
                                                     <Card className="img-fluid image-animation" style={{ backgroundImage: `url(${Travertine})`, backgroundSize: 'cover', borderRadius: '10px', height: '50vh' }}>
                                                         <Card.Body>
                                                             <h5 className="text-light m-2">Traventine</h5>
@@ -211,7 +211,7 @@ function HomePage() {
                                         We keep you updated about unmissable offers from numerous sellers and
                                         traders so that you can grab the best deal from the comfort of your home.
                                     </p>
-                                    <Link to="/productlist">
+                                    <Link to="/products">
                                         <button className="Home-btns">Check Offers</button>
                                     </Link>
                                 </div>

@@ -2,9 +2,9 @@ import React from "react";
 import { Row, Col, Button, Card } from "react-bootstrap";
 import Menubar from "../Menubar/Menubar";
 import PostPg from "../Post/PostPg";
-import YourProjectsSeller from "./YourProjects";
+// import YourProjectsSeller from "./YourProjects";
 import NavbarStandard from "../Header/AdvanceHeader/NavbarStandard";
-import AddProductCard from "./MiniCard/AddProductCard";
+// import AddProductCard from "./MiniCard/AddProductCard";
 function SellerLandingPage() {
     return (
         <>

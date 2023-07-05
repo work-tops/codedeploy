@@ -145,7 +145,7 @@ const FrontendAddService = () => {
             toast.success('Successfully Service Added')
             setform("")
             cleardata()
-            history.push('/addservicecard');
+            history.push('/dashboard-services');
         } else {
             toast.error('Something went wrong')
         }
@@ -512,7 +512,7 @@ const FrontendAddService = () => {
                         </Row>
                         <Row>
                             <Col lg={7} className='mb-3'>
-                                {/* <Link to='/addservicecard'> */}
+                                {/* <Link to='/dashboard-services'> */}
                                 <Button type='submit' className='mt-3  btn text-light bg-success border-0'>Add Services</Button>
                                 {/* </Link> */}
 
@@ -533,7 +533,7 @@ const FrontendAddService = () => {
                                         <Button className='me-2' variant="secondary" onClick={handleClose1}>
                                             No
                                         </Button>
-                                        <Link to="/addservicecard">
+                                        <Link to="/dashboard-services">
                                             <Button variant="danger" onClick={handleClose1}>
                                                 Yes
                                             </Button>

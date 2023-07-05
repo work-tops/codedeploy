@@ -179,35 +179,30 @@ function ProductList() {
                                 </Card>
 
                                 <Card className="mt-3">
-                                    {/* <SimpleBarReact style={{ overflow:'hidden',height: '100%' }}> */}
-                                    <Card.Header as={Flex} className="flex-between-center pt-x1 bg-white">
-                                        <div className="justify-content-between d-flex m-2">
-                                            <h4 className="mb-0 text-700 fs-0 d-flex align-items-center">
-                                                <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
-                                                <span>Filter</span>
+                                    {/* <SimpleBarReact style={{ height: '100%' }}> */}
+                                    <Card.Header as={Flex} className="flex-between-center bg-light pt-x1">
+                                        {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
+                                        <div className='justify-content-xl-between d-flex m-2'>
+                                            <h4 className="mb-0 text-900 fs-0 d-flex align-items-center">
+                                                <FontAwesomeIcon icon="filter" className="ms-2 me-1" />
+                                                Filter
                                             </h4>
-                                            <button onClick={() => resetFilter()} className="btn btn-sm btn-outline-secondary">Reset</button>
+                                            <div>
+                                                <button
+                                                    onClick={() => resetFilter()}
+                                                    className="btn btn-sm btn-outline-secondary">Reset
+                                                </button>
+                                            </div>
                                         </div>
                                     </Card.Header>
-                                    <Card.Body className="py-0 mt-2" style={{ overflowY: 'auto' }}>
-                                        <div className="d-flex flex-wrap mb-2">
-                                            {filterList?.map((x, i) => (
-                                                <span
-                                                    key={`filter_${i}`}
-                                                    onClick={() => removeFilter(i)}
-                                                    className="badge m-1 bg-secondary text-white"
-                                                >
-                                                    {x}{' '}
-                                                    <Icon
-                                                        icon="ic:sharp-close"
-                                                        className="cursor-pointer"
-                                                        color="white"
-                                                        width="14"
-                                                        height="14"
-                                                    />
-                                                </span>
-                                            ))}
-                                        </div>
+                                    <Card.Body className="py-0 mt-2">
+
+                                        <Flex wrap="wrap" className=" mb-2">
+                                            {filterList?.map((x, i) => {
+                                                return <span key={`filter_${i}`} onClick={() => removeFilter(i)} className='badge m-1 bg-secondary text-white'>{x} <Icon icon="ic:sharp-close" color="white" width="14" height="14" /></span>
+                                            })}
+                                        </Flex>
+
                                         <ul className="list-unstyled mt-1">
                                             {productTags?.map((data, key) => (
                                                 <FilterItem
@@ -217,8 +212,7 @@ function ProductList() {
                                                     filterList={filterList}
                                                     setFilterList={setFilterList}
                                                     handleFilter={handleFilter}
-                                                />
-                                            ))}
+                                                />))}
                                         </ul>
                                     </Card.Body>
                                     {/* </SimpleBarReact> */}
@@ -226,14 +220,9 @@ function ProductList() {
                             </div>
                         </Col>
                         <Col className='mb-3' lg={9}>
-
                             <div className="card mt-5 mb-3">
                                 <div className="card-header bg-light position-relative">
                                     <h1 className="mb-0 fs-2 mt-1">Products</h1>
-                                    <div className="bg-holder d-none d-md-block bg-card">
-
-                                    </div>
-
                                 </div>
                                 <div className="card-body pt-0 pt-md-3">
                                     <div className="row g-3 align-items-center">
@@ -316,15 +305,12 @@ function ProductList() {
                                                                         <span>Out of Stock</span>
                                                                     </span>
                                                                 </div>
-                                                                <h2 className="product-name text-uppercase fs-0 mb-2">
-                                                                    <Link
-                                                                        to={`productdetails/${data._id}`}
-                                                                        className="text-dark"
-                                                                    >
+                                                                <h2 class="mt-3 mb-3 mt-sm-0 fs-0 fs-lg-1">
+                                                                    <Link className="product-name text-uppercase text-900" to={`productdetails/${data._id}`}>
                                                                         {data?.name}
                                                                     </Link>
                                                                 </h2>
-                                                                <h3 className="fs--1 mt-2 mb-2 w-50 d-none d-lg-block">
+                                                                <h3 className="fs-0 mt-2 mb-3 ">
                                                                     {data?.type?.name}
                                                                 </h3>
                                                                 <div style={{ fontSize: '12px' }} className=" mb-2 text-700">
@@ -350,7 +336,7 @@ function ProductList() {
                                                             <div className="col ps-3">
                                                                 <h4 className="fs-1 text-warning d-flex align-items-center"><span>£ {data?.variant[0]?.pricing?.price}</span><del className="ms-2 fs--1 fw-bold text-900">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
                                                                 <p className="mb-0 fs--1 text-800"> 92,632 Members Purchased</p>
-                                                                <Link to="/GetQuote">
+                                                                <Link to="/p/enquiry">
                                                                     <Button
                                                                         size="md"
                                                                         style={{ background: '#003f6b' }}
@@ -459,7 +445,7 @@ function ProductList() {
                                                                             {data?.name}
                                                                         </Link>
                                                                     </h2>
-                                                                    <h3 className="fs-0 mt-1 mb-2 w- d-lg-block">
+                                                                    <h3 className="fs-0 mt-2 mb-3 ">
                                                                         {data?.type?.name}
                                                                     </h3>
                                                                     <div style={{ fontSize: '12px' }} className=" mb-2 text-700">
@@ -527,7 +513,7 @@ function ProductList() {
                                                                             <button onClick={toastDark} class="btn btn-md btn-primary fs--1">
                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
                                                                             </button>
-                                                                            <Link to="/GetQuote">
+                                                                            <Link to="/p/enquiry">
                                                                                 <button className="btn w-100 Home-btns-1 text-white btn-md fs--1" style={{ background: '#003f6b', border: '1px solid #003f6b' }} >
                                                                                     <span class="ms-1">Get a Quote</span>
                                                                                 </button>

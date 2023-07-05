@@ -1259,7 +1259,7 @@ const AddProduct = () => {
                                     </Col>
                                     <Row>
                                         <Col className='mt-3'>
-                                            <Link to='/addproductcard'>
+                                            <Link to='/dashboard-products'>
                                                 <Button type='submit' className='mb-3 btn text-light bg-success border-0'>Add Products</Button>
                                             </Link>
 

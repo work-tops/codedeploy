@@ -78,7 +78,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
       })
       toast.success('Successfully Logged In')
       sessionStorage.setItem("token", response.data.token);
-      history.push("/addproductcard");
+      history.push("/dashboard-products");
     }).catch(err => {
       toast.error(err.response.data.message);
     })

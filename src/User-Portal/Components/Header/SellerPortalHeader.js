@@ -30,8 +30,8 @@ function SellerPortalHeader() {
                             Upload Your
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item href="/user/addproduct">Add Product</Dropdown.Item>
-                            <Dropdown.Item href="/user/addservices">Add Service</Dropdown.Item>
+                            <Dropdown.Item href="/dashboard-addproduct">Add Product</Dropdown.Item>
+                            <Dropdown.Item href="/dashboard-addservice">Add Service</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Col>
@@ -47,17 +47,17 @@ function SellerPortalHeader() {
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     <Dropdown.Item>
-                                        <Link to='/wishlist/product'>
+                                        <Link to='/wishlist/products'>
                                             Product
                                         </Link>
                                     </Dropdown.Item>
                                     <Dropdown.Item>
-                                        <Link to='/wishlist/project'>
+                                        <Link to='/wishlist/projects'>
                                             Project
                                         </Link>
                                     </Dropdown.Item>
                                     <Dropdown.Item >
-                                        <Link to='/wishlist/seller'>
+                                        <Link to='/wishlist/followers'>
                                             Seller
                                         </Link>
                                     </Dropdown.Item>
@@ -72,7 +72,7 @@ function SellerPortalHeader() {
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 <Dropdown.Item>
-                                    <Link to="/MyProfile">
+                                    <Link to="/projectowner/profile">
                                         Profile
                                     </Link>
                                 </Dropdown.Item>
@@ -82,12 +82,12 @@ function SellerPortalHeader() {
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item href="">
-                                    <Link to="/user/addproduct">
+                                    <Link to="/dashboard-addproduct">
                                         Product
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item href="">
-                                    <Link to="/user/addservices">
+                                    <Link to="/dashboard-addservice">
                                         Services
                                     </Link>
                                 </Dropdown.Item>

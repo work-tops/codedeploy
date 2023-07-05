@@ -110,7 +110,7 @@ function ProductDetails() {
                             <div className="d-flex  justify-content-center">
                                 <Breadcrumb>
                                     <Breadcrumb.Item as={Link} to="/">Home</Breadcrumb.Item>
-                                    <Breadcrumb.Item as={Link} to="/productlist">Products</Breadcrumb.Item>
+                                    <Breadcrumb.Item as={Link} to="/products">Products</Breadcrumb.Item>
                                     <Breadcrumb.Item as={Link} to="/productdetails/data._id">Product Name</Breadcrumb.Item>
                                 </Breadcrumb>
                             </div>
@@ -582,7 +582,7 @@ function ProductDetails() {
                                             <button onClick={toastDark} class="btn w-100 mb-2 btn-md btn-primary fs--1">
                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
                                             </button>
-                                            <Link to="/GetQuote">
+                                            <Link to="/p/enquiry">
                                                 <button className="btn w-100 Home-btns-1 text-white btn-md fs--1" style={{ background: '#003f6b', border: '1px solid #003f6b' }} >
                                                     <span class="ms-1">Get a Quote</span>
                                                 </button>

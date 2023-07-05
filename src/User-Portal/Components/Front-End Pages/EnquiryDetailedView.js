@@ -25,7 +25,7 @@ function ServiceEnquiryDetails() {
                         <Col lg={12}>
                             <Card className="mt-5 mb-3">
                                 <Card.Header className="d-flex justify-content-end bg-light">
-                                    <Button as={Link} to="/Enquirescard" className="bg-danger text-uppercase border-0">Close the Enquiry </Button>
+                                    <Button as={Link} to="/enquire" className="bg-danger text-uppercase border-0">Close the Enquiry </Button>
                                 </Card.Header>
                                 <Card.Body>
                                     <div>
@@ -103,7 +103,7 @@ function ServiceEnquiryDetails() {
                                     <h5 className=" text-uppercase fs-0">Message</h5>
                                 </div>
                                 <div className="d-flex justify-content-end align-items-end">
-                                    <Button as={Link} to="/NewEstimate" style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
+                                    <Button as={Link} to="/new-estimate" style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
                                         Create Estimate
                                     </Button>
                                     <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">

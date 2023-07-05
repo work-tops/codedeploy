@@ -12,7 +12,7 @@ function FrontEndAllProducts() {
         <Card.Body className="bg-light">
           <div className='d-flex justify-content-between flex-wrap'>
             <h4 className="mt-2 mb-3">My Products</h4>
-            <Link to="/user/addproduct">
+            <Link to="/dashboard-addproduct">
               <Button className='m-1 bg-success border-success'>Add Product</Button>
             </Link>
           </div>

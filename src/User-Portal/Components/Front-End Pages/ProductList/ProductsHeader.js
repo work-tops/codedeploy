@@ -104,7 +104,7 @@ const ListingHeader = ({ layout }) => {
                       overlay={<Tooltip>Course List</Tooltip>}
                     >
                       <Link
-                        to="/productlist"
+                        to="/products"
                         className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
                           }`}
                       >

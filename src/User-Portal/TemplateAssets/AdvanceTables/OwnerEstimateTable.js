@@ -169,7 +169,7 @@ const OwnerEstimateTable = () => {
                                     <h5 className="mb-2 mb-md-0"># MAI/EST/000001</h5>
                                 </div>
                                 <div className="col-auto">
-                                    <Link to="/InvoiceCheckout">
+                                    <Link to="/invoice/checkout">
                                         <button className="btn  btn-falcon-success btn-sm me-1 mb-2 mb-sm-0" type="button">
                                             Accept
                                         </button>

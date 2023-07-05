@@ -396,8 +396,8 @@ function EditInvoice() {
                                     </div>
 
                                 </div>
-                                <Button as={Link} to="/InvoiceFreelancerCard" className="btn-primary me-2" type="submit">Save</Button>
-                                <Button as={Link} to="/InvoiceFreelancerCard" className="btn-success me-2" type="submit">Save & Send</Button>
+                                <Button as={Link} to="/t/invoices" className="btn-primary me-2" type="submit">Save</Button>
+                                <Button as={Link} to="/t/invoices" className="btn-success me-2" type="submit">Save & Send</Button>
                                 <Button variant="danger" onClick={handleShow1}>
                                     Discard
                                 </Button>
@@ -421,7 +421,7 @@ function EditInvoice() {
                         <Button variant="secondary" onClick={handleClose1}>
                             No
                         </Button>
-                        <Button as={Link} to="/InvoiceFreelancerCard" variant="danger">
+                        <Button as={Link} to="/t/invoices" variant="danger">
                             Yes
                         </Button>
                     </Modal.Footer>

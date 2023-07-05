@@ -213,7 +213,7 @@ function EditProposal() {
 
                                         </div>
                                         <div className="d-flex justify-content-end">
-                                            <Button as={Link} to="/proposalcard" className="border-0 Home-btns-1 mt-3" style={{ background: '#003f6b', fontSize: '14px' }} type="submit">
+                                            <Button as={Link} to="/user/myproposals" className="border-0 Home-btns-1 mt-3" style={{ background: '#003f6b', fontSize: '14px' }} type="submit">
                                                 SEND
                                             </Button>
                                         </div>

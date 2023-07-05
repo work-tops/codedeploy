@@ -149,7 +149,7 @@ const InvoiceFreelancerDueTable = () => {
             status: <span className="badge bg-success">Paid</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow2}>View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/EditInvoice" >Edit</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/edit-invoice" >Edit</Dropdown.Item>
 
             </CardDropdown>,
         },
@@ -162,7 +162,7 @@ const InvoiceFreelancerDueTable = () => {
             status: <span className="badge bg-warning">New</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow2} >View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/EditInvoice" >Edit</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/edit-invoice" >Edit</Dropdown.Item>
 
             </CardDropdown>,
         },
@@ -175,7 +175,7 @@ const InvoiceFreelancerDueTable = () => {
             status: <span className="badge bg-danger">Rejected</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow2} >View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/EditInvoice" >Edit</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/edit-invoice" >Edit</Dropdown.Item>
 
             </CardDropdown>,
         }
@@ -189,7 +189,7 @@ const InvoiceFreelancerDueTable = () => {
             status: <span className="badge bg-secondary">Draft</span>,
             action: <CardDropdown>
                 <Dropdown.Item onClick={handleShow2}>View</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/EditInvoice" >Edit</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/edit-invoice" >Edit</Dropdown.Item>
 
             </CardDropdown>,
         },

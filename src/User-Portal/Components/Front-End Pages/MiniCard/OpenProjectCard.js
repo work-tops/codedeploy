@@ -31,7 +31,7 @@ function OpenProjectCard() {
         setSelectedOption(selectedValue);
 
         if (selectedValue === 'In Progress') {
-            history.push('/WorkstreamDetails');
+            history.push('/work-stream');
         }
     };
     // 
@@ -62,7 +62,7 @@ function OpenProjectCard() {
                                 <h3 className="text-center">Please Post a Project Here</h3>
                             </div>
                             <div className="mt-4 d-flex justify-content-center">
-                                <Link to="/postproject">
+                                <Link to="/post-a-project">
                                     <Button style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 text-uppercase">Post Project</Button>
                                 </Link>
                             </div>
@@ -91,7 +91,7 @@ function OpenProjectCard() {
                                                 <Dropdown.Toggle style={{ background: '#003f6b', border: "none" }}>
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu>
-                                                    <Dropdown.Item as={Link} className="text-success" to="/proposallist">View Proposals</Dropdown.Item>
+                                                    <Dropdown.Item as={Link} className="text-success" to="/proposal-list">View Proposals</Dropdown.Item>
                                                     <Dropdown.Item as={Link} className="text-primary" to="/EditPostProject">Edit</Dropdown.Item>
                                                     <Dropdown.Item as={Link} className="text-warning" to="/RepostProject">Repost</Dropdown.Item>
                                                 </Dropdown.Menu>

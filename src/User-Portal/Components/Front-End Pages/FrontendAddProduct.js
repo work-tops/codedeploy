@@ -273,7 +273,7 @@ const FrontendAddProduct = () => {
         if (response.status === 201) {
             toast.success('Successfully Product Submitted');
             clearData();
-            history.push('/addproductcard');
+            history.push('/dashboard-products');
         } else {
             toast.error('Something went wrong')
         }
@@ -892,7 +892,7 @@ const FrontendAddProduct = () => {
                             </Col>
                             <Row>
                                 <Col className='mt-3'>
-                                    <Link to='/addproductcard'>
+                                    <Link to='/dashboard-products'>
                                         <Button type='submit' className='mb-3 btn text-light bg-success border-0'>Add Products</Button>
                                     </Link>
 
@@ -912,7 +912,7 @@ const FrontendAddProduct = () => {
                                             <Button className='me-2' variant="secondary" onClick={handleClose1}>
                                                 No
                                             </Button>
-                                            <Link to="/addproductcard">
+                                            <Link to="/dashboard-products">
                                                 <Button variant="danger" onClick={handleClose1}>
                                                     Yes
                                                 </Button>

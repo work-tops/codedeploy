@@ -133,7 +133,7 @@ const ServiceAdvancedTable = () => {
         status: _service.status == "Active" ? <span className="badge bg-success ">{_service.status}</span> : <span className="badge bg-warning">{_service.status}</span>,
         action: <CardDropdown>
             <div className="py-2">
-                <Dropdown.Item as={Link} to="/user/addservices">Edit</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/dashboard-addservice">Edit</Dropdown.Item>
 
                 <Dropdown.Item onClick={() => setShowModal1(true)} className='text-danger'>Disable</Dropdown.Item>
                 {/*  */}
