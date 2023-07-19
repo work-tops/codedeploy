@@ -391,23 +391,27 @@ const AllOrders = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                            {/* <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="plus"
-                                transform="shrink-3"
-                                className='me-2'
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">New</span>
-                            </IconButton>
-                            <IconButton
-                                variant="falcon-default"
-                                size="sm"
-                                icon="external-link-alt"
-                                transform="shrink-3"
-                            >
-                                <span className="d-none d-sm-inline-block ms-1">Export</span>
-                            </IconButton> */}
+                            <Dropdown>
+                                <div id="orders-actions">
+                                    <Button variant="falcon-default"
+                                        size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
+                                    </Button>
+                                </div>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <Form.Group className="mb-3">
+                                            <Form.Label>Export From Date</Form.Label>
+                                            <Form.Control type="date" />
+                                        </Form.Group>
+                                    </Dropdown.Item>
+                                    <Dropdown.Item>
+                                        <Form.Group className="mb-3">
+                                            <Form.Label>Export to Date</Form.Label>
+                                            <Form.Control type="date" />
+                                        </Form.Group>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </div>
                     )}
                 </Col>
@@ -424,8 +428,8 @@ const AllOrders = () => {
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
                         <Card.Header className="bg-light">
-                            <h5>All Orders<span className="badge ms-1 fs--1 bg-secondary">#100</span></h5>
-                            <p className="text-primary mt-2 fs--1">Here are the All Orders on your store</p>
+                            <h2>All Orders<span className="badge ms-1 fs--1 bg-secondary">#100</span></h2>
+                            <p className=" mt-2">Here are the All Orders on your store</p>
                         </Card.Header>
                         <Card.Body>
                             <div className="row g-3">
@@ -438,25 +442,7 @@ const AllOrders = () => {
                                     </Form.Group>
                                 </div>
                                 <div className="col-md-6 d-flex  justify-content-end">
-                                    <Dropdown>
-                                        <Dropdown.Toggle>
-                                            Export Details
-                                        </Dropdown.Toggle>
-                                        <Dropdown.Menu>
-                                            <Dropdown.Item>
-                                                <Form.Group className="mb-3">
-                                                    <Form.Label>Export From Date</Form.Label>
-                                                    <Form.Control type="date" />
-                                                </Form.Group>
-                                            </Dropdown.Item>
-                                            <Dropdown.Item>
-                                                <Form.Group className="mb-3">
-                                                    <Form.Label>Export to Date</Form.Label>
-                                                    <Form.Control type="date" />
-                                                </Form.Group>
-                                            </Dropdown.Item>
-                                        </Dropdown.Menu>
-                                    </Dropdown>
+
                                 </div>
                             </div>
                             <AdvanceTableWrapper
@@ -475,7 +461,7 @@ const AllOrders = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        className: 'fs--1 mb-0 overflow-hidden'
+                                        className: 'mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">

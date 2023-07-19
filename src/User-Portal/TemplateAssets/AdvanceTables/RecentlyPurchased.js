@@ -120,10 +120,10 @@ const RecentlyPurchased = () => {
 
     return (
         <Card className="btn-reveal-trigger h-100">
-            <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
-                <h5 className="text-capitalize">
+            <Card.Header className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
+                <h2 className="text-capitalize">
                     Recently Purchased
-                </h5>
+                </h2>
             </Card.Header>
             <Card.Body>
                 <AdvanceTableWrapper
@@ -147,12 +147,12 @@ const RecentlyPurchased = () => {
                     />
                     <div className="mt-3">
                         <AdvanceTableFooter
-                    rowCount={data.length}
-                    table
-                    rowInfo
-                    navButtons
-                    rowsPerPageSelection
-                />
+                            rowCount={data.length}
+                            table
+                            rowInfo
+                            navButtons
+                            rowsPerPageSelection
+                        />
                     </div>
                 </AdvanceTableWrapper>
             </Card.Body>

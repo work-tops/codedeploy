@@ -83,15 +83,15 @@ const ServiceAdvancedTable = () => {
     const columns = [
         {
             accessor: 'serviceid',
-            Header: 'Service Id'
-        },
-        {
-            accessor: 'name',
-            Header: 'Name'
+            Header: 'Service ID'
         },
         {
             accessor: 'image',
             Header: 'Service Image'
+        },
+        {
+            accessor: 'name',
+            Header: 'Name'
         },
         // {
         //     accessor: 'email',
@@ -107,7 +107,7 @@ const ServiceAdvancedTable = () => {
         // },
         {
             accessor: 'priceType',
-            Header: 'PriceType'
+            Header: 'Price Type'
         },
 
         {
@@ -126,7 +126,7 @@ const ServiceAdvancedTable = () => {
     const data = service.map(_service => ({
         serviceid: '625355',
         image: <img src={product_image} width="40px" height="35px" />,
-        name: _service.title,
+        name: <p className="text-uppercase">{_service.title}</p>,
         priceType: _service.price_type,
         email: _service.email,
         price: _service.price,
@@ -241,7 +241,7 @@ const ServiceAdvancedTable = () => {
                 rowClassName="align-middle white-space-nowrap"
                 tableProps={{
                     striped: true,
-                    className: 'fs--1 mb-0 overflow-hidden'
+                    className: 'mb-0 overflow-hidden'
                 }}
             />
             <div className="mt-3">

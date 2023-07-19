@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import coverimg from '../../Projectimages/7.jpg'
-import { Button, Container, Dropdown, Form, Modal } from "react-bootstrap";
+import { Button, Col, Dropdown, Form, Modal } from "react-bootstrap";
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import profile from '../../Projectimages/Handyman.jpg'
 import { Link } from "react-router-dom";
@@ -190,7 +190,7 @@ function FreelancerEditProfile() {
                         <div className="card mb-3">
                             <div className="card-header d-flex justify-content-between">
                                 <h5 className="mb-0">Skills</h5>
-                                <><Icon onClick={() => setShowModal2(true)} icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" color="#df2020" /></>
+                                <><Icon onClick={() => setShowModal2(true)} icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" className="hover-danger" /></>
                             </div>
                             <div className="card-body bg-light"><a className="mb-4 d-block d-flex align-items-center collapsed" href="#experience-form1" data-bs-toggle="collapse" aria-expanded="false" aria-controls="experience-form1"><span className="circle-dashed">
                                 <span className="fas fa-plus"></span></span><span className="ms-3">Add new experience</span></a>
@@ -245,7 +245,6 @@ function FreelancerEditProfile() {
                                                 <div className="border-bottom border-dashed my-3"></div>
                                             </Form.Check.Label>
                                         </Form.Check>
-
                                     </div>
                                 </div>
                             </div>
@@ -254,12 +253,26 @@ function FreelancerEditProfile() {
                         {/* Followers */}
                         <div class="card mb-3 mt-3">
                             <div className="card-header bg-light">
-                                <div className="row g-3 align-items-center">
+                                <div className="d-flex flex-wrap justify-content-between">
                                     <div className="col-4">
-                                        <h5 className="mb-0" id="followers"><input className="form-check-input me-2" type="checkbox" />Followers <span className="d-none d-sm-inline-block">(12)</span></h5>
+                                        <h5 className="mb-0" id="followers">
+                                            <Col xs="auto">
+                                                <Form.Check type="checkbox" id="rememberMe" className="mb-0">
+                                                    <Form.Check.Input
+                                                        type="checkbox"
+                                                        name="remember"
+                                                        className="cursor-pointer"
+                                                      />
+                                                    <Form.Check.Label className="mb-0 text-700">
+                                                        Remember me
+                                                    </Form.Check.Label>
+                                                </Form.Check>
+                                            </Col>
+                                            <span className="">(12)</span>
+                                        </h5>
                                     </div>
 
-                                    <div className="col-6 ">
+                                    <div className="">
                                         <form>
                                             <div className="row  g-0">
                                                 <div className="col"><input className="form-control form-control-sm" type="text" placeholder="Search..." /></div>

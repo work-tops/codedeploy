@@ -33,8 +33,10 @@ function ProposalDetails() {
                         <Row>
                             <Col lg={8}>
                                 <Card className="mb-3">
-                                    <Card.Header as="h5" className="text-capitalize bg-light">
-                                        <span className="text-success me-2">#3901031</span> new kitchen worktops with island
+                                    <Card.Header className="text-capitalize bg-light">
+                                        <h2 className="mb-0">
+                                            <span className="text-success me-2">#3901031</span> new kitchen worktops with island
+                                        </h2>
                                     </Card.Header>
                                     <Card.Body>
                                         <Row>
@@ -46,15 +48,15 @@ function ProposalDetails() {
                                             <Col lg={9}>
                                                 <Card style={{ border: '1px solid #003f6b' }}>
                                                     <Card.Body>
-                                                        <h6 style={{ fontSize: '14px' }} className="text-700 fw-semibold">01 Apr 2023</h6>
-                                                        <h5 className="mb-3">New Proposal</h5>
-                                                        <p className="text-justify" style={{ fontSize: '14px' }}>
+                                                        <h4 className="text-700 fw-semibold">01 Apr 2023</h4>
+                                                        <h3 className="mb-3">New Proposal</h3>
+                                                        <p className="" >
                                                             How are you? Sir / Madam Please send admin access details to website, Bitrix and email host.Also Price £200.00
                                                             your Whatsapp numberWill start nowPromise SIX star service.Please see 210 five star reviews of
                                                             many gigs that we have done in our profile Deposit £200
                                                             Many thanks David Soanes, Worthing BN11 4DT England
                                                         </p>
-                                                        <p className="text-justify" style={{ fontSize: '14px' }} >
+                                                        <p className=""  >
                                                             {/* <span className="d-block mb-2 fw-semibold">
                                                                 Mobile : <span className="text-primary">07900 548 590</span>
                                                             </span>
@@ -74,19 +76,20 @@ function ProposalDetails() {
                                                             u=34452 password is abcdFor screen sharing:------------------Windows: Please search and open Quick
                                                             Assist App and | will send you the codeApple Mac: | will send you a Zoom link. Please send your
                                                             €MAl AAAESS. ~-mmmemmroem oo
-                                                            <h6 className="mt-3 mb-3">TEAM</h6>
+                                                            <h4 className="mt-3 mb-3">TEAM</h4>
                                                             Our team of five experts consists of graphic artists, Office 365, IT Support, Wordpress and online
                                                             marketing consultantsREFEREESReferees for email migration ( Please contact by email only )Mr
                                                             Mark Bowen mark@supportedlivinggateway.comMr Colin McGregor colin@tranquilico.comMiss
                                                             Tracie Mckenna tracie.mckenna@1stresponse.org.uk
                                                         </p>
-                                                        <h6 className="mt-3 text-uppercase mb-3">Uploaded File</h6>
-                                                        <div className="row bg-pre mt-3">
+                                                        <h4 className="mt-3 text-uppercase mb-3">Uploaded File</h4>
+                                                        <img src={file} width="50px" height="50px" />
+                                                        <div className="fs--1 mt-2 text-900">File Name</div>
+                                                        <div className="fs--1 mt-1 text-900">540 KB</div>
+                                                        {/* <div className="row mt-3">
                                                             <div className="col-4">
-                                                                <img src={file} width="50px" height="50px" className="pro-pre" />
                                                             </div>
-                                                            <div className="col-6 text-900 fil-name">File Name</div>
-                                                        </div>
+                                                        </div> */}
                                                     </Card.Body>
                                                 </Card>
                                             </Col>
@@ -94,9 +97,9 @@ function ProposalDetails() {
                                     </Card.Body>
                                 </Card>
                                 <Card className="mb-3">
-                                    <Card.Header className="bg-light d-flex justify-content-between">
-                                        <h5 className="bg-transparent text-900 border-secondary">Clarification Board</h5>
-                                        <Button className="Home-btns-1 text-uppercase" style={{ background: '#003f6b' }}>Ask a Question</Button>
+                                    <Card.Header className="bg-light d-flex justify-content-between flex-wrap">
+                                        <h2 className="bg-transparent text-900 border-secondary">Clarification Board</h2>
+                                        <Button className="Home-btns-1 mt-2 mt-md-0 mt-lg-0" style={{ background: '#003f6b' }}>Ask a Question</Button>
                                     </Card.Header>
                                     <Card.Body>
                                         <Form>
@@ -128,17 +131,17 @@ function ProposalDetails() {
                                             </Form.Group>
                                             <Form.Check type="checkbox" id="rememberMe" className="mb-0">
                                                 <Form.Check.Input type="checkbox" />
-                                                <Form.Check.Label style={{ fontSize: '12px' }} className="mb-0 text-900">
+                                                <Form.Check.Label  className="mb-0 text-900">
                                                     I acknowledge that all billing regarding this Project (including follow on work) has to be conducted through PPH in order to
                                                     comply with MAI policy
                                                 </Form.Check.Label>
                                             </Form.Check>
-                                            <div className="d-flex justify-content-end gap-2 mb-3">
-                                                <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                            <div className="d-flex justify-content-end gap-2 mt-3 mb-3">
+                                                <Button style={{ background: '#003f6b'}} className="Home-btns-1 border-0">
                                                     Attachments
                                                 </Button>
-                                                <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
-                                                    SEND
+                                                <Button style={{ background: '#003f6b'}} className="Home-btns-1 border-0">
+                                                    Send
                                                 </Button>
                                             </div>
                                         </Form>
@@ -207,7 +210,7 @@ function ProposalDetails() {
                                             </div>
                                             <div>
                                                 <p className="fw-bold text-uppercase mt-3 text-900">Soanes IT</p>
-                                                <p style={{ fontSize: '14px' }} className="fw-semibold text-capitalize text-700">Fabricator</p>
+                                                <p className="fw-semibold text-capitalize text-700">Fabricator</p>
                                             </div>
                                         </div>
                                         <p style={{ fontSize: '16px' }} className="fw-semibold text-secondary mt-2 text-capitalize">United Kingdom</p>
@@ -235,7 +238,7 @@ function ProposalDetails() {
                                                 </Dropdown>
                                                 {/* Accepted */}
                                                 {/* Edit Your Proposal */}
-                                                <Button as={Link} to="/edit-proposal" className="d-block mt-2 btn bg-secondary border-0">Edit Your Proposal</Button>
+                                                <Button style={{background:'#003f6b'}} as={Link} to="/edit-proposal" className="d-block mt-2 Home-btns-1 border-0">Edit Your Proposal</Button>
                                             </Card.Body>
                                         </Card>
                                     </Card.Body>
@@ -267,7 +270,7 @@ function ProposalDetails() {
                     <Form.Group className="mb-3">
                         <Form.Check type="checkbox" id="rememberMe" className="mb-0">
                             <Form.Check.Input type="checkbox" />
-                            <Form.Check.Label style={{ fontSize: '12px' }} className="mb-0 text-900">
+                            <Form.Check.Label  className="mb-0 text-900">
                                 I Confirm That This Message Is Essential For The Submission Of My
                                 Proposal And | Understand That It Will Be Publicly Posted In The
                                 Project's Clarification Board And In Case It Is Used To Spam Or

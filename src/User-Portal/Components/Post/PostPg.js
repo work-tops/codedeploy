@@ -15,7 +15,7 @@ function PostPg() {
             <Col className="p-1" lg={12}>
                 <Row>
                     <Col lg={6}>
-                        <h3 className="text-start text-white m-5">Hello , {user}</h3>
+                        <p style={{fontSize:'32px'}} className="text-start text-capitalize text-white m-5">Hello , {user}</p>
                     </Col>
                     <Col lg={6}>
                         {/* <div className="m-5">

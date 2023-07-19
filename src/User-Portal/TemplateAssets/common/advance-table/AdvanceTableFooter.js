@@ -28,10 +28,10 @@ export const AdvanceTableFooter = ({
     <div
       className='d-flex align-items-center justify-content-between'
     >
-      <div  className="d-flex justify-content-between align-items-center fs--1">
+      <div className="d-flex justify-content-between align-items-center fs--1">
         {rowInfo && (
-          <p className="mb-0">
-            <span className="d-none d-sm-inline-block me-2">
+          <p style={{fontSize:'15px'}} className="mb-0">
+            <span className="d-none d-sm-inline-block text-lowercase me-2">
               {pageSize * pageIndex + 1} to {pageSize * pageIndex + page.length}{' '}
               of {rowCount}
             </span>
@@ -59,7 +59,7 @@ export const AdvanceTableFooter = ({
         )}
         {rowsPerPageSelection && (
           <>
-            <p className="mb-0 mx-2">Rows per page:</p>
+            <p style={{fontSize:'16px'}} className="mb-0 mx-2">Rows Per Page:</p>
             <Form.Select
               size="sm"
               className="w-auto"

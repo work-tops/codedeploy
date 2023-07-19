@@ -397,7 +397,7 @@ const AdvancedTable = () => {
     const data = product.map(product => ({
         productId: product._id,
         image: <img src={product.attachments[0].url} width="40px" height="35px" />,
-        name: <p className="fs--1 text-uppercase">{product.name}</p>,
+        name: <p className="text-uppercase">{product.name}</p>,
         
         price: `£${product.variant[0].pricing.price}`,
         quantity: `${product.variant[0].inventory.quantity} Pcs`,
@@ -508,7 +508,7 @@ const AdvancedTable = () => {
                 rowClassName="align-middle white-space-nowrap"
                 tableProps={{
                     striped: true,
-                    className: 'fs--1 mb-0 overflow-hidden'
+                    className:'mb-0 overflow-hidden'
                 }}
             />
             <div className="mt-3">

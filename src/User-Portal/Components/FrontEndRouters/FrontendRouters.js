@@ -21,7 +21,7 @@ import SellerLandingPage from "../Front-End Pages/SellerLandingPage";
 import AddProductCard from "../Front-End Pages/MiniCard/AddProductCard";
 import AddServiceCard from "../Front-End Pages/MiniCard/AddServiceCard";
 import ProposalCard from "../Front-End Pages/MiniCard/ProposalCard";
-import ProductEnquiresCard from "../Front-End Pages/MiniCard/ProductEnquiresCard";
+import ProductEnquiresCard from "../Front-End Pages/MiniCard/EnquiriesCard";
 import ReviewsCard from "../Front-End Pages/MiniCard/ReviewsCard";
 import ProjectOwnerLandingPage from "../Front-End Pages/ProjectOwnerLandingPage";
 import OpenProjectCard from "../Front-End Pages/MiniCard/OpenProjectCard";
@@ -152,7 +152,7 @@ const FrontEndRouters = () => {
             {/* <Route path='/reviewscard'><ReviewsCard /></Route> */}
             {/* <Route path='/Project-owner/login/Landing'><ProjectOwnerLandingPage /></Route> */}
             <Route path='/dashboard/my-project'><OpenProjectCard /></Route>
-            <Route path='/workStreamCard'><WorkStreamCard /></Route>
+            {/* <Route path='/workStreamCard'><WorkStreamCard /></Route> */}
 
             {/* <Route path='/POReviewsCard'><POReviewCard /></Route> */}
             {/* <Route path='/productList'><ProductList /></Route> */}
@@ -211,19 +211,19 @@ const FrontEndRouters = () => {
             <Route path="/t/invoices"><InvoiceFreelancerCard /></Route>
             <Route path="/work-stream"><WorkStreamDetails /></Route>
             {/* <Route path="/TraderWorkstreamDetails"><TraderWorkStreamDetails/></Route> */}
+            {/* <Route path="/Allsellerlist"><AllSellerList /></Route> */}
             <Route path="/EditPostProject"><Editpostproject /></Route>
             <Route path="/edit-proposal"><EditProposal /></Route>
             <Route path="/invoice/checkout"><InvoiceCheckout /></Route>
             <Route path="/new-estimate"><NewEstimate /></Route>
             <Route path="/edit-estimate"><EditEstimate /></Route>
-            {/* <Route path="/Allsellerlist"><AllSellerList /></Route> */}
             <Route path="/t/estimate-list"><Estimate /></Route>
             <Route path="/g/checkout"><GuestCheckout /></Route>
             <Route path="/p/estimate-list"><OwnerEstimate /></Route>
             <Route path="/edit-invoice"><EditInvoice /></Route>
             <Route path="/new-invoice"><NewInvoice /></Route>
             <Route path="/RepostProject"><RepostProject /></Route>
-            <Route path="/projectOwnerprofile"><ProjectOwnerProfile/></Route>
+            <Route path="/projectOwnerprofile"><ProjectOwnerProfile /></Route>
             {/* New Pages */}
         </Switch>
 

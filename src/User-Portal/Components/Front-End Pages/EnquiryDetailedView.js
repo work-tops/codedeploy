@@ -10,6 +10,8 @@ import Footer from "../Footer/Footer";
 
 
 function ServiceEnquiryDetails() {
+
+
     const editorRef = useRef(null);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -25,16 +27,16 @@ function ServiceEnquiryDetails() {
                         <Col lg={12}>
                             <Card className="mt-5 mb-3">
                                 <Card.Header className="d-flex justify-content-end bg-light">
-                                    <Button as={Link} to="/enquire" className="bg-danger text-uppercase border-0">Close the Enquiry </Button>
+                                    <Button as={Link} to="/enquire" className="bg-danger  border-0">Close the Enquiry </Button>
                                 </Card.Header>
                                 <Card.Body>
                                     <div>
-                                        <h5>
-                                            "Enquiry Details: #2737"
-                                        </h5>
+                                        <h1>
+                                            Enquiry Details: #2737
+                                        </h1>
                                         <p className="mt-3 text-900" style={{ fontSize: '14px' }}>April 21, 2019, 5:33 PM</p>
                                         <div>
-                                            <h5 className="me-2 d-inline">Status: </h5>
+                                            <h2 className="me-2 d-inline">Status: </h2>
                                             <span className="bg-success badge  rounded-pill">
                                                 {' '}
                                                 Completed
@@ -52,31 +54,31 @@ function ServiceEnquiryDetails() {
                                 <Card.Body>
                                     <Row>
                                         <Col md={6} lg={3}>
-                                            <h5 className="mb-3 fs-0 text-uppercase">Customer Details</h5>
+                                            <h2 className="mb-3  ">Customer Details</h2>
                                             <div className="d-flex">
                                                 <img
                                                     src={profile}
                                                     width="30"
                                                     height="30"
-                                                    className="me-3 rounded-circle"
-                                                    alt="visa"
+                                                    className="me-2 rounded-circle"
+                                                    alt="profile"
                                                 />
                                                 <div className="flex-1">
-                                                    <h6 className=" mb-0">Peter Leverkus</h6>
-                                                </div>
+                                                <h3 className="mb-3 mb-lg-0">Peter Leverkus</h3>
+                                                 </div>
                                             </div>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3 fs-0 text-uppercase">Title</h5>
-                                            <h6 className="mb-0">Kitchen Worktops</h6>
+                                            <h2 className="mb-3  ">Title</h2>
+                                            <h3 className="mb-0">Kitchen Worktops</h3>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3 text-uppercase fs-0">Requirements</h5>
-                                            <h6 className="mb-2">Within 2 weeks</h6>
+                                            <h2 className="mb-3  ">Requirements</h2>
+                                            <h3 className="mb-2">Within 2 weeks</h3>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3 text-uppercase fs-0">Postcode</h5>
-                                            <h6 className="mb-2">CB236DX</h6>
+                                            <h2 className="mb-3  ">Postcode</h2>
+                                            <h3 className="mb-2">CB236DX</h3>
                                         </Col>
                                     </Row>
                                 </Card.Body>
@@ -85,7 +87,7 @@ function ServiceEnquiryDetails() {
                                 <Card.Body>
                                     <Form>
                                         <Form.Group className="mb-3">
-                                            <h5 className="mb-3 text-uppercase fs-0">Description</h5>
+                                            <h2 className="mb-3  ">Description</h2>
 
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum
@@ -99,16 +101,16 @@ function ServiceEnquiryDetails() {
                                 </Card.Body>
                             </Card>
                             <Card className="mt-3 mb-2">
-                                <div className='bg-light mb-3 p-3 d-flex justify-content-between text-uppercase'>
-                                    <h5 className=" text-uppercase fs-0">Message</h5>
-                                </div>
-                                <div className="d-flex justify-content-end align-items-end">
-                                    <Button as={Link} to="/new-estimate" style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
-                                        Create Estimate
-                                    </Button>
-                                    <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
-                                        Reply the Enquiry
-                                    </Button>
+                                <div className='bg-light mb-3 p-3 d-flex flex-wrap justify-content-between '>
+                                    <h2 className="">Message</h2>
+                                    <div className="d-flex justify-content-end align-items-end">
+                                        <Button as={Link} to="/new-estimate" style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 Home-btns-1 me-2 ">
+                                            Create Estimate
+                                        </Button>
+                                        <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 Home-btns-1 me-2 ">
+                                            Reply the Enquiry
+                                        </Button>
+                                    </div>
                                 </div>
                                 <Card.Body className="position-relative">
                                     <Row>
@@ -142,10 +144,10 @@ function ServiceEnquiryDetails() {
                                                         />
                                                     </Form.Group>
                                                     <div className="d-flex gap-2 justify-content-end mb-3">
-                                                        <Button id="FileUpload1" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                        <Button id="FileUpload1" style={{ background: '#003f6b', fontSize: '14px' }} className=" border-0">
                                                             Attachments
                                                         </Button>
-                                                        <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                        <Button style={{ background: '#003f6b', fontSize: '14px' }} className=" border-0">
                                                             Send
                                                         </Button>
                                                     </div>
@@ -214,7 +216,7 @@ function ServiceEnquiryDetails() {
                                 </Card.Body>
                             </Card>
                             {/* Modal Content */}
-                            <Modal
+                            {/* <Modal
                                 show={show}
                                 onHide={() => setShow(false)}
                                 dialogClassName="modal-lg modal-90w"
@@ -223,9 +225,9 @@ function ServiceEnquiryDetails() {
                             >
                                 <Modal.Header>
                                     <Modal.Title id="example-custom-modal-styling-title">
-                                        <h6 className="text-uppercase">
+                                        <h3 className="">
                                             Please Type Your Message
-                                        </h6>
+                                        </h3>
                                     </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
@@ -241,12 +243,12 @@ function ServiceEnquiryDetails() {
                                         </Form.Check>
                                     </Form.Group>
                                     <div className="d-flex justify-content-end mb-3">
-                                        <Button onClick={handleClose} style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                                        <Button onClick={handleClose} style={{ background: '#003f6b' }} className=" border-0">
                                             Send
                                         </Button>
                                     </div>
                                 </Modal.Body>
-                            </Modal>
+                            </Modal> */}
                             {/* Modal Content */}
                         </Col>
                     </Row>

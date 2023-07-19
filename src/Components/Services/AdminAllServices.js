@@ -513,14 +513,14 @@ const AllServices = () => {
         return (
             <Row className="flex-between-center mb-3">
                 <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
-                    <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
+                    <h4 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
                                 'You have selected ' + Object.keys(selectedRowIds).length + ' Services Lists'
                                 :
                                 ''
                         }
-                    </h5>
+                    </h4>
                 </Col>
                 <Row className="flex-end-center mt-2 mb-3">
                     <Col xs="auto">
@@ -566,10 +566,10 @@ const AllServices = () => {
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
                         <Card.Header className="bg-light">
-                            <h5>
+                            <h2>
                                 All Services<span className="ms-1 fs--1 badge bg-secondary">#100</span>
-                            </h5>
-                            <Breadcrumb className="fs--1 mt-2">
+                            </h2>
+                            <Breadcrumb className="mt-2">
                                 <Breadcrumb.Item>
                                     All Services
                                 </Breadcrumb.Item>
@@ -577,7 +577,7 @@ const AllServices = () => {
                                     Add Services
                                 </Breadcrumb.Item>
                             </Breadcrumb>
-                            <p className="text-dark text-capitalize fs--1 mt-2">Here all the current Services on your store</p>
+                            <p className="text-dark text-capitalize mt-2">Here all the current Services on your store</p>
                         </Card.Header>
                         <Card.Body>
                             {/* <div className="d-flex justify-content-end">
@@ -613,7 +613,7 @@ const AllServices = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        className: 'fs--1 mb-0 overflow-hidden'
+                                        className: 'mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">

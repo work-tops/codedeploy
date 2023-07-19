@@ -32,20 +32,20 @@ function ProposalList() {
                     <Col lg={12} className='mt-4'>
                         <Card className='mb-3 mt-4'>
                             <Card.Header className='bg-light'>
-                                <h5 className='text-uppercase'>
+                                <h1 className='text-uppercase'>
                                     Proposal List
-                                </h5>
+                                </h1>
                             </Card.Header>
                             <Card.Body>
-                                <div className='mb-3 d-flex justify-content-between'>
-                                    <h5 className='text-capitalize'>
+                                <div className='d-flex flex-wrap justify-content-between'>
+                                    <h2 className='text-uppercase'>
                                         New Kitchen Worktops with Island
-                                    </h5>
-                                    <div className='text-uppercase'>
-                                        <span className='badge me-5 mb-2 p-2 bg-primary'>open</span>
-                                        <span className='badge me-5 mb-2 p-2 bg-warning'>Progress</span>
-                                        <span className='badge me-5 mb-2 p-2 bg-danger'>Expired</span>
-                                        <span className='fw-semibold' style={{ fontSize: '13px' }}>Job Id:1234567</span>
+                                    </h2>
+                                    <div style={{marginTop:'14px'}} className='text-uppercase'>
+                                        <span className='badge me-2 mb-2 p-2 bg-primary'>open</span>
+                                        <span className='badge me-2 mb-2 p-2 bg-warning'>Progress</span>
+                                        <span className='badge me-2 mb-2 p-2 bg-danger'>Expired</span>
+                                        <span className='fw-semibold fs--1 text-900'>Job Id:1234567</span>
                                     </div>
                                 </div>
 
@@ -53,10 +53,10 @@ function ProposalList() {
                         </Card>
                         <Card className='mb-3'>
                             <Card.Body>
-                                <div className='mb-3 d-flex justify-content-between'>
-                                    <h5 className='text-capitalize'>
+                                <div className=' d-flex flex-wrap justify-content-between'>
+                                    <h2 className='text-capitalize'>
                                         Budget : £ 3000
-                                    </h5>
+                                    </h2>
                                     <Link to="/jobdetails/:jobid">
                                         <Button className='border-0 bg-success'>
                                             View Project
@@ -103,15 +103,15 @@ function ProposalList() {
                                                 <Col lg={9}>
                                                     <Card style={{ border: '1px solid #003f6b' }}>
                                                         <Card.Body>
-                                                            <h6 style={{ fontSize: '14px' }} className="text-700 fw-semibold">01 Apr 2023</h6>
+                                                            <h6  className="text-700 fw-semibold">01 Apr 2023</h6>
                                                             <h5 className="mb-3">New Proposal</h5>
-                                                            <p className="text-justify" style={{ fontSize: '14px' }}>
+                                                            <p className="" >
                                                                 How are you? Sir / Madam Please send admin access details to website, Bitrix and email host.Also Price £200.00
                                                                 your Whatsapp numberWill start nowPromise SIX star service.Please see 210 five star reviews of
                                                                 many gigs that we have done in our profile Deposit £200
                                                                 Many thanks David Soanes, Worthing BN11 4DT England
                                                             </p>
-                                                            <p className="text-justify" style={{ fontSize: '14px' }} >
+                                                            <p className=""  >
                                                                 <span className="d-block mb-2 fw-semibold">
                                                                     Mobile : <span className="text-primary">07900 548 590</span>
                                                                 </span>
@@ -198,7 +198,7 @@ function ProposalList() {
                                 <Form.Check.Input name="job-start" type="radio" />
                                 <Form.Check.Label
                                     className="d-inline"
-                                    style={{ fontSize: '14px' }}
+                                    
                                 >
                                     Contact Details are Revealed
                                 </Form.Check.Label>
@@ -207,7 +207,7 @@ function ProposalList() {
                                 <Form.Check.Input name="job-start" type="radio" />
                                 <Form.Check.Label
                                     className=" d-inline"
-                                    style={{ fontSize: '14px' }}
+                                    
                                 >
                                     Suggestion to make payment outside PPH
                                 </Form.Check.Label>
@@ -216,7 +216,7 @@ function ProposalList() {
                                 <Form.Check.Input name="job-start" type="radio" />
                                 <Form.Check.Label
                                     className=" d-inline"
-                                    style={{ fontSize: '14px' }}
+                                    
                                 >
                                     Promoting Self
                                 </Form.Check.Label>
@@ -225,7 +225,7 @@ function ProposalList() {
                                 <Form.Check.Input name="job-start" type="radio" />
                                 <Form.Check.Label
                                     className="d-inline"
-                                    style={{ fontSize: '14px' }}
+                                    
                                 >
                                     Offensive Content
                                 </Form.Check.Label>
@@ -234,7 +234,7 @@ function ProposalList() {
                                 <Form.Check.Input name="job-start" type="radio" />
                                 <Form.Check.Label
                                     className=" d-inline"
-                                    style={{ fontSize: '14px' }}
+                                    
                                 >
                                     Spam Content
                                 </Form.Check.Label>
@@ -243,7 +243,7 @@ function ProposalList() {
                                 <Form.Check.Input name="job-start" type="radio" />
                                 <Form.Check.Label
                                     className=" d-inline"
-                                    style={{ fontSize: '14px' }}
+                                    
                                 >
                                     Others
                                 </Form.Check.Label>

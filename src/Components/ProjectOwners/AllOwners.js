@@ -204,14 +204,14 @@ const AllOwnerTable = () => {
         return (
             <Row className="flex-between-center mb-3">
                 <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
-                    <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
+                    <h4 className="fs-0 mb-0 mt-2h text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
                                 'You have selected ' + Object.keys(selectedRowIds).length + ' Owners Lists'
                                 :
                                 ''
                         }
-                    </h5>
+                    </h4>
                 </Col>
                 <Row className="flex-end-center mt-2 mb-3">
                     <Col xs="auto">
@@ -257,10 +257,10 @@ const AllOwnerTable = () => {
                 <Col className="mt-4" lg={12}>
                     <Card className="ms-3 me-3 mb-3">
                         <Card.Header className="bg-light">
-                            <h5>
+                            <h2>
                                 All Owner<span className="ms-1 fs--1 badge bg-secondary">#100</span>
-                            </h5>
-                            <Breadcrumb className="fs--1 mt-2">
+                            </h2>
+                            <Breadcrumb className="mt-2">
                                 <Breadcrumb.Item>
                                     All Owners
                                 </Breadcrumb.Item>
@@ -268,7 +268,7 @@ const AllOwnerTable = () => {
                                     Add Owners
                                 </Breadcrumb.Item>
                             </Breadcrumb>
-                            <p className="text-dark fs--1 mt-2">Here all the current Owners on your store</p>
+                            <p className="text-dark mt-2">Here all the current Owners on your store</p>
                         </Card.Header>
                         <Card.Body>
                             <div className="row g-3">
@@ -297,7 +297,7 @@ const AllOwnerTable = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        className: 'fs--1 mb-0 overflow-hidden'
+                                        className: 'mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">

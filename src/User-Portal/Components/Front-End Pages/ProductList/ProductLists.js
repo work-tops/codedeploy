@@ -165,7 +165,7 @@ function ProductList() {
                                             className="form-check d-flex ps-0"
                                         >
                                             <Form.Check.Label
-                                                className="fs--1 flex-1 text-truncate"
+                                                className="flex-1 text-truncate"
                                             >
                                                 Offers
                                             </Form.Check.Label>
@@ -182,10 +182,10 @@ function ProductList() {
                                     {/* <SimpleBarReact style={{ height: '100%' }}> */}
                                     <Card.Header as={Flex} className="flex-between-center bg-light pt-x1">
                                         {/* <Flex className="gap-2 flex-xl-grow-1 align-items-center justify-content-xl-between"> */}
-                                        <div className='justify-content-xl-between d-flex m-2'>
-                                            <h4 className="mb-0 text-900 fs-0 d-flex align-items-center">
-                                                <FontAwesomeIcon icon="filter" className="ms-2 me-1" />
-                                                Filter
+                                        <div className='justify-content-between d-flex m-2'>
+                                            <h4 className="mb-0 text-900 d-flex align-items-center">
+                                                <FontAwesomeIcon icon="filter" className="fs-0 me-1" />
+                                                <span className="fs-0">Filter</span>
                                             </h4>
                                             <div>
                                                 <button
@@ -221,8 +221,8 @@ function ProductList() {
                         </Col>
                         <Col className='mb-3' lg={9}>
                             <div className="card mt-5 mb-3">
-                                <div className="card-header bg-light position-relative">
-                                    <h1 className="mb-0 fs-2 mt-1">Products</h1>
+                                <div className="card-header col-lg-12 col-md-12 col-xl-12 bg-light position-relative">
+                                    <h1 className="mb-0 mt-1">Products</h1>
                                 </div>
                                 <div className="card-body pt-0 pt-md-3">
                                     <div className="row g-3 align-items-center">
@@ -305,11 +305,11 @@ function ProductList() {
                                                                         <span>Out of Stock</span>
                                                                     </span>
                                                                 </div>
-                                                                <h2 class="mt-3 mb-3 mt-sm-0 fs-0 fs-lg-1">
-                                                                    <Link className="product-name text-uppercase text-900" to={`productdetails/${data._id}`}>
+                                                                <Link className="text-uppercase text-900" to={`productdetails/${data._id}`}>
+                                                                    <h2 className="product-name mt-3 mb-3 mt-sm-0 fs-0 fs-lg-1">
                                                                         {data?.name}
-                                                                    </Link>
-                                                                </h2>
+                                                                    </h2>
+                                                                </Link>
                                                                 <h3 className="fs-0 mt-2 mb-3 ">
                                                                     {data?.type?.name}
                                                                 </h3>
@@ -415,23 +415,23 @@ function ProductList() {
                                 <>
                                     {products.map((data, key) => (
                                         <>
-                                            <article class="card mb-3 overflow-hidden">
-                                                <div class="card-body p-0">
-                                                    <div class="row g-0">
+                                            <article className="card mb-3 overflow-hidden">
+                                                <div className="card-body p-0">
+                                                    <div className="row g-0">
 
-                                                        <div class="col-md-4 col-lg-3">
-                                                            <div class="hoverbox h-md-100"><a class="text-decoration-none">
+                                                        <div className="col-md-4 col-lg-3">
+                                                            <div className="hoverbox h-md-100"><a className="text-decoration-none">
                                                                 <Link to={`productdetails/${data._id}`}>
-                                                                    <img class="h-100 cursor-pointer w-100 fit-cover" src={data?.attachments[0]?.url} alt="" />
+                                                                    <img className="h-100 cursor-pointer w-100 fit-cover" src={data?.attachments[0]?.url} alt="" />
                                                                 </Link>
                                                             </a>
-                                                                <div class="hoverbox-content flex-center pe-none bg-holder overlay overlay-2">
+                                                                <div className="hoverbox-content flex-center pe-none bg-holder overlay overlay-2">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-8 col-lg-9 p-x1">
-                                                            <div class="row g-0 h-100">
-                                                                <div class="col-lg-8 col-xxl-9 d-flex flex-column pe-x1">
+                                                        <div className="col-md-8 col-lg-9 p-x1">
+                                                            <div className="row g-0 h-100">
+                                                                <div className="col-lg-8 col-xxl-9 d-flex flex-column pe-x1">
                                                                     <div className="d-flex gap-2 flex-wrap mb-3">
                                                                         <span className="badge rounded-pill badge-soft-success">
                                                                             <span>In Stock</span>
@@ -440,12 +440,12 @@ function ProductList() {
                                                                             <span>Out of Stock</span>
                                                                         </span>
                                                                     </div>
-                                                                    <h2 class="mt-3 mt-sm-0 fs-0 fs-lg-1">
-                                                                        <Link className="product-name text-uppercase text-900" to={`productdetails/${data._id}`}>
+                                                                    <Link className="" to={`productdetails/${data._id}`}>
+                                                                        <h2 className="mt-3 text-uppercase product-name mt-sm-0 fs-0 fs-lg-1">
                                                                             {data?.name}
-                                                                        </Link>
-                                                                    </h2>
-                                                                    <h3 className="fs-0 mt-2 mb-3 ">
+                                                                        </h2>
+                                                                    </Link>
+                                                                    <h3 className="fs-0 mt-2 mb-3">
                                                                         {data?.type?.name}
                                                                     </h3>
                                                                     <div style={{ fontSize: '12px' }} className=" mb-2 text-700">
@@ -454,25 +454,25 @@ function ProductList() {
                                                                             HOBCRT - 700480
                                                                         </span>
                                                                     </div>
-                                                                    <div class="flex-1 d-flex fw-semi-bold fs--1">
-                                                                        <span class="me-1 text-900">4.9</span>
+                                                                    <div className="flex-1 d-flex fw-semi-bold fs--1">
+                                                                        <span className="me-1 text-900">4.9</span>
                                                                         <div>
-                                                                            <span class="fa fa-star text-warning"></span>
-                                                                            <span class="fa fa-star text-warning"></span>
-                                                                            <span class="fa fa-star text-warning"></span>
-                                                                            <span class="fa fa-star text-warning"></span>
+                                                                            <span className="fa fa-star text-warning"></span>
+                                                                            <span className="fa fa-star text-warning"></span>
+                                                                            <span className="fa fa-star text-warning"></span>
+                                                                            <span className="fa fa-star text-warning"></span>
                                                                             <span className="fa fa-star-half-alt text-warning star-icon"></span>
                                                                             <span className="ms-2 text-secondary">(78,259 reviews)</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-4 col-xxl-3 mt-4 mt-lg-0">
-                                                                    <div class="h-100 rounded border-lg border-1  justify-content-between p-lg-3">
-                                                                        <div class="mb-lg-4 mt-auto mt-lg-0">
-                                                                            <h4 class="mb-1 lh-1 fs-2 text-warning d-flex align-items-end">£ {data?.variant[0]?.pricing?.price}<del class="ms-1 fs--1 fw-bold text-900 mb-1">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
-                                                                            <p class="mb-0 fs--2 text-800">92,632 Members Purchased</p>
+                                                                <div className="col-lg-4 col-xxl-3 mt-4 mt-lg-0">
+                                                                    <div className="h-100 rounded border-lg border-1  justify-content-between p-lg-3">
+                                                                        <div className="mb-lg-4 mt-auto mt-lg-0">
+                                                                            <h4 className="mb-1 lh-1 fs-2 text-warning d-flex align-items-end">£ {data?.variant[0]?.pricing?.price}<del className="ms-1 fs--1 fw-bold text-900 mb-1">£ {data?.variant[0]?.pricing?.compare_at}</del></h4>
+                                                                            <p className="mb-0 fs--2 text-800">92,632 Members Purchased</p>
                                                                         </div>
-                                                                        <div class="mt-3 d-flex flex-lg-column gap-2">
+                                                                        <div className="mt-3 d-flex flex-lg-column gap-2">
 
                                                                             <>
                                                                                 {isAdded ? (
@@ -510,12 +510,12 @@ function ProductList() {
                                                                                     </button>
                                                                                 )}
                                                                             </>
-                                                                            <button onClick={toastDark} class="btn btn-md btn-primary fs--1">
-                                                                                <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
+                                                                            <button onClick={toastDark} className="btn btn-md btn-primary fs--1">
+                                                                                <span className="fas fa-cart-plus"></span><span className="ms-1 d-none d-lg-inline">Add to Cart</span>
                                                                             </button>
                                                                             <Link to="/p/enquiry">
                                                                                 <button className="btn w-100 Home-btns-1 text-white btn-md fs--1" style={{ background: '#003f6b', border: '1px solid #003f6b' }} >
-                                                                                    <span class="ms-1">Get a Quote</span>
+                                                                                    <span className="ms-1">Get a Quote</span>
                                                                                 </button>
                                                                             </Link>
                                                                         </div>

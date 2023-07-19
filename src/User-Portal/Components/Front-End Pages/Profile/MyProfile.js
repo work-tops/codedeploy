@@ -91,8 +91,10 @@ function MyProfile() {
                                     <Col xs={12} lg={12} xxl={12} md={12} xl={12}>
                                         {/* StudentInfo */}
                                         <Card className=" btn-reveal-trigger font-sans-serif">
-                                            <Card.Header as="h5" className="bg-light text-capitalize">
-                                                Personal Information
+                                            <Card.Header className="bg-light text-capitalize">
+                                                <h2>
+                                                    Personal Information
+                                                </h2>
                                             </Card.Header>
                                             <Card.Body className="d-flex gap-3 flex-column flex-sm-row align-items-center">
 
@@ -198,10 +200,10 @@ function MyProfile() {
                                         {/* Payment */}
 
                                         <Card className="mb-3 btn-reveal-trigger h-100">
-                                            <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
-                                                <h5 className="text-capitalize">
+                                            <Card.Header  className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
+                                                <h2 className="text-capitalize">
                                                     Payment Methods
-                                                </h5>
+                                                </h2>
                                                 <div>
                                                     <div className="position-absolute top-0 end-0 m-3">
                                                         <CardDropdown iconClassName="fs--1" drop="bottom">
@@ -221,7 +223,7 @@ function MyProfile() {
                                                                 <Modal show={showModal3} onHide={handleClose3}>
                                                                     <Modal.Header closeButton>
                                                                         <Modal.Title>
-                                                                            <h5 className="mb-0">Payment Method</h5>
+                                                                            <h2 className="mb-0">Payment Method</h2>
                                                                         </Modal.Title>
                                                                     </Modal.Header>
                                                                     <Modal.Body>
@@ -376,10 +378,10 @@ function MyProfile() {
                             {/*  */}
                             <Col xs={12}>
                                 <Card className="mb-3 btn-reveal-trigger h-100">
-                                    <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
-                                        <h5 className="text-capitalize">
+                                    <Card.Header className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
+                                        <h2 className="text-capitalize">
                                             Billing Address
-                                        </h5>
+                                        </h2>
                                     </Card.Header>
                                     <Card.Body>
                                         <Table borderless className="fs--1 fw-medium mb-0">
@@ -580,7 +582,7 @@ function MyProfile() {
                         <div className="mb-3"><label className="form-label" for="old-password">Old Password<span className="text-danger ms-1">*</span></label><input className="form-control" id="old-password" type="password" /></div>
                         <div className="mb-3"><label className="form-label" for="new-password">New Password<span className="text-danger ms-1">*</span></label><input className="form-control" id="new-password" type="password" /></div>
                         <div className="mb-3"><label className="form-label" for="confirm-password">Confirm Password<span className="text-danger ms-1">*</span></label><input className="form-control" id="confirm-password" type="password" /></div>
-                        
+
                     </form>
                 </Modal.Body>
                 <Modal.Footer>

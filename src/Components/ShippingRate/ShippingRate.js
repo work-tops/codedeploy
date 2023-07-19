@@ -320,7 +320,7 @@ const ShippingRate = () => {
                 </Col>
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
-                        <Card.Header className="bg-light" as={"h5"}>
+                        <Card.Header className="bg-light" as={"h2"}>
                             Shipping Rate
                         </Card.Header>
                         <Card.Body>
@@ -345,7 +345,7 @@ const ShippingRate = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        className: 'fs--1 mb-0 overflow-hidden'
+                                        className: 'mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">

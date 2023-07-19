@@ -7,6 +7,8 @@ import trainer from '../../Projectimages/trainer.png'
 import { Button, Dropdown, Badge, Container } from 'react-bootstrap';
 import profile from '../../Projectimages/Handyman.jpg'
 import logo from '../../Projectimages/My Project white logo-01.png'
+
+
 function NavbarStandard() {
 
   const {
@@ -87,7 +89,7 @@ function NavbarStandard() {
                   {/* Post A Project */}
                   {id == 2 &&
                     <li>
-                      <Button as={Link} to="/post-a-project" variant='falcon-default' className='mt-3 me-4 mb-3 mb-lg-0 mt-lg-0 ms-1 ms-lg-0 '>Post a Project</Button>
+                      <Button as={Link} to="/post-a-project" variant='falcon-default' className='me-3 mt-2 mt-lg-0 ms-2'>Post a Project</Button>
                     </li>
                   }
                   {/* Post A Project */}
@@ -98,7 +100,7 @@ function NavbarStandard() {
                     <Link to="/how-it-work" className="link-item">
                       <a
                         title='How It Works'
-                        className="  text-white nav-link"
+                        className="ms-2 text-white nav-link"
                         role="button"
                         aria-haspopup="true"
                         aria-expanded="false"
@@ -114,7 +116,7 @@ function NavbarStandard() {
                     <Link to="/products" className="link-item">
                       <a
                         title='Products'
-                        className=" text-white nav-link"
+                        className="ms-2 text-white nav-link"
                         role="button"
                         aria-haspopup="true"
                         aria-expanded="false"
@@ -130,7 +132,7 @@ function NavbarStandard() {
                     <Link to="/projects" className="link-item">
                       <a
                         title='Projects'
-                        className=" text-white nav-link"
+                        className="ms-2 text-white nav-link"
                         role="button"
                         aria-haspopup="true"
                         aria-expanded="false"
@@ -146,7 +148,7 @@ function NavbarStandard() {
                     <Link to="/services" className="link-item">
                       <a
                         title='Services'
-                        className=" text-white nav-link"
+                        className="ms-2 text-white nav-link"
                         role="button"
                         aria-haspopup="true"
                         aria-expanded="false"
@@ -163,7 +165,7 @@ function NavbarStandard() {
                       <li className="nav-item dropdown">
                         <a
                           title='Click here to Login or Signup as Projectowner in Myproject.Ai'
-                          className=" text-white nav-link "
+                          className="ms-2 text-white nav-link "
                           href="#"
                           role="button"
                           data-bs-toggle="dropdown"
@@ -188,7 +190,7 @@ function NavbarStandard() {
 
                       {/* Trader Portal */}
                       <li className="nav-item dropdown">
-                        <a title='Click here to Login or Signup as Trader in Myproject.Ai' className=" text-white nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Trader</a>
+                        <a title='Click here to Login or Signup as Trader in Myproject.Ai' className="ms-2 text-white nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Trader</a>
                         <div className="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                           <div className="bg-white dark__bg-1000 rounded-3 py-2">
                             <Link to="/freelancer/true">
@@ -278,7 +280,7 @@ function NavbarStandard() {
                           <div className="card-header">
                             <div className="row justify-content-between align-items-center">
                               <div className="col-auto">
-                                <h6 className="card-header-title mb-0">Notifications</h6>
+                                <h4 className="card-header-title mb-0">Notifications</h4>
                               </div>
                               <div className="col-auto ps-0 ps-sm-3"><a className="card-link fw-normal" href="#">Mark all as read</a></div>
                             </div>
@@ -304,7 +306,7 @@ function NavbarStandard() {
                                               </div>
                                             </div>
                                             <div className="notification-body">
-                                              <p className="mb-1"><strong style={{ fontSize: "14px" }}>Emma Watson</strong> replied to your comment : "Hello world"</p>
+                                              <p className="mb-1"><span className="fw-semibold">Emma Watson</span> replied to your comment : "Hello world"</p>
                                               <span className="notification-time">Just now</span>
                                             </div>
                                           </a>
@@ -319,7 +321,7 @@ function NavbarStandard() {
                                               </div>
                                             </div>
                                             <div className="notification-body">
-                                              <p className="mb-1"><strong style={{ fontSize: "14px" }}>Emma Watson</strong> replied to your comment : "Hello world"</p>
+                                              <p className="mb-1"><span className="fw-semibold">Emma Watson</span> replied to your comment : "Hello world"</p>
                                               <span className="notification-time">9hr</span>
                                             </div>
                                           </a>
@@ -336,7 +338,7 @@ function NavbarStandard() {
                                               </div>
                                             </div>
                                             <div className="notification-body">
-                                              <p className="mb-1"><strong style={{ fontSize: "14px" }}>Emma Watson</strong> replied to your comment : "Hello world"</p>
+                                              <p className="mb-1"><span className="fw-semibold">Emma Watson</span> replied to your comment : "Hello world"</p>
                                               <span className="notification-time">1d</span>
                                             </div>
                                           </a>

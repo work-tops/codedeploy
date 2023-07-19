@@ -718,35 +718,36 @@ function WishlistProductCard() {
                 </Col>
                 <Container>
                     <Row>
+                        <div className=""></div>
                         <Col className='mb-3' lg={3}>
-                            <Card className="mt-5">
-                                <Card.Body>
-                                    <Form.Check
-                                        type="checkbox"
-                                        className="form-check d-flex ps-0"
-                                    >
-                                        <Form.Check.Label
-                                            className="fs--1 flex-1 text-truncate"
-                                        >
-                                            Offers
-                                        </Form.Check.Label>
-
-                                        <Form.Check.Input
+                            <div className="course-details-sticky-sidebar">
+                                <Card className="mt-5">
+                                    <Card.Body>
+                                        <Form.Check
                                             type="checkbox"
-                                            className="cursor-pointer"
-                                        />
-                                    </Form.Check>
-                                </Card.Body>
-                            </Card>
-                            <Card className="mt-3">
-                                <SimpleBarReact style={{ height: '100%' }}>
+                                            className="form-check d-flex ps-0"
+                                        >
+                                            <Form.Check.Label
+                                                className="fs--1 flex-1 text-truncate"
+                                            >
+                                                Offers
+                                            </Form.Check.Label>
+
+                                            <Form.Check.Input
+                                                type="checkbox"
+                                                className="cursor-pointer"
+                                            />
+                                        </Form.Check>
+                                    </Card.Body>
+                                </Card>
+                                <Card className="mt-3">
+                                    {/* <SimpleBarReact style={{ height: '100%' }}> */}
                                     <Card.Header as={Flex} className="flex-between-center pt-x1">
                                         <div className='justify-content-between d-flex m-2'>
-                                            <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
-                                                <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
-                                                <span>Filter</span>
-                                            </h5>
-
+                                            <h4 className="mb-0 text-900 d-flex align-items-center">
+                                                <FontAwesomeIcon icon="filter" className="fs-0 me-1" />
+                                                <span className="fs-0">Filter</span>
+                                            </h4>
                                             <button
                                                 onClick={() => resetFilter()}
                                                 className="btn btn-sm btn-outline-secondary">Reset</button>
@@ -773,14 +774,15 @@ function WishlistProductCard() {
                                                 />))}
                                         </ul>
                                     </Card.Body>
-                                </SimpleBarReact>
-                            </Card>
+                                    {/* </SimpleBarReact> */}
+                                </Card>
+                            </div>
                         </Col>
                         <Col className='mb-3' lg={9}>
-
-                            <div className="card mt-5 mb-3">
+                            <div className="mt-5 d-none d-lg-block"></div>
+                            <div className="card mb-3">
                                 <div className="card-header bg-light position-relative">
-                                <h5 className="mb-0 mt-1">My Wishlists</h5>
+                                    <h1 className="mb-0 mt-1">My Wishlists</h1>
                                     <div className="bg-holder d-none d-md-block bg-card">
 
                                     </div>
@@ -806,8 +808,8 @@ function WishlistProductCard() {
                                             <div className="row g-0 g-md-3 justify-content-end">
                                                 <div className="col-auto">
                                                     <form className="row gx-2">
-                                                        <div className="col-auto d-none d-lg-block"><span className="fw-semi-bold">Sort by</span></div>
-                                                        <div className="col-auto">
+                                                        <div className="col-auto d-none"><span className="fw-semi-bold">Sort by</span></div>
+                                                        <div className="col-auto d-none">
                                                             <select className="cursor-pointer form-select form-select-sm" aria-label="Bulk actions">
                                                                 <option>Recently uploaded</option>
                                                                 <option>Recommended</option>
@@ -821,7 +823,7 @@ function WishlistProductCard() {
                                                         </div>
                                                     </form>
                                                 </div>
-                                                <div className="col-auto">
+                                                <div className="col-auto d-none d-md-block">
                                                     <div className="d-flex align-items-center"><span className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</span>
                                                         <div onClick={() => { setIsList(false) }}
                                                             className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
@@ -867,15 +869,15 @@ function WishlistProductCard() {
                                                                         <span>Out of Stock</span>
                                                                     </span>
                                                                 </div>
-                                                                <h2 className="product-name text-uppercase fs-0 mb-2">
-                                                                    <Link
-                                                                        to="/productdetails/data._id"
-                                                                        className="text-dark"
-                                                                    >
+                                                                <Link
+                                                                    to="/productdetails/data._id"
+                                                                    className="text-dark"
+                                                                >
+                                                                    <h2 className="mt-3 text-uppercase product-name mt-sm-0 fs-0 fs-lg-1">
                                                                         {data?.name}
-                                                                    </Link>
-                                                                </h2>
-                                                                <h3 className="fs--1 mt-2 mb-2 w-50 d-none d-lg-block">
+                                                                    </h2>
+                                                                </Link>
+                                                                <h3 className="fs-0 mt-2 mb-3">
                                                                     {data?.type?.name}
                                                                 </h3>
                                                                 <div style={{ fontSize: '12px' }} className=" mb-2 text-700">
@@ -904,36 +906,35 @@ function WishlistProductCard() {
                                                                 <Link to="/p/enquiry">
                                                                     <Button
                                                                         size="md"
-                                                                        variant="falcon-default"
                                                                         style={{ background: '#003f6b' }}
                                                                         className="fs--1 Home-btns-1 border-0 border-0 text-600 mt-3 text-white"
 
                                                                     >
-                                                                        Get Quote
+                                                                        Get a Quote
                                                                     </Button>
                                                                 </Link>
                                                             </div>
                                                             <div className="col-auto pe-3">
                                                                 <>
-                                                                        <a
-                                                                            onClick={handleRemoveFromWishlist}
-                                                                            className="btn btn-sm btn-falcon-default me-2 hover-danger"
-                                                                            href="#!"
-                                                                            data-bs-toggle="tooltip"
-                                                                            data-bs-placement="top"
-                                                                            aria-label="Remove from Wishlist"
-                                                                            data-bs-original-title="Remove from Wishlist"
-                                                                        >
-                                                                            <Icon
-                                                                                style={{ marginTop: '-5px' }}
-                                                                                className="me-1"
-                                                                                icon="icon-park-solid:like"
-                                                                                color="#df2020"
-                                                                                width="20"
-                                                                                height="20"
-                                                                            />
-                                                                        </a>
-                                                                
+                                                                    <a
+                                                                        onClick={handleRemoveFromWishlist}
+                                                                        className="btn btn-sm btn-falcon-default me-2 hover-danger"
+                                                                        href="#!"
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-placement="top"
+                                                                        aria-label="Remove from Wishlist"
+                                                                        data-bs-original-title="Remove from Wishlist"
+                                                                    >
+                                                                        <Icon
+                                                                            style={{ marginTop: '-5px' }}
+                                                                            className="me-1"
+                                                                            icon="icon-park-solid:like"
+                                                                            color="#df2020"
+                                                                            width="20"
+                                                                            height="20"
+                                                                        />
+                                                                    </a>
+
                                                                 </>
                                                                 <a onClick={toastDark} className="btn btn-sm btn-falcon-default hover-primary" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Add to Cart" data-bs-original-title="Add to Cart">
                                                                     <span className="fas fa-cart-plus" data-fa-transform="down-2"></span>
@@ -987,12 +988,12 @@ function WishlistProductCard() {
                                                                             <span>Out of Stock</span>
                                                                         </span>
                                                                     </div>
-                                                                    <h2 class="mt-3 mt-sm-0 fs-0 fs-lg-1">
-                                                                        <Link className="product-name text-uppercase text-900" to="/productdetails/data._id">
+                                                                    <Link className="text-900" to="/productdetails/data._id">
+                                                                        <h2 className="mt-3 text-uppercase product-name mt-sm-0 fs-0 fs-lg-1">
                                                                             {data?.name}
-                                                                        </Link>
-                                                                    </h2>
-                                                                    <h3 className="fs--1 mt-2 w- d-lg-block">
+                                                                        </h2>
+                                                                    </Link>
+                                                                    <h3 className="fs-0 mt-2 mt-1">
                                                                         {data?.type?.name}
                                                                     </h3>
                                                                     <div style={{ fontSize: '12px' }} className=" mb-2 text-700">
@@ -1022,29 +1023,31 @@ function WishlistProductCard() {
                                                                         <div class="mt-3 d-flex flex-lg-column gap-2">
 
                                                                             <>
-                                                                                    <button
-                                                                                        className="btn btn-md btn-falcon-danger fs--1 text-600"
-                                                                                        onClick={handleRemoveFromWishlist}
-                                                                                    >
-                                                                                        <span className="d-block">
-                                                                                            <Icon
-                                                                                                style={{ marginTop: '-2px' }}
-                                                                                                className="me-1"
-                                                                                                icon="icon-park-solid:like"
-                                                                                                color="#df2020"
-                                                                                                width="18"
-                                                                                                height="18"
-                                                                                            />
-                                                                                            <span className="d-none d-lg-inline">Remove from Wishlist</span>
-                                                                                        </span>
-                                                                                    </button>
+                                                                                <button
+                                                                                    className="btn btn-md btn-falcon-danger fs--1 text-600"
+                                                                                    onClick={handleRemoveFromWishlist}
+                                                                                >
+                                                                                    <span className="d-block">
+                                                                                        <Icon
+                                                                                            style={{ marginTop: '-2px' }}
+                                                                                            className="me-1"
+                                                                                            icon="icon-park-solid:like"
+                                                                                            color="#df2020"
+                                                                                            width="18"
+                                                                                            height="18"
+                                                                                        />
+                                                                                        <span className="d-none d-lg-inline">Remove from Wishlist</span>
+                                                                                    </span>
+                                                                                </button>
                                                                             </>
                                                                             <button onClick={toastDark} class="btn btn-md btn-primary fs--1">
                                                                                 <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
                                                                             </button>
-                                                                            <Button to="/p/enquiry" as={Link} style={{ background: '#003f6b', border: '1px solid #003f6b', fontSize: '.8333333333rem' }} class="Home-btns-1 btn btn-md btn-primary fs--1">
-                                                                                <span class="ms-1 Home-btns-1">Get Quote</span>
-                                                                            </Button>
+                                                                            <Link to="/p/enquiry">
+                                                                                <button className="btn w-100 Home-btns-1 text-white btn-md fs--1" style={{ background: '#003f6b', border: '1px solid #003f6b' }} >
+                                                                                    <span className="ms-1">Get a Quote</span>
+                                                                                </button>
+                                                                            </Link>
                                                                         </div>
                                                                     </div>
                                                                 </div>

@@ -215,6 +215,10 @@
 //     )
 // }
 // export default AiProducts
+
+
+
+
 import React from "react";
 import AdvanceTableWrapper from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTable";
@@ -317,7 +321,7 @@ const data = [
         email: 'oscar@example.com',
         price: '£100',
         quantity: "10 Pcs",
-        status: <span className="badge  bg-secondary">Disabled</span>,
+        status: <span className="badge bg-secondary">Disabled</span>,
         action: <CardDropdown>
             <div className="py-2">
                 <Dropdown.Item>Edit</Dropdown.Item>
@@ -336,14 +340,14 @@ const AllProducts = () => {
         return (
             <Row className="flex-between-center mb-3">
                 <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
-                    <h5 className="fs-0 mb-0 mt-2 text-nowrap py-2 py-xl-0">
+                    <h4 className="fs-0 mb-0 mt-2 text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
                                 'You have selected ' + Object.keys(selectedRowIds).length + ' Product Lists'
                                 :
                                 ''
                         }
-                    </h5>
+                    </h4>
                 </Col>
                 <Row className="flex-end-center mt-2 mb-3">
                     <Col xs="auto">
@@ -370,7 +374,7 @@ const AllProducts = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                             <Button variant="falcon-default"
+                            <Button variant="falcon-default"
                                 size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
                             </Button>
                         </div>
@@ -389,10 +393,10 @@ const AllProducts = () => {
                 <Col lg={12}>
                     <Card className="ms-3 me-3 mb-3 mt-4">
                         <Card.Header className="bg-light">
-                            <h5>
+                            <h2>
                                 All Product<span className="ms-1 fs--1 badge bg-secondary">#100</span>
-                            </h5>
-                            <Breadcrumb className="fs--1 mt-2">
+                            </h2>
+                            <Breadcrumb className="mt-2">
                                 <Breadcrumb.Item>
                                     All Products
                                 </Breadcrumb.Item>
@@ -400,7 +404,7 @@ const AllProducts = () => {
                                     Add Products
                                 </Breadcrumb.Item>
                             </Breadcrumb>
-                            <p className="text-dark text-capitalize fs--1 mt-2">Here all the current products on your store</p>
+                            <p className="text-dark text-capitalize mt-2">Here all the current products on your store</p>
                         </Card.Header>
                         <Card.Body>
                             <div className="row g-3">
@@ -432,7 +436,7 @@ const AllProducts = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        className: 'fs--1 mb-0 overflow-hidden'
+                                        className: 'mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">

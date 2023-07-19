@@ -25,6 +25,9 @@ import SimpleBarReact from 'simplebar-react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../../Footer/Footer';
+
+
+
 function ProjectWishlistCard(layout) {
     // 
     const toastDanger = () => toast.error(<h6 className="text-sucess">Project Removed from Wishlist</h6>);
@@ -224,14 +227,15 @@ function ProjectWishlistCard(layout) {
 
                     <Row>
                         <Col className='' lg={3}>
-                            <Card className="mt-5">
-                                <SimpleBarReact style={{ height: '100%' }}>
+                            <div className="course-details-sticky-sidebar">
+                                <Card className="mt-5 mb-3">
+                                    {/* <SimpleBarReact style={{ height: '100%' }}> */}
                                     <Card.Header className="bg-light d-flex justify-content-between pt-x1">
 
-                                        <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
-                                            <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
-                                            <span>Filter</span>
-                                        </h5>
+                                        <h4 className="mb-0 text-900 d-flex align-items-center">
+                                            <FontAwesomeIcon icon="filter" className="fs-0 me-1" />
+                                            <span className="fs-0">Filter</span>
+                                        </h4>
                                         <div>
                                             <button
                                                 onClick={() => resetFilter()}
@@ -275,20 +279,20 @@ function ProjectWishlistCard(layout) {
                                         </ul>
                                         {/*  */}
                                         <div>
-                                            <Form.Label className='fs--1 fw-semibold text-start text-700 text-decoration-none mt-3 px-0'>Search County</Form.Label>
+                                            <Form.Label className='fs--1 fw-semibold text-start  text-decoration-none mt-3 px-0'>Search County</Form.Label>
                                             <MultiSelect
                                                 options={countyOptions}
                                                 selectedValues={selectedCounties}
                                                 onSelect={handleCountySelect}
                                                 onRemove={handleCountySelect}
                                                 displayValue="key"
-                                                className='form-control'
+                                                className='form-control cursor-default form-control-sm'
                                             />
                                         </div>
                                         {/*  */}
                                         <Form>
                                             <Form.Group className='mb-3'>
-                                                <Form.Label className='fs--1 fw-semibold text-start text-700 text-decoration-none mt-3 px-0'>Range</Form.Label>
+                                                <Form.Label className='fs--1 fw-semibold text-start  text-decoration-none mt-3 px-0'>Range</Form.Label>
                                                 {/* <p className='fw-semibold' style={{ fontSize: '14px' }}>£ 0-10,000</p>
                                                 <Form.Range min={0} max={10000} onChange={(e) => priceSearch(e)} /> */}
                                                 <Form>
@@ -310,25 +314,23 @@ function ProjectWishlistCard(layout) {
                                             </Form.Group>
                                         </Form>
                                     </Card.Body>
-                                </SimpleBarReact>
-                            </Card>
+                                    {/* </SimpleBarReact> */}
+                                </Card>
+                            </div>
                         </Col>
 
                         <Col className='' lg={9}>
-                            <div className="card mt-5 mb-3">
+                            <div className='mt-5 d-none d-lg-block'></div>
+                            <div className="card mb-3">
                                 <div className="card-header bg-light position-relative">
-                                    <h5 className="mb-0 mt-1">My Wishlists</h5>
-                                    <div className="bg-holder d-none d-md-block bg-card">
-
-                                    </div>
-
+                                    <h1 className="mb-0 mt-1">My Wishlists</h1>
                                 </div>
                                 <div className="card-body pt-0 pt-md-3">
                                     <div className="row g-3 align-items-center">
                                         <div className="col-auto d-xl-none">
-                                            <button className="btn btn-sm p-0 btn-link position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas">
-                                                {/*<svg className="svg-inline--fa fa-filter fa-w-16 fs-0 text-700" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path></svg>*/}
-                                                <span className="fas fa-filter fs-0 text-700"></span>
+                                            <button className="btn btn-sm p-0 position-relative">
+                                                {/*<svg className="svg-inline--fa fa-filter fa-w-16 fs-0 " aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path></svg>*/}
+                                                <span className="fas fa-filter fs-0 "></span>
                                             </button>
                                         </div>
                                         <div className="col">
@@ -342,7 +344,7 @@ function ProjectWishlistCard(layout) {
                                         <div className="col position-sm-relative position-absolute top-0 end-0  me-sm-0 p-0">
                                             <div className="row g-0 g-md-3 justify-content-end">
                                                 <div className="col-auto">
-                                                    <form className="row gx-2">
+                                                    <form className="row d-none gx-2">
                                                         <div className="col-auto d-none d-lg-block"><span className="fw-semi-bold">Sort by</span></div>
                                                         <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Bulk actions">
                                                             <option >Recent Added</option>
@@ -353,16 +355,16 @@ function ProjectWishlistCard(layout) {
                                                         </select></div>
                                                     </form>
                                                 </div>
-                                                <div className="col-auto">
+                                                <div className="col-auto d-none d-md-block">
                                                     <div className="d-flex align-items-center"><span className="fw-semi-bold me-2 d-none d-lg-block lh-1">View</span>
                                                         <div
-                                                            className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
+                                                            className={` ${layout === 'grid' ? '' : 'text-400 hover-700'
                                                                 }`}
                                                         >
                                                             <Icon className="cursor-pointer" icon="material-symbols:grid-on-sharp" width="24" height="24" />
                                                         </div>
                                                         <div
-                                                            className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
+                                                            className={`me-2 ${layout === 'list' ? '' : 'text-400 hover-700'
                                                                 }`}
                                                         >
                                                             <Icon className="cursor-pointer" icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
@@ -377,7 +379,7 @@ function ProjectWishlistCard(layout) {
                             </div>
                             {/*  */}
                             {jobs.map((data, key) => (
-                                <Card className="overflow-hidden mt-3 mb-3">
+                                <Card className="overflow-hidden mt-3">
                                     <Card.Body className="p-0">
                                         <Row className="g-0">
                                             <Col md={12} lg={12} className="p-x1">
@@ -392,14 +394,15 @@ function ProjectWishlistCard(layout) {
                                                         <div key={key}>
                                                             {/* <h5 className='text-primary mb-3'>{data.customer_email}</h5> */}
                                                             <Link to="/jobdetails/:jobid" role="button">
-                                                                <h6 style={{ fontSize: '16px' }} className="mb-3 text-uppercase">{data.project_title}</h6>
+                                                                <h2 className="text-uppercase product-name mt-3 mb-3 mt-sm-0 fs-0 fs-lg-1">
+                                                                    {data.project_title}
+                                                                </h2>
                                                             </Link>
-                                                            <p className='fifty-chars text-justify' style={{ fontSize: '14px', width: '96%' }}>{data.project_description}</p>
+                                                            <p className='fifty-chars ' style={{ width: '96%' }}>{data.project_description}</p>
                                                         </div>
 
                                                         {/* *8-Col */}
                                                     </Col>
-
 
                                                     {/* COl-4 */}
                                                     <Col md={12} lg={4} className=" mt-lg-0">
@@ -413,15 +416,16 @@ function ProjectWishlistCard(layout) {
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:clock-time-eight" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} />20 to 30 days</p>
                                                             <p className='text-justiy fw-semibold' style={{ fontSize: '14px' }}><Icon icon="mdi:tag" color="#003f6b" className='me-1' style={{ marginTop: '-1px' }} width="20" height="20" hFlip={true} /> Job ID : {data?._id}</p>
                                                             {/* <Link to="/wishlist/projects"> */}
-                                                            <p onClick={toastDanger} className='text-justiy text-700 cursor-pointer fw-semibold' style={{ fontSize: '14px' }}>
+                                                            <p onClick={toastDanger} className='text-justiy  cursor-pointer fw-semibold' style={{ fontSize: '14px' }}>
                                                                 <span>
                                                                     <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
                                                                     Remove from Wishlist
                                                                 </span>
                                                             </p>
                                                             {/* </Link> */}
-                                                            <Button as={Link} to="/jobdetails/:jobid" className='border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
-                                                                VIEW JOB
+
+                                                            <Button as={Link} to="/jobdetails/:jobid" className='border-0 Home-btns-1' style={{ background: '#003f6b' }}>
+                                                                View Job
                                                             </Button>
                                                             <ToastContainer
                                                                 position="top-right"
@@ -449,8 +453,8 @@ function ProjectWishlistCard(layout) {
                                 <article className="col-md-6 col-xxl-4">
                                     <div className="card h-100 overflow-hidden">
                                         <div className="bg-light d-flex justify-content-end position-relative card-header">
-                                            <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
-                                            <Icon onClick={toastDanger} icon="icon-park-outline:like" className="cursor-pointer me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
+                                            <Icon onClick={toastDanger} style={{ marginTop: '-5px' }} className="me-1 cursor-pointer" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
+                                            {/* <Icon  icon="icon-park-outline:like" className="cursor-pointer me-1" style={{ marginTop: '-5px' }} width="20" height="20" /> */}
                                         </div>
                                         <div className="card-body p-0 d-flex flex-column justify-content-between">
                                             <div>
@@ -461,9 +465,11 @@ function ProjectWishlistCard(layout) {
                                                     </div>
                                                     {/* <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5> */}
                                                     <Link to="/jobdetails/:jobid" role="button">
-                                                        <h6 style={{ fontSize: '16px' }} className="mb-3 text-uppercase">Bathroom Installation</h6>
+                                                        <h2 className="text-uppercase product-name mt-3 mb-3 mt-sm-0 fs-0 fs-lg-1">
+                                                            Bathroom Installation
+                                                        </h2>
                                                     </Link>
-                                                    <p className='one-twenty-chars mb-lg-0 text-justify' style={{ fontSize: '14px' }}>White Attica
+                                                    <p className='one-twenty-chars mb-lg-0' >White Attica
                                                         Supernatural Quartz has a crisp white base featured with an intricate
                                                         veiny pattern. This quartz slab has a super sleek look in polished finish which
                                                         is more enhanced by the distinct black veins which have been manufactured to look fit
@@ -475,8 +481,8 @@ function ProjectWishlistCard(layout) {
                                                     </p>
                                                 </div>
                                                 <div>
-                                                    <Button as={Link} to="/jobdetails/:jobid" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
-                                                        VIEW JOB
+                                                    <Button as={Link} to="/jobdetails/:jobid" className='border-0 m-3 Home-btns-1' style={{ background: '#003f6b' }}>
+                                                        View Job
                                                     </Button>
                                                 </div>
                                             </div>
@@ -486,8 +492,8 @@ function ProjectWishlistCard(layout) {
                                 <article className="col-md-6 col-xxl-4">
                                     <div className="card h-100 overflow-hidden">
                                         <div className="bg-light d-flex justify-content-end position-relative card-header">
-                                            <Icon onClick={toastDanger} icon="icon-park-outline:like" className="cursor-pointer me-1" style={{ marginTop: '-5px' }} width="20" height="20" />
-                                            <Icon style={{ marginTop: '-5px' }} className="me-1" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
+                                            {/* <Icon  icon="icon-park-outline:like" className="cursor-pointer me-1" style={{ marginTop: '-5px' }} width="20" height="20" /> */}
+                                            <Icon onClick={toastDanger} style={{ marginTop: '-5px' }} className="me-1 cursor-pointer" icon="icon-park-solid:like" color="#df2020" width="20" height="20" />
                                         </div>
                                         <div className="card-body p-0 d-flex flex-column justify-content-between">
                                             <div>
@@ -498,9 +504,11 @@ function ProjectWishlistCard(layout) {
                                                     </div>
                                                     {/* <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5> */}
                                                     <Link to="/jobdetails/:jobid" role="button">
-                                                        <h6 style={{ fontSize: '16px' }} className="mb-3 text-uppercase">Bathroom Installation</h6>
+                                                        <h2 className="text-uppercase product-name mt-3 mb-3 mt-sm-0 fs-0 fs-lg-1">
+                                                            Bathroom Installation
+                                                        </h2>
                                                     </Link>
-                                                    <p className='one-twenty-chars mb-lg-0 text-justify' style={{ fontSize: '14px' }}>White Attica
+                                                    <p className='one-twenty-chars mb-lg-0 ' >White Attica
                                                         Supernatural Quartz has a crisp white base featured with an intricate
                                                         veiny pattern. This quartz slab has a super sleek look in polished finish which
                                                         is more enhanced by the distinct black veins which have been manufactured to look fit
@@ -511,8 +519,8 @@ function ProjectWishlistCard(layout) {
                                                         ideal for room walls, showers, backsplashes, and floors. Thickness: 20mm and 30mm Finish: Polished
                                                     </p>
                                                 </div>
-                                                <Button as={Link} to="/jobdetails/:jobid" className='m-3 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
-                                                    VIEW JOB
+                                                <Button as={Link} to="/jobdetails/:jobid" className='border-0 m-3 Home-btns-1' style={{ background: '#003f6b' }}>
+                                                    View Job
                                                 </Button>
                                             </div>
                                         </div>

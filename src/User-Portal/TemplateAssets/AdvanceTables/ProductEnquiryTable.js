@@ -63,7 +63,7 @@ const SellerEnquiryTable = () => {
         {
             id: '625355',
             name: 'Peter Leverkus',
-            date: '10 May 2023',
+            date: '10 MAY 2023',
             productName: 'Quartz',
             postcode: 'CB236DX',
             status: <span className="badge bg-success">Completed</span>,
@@ -76,7 +76,7 @@ const SellerEnquiryTable = () => {
         {
             id: '625355',
             name: 'Peter Leverkus',
-            date: '10 May 2023',
+            date: '10 MAY 2023',
             productName: 'Quartz',
             postcode: 'CB236DX',
             status: <span className="badge bg-danger">Declined</span>,
@@ -89,7 +89,7 @@ const SellerEnquiryTable = () => {
         {
             id: '625355',
             name: 'Peter Leverkus',
-            date: '10 May 2023',
+            date: '10 MAY 2023',
             productName: 'Quartz',
             postcode: 'CB236DX',
             status: <span className="badge bg-warning">Pending</span>,
@@ -102,7 +102,7 @@ const SellerEnquiryTable = () => {
         {
             id: '625355',
             name: 'Peter Leverkus',
-            date: '10 May 2023',
+            date: '10 MAY 2023',
             productName: 'Quartz',
             postcode: 'CB236DX',
             status: <span className="badge bg-primary">Processing</span>,
@@ -126,10 +126,9 @@ const SellerEnquiryTable = () => {
                     aria-labelledby="example-custom-modal-styling-title"
                 >
                     <Modal.Header closeButton>
-                        <h6 className="text-uppercase">
+                        <h2 className="mb-0 text-capitalize">
                             Please Type Your Message
-                        </h6>
-
+                        </h2>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group className="mb-3">
@@ -155,25 +154,26 @@ const SellerEnquiryTable = () => {
                                 }}
                             />
                         </Form.Group>
-                        <Form.Group className="mb-3">
+                        <Form.Group className="mt-2">
                             <Form.Check type="checkbox" id="rememberMe" className="mb-0">
                                 <Form.Check.Input type="checkbox" />
-                                <Form.Check.Label style={{ fontSize: '12px' }} className="mb-0 text-900">
+                                <Form.Check.Label className="mb-0 text-900">
                                     Proceed to Send
                                 </Form.Check.Label>
                             </Form.Check>
                         </Form.Group>
-                        <div className="d-flex justify-content-end gap-2 mb-3">
-                            <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <div className="d-flex justify-content-end gap-2">
+                            <Button style={{ background: '#003f6b' }} className=" Home-btns-1 border-0">
                                 Attachments
                             </Button>
-                            <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                            <Button style={{ background: '#003f6b' }} className=" Home-btns-1 border-0">
                                 Send
                             </Button>
                         </div>
-                    </Modal.Body>
+                    </Modal.Footer>
                 </Modal>
-
 
                 <Row className="flex-between-center mb-3">
                     <Col xs={12} md={8} lg={7} sm="12" className="mt-3  pe-0">

@@ -130,8 +130,8 @@ function ProductDetails() {
                                             ))}
                                         </Col>
                                         <Col md={7} lg={7}>
-                                            <h1 className="fw-bold text-white">{prodata.name}</h1>
-                                            <div className="fw-semi-bold fs--1">
+                                            <h1 className="text-uppercase text-white">{prodata.name}</h1>
+                                            <div className="fw-semi-bold ">
                                                 <span className="me-1 text-white me-2">4.9</span>
                                                 <div className="d-inline-block ">
                                                     <span className="fa fa-star text-warning"></span>
@@ -151,7 +151,7 @@ function ProductDetails() {
                                         </Col>
                                     </Row>
                                     <hr className="text-secondary text-opacity-50" />
-                                    <ul className="list-unstyled d-flex flex-wrap gap-3 fs--1 fw-semi-bold text-300 mt-3 mb-0">
+                                    <ul className="list-unstyled d-flex flex-wrap gap-3  fw-semi-bold text-300 mt-3 mb-0">
                                         <li role="button" className="text-primary">
                                             Previous
                                         </li>
@@ -160,8 +160,8 @@ function ProductDetails() {
                                                 <li
                                                     onClick={handleRemoveFromWishlist}
                                                     role='button'
-                                                    style={{ fontSize: '14px' }}
-                                                    className="text-justify fw-semibold"
+                                                    style={{ fontSize: '14px', marginTop: '2px' }}
+                                                    className=" fw-semibold"
                                                     href="#!"
                                                     data-bs-toggle="tooltip"
                                                     data-bs-placement="top"
@@ -176,8 +176,8 @@ function ProductDetails() {
                                                 <li
                                                     onClick={handleAddToWishlist}
                                                     role='button'
-                                                    style={{ fontSize: '14px' }}
-                                                    className="text-justify fw-semibold"
+                                                    style={{ fontSize: '14px', marginTop: '2px' }}
+                                                    className=" fw-semibold"
                                                     href="#!"
                                                     data-bs-toggle="tooltip"
                                                     data-bs-placement="top"
@@ -207,12 +207,12 @@ function ProductDetails() {
 
 
                 <Row >
-                    <Col className="container order-lg-0 order-2 " sm={12} lg={8} xl={8} md={12}>
+                    <Col className="container order-lg-0 order-2" sm={12} lg={8} xl={8} md={12}>
 
                         {/* Product Images */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light text-uppercase">
-                                Product Images
+                            <Card.Header className="bg-light ">
+                                <h2 className="text-capitalize">Product Images</h2>
                             </Card.Header>
                             <Card.Body className="position-relative">
                                 {prodata.attachments?.map((data, key) => (
@@ -231,14 +231,11 @@ function ProductDetails() {
 
                         {/* Description */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light text-uppercase">
-                                Description
+                            <Card.Header className="bg-light ">
+                                <h2 className="text-capitalize">Description</h2>
                             </Card.Header>
                             <Card.Body className="position-relative">
-                                <p
-                                    style={{ fontSize: '14px' }}
-                                    className="text-justify"
-                                >
+                                <p>
                                     {prodata.description}
                                 </p>
                             </Card.Body>
@@ -248,30 +245,26 @@ function ProductDetails() {
 
                         {/* Disclaimer */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light text-uppercase">
-                                Refund Policy
+                            <Card.Header className="bg-light ">
+                                <h2 className="text-capitalize">Return Policy</h2>
                             </Card.Header>
                             <Card.Body className="position-relative">
-                                <p
-                                    style={{ fontSize: '14px' }}
-                                    className="text-justify"
-                                >
+                                <p>
                                     {prodata.policy}
                                 </p>
                             </Card.Body>
                         </Card>
                         {/* Reviews */}
                         <Card className="mb-3">
-                            <Card.Header className=" text-capitalize bg-light">
-                                <h5 className="text-uppercase">
-                                    Reviews (60)
-                                </h5>
+                            <Card.Header className="bg-light">
+                                <h2 className="text-capitalize">Reviews (60)</h2>
                             </Card.Header>
                             <Card.Body>
                                 <div className="d-flex gap-2 mt-2 justify-content-lg-end">
                                     <Button
                                         variant="falcon-default"
                                         size="sm"
+                                        className="mb-3"
                                         onClick={handleShow}
                                     >
                                         Write Review
@@ -293,7 +286,7 @@ function ProductDetails() {
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
-                                            <Form.Check.Label className="mb-0 text-700">
+                                            <Form.Check.Label className="mb-0 ">
                                                 <FaStar color="#f68f57" />
                                                 <FaStar color="#f68f57" />
                                                 <FaStar color="#f68f57" />
@@ -308,7 +301,7 @@ function ProductDetails() {
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
-                                            <Form.Check.Label className="mb-0 text-700">
+                                            <Form.Check.Label className="mb-0 ">
                                                 <FaStar color="#f68f57" />
                                                 <FaStar color="#f68f57" />
                                                 <FaStar color="#f68f57" />
@@ -322,7 +315,7 @@ function ProductDetails() {
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
-                                            <Form.Check.Label className="mb-0 text-700">
+                                            <Form.Check.Label className="mb-0 ">
                                                 <FaStar color="#f68f57" />
                                                 <FaStar color="#f68f57" />
                                                 <FaStar color="#f68f57" />
@@ -335,7 +328,7 @@ function ProductDetails() {
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
-                                            <Form.Check.Label className="mb-0 text-700">
+                                            <Form.Check.Label className="mb-0 ">
 
                                                 <FaStar color="#f68f57" />
                                                 <FaStar color="#f68f57" />
@@ -348,7 +341,7 @@ function ProductDetails() {
                                                 type="checkbox"
                                                 className="cursor-pointer"
                                             />
-                                            <Form.Check.Label className="mb-0 text-700">
+                                            <Form.Check.Label className="mb-0 ">
 
                                                 <FaStar color="#f68f57" />
                                             </Form.Check.Label>
@@ -359,33 +352,27 @@ function ProductDetails() {
                         </Card>
                         <Card className="mb-3">
                             <Card.Body className="py-0">
-
                                 <Row className='g-3 align-items-center text-center text-md-start py-3'>
-                                    <Col md="auto">
-                                        <Link to="#!">
-                                            <div class="avatar avatar-2xl">
-                                                <div class="avatar-name rounded-circle"><span>EW</span></div>
-                                            </div>
-                                        </Link>
-                                    </Col>
                                     <Col>
                                         <Row>
                                             <Col xs={12}>
-                                                <h6 className="fs-0">
-                                                    <Link to="#!" className="me-2">
-                                                        Emma Watson
-                                                    </Link>
-                                                    <span>
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />
-                                                    </span>
+                                                <div class="avatar avatar-2xl">
+                                                    <div class="avatar-name rounded-circle"><span>L</span>
+                                                    </div>
+                                                </div>
+                                                <h6 className="text-primary fs-0">
+                                                    Lee
                                                 </h6>
+                                                <div>
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />
+                                                </div>
                                             </Col>
                                             <Col md={10}>
-                                                <p className="fs--1 text-800">
+                                                <p className=" text-800">
                                                     Excellent Course for any beginner like me :p
                                                     The trainer was very generous and helped whenever DMed.
                                                 </p>
@@ -396,9 +383,9 @@ function ProductDetails() {
                                                     className="d-flex align-items-center
                                                     flex-column
                                                      flex-md-row gap-2
-                                                      fs--2 text-600"
+                                                      text-600"
                                                 >
-                                                    <h6 className="fs--2 text-600 mb-0">3 Days Ago</h6>
+                                                    <p className=" text-900 fs--1 mb-0">3 Days Ago</p>
                                                     <p style={{ fontSize: "14px" }} className="fw-semibold mb-0 ms-1">
                                                         230 people found this helpful
                                                     </p>
@@ -432,17 +419,16 @@ function ProductDetails() {
                                 </Row>
                                 <Card className="mb-3" style={{ background: '#f3f3f3' }}>
                                     <Card.Header className="d-flex justify-content-between">
-                                        <h6><Icon icon="mdi:reply-outline" width="24" height="24" hFlip={true} vFlip={true} />Reply from MAI</h6>
+                                        <h5 className="fw-bold fs-0"><Icon icon="mdi:reply-outline" width="24" height="24" hFlip={true} vFlip={true} />Reply from MAI</h5>
                                         <span className="fs--1 fw-semibold">01/01/2023</span>
                                     </Card.Header>
                                     <Card.Body>
-                                        <p className="text-justify fs--1">
+                                        <p className=" ">
                                             Thank you for this awesome review, Michael.
                                             We're so pleased to know that you love your new Urban Concrete Quartz worktops and have had a truly positive experience from start to finish with MAI.com.
 
                                             Thank you for choosing us.
                                             We would love to serve your friends and family as well.
-
 
                                             Thanks and regards,
                                             Team MAI
@@ -456,31 +442,26 @@ function ProductDetails() {
                             <Card.Body className="py-0">
 
                                 <Row className='g-3 align-items-center text-center text-md-start py-3'>
-                                    <Col md="auto">
-                                        <Link to="#!">
-                                            <div class="avatar avatar-2xl">
-                                                <div class="avatar-name rounded-circle"><span>L</span></div>
-                                            </div>
-                                        </Link>
-                                    </Col>
                                     <Col>
                                         <Row>
                                             <Col xs={12}>
-                                                <h6 className="fs-0">
-                                                    <Link to="#!" className="me-2">
-                                                        Lee
-                                                    </Link>
-                                                    <span>
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />
-                                                    </span>
+                                                <div class="avatar avatar-2xl">
+                                                    <div class="avatar-name rounded-circle"><span>L</span>
+                                                    </div>
+                                                </div>
+                                                <h6 className="text-primary fs-0">
+                                                    Lee
                                                 </h6>
+                                                <div>
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />
+                                                </div>
                                             </Col>
                                             <Col md={10}>
-                                                <p className="fs--1 text-800">
+                                                <p className=" text-800">
                                                     Excellent Course for any beginner like me :p
                                                     The trainer was very generous and helped whenever DMed.
                                                 </p>
@@ -491,9 +472,9 @@ function ProductDetails() {
                                                     className="d-flex align-items-center
                                                     flex-column
                                                      flex-md-row gap-2
-                                                      fs--2 text-600"
+                                                      text-600"
                                                 >
-                                                    <h6 className="fs--2 text-600 mb-0">3 Days Ago</h6>
+                                                    <h6 className=" text-600 mb-0">3 Days Ago</h6>
                                                     <p style={{ fontSize: "14px" }} className="fw-semibold mb-0 ms-1">
                                                         230 people found this helpful
                                                     </p>
@@ -527,11 +508,11 @@ function ProductDetails() {
                                 </Row>
                                 <Card className="mb-3" style={{ background: '#f3f3f3' }}>
                                     <Card.Header className="d-flex justify-content-between">
-                                        <h6><Icon icon="mdi:reply-outline" width="24" height="24" hFlip={true} vFlip={true} />Reply from MAI</h6>
+                                        <h6 className="fw-bold fs-0"><Icon icon="mdi:reply-outline" width="24" height="24" hFlip={true} vFlip={true} />Reply from MAI</h6>
                                         <span className="fs--1 fw-semibold">01/01/2023</span>
                                     </Card.Header>
                                     <Card.Body>
-                                        <p className="text-justify fs--1">
+                                        <p className=" ">
                                             Thank you for this awesome review, Michael.
                                             We're so pleased to know that you love your new Urban Concrete Quartz worktops and have had a truly positive experience from start to finish with MAI.com.
 
@@ -570,20 +551,20 @@ function ProductDetails() {
                                             <h2 className="fw-medium mb-3 d-flex align-items-center">
                                                 £ {prodata.variant?.[0]?.pricing?.price}
                                                 {' '}
-                                                <del className="ms-2 fs--1 text-500">£ {prodata.variant?.[0]?.pricing?.compare_at}</del>
+                                                <del className="ms-2 fs--1 text-900">£ {prodata.variant?.[0]?.pricing?.compare_at}</del>
                                                 <span style={{ background: '#ff4242', fontSize: '12px' }} className="badge ms-2">{Math.round(100 - (prodata.variant?.[0]?.pricing?.price / prodata.variant?.[0]?.pricing?.compare_at * 100))}%</span>
                                             </h2>
-                                            {/* <p className="text-danger fs--1 fw-semi-bold">
+                                            {/* <p className="text-danger  fw-semi-bold">
                                                     <FontAwesomeIcon icon={['far', 'clock']} className="me-2" />
                                                     Sale ends in 13h : 25m : 54s
                                                 </p> */}
 
 
-                                            <button onClick={toastDark} class="btn w-100 mb-2 btn-md btn-primary fs--1">
-                                                <span class="fas fa-cart-plus"></span><span class="ms-1 d-none d-lg-inline">Add to Cart</span>
+                                            <button onClick={toastDark} class="btn w-100 mb-2 btn-md btn-primary ">
+                                                <span class="fas fa-cart-plus"></span><span class="ms-1">Add to Cart</span>
                                             </button>
                                             <Link to="/p/enquiry">
-                                                <button className="btn w-100 Home-btns-1 text-white btn-md fs--1" style={{ background: '#003f6b', border: '1px solid #003f6b' }} >
+                                                <button className="btn w-100 Home-btns-1 text-white btn-md " style={{ background: '#003f6b', border: '1px solid #003f6b' }} >
                                                     <span class="ms-1">Get a Quote</span>
                                                 </button>
                                             </Link>
@@ -601,7 +582,7 @@ function ProductDetails() {
                                                 pauseOnHover
                                             />
                                             {/*  */}
-                                            {/* <p className="text-700 fw-medium fs--1 mt-3 mb-0">
+                                            {/* <p className=" fw-medium  mt-3 mb-0">
                                                     14 day Refund Policy
                                                 </p> */}
                                         </Col>
@@ -609,7 +590,7 @@ function ProductDetails() {
                                             <hr className="border-top border-dashed d-md-none d-lg-block" />
                                             <Form.Group className="mb-3">
                                                 {/* <h6 className="fw-bold">Colour</h6> */}
-                                                <Form.Label className="text-700 text-uppercase">Colour<span className="ms-1 text-danger">*</span></Form.Label>
+                                                <Form.Label className=" ">Colour<span className="ms-1 text-danger">*</span></Form.Label>
                                                 <Form.Select className="cursor-pointer">
                                                     <option value="">Select</option>
                                                     {prodata.variant?.map((data, key) => (
@@ -619,7 +600,7 @@ function ProductDetails() {
                                             </Form.Group>
                                             <Form.Group className="mb-3">
                                                 {/* <h6 className="fw-bold">Size</h6> */}
-                                                <Form.Label className="text-700 text-uppercase">Size<span className="ms-1 text-danger">*</span></Form.Label>
+                                                <Form.Label className=" ">Size<span className="ms-1 text-danger">*</span></Form.Label>
                                                 <Form.Select className="cursor-pointer">
                                                     <option value="">Select</option>
                                                     {prodata.variant?.map((data, key) => (
@@ -629,7 +610,7 @@ function ProductDetails() {
                                             </Form.Group>
                                             <Form.Group className="mb-3">
                                                 {/* <h6 className="fw-bold">Finish Type</h6> */}
-                                                <Form.Label className="text-700 text-uppercase">Finish Type<span className="ms-1 text-danger">*</span></Form.Label>
+                                                <Form.Label className=" ">Finish Type<span className="ms-1 text-danger">*</span></Form.Label>
                                                 <Form.Select className="cursor-pointer">
                                                     <option value="">Select</option>
                                                     {prodata.variant?.map((data, key) => (
@@ -639,7 +620,7 @@ function ProductDetails() {
                                             </Form.Group>
                                             <Form.Group className="mb-3">
                                                 {/* <h6 className="fw-bold">Finish Type</h6> */}
-                                                <Form.Label className="text-700 text-uppercase">Quantity<span className="ms-1 text-danger">*</span></Form.Label>
+                                                <Form.Label className=" ">Quantity<span className="ms-1 text-danger">*</span></Form.Label>
                                                 <Form.Control
                                                     type="number"
                                                     placeholder="0"
@@ -648,7 +629,7 @@ function ProductDetails() {
                                         </Col>
                                     </Row>
                                     <hr className="border-top border-dashed" />
-                                    <h6 className="fw-bold">Share </h6>
+                                    <h5 className="fw-semibold">Share</h5>
                                     <div className="d-flex justify-content-start mt-4 mt-xxl-0">
                                         <ul className="list-unstyled mb-0 d-flex flex-wrap flex-xxl-column gap-3 justify-content-start">
 
@@ -684,13 +665,13 @@ function ProductDetails() {
                 dialogClassName="modal-lg modal-90w"
                 aria-labelledby="example-custom-modal-styling-title">
                 <Modal.Header closeButton>
-                    <h5 className="text-uppercase">Write your Review</h5>
+                    <h2 className="">Write your Review</h2>
                 </Modal.Header>
                 <Modal.Body>
 
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="rating">
-                            <Form.Label className="text-700 text-uppercase">Rating<span className="ms-1 text-danger">*</span></Form.Label>
+                            <Form.Label className=" ">Rating<span className="ms-1 text-danger">*</span></Form.Label>
                             <div className="star-rating">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <FaStar
@@ -702,7 +683,7 @@ function ProductDetails() {
                             </div>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="name">
-                            <Form.Label className="text-700 text-uppercase">Name<span className="ms-1 text-danger">*</span></Form.Label>
+                            <Form.Label className=" ">Name<span className="ms-1 text-danger">*</span></Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Enter your name"
@@ -712,7 +693,7 @@ function ProductDetails() {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="email">
-                            <Form.Label className="text-700 text-uppercase">Email<span className="ms-1 text-danger">*</span></Form.Label>
+                            <Form.Label className=" ">Email<span className="ms-1 text-danger">*</span></Form.Label>
                             <Form.Control
                                 type="email"
                                 placeholder="Enter your email"
@@ -722,7 +703,7 @@ function ProductDetails() {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="reviewText">
-                            <Form.Label className="text-700 text-uppercase">Write your review<span className="ms-1 text-danger">*</span></Form.Label>
+                            <Form.Label className=" ">Write your review<span className="ms-1 text-danger">*</span></Form.Label>
                             {/* <Form.Control
                                 as="textarea"
                                 rows={3}

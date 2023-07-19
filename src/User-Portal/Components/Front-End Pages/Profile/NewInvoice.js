@@ -66,7 +66,7 @@ function NewInvoice() {
                     <Col lg={12} className="mt-4">
                         <Card>
                             <Card.Header className="bg-light" >
-                                <h4 className="text-capitalize">Invoice</h4>
+                                <h1 className="text-capitalize mb-0">Invoice</h1>
                             </Card.Header>
                             <Card.Body>
                                 <Form>

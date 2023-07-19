@@ -61,10 +61,10 @@ const PaymentTable = () => {
 
     return (
         <Card className="mb-3 btn-reveal-trigger h-100">
-            <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
-                <h5 className="text-capitalize">
+            <Card.Header className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
+                <h2 className="text-capitalize">
                     transactions
-                </h5>
+                </h2>
             </Card.Header>
             <Card.Body>
                 <AdvanceTableWrapper

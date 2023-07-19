@@ -136,24 +136,28 @@ function JobDetails() {
                         <Col lg={8}>
                             <Card className="mt-5">
                                 <Card.Header className='bg-light mb-0 mt-1'>
-                                    <h1 className="mb-0 fs-2 mt-1">Project Details</h1>
+                                    <h1 className="mb-0  mt-1">Project Details</h1>
                                 </Card.Header>
                                 <Card.Body className="position-relative">
                                     <Row>
                                         <Col xl={12}>
-                                            <h2 className=" text-uppercase fs-0 mb-3">{jobdata.project_title}</h2>
+                                            <h2 className="text-uppercase mt-3 mb-3 mt-sm-0 fs-0 fs-lg-1">
+                                                {jobdata.project_title}</h2>
                                             <p>{jobdata.project_description}</p>
+                                            <div>
+                                            <img src={worktops} width="50px"/>
+                                            <p className="mb-0 fs--1">File Name<span>(01/01/2023)</span></p>
+                                            <p className="mb-0 fs--1">540 KB</p>
+                                            </div>
                                         </Col>
                                     </Row>
                                 </Card.Body>
                             </Card>
 
                             {user?.role == "Freelancer" && <Card className="mt-3 mb-2">
-                                <Card.Header className='bg-white d-flex justify-content-between text-uppercase'>
-                                    <h5 className="mt-3 me-1">
-                                        Clarification Board
-                                    </h5>
-                                    <Button onClick={showboard} style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 text-uppercase">
+                                <Card.Header className='bg-light d-flex justify-content-between '>
+                                    <h2 className="">Clarification Board</h2>
+                                    <Button size="md" onClick={showboard} className="border-0 Home-btns-1   me-2" style={{ color: '#fff', background: '#003f6b' }}>
                                         ask a question
                                     </Button>
                                 </Card.Header>
@@ -190,10 +194,10 @@ function JobDetails() {
                                                             />
                                                         </Form.Group>
                                                         <div className="d-flex gap-2 justify-content-end mb-3">
-                                                            <Button id="FileUpload1" style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                            <Button style={{ background: '#003f6b', }} className="Home-btns-1 border-0">
                                                                 Attachments
                                                             </Button>
-                                                            <Button onClick={() => { askaQuestion() }} style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                            <Button onClick={() => { askaQuestion() }} style={{ background: '#003f6b', }} className="Home-btns-1 border-0">
                                                                 Send
                                                             </Button>
                                                         </div>
@@ -211,7 +215,7 @@ function JobDetails() {
                                                         <div class="position-relative mb-1">
                                                             <span>21 March 2023</span>,<span>00:00</span>
                                                         </div>
-                                                        <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">{x}</p>
+                                                        <p class="mb-0  fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">{x}</p>
                                                         <div class="kanban-item-footer cursor-default">
                                                             <div class="z-index-2">
                                                                 <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
@@ -232,7 +236,8 @@ function JobDetails() {
                         </Col>
                         <Col lg={4}>
                             {/*  Customize Details  */}
-                            <Card className="mt-5 overflow-hidden">
+                            <div className="d-none mt-5 d-lg-block"></div>
+                            <Card className="mt-2 overflow-hidden">
                                 <Card.Header className="bg-light">
                                     <div style={{ fontSize: '14px' }}>
                                         <span className="me-1">
@@ -244,7 +249,7 @@ function JobDetails() {
                                     </div>
                                 </Card.Header>
                                 <Card.Body className="bg-white">
-                                    <ul className="list-unstyled fs--1 mb-0">
+                                    <ul className="list-unstyled  mb-0">
                                         {/* <p className='text-justiy fw-bold' style={{ fontSize: '14px' }}>
                                             <Icon icon="tabler:currency-pound" className='me-1' style={{ marginTop: '-1px' }} color="#003f6b" width="20" height="20" />
                                             1000
@@ -297,12 +302,12 @@ function JobDetails() {
                                 <Card.Footer className="bg-light">
                                     <div className="d-flex justify-content-between">
                                         <Link to="/proposal-list">
-                                            <p className="fw-semibold fs--1 mb-0 me-1" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
+                                            <p className="fw-semibold  mb-0 me-1" style={{ color: '#003f6b' }}> <span className="text-success me-2">{proposalsList?.length}</span>Proposals Received</p>
                                         </Link>
-                                        <Button className="border-0 fs--1  text-uppercase me-2" style={{ color: '#fff', background: '#003f6b' }} as={Link} to="/EditPostProject">
+                                        <Button className="border-0  Home-btns-1   me-2" style={{ color: '#fff', background: '#003f6b' }} as={Link} to="/EditPostProject">
                                             Edit
                                         </Button>
-                                        <Button onClick={() => sendProposal()} className="border-0   fs--1 text-uppercase" style={{ color: '#fff', background: '#003f6b' }}>
+                                        <Button onClick={() => sendProposal()} className="border-0 Home-btns-1    " style={{ color: '#fff', background: '#003f6b' }}>
                                             Send Proposal
                                         </Button>
                                     </div>
@@ -333,7 +338,7 @@ function JobDetails() {
 
                                         <p
                                             style={{ fontSize: '12px' }}
-                                            className="fw-semibold mt-2 text-center text-uppercase">
+                                            className="fw-semibold mt-2 text-center ">
                                             Project ID : : 1484KHON
                                         </p>
                                         <div className="d-flex justify-content-center">
@@ -458,8 +463,8 @@ function JobDetails() {
                             {/* Report This Project */}
                             {user?.role == "Freelancer" &&
                                 <Card className="mt-3 mb-3">
-                                    <Card.Header as="h5" className="text-uppercase bg-light" >
-                                        Report this Project
+                                    <Card.Header className=" bg-light" >
+                                        <h2>Report this Project</h2>
                                     </Card.Header>
                                     <Card.Body>
                                         <Form>
@@ -476,7 +481,7 @@ function JobDetails() {
                                                     rows={5} />
                                             </Form.Group>
                                             <div className="d-flex justify-content-center">
-                                                <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b', fontSize: '14px' }} className="border-0 w-100 text-uppercase">
+                                                <Button as={Link} to="/freelancer/true" style={{ background: '#003f6b' }} className="border-0 Home-btns-1 w-100 ">
                                                     Submit
                                                 </Button>
                                             </div>
@@ -502,7 +507,7 @@ function JobDetails() {
             >
                 <Modal.Header>
                     <Modal.Title id="example-custom-modal-styling-title">
-                        <h6 className="text-uppercase">
+                        <h6 className="">
                             Please Type Your Message
                         </h6>
                     </Modal.Title>
@@ -523,7 +528,7 @@ function JobDetails() {
                         </Form.Check>
                     </Form.Group>
                     <div className="d-flex justify-content-end mb-3">
-                        <Button onClick={handleClose} style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                        <Button onClick={handleClose} style={{ background: '#003f6b' }} className=" border-0">
                             Send
                         </Button>
                     </div>

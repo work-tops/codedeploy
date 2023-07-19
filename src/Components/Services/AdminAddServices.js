@@ -621,7 +621,7 @@ const FrontendAddService = () => {
     return (
         <>
             <Row>
-                <Col lg={12} className='mb-5'>
+                <Col lg={12} className="mb-5">
                     <AdminHeader />
                 </Col>
                 <Col lg={12} className='container mt-4'>

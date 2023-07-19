@@ -17,9 +17,9 @@ function Notifications() {
                 <div className="card-header bg-light">
                     <div className="row flex-between-center">
                         <div className="col-sm-auto">
-                            <h5 className="mb-1 mb-md-0">Your Notifications</h5>
+                            <h1 className="mb-1 mb-md-0">Your Notifications</h1>
                         </div>
-                        <div className="col-sm-auto fs--1">
+                        <div className="col-sm-auto">
                             <a className="font-sans-serif ms-2 ms-sm-3" href="#!">Mark all as read</a>
                         </div>
                     </div>
@@ -33,7 +33,7 @@ function Notifications() {
                                 </div>
                             </div>
                             <div className="notification-body">
-                                <p className="mb-1">Announcing the winners of the <span className="fw-semibold">The only book awards</span> decided by you, the readers. Check out the champions and runners-up in all 21 categories now!</p>
+                                <p className="mb-1">Announcing the winners of the <span className="">The only book awards</span> decided by you, the readers. Check out the champions and runners-up in all 21 categories now!</p>
                                 <span className="notification-time">Just Now</span>
                             </div>
                         </a>
@@ -46,7 +46,7 @@ function Notifications() {
                                 </div>
                             </div>
                             <div className="notification-body">
-                                <p className="mb-1">Last chance to vote in <span className="fw-semibold">The 2018 Falcon Choice Awards</span>! See what made it to the Final Round and help your favorites take home the win. Voting closes on November 26</p>
+                                <p className="mb-1">Last chance to vote in <span className="">The 2018 Falcon Choice Awards</span>! See what made it to the Final Round and help your favorites take home the win. Voting closes on November 26</p>
                                 <span className="notification-time">15m</span>
                             </div>
                         </a>
@@ -59,7 +59,7 @@ function Notifications() {
                                 </div>
                             </div>
                             <div className="notification-body">
-                                <p className="mb-1"><span className="fw-semibold">Jennifer Kent</span> declared you as a <span className="fw-semibold">President</span> of Computer Science and Engineering Society</p>
+                                <p className="mb-1"><span className="">Jennifer Kent</span> declared you as a <span className="">President</span> of Computer Science and Engineering Society</p>
                                 <span className="notification-time">1h</span>
                             </div>
                         </a>

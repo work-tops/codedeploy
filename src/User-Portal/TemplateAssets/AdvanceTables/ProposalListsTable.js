@@ -71,12 +71,12 @@ const ProposalListsTable = () => {
     ];
     const data = [
         {
-            name: 'IRIE ARTS INC',
+            name: 'Peter Leverkus',
             image:
                 <Link to="/trader-profile-public">
                     <img src={profile} className="rounded-circle" height={30} width={30} />
                 </Link>,
-            date: '01 May 2023',
+            date: '01 MAY 2023',
             skills: 'Fabricator , Kitchen Designer',
             experience: '4 Years',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
@@ -91,11 +91,11 @@ const ProposalListsTable = () => {
             </CardDropdown>
         },
         {
-            name: 'IRIE ARTS INC',
+            name: 'Peter Leverkus',
             image: <Link to="/trader-profile-public">
                 <img src={profile} className="rounded-circle" height={30} width={30} />
             </Link>,
-            date: '01 May 2023',
+            date: '01 MAY 2023',
             skills: 'Fabricator , Kitchen Designer',
             experience: '4 Years',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
@@ -110,11 +110,11 @@ const ProposalListsTable = () => {
             </CardDropdown>
         },
         {
-            name: 'IRIE ARTS INC',
+            name: 'Peter Leverkus',
             image: <Link to="/trader-profile-public">
                 <img src={profile} className="rounded-circle" height={30} width={30} />
             </Link>,
-            date: '01 May 2023',
+            date: '01 MAY 2023',
             skills: 'Fabricator , Kitchen Designer',
             experience: '4 Years',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
@@ -129,11 +129,11 @@ const ProposalListsTable = () => {
             </CardDropdown>
         },
         {
-            name: 'IRIE ARTS INC',
+            name: 'Peter Leverkus',
             image: <Link to="/trader-profile-public">
                 <img src={profile} className="rounded-circle" height={30} width={30} />
             </Link>,
-            date: '01 May 2023',
+            date: '01 MAY 2023',
             skills: 'Fabricator , Kitchen Designer',
             experience: '4 Years',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
@@ -201,13 +201,13 @@ const ProposalListsTable = () => {
                                                         <Card.Body>
                                                             <h6 style={{ fontSize: '14px' }} className="text-700 fw-semibold">01 Apr 2023</h6>
                                                             <h5 className="mb-3">New Proposal</h5>
-                                                            <p className="text-justify" style={{ fontSize: '14px' }}>
+                                                            <p className="" style={{ fontSize: '14px' }}>
                                                                 How are you? Sir / Madam Please send admin access details to website, Bitrix and email host.Also Price £200.00
                                                                 your Whatsapp numberWill start nowPromise SIX star service.Please see 210 five star reviews of
                                                                 many gigs that we have done in our profile Deposit £200
                                                                 Many thanks David Soanes, Worthing BN11 4DT England
                                                             </p>
-                                                            <p className="text-justify" style={{ fontSize: '14px' }} >
+                                                            <p className="" style={{ fontSize: '14px' }} >
                                                                 Please see my cv at this link <a href="#">https://surl.link/q0Lck3 https://surl.link/accessRestricted.html?</a> Decline
                                                                 u=34452 password is abcdFor screen sharing:------------------Windows: Please search and open Quick
                                                                 Assist App and | will send you the codeApple Mac: | will send you a Zoom link. Please send your
@@ -446,7 +446,7 @@ const ProposalListsTable = () => {
                 rowClassName="align-middle white-space-nowrap"
                 tableProps={{
                     striped: true,
-                    className: 'fs--1 mb-0 overflow-hidden'
+                    className: 'mb-0 overflow-hidden'
                 }}
             />
             <div className="mt-3">

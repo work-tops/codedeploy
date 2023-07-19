@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AdvanceTableWrapper from "../common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../common/advance-table/AdvanceTableFooter";
-import { Row, Card, Col, Form, Modal } from "react-bootstrap";
+import { Row, Card, Col, Form, Modal, Button } from "react-bootstrap";
 import { Icon } from "@iconify/react";
 import { getAllData } from "../../../Services/ProxyService";
 import { Link } from "react-router-dom";
@@ -54,14 +54,10 @@ const AdvancedTable = () => {
 
     const data = proposals.map(x => ({
         proposalID: x?._id,
-        projectTitle: x?.job?.project_title,
+        projectTitle: <p className="text-uppercase">{x?.job?.project_title}</p>,
         price: x?.amount,
         status: <span className={`badge ${x.is_approved ? 'bg-success' : 'bg-danger'}`}>{x.is_approved == true ? `Accepted` : `Pending`}</span>,
-        action: <p className="mt-2" role="button">
-            <Link to={'/proposal-details'}>
-                View
-            </Link>
-        </p>
+        action: <Button className="Home-btns-1" style={{ background: '#003f6b',border:'0px',fontSize:'14px' }} as={Link} to={'/proposal-details'} size="sm">View</Button>
         // action: <Link to={'/proposal-details'}><Icon className="ms-3" icon="ic:outline-remove-red-eye" color="#003f6b" width="20" height="20" /></Link>
     }));
 
@@ -82,10 +78,10 @@ const AdvancedTable = () => {
                 <Card.Header className=" text-uppercase bg-light">
                     <div className="row">
                         <div className="col-lg-10 col-sm-12 col-md-8">
-                            <h5>My Proposals</h5>
+                            <h1>My Proposals</h1>
                         </div>
                         <div className="col-lg-2 col-sm-12 col-md-4">
-                            <Form.Label>Sort By</Form.Label>
+                            <Form.Label className="mt-1">Sort By</Form.Label>
                             <Form.Select>
                                 <option>All</option>
                                 <option>Accepeted</option>
@@ -112,7 +108,7 @@ const AdvancedTable = () => {
                             rowClassName="align-middle white-space-nowrap"
                             tableProps={{
                                 striped: true,
-                                className: 'fs--1 mb-0 overflow-hidden'
+                                className: 'mb-0 overflow-hidden'
                             }}
                         />
                         <div className="mt-3">

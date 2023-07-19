@@ -24,23 +24,27 @@ const CardDropdown = ({
       <Dropdown.Toggle
         variant="link"
         size="sm"
+
         data-boundary="viewport"
-        // className={classNames('text-600', {
-        //   [btnRevealClass]: btnRevealClass,
-        //   'btn-reveal': !btnRevealClass
-        // })}
+      // className={classNames('text-600', {
+      //   [btnRevealClass]: btnRevealClass,
+      //   'btn-reveal': !btnRevealClass
+      // })}
       >
         <FontAwesomeIcon icon={icon} className="fs--2" />
       </Dropdown.Toggle>
-      <Dropdown.Menu className="border py-0">
+      <Dropdown.Menu
+        style={{ zIndex: '9999' }}
+        className="border py-0">
         {children}
         {!children && (
-          <div className="py-2">
-            <Dropdown.Item>View</Dropdown.Item>
-            <Dropdown.Item>Export</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item className="text-danger">Remove</Dropdown.Item>
-          </div>
+          <></>
+          // <div className="py-2">
+          //   <Dropdown.Item>View</Dropdown.Item>
+          //   <Dropdown.Item>Export</Dropdown.Item>
+          //   <Dropdown.Divider />
+          //   <Dropdown.Item className="text-danger">Remove</Dropdown.Item>
+          // </div>
         )}
       </Dropdown.Menu>
     </Dropdown>

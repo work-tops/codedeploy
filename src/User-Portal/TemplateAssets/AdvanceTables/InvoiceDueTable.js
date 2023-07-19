@@ -133,10 +133,10 @@ const InvoiceTableCard = () => {
     return (
         <>
             <Card className="mb-3 mt-4 btn-reveal-trigger h-100">
-                <Card.Header className="d-flex flex-between-center bg-light ">
-                    <h5 className="text-capitalize">
+                <Card.Header className="d-flex flex-between-center bg-light">
+                    <h2 className="text-capitalize">
                         Invoice
-                    </h5>
+                    </h2>
 
                 </Card.Header>
                 <Card.Body>
@@ -156,7 +156,7 @@ const InvoiceTableCard = () => {
                             rowClassName="align-middle white-space-nowrap"
                             tableProps={{
                                 striped: true,
-                                className: 'fs--1 mb-0 overflow-hidden'
+                                className: 'mb-0 overflow-hidden'
                             }}
                         />
                         <div className="mt-3">
@@ -214,10 +214,10 @@ const InvoiceTableCard = () => {
                                 </div>
                             </div>
                             <div className="card-body">
-                                <div className="row align-items-center text-center mb-3">
-                                    <div className="col-sm-6 text-sm-start">
-                                        <h6 className="">From,</h6>
-                                        <h6>Jagan</h6>
+                                <div className="row mb-3">
+                                    <div className="col-sm-6 text-start">
+                                        <h6 className="text-900">From,</h6>
+                                        <h6 className="text-900">Jagan</h6>
                                         <p className="fs--1 w-50 mb-0">156 University Ave, TorontoOn, Canada, M5H 2H7</p>
                                     </div>
 
@@ -320,7 +320,7 @@ const InvoiceTableCard = () => {
                                     </table>
                                 </div>
                                 <div className="row g-3 justify-content-between">
-                                    <div className="order-2 order-lg-0 col-md-6">
+                                    <div className="order-2 order-lg-0 col-xl-6">
                                         <h6>Customer Notes</h6>
                                         <p className="text-justify">
                                             ......
@@ -330,7 +330,7 @@ const InvoiceTableCard = () => {
                                             Read our <Link to="/termsofuse" className="text-capitalize me-1">Terms & Conditions</Link>to know more
                                         </p>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <table className="table table-sm table-borderless fs--1 text-end">
                                             <tbody><tr>
                                                 <th className="text-900">Subtotal:</th>

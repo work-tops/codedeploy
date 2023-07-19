@@ -527,10 +527,10 @@ const AddTrader = () => {
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 mb-3 me-3">
                         <Card.Header className="bg-light">
-                            <h5>
+                            <h2>
                                 Add Trader
-                            </h5>
-                            <Breadcrumb className="fs--1 mt-2">
+                            </h2>
+                            <Breadcrumb className="mt-2">
                                 <Breadcrumb.Item>
                                     All Traders
                                 </Breadcrumb.Item>
@@ -538,7 +538,7 @@ const AddTrader = () => {
                                     Add Traders
                                 </Breadcrumb.Item>
                             </Breadcrumb>
-                            <p className="text-dark fs--1 mt-2">Here Add Traders to your store</p>
+                            <p className="text-dark mt-2">Here Add Traders to your store</p>
                         </Card.Header>
                         <Card.Body>
                             <Container>

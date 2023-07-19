@@ -8,6 +8,7 @@ import logo from '../../Components/Projectimages/My Project Final logo-01.png'
 import file from '../../Components/Projectimages/BathroomFitting.jpg'
 import { useDropzone } from 'react-dropzone';
 import { Link } from "react-router-dom";
+
 const InvoiceFreelancerDueTable = () => {
 
     const [show, setShow] = useState(false);
@@ -234,9 +235,9 @@ const InvoiceFreelancerDueTable = () => {
         <>
             <Card className="mb-3 mt-4 btn-reveal-trigger h-100">
                 <Card.Header className="d-flex flex-between-center bg-light ">
-                    <h5 className="text-capitalize">
-                        Invoice
-                    </h5>
+                    <h1 className="text-capitalize">
+                        Invoices
+                    </h1>
 
                 </Card.Header>
                 <Card.Body>
@@ -256,7 +257,7 @@ const InvoiceFreelancerDueTable = () => {
                             rowClassName="align-middle white-space-nowrap"
                             tableProps={{
                                 striped: true,
-                                className: 'fs--1 mb-0 overflow-hidden'
+                                className: 'mb-0 overflow-hidden'
                             }}
                         />
                         <div className="mt-3">
@@ -282,11 +283,10 @@ const InvoiceFreelancerDueTable = () => {
                 dialogClassName="modal-lg modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
-                <Modal.Header closeButton className="">
-                    <h5>
+                <Modal.Header closeButton>
+                    <h1 className="mb-0">
                         Invoice Details:
-                    </h5>
-
+                    </h1>
                 </Modal.Header>
                 <Modal.Body>
                     {/* <div className="card mb-3"> */}
@@ -294,7 +294,7 @@ const InvoiceFreelancerDueTable = () => {
                         <div className="card-body">
                             <div className="row justify-content-between align-items-center">
                                 <div className="col-md">
-                                    <h5 className="mb-2 mb-md-0"># MAI/INV/2737</h5>
+                                    <h4 className="mb-2 mb-md-0"># MAI/INV/2737</h4>
                                 </div>
                                 <div className="col-auto">
                                     <button className="btn btn-falcon-success btn-sm mb-2 me-1 mb-sm-0" type="button">
@@ -316,12 +316,12 @@ const InvoiceFreelancerDueTable = () => {
                             </div>
                         </div>
                         <div className="card-body">
-                            <div className="row align-items-center text-center mb-3">
+                            <div className="row align-items-center mb-3">
                                 <div className="col-sm-6 text-sm-start">
 
-                                    <h6 className="">From,</h6>
-                                    <h6>Jagan</h6>
-                                    <p className="fs--1 mb-0">156 University Ave, Toronto<br></br>On, Canada, M5H 2H7</p>
+                                    <h3 className="">From,</h3>
+                                    <h4>Jagan</h4>
+                                    <p className="mb-0 w-50">156 University Ave, TorontoOn, Canada, M5H 2H7</p>
                                 </div>
 
                                 <div className="col-12">
@@ -330,9 +330,9 @@ const InvoiceFreelancerDueTable = () => {
                             </div>
                             <div className="row align-items-center">
                                 <div className="col">
-                                    <h6 className="text-500">Invoice to</h6>
-                                    <h5>Peter Leverkus</h5>
-                                    <p className="fs--1">1954 Bloor Street West<br></br>Torronto ON, M6P 3K9<br></br>Canada</p>
+                                    <h3 className="">Invoice to,</h3>
+                                    <h4>Peter Leverkus</h4>
+                                    <p className=" w-50">1954 Bloor Street WestTorronto ON, M6P 3K9Canada</p>
                                 </div>
                                 <div className="col-sm-auto ms-auto">
                                     <div className="table-responsive">
@@ -413,12 +413,12 @@ const InvoiceFreelancerDueTable = () => {
                                 </table>
                             </div>
                             <div className="row g-3 justify-content-between">
-                                <div className="order-2 order-lg-0 col-md-6">
-                                    <h6>Customer Notes</h6>
+                                <div className="order-2 order-md-0 order-lg-0 col-md-6">
+                                    <h4>Customer Notes</h4>
                                     <p className="text-justify">
                                         .....
                                     </p>
-                                    <h6>Terms & Conditions</h6>
+                                    <h4>Terms & Conditions</h4>
                                     Read our <Link to="/termsofuse" className="text-capitalize me-1">Terms & Conditions</Link>to know more
                                 </div>
                                 <div className="col-md-6">
@@ -444,7 +444,6 @@ const InvoiceFreelancerDueTable = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     {/* </div> */}
                 </Modal.Body>
@@ -468,7 +467,6 @@ const InvoiceFreelancerDueTable = () => {
                     <Button variant="danger" onClick={handleShow1}>
                         Yes
                     </Button>
-
                 </Modal.Footer>
             </Modal>
             {/*  */}

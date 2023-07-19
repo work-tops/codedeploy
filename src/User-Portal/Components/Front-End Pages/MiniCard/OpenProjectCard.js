@@ -3,8 +3,6 @@ import { Card, Button, Col, Form, Row, Container, InputGroup, Dropdown } from "r
 import { useHistory, Link } from "react-router-dom";
 import { getAllData } from "../../../../Services/ProxyService";
 import ProjectOwnerLandingPage from '../ProjectOwnerLandingPage'
-import { Icon } from "@iconify/react";
-import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import Footer from "../../Footer/Footer";
 
 
@@ -44,18 +42,21 @@ function OpenProjectCard() {
                 </Col>
                 {/* <Col lg={12}> */}
                 <Container>
-                    <div className="d-flex justify-content-between">
-                        <h4 className="mb-3 text-uppercase">Projects</h4>
-                        <div>
-                            <Form.Select value={selectedOption} onChange={handleChange}>
-                                <option>All</option>
-                                <option>Open</option>
-
-                                <option value="In Progress">In Progress</option>
-                                <option>Expired</option>
-                            </Form.Select>
-                        </div>
-                    </div>
+                    <Card className="mb-3">
+                        <Card.Header>
+                            <div className="d-flex justify-content-between">
+                                <h1 className="text-uppercase">Projects</h1>
+                                <div className="">
+                                    <Form.Select className="cursor-pointer mt-lg-2 mt-md-0" value={selectedOption} onChange={handleChange}>
+                                        <option>All</option>
+                                        <option>Open</option>
+                                        <option value="In Progress">In Progress</option>
+                                        <option>Expired</option>
+                                    </Form.Select>
+                                </div>
+                            </div>
+                        </Card.Header>
+                    </Card>
                     <Card className="mb-3 d-none">
                         <Card.Body>
                             <div className="mt-4 d-flex justify-content-center">
@@ -72,12 +73,12 @@ function OpenProjectCard() {
                     {jobs.map((data, key) => (
                         <Card className="mb-3" key={`jobs_${key}`}>
                             <Card.Header className="bg-light">
-                                <h5 className="text-uppercase">{data?.project_title}</h5>
+                                <h2 className="text-uppercase">{data?.project_title}</h2>
                             </Card.Header>
                             <Card.Body>
                                 <Row>
                                     <Col md={8} lg={8}>
-                                        <p style={{ fontSize: '14px' }} className="fifty-chars text-justify">{data?.project_description}</p>
+                                        <p className="fifty-chars text-justify">{data?.project_description}</p>
                                         {/* <div className="d-flex justify-content-center mb-3"> */}
                                         {/* </div> */}
                                         <p style={{ color: '#003f6b', fontSize: '16px' }} className=" fw-bold">Client Budget<span className="ms-2 text-success text-center fw-bold">£ 200</span></p>

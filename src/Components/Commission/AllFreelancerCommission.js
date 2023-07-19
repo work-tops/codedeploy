@@ -180,7 +180,7 @@ import React from "react";
 import AdvanceTableWrapper from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableWrapper";
 import AdvanceTable from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTable";
 import AdvanceTableFooter from "../../User-Portal/TemplateAssets/common/advance-table/AdvanceTableFooter";
-import { Row, Button, Col, Form, Card } from "react-bootstrap";
+import { Row, Button, Col, Form, Card,InputGroup } from "react-bootstrap";
 // import IconButton from "components/common/IconButton";
 // import AdvanceTableSearchBox from "components/common/advance-table/AdvanceTableSearchBox";
 import product_image from "../../Images/product_image.png"
@@ -296,14 +296,14 @@ const AllFreelancerCommission = () => {
         return (
             <Row className="flex-between-center mb-3">
                 <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
-                    <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
+                    <h4 className="fs-0 mb-0 mt-2 text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
-                                'You have selected ' + Object.keys(selectedRowIds).length + ' Freelancer Commissions'
+                                'You have selected ' + Object.keys(selectedRowIds).length + ' Trader Commissions'
                                 :
                                 ''
                         }
-                    </h5>
+                    </h4>
                 </Col>
                 <Row className="flex-end-center mt-2 mb-3">
                     <Col xs="auto">
@@ -330,7 +330,7 @@ const AllFreelancerCommission = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                             <Button variant="falcon-default"
+                            <Button variant="falcon-default"
                                 size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
                             </Button>
                         </div>
@@ -349,12 +349,22 @@ const AllFreelancerCommission = () => {
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
                         <Card.Header className="bg-light">
-                            <h5>All Trader Commission<span className="ms-1 fs--1 badge bg-secondary">#100</span></h5>
-                            <p className="fs--1 mt-2">Here You Can See All Trader Commission</p>
+                            <h2>All Trader Commission<span className="ms-1 fs--1 badge bg-secondary">#100</span></h2>
+                            <p className="mt-2">Here You Can See All Trader Commission</p>
                         </Card.Header>
                         <Card.Body>
-                            <div className="d-flex justify-content-end">
-                                <Button as={Link} to="/Tradercommission" variant="success">Add Commission to Trader</Button>
+                            <div className="row g-3">
+                                <div className="col-md-6 d-flex justify-content-start">
+                                    <Form.Group>
+                                        <InputGroup>
+                                            <Form.Control size="sm" placeholder="Search.." type="search" />
+                                            <Button variant="secondary" size="sm"><Icon icon="mdi:search" color="white" width="20" height="20" /></Button>
+                                        </InputGroup>
+                                    </Form.Group>
+                                </div>
+                                <div className="col-md-6 d-flex  justify-content-end">
+                                    <Button as={Link} to="/Tradercommission" variant="success">Add Commission to Trader</Button>
+                                </div>
                             </div>
                             <AdvanceTableWrapper
                                 columns={columns}
@@ -372,7 +382,7 @@ const AllFreelancerCommission = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        className: 'fs--1 mb-0 overflow-hidden'
+                                        className: 'mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">

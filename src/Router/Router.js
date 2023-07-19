@@ -59,12 +59,12 @@ const Routers = () => {
             <Route path="/AllEnquires"><AllEnquires /></Route>
             <Route path="/ConversationDetails"><ConversationDetails /></Route>
             <Route path="/ShippingRate"><ShippingRate /></Route>
-            {/* <Route path="/allservices"><Serviceslist /></Route> */}
             <Route path="/ailogin"><AiLoginPage /></Route>
             <Route path="/allstaff"><AllStaff /></Route>
             <Route path="/addstaff"><AddStaff /></Route>
             <Route path="/AllOwner"><AllOwnersTable /></Route>
             {/* Routes for AI Pages //end*/}
+            {/* <Route path="/allservices"><Serviceslist /></Route> */}
             {/* <Route path='/advallfreelancer'><AdvAllFreelancer/></Route> */}
         </Switch>
 

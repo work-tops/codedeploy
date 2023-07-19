@@ -43,20 +43,28 @@ function WishListSellerCard() {
                 </div>
                 <Container>
                     <Col lg={12}>
-                        <h5 className="mt-4">Your Wishlists</h5>
+                        <Card className="mt-4">
+                            <Card.Header>
+                                <h1>Your Wishlists</h1>
+                            </Card.Header>
+                        </Card>
                         {/* Followers */}
                         <div class="card mb-3 mt-3">
                             <div className="card-header bg-light">
-                                <div className="row align-items-center">
-                                    <div className="col-3">
-                                        <h5 className="mb-0" id="followers"><input className="form-check-input me-2" type="checkbox" />Followers <span className="d-none d-sm-inline-block">(12)</span></h5>
+                                <div className="d-flex justify-content-between flex-row flex-wrap align-items-center">
+                                    <div className="mb-2 mb-md-0 mb-lg-0">
+                                        <h2 class="mt-3 mt-sm-0 fs-0 fs-lg-1">
+                                            <input className="form-check-input cursor-pointer me-2" type="checkbox" />
+                                            Followers <span className="">(12)</span>
+                                        </h2>
                                     </div>
 
-                                    <div className="col-6">
+                                    <div className="">
                                         <form>
                                             <div className="row g-0">
                                                 <div className="col"><input className="form-control form-control-sm" type="text" placeholder="Search..." /></div>
-                                                <div className="col d-md-block d-none"><select className="form-select form-select-sm ms-2" aria-label=".form-select-sm example">
+                                                <div className="col d-md-block d-none">
+                                                    <select className="form-select cursor-pointer form-select-sm ms-2" aria-label=".form-select-sm example">
                                                     <option selected="selected">All followers</option>
                                                     <option>Fabricator</option>
                                                     <option>Plumber</option>
@@ -68,7 +76,7 @@ function WishListSellerCard() {
                                             </div>
                                         </form>
                                     </div>
-                                    <div className="col-3 d-flex justify-content-lg-end">
+                                    <div className="d-flex justify-content-lg-end">
                                         <Icon icon="ph:note-pencil" className="cursor-pointer" width="24" height="24" />
                                         <Icon onClick={() => setShowModal1(true)} className="hover-danger" icon="solar:trash-bin-minimalistic-2-bold" width="24" height="24" role="button" />
                                     </div>
@@ -276,7 +284,7 @@ function WishListSellerCard() {
 
                         {/*  */}
                         <Modal show={showModal1} onHide={handleClose1}>
-                            <Modal.Header >
+                            <Modal.Header closeButton>
                                 <Modal.Title>Warning</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
@@ -286,10 +294,10 @@ function WishListSellerCard() {
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose1}>
-                                    Cancel
+                                    No
                                 </Button>
                                 <Button variant="danger" onClick={handleClose1}>
-                                    Remove
+                                    Yes
                                 </Button>
 
                             </Modal.Footer>
@@ -297,7 +305,7 @@ function WishListSellerCard() {
                         {/*  */}
                         {/* Modal-4 */}
                         <Modal show={showModal4} onHide={handleClose4}>
-                            <Modal.Header >
+                            <Modal.Header closeButton>
                                 <Modal.Title>Warning</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
@@ -307,10 +315,10 @@ function WishListSellerCard() {
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose4}>
-                                    Cancel
+                                    No
                                 </Button>
                                 <Button variant="danger" onClick={handleClose4}>
-                                    Remove
+                                    Yes
                                 </Button>
 
                             </Modal.Footer>

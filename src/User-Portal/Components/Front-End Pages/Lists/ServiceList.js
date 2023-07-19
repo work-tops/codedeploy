@@ -41,14 +41,14 @@ import {
     ListGroup, ListGroupItem, Container
 } from 'react-bootstrap';
 import NavbarStandard from '../../Header/AdvanceHeader/NavbarStandard'
-import Flex from '../../../TemplateAssets/common/Flex';
-import image from '../../../Components/Images/Granite.png'
-import { Icon } from '@iconify/react';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 
 function ServiceList(layout) {
+
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -81,20 +81,14 @@ function ServiceList(layout) {
                     <Row>
                         <Col lg={12} className="mt-5">
                             <Card className="">
-                                <Card.Header as="h4" className='bg-light text-justify  '>Service Lists</Card.Header>
-
+                                <Card.Header className='bg-light'>
+                                    <h1>
+                                        Service Lists
+                                    </h1>
+                                </Card.Header>
                                 <Card.Body className="pt-0 pt-md-3">
                                     <Row className="g-3 mt-1 align-items-center">
-                                        <Col xs="auto" className="d-none">
-                                            <Button
-                                                className="position-relative p-0"
-                                                size="sm"
-                                                variant="link"
-                                            >
-                                                <FontAwesomeIcon icon="filter" className="fs-0 text-700" />
-                                            </Button>
-                                        </Col>
-                                        <Col md={6} xl={6} lg={6} xs="auto">
+                                        <Col md={12} lg={6} >
                                             <Form className="position-relative">
                                                 <Form.Control
                                                     type="search"
@@ -125,7 +119,7 @@ function ServiceList(layout) {
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={worktops} alt="Card image cap" />
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -133,7 +127,7 @@ function ServiceList(layout) {
                                                     >
                                                         worktops installation
                                                     </Link>
-                                                </h5>
+                                                </h2>
                                             </Card.Title>
                                         </Card.Body>
                                     </Card>
@@ -143,7 +137,7 @@ function ServiceList(layout) {
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={bathroom_fitting} alt="Card image cap" />
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -151,7 +145,7 @@ function ServiceList(layout) {
                                                     >
                                                         Bathroom Fitting
                                                     </Link>
-                                                </h5>
+                                                </h2>
                                             </Card.Title>
                                         </Card.Body>
                                     </Card>
@@ -161,7 +155,7 @@ function ServiceList(layout) {
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={carpenterwork} alt="Card image cap" />
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -169,7 +163,7 @@ function ServiceList(layout) {
                                                     >
                                                         Carpentry & Joinery
                                                     </Link>
-                                                </h5>
+                                                </h2>
                                             </Card.Title>
                                         </Card.Body>
                                     </Card>
@@ -179,7 +173,7 @@ function ServiceList(layout) {
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={bricklaying} alt="Card image cap" />
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -187,7 +181,7 @@ function ServiceList(layout) {
                                                     >
                                                         bricklaying
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -196,7 +190,7 @@ function ServiceList(layout) {
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={carpetFitting} alt="Card image cap" />
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -204,7 +198,7 @@ function ServiceList(layout) {
                                                     >
                                                         Carpet Fitting
                                                     </Link>
-                                                </h5>
+                                                </h2>
                                             </Card.Title>
                                         </Card.Body>
                                     </Card>
@@ -214,7 +208,7 @@ function ServiceList(layout) {
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Chimneys} alt="Card image cap" />
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -222,7 +216,7 @@ function ServiceList(layout) {
                                                     >
                                                         Chimneys & fireplaces
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -231,7 +225,7 @@ function ServiceList(layout) {
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Conservatories} alt="Card image cap" />
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -239,7 +233,7 @@ function ServiceList(layout) {
                                                     >
                                                         Conservatories
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -248,7 +242,7 @@ function ServiceList(layout) {
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Conversions} alt="Card image cap" />
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -256,7 +250,7 @@ function ServiceList(layout) {
                                                     >
                                                         Conversions
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -265,7 +259,7 @@ function ServiceList(layout) {
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Damp_proofing} alt="Card image cap" />
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -273,7 +267,7 @@ function ServiceList(layout) {
                                                     >
                                                         Damp proofing
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -282,7 +276,7 @@ function ServiceList(layout) {
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Demolition_cleaning} alt="Card image cap" />
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -290,7 +284,7 @@ function ServiceList(layout) {
                                                     >
                                                         Demolition & Clearing
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -299,7 +293,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Driveways} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -307,7 +301,7 @@ function ServiceList(layout) {
                                                     >
                                                         Drive Ways
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -316,7 +310,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Electrical} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -324,7 +318,7 @@ function ServiceList(layout) {
                                                     >
                                                         Electrical
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -333,7 +327,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Extensions} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -341,7 +335,7 @@ function ServiceList(layout) {
                                                     >
                                                         Extensions
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -350,7 +344,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Facias} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -358,7 +352,7 @@ function ServiceList(layout) {
                                                     >
                                                         Fascias,soffits & guttering
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -367,7 +361,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Fencing} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -375,7 +369,7 @@ function ServiceList(layout) {
                                                     >
                                                         Fencing
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -384,7 +378,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Flooring} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -392,7 +386,7 @@ function ServiceList(layout) {
                                                     >
                                                         Flooring
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -401,7 +395,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={GroundWork} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -409,7 +403,7 @@ function ServiceList(layout) {
                                                     >
                                                         Groundwork & Foundations
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -418,7 +412,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Handyman} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -426,7 +420,7 @@ function ServiceList(layout) {
                                                     >
                                                         Handyman
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -435,7 +429,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Locksmiths} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -443,7 +437,7 @@ function ServiceList(layout) {
                                                     >
                                                         Lock Smiths
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -452,7 +446,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Painting} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -460,7 +454,7 @@ function ServiceList(layout) {
                                                     >
                                                         Painting & Decorating
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -469,7 +463,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Plastering} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -477,7 +471,7 @@ function ServiceList(layout) {
                                                     >
                                                         Plastering
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -486,7 +480,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Plumbing} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -494,7 +488,7 @@ function ServiceList(layout) {
                                                     >
                                                         Plumbing
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -503,7 +497,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Restoration} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -511,7 +505,7 @@ function ServiceList(layout) {
                                                     >
                                                         Restoration
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -521,7 +515,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Roofing} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -529,7 +523,7 @@ function ServiceList(layout) {
                                                     >
                                                         Roofing
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -538,7 +532,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={LandScaping} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -546,7 +540,7 @@ function ServiceList(layout) {
                                                     >
                                                         Landscape Gardening
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -555,7 +549,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Stonemasonary} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -563,7 +557,7 @@ function ServiceList(layout) {
                                                     >
                                                         Stonemasonry
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -572,7 +566,7 @@ function ServiceList(layout) {
                                         <Card.Img loading="lazy" variant='top' className="img-fluid cursor-pointer" onClick={handleShow} style={{ aspectRatio: '1.1', objectFit: 'cover' }} src={Tilling} alt="Card image cap" />
                                         <Card.Body style={{ maxWidth: '100%', height: 'auto%' }} className="card-body p-0 d-flex flex-column justify-content-between">
                                             <Card.Title className="m-3">
-                                                <h5 onClick={handleShow} className="fs-0 mb-2">
+                                                <h2 onClick={handleShow} className="fs-0 mb-2">
                                                     <Link
                                                         to="#"
                                                         style={{ fontSize: '1rem' }}
@@ -580,34 +574,34 @@ function ServiceList(layout) {
                                                     >
                                                         Tilling
                                                     </Link>
-                                                </h5></Card.Title>
+                                                </h2></Card.Title>
                                         </Card.Body>
                                     </Card>
                                 </Col>
 
                             </Row>
-                                    {/* pagination */}
-                                    <div className="card mb-3">
-                                        <div className="card-body">
-                                            <div className="row g-3 flex-center justify-content-md-between">
-                                                <div className="col-auto">
-                                                    <form className="row gx-2">
-                                                        <div className="col-auto"><small>Show:</small></div>
-                                                        <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Show courses">
-                                                            <option selected="selected" value="9">9</option>
-                                                            <option value="20">20</option>
-                                                            <option value="50">50</option>
-                                                        </select></div>
-                                                    </form>
-                                                </div>
-                                                <div className="col-auto"> <button className="btn btn-falcon-default btn-sm me-2" type="button" disabled="disabled" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Prev" data-bs-original-title="Prev">
-                                                    <span className="fas fa-chevron-left"></span></button><a className="btn btn-sm btn-falcon-default text-primary me-2" href="#!">1</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">2</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">3</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">
-                                                        <span className="fas fa-ellipsis-h"></span></a><a className="btn btn-sm btn-falcon-default me-2" href="#!">303</a><button className="btn btn-falcon-default btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Next" data-bs-original-title="Next">
-                                                        <span className="fas fa-chevron-right">  </span></button></div>
-                                            </div>
+                            {/* pagination */}
+                            <div className="card mb-3">
+                                <div className="card-body">
+                                    <div className="row g-3 flex-center justify-content-md-between">
+                                        <div className="col-auto">
+                                            <form className="row gx-2">
+                                                <div className="col-auto"><small>Show:</small></div>
+                                                <div className="col-auto"> <select className="form-select form-select-sm" aria-label="Show courses">
+                                                    <option selected="selected" value="9">9</option>
+                                                    <option value="20">20</option>
+                                                    <option value="50">50</option>
+                                                </select></div>
+                                            </form>
                                         </div>
+                                        <div className="col-auto"> <button className="btn btn-falcon-default btn-sm me-2" type="button" disabled="disabled" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Prev" data-bs-original-title="Prev">
+                                            <span className="fas fa-chevron-left"></span></button><a className="btn btn-sm btn-falcon-default text-primary me-2" href="#!">1</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">2</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">3</a><a className="btn btn-sm btn-falcon-default me-2" href="#!">
+                                                <span className="fas fa-ellipsis-h"></span></a><a className="btn btn-sm btn-falcon-default me-2" href="#!">303</a><button className="btn btn-falcon-default btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Next" data-bs-original-title="Next">
+                                                <span className="fas fa-chevron-right">  </span></button></div>
                                     </div>
-                                    {/* pagination */}
+                                </div>
+                            </div>
+                            {/* pagination */}
                         </Container>
                     </Row>
                 </Container>

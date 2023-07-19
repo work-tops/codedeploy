@@ -657,23 +657,22 @@ body {
   cursor: pointer;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-/* p, */
+/*------------------------------------*/
 .form-label,
 span,
 small,
 strong,
 select,
 option,
-a,
 .btn,
 button,
-label {
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-transform: capitalize;
   font-family: 'Open Sans', sans-serif;
 }
@@ -688,5 +687,104 @@ label {
   transition: all .5s !important;
 }
 
+/* --------------------------------------- */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-family: 'Open Sans';
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--falcon-headings-color)
+}
 
-/*  */
+.h1,
+h1 {
+  font-size: calc(1.37383rem + 1.48598vw)
+}
+
+@media (min-width:1200px) {
+
+  .h1,
+  h1 {
+    font-size: 2.48832rem
+  }
+}
+
+.h2,
+h2 {
+  font-size: calc(1.33236rem + .98832vw)
+}
+
+@media (min-width:1200px) {
+
+  .h2,
+  h2 {
+    font-size: 2.0736rem
+  }
+}
+
+.h3,
+h3 {
+  font-size: calc(1.2978rem + .5736vw)
+}
+
+@media (min-width:1200px) {
+
+  .h3,
+  h3 {
+    font-size: 1.728rem
+  }
+}
+
+.h4,
+h4 {
+  font-size: calc(1.269rem + .228vw)
+}
+
+@media (min-width:1200px) {
+
+  .h4,
+  h4 {
+    font-size: 1.44rem
+  }
+}
+
+.h5,
+h5 {
+  font-size: 1.2rem
+}
+
+.h6,
+h6 {
+  font-size: 16px;
+}
+
+/* --------------------------------------- */
+.form-label {
+  text-transform: uppercase;
+  font-weight: 600 !important;
+  color: #344050 !important;
+
+}
+
+/* --------------------------------------- */
+.commission a {
+  color: #fff !important;
+  /* background-color: #003f6b; */
+}
+element.style {
+  position: absolute;
+  inset: 0px 0px auto auto;
+ 
+}

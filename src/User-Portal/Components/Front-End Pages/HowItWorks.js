@@ -28,18 +28,18 @@ function HowItWorks() {
                     <div className="row justify-content-center align-items-center ">
                         <div className="col-lg-7">
                             <div className="text-center">
-                                <div class="col-md-12 col-lg-12 col-xl-12 ">
+                                <div class="col-md-12 col-lg-12 col-xl-12 mt-3">
                                     {/* <div className="d-flex flex-column "> */}
-                                    <h1 className=" mb-2 mt-3 d-block fw-bold text-dark fw-light">A KBB Certified Platform</h1>
-                                    <h2 className="  fw-bold">
+                                    <h1 className="fw-bold">A KBB Certified Platform</h1>
+                                    <h2 className="fw-semi-bold">
                                         Chosen By
                                         Professionals Who Love Doing What They Do
                                     </h2>
-                                    <p className="mt-3 text-center fw-semibold mb-3 text-dark">
+                                    <p className="mt-3 text-900 mb-3">
                                         Every project is precious for the right professional
                                     </p>
-                                    {/* </div> */}
                                 </div>
+                                {/* </div> */}
                             </div>
                         </div>
                         <div className="col-lg-5">
@@ -133,7 +133,7 @@ function HowItWorks() {
                                                         </div>
                                                         <div className="card-footer bg-light">
                                                             <Link to="/products">
-                                                                <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="fw-semibold text-center">Check Current Offers</p>
+                                                                <p style={{ fontSize: '16px', color: '#003f6b' }} role="button" className="text-center">Check Current Offers</p>
                                                             </Link>
                                                         </div>
                                                     </div>

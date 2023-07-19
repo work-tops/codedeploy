@@ -24,17 +24,17 @@ function WorkStreamDetails() {
                 <Col lg={12} className="mt-4">
                     <Card className="mb-3 overflow-hidden g-3 ms-3 me-3">
                         <Card.Header className="bg-light">
-                            <h5 className="mb-3">Workstream with <span className="">Sonaes</span></h5>
+                            <h1 className="mb-3">Workstream with <span className="">Sonaes</span></h1>
                         </Card.Header>
                         <Card.Body>
-                            <h5><span className="text-success me-2">#3901031</span>New Kitchen Worktops With Island</h5>
+                            <h2><span className="text-success me-2">#3901031</span>New Kitchen Worktops With Island</h2>
                         </Card.Body>
                     </Card>
                     <div className="row ms-3 g-3 me-3">
-                        <div className="col-md-6 col-lg-8">
+                        <div className="col-md-6 order-2 order-md-0 col-lg-8">
                             <Card className="mb-3">
                                 <Card.Header className="bg-light">
-                                    <h5 className="">Messages</h5>
+                                    <h2 className="">Message</h2>
                                 </Card.Header>
                                 <Card.Body>
                                     <Form className="mt-3">
@@ -67,16 +67,16 @@ function WorkStreamDetails() {
                                         </Form.Group>
                                         <Form.Check type="checkbox" id="rememberMe" className="mb-0">
                                             <Form.Check.Input type="checkbox" />
-                                            <Form.Check.Label style={{ fontSize: '12px' }} className="mb-0 text-900">
+                                            <Form.Check.Label className="mb-0 text-900">
                                                 I acknowledge that all billing regarding this Project (including follow on work) has to be conducted through PPH in order to
                                                 comply with MAI policy
                                             </Form.Check.Label>
                                         </Form.Check>
-                                        <div className="d-flex gap-1 mt-2 mb-2  justify-content-center justify-content-lg-end">
-                                            <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                                        <div className="d-flex gap-1 mt-3 mb-2  justify-content-center justify-content-lg-end">
+                                            <Button style={{ background: '#003f6b' }} className="border-0 Home-btns-1">
                                                 Attachments
                                             </Button>
-                                            <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
+                                            <Button style={{ background: '#003f6b' }} className="border-0 Home-btns-1">
                                                 send
                                             </Button>
                                         </div>
@@ -88,7 +88,7 @@ function WorkStreamDetails() {
                                                     <div class="position-relative mb-1">
                                                         <span>21 March 2023</span>,<span>00:00</span>
                                                     </div>
-                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                    <p class="mb-0 fw-medium font-sans-serif " >Hello</p>
                                                     <div class="kanban-item-footer cursor-default">
                                                         <div class="z-index-2">
                                                             <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
@@ -105,7 +105,7 @@ function WorkStreamDetails() {
                                                     <div class="position-relative mb-1">
                                                         <span>21 March 2023</span>,<span>00:00</span>
                                                     </div>
-                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                    <p class="mb-0 fw-medium font-sans-serif " >Hello</p>
                                                     <div class="kanban-item-footer cursor-default">
                                                         <div class="z-index-2">
                                                             <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
@@ -122,7 +122,7 @@ function WorkStreamDetails() {
                                                     <div class="position-relative mb-1">
                                                         <span>21 March 2023</span>,<span>00:00</span>
                                                     </div>
-                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                    <p class="mb-0 fw-medium font-sans-serif " >Hello</p>
                                                     <div class="kanban-item-footer cursor-default">
                                                         <div class="z-index-2">
                                                             <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
@@ -139,7 +139,7 @@ function WorkStreamDetails() {
                                                     <div class="position-relative mb-1">
                                                         <span>21 March 2023</span>,<span>00:00</span>
                                                     </div>
-                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                    <p class="mb-0 fw-medium font-sans-serif " >Hello</p>
                                                     <div class="kanban-item-footer cursor-default">
                                                         <div class="z-index-2">
                                                             <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
@@ -154,7 +154,7 @@ function WorkStreamDetails() {
                                 </Card.Body>
                             </Card>
                         </div>
-                        <div className="col-md-6 col-lg-4 ">
+                        <div className="col-md-6 order-1 order-md-0 col-lg-4 ">
                             <Card className="mb-3">
                                 <Card.Body>
                                     <div className="d-flex justify-content-start">
@@ -165,14 +165,14 @@ function WorkStreamDetails() {
                                         </div>
                                         <div>
                                             <p className="fw-bold  mt-3 text-900">Soanes IT</p>
-                                            <p style={{ fontSize: '14px' }} className="fw-semibold  text-700">Fabricator</p>
+                                            <p className="fw-semibold  text-900">Fabricator</p>
                                         </div>
                                     </div>
-                                    <p style={{ fontSize: '16px' }} className="fw-semibold text-secondary mt-2 ">United Kingdom</p>
+                                    <p style={{ fontSize: '16px' }} className="fw-semibold text-900 text-secondary mt-2 ">United Kingdom</p>
                                     <Card style={{ border: '1px solid #003f6b' }}>
                                         <Card.Body>
-                                            <p style={{ fontSize: '14px' }} className="fw-bold" >Project Status</p>
-                                            <span style={{ fontSize: '14px' }} className="badge p-2 bg-success mt-2 d-block">Accepted</span>
+                                            <p className="fw-bold text-900" >Project Status</p>
+                                            <span style={{fontSize:'16px'}} className="badge p-2 bg-success mt-2 d-block">Accepted</span>
                                             <Button as={Link} to="/new-invoice" style={{ background: '#003f6b' }} className="Home-btns-1 mt-2 w-100">Create Invoice</Button>
                                         </Card.Body>
                                     </Card>
@@ -180,33 +180,32 @@ function WorkStreamDetails() {
                                 </Card.Body>
                             </Card>
                             {/*  */}
-                            <Card>
+                            <Card className="mb-3">
                                 <Card.Body>
-                                    {/* <h6 style={{ fontSize: '14px' }} className="text-700 fw-semibold">01 Apr 2023</h6> */}
-                                    <h5 className="mb-3">New Proposal</h5>
-                                    <p className="text-justify" style={{ fontSize: '14px' }}>
+                                    {/* <h4  className="text-700 fw-semibold">01 Apr 2023</h4> */}
+                                    <h3 className="mb-3">New Proposal</h3>
+                                    <p className="" >
                                         How are you? Sir / Madam Please send admin access details to website, Bitrix and email host.Also Price £200.00
                                         your Whatsapp numberWill start nowPromise SIX star service.Please see 210 five star reviews of
                                         many gigs that we have done in our profile Deposit £200
                                         Many thanks David Soanes, Worthing BN11 4DT England
                                     </p>
-                                    <p className="text-justify" style={{ fontSize: '14px' }} >
+                                    <p className=""  >
                                         Please see my cv at this link <a href="#">https://surl.link/q0Lck3 https://surl.link/accessRestricted.html?</a> Decline
                                         u=34452 password is abcdFor screen sharing:------------------Windows: Please search and open Quick
                                         Assist App and | will send you the codeApple Mac: | will send you a Zoom link. Please send your
                                         €MAl AAAESS. ~-mmmemmroem oo
-                                        <h6 className="mt-3 mb-3">TEAM</h6>
+                                        <h4 className="mt-3 mb-3">Team</h4>
                                         Our team of five experts consists of graphic artists, Office 365, IT Support, Wordpress and online
                                         marketing consultantsREFEREESReferees for email migration ( Please contact by email only )Mr
                                         Mark Bowen mark@supportedlivinggateway.comMr Colin McGregor colin@tranquilico.comMiss
                                         Tracie Mckenna tracie.mckenna@1stresponse.org.uk
                                     </p>
-                                    <h6 className="mt-3  mb-3">Uploaded File</h6>
-                                    <div className="row bg-pre mt-3">
-                                        <div className="col-4">
-                                            <img src={file} width="50px" height="50px" className="pro-pre" />
-                                        </div>
-                                        <div className="col-6 text-900 fil-name">File Name</div>
+                                    <h4 className="mt-3 mb-3">Uploaded File</h4>
+                                    <div>
+                                    <img src={file} width="50px" height="50px"/>
+                                    <p className="fs--1 mb-0 mt-2">File Name</p>
+                                    <p className="fs--1">540KB</p>
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -229,9 +228,9 @@ function WorkStreamDetails() {
                 >
                     <Modal.Header>
                         <Modal.Title id="example-custom-modal-styling-title">
-                            <h6 className="">
+                            <h4 className="">
                                 Please Type Your Message
-                            </h6>
+                            </h4>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>

@@ -302,8 +302,8 @@ function ListJobs(layout) {
                                             {/*  */}
                                             <Form>
                                                 <Form.Group className='mb-3'>
-                                                    <Form.Label className=' fw-semibold  text-700 text-decoration-none mt-3 px-0'>Range</Form.Label>
-                                                    {/* <p className='fw-semibold' style={{ fontSize: '14px' }}>£ 0-10,000</p>
+                                                    <Form.Label className=' text-decoration-none mt-3 px-0'>Range</Form.Label>
+                                                    {/* <p className='' style={{ fontSize: '14px' }}>£ 0-10,000</p>
                                                 <Form.Range min={0} max={10000} onChange={(e) => priceSearch(e)} /> */}
                                                     <Form>
                                                         <Form.Group controlId="rangeFilter">
@@ -331,15 +331,16 @@ function ListJobs(layout) {
                         </Col>
 
                         <Col className='' lg={9}>
-                            <div className="card mt-5 mb-3">
+                            <div className='mt-5 d-none d-lg-block'></div>
+                            <div className="card mb-3">
                                 <div className="card-header bg-light position-relative">
-                                    <h1 className="mb-0 fs-2 mt-1">Projects</h1>
+                                    <h1 className="mb-0  mt-1">Projects</h1>
                                 </div>
                                 <div className="card-body pt-0 pt-md-3">
                                     <div className="row g-3 align-items-center">
                                         <div className="col-auto d-xl-none">
-                                            <button className="btn btn-sm p-0 btn-link position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas">
-                                                <span className="fas fa-filter fs-0 text-700"></span>
+                                            <button className="btn btn-sm p-0 position-relative">
+                                                <span className="fas fa-filter fs-0 "></span>
                                             </button>
                                         </div>
                                         <div className="col">
@@ -404,7 +405,7 @@ function ListJobs(layout) {
                                                         <div key={key}>
                                                             {/* <h5 className='text-primary mb-3'>{data.customer_email}</h5> */}
                                                             <Link to={`jobdetails/${data._id}`} role="button">
-                                                                <h2 className="product-name text-uppercase fs-0 mb-3">{data.project_title}</h2>
+                                                                <h2 className="text-uppercase  product-name mt-3 mb-3 mt-sm-0 fs-0 fs-lg-1">{data.project_title}</h2>
                                                             </Link>
                                                             <p className='fifty-chars' style={{ width: '90%' }}>{data.project_description}</p>
                                                         </div>
@@ -460,8 +461,8 @@ function ListJobs(layout) {
                                                                 )}
                                                             </>
                                                             <Link to={`jobdetails/${data._id}`} role="button">
-                                                                <Button className='border-0 Home-btns-1' style={{ background: '#003f6b', fontSize: '14px' }}>
-                                                                    VIEW JOB
+                                                                <Button className='border-0 Home-btns-1' style={{ background: '#003f6b'}}>
+                                                                    View Job
                                                                 </Button>
                                                             </Link>
                                                             <ToastContainer
@@ -497,7 +498,7 @@ function ListJobs(layout) {
                                                         <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Worktop</span>
                                                     </div>
                                                     {/* <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5> */}
-                                                    <h2 className="product-name cursor-pointer text-uppercase fs-0 mb-3">
+                                                    <h2 className="text-uppercase   cursor-pointer product-name mt-3 mb-3 mt-sm-0 fs-0 fs-lg-1">
                                                         Bathroom Installation
                                                     </h2>
                                                     <p className='one-twenty-chars mb-lg-0'>White Attica
@@ -512,8 +513,8 @@ function ListJobs(layout) {
                                                     </p>
                                                 </div>
                                                 <div className='d-flex align-items-end mt-5 mb-2 ms-2 me-2 justify-content-between'>
-                                                    <Button as={Link} to="/jobdetails/:jobid" className='d-block Home-btns-1 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
-                                                        VIEW JOB
+                                                    <Button as={Link} to="/jobdetails/:jobid" className='d-block Home-btns-1 border-0' style={{ background: '#003f6b'}}>
+                                                        View Job
                                                     </Button>
                                                     {/* <a onClick={toastDanger}  */}
                                                     <>
@@ -566,7 +567,7 @@ function ListJobs(layout) {
                                                         <span className='badge m-1 rounded-pill p-2' style={{ background: '#ccf6e4', color: '#00864e' }}>Worktop</span>
                                                     </div>
                                                     {/* <h5 className='text-primary mb-3'>jaganadmin@gmail.com</h5> */}
-                                                    <h2 className="product-name cursor-pointer text-uppercase fs-0 mb-3">
+                                                    <h2 className="text-uppercase   cursor-pointer product-name mt-3 mb-3 mt-sm-0 fs-0 fs-lg-1">
                                                         Bathroom Installation
                                                     </h2>
                                                     <p className='one-twenty-chars mb-lg-0'>White Attica
@@ -581,8 +582,8 @@ function ListJobs(layout) {
                                                     </p>
                                                 </div>
                                                 <div className='d-flex align-items-end mt-5 mb-2 ms-2 me-2 justify-content-between'>
-                                                    <Button as={Link} to="/jobdetails/:jobid" className='d-block Home-btns-1 border-0' style={{ background: '#003f6b', fontSize: '14px' }}>
-                                                        VIEW JOB
+                                                    <Button as={Link} to="/jobdetails/:jobid" className='d-block Home-btns-1 border-0' style={{ background: '#003f6b'}}>
+                                                        View Job
                                                     </Button>
                                                     {/* <a onClick={toastDanger}  */}
                                                     <>

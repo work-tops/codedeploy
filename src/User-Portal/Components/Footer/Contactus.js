@@ -15,19 +15,18 @@ function ContactUs() {
                 <Container>
                     <Card className="mt-4 overflow-hidden">
                         <Card.Body>
-
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <Form>
                                                 <Form.Group className="">
-                                                    <h2 className="mb-0">Get in Touch</h2>
-                                                    <p className="">We'd Love to talk about how we can help you</p>
+                                                    <h1 className="mb-3 mb-md-0">Get in Touch</h1>
+                                                    <p className="mt-2 text-900">We'd Love to talk about how we can help you</p>
                                                 </Form.Group>
-                                                <p className="fw-bold"><i className="fas fa-home me-2"></i>1 De La Warr Way, Cambridge, CB23 6DX</p>
-                                                <p className="fw-bold"><i className="fas fa-envelope me-2"></i> info@work-tops.com</p>
-                                                <p className="fw-bold"><i className="fas fa-phone me-2"></i> +44 0330 113 5868</p>
+                                                <p className="fw-bold text-900"><i className="fas fa-home me-2"></i>1 De La Warr Way, Cambridge, CB23 6DX</p>
+                                                <p className="fw-bold text-900"><i className="fas fa-envelope me-2"></i> info@work-tops.com</p>
+                                                <p className="fw-bold text-900"><i className="fas fa-phone me-2"></i> +44 0330 113 5868</p>
                                             </Form>
                                         </div>
                                         <div className="mb-3 col-lg-12">
@@ -47,20 +46,20 @@ function ContactUs() {
 
                                 <div className="col-md-6">
                                     <Card className="">
-                                        <Card.Header className="text-center bg-light" as={"h4"}>
-                                            General Enquiry
+                                        <Card.Header className="text-center bg-light">
+                                            <h2 className="">General Enquiry</h2>
                                         </Card.Header>
                                         <Card.Body>
                                             <Row className="">
                                                 <Col md={12} lg={6}>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">First Name<span className="text-danger">*</span></Form.Label>
+                                                        <Form.Label className="">First Name<span className="text-danger ms-1">*</span></Form.Label>
                                                         <Form.Control placeholder="First Name" />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col md={12} lg={6}>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">Last Name<span className="text-danger">*</span></Form.Label>
+                                                        <Form.Label className="">Last Name<span className="text-danger ms-1">*</span></Form.Label>
                                                         <Form.Control placeholder="First Name" />
                                                     </Form.Group>
                                                 </Col>
@@ -68,19 +67,19 @@ function ContactUs() {
                                             <Row className="">
                                                 <Col md={12} lg={6}>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">Email <span className="text-danger">*</span></Form.Label>
+                                                        <Form.Label className="">Email <span className="text-danger ms-1">*</span></Form.Label>
                                                         <Form.Control type="email" placeholder="Enter Your Email Address" />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col md={12} lg={6}>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label className="text-uppercase">Phone Number<span className="text-danger">*</span></Form.Label>
+                                                        <Form.Label className="">Phone Number<span className="text-danger ms-1">*</span></Form.Label>
                                                         <Form.Control placeholder="+44 0000 000 0000" />
                                                     </Form.Group>
                                                 </Col>
                                             </Row>
                                             <Form.Group className="mb-3">
-                                                <Form.Label className="text-uppercase">Details</Form.Label>
+                                                <Form.Label className="">Details</Form.Label>
                                                 {/* <Form.Control
                                                     placeholder="Tell us About Your..."
                                                     as="textarea"

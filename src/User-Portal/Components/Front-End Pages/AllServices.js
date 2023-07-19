@@ -11,7 +11,7 @@ function AllServices() {
                 <Card.Body>
                     <div className='d-flex justify-content-between'>
                         <div>
-                            <h4 className="mt-2">My Services</h4>
+                            <h1 className="mt-2">My Services</h1>
                         </div>
                         <div>
                             <Row>

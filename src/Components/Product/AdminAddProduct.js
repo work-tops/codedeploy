@@ -737,10 +737,10 @@ const AddProduct = () => {
                 <Col lg={12} className='container mt-4'>
                     <Card>
                         <Card.Header className="bg-light">
-                            <h5>
+                            <h2>
                                 Add Product
-                            </h5>
-                            <Breadcrumb className="fs--1 mt-2">
+                            </h2>
+                            <Breadcrumb className="mt-2">
                                 <Breadcrumb.Item>
                                     All Products
                                 </Breadcrumb.Item>
@@ -748,7 +748,7 @@ const AddProduct = () => {
                                     Add Products
                                 </Breadcrumb.Item>
                             </Breadcrumb>
-                            <p className="text-dark  fs--1 mt-2">Here Add Products to your store</p>
+                            <p className="text-dark mt-2">Here Add Products to your store</p>
                         </Card.Header>
                         <Card.Body>
                             <Form>
@@ -913,7 +913,7 @@ const AddProduct = () => {
                                                                         </Row>
                                                                         <Row className="mb-3 g-3">
                                                                             <Col md={6}>
-                                                                            <Form.Label className="text-700 ">Finish Type<span className="ms-1 text-danger">*</span></Form.Label>
+                                                                                <Form.Label className="text-700 ">Finish Type<span className="ms-1 text-danger">*</span></Form.Label>
                                                                                 {/* <Form.Group className='mb-3'>
                                                                                     <Form.Select className=''>
                                                                                         <option>Size</option>

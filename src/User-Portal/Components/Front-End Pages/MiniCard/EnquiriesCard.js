@@ -27,16 +27,24 @@ function ProductEnquiresCard() {
                         <Col lg={12}>
                             <Card className="mb-3" >
                                 <Card.Header className="bg-light d-flex justify-content-between">
-                                    <h5>Enquiries</h5>
+                                    <h1>Enquiries</h1>
                                 </Card.Header>
                                 <Card.Body>
                                     <Tab.Container activeKey={activeTab} onSelect={handleTabSelect}>
                                         <Nav variant="tabs" style={{ color: '#003f6b' }}>
                                             <Nav.Item>
-                                                <Nav.Link eventKey="tab1">Product Enquiry</Nav.Link>
+                                                <Nav.Link eventKey="tab1">
+                                                    <h2 className="fs-0">
+                                                        Product Enquiry
+                                                    </h2>
+                                                </Nav.Link>
                                             </Nav.Item>
                                             <Nav.Item>
-                                                <Nav.Link eventKey="tab2">Service Enquiry</Nav.Link>
+                                                <Nav.Link eventKey="tab2">
+                                                    <h2 className="fs-0">
+                                                        Service Enquiry
+                                                    </h2>
+                                                </Nav.Link>
                                             </Nav.Item>
                                         </Nav>
                                         <Tab.Content>
@@ -53,8 +61,8 @@ function ProductEnquiresCard() {
                             </Card>
                         </Col>
                     </Row>
-                </Container>
-            </Row>
+                </Container >
+            </Row >
             <Col lg={12}>
                 <Footer />
             </Col>

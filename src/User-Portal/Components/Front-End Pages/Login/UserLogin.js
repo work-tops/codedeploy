@@ -83,7 +83,7 @@ const UserLogin = ({ }) => {
           <NavbarStandard />
         </Col>
         <Col lg={7} className="d-none d-lg-block position-relative">
-          <div style={{ backgroundImage: `url(${worktops})` }} className="bg-holder">
+          <div style={{ backgroundImage: `url(${worktops})`,width:'100%' }} className="bg-holder">
           </div>
         </Col>
         <Col lg={5} className="px-sm-0 align-self-center mx-auto py-5">
@@ -98,12 +98,12 @@ const UserLogin = ({ }) => {
                   </Card.Header>
                   <Card.Body className="p-4">
                     <div className="d-flex align-items-center justify-content-between">
-                      <h4 className=' mb-3'>Project Owner Login</h4>
+                      <h2 className='mb-4'>Project Owner Login</h2>
                     </div>
                     <>
                       <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                          <Form.Label className='text-700'>Email address<span className="text-danger">*</span></Form.Label>
+                          <Form.Label className='text-700'>Email address<span className="text-danger ms-1">*</span></Form.Label>
                           <Form.Control
                             placeholder={'Email address'}
                             value={formData.email}
@@ -114,7 +114,7 @@ const UserLogin = ({ }) => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                          <Form.Label className="text-700">Password<span className="text-danger">*</span></Form.Label>
+                          <Form.Label className="text-700">Password<span className="text-danger ms-1">*</span></Form.Label>
                           <div className="position-relative">
                             <Form.Control
                               placeholder="Password"

@@ -87,22 +87,22 @@ function Dashboard() {
                     <AdminHeader />
                 </div>
                 <div className="col-12 container mb-3 mt-4">
-                    <div class="card bg-transparent-50 overflow-hidden">
+                    <div class="card bg-white overflow-hidden">
                         <div class="card-header position-relative">
                             {/* <div class="bg-holder d-none d-md-block bg-card z-index-1" style="background-image:url(../assets/img/illustrations/ecommerce-bg.png);background-size:230px;background-position:right bottom;z-index:-1;"></div> */}
 
                             <div class="position-relative z-index-2">
                                 <div>
-                                    <h3 class="text-primary mb-1">Good Afternoon, Jonathan!</h3>
+                                    <h1 class="text-primary mb-1">Good Afternoon, Jonathan!</h1>
                                     <p>Here’s what happening with your store today </p>
                                 </div>
                                 <div class="d-flex py-3">
                                     <div class="pe-3">
-                                        <p class="text-600 fs--1 fw-medium">Today's visit </p>
+                                        <h2 class="text-600  fw-medium">Today's visit </h2>
                                         <h4 class="text-800 mb-0">14,209</h4>
                                     </div>
                                     <div class="ps-3">
-                                        <p class="text-600 fs--1">Today’s total sales </p>
+                                        <h2 class="text-600 ">Today’s total sales </h2>
                                         <h4 class="text-800 mb-0">£21,349.29 </h4>
                                     </div>
                                 </div>
@@ -159,52 +159,52 @@ function Dashboard() {
                         <div class="card-body py-3">
                             <div class="row g-0">
                                 <div class="col-6 col-md-4 border-200 border-bottom border-end pb-4">
-                                    <h6 class="pb-1 text-700">Orders </h6>
+                                    <h2 class="pb-1 text-700">Orders </h2>
                                     <p class="font-sans-serif lh-1 mb-1 fs-2">15,450 </p>
                                     <div class="d-flex align-items-center">
-                                        <h6 class="fs--1 text-500 mb-0">13,675 </h6>
-                                        <h6 class="fs--2 ps-3 mb-0 text-primary">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h6>
+                                        <h2 class="fs--1 text-500 mb-0">13,675 </h2>
+                                        <h2 class="fs--2 ps-3 mb-0 text-primary">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h2>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 border-200 border-md-200 border-bottom border-md-end pb-4 ps-3">
-                                    <h6 class="pb-1 text-700">Items sold </h6>
+                                    <h2 class="pb-1 text-700">Items sold </h2>
                                     <p class="font-sans-serif lh-1 mb-1 fs-2">1,054 </p>
                                     <div class="d-flex align-items-center">
-                                        <h6 class="fs--1 text-500 mb-0">13,675 </h6>
-                                        <h6 class="fs--2 ps-3 mb-0 text-warning">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h6>
+                                        <h2 class="fs--1 text-500 mb-0">13,675 </h2>
+                                        <h2 class="fs--2 ps-3 mb-0 text-warning">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h2>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 border-200 border-bottom border-end border-md-end-0 pb-4 pt-4 pt-md-0 ps-md-3">
-                                    <h6 class="pb-1 text-700">Refunds </h6>
+                                    <h2 class="pb-1 text-700">Refunds </h2>
                                     <p class="font-sans-serif lh-1 mb-1 fs-2">£145.65 </p>
                                     <div class="d-flex align-items-center">
-                                        <h6 class="fs--1 text-500 mb-0">13,675 </h6>
-                                        <h6 class="fs--2 ps-3 mb-0 text-success">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h6>
+                                        <h2 class="fs--1 text-500 mb-0">13,675 </h2>
+                                        <h2 class="fs--2 ps-3 mb-0 text-success">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h2>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 border-200 border-md-200 border-bottom border-md-bottom-0 border-md-end pt-4 pb-md-0 ps-3 ps-md-0">
-                                    <h6 class="pb-1 text-700">Gross sale </h6>
+                                    <h2 class="pb-1 text-700">Gross sale </h2>
                                     <p class="font-sans-serif lh-1 mb-1 fs-2">£100.26 </p>
                                     <div class="d-flex align-items-center">
-                                        <h6 class="fs--1 text-500 mb-0">£109.65 </h6>
-                                        <h6 class="fs--2 ps-3 mb-0 text-danger">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h6>
+                                        <h2 class="fs--1 text-500 mb-0">£109.65 </h2>
+                                        <h2 class="fs--2 ps-3 mb-0 text-danger">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h2>
                                     </div>
                                 </div>
 
                                 <div class="col-6 col-md-4 border-200 border-md-bottom-0 border-end pt-4 pb-md-0 ps-md-3">
-                                    <h6 class="pb-1 text-700">Shipping </h6>
+                                    <h2 class="pb-1 text-700">Shipping </h2>
                                     <p class="font-sans-serif lh-1 mb-1 fs-2">£365.53 </p>
                                     <div class="d-flex align-items-center">
-                                        <h6 class="fs--1 text-500 mb-0">13,675 </h6>
-                                        <h6 class="fs--2 ps-3 mb-0 text-success">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h6>
+                                        <h2 class="fs--1 text-500 mb-0">13,675 </h2>
+                                        <h2 class="fs--2 ps-3 mb-0 text-success">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h2>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 pb-0 pt-4 ps-3">
-                                    <h6 class="pb-1 text-700">Processing </h6>
+                                    <h2 class="pb-1 text-700">Processing </h2>
                                     <p class="font-sans-serif lh-1 mb-1 fs-2">861 </p>
                                     <div class="d-flex align-items-center">
-                                        <h6 class="fs--1 text-500 mb-0">13,675 </h6>
-                                        <h6 class="fs--2 ps-3 mb-0 text-info">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h6>
+                                        <h2 class="fs--1 text-500 mb-0">13,675 </h2>
+                                        <h2 class="fs--2 ps-3 mb-0 text-info">{/*<svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>*/}<span class="me-1 fas fa-caret-up"></span>21.8%</h2>
                                     </div>
                                 </div>
                             </div>
@@ -216,8 +216,8 @@ function Dashboard() {
                         <div className="col-md-6">
                             <div class="card h-md-100 h-100">
                                 <div class="card-header pb-0">
-                                    <h6 class="mb-0 mt-2 d-flex align-items-center">Category<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Calculated according to last week's sales" data-bs-original-title="Calculated according to last week's sales">
-                                    </span></h6>
+                                    <h2 class="mb-0 mt-2 d-flex align-items-center">Category<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Calculated according to last week's sales" data-bs-original-title="Calculated according to last week's sales">
+                                    </span></h2>
                                 </div>
                                 <div class="card-body">
                                     <ReactECharts option={option} style={{ minHeight: '300px' }} />
@@ -228,8 +228,8 @@ function Dashboard() {
                         <div class="col-md-6">
                             <div class="card h-md-100 ecommerce-card-min-width">
                                 <div class="card-header pb-0">
-                                    <h6 class="mb-0 mt-2 d-flex align-items-center">Weekly Sales<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Calculated according to last week's sales" data-bs-original-title="Calculated according to last week's sales">
-                                    </span></h6>
+                                    <h2 class="mb-0 mt-2 d-flex align-items-center">Weekly Sales<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Calculated according to last week's sales" data-bs-original-title="Calculated according to last week's sales">
+                                    </span></h2>
                                 </div>
                                 <div class="card-body d-flex flex-column justify-content-end">
                                     <ReactECharts option={option1} style={{ minHeight: '320px' }} />
@@ -241,8 +241,8 @@ function Dashboard() {
                 <div className="col-lg-12 container mb-3">
                     <Card>
                         <Card.Header>
-                            <h6 class="mb-0 mt-2 d-flex align-items-center">Sales<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Calculated according to last week's sales" data-bs-original-title="Calculated according to last week's sales">
-                            </span></h6>
+                            <h2 class="mb-0 mt-2 d-flex align-items-center">Sales<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Calculated according to last week's sales" data-bs-original-title="Calculated according to last week's sales">
+                            </span></h2>
                         </Card.Header>
                         <Card.Body>
                             <ReactECharts option={option2} style={{ height: '400px' }} />

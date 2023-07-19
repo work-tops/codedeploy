@@ -7,7 +7,11 @@ import { Link } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
 import file from '../Projectimages/BathroomFitting.jpg'
 import Footer from "../Footer/Footer";
+
+
 function ProductEnquiryDetails() {
+
+
     const [show, setShow] = useState(false);
     const editorRef = useRef(null);
     const handleClose = () => setShow(false);
@@ -23,17 +27,17 @@ function ProductEnquiryDetails() {
                         <Col lg={12}>
                             <Card className="mt-5 mb-3">
                                 <Card.Header className="d-flex justify-content-end bg-light">
-                                    <Button as={Link} to="/enquire" className="bg-danger  text-uppercase border-0">Close the Enquiry </Button>
+                                    <Button as={Link} to="/enquire" className="bg-danger   border-0">Close the Enquiry </Button>
                                 </Card.Header>
                                 <Card.Body>
+                                    <h1>
+                                        Enquiry Details: #2737
+                                    </h1>
                                     <div>
-                                        <h5>
-                                            "Enquiry Details: #2737"
-                                        </h5>
-                                        <p className="mt-3 text-900 text-capitalize" style={{ fontSize: '14px' }}>May 01 2023, 5:33 PM</p>
+                                        <p className="mt-3 text-900 text-capitalize">May 01 2023, 5:33 PM</p>
                                         <div>
-                                            <h5 className="me-2 text-capitalize d-inline">Status: </h5>
-                                            <span className="bg-success badge  rounded-pill">
+                                            <h2 className="me-2 text-capitalize d-inline">Status: </h2>
+                                            <span className="bg-success badge rounded-pill">
                                                 {' '}
                                                 Completed
                                                 <FontAwesomeIcon
@@ -50,31 +54,31 @@ function ProductEnquiryDetails() {
                                 <Card.Body>
                                     <Row>
                                         <Col md={6} lg={3}>
-                                            <h5 className="mb-3 fs-0 text-uppercase">Customer Name</h5>
+                                            <h2 className="mb-3 text-uppercase">Customer Name</h2>
                                             <div className="d-flex">
                                                 <img
                                                     src={profile}
                                                     width="30"
                                                     height="30"
-                                                    className="me-3 rounded-circle"
-                                                    alt="visa"
+                                                    className="me-2 rounded-circle"
+                                                    alt="profile"
                                                 />
                                                 <div className="flex-1">
-                                                    <h6 className=" mb-0">Peter Leverkus</h6>
+                                                    <h3 className="mb-3 mb-lg-0">Peter Leverkus</h3>
                                                 </div>
                                             </div>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3 fs-0 text-uppercase">Product Name</h5>
-                                            <h6 className="mb-0">Quartz</h6>
+                                            <h2 className="mb-3  text-uppercase">Product Name</h2>
+                                            <h3 className="mb-0">Quartz</h3>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3  text-uppercase fs-0">Requirements</h5>
-                                            <h6 className="mb-2">Within 2 weeks</h6>
+                                            <h2 className="mb-3  text-uppercase ">Requirements</h2>
+                                            <h3 className="mb-2">Within 2 weeks</h3>
                                         </Col>
                                         <Col md={6} lg={3} className="mb-4 mb-lg-0">
-                                            <h5 className="mb-3  text-uppercase fs-0">Postcode</h5>
-                                            <h6 className="mb-2">CB236DX</h6>
+                                            <h2 className="mb-3  text-uppercase ">Postcode</h2>
+                                            <h3 className="mb-2">CB236DX</h3>
                                         </Col>
                                     </Row>
                                 </Card.Body>
@@ -85,34 +89,36 @@ function ProductEnquiryDetails() {
                                         <Row>
                                             <Col lg={6}>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="text-900 text-uppercase">
+                                                    <Form.Label className="text-900 text-capitalize">
                                                         Stone Category
                                                     </Form.Label>
-                                                    <p className="text-900 text-uppercase">Quartz</p>
+                                                    <p className="text-900 text-capitalize">Quartz</p>
                                                 </Form.Group>
                                             </Col>
                                             <Col lg={6}>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="text-900 text-uppercase">
+                                                    <Form.Label className="text-900 text-capitalize">
                                                         Thickness
                                                     </Form.Label>
-                                                    <p className="text-900 text-uppercase">20mm</p>
+                                                    <p className="text-900 text-capitalize">20mm</p>
                                                 </Form.Group>
                                             </Col>
 
                                             <Form.Group className="mb-3">
-                                                <Form.Label className="text-900 text-uppercase">
+                                                <Form.Label className="text-900 text-capitalize">
                                                     More Informations
                                                 </Form.Label>
-                                                <p className="text-900 text-uppercase">Length-3200mm , Width-1650mm</p>
+                                                <p className="text-900 text-capitalize">Length-3200mm , Width-1650mm</p>
 
                                             </Form.Group>
                                             <Form.Group className="mb-3">
-                                                <Form.Label className="text-900 text-uppercase">
+                                                <Form.Label className="text-900 text-capitalize">
                                                     Attach Kitchen Plan
                                                 </Form.Label>
-                                                <div className="col-4">
-                                                    <img src={file} width="50px" height="50px" className="pro-pre" />
+                                                <div>
+                                                    <img src={file} width="50px" height="50px" />
+                                                    <p className="mb-0 mt-1 fs--1">File Name</p>
+                                                    <p className="fs--1">540KB</p>
                                                 </div>
                                             </Form.Group>
                                         </Row>
@@ -121,16 +127,16 @@ function ProductEnquiryDetails() {
                                 </Card.Body>
                             </Card>
                             <Card className="mt-3 mb-2">
-                                <div className='bg-light mb-3 p-3 d-flex justify-content-between text-uppercase'>
-                                    <h5 className=" text-uppercase fs-0">Message</h5>
-                                </div>
-                                <div className="d-flex justify-content-end align-items-end">
-                                    <Button as={Link} to="/new-estimate" style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
-                                        Create Estimate
-                                    </Button>
-                                    <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 me-2 text-uppercase">
-                                        Reply the Enquiry
-                                    </Button>
+                                <div className='bg-light mb-3 p-3 d-flex flex-wrap justify-content-between'>
+                                    <h2 className="">Message</h2>
+                                    <div className="d-flex justify-content-end align-items-end">
+                                        <Button as={Link} to="/new-estimate" style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 Home-btns-1 me-2 ">
+                                            Create Estimate
+                                        </Button>
+                                        <Button style={{ background: "#003f6b", fontSize: '14px' }} className="border-0 Home-btns-1 me-2 ">
+                                            Reply the Enquiry
+                                        </Button>
+                                    </div>
                                 </div>
                                 <Card.Body className="position-relative">
                                     <Row>
@@ -164,10 +170,10 @@ function ProductEnquiryDetails() {
                                                         />
                                                     </Form.Group>
                                                     <div className="d-flex gap-2 justify-content-end mb-3">
-                                                        <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                        <Button style={{ background: '#003f6b'}} className="Home-btns-1 border-0">
                                                             Attachments
                                                         </Button>
-                                                        <Button style={{ background: '#003f6b', fontSize: '14px' }} className="text-uppercase border-0">
+                                                        <Button style={{ background: '#003f6b'}} className="Home-btns-1 border-0">
                                                             Send
                                                         </Button>
                                                     </div>
@@ -178,12 +184,12 @@ function ProductEnquiryDetails() {
                                     </Row>
                                     <div class="kanban-items-container scrollbar" tabindex="0">
                                         <div class="kanban-item" tabindex="0">
-                                            <div class="card kanban-item-card hover-actions-trigger">
+                                            <div class="card kanban-item-card ">
                                                 <div style={{ background: '#f3f3f3' }} class="card-body">
                                                     <div class="position-relative mb-1">
                                                         <span>21 March 2023</span>,<span>00:00</span>
                                                     </div>
-                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif " >Hello</p>
                                                     <div class="kanban-item-footer cursor-default">
                                                         <div class="z-index-2">
                                                             <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
@@ -195,12 +201,12 @@ function ProductEnquiryDetails() {
                                             </div>
                                         </div>
                                         <div class="kanban-item" tabindex="0">
-                                            <div class="card kanban-item-card hover-actions-trigger">
+                                            <div class="card kanban-item-card ">
                                                 <div style={{ background: '#f3f3f3' }} class="card-body">
                                                     <div class="position-relative mb-1">
                                                         <span>21 March 2023</span>,<span>00:00</span>
                                                     </div>
-                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif " >Hello</p>
                                                     <div class="kanban-item-footer cursor-default">
                                                         <div class="z-index-2">
                                                             <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
@@ -212,12 +218,12 @@ function ProductEnquiryDetails() {
                                             </div>
                                         </div>
                                         <div class="kanban-item" tabindex="0">
-                                            <div class="card kanban-item-card hover-actions-trigger">
+                                            <div class="card kanban-item-card ">
                                                 <div style={{ background: '#f3f3f3' }} class="card-body">
                                                     <div class="position-relative mb-1">
                                                         <span>21 March 2023</span>,<span>00:00</span>
                                                     </div>
-                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif " >Hello</p>
                                                     <div class="kanban-item-footer cursor-default">
                                                         <div class="z-index-2">
                                                             <div class="avatar avatar-l align-top ms-n2" data-bs-toggle="tooltip" aria-label="Emma" data-bs-original-title="Emma">
@@ -229,12 +235,12 @@ function ProductEnquiryDetails() {
                                             </div>
                                         </div>
                                         <div class="kanban-item" tabindex="0">
-                                            <div class="card kanban-item-card hover-actions-trigger">
+                                            <div class="card kanban-item-card ">
                                                 <div style={{ background: '#f3f3f3' }} class="card-body">
                                                     <div class="position-relative mb-1">
                                                         <span>21 March 2023</span>,<span>00:00</span>
                                                     </div>
-                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif stretched-link" data-bs-toggle="modal" data-bs-target="#kanban-modal-1">Hello</p>
+                                                    <p class="mb-0 fs--1 fw-medium font-sans-serif " >Hello</p>
                                                     <a href={profile}>
                                                         <img src={profile} width={"50px"} height={"50px"} />
                                                     </a>
@@ -252,7 +258,7 @@ function ProductEnquiryDetails() {
                                 </Card.Body>
                             </Card>
                             {/* Modal Content */}
-                            <Modal
+                            {/* <Modal
                                 show={show}
                                 onHide={() => setShow(false)}
                                 dialogClassName="modal-lg modal-90w"
@@ -261,9 +267,9 @@ function ProductEnquiryDetails() {
                             >
                                 <Modal.Header>
                                     <Modal.Title id="example-custom-modal-styling-title">
-                                        <h6 className="text-uppercase">
+                                        <h3 className="text-uppercase">
                                             Please Type Your Message
-                                        </h6>
+                                        </h3>
                                     </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
@@ -284,7 +290,7 @@ function ProductEnquiryDetails() {
                                         </Button>
                                     </div>
                                 </Modal.Body>
-                            </Modal>
+                            </Modal> */}
                             {/* Modal Content */}
 
                         </Col>

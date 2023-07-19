@@ -134,8 +134,8 @@ function JobProposal() {
                     <Row>
                         <Col lg={8}>
                             <Card className="mb-3">
-                                <Card.Header as="h4" className="bg-light text-uppercase">
-                                    Project Proposal
+                                <Card.Header className="bg-light text-uppercase">
+                                    <h1>Project Proposal</h1>
                                 </Card.Header>
                                 <Card.Body>
                                     {/* <h6 >Proposal Amount</h6> */}
@@ -162,15 +162,23 @@ function JobProposal() {
                                         </Form.Group>
                                         <Card className="mb-3">
                                             <Card.Body>
-
-                                                <div className="d-flex justify-content-between">
+                                                <div className="row">
+                                                    <div className="col-6">
                                                     <p className="fw-bold">(<span className="text-success">£</span>) - {serviceFee}</p>
-                                                    <p style={{ fontSize: '12px' }} className="me-2">"myproject.ai" Service Fee<i className="ms-2 text-success fa-solid fa-circle-info "></i></p>
+                                                    </div>
+                                                    <div className="col-6">
+                                                    <p style={{ fontSize: '12px' }} className="me-2">"Myproject.ai" Service Fee<i className="ms-2 text-success fa-solid fa-circle-info "></i></p>
+                                                    </div>
                                                 </div>
-                                                <div className="d-flex justify-content-between">
+                                                <div className="row">
+                                                    <div className="col-6">
                                                     <p className=" fw-bold">(<span className="text-success">£</span>) - {amountUReceive}</p>
-                                                    <p style={{ fontSize: '12px' }} className="me-2">"Amount You'll Receive after" Service Fee education <i className="ms-2 text-success fa-solid fa-circle-info"></i></p>
+                                                    </div>
+                                                    <div className="col-6">
+                                                    <p style={{ fontSize: '12px' }} className="">"Amount You'll Receive after" Service Fee education <i className="ms-2 text-success fa-solid fa-circle-info"></i></p>
+                                                    </div>
                                                 </div>
+
                                             </Card.Body>
                                         </Card>
                                         <Form.Group className="mb-3">
@@ -295,7 +303,7 @@ function JobProposal() {
                             {/*  Customize Details  */}
                             <Card className="mb-3">
                                 <Card.Header className="py-2 text-center  bg-light">
-                                    <h4 className="text-uppercase mb-0">{jobdetails?.project_title}</h4>
+                                    <h2 className="h2 text-uppercase mb-0">{jobdetails?.project_title}</h2>
                                 </Card.Header>
                                 <Card.Body className="bg-white">
                                     <ul className="list-unstyled fs--1 mb-0">

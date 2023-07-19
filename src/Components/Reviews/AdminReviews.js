@@ -92,7 +92,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -116,7 +116,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -138,7 +138,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -162,7 +162,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -175,7 +175,7 @@ const AllReviews = () => {
                 <span className="fa fa-star text-warning"></span>
                 <span className="fa fa-star-half-alt text-warning star-icon"></span>
             </div></>,
-             reviewID: '567890',
+            reviewID: '567890',
             status: <span className="badge  bg-success">Published</span>,
             source: "Service", created: "02/06/23,14:30", review: <>
                 <span className="text-primary d-block">Bessie</span>
@@ -183,7 +183,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -205,7 +205,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -226,7 +226,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -248,7 +248,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -269,7 +269,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -291,7 +291,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -313,7 +313,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -336,7 +336,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -359,7 +359,7 @@ const AllReviews = () => {
             </>,
             action: <CardDropdown>
                 <div className="py-2">
-                     <Dropdown.Item >Unpublish</Dropdown.Item>
+                    <Dropdown.Item >Unpublish</Dropdown.Item>
                     <Dropdown.Item onClick={handleShow}>Reply</Dropdown.Item>
                     <Dropdown.Item className='text-danger'>Delete</Dropdown.Item>
                 </div>
@@ -371,14 +371,14 @@ const AllReviews = () => {
         return (
             <Row className="flex-between-center mb-3">
                 <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
-                    <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
+                    <h4 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
                         {
                             // Object.keys(selectedRowIds).length > 0 ?
                             //     'You have selected ' + Object.keys(selectedRowIds).length + 'Lists'
                             //     :
                             //     ''
                         }
-                    </h5>
+                    </h4>
                 </Col>
                 <Row className="flex-end-center mt-2 mb-3">
                     <Col xs="auto">
@@ -405,7 +405,7 @@ const AllReviews = () => {
                         </div>
                     ) : (
                         <div id="orders-actions">
-                             <Button variant="falcon-default"
+                            <Button variant="falcon-default"
                                 size="sm" className="fs--1"><Icon icon="entypo:export" width="18" height="18" className="" /><span className="d-none ms-2 d-lg-inline">Export</span>
                             </Button>
                         </div>
@@ -423,9 +423,11 @@ const AllReviews = () => {
                 </Col>
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
-                        <Card.Header className="bg-light" as={"h5"}>
+                        <Card.Header className="bg-light">
+                            <h2>
                             All Reviews<span className="ms-1 fs--1 badge bg-secondary">#100</span>
-                            <p className="text-dark text-capitalize fs--1 mt-2">Here all the Reviews of the customer on your store</p>
+                            </h2>
+                            <p className="text-dark text-capitalize mt-2">Here all the Reviews of the customer on your store</p>
                         </Card.Header>
                         <Card.Body>
 
@@ -445,7 +447,7 @@ const AllReviews = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        className: 'fs--1 mb-0 overflow-hidden'
+                                        className: 'mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">

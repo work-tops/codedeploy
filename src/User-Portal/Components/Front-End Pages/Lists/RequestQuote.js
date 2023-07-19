@@ -17,18 +17,20 @@ function RequestQuote() {
                         <NavbarStandard />
                     </Col>
                     <Col lg={12}>
-                        <div className="d-flex justify-content-center align-items-center mb-3 mt-5">
-                            <h4 className="fw-bolder">Request a Quote</h4>
+                        <div className="d-flex justify-content-center align-items-center mb-1 mt-5">
+                            <h1 className="fw-bolder">Request a Quote</h1>
                         </div>
-                        <div className="d-flex justify-content-center align-items-center m-3">
-                            <p className="text-center" style={{ fontSize: '14px' }}>Give us the details of your project and we'll send it to specialist trades for you.</p>
+                        <div className="d-flex justify-content-center align-items-center">
+                            <p className="text-center">
+                                Give us the details of your project and we'll send it to specialist trades for you
+                            </p>
                         </div>
                         <Row className="">
 
                             <Form>
                                 <Card className="mb-3">
                                     <Card.Header className="bg-light">
-                                        <Form.Label className="fw-semibold text-uppercase text-900">
+                                        <Form.Label className="  text-900">
                                             Describe Your Job<span className="ms-1 text-danger">*</span>
                                         </Form.Label>
                                     </Card.Header>
@@ -61,7 +63,7 @@ function RequestQuote() {
                                 </Card>
                                 <Card className="mb-3">
                                     <Card.Header className="bg-light">
-                                        <Form.Label className="fw-semibold text-uppercase text-900">
+                                        <Form.Label className="  text-900">
                                             What Service do you need ?<span className="ms-1 text-danger">*</span>
                                         </Form.Label>
                                     </Card.Header>
@@ -74,7 +76,7 @@ function RequestQuote() {
                                 </Card>
                                 <Card className="mb-3">
                                     <Card.Header className="bg-light">
-                                        <Form.Label className="fw-semibold text-uppercase text-900">
+                                        <Form.Label className="  text-900">
                                             Postcode<span className="ms-1 text-danger"></span>
                                         </Form.Label>
                                     </Card.Header>
@@ -87,7 +89,7 @@ function RequestQuote() {
                                 </Card>
                                 <Card className="mb-3">
                                     <Card.Header className="bg-light">
-                                        <Form.Label className="fw-semibold text-uppercase text-900">
+                                        <Form.Label className="  text-900">
                                             When You Would like the job to start ?<span className="ms-1 text-danger">*</span>
                                         </Form.Label>
                                     </Card.Header>
@@ -153,7 +155,7 @@ function RequestQuote() {
                                     <Card.Body>
 
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-uppercase text-900">
+                                            <Form.Label className="  text-900">
                                                 Tell us About You<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control type="text"

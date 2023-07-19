@@ -602,7 +602,7 @@ const AddJobs = () => {
     return (
         <>
             <Row>
-                <Col lg={12} className='mb-5'>
+                <Col lg={12} className="mb-5">
                     <AdminHeader />
                 </Col>
                 <Col lg={12} className='mt-4'>

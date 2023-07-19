@@ -114,41 +114,39 @@ function Editpostproject() {
 
                     <Container>
                         <Card className="mt-5">
-                            <Card.Header as="h4" className='bg-light text-justify text-uppercase'>Note</Card.Header>
+                            <Card.Header className='bg-light  '>
+                                <h1>Note</h1>
+                            </Card.Header>
                             <Card.Body className="">
                                 <ul>
-                                    <li style={{ fontSize: '14px', width: '100%' }}>
+                                    <li className="w-100">
                                         The customers who have described their requirements with better clarity while uploading the project have always connected with the right professionals and received better proposals, and hence completed their projects on time.
 
                                     </li>
-                                    <li style={{ fontSize: '14px', width: '100%' }}>
+                                    <li className="w-100">
                                         To make it even better, we recommend that you upload as much relevant information (pictures, documents, specifications, etc) as possible to give clarity.
                                     </li>
-
                                 </ul>
                             </Card.Body>
                         </Card>
-
                         {/* Note */}
 
                         {/* Post A Project */}
                         <Card className="mb-3 mt-3">
                             <Card.Header className='bg-light'>
                                 <div className="row">
-                                    <h4 className="text-uppercase text-justify ">Edit Your Project</h4>
-                                    {/* <div className="col-lg-4 mt-3 d-flex justify-content-lg-end align-items-lg-end"> */}
-                                    {/* </div> */}
-                                    <p className='mt-2 fs--1' >Select a relevant category so that traders can find your project</p>
+                                    <h1 className="">Edit Your Project</h1>
+                                    <p className='mt-1'>Select a relevant category so that traders can find your project</p>
                                 </div>
-                                <button className="btn btn-primary mb-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Comment History</button>
+                                <button style={{ background: '#003f6b' }} className="btn Home-btns-1 border-0 btn-primary mb-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Comment History</button>
                             </Card.Header>
                             <Card.Body className="bg-white">
                                 <div className="row">
                                     <div className="col-md-6 mb-3 d-flex justify-content-lg-start">
-                                        <span className="d-block" style={{ fontSize: '12px' }}>Project Created On :<span className="ms-2 fw-semibold text-primary">01/05/2023</span> </span>
+                                        <span className="d-block fw-semibold text-900" style={{ fontSize: '14px' }}>Project Created On :<span className="ms-2 fw-semibold text-primary">01/05/2023</span> </span>
                                     </div>
                                     <div className="col-md-6 mb-3 d-flex justify-content-lg-start">
-                                        <span className="" style={{ fontSize: '12px' }}>Last Update On :<span className="ms-2 fw-semibold text-success">10/05/2023</span> </span>
+                                        <span className="fw-semibold text-900" style={{ fontSize: '14px' }}>Last Update On :<span className="ms-2 fw-semibold text-success">10/05/2023</span> </span>
                                     </div>
                                 </div>
 
@@ -156,7 +154,7 @@ function Editpostproject() {
 
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 category <span className="text-danger">*</span>
                                             </Form.Label>
                                             <p className="text-900 text-capitalize">Attic</p>
@@ -164,7 +162,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 sub-category <span className="text-danger">*</span>
                                             </Form.Label>
                                             <p className="text-900 text-capitalize">Worktop</p>
@@ -172,7 +170,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={12} className='me-2 '>
                                         <Form.Group controlId="courseTitle">
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 project title <span className="text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
@@ -190,7 +188,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={12} className='me-2'>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className='text-700 text-uppercase'>Project Description <span className="text-danger">*</span> </Form.Label>
+                                            <Form.Label className='text-700 '>Project Description <span className="text-danger">*</span> </Form.Label>
                                             {/* <Form.Control
                                                 as="textarea"
                                                 // value={form.project_description}
@@ -228,11 +226,11 @@ function Editpostproject() {
                                                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                                                 }}
                                             />
-                                            <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our Traders
+                                            <p className='mt-2' style={{fontSize:'14px'}}>Be Descriptive , Projects with good descriptions are more popular with our Traders
                                             </p>
                                         </Form.Group>
                                     </Col>
-                                    <Form.Label className='text-700 text-uppercase'>
+                                    <Form.Label className='text-700 '>
                                         Upload Sample and Other Helpful
                                     </Form.Label>
                                     <Card>
@@ -297,7 +295,7 @@ function Editpostproject() {
                                     {/* Upload Samples */}
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 mt-3 text-uppercase'>
+                                            <Form.Label className='text-700 mt-3 '>
                                                 Budget Type <span className="text-danger">*</span>
                                             </Form.Label>
                                             <Form.Select
@@ -315,7 +313,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 mt-3 text-uppercase'>
+                                            <Form.Label className='text-700 mt-3 '>
                                                 Currency <span className="text-danger">*</span>
                                             </Form.Label>
                                             <Form.Select
@@ -332,7 +330,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 Budget <span className="text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
@@ -361,7 +359,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={12} className=''>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className='text-700 text-uppercase'>Project Location <span className="text-danger">*</span> </Form.Label>
+                                            <Form.Label className='text-700 '>Project Location <span className="text-danger">*</span> </Form.Label>
                                             {/* <Form.Control
                                                 value={form.location}
                                                 required
@@ -393,7 +391,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 Post Code<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
@@ -408,7 +406,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 Starting Date
                                             </Form.Label>
                                             <Form.Control
@@ -424,47 +422,52 @@ function Editpostproject() {
                                     </Col>
                                     <Col md="12">
                                         <Form.Group className='mb-3 mt-2'>
-                                            <Form.Label className='text-700 d-block text-uppercase'>
+                                            <Form.Label className='text-700 d-block '>
                                                 Project Visibility <span className="text-danger">*</span>
                                             </Form.Label>
                                             <Form.Check
+                                                className="mb-0 mt-3"
                                                 type='radio'
-                                                id="radio-btn"
+                                                // id="radio-btn"
                                                 // onChange={(e) => { handleChange(e) }}
                                                 name="visibility"
                                                 value="public"
-                                                className='d-inline-block'
+
                                             >
-                                                <Form.Check.Input name="visibility" type="radio" />
+                                                <Form.Check.Input className='cursor-pointer' name="visibility" type="radio" />
                                                 <Form.Check.Label
-                                                    style={{ fontSize: '14px' }}
+                                                    className="d-inline"
+
                                                 >
-                                                    <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span >(All Traders can view the project post and send proposals)</span></span>
+                                                    <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className=""><span className="text-900 fw-semibold me-1">Public</span><span >(All Traders can view the project post and send proposals)</span></span>
                                                 </Form.Check.Label>
                                             </Form.Check>
                                         </Form.Group>
+
                                         <Form.Group className=''>
                                             <Form.Check
                                                 type='radio'
-                                                id="radio-btn"
+                                                // id="radio-btn"
                                                 // onChange={(e) => { handleChange(e) }}
                                                 name="visibility"
                                                 value="private"
-                                                className='d-inline-block'
+
+                                                className="mb-0 mt-3"
+                                            // className='d-inline-block'
                                             >
-                                                <Form.Check.Input name="visibility" type="radio" />
+                                                <Form.Check.Input className='cursor-pointer' name="visibility" type="radio" />
                                                 <Form.Check.Label
-                                                    style={{ fontSize: '14px' }}
+                                                    className='d-inline'
+
                                                 >
-                                                    <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span >(Only Traders that you specifically invite can view the
-                                                        project post and send proposal)</span></span>
+                                                    <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className=""><span className="text-900 fw-semibold me-1">Private</span><span>(Only Traders that you specifically invite can view the project post and send proposal)</span></span>
                                                 </Form.Check.Label>
                                             </Form.Check>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700  text-uppercase'>
+                                            <Form.Label className='text-700  '>
                                                 Project Duration Time <span className="text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
@@ -480,7 +483,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group className='mb-3'>
-                                            <Form.Label className='text-700  text-uppercase'>
+                                            <Form.Label className='text-700  '>
                                                 Expiry Date <span className="text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control
@@ -526,7 +529,7 @@ function Editpostproject() {
 
                         {/* Post A Project */}
                         <Modal show={showModal} onHide={handleClose}>
-                            <Modal.Header >
+                            <Modal.Header closeButton >
                                 <Modal.Title>Warning</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
@@ -534,10 +537,10 @@ function Editpostproject() {
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose}>
-                                    Cancel
+                                    No
                                 </Button>
                                 <Button as={Link} to="/dashboard/my-project" variant="danger" onClick={handleClose}>
-                                    Exit
+                                    Yes
                                 </Button>
 
                             </Modal.Footer>
@@ -554,7 +557,7 @@ function Editpostproject() {
                                 <Row className="gx-2 gy-3">
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 category <span className="text-danger">*</span>
                                             </Form.Label>
                                             <p className="text-900 text-capitalize">Attic</p>
@@ -562,7 +565,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 sub-category <span className="text-danger">*</span>
                                             </Form.Label>
                                             <p className="text-900 text-capitalize">Worktop</p>
@@ -570,16 +573,16 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={12} className='me-2 '>
                                         <Form.Group controlId="courseTitle">
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 project title <span className="text-danger">*</span>
                                             </Form.Label>
-                                            <p className="text-900 text-uppercase">WHITE ATTICA SUPERNATURAL QUARTZ</p>
+                                            <p className="text-900 ">WHITE ATTICA SUPERNATURAL QUARTZ</p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={12} className='me-2'>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className='text-700 text-uppercase'>Project Description <span className="text-danger">*</span> </Form.Label>
-                                            <p className="text-900 text-justify">White Attica Supernatural Quartz has a crisp white base featured with an
+                                            <Form.Label className='text-700 '>Project Description <span className="text-danger">*</span> </Form.Label>
+                                            <p className="text-900 ">White Attica Supernatural Quartz has a crisp white base featured with an
                                                 intricate veiny pattern. This quartz slab has a super sleek look in polished
                                                 finish which
                                                 is more enhanced by the distinct black veins which have been manufactured to look fit for classNamey modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true
@@ -590,7 +593,7 @@ function Editpostproject() {
                                     </Col>
                                     {/* Upload Samples */}
 
-                                    <Form.Label className='text-700 text-uppercase'>
+                                    <Form.Label className='text-700 '>
                                         Upload Sample and Other Helpful
                                     </Form.Label>
                                     <div className="col-6">
@@ -604,7 +607,7 @@ function Editpostproject() {
                                     {/* Upload Samples */}
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 Budget Type <span className="text-danger">*</span>
                                             </Form.Label>
                                             <p className="text-900">Fixed Price</p>
@@ -612,7 +615,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 Currency <span className="text-danger">*</span>
                                             </Form.Label>
                                             <p className="text-900">£ GBP </p>
@@ -620,7 +623,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 Budget <span className="text-danger">*</span>
                                             </Form.Label>
                                             <p className="text-900">£ 200 </p>
@@ -629,13 +632,13 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={12} className=''>
                                         <Form.Group className="mb-3">
-                                            <Form.Label className='text-700 text-uppercase'>Project Location <span className="text-danger">*</span> </Form.Label>
+                                            <Form.Label className='text-700 '>Project Location <span className="text-danger">*</span> </Form.Label>
                                             <p className="text-900">Buckinghamshire </p>
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 Post Code<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <p className="text-900">CD23BX </p>
@@ -643,7 +646,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group>
-                                            <Form.Label className='text-700 text-uppercase'>
+                                            <Form.Label className='text-700 '>
                                                 Starting Date
                                             </Form.Label>
                                             <p className="text-900">01/04/2023 </p>
@@ -651,7 +654,7 @@ function Editpostproject() {
                                     </Col>
                                     <Col md="12">
                                         <Form.Group className='mb-3 mt-2'>
-                                            <Form.Label className='text-700 d-block text-uppercase'>
+                                            <Form.Label className='text-700 d-block '>
                                                 Project Visibility <span className="text-danger">*</span>
                                             </Form.Label>
                                             {/* <Form.Check
@@ -666,7 +669,7 @@ function Editpostproject() {
                                             <Form.Check.Label
                                                 style={{ fontSize: '14px' }}
                                             >
-                                                <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span >(All Traders can view the project post and send proposals)</span></span>
+                                                <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="">  Public <span >(All Traders can view the project post and send proposals)</span></span>
                                             </Form.Check.Label>
                                             {/* </Form.Check> */}
                                         </Form.Group>
@@ -683,7 +686,7 @@ function Editpostproject() {
                         <Form.Check.Label
                           style={{ fontSize: '14px' }}
                         >
-                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span >(Only Traders that you specifically invite can view the
+                          <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className=""> Private <span >(Only Traders that you specifically invite can view the
                             <p className="opt-span">project post and send proposal)</p></span></span>
                         </Form.Check.Label>
                       </Form.Check>
@@ -692,7 +695,7 @@ function Editpostproject() {
 
                                     <Col lg={6} md={6} className=''>
                                         <Form.Group className='mb-3'>
-                                            <Form.Label className='text-700  text-uppercase'>
+                                            <Form.Label className='text-700  '>
                                                 Expiry Date <span className="text-danger">*</span>
                                             </Form.Label>
                                             <p className="text-900">01/05/2023 </p>
@@ -719,7 +722,7 @@ function Editpostproject() {
 
                         <div className="offcanvas offcanvas-end" id="offcanvasRight" tabindex="-1" aria-labelledby="offcanvasRightLabel">
                             <div className="bg-light offcanvas-header">
-                                <h5 id="offcanvasRightLabel">Comment History</h5><button className="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                <h1 className="text-900" id="offcanvasRightLabel">Comment History</h1><button className="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
                             <div className="offcanvas-body">
                                 <div>
@@ -738,7 +741,7 @@ function Editpostproject() {
                                                 <div className="col-lg-6">
                                                     <div className="timeline-item-content">
                                                         <div className="timeline-item-card">
-                                                            <h5 className="mb-2">Project Owner Name</h5>
+                                                            <h2 className="mb-2">Project Owner Name</h2>
                                                             <p className="fs--1 mb-0">Project Updated in MAI <span className="fw-semibold">Amount Changed from £ 6,157.32 to £ 6,606.96</span></p>
                                                         </div>
                                                     </div>
@@ -757,7 +760,7 @@ function Editpostproject() {
                                                 <div className="col-lg-6">
                                                     <div className="timeline-item-content">
                                                         <div className="timeline-item-card">
-                                                            <h5 className="mb-2">Project Owner Name</h5>
+                                                            <h2 className="mb-2">Project Owner Name</h2>
                                                             <p className="fs--1 mb-0"><p className="fs--1 mb-0">Project Updated in MAI <span className="fw-semibold">Amount Changed from £ 6,157.32 to £ 6,606.96</span></p> </p>
                                                         </div>
                                                     </div>
@@ -777,7 +780,7 @@ function Editpostproject() {
                                                 <div className="col-lg-6">
                                                     <div className="timeline-item-content">
                                                         <div className="timeline-item-card">
-                                                            <h5 className="mb-2">Project Owner Name</h5>
+                                                            <h2 className="mb-2">Project Owner Name</h2>
                                                             <p className="fs--1 mb-0"><p className="fs--1 mb-0">Project Updated in MAI <span className="fw-semibold">Amount Changed from £ 6,157.32 to £ 6,606.96</span></p> </p>
                                                         </div>
                                                     </div>
@@ -797,7 +800,7 @@ function Editpostproject() {
                                                 <div className="col-lg-6">
                                                     <div className="timeline-item-content">
                                                         <div className="timeline-item-card">
-                                                            <h5 className="mb-2">Project Owner Name</h5>
+                                                            <h2 className="mb-2">Project Owner Name</h2>
                                                             <p className="fs--1 mb-0"><p className="fs--1 mb-0">Project Updated in MAI <span className="fw-semibold">Amount Changed from £ 6,157.32 to £ 6,606.96</span></p> </p>
                                                         </div>
                                                     </div>

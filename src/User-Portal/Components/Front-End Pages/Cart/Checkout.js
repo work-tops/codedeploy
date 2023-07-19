@@ -3,8 +3,6 @@ import { Button, Col, Modal, Row, Container, Form, Card } from "react-bootstrap"
 import NavbarStandard from "../../Header/AdvanceHeader/NavbarStandard";
 import { Link } from "react-router-dom";
 import payment_methods from '../../Projectimages/payment_methods.png'
-import paypal from '../../Projectimages/paypal.png'
-import sheild from '../../Projectimages/shield.png'
 import Footer from "../../Footer/Footer";
 function Checkout() {
 
@@ -25,7 +23,7 @@ function Checkout() {
                             <div className="col-xl-4 order-xl-1">
                                 <div className="card">
                                     <div className="card-header bg-light btn-reveal-trigger d-flex flex-between-center">
-                                        <h5 className="mb-0">Order Summary</h5>
+                                        <h2 className="mb-0">Order Summary</h2>
                                         <Link to="/cart">
                                             <a className="btn btn-link btn-sm btn-reveal text-600" >
                                                 <span className="fas fa-pencil-alt"></span>
@@ -70,7 +68,7 @@ function Checkout() {
                                     <div className="card-header bg-light">
                                         <div className="row flex-between-center">
                                             <div className="col-sm-auto">
-                                                <h5 className="mb-2 mb-sm-0">Your Shipping Address</h5>
+                                                <h2 className="mb-2 mb-sm-0">Your Shipping Address</h2>
                                             </div>
                                             <div className="col-sm-auto">
                                                 <a onClick={handleShow} className="btn btn-falcon-default btn-sm" href="#!">
@@ -86,7 +84,7 @@ function Checkout() {
                                             aria-labelledby="example-custom-modal-styling-title"
                                         >
                                             <Modal.Header closeButton>
-                                                <h5 className="text-900"> Address</h5>
+                                                <h2 className="text-900 mb-0">Address</h2>
                                             </Modal.Header>
                                             <Modal.Body>
                                                 <Form>
@@ -236,7 +234,7 @@ function Checkout() {
                                 {/*  */}
                                 <Card className="mb-3">
                                     <Card.Header className="bg-light">
-                                        <h5>Shipping Method</h5>
+                                        <h2>Shipping Method</h2>
                                     </Card.Header>
                                     <Card.Body>
                                         <div className="row">
@@ -276,7 +274,7 @@ function Checkout() {
                                 {/*  */}
                                 <div className="card mb-3">
                                     <div className="card-header bg-light">
-                                        <h5 className="mb-0">Payment Method</h5>
+                                        <h2 className="mb-0">Payment Method</h2>
                                     </div>
                                     <div className="card-body">
                                         <form>

@@ -116,10 +116,10 @@ const OwnerEstimateTable = () => {
             </Row>
             <div className="container mt-4">
                 <Card className="mb-3 btn-reveal-trigger h-100">
-                    <Card.Header as="h5" className="d-flex gap-2 flex-wrap flex-between-center bg-white ">
-                        <h5 className="text-capitalize">
+                    <Card.Header className="d-flex gap-2 flex-wrap flex-between-center bg-light ">
+                        <h1 className="text-capitalize">
                             Estimate
-                        </h5>
+                        </h1>
                     </Card.Header>
                     <Card.Body>
                         <AdvanceTableWrapper
@@ -138,7 +138,7 @@ const OwnerEstimateTable = () => {
                                 rowClassName="align-middle white-space-nowrap"
                                 tableProps={{
                                     striped: true,
-                                    className: 'fs--1 mb-0 overflow-hidden'
+                                    className: 'mb-0 overflow-hidden'
                                 }}
                             />
 
@@ -158,7 +158,7 @@ const OwnerEstimateTable = () => {
             {/* Estimate Modal */}
             <Modal show={show} onHide={handleClose} size="lg" centered>
                 <Modal.Header closeButton>
-                    <h5>Estimate Details</h5>
+                    <h1>Estimate Details</h1>
                 </Modal.Header>
                 <Modal.Body>
                     {/* <div className="card mb-3"> */}
@@ -193,11 +193,11 @@ const OwnerEstimateTable = () => {
                             </div>
                         </div>
                         <div className="card-body">
-                            <div className="row align-items-center text-center mb-3">
-                                <div className="col-sm-6 text-sm-start">
+                            <div className="row align-items-center mb-3">
+                                <div className="col-sm-6 text-start">
 
-                                    <h6 className="">From,</h6>
-                                    <h6>Jagan</h6>
+                                    <h6 className="text-900">From,</h6>
+                                    <h6 className="text-900">Jagan</h6>
                                     <p className="fs--1 mb-0">156 University Ave, Toronto<br></br>On, Canada, M5H 2H7</p>
                                 </div>
 
@@ -290,7 +290,7 @@ const OwnerEstimateTable = () => {
                                 </table>
                             </div>
                             <div className="row g-3 justify-content-between">
-                                <div className="order-2 order-lg-0 col-md-6">
+                                <div className="order-2 order-md-0 order-lg-0 col-md-6">
                                     <h6>Customer Notes</h6>
                                     <p className="text-justify">
                                         .....

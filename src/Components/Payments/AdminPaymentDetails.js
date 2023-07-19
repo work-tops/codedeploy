@@ -8,6 +8,8 @@ import { Dropdown } from "react-bootstrap";
 import logo from '../../User-Portal/Components/Projectimages/My Project Final logo-01.png'
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
+
+
 const Payments = () => {
 
     const [show, setShow] = useState(false);
@@ -291,11 +293,11 @@ const Payments = () => {
     return (
         <>
             <Row>
-                <Col lg={12} className="">
+                <Col lg={12} className="mb-5">
                     <Card className="">
                         <Card.Header className="bg-light">
-                            <h5>Payments<span className="ms-1 fs--1 badge bg-secondary">#100</span></h5>
-                            <p className="text-dark text-capitalize fs--1 mt-2">Here all the Payments on your store</p>
+                            <h2>Payments<span className="ms-2 fs--1 badge bg-secondary">#100</span></h2>
+                            <p className="text-dark text-capitalize  mt-2">Here all the Payments on your store</p>
                         </Card.Header>
                         <Card.Body>
 
@@ -315,7 +317,7 @@ const Payments = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        className: 'fs--1 mb-0 overflow-hidden'
+                                        className: 'mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">

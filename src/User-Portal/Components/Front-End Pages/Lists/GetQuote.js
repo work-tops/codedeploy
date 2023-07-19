@@ -45,10 +45,10 @@ function GetQuote() {
                     </Col>
                     <Col lg={12}>
                         <div className="d-flex justify-content-center align-items-center mt-5">
-                            <h4 className="fw-bolder">Get Quote</h4>
+                            <h1 className="fw-bolder">Get Quote</h1>
                         </div>
                         <div className="d-flex justify-content-center align-items-center">
-                            <p className="text-center" style={{ fontSize: '14px' }}>Give us the details of your project and we'll send it to specialist trades for you.</p>
+                            <p className="text-center">Give us the details of your project and we'll send it to specialist trades for you.</p>
                         </div>
                         <Row className="">
 
@@ -59,31 +59,31 @@ function GetQuote() {
                                         <Row>
                                             <Col lg={6}>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="fw-semibold text-uppercase text-900">
+                                                    <Form.Label className="  text-900">
                                                         Stone Category<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
-                                                    <p className="text-capitalize text-900">Marble</p>
+                                                    <p className=" text-900">Marble</p>
                                                 </Form.Group>
                                             </Col>
                                             <Col lg={6}>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="fw-semibold text-uppercase text-900">
+                                                    <Form.Label className="  text-900">
                                                         Thickness<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
-                                                    <p className="text-capitalize text-900">20mm</p>
+                                                    <p className="text-900">20mm</p>
                                                 </Form.Group>
                                             </Col>
                                             <Col lg={12}>
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="fw-semibold text-uppercase text-900">
+                                                    <Form.Label className="  text-900">
                                                         Stone Name<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
-                                                    <p className="text-capitalize text-900">Calacatta Light Quartz</p>
+                                                    <p className=" text-900">Calacatta Light Quartz</p>
                                                 </Form.Group>
                                             </Col>
                                             <Col lg={12}>
                                                 <div className="mb-3" >
-                                                    <Form.Label className="fw-semibold text-uppercase text-900">
+                                                    <Form.Label className="  text-900">
                                                         Attach diagrams/plans
                                                     </Form.Label>
                                                     <div {...getRootProps({ className: 'dropzone-area py-6' })}>
@@ -136,14 +136,14 @@ function GetQuote() {
                                                         </div>
                                                     }
 
-                                                    <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
-                                                    <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
+                                                    <small className='d-block'><span className=' me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
+                                                    <small className='d-block'><span className=' me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
                                                 </div>
                                             </Col>
                                             <Col lg={12}>
 
                                                 <Form.Group className="mb-3">
-                                                    <Form.Label className="fw-semibold text-uppercase text-900">
+                                                    <Form.Label className="  text-900">
                                                         More Informations<span className="ms-1 text-danger">*</span>
                                                     </Form.Label>
                                                     {/* <Form.Control as="textarea" rows={5} /> */}
@@ -176,7 +176,7 @@ function GetQuote() {
                                 </Card>
                                 <Card className="mb-3">
                                     <Card.Header className="bg-light">
-                                        <Form.Label className="fw-semibold text-uppercase text-900">
+                                        <Form.Label className="  text-900">
                                             Postcode<span className="ms-1 text-danger"></span>
                                         </Form.Label>
                                     </Card.Header>
@@ -189,7 +189,7 @@ function GetQuote() {
                                 </Card>
                                 <Card className="mb-3">
                                     <Card.Header className="bg-light">
-                                        <Form.Label className="fw-semibold text-uppercase text-900">
+                                        <Form.Label className="  text-900">
                                             When will you be ready for template?<span className="ms-1 text-danger">*</span>
                                         </Form.Label>
                                     </Card.Header>
@@ -255,7 +255,7 @@ function GetQuote() {
                                     <Card.Body>
 
                                         <Form.Group className="mb-3">
-                                            <Form.Label className="fw-semibold text-uppercase text-900">
+                                            <Form.Label className="  text-900">
                                                 Tell us About You<span className="ms-1 text-danger">*</span>
                                             </Form.Label>
                                             <Form.Control type="text"

@@ -62,7 +62,7 @@ const OwnerEnquiryTable = () => {
         {
             id: '625355',
             name: 'Peter Leverkus',
-            date: '10 May 2023',
+            date: '10 MAY 2023',
             serviceName: 'Kitchen Worktops',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
             status: <span className="badge bg-success">Completed</span>,
@@ -75,7 +75,7 @@ const OwnerEnquiryTable = () => {
         {
             id: '625355',
             name: 'Peter Leverkus',
-            date: '10 May 2023',
+            date: '10 MAY 2023',
             serviceName: 'Kitchen Worktops',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
             status: <span className="badge bg-danger">Declined</span>,
@@ -88,7 +88,7 @@ const OwnerEnquiryTable = () => {
         {
             id: '625355',
             name: 'Peter Leverkus',
-            date: '10 May 2023',
+            date: '10 MAY 2023',
             serviceName: 'Kitchen Worktops',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
             status: <span className="badge bg-warning">Pending</span>,
@@ -101,7 +101,7 @@ const OwnerEnquiryTable = () => {
         {
             id: '625355',
             name: 'Peter Leverkus',
-            date: '10 May 2023',
+            date: '10 MAY 2023',
             serviceName: 'Kitchen Worktops',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
             status: <span className="badge bg-primary">Processing</span>,
@@ -125,9 +125,9 @@ const OwnerEnquiryTable = () => {
                     aria-labelledby="example-custom-modal-styling-title"
                 >
                     <Modal.Header closeButton>
-                        <h6 className="text-uppercase">
+                        <h2 className="mb-0 text-capitalize">
                             Please Type Your Message
-                        </h6>
+                        </h2>
                         {/* <Button onClick={handleClose} className="bg-danger border-0">Close</Button> */}
                     </Modal.Header>
                     <Modal.Body>
@@ -154,25 +154,25 @@ const OwnerEnquiryTable = () => {
                         {/* <Form.Group className="mb-3">
                             <Form.Control as="textarea" placeholder='Type Your Message....' rows={8} />
                         </Form.Group> */}
-                        <Form.Group className="mb-3">
+                        <Form.Group className="mt-2">
                             <Form.Check type="checkbox" id="rememberMe" className="mb-0">
                                 <Form.Check.Input type="checkbox" />
-                                <Form.Check.Label style={{ fontSize: '12px' }} className="mb-0 text-900">
+                                <Form.Check.Label className="mb-0 text-900">
                                     Proceed to Send
                                 </Form.Check.Label>
                             </Form.Check>
                         </Form.Group>
-                        <div className="d-flex justify-content-end mb-3">
-                            <div className="d-flex justify-content-end gap-2 mb-3">
-                                <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
-                                    Attachments
-                                </Button>
-                                <Button style={{ background: '#003f6b' }} className="text-uppercase border-0">
-                                    Send
-                                </Button>
-                            </div>
-                        </div>
                     </Modal.Body>
+                    <Modal.Footer>
+                        <div className="d-flex justify-content-end gap-2">
+                            <Button style={{ background: '#003f6b' }} className="Home-btns-1 border-0">
+                                Attachments
+                            </Button>
+                            <Button style={{ background: '#003f6b' }} className="Home-btns-1 border-0">
+                                Send
+                            </Button>
+                        </div>
+                    </Modal.Footer>
                 </Modal>
 
                 {/*  */}

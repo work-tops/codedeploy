@@ -99,18 +99,15 @@ function ServiceInformation() {
                                 <Col xl={8} className="position-relative">
                                     <Row className="g-3 align-items-center">
                                         <Col lg={5}>
-                                            <div className="position-relative text-center ">
-                                                <img
-                                                    src={freelancer}
-                                                    className="w-100 rounded-1 overlay"
-                                                />
+                                            <div className=''>
+                                                <img className="w-100 rounded-1 overlay" src={freelancer} width={400} height={219} alt="profile-img" />
                                             </div>
                                         </Col>
                                         <Col lg={7}>
-                                            <h2 className="fw-bold text-white">
+                                            <h1 className="text-uppercase text-white">
                                                 Reliant Plumbing and Heating
-                                            </h2>
-                                            <p className="text-justify text-white" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span></p>
+                                            </h1>
+                                            <p className=" text-white" style={{ fontSize: '14px' }}><Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span></p>
                                             <p className="text-white fw-semi-bold fs--1">
                                                 <span className="me-1">4.5</span>
                                                 <span>
@@ -143,7 +140,7 @@ function ServiceInformation() {
                                                     onClick={handleRemoveFromWishlist}
                                                     role='button'
                                                     style={{ fontSize: '14px' }}
-                                                    className="text-justify fw-semibold"
+                                                    className=" fw-semibold"
                                                     href="#!"
                                                     data-bs-toggle="tooltip"
                                                     data-bs-placement="top"
@@ -159,7 +156,7 @@ function ServiceInformation() {
                                                     onClick={handleAddToWishlist}
                                                     role='button'
                                                     style={{ fontSize: '14px' }}
-                                                    className="text-justify fw-semibold"
+                                                    className=" fw-semibold"
                                                     href="#!"
                                                     data-bs-toggle="tooltip"
                                                     data-bs-placement="top"
@@ -183,12 +180,12 @@ function ServiceInformation() {
                     </Card>
                 </Col>
                 <Row className="">
-                    <Col lg={8} className="container">
+                    <Col lg={8} className="order-2 order-lg-0 container">
 
                         {/* Service Images */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light">
-                                Photo Gallery
+                            <Card.Header className="bg-light">
+                                <h2>Photo Gallery</h2>
                             </Card.Header>
                             <Card.Body className="position-relative">
 
@@ -209,14 +206,11 @@ function ServiceInformation() {
 
                         {/* Profile */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light">
-                                Profile
+                            <Card.Header className="bg-light">
+                                <h2>Profile</h2>
                             </Card.Header>
                             <Card.Body className="position-relative">
-                                <p
-                                    style={{ fontSize: '14px' }}
-                                    className="text-justify"
-                                >
+                                <p>
                                     My name is Nick. I am the main tradesmen for Kentishbuilder.
                                     After reading my feedback you will see I am dedicated to my work.
                                     I always respect the customers wishes and work with them to
@@ -233,13 +227,12 @@ function ServiceInformation() {
 
                         {/* About company Reliant Plumbing and Heating */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light">
-                                About company Reliant Plumbing and Heating
+                            <Card.Header className="bg-light">
+                                <h2>About company Reliant Plumbing and Heating</h2>
                             </Card.Header>
                             <Card.Body className="position-relative">
                                 <p
-                                    style={{ fontSize: '14px' }}
-                                    className="text-justify"
+                                // className=""
                                 >
                                     I have been in the building industry for 45years since |
                                     left school. | have been a brick-layer for 40 years and have
@@ -273,8 +266,8 @@ function ServiceInformation() {
                         />
                         {/* Skills */}
                         <Card className="mb-3">
-                            <Card.Header as="h5" className="bg-light">
-                                Skills
+                            <Card.Header className="bg-light">
+                                <h2>Skills</h2>
                             </Card.Header>
                             <Card.Body className="position-relative">
                                 <ol>
@@ -294,17 +287,17 @@ function ServiceInformation() {
                         {/* Skills */}
                         {/* Review */}
                         <Card className="mb-3">
-                            <Card.Header className=" text-capitalize bg-light">
-                                <h5 className="text-uppercase">
+                            <Card.Header className="  bg-light">
+                                <h2 className="">
                                     Reviews (60)
-                                </h5>
+                                </h2>
                             </Card.Header>
                             <Card.Body>
-                                <div className="d-flex gap-2 mt-2 justify-content-lg-end">
+                                <div className="d-flex gap-2 mb-2 justify-content-lg-end">
                                     <Button
                                         variant="falcon-default"
                                         size="sm"
-                                        onClick={handleShow}
+                                        onClick={handleShow1}
                                     >
                                         Write Review
                                     </Button>
@@ -399,7 +392,7 @@ function ServiceInformation() {
                                 aria-labelledby="example-custom-modal-styling-title"
                             >
                                 <Modal.Header closeButton>
-                                    <h5 class="mb-3">Write your Review</h5>
+                                    <h1 class="">Write your Review</h1>
                                 </Modal.Header>
                                 <Modal.Body>
 
@@ -477,31 +470,26 @@ function ServiceInformation() {
                             <Card.Body className="py-0">
 
                                 <Row className='g-3 align-items-center text-center text-md-start py-3'>
-                                    <Col md="auto">
-                                        <Link to="#!">
-                                            <div class="avatar avatar-2xl">
-                                                <div class="avatar-name rounded-circle"><span>EW</span></div>
-                                            </div>
-                                        </Link>
-                                    </Col>
                                     <Col>
                                         <Row>
                                             <Col xs={12}>
-                                                <h6 className="fs-0">
-                                                    <Link to="#!" className="me-2">
-                                                        Emma Watson
-                                                    </Link>
-                                                    <span>
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />
-                                                    </span>
+                                                <div class="avatar avatar-2xl">
+                                                    <div class="avatar-name rounded-circle"><span>EW</span>
+                                                    </div>
+                                                </div>
+                                                <h6 className="text-primary fs-0">
+                                                    Emma Watson
                                                 </h6>
+                                                <div>
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />
+                                                </div>
                                             </Col>
                                             <Col md={10}>
-                                                <p className="fs--1 text-800">
+                                                <p className=" text-800">
                                                     Excellent Course for any beginner like me :p
                                                     The trainer was very generous and helped whenever DMed.
                                                 </p>
@@ -512,9 +500,9 @@ function ServiceInformation() {
                                                     className="d-flex align-items-center
                                                     flex-column
                                                      flex-md-row gap-2
-                                                      fs--2 text-600"
+                                                      text-600"
                                                 >
-                                                    <h6 className="fs--2 text-600 mb-0">3 Days Ago</h6>
+                                                    <p className="text-900 fs--1 mb-0">3 Days Ago</p>
                                                     <p style={{ fontSize: "14px" }} className="fw-semibold mb-0 ms-1">
                                                         230 people found this helpful
                                                     </p>
@@ -548,11 +536,11 @@ function ServiceInformation() {
                                 </Row>
                                 <Card className="mb-3" style={{ background: '#f3f3f3' }}>
                                     <Card.Header className="d-flex justify-content-between">
-                                        <h6><Icon icon="mdi:reply-outline" width="24" height="24" hFlip={true} vFlip={true} />Reply from MAI</h6>
+                                        <h6 className="fw-bold fs-0"><Icon icon="mdi:reply-outline" width="24" height="24" hFlip={true} vFlip={true} />Reply from MAI</h6>
                                         <span className="fs--1 fw-semibold">01/01/2023</span>
                                     </Card.Header>
                                     <Card.Body>
-                                        <p className="text-justify fs--1">
+                                        <p className=" ">
                                             Thank you for this awesome review, Michael.
                                             We're so pleased to know that you love your new Urban Concrete Quartz worktops and have had a truly positive experience from start to finish with MAI.com.
 
@@ -570,33 +558,27 @@ function ServiceInformation() {
                             <Divider />
                             {/*  */}
                             <Card.Body className="py-0">
-
                                 <Row className='g-3 align-items-center text-center text-md-start py-3'>
-                                    <Col md="auto">
-                                        <Link to="#!">
-                                            <div class="avatar avatar-2xl">
-                                                <div class="avatar-name rounded-circle"><span>L</span></div>
-                                            </div>
-                                        </Link>
-                                    </Col>
                                     <Col>
                                         <Row>
                                             <Col xs={12}>
-                                                <h6 className="fs-0">
-                                                    <Link to="#!" className="me-2">
-                                                        Lee
-                                                    </Link>
-                                                    <span>
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
-                                                        <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />
-                                                    </span>
+                                                <div class="avatar avatar-2xl">
+                                                    <div class="avatar-name rounded-circle"><span>L</span>
+                                                    </div>
+                                                </div>
+                                                <h6 className="text-primary fs-0">
+                                                    Lee
                                                 </h6>
+                                                <div>
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="#f68f57" width="20" height="20" />
+                                                    <Icon icon="material-symbols:star-rate-rounded" color="gray" width="20" height="20" />
+                                                </div>
                                             </Col>
                                             <Col md={10}>
-                                                <p className="fs--1 text-800">
+                                                <p className=" text-800">
                                                     Excellent Course for any beginner like me :p
                                                     The trainer was very generous and helped whenever DMed.
                                                 </p>
@@ -607,9 +589,9 @@ function ServiceInformation() {
                                                     className="d-flex align-items-center
                                                     flex-column
                                                      flex-md-row gap-2
-                                                      fs--2 text-600"
+                                                      text-600"
                                                 >
-                                                    <h6 className="fs--2 text-600 mb-0">3 Days Ago</h6>
+                                                    <p className=" text-900 fs--1 mb-0">3 Days Ago</p>
                                                     <p style={{ fontSize: "14px" }} className="fw-semibold mb-0 ms-1">
                                                         230 people found this helpful
                                                     </p>
@@ -643,11 +625,11 @@ function ServiceInformation() {
                                 </Row>
                                 <Card className="mb-3" style={{ background: '#f3f3f3' }}>
                                     <Card.Header className="d-flex justify-content-between">
-                                        <h6><Icon icon="mdi:reply-outline" width="24" height="24" hFlip={true} vFlip={true} />Reply from MAI</h6>
+                                        <h5 className="fw-bold fs-0"><Icon icon="mdi:reply-outline" width="24" height="24" hFlip={true} vFlip={true} />Reply from MAI</h5>
                                         <span className="fs--1 fw-semibold">01/01/2023</span>
                                     </Card.Header>
                                     <Card.Body>
-                                        <p className="text-justify fs--1">
+                                        <p className=" ">
                                             Thank you for this awesome review, Michael.
                                             We're so pleased to know that you love your new Urban Concrete Quartz worktops and have had a truly positive experience from start to finish with MAI.com.
 
@@ -675,16 +657,14 @@ function ServiceInformation() {
                         {/*  */}
                     </Col>
                     {/*  */}
-                    <Col lg={4} className="container">
+                    <Col lg={4} className="container order-lg-0 order-1">
                         <div className="course-details-sticky-sidebar mb-lg-8 mt-xl-n10 pe-xl-4 pe-xxl-7">
                             {/* Plan Your Carrer */}
-                            <Card className="mt-5">
-
+                            <div className="mt-5 d-none d-lg-block"></div>
+                            <Card className="mb-3 mb-lg-0">
                                 <Card.Body>
                                     <Row>
-                                        <Col md={7} lg={12} className="order-md-1 order-lg-0">
-
-
+                                        <Col md={7} lg={12} className="">
                                             <Button
                                                 variant="primary"
                                                 size="lg"
@@ -706,7 +686,7 @@ function ServiceInformation() {
                                         </Col>
                                     </Row>
                                     <hr className="border-top border-dashed" />
-                                    <h6 className="fw-bold">Share </h6>
+                                    <h5 className="fw-bold">Share </h5>
                                     <div className="d-flex justify-content-start mt-4 mt-xxl-0">
                                         <ul className="list-unstyled mb-0 d-flex flex-wrap flex-xxl-column gap-3 justify-content-start">
 
@@ -755,13 +735,13 @@ function ServiceInformation() {
                     <Modal.Body>
                         <Form>
                             <Form.Group className="mb-3">
-                                <Form.Label className="text-uppercase fw-semibold">
+                                <Form.Label className=" fw-semibold">
                                     What's the Message About ?<span className="text-danger">*</span>
                                 </Form.Label>
                                 <Form.Control type="text" />
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <Form.Label className="text-uppercase fw-semibold">
+                                <Form.Label className=" fw-semibold">
                                     Message<span className="text-danger">*</span>
                                 </Form.Label>
                                 {/* <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} /> */}
@@ -797,10 +777,10 @@ function ServiceInformation() {
                                 </Form.Check>
                             </Form.Group>
                         </Form>
-                        <Button className="m-1 text-uppercase border-0" style={{ background: '#003f6b' }}>
+                        <Button className="m-1  border-0" style={{ background: '#003f6b' }}>
                             attachments
                         </Button>
-                        <Button as={Link} to="/Project-owner/login" className="m-1 text-uppercase border-0" style={{ background: '#003f6b' }}>
+                        <Button as={Link} to="/Project-owner/login" className="m-1  border-0" style={{ background: '#003f6b' }}>
                             SEND
                         </Button>
                     </Modal.Body>
@@ -808,8 +788,6 @@ function ServiceInformation() {
             </div >
 
             {/*  */}
-
-
         </>
     )
 }

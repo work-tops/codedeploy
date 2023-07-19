@@ -81,14 +81,14 @@ function SellerList() {
                 <Col lg={12} className="container">
                     <Row>
                         <Col lg={3} className="mb-3">
-                            <Card className="mt-5 ">
-                                <SimpleBarReact style={{ height: '100%' }}>
+                            <div className="course-details-sticky-sidebar">
+                                <Card className="mt-5 ">
+                                    {/* <SimpleBarReact style={{ height: '100%' }}> */}
                                     <Card.Header className="bg-light d-flex justify-content-between pt-x1">
-
-                                        <h5 className="mb-0 text-700 fs-0 d-flex align-items-center">
-                                            <FontAwesomeIcon icon="filter" className="fs--1 me-1" />
-                                            <span>Filter</span>
-                                        </h5>
+                                        <h4 className="mb-0 text-900 d-flex align-items-center">
+                                            <FontAwesomeIcon icon="filter" className="fs-0 me-1" />
+                                            <span className="fs-0">Filter</span>
+                                        </h4>
                                         <div>
                                             <button
                                                 className="btn btn-sm btn-outline-secondary">Reset
@@ -171,26 +171,26 @@ function SellerList() {
                                         </ul>
                                         {/*  */}
                                         <div className="mb-3">
-                                            <Form.Label className='text-start fw-semibold fs--1 text-700'>Search County</Form.Label>
+                                            <Form.Label className='fw-semibold fs--1'>Search County</Form.Label>
                                             <MultiSelect
                                                 options={countyOptions}
                                                 selectedValues={selectedCounties}
                                                 onSelect={handleCountySelect}
                                                 onRemove={handleCountySelect}
                                                 displayValue="key"
-                                                className='form-control'
+                                                className='form-control cursor-default form-control-sm'
                                             />
                                         </div>
                                         {/*  */}
-
                                     </Card.Body>
-                                </SimpleBarReact>
-                            </Card>
+                                    {/* </SimpleBarReact> */}
+                                </Card>
+                            </div>
                         </Col>
                         <Col lg={9}>
                             <Card className="mt-5">
                                 <Card.Header className="bg-light position-relative">
-                                    <h4 className="  mb-0 mt-1">Service Provider Lists</h4>
+                                    <h1 className="mb-0 mt-1">Service Provider Lists</h1>
                                 </Card.Header>
                                 <Card.Body className="pt-0 mt-3 pt-md-3">
                                     <Row className="g-3 align-items-center">
@@ -200,7 +200,7 @@ function SellerList() {
                                                 size="sm"
                                                 variant="link"
                                             >
-                                                <FontAwesomeIcon icon="filter" className="fs-0 text-700" />
+                                                <FontAwesomeIcon icon="filter" className="fs-0 " />
                                             </Button>
                                         </Col>
                                         <Col>
@@ -229,16 +229,16 @@ function SellerList() {
                                                             <small style={{ fontSize: '16px' }} className="fw-semi-bold ms-2 me-2 d-lg-block lh-1">View</small>
                                                             <div className="d-flex">
                                                                 <div onClick={() => { setIsList(false) }}
-                                                                    className={` ${layout === 'grid' ? 'text-700' : 'text-400 hover-700'
+                                                                    className={` ${layout === 'grid' ? '' : 'text-400 hover-700'
                                                                         }`}
                                                                 >
-                                                                    <Icon className="cursor-pointer" icon="material-symbols:grid-on-sharp" width="24" height="24" />
+                                                                    <Icon className="cursor-pointer" icon="material-symbols:grid-on-sharp" width="22" height="22" />
                                                                 </div>
                                                                 <div onClick={() => { setIsList(true) }}
-                                                                    className={`me-2 ${layout === 'list' ? 'text-700' : 'text-400 hover-700'
+                                                                    className={`me-2 ${layout === 'list' ? '' : 'text-400 hover-700'
                                                                         }`}
                                                                 >
-                                                                    <Icon className="cursor-pointer" icon="material-symbols:format-list-bulleted-rounded" width="24" height="24" />
+                                                                    <Icon className="cursor-pointer" icon="material-symbols:format-list-bulleted-rounded" width="22" height="22" />
                                                                 </div>
                                                             </div>
 
@@ -265,16 +265,16 @@ function SellerList() {
                                             <Col md={8} lg={9} className="p-x1">
                                                 <Row className="g-0 h-100">
                                                     <Col lg={8}>
-                                                        <h4 className="mt-3 mb-2 text-start  mt-sm-0 fs-0 fs-lg-1">
-                                                            <Link className="text-900" to="/service-provider">
+                                                        <Link className="text-900" to="/service-provider">
+                                                            <h2 className="mt-3 product-name mb-2 product-name text-uppercase  mt-sm-0 fs-0 fs-lg-1">
                                                                 {data.name}
-                                                            </Link>
-                                                        </h4>
-                                                        <p className="text-justify mb-2 fs--1 text-primary">
+                                                            </h2>
+                                                        </Link>
+                                                        <h3 className="mb-2 mt-2 fs-0 text-primary">
                                                             Roofer
-                                                        </p>
-                                                        <p className="text-justify fs--1 mb-2">
-                                                            <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
+                                                        </h3>
+                                                        <p className="fs-0 mb-2">
+                                                            <Icon icon="material-symbols:location-on" color="gray" width="22" height="22" /> Operates in <span>CAMBRIDGE</span>
                                                         </p>
                                                         <div className="fw-semi-bold fs--1 mb-2">
                                                             <span className="me-1 text-900 me-2">4.5</span>
@@ -289,7 +289,7 @@ function SellerList() {
                                                         </div>
                                                         <div className="ms-0 mt-2 me-5 mb-2">
 
-                                                            <p className="text-justify mb-2 w-100" style={{ fontSize: '14px' }}>
+                                                            <p className=" mb-2 w-100" >
                                                                 Reliant Plumbing & Heating are a prompt, reliable and affordable
                                                                 Cambridge company that offers a variety of Plumbing
                                                                 solutions and services.
@@ -315,7 +315,7 @@ function SellerList() {
                                                                                 width="18"
                                                                                 height="18"
                                                                             />
-                                                                            <span className="d-none d-lg-inline">Remove from Wishlist</span>
+                                                                            <span className="">Remove from Wishlist</span>
                                                                         </span>
                                                                     </button>
                                                                 ) : (
@@ -331,7 +331,7 @@ function SellerList() {
                                                                                 width="18"
                                                                                 height="18"
                                                                             />
-                                                                            <span className="d-none d-lg-inline">Add to Wishlist</span>
+                                                                            <span className="">Add to Wishlist</span>
                                                                         </span>
                                                                     </button>
                                                                 )}
@@ -377,17 +377,17 @@ function SellerList() {
                                                     </Link>
                                                 </div>
                                                 <div className="p-3">
-                                                    <h4 className="mt-3 text-start  mt-sm-0 fs-0 fs-lg-1">
-                                                        <Link className="text-900" to="/service-provider">
+                                                    <Link className="text-900" to="/service-provider">
+                                                        <h2 className="mt-3 product-name text-uppercase mt-sm-0 fs-0 fs-lg-1">
                                                             {/* {data.name} */}
                                                             JAGAN SELLER
-                                                        </Link>
-                                                    </h4>
-                                                    <p className="text-justify mb-2 fs--1 text-primary">
+                                                        </h2>
+                                                    </Link>
+                                                    <h3 className="mb-2 fs-0 text-primary">
                                                         Roofer
-                                                    </p>
-                                                    <p className="text-justify fs--1 mb-2">
-                                                        <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
+                                                    </h3>
+                                                    <p className="mb-2">
+                                                        <Icon icon="material-symbols:location-on" color="gray" width="22" height="22" />Operates in <span>CAMBRIDGE</span>
                                                     </p>
                                                     <div className="fw-semi-bold fs--1">
                                                         <span className="me-1 text-900 me-2">4.9</span>
@@ -400,7 +400,7 @@ function SellerList() {
                                                         </div>
                                                         <span className="ms-2 text-secondary">(78,259 reviews)</span>
                                                     </div>
-                                                    <p className="text-justify fs--1 mt-2 w-100 d-none d-lg-block" style={{ fontSize: '14px' }}>
+                                                    <p className=" fs--1 mt-2 w-100 d-none d-lg-block" >
                                                         Reliant Plumbing & Heating are a prompt, reliable and affordable
                                                         Cambridge company that offers a variety of Plumbing
                                                         solutions and services.
@@ -486,17 +486,16 @@ function SellerList() {
                                                     </Link>
                                                 </div>
                                                 <div className="p-3">
-                                                    <h4 className="mt-3 text-start  mt-sm-0 fs-0 fs-lg-1">
-                                                        <Link className="text-900" to="/service-provider">
-                                                            {/* {data.name} */}
+                                                    <Link className="text-900" to="/service-provider">
+                                                        <h2 className="mt-3 product-name text-uppercase  mt-sm-0 fs-0 fs-lg-1">
                                                             JAGAN SELLER
-                                                        </Link>
-                                                    </h4>
-                                                    <p className="text-justify mb-2 fs--1 text-primary">
+                                                        </h2>
+                                                    </Link>
+                                                    <h3 className="mb-2 fs-0 text-primary">
                                                         Roofer
-                                                    </p>
-                                                    <p className="text-justify fs--1 mb-2">
-                                                        <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
+                                                    </h3>
+                                                    <p className=" mb-2">
+                                                        <Icon icon="material-symbols:location-on" color="gray" width="22" height="22" /> Operates in <span>CAMBRIDGE</span>
                                                     </p>
                                                     <div className="fw-semi-bold fs--1">
                                                         <span className="me-1 text-900 me-2">4.9</span>
@@ -509,7 +508,7 @@ function SellerList() {
                                                         </div>
                                                         <span className="ms-2 text-secondary">(78,259 reviews)</span>
                                                     </div>
-                                                    <p className="text-justify fs--1 mt-2 w-100 d-none d-lg-block" style={{ fontSize: '14px' }}>
+                                                    <p className=" fs--1 mt-2 w-100 d-none d-lg-block" >
                                                         Reliant Plumbing & Heating are a prompt, reliable and affordable
                                                         Cambridge company that offers a variety of Plumbing
                                                         solutions and services.
@@ -595,18 +594,17 @@ function SellerList() {
                                                     </Link>
                                                 </div>
                                                 <div className="p-3">
-                                                    <h4 className="mt-3 text-start  mt-sm-0 fs-0 fs-lg-1">
-                                                        <Link className="text-900" to="/service-provider">
+                                                    <Link className="text-900" to="/service-provider">
+                                                        <h2 className="mt-3 product-name text-uppercase  mt-sm-0 fs-0 fs-lg-1">
                                                             {/* {data.name} */}
                                                             JAGAN SELLER
-                                                        </Link>
-                                                    </h4>
-                                                    <p className="text-justify mb-2 fs--1 text-primary">
+                                                        </h2>
+                                                    </Link>
+                                                    <h3 className="mb-2 fs-0 text-primary">
                                                         Roofer
-                                                    </p>
-
-                                                    <p className="text-justify fs--1 mb-2">
-                                                        <Icon icon="material-symbols:location-on" color="gray" width="20" height="20" /> Operates in <span>CAMBRIDGE</span>
+                                                    </h3>
+                                                    <p className=" mb-2">
+                                                        <Icon icon="material-symbols:location-on" color="gray" width="22" height="22" /> Operates in <span>CAMBRIDGE</span>
                                                     </p>
                                                     <div className="fw-semi-bold fs--1">
                                                         <span className="me-1 text-900 me-2">4.9</span>
@@ -619,7 +617,7 @@ function SellerList() {
                                                         </div>
                                                         <span className="ms-2 text-secondary">(78,259 reviews)</span>
                                                     </div>
-                                                    <p className="text-justify fs--1 mt-2 w-100 d-none d-lg-block" style={{ fontSize: '14px' }}>
+                                                    <p className=" fs--1 mt-2 w-100 d-none d-lg-block" >
                                                         Reliant Plumbing & Heating are a prompt, reliable and affordable
                                                         Cambridge company that offers a variety of Plumbing
                                                         solutions and services.
@@ -756,13 +754,13 @@ function SellerList() {
                     <Modal.Body>
                         <Form>
                             <Form.Group className="mb-3">
-                                <Form.Label className="fw-semibold">
+                                <Form.Label className="">
                                     What's the Message About ?
                                 </Form.Label>
                                 <Form.Control type="text" />
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <Form.Label className="fw-semibold">
+                                <Form.Label className="">
                                     Message
                                 </Form.Label>
                                 {/* <Form.Control as="textarea" placeholder='Tag Your Description....' rows={8} /> */}
@@ -791,17 +789,17 @@ function SellerList() {
                                 <Form.Check type="checkbox" className="mb-0 mt-3">
                                     <Form.Check.Input type="checkbox" />
                                     <Form.Check.Label
-                                        className="text-700 d-inline"
+                                        className=" d-inline"
                                     >
                                         I Agree to the terms and conditions.
                                     </Form.Check.Label>
                                 </Form.Check>
                             </Form.Group>
                         </Form>
-                        <Button className="m-2 text-uppercase border-0" style={{ background: '#003f6b' }}>
+                        <Button className="m-2 border-0" style={{ background: '#003f6b' }}>
                             attachments
                         </Button>
-                        <Button as={Link} to="/Project-owner/login" className="m-2 text-uppercase border-0" style={{ background: '#003f6b' }}>
+                        <Button as={Link} to="/Project-owner/login" className="m-2 border-0" style={{ background: '#003f6b' }}>
                             Send
                         </Button>
                     </Modal.Body>

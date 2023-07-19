@@ -238,7 +238,7 @@ const PostProject = () => {
   return (
     <>
       <Form onSubmit={(e) => { formsubmit(e) }}>
-        <Row className=" font-sans-serif">
+        <Row className="">
           {/* Header */}
           <Col lg={12} className='mb-5' >
             <NavbarStandard />
@@ -252,15 +252,17 @@ const PostProject = () => {
 
           <Container>
             <Card className="mt-5">
-              <Card.Header as="h4" className='bg-light text-justify text-uppercase'>Note</Card.Header>
+              <Card.Header className='bg-light  '>
+                <h1>Note</h1>
+              </Card.Header>
               <Card.Body className="">
 
                 <ul>
-                  <li style={{ fontSize: '14px', width: '100%' }}>
+                  <li style={{ width: '100%' }}>
                     The customers who have described their requirements with better clarity while uploading the project have always connected with the right professionals and received better proposals, and hence completed their projects on time.
 
                   </li>
-                  <li style={{ fontSize: '14px', width: '100%' }}>
+                  <li style={{ width: '100%' }}>
                     To make it even better, we recommend that you upload as much relevant information (pictures, documents, specifications, etc) as possible to give clarity.
                   </li>
 
@@ -273,19 +275,20 @@ const PostProject = () => {
             {/* Post A Project */}
             <Card className="mb-3 mt-3">
               <Card.Header className='bg-light'>
-                <h4 className='text-uppercase text-justify'>Post A Project</h4>
-                <p className='mt-2 fs--1' >Select a relevant category so that traders can find your project</p>
+                <h1 className=' '>Post A Project</h1>
+                <p className='mt-2 mb-0'>Select a relevant category so that traders can find your project</p>
               </Card.Header>
               <Card.Body className="bg-white">
                 <Row className="gx-2 gy-3">
 
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         category <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Select value={form.category}
                         required
+                        className='cursor-pointer'
                         name="category"
                         onChange={(e) => { handleChange(e) }}
                       >
@@ -298,11 +301,12 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         sub-category <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Select
                         required
+                        className='cursor-pointer'
                         value={form.sub_category}
                         name="sub_category"
                         onChange={(e) => { handleChange(e) }}
@@ -316,7 +320,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={12} className='me-2 '>
                     <Form.Group controlId="courseTitle">
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         project title <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -334,7 +338,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={12} className='me-2'>
                     <Form.Group className="mb-3">
-                      <Form.Label className='text-700 text-uppercase'>Project Description <span className="text-danger">*</span> </Form.Label>
+                      <Form.Label className='text-700 '>Project Description <span className="text-danger">*</span> </Form.Label>
                       {/* <Form.Control
                         as="textarea"
                         value={form.project_description}
@@ -361,24 +365,26 @@ const PostProject = () => {
                           content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                         }}
                       />
-                      <p className='mt-2' style={{ fontSize: '12px' }}>Be Descriptive , Projects with good descriptions are more popular with our Traders</p>
+                      <p className='mt-2' style={{ fontSize: '14px' }}>Be Descriptive , Projects with good descriptions are more popular with our Traders</p>
                     </Form.Group>
                   </Col>
                   {/* Upload Samples */}
+                  <Form.Label>
+                    Upload Sample And Other Helpful
+                  </Form.Label>
                   <Card>
                     <Card.Body>
-
                       <Col lg={12} className='me-2 mb-2 w-100'>
                         <div {...getRootProps({ className: 'dropzone-area py-6' })}>
                           <input {...getInputProps()} multiple />
-                          <div className="fs--1">
+                          <div className="">
                             <img src={cloudUpload} alt="" width={20} className="me-2" />
                             <span className="d-none d-lg-inline">
                               Drag your images here
                               <br />
                               or,{' '}
                             </span>
-                            <Button variant="link" size="sm" className="p-0 fs--1">
+                            <Button variant="link" size="sm" className="p-0 ">
                               Browse
                             </Button>
                           </div>
@@ -398,7 +404,7 @@ const PostProject = () => {
                                 <div className='mx-2 flex-1 text-truncate flex-column d-flex justify-content-between'>
                                   <h6 className="text-truncate">{cover.path}</h6>
                                   <div className="d-flex align-items-center position-relative">
-                                    <p className="mb-0 fs--1 text-400 line-height-1">
+                                    <p className="mb-0  text-400 line-height-1">
                                       <strong>{getSize(cover.size)}</strong>
                                     </p>
                                   </div>
@@ -419,20 +425,21 @@ const PostProject = () => {
                           </div>
                         }
 
-                        <small className='d-block'><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</small>
-                        <small className='d-block'><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></small>
+                        <p className='d-block mb-0 mt-3' style={{ fontSize: '14px' }}><span className='fw-semibold me-2 text-danger'>Note:</span>Image can be uploaded of any dimension but we recommend you to upload image with dimension of 1024x1024 & its size must be less than 10MB.</p>
+                        <p className='d-block mb-0 mt-2' style={{ fontSize: '14px' }}><span className='fw-semibold me-2 text-danger'>Supported Format:</span><span className='fw-bold'>JPEG,PNG,PDF.</span></p>
                       </Col>
                     </Card.Body>
                   </Card>
                   {/* Upload Samples */}
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         Budget Type <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Select
                         value={form.budget_type}
                         required
+                        className='cursor-pointer'
                         name="budget_type"
                         onChange={(e) => { handleChange(e) }}
                       >
@@ -445,12 +452,13 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         Currency <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Select
                         value={form.currency}
                         required
+                        className='cursor-pointer'
                         name="currency"
                         onChange={(e) => { handleChange(e) }}
                       >
@@ -462,7 +470,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         Budget <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -490,7 +498,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={12} className=''>
                     <Form.Group className="mb-3">
-                      <Form.Label className='text-700 text-uppercase'>Project Location <span className="text-danger">*</span> </Form.Label>
+                      <Form.Label className='text-700 '>Project Location <span className="text-danger">*</span> </Form.Label>
 
                       {/* <Form.Control
                         value={form.location}
@@ -527,7 +535,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         Post Code<span className="ms-1 text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -542,36 +550,39 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
-                        Starting Date
+                      <Form.Label className='text-700 <'>
+                        Starting Date<span className='text-danger'>*</span>
                       </Form.Label>
                       <Form.Control
                         value={form.startdate}
                         required
+
                         name="startdate"
                         onChange={(e) => { handleChange(e) }}
-
                         type='date'
                       />
                     </Form.Group>
                   </Col>
                   <Col md="12">
                     <Form.Group className='mb-3 mt-2'>
+                      <Form.Label className='text-700 d-block '>
+                        Project Visibility <span className="text-danger">*</span>
+                      </Form.Label>
                       <Form.Check
                         className="mb-0 mt-3"
                         type='radio'
-                        id="radio-btn"
+                        // id="radio-btn"
                         onChange={(e) => { handleChange(e) }}
                         name="visibility"
                         value="public"
+
                       >
-                        <Form.Check.Input name="visibility" type="radio" />
+                        <Form.Check.Input className='cursor-pointer' name="visibility" type="radio" />
                         <Form.Check.Label
                           className="d-inline"
-                          style={{ fontSize: '14px' }}
+
                         >
                           <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span >(All Traders can view the project post and send proposals)</span></span>
-
                         </Form.Check.Label>
                       </Form.Check>
                     </Form.Group>
@@ -579,17 +590,18 @@ const PostProject = () => {
                     <Form.Group className=''>
                       <Form.Check
                         type='radio'
-                        id="radio-btn"
+                        // id="radio-btn"
                         onChange={(e) => { handleChange(e) }}
                         name="visibility"
                         value="private"
+
                         className="mb-0 mt-3"
                       // className='d-inline-block'
                       >
-                        <Form.Check.Input name="visibility" type="radio" />
+                        <Form.Check.Input className='cursor-pointer' name="visibility" type="radio" />
                         <Form.Check.Label
                           className='d-inline'
-                          style={{ fontSize: '14px' }}
+
                         >
                           <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span>(Only Traders that you specifically invite can view the project post and send proposal)</span></span>
                         </Form.Check.Label>
@@ -598,7 +610,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700  text-uppercase'>
+                      <Form.Label className='text-700  '>
                         Project Duration Time <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -613,7 +625,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group className='mb-3'>
-                      <Form.Label className='text-700  text-uppercase'>
+                      <Form.Label className='text-700  '>
                         Expiry Date <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -658,11 +670,11 @@ const PostProject = () => {
 
             {/* Post A Project */}
             <Modal show={showModal} onHide={handleClose}>
-              <Modal.Header >
+              <Modal.Header closeButton>
                 <Modal.Title>Warning</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <p className='text-capitalize'>
+                <p className=''>
                   Are you sure you want to cancel without posting the project?
                 </p>
               </Modal.Body>
@@ -671,7 +683,7 @@ const PostProject = () => {
                   No
                 </Button>
                 <Button as={Link} to="/dashboard/my-project" variant="danger" onClick={handleClose}>
-                  Exit
+                  Yes
                 </Button>
               </Modal.Footer>
             </Modal>
@@ -686,32 +698,32 @@ const PostProject = () => {
                 <Row className="gx-2 gy-3">
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         category <span className="text-danger">*</span>
                       </Form.Label>
-                      <p className="text-900 text-capitalize">Attic</p>
+                      <p className="text-900 ">Attic</p>
                     </Form.Group>
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         sub-category <span className="text-danger">*</span>
                       </Form.Label>
-                      <p className="text-900 text-capitalize">Worktop</p>
+                      <p className="text-900 ">Worktop</p>
                     </Form.Group>
                   </Col>
                   <Col lg={12} className='me-2 '>
                     <Form.Group controlId="courseTitle">
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         project title <span className="text-danger">*</span>
                       </Form.Label>
-                      <p className="text-900 text-uppercase">WHITE ATTICA SUPERNATURAL QUARTZ</p>
+                      <p className="text-900 ">WHITE ATTICA SUPERNATURAL QUARTZ</p>
                     </Form.Group>
                   </Col>
                   <Col lg={12} className='me-2'>
                     <Form.Group className="mb-3">
-                      <Form.Label className='text-700 text-uppercase'>Project Description <span className="text-danger">*</span> </Form.Label>
-                      <p className="text-900 text-justify">White Attica Supernatural Quartz has a crisp white base featured with an
+                      <Form.Label className='text-700 '>Project Description <span className="text-danger">*</span> </Form.Label>
+                      <p className="text-900 ">White Attica Supernatural Quartz has a crisp white base featured with an
                         intricate veiny pattern. This quartz slab has a super sleek look in polished
                         finish which
                         is more enhanced by the distinct black veins which have been manufactured to look fit for classy modern settings. The deep dark veins create remarkable designs in your interior spaces. It feels like a dream come true
@@ -722,21 +734,21 @@ const PostProject = () => {
                   </Col>
                   {/* Upload Samples */}
 
-                  <Form.Label className='text-700 text-uppercase'>
+                  <Form.Label className='text-700 '>
                     Upload Sample and Other Helpful
                   </Form.Label>
                   <div className="col-6">
                     <img src={file} width="50px" height="50px" className="pro-pre" />
-                    <span className="text-900 ms-3 fs--1"><span className="d-block mt-3 ms-2">File Name </span><span className="ms-2 d-block">(540 KB)</span><span className="ms-2 d-block">01/01/2023</span></span>
+                    <span className="text-900 ms-3 "><span className="d-block mt-3 ms-2">File Name </span><span className="ms-2 d-block">(540 KB)</span><span className="ms-2 d-block">01/01/2023</span></span>
                   </div>
                   <div className="col-6">
                     <img src={file} width="50px" height="50px" className="pro-pre" />
-                    <span className="text-900 ms-3 fs--1"><span className="d-block mt-3 ms-2">File Name </span><span className="ms-2 d-block">(540 KB)</span><span className="ms-2 d-block">01/01/2023</span></span>
+                    <span className="text-900 ms-3 "><span className="d-block mt-3 ms-2">File Name </span><span className="ms-2 d-block">(540 KB)</span><span className="ms-2 d-block">01/01/2023</span></span>
                   </div>
                   {/* Upload Samples */}
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         Budget Type <span className="text-danger">*</span>
                       </Form.Label>
                       <p className="text-900">Fixed Price</p>
@@ -744,7 +756,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         Currency <span className="text-danger">*</span>
                       </Form.Label>
                       <p className="text-900">£ GBP </p>
@@ -752,7 +764,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         Budget <span className="text-danger">*</span>
                       </Form.Label>
                       <p className="text-900">£ 200 </p>
@@ -761,13 +773,13 @@ const PostProject = () => {
                   </Col>
                   <Col lg={12} className=''>
                     <Form.Group className="mb-3">
-                      <Form.Label className='text-700 text-uppercase'>Project Location <span className="text-danger">*</span> </Form.Label>
+                      <Form.Label className='text-700 '>Project Location <span className="text-danger">*</span> </Form.Label>
                       <p className="text-900">Buckinghamshire </p>
                     </Form.Group>
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         Post Code<span className="ms-1 text-danger">*</span>
                       </Form.Label>
                       <p className="text-900">CD23BX </p>
@@ -775,7 +787,7 @@ const PostProject = () => {
                   </Col>
                   <Col lg={6} md={6} className=''>
                     <Form.Group>
-                      <Form.Label className='text-700 text-uppercase'>
+                      <Form.Label className='text-700 '>
                         Starting Date
                       </Form.Label>
                       <p className="text-900">01/01/2023 </p>
@@ -783,7 +795,7 @@ const PostProject = () => {
                   </Col>
                   <Col md="12">
                     <Form.Group className='mb-3 mt-2'>
-                      <Form.Label className='text-700 d-block text-uppercase'>
+                      <Form.Label className='text-700 d-block '>
                         Project Visibility <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Check
@@ -796,7 +808,7 @@ const PostProject = () => {
                       >
                         <Form.Check.Input name="visibility" type="radio" />
                         <Form.Check.Label
-                          style={{ fontSize: '14px' }}
+
                         >
                           <Icon width="24" height="24" className='ms-1' icon="gridicons:multiple-users" /> <span className="radio-opt">  Public <span className="optional">(All Traders can view the project post and send proposals)</span></span>
                         </Form.Check.Label>
@@ -813,7 +825,7 @@ const PostProject = () => {
                       >
                         <Form.Check.Input name="visibility" type="radio" />
                         <Form.Check.Label
-                          style={{ fontSize: '14px' }}
+                          
                         >
                           <Icon icon="ph:lock-simple-fill" className='ms-1' width="24" height="24" /> <span className="radio-opt"> Private <span className="optional">(Only Traders that you specifically invite can view the
                             <p className="opt-span">project post and send proposal)</p></span></span>
@@ -824,7 +836,7 @@ const PostProject = () => {
 
                   <Col lg={6} md={6} className=''>
                     <Form.Group className='mb-3'>
-                      <Form.Label className='text-700  text-uppercase'>
+                      <Form.Label className='text-700  '>
                         Expiry Date <span className="text-danger">*</span>
                       </Form.Label>
                       <p className="text-900">01/01/2023 </p>

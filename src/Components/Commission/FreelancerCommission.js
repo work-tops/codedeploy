@@ -191,20 +191,20 @@ function TraderCommission() {
                 </Col>
                 <Col lg={12} className="mt-4">
                     <Card className="ms-3 me-3 mb-3">
-                        <Card.Header as="h5" className='bg-light text-justify text-uppercase'>Note</Card.Header>
+                        <Card.Header as="h2" className='bg-light text-justify text-uppercase'>Note</Card.Header>
                         <Card.Body className="">
                             <ul>
-                                <li style={{ fontSize: '14px', width: '100%' }} className="">% - In this type of commission,the
+                                <li style={{  width: '100%' }} className="">% - In this type of commission,the
                                     percentage amount will be deducted from the base price of the product.</li>
-                                <li style={{ fontSize: '14px', width: '100%' }} className="">
+                                <li style={{  width: '100%' }} className="">
                                     Fixed -In this type of commission ,
                                     the fixed amount will be deducted from the base price.
                                 </li>
-                                <li style={{ fontSize: '14px', width: '100%' }} className="">% + Fixed - In this type of commission ,
+                                <li style={{  width: '100%' }} className="">% + Fixed - In this type of commission ,
                                     first the percentage amount will be deducted from the base price of the product
                                     and then a fixed amount will be deducted from the remaining amount.
                                 </li>
-                                <li style={{ fontSize: '14px', width: '100%' }} className="">
+                                <li style={{  width: '100%' }} className="">
                                     Fixed + % - In this type of commission , first a fixed amount will be deducted from the base price
                                     and then the percentage amount will be deducted from the remaining price.
                                 </li>
@@ -213,8 +213,8 @@ function TraderCommission() {
                     </Card>
                     <Card className=" ms-3 me-3 mb-3">
                         <Card.Header className="bg-light">
-                            <h5>Trader Commission</h5>
-                            <p className="fs--1 mt-2">Here are the setting for Trader Commission</p>
+                            <h2>Trader Commission</h2>
+                            <p className="mt-2">Here are the setting for Trader Commission</p>
                         </Card.Header>
                         <Card.Body>
                             <Form.Group className="mb-3">
@@ -283,7 +283,7 @@ function TraderCommission() {
                                     </InputGroup>
                                 </div>
                             </Form.Group>
-                            <h6 className="mt-3">UPDATE EARLIER PRODUCT PRICE</h6>
+                            <h3 className="mt-3">UPDATE EARLIER PRODUCT PRICE</h3>
                             <div className="form-check form-switch">
                                 <input
                                     name="update_old_values"

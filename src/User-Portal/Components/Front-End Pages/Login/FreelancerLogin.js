@@ -122,12 +122,12 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                   <Card.Body className="p-0">
                     <Row className="g-0">
                       <Col style={{ background: '#003f6b' }} lg={5} className="justify-content-center align-items-center text-white text-center">
-                        <div className='mt-4 ms-2'>
+                        <div className='mt-4 ms-3'>
                         <Link to={'/'}> <img src={logo} width="135px" /></Link>
                         </div>
                         <div className="position-relative mt-md-0 mt-sm-0 mt-lg-6">
                           <div className="z-index-1 position-relative light">
-                            <h3 className="opacity-75 mt-3 ms-3 mb-3 text-white"> Welcome </h3>
+                            <h1 className="opacity-75 mt-3 ms-3 mb-3 text-white"> Welcome </h1>
                           </div>
                           {isToggle == false ? <p className="mt-lg-5 mt-sm-3 mt-md-3 text-white">
                             <p className='mb-2 text-center'>
@@ -165,7 +165,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                       >
                         {isToggle == false ?
                           <div className="p-4 p-md-5 flex-grow-1">
-                            <h4 className='mb-3'>Trader SignUp</h4>
+                            <h2 className='mb-4'>Trader SignUp</h2>
                             <Form onSubmit={handleSubmit}>
                               <Row className='g-2'>
                                 <Col md={6}>
@@ -262,7 +262,7 @@ const SellerLogin = ({ leftSideContent, layout, footer = true }) => {
                               </div>
                             </Form>
                           </div> : <div className="p-4 p-md-5 flex-grow-1">
-                            <h4 className='mb-3'>Trader Login</h4>
+                            <h2 className='mb-4'>Trader Login</h2>
                             <Form onSubmit={handleSubmit}>
                               <Form.Group className='mb-3'>
                                 <Form.Label className='text-700'>Email address<span className="text-danger">*</span></Form.Label>

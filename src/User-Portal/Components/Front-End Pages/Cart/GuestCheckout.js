@@ -24,7 +24,7 @@ function GuestCheckout() {
                             <div className="col-xl-4 order-xl-1">
                                 <div className="card">
                                     <div className="card-header bg-light btn-reveal-trigger d-flex flex-between-center">
-                                        <h5 className="mb-0">Order Summary</h5>
+                                        <h2 className="mb-0">Order Summary</h2>
                                         <Link to="/cart">
                                             <a className="btn btn-link btn-sm btn-reveal text-600" >
                                                 <span className="fas fa-pencil-alt"></span>
@@ -69,7 +69,7 @@ function GuestCheckout() {
                                     <div className="card-header bg-light">
                                         <div className="row flex-between-center">
                                             <div className="col-sm-auto">
-                                                <h5 className="mb-2 mb-sm-0">Shipping Address</h5>
+                                                <h2 className="mb-2 mb-sm-0">Shipping Address</h2>
                                             </div>
                                         </div>
                                         {/*  */}
@@ -134,7 +134,7 @@ function GuestCheckout() {
                                                 <Form.Label className="text-uppercase">
                                                     Country<span className="text-danger">*</span>
                                                 </Form.Label>
-                                                <Form.Select>
+                                                <Form.Select className="cursor-pointer">
                                                     <option>United Kingdom</option>
                                                     <option>Ireland</option>
                                                 </Form.Select>
@@ -177,7 +177,7 @@ function GuestCheckout() {
                                                 <Form.Label className="text-uppercase">
                                                     Country<span className="text-danger">*</span>
                                                 </Form.Label>
-                                                <Form.Select>
+                                                <Form.Select className="cursor-pointer">
                                                     <option>United Kingdom</option>
                                                     <option>Ireland</option>
                                                 </Form.Select>
@@ -187,7 +187,7 @@ function GuestCheckout() {
                                 </div>
                                 <Card className="mb-3">
                                     <Card.Header className="bg-light">
-                                        <h5>Shipping Method</h5>
+                                        <h2>Shipping Method</h2>
                                     </Card.Header>
                                     <Card.Body>
                                         <div className="row">
@@ -226,7 +226,7 @@ function GuestCheckout() {
                                 </Card>
                                 <div className="card mb-3">
                                     <div className="card-header bg-light">
-                                        <h5 className="mb-0">Payment Method</h5>
+                                        <h2 className="mb-0">Payment Method</h2>
                                     </div>
                                     <div className="card-body">
                                         <form>
@@ -271,7 +271,7 @@ function GuestCheckout() {
                                                     <div className="col-md-5 col-xl-12 col-xxl-5 ps-lg-4 ps-xl-2 ps-xxl-5 text-center text-md-start text-xl-center text-xxl-start">
                                                         <div className="border-bottom border-dashed d-block d-md-none d-xl-block d-xxl-none my-4"></div>
                                                         <div className="fs-2 fw-semi-bold">All Total: <span className="text-primary">£3320</span></div><button className="btn btn-success mt-3 mb-3 px-5" type="submit">Confirm &amp; Pay</button>
-                                                        <p className="fs--1 mt-3 mb-0">By clicking <span className="fw-semibold text-900 m-1">Confirm & Pay</span>button you agree to the <Link to="/termsofuse">Terms & Conditions</Link></p>
+                                                        <p style={{fontSize:'16px'}} className="mt-3 mb-0">By clicking <span className="fw-semibold text-900 m-1">Confirm & Pay</span>button you agree to the <Link to="/termsofuse">Terms & Conditions....</Link></p>
                                                     </div>
                                                 </div>
                                             </div>

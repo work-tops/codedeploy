@@ -14,11 +14,6 @@ function Cart() {
         setShowModal(false);
     };
 
-    const handleCancel = () => {
-        // Perform cancel action here
-        console.log('Cancel project');
-        setShowModal(false);
-    };
     return (
         <>
             <Row>
@@ -32,13 +27,13 @@ function Cart() {
                             <div className="card-header">
                                 <div className="row justify-content-between">
                                     <div className="col-md-auto">
-                                        <h5 className="mb-3 mb-md-0">Cart (1 Items)</h5>
+                                        <h1 className="mb-3 mb-md-0">Cart (1)</h1>
                                     </div>
                                     <div className="col-md-auto">
-                                    <div className="d-flex justify-content-start gap-1 flex-wrap">
+                                        <div className="d-flex justify-content-start gap-1 flex-wrap">
                                             <Link to="/products">
                                                 <a className="btn btn-sm  btn-outline-secondary   border-300 shadow-none" >
-                                                    <span  data-fa-transform="shrink-4"></span>
+                                                    <span data-fa-transform="shrink-4"></span>
                                                     Continue Shopping
                                                 </a>
                                             </Link>
@@ -51,11 +46,11 @@ function Cart() {
                                     <div className="col-2 col-md-2 py-2">
                                         <Form.Check type="checkbox" />
                                     </div>
-                                    <div className="col-6 col-md-6 py-2">Product Name</div>
+                                    <div className="col-6 fs-0 col-md-6 py-2">Product Name</div>
                                     <div className="col-4 col-md-4">
                                         <div className="row">
-                                            <div className="col-md-8 py-2 d-none d-md-block text-center">Quantity</div>
-                                            <div className="col-12 col-md-4 text-end py-2">Price</div>
+                                            <div className="col-md-8 fs-0 py-2 d-none d-md-block text-center">Quantity</div>
+                                            <div className="col-12 fs-0 col-md-4 text-end py-2">Price</div>
                                         </div>
                                     </div>
                                 </div>
@@ -75,23 +70,23 @@ function Cart() {
                                             </Link>
 
                                             <div className="flex-1">
-                                                <h5 className="fs-0 text-uppercase">
-                                                    <Link
-                                                        to={`productdetails/${"data._id"}`}
-                                                        className="text-dark "
-                                                    >
+                                                <Link
+                                                    to={`productdetails/${"data._id"}`}
+                                                    className="text-dark "
+                                                >
+                                                   <h2 className="product-name mb-0 fs-0 fs-lg-1">
                                                         MALACHITE SEMI PRECIOUS
-                                                    </Link>
-                                                </h5>
-                                                <span style={{ fontSize: '14px' }} className="fw-semibold mt-2 d-block">White / 20MM / Polished / Per Sq Mt</span>
-                                                <p className="text-danger" onClick={setShowModal} style={{fontSize:'14px',marginTop:'5px'}} role="button">Remove</p>
+                                                    </h2>
+                                                </Link>
+                                                <span className="fs--1 text-900 mt-1 d-block">White / 20MM / Polished / Per Sq Mt</span>
+                                                <p className="text-danger" onClick={setShowModal} style={{ fontSize: '14px', marginTop: '5px' }} role="button">Remove</p>
                                                 <div>
                                                     <Modal show={showModal} onHide={handleClose}>
                                                         <Modal.Header closeButton>
                                                             <Modal.Title>Warning</Modal.Title>
                                                         </Modal.Header>
                                                         <Modal.Body>
-                                                            <p className="text-capitalize">
+                                                            <p className="">
                                                                 Are you sure want to remove selected items from your cart?
                                                             </p>
                                                         </Modal.Body>
@@ -126,7 +121,7 @@ function Cart() {
                                     <div className="col px-0">
                                         <div className="row gx-card mx-0">
                                             <div className="col-md-8 py-2 d-none d-md-block">1 (items)</div>
-                                            <div className="col-12 col-md-4 text-start py-2">£ 200</div>
+                                            <div className="col-12 col-md-4 text-end py-2">£ 200</div>
                                         </div>
                                     </div>
                                 </div>
@@ -142,10 +137,10 @@ function Cart() {
                             <div class="card-body cart">
                                 <div class="col-sm-12 empty-cart-cls text-center">
                                     <img src={emptycart} width="130" height="130" class="img-fluid mb-4 mr-3" />
-                                    <h3><strong>Your Cart is Empty</strong></h3>
-                                    <h6 className="text-capitalize">Must Add all Items Before You proceed to Checkout </h6>
+                                    <h2><strong>Your Cart is Empty</strong></h2>
+                                    <h3 className="fs-0 mt-3">Must Add all Items Before You proceed to Checkout </h3>
                                     <Link to="/products">
-                                        <a className="btn text-capitalize mt-3 btn-outline-secondary border-300 me-2 shadow-none" data-abc="true">continue shopping</a>
+                                        <a className="btn  mt-3 btn-outline-secondary border-300 me-2 shadow-none" data-abc="true">continue shopping</a>
                                     </Link>
 
 

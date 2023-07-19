@@ -293,14 +293,14 @@ const AllCategoryCommission = () => {
         return (
             <Row className="flex-between-center mb-3">
                 <Col xs={4} sm="auto" className="d-flex align-items-center pe-0">
-                    <h5 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
+                    <h4 className="fs-0 mb-0 text-nowrap py-2 py-xl-0">
                         {
                             Object.keys(selectedRowIds).length > 0 ?
                                 'You have selected ' + Object.keys(selectedRowIds).length + ' Category Commissions'
                                 :
                                 ''
                         }
-                    </h5>
+                    </h4>
                 </Col>
                 <Row className="flex-end-center mt-2 mb-3">
                     <Col xs="auto">
@@ -346,8 +346,8 @@ const AllCategoryCommission = () => {
                 <Col lg={12} className="mt-4">
                     <Card className=" ms-3 me-3 mb-3">
                         <Card.Header className="bg-light">
-                            <h5>All Category Commission Settings<span className="ms-1 fs--1 badge bg-secondary">#100</span></h5>
-                            <p className="fs--1 mt-3">Here are the Category Commission Setting on your store</p>
+                            <h2>All Category Commission Settings<span className="ms-1 fs--1 badge bg-secondary">#100</span></h2>
+                            <p className="mt-3">Here are the Category Commission Setting on your store</p>
                         </Card.Header>
 
                         <Card.Body>
@@ -370,7 +370,7 @@ const AllCategoryCommission = () => {
                                     rowClassName="align-middle white-space-nowrap"
                                     tableProps={{
                                         striped: true,
-                                        className: 'fs--1 mb-0 overflow-hidden'
+                                        className: ' mb-0 overflow-hidden'
                                     }}
                                 />
                                 <div className="mt-3">
