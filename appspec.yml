@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /var/www/
+  - source: /opt/codedeploy-agent/deployment-root/...
     destination: /var/www/codebuild
 
 permissions:
