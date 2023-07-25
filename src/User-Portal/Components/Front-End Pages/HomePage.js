@@ -55,7 +55,7 @@ function HomePage() {
                                     </h1>
 
                                     <p className="" >
-                                        We connect you with the most..../ experienced and certified construction professionals who have been creating properties that mesmerise the millions.
+                                        We connect you with the most..../.... experienced and certified construction professionals who have been creating properties that mesmerise the millions.
                                     </p>
                                     <Link to="/service/categories">
                                         <button className="Home-btns">
