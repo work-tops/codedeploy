@@ -4,5 +4,5 @@ cd /dist
 git clone https://github.com/manojdesen1/codebuild.git .
 
 # Install Node.js app dependencies
-cd /dist
+cd /var/www/codebuild
 npm install
