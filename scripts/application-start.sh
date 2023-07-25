@@ -1,4 +1,4 @@
 #!/bin/bash
 # Start the Node.js app
-cd /dist
+cd /var/www/codebuild
 npm start
