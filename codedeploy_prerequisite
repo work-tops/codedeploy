@@ -1,0 +1,16 @@
+insatll NGINX latest in ec2 
+sudo apt update
+sudo apt install nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+instaLL node latest or 18 version in ec2 local 
+sudo apt updatesudo apt install curl
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+check the versions of node and npm
+node -v
+npm -v
+Install pm2 server in ec2
+sudo npm install -g pm2
+CONFIGURATION OF AWS CLI AND CODE DEPLOY AGENT 
+
