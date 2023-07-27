@@ -13,4 +13,22 @@ npm -v
 Install pm2 server in ec2
 sudo npm install -g pm2
 CONFIGURATION OF AWS CLI AND CODE DEPLOY AGENT 
+INSTALL AWS CLI
+sudo apt update
+sudo apt upgrade
+sudo apt install python3 python3-pip
+or
+sudo apt install -y puthon-pip
+sudo apt install awscli 
+aws --version
+INSTALL AWS CODE DEPLOY IN EC2 UBUNTU
+apt update
+sudo apt install ruby
+wget https://aws-codedeploy-us-west-2.s3.us-west-2.amazonaws.com/latest/install  //NOTE REGION MUST BE CHECKED IF IT LONDON CHANGE IT TO eu-west-2
+chmod +x ./install
+sudo ./install auto
+sudo service codedeploy-agent start
+sudo systemctl enable codedeploy-agent
+sudo service codedeploy-agent status
+
 
