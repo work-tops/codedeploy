@@ -2,10 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/codebuild
+    destination: /var/www/codedeploy
 
 permissions:
-  - object: /var/www/codebuild
+  - object: /var/www/codedeploy
     owner: root
     group: root
 
