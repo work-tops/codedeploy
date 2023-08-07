@@ -1,4 +1,4 @@
 #!/bin/bash
 # Start the Node.js app
-cd /var/www/codebuild
-pm2 --name codebuild start npm -- start
+cd /var/www/codedeploy
+pm2 --name codedeploy start npm -- start
